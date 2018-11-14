@@ -12,7 +12,7 @@
 		<div class="ui-areamini-content-wrap" id="ui-content-wrap">
 			<div class="hot">
             	{foreach from=$region_list item=list}
-                <a href="javascript:get_district_list({$list.region_id}, 0);"  {if $city_top eq $list.region_id}style="background-color:#eee; color:#f42424;"{/if}>{$list.region_name}</a>
+                <a href="javascript:get_district_list({$list.region_id}, 0);"  {if $city_top eq $list.region_id}style="background-color:#eee; color:#1abb8c;"{/if}>{$list.region_name}</a>
                 {/foreach}
 			</div>
 			<div class="search-first-letter">

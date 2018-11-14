@@ -2181,7 +2181,7 @@ color: #139ff0;
 .step_item_right .item_right_li .value .checkbox_item{ position:relative; padding-right:15px;}
 .step_item_right .item_right_li .value .icon-cha{ font-size: 12px;vertical-align: middle; position:absolute; top:9px; right:0; color:#62b3ff; display:none; cursor:pointer;}
 .step_item_right .item_right_li .value .checkbox_item:hover .icon-cha{ display:block;}
-.step_item_right .item_right_li .value .icon-cha:hover{ color:#F42424;}
+.step_item_right .item_right_li .value .icon-cha:hover{ color:#1abb8c;}
 
 .step_item_right .goods_attr_type{ width:auto; min-width:200px; margin-right:10px}
 .step_item_right .goods_attr_type .label{ line-height:30px; min-width:60px; text-align:right;}
@@ -2676,7 +2676,7 @@ color: #139ff0;
 
 .import_step_content .ecsc-form-goods dl{ padding:5px 0;}
 
-.notic_import_attr{ color:#f42424;text-align: center;font-size: 18px;padding-top: 250px;}
+.notic_import_attr{ color:#1abb8c;text-align: center;font-size: 18px;padding-top: 250px;}
 
 .attr_gallerys{ max-height:425px; position:relative; overflow:hidden;}
 
@@ -2776,7 +2776,7 @@ color: #139ff0;
 .goods_gallery .table_list .ga-images-ul li img{ max-width:100%; max-height:100%;}
 .goods_gallery .table_list .ga-images-ul li .pixel{ position: absolute;background: rgba(0,0,0,0.5);filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0, startColorstr='#4cffffff', endColorstr='#4cffffff');width: 100%;padding: 2px 0;color: #fff;left: 0;bottom: 0;-webkit-transition: all .3s ease-out;-moz-transition: all .3s ease-out;-ms-transition: all .3s ease-out;-o-transition: all .3s ease-out;transition: all .3s ease-out;}
 .goods_gallery .table_list .ga-images-ul li:hover .pixel{ bottom:-30px;}
-.goods_gallery .table_list .ga-images-ul li.notic{ width:100%; height:140px; line-height:140px; border:0; text-align:center; font-size:16px; color:#f42424; margin:0;}
+.goods_gallery .table_list .ga-images-ul li.notic{ width:100%; height:140px; line-height:140px; border:0; text-align:center; font-size:16px; color:#1abb8c; margin:0;}
 .goods_gallery .table_list .pagination li span{ width:auto; float:none;}
 /* 模块设置盒子 start */
 .modal-footer .btn-default{ background-color: #4d9de4; border-color: #4d9de4; color:#fff; outline:0;}
@@ -2838,7 +2838,7 @@ color: #139ff0;
 /*图片上传进度条*/
 .text_div{ width:105px; border:1px solid #dbdbdb;border-radius:2px; height:28px; line-height:28px;background:#f7f7f7; float:left;}
 .Percent_pic{background-color: green; display:block; width:0%; height:28px; float:left;}
-.Percent{ float:left; margin-left:10px; line-height:30px; color:#f42424;}
+.Percent{ float:left; margin-left:10px; line-height:30px; color:#1abb8c;}
 
 /*批量打印快递单*/
 .print_body{ overflow:hidden; text-align:center;}
@@ -2853,7 +2853,7 @@ color: #139ff0;
 .transport_shipping_tpl .level_linkage .ui-dropdown{ width:auto;}
 
 .goods_attr_04_batch{ font-size: 0;text-align: center;}
-.goods_attr_04_explain{ border: 0 none;color: #f42424;display: block;font-size: 12px;padding: 15px 0;text-align: center;}
+.goods_attr_04_explain{ border: 0 none;color: #1abb8c;display: block;font-size: 12px;padding: 15px 0;text-align: center;}
 .attr-turn-page .pagination{ padding: 30px 0 0;}
 .alipay input{ border:none;color:#fff;background:#139ff0 ;padding:5px 10px;cursor:pointer;border-radius:4px;}
 

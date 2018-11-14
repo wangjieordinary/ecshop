@@ -164,7 +164,7 @@
 .am-modal-alert .am-modal-dialog{ padding-bottom:0; background-color:#fff;}
 .am-modal-alert .am-modal-dialog .am-modal-bd{ font-size:16px; border-bottom:solid 1px #e5e5e5;}
 .am-modal-alert .am-modal-dialog .am-modal-btn{ font-size:16px;}
-.am-modal-alert .am-modal-dialog .error{ color:#f42424;}
+.am-modal-alert .am-modal-dialog .error{ color:#1abb8c;}
 .am-modal-alert .am-modal-dialog .success{ color:#1ecb63;}
 
 @media screen and (max-width: 1024px){

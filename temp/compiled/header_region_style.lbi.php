@@ -13,7 +13,7 @@
             	<?php $_from = $this->_var['region_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'list');if (count($_from)):
     foreach ($_from AS $this->_var['list']):
 ?>
-                <a href="javascript:get_district_list(<?php echo $this->_var['list']['region_id']; ?>, 0);"  <?php if ($this->_var['city_top'] == $this->_var['list']['region_id']): ?>style="background-color:#eee; color:#f42424;"<?php endif; ?>><?php echo $this->_var['list']['region_name']; ?></a>
+                <a href="javascript:get_district_list(<?php echo $this->_var['list']['region_id']; ?>, 0);"  <?php if ($this->_var['city_top'] == $this->_var['list']['region_id']): ?>style="background-color:#eee; color:#1abb8c;"<?php endif; ?>><?php echo $this->_var['list']['region_name']; ?></a>
                 <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
 			</div>
 			<div class="search-first-letter">

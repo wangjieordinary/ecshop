@@ -2338,7 +2338,7 @@ $(function(){
 		
 		if(parent.find(".selected").length>0){
 			$("#alipay_bank").find(".noBtn").hide();
-			$("#alipay_bank").find("input").show().css({"background-color":"#f42424"});
+			$("#alipay_bank").find("input").show().css({"background-color":"#1abb8c"});
 		}
 	});
 	
