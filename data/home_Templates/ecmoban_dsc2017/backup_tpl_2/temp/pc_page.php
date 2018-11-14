@@ -186,7 +186,7 @@
         <div class="w w1200">
             <div class="logo">
                 <div class="logoImg"><a href="#"><img src="../themes/ecmoban_dsc2017/images/logo.gif"></a></div>
-                <div class="logoAdv"><a href="#"><img src="../themes/ecmoban_dsc2017/images/ecsc-join.gif"></a></div>
+                <!-- <div class="logoAdv"><a href="#"><img src="../themes/ecmoban_dsc2017/images/ecsc-join.gif"></a></div> -->
             </div>
             <div class="dsc-search">
                 <div class="form">
