@@ -9,7 +9,7 @@ $db_name   = "dscx_websc_la";
 $db_user   = "root";
 
 // database password
-$db_pass   = "root";
+$db_pass   = "e0ee1508706cbac6";
 
 // table prefix
 $prefix    = "dsc_";
