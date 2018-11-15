@@ -26,19 +26,19 @@
             <div class="s-p-steps">
                 <ul>
                     <li class="{if $sid eq 1}curr{elseif $sid gt 1  || $step eq 'stepSubmit'} cur{/if}">
-                        <span>1. {$lang.merchants_step_one}</span>
+                        <span>1. 入驻须知</span>
                         <i class="iconfont icon-arrow-right-alt"></i>
                     </li>
                     <li class="{if $sid eq 2} curr{elseif $sid gt 2  || $step eq 'stepSubmit'} cur{/if}">
-                        <span>2. {$lang.merchants_step_two}</span>
+                        <span>2. 公司信息认证</span>
                         <i class="iconfont icon-arrow-right-alt"></i>
                     </li>
                     <li class="{if $sid eq 3} curr{elseif $sid gt 3 || $step eq 'stepSubmit'} cur{/if}">
-                        <span>3. {$lang.merchants_step_three}</span>
+                        <span>3. 店铺信息认证</span>
                         <i class="iconfont icon-arrow-right-alt"></i>
                     </li>
                     <li class="last{if $step eq 'stepSubmit'} curr{elseif $sid gt 4} cur{/if}">
-                        <span>4. {$lang.merchants_step_four}</span>
+                        <span>4. 等待审核</span>
                     </li>
                 </ul>
             </div>
@@ -126,7 +126,7 @@
             <div class="settled-prog-warp">
                 <div class="che"><img src="images/che.png"></div>
                 <div class="spw-cont">
-                    <div class="spw-tit"><h1>{$lang.review_progress}</h1></div>
+                    <div class="spw-tit"><h1>审核进度</h1></div>
                     <!--审核成功-->
                     <div class="spw-mian {if $shop_info.merchants_audit eq 0}spw-wait{elseif $shop_info.merchants_audit eq 1}spw-success{elseif $shop_info.merchants_audit eq 2}spw-fail{/if}">
                         <i class="spw-icon"></i>
@@ -148,19 +148,19 @@
                                 <span>{$lang.audit_shop_one}：<strong class="orange2">{$shop_info.shop_name}</strong></span>
                                 <span>{$lang.audit_shop_two}：<em>{$shop_info.shop_class_keyWords}</em></span>
                                 {if $shop_info.merchants_audit eq 2 && $shop_info.merchants_message}
-                                <span>{$lang.reply_comment}：<strong class="red">{$shop_info.merchants_message}</strong></span>
+                                <span>回复：<strong class="red">{$shop_info.merchants_message}</strong></span>
                                 {/if}
                             </div>
                             {if $shop_info.merchants_audit eq 2 || $shop_info.merchants_audit eq 0}
                                 {if $shop_info.steps_audit eq 0 }
-                                <div class="spw-btn"><a href="merchants_steps.php?step=stepOne&pid_key=0" class="btn sc-redBg-btn">{$lang.reapply}</a></div>
+                                <div class="spw-btn"><a href="merchants_steps.php?step=stepOne&pid_key=0" class="btn sc-redBg-btn">重新申请</a></div>
                                 {/if}
                             {elseif $shop_info.merchants_audit eq 1}
-                            <div class="spw-btn"><a href="seller/index.php" target="_blank" class="btn sc-redBg-btn">{$lang.merchant_login}</a></div>
+                            <div class="spw-btn"><a href="seller/index.php" target="_blank" class="btn sc-redBg-btn">商家登录</a></div>
                             {elseif $shop_info.merchants_audit eq 0}
                             <!--<div class="spw-btn"><a href="user.php" target="_blank" class="btn sc-redBg-btn">用户中心</a></div>-->
                             {/if}
-                            <div class="setted-footer"><a href="index.php" class="ftx-05">{$lang.back_home}</a><a href="user.php" class="ftx-05">{$lang.user_center}</a>{if $shop_info.merchants_audit eq 1}<a href="user.php?act=merchants_upgrade"  class="ftx-05">{$lang.seller_Grade}</a>{/if}</div>
+                            <div class="setted-footer"><a href="index.php" class="ftx-05">{$lang.back_home}</a><a href="user.php" class="ftx-05">{$lang.user_center}</a>{if $shop_info.merchants_audit eq 1}<a href="user.php?act=merchants_upgrade">{$lang.seller_Grade}</a>{/if}</div>
                         </div>
                     </div>
                 </div>
@@ -214,11 +214,11 @@ $(function(){
 		
 		pb({
 			id:"dialogCate",
-			title:"{$lang.Add_category}",
+			title:"添加类目",
 			width:560,
 			content:content,
-			ok_title:"{$lang.assign}",
-			cl_title:"{$lang.is_cancel}",
+			ok_title:"确定",
+			cl_title:"取消",
 			onOk:function(){
 				scanCodeDialog("#dialogCate");
 				
@@ -357,17 +357,13 @@ $(function(){
 			}
 		});
 		
-		var shoprz_brand_length = $("input[name='ec_shoprz_brandName']").size();
+		$("input[name='ec_shoprz_brandName']").rules("add",{
+			required:true,
+			messages : {
+				required : json_languages.merchants_step_error_brand
+			}
+		});
 		
-		if(shoprz_brand_length > 0){
-			$("input[name='ec_shoprz_brandName']").rules("add",{
-				required:true,
-				messages : {
-					required : json_languages.merchants_step_error_brand
-				}
-			});
-		}
-
 		$("input[name='ec_shop_class_keyWords']").rules("add",{
 			required:true,
 			messages : {

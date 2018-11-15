@@ -2,10 +2,10 @@
 	<thead>
 		<tr>
 			<th width="3%"><div class="tDiv">&nbsp;</div></th>
-			<th width="20%"><div class="tDiv">{$lang.area_name}</div></th>
-			<th width="25%"><div class="tDiv">{$lang.belong_level}</div></th>
-			<th width="25%"><div class="tDiv">{$lang.belong_area}</div></th>
-			<th width="25%" class="handle">{$lang.handler}</th>
+			<th width="20%"><div class="tDiv">地区名称</div></th>
+			<th width="25%"><div class="tDiv">所在层级</div></th>
+			<th width="25%"><div class="tDiv">所属地区</div></th>
+			<th width="25%" class="handle">操作</th>
 		</tr>
 	</thead>
 	<tbody>

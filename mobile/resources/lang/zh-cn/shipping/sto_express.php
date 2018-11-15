@@ -1,4 +1,5 @@
 <?php
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $_LANG['sto_express']            = '申通快递';
 $_LANG['sto_express_desc']       = '江、浙、沪地区首重为15元/KG，其他地区18元/KG， 续重均为5-6元/KG， 云南地区为8元';

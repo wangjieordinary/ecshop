@@ -94,7 +94,7 @@
 				},
 				messages:{
 					textfile:{
-						required : '<i class="icon icon-exclamation-sign"></i>'+file_null
+						required : '<i class="icon icon-exclamation-sign"></i>请选择上传文件'
 					}
 				}			
 			});

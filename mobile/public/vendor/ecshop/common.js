@@ -43,14 +43,11 @@ function addToCart(goodsId, parentId, storeId, cart_type) {
         var warehouse_id = document.getElementById('region_id').value;
         goods.warehouse_id   = warehouse_id;
     }
+
     //地区ID
     if (document.getElementById('area_id')) {
         var area_id = document.getElementById('area_id').value;
         goods.area_id = area_id;
-    }
-    if (document.getElementById('area_city')) {
-        var area_city = document.getElementById('area_city').value;
-        goods.area_city = area_city;
     }
     //ecmoban模板堂 --zhuo 仓库ID end
     if (storeId > 0) {
@@ -1080,18 +1077,15 @@ function addToCart_quick(goodsId, parentId) {
         quick = 1;
     }
     //ecmoban模板堂 --zhuo 仓库ID start
-    if (document.getElementById('region_id')) {
+    if(document.getElementById('region_id')){
         var warehouse_id = document.getElementById('region_id').value;
         goods.warehouse_id   = warehouse_id;
     }
+
     //地区ID
-    if (document.getElementById('area_id')) {
+    if(document.getElementById('area_id')){
         var area_id = document.getElementById('area_id').value;
         goods.area_id = area_id;
-    }
-    if (document.getElementById('area_city')) {
-        var area_city = document.getElementById('area_city').value;
-        goods.area_city = area_city;
     }
     //ecmoban模板堂 --zhuo 仓库ID end
 

@@ -14,7 +14,7 @@
 					{include file ='library/seller_menu_tab.lbi'}
                     <div class="ecsc-form-goods">
                         <div class="explanation" id="explanation">
-                            <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                            <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                             {$lang.use_help}
                         </div>
                         
@@ -32,9 +32,9 @@
                                 <div class="label">{$lang.file_charset}</div>
                                 <div class="label_value">
                                     <div id="format" class="imitate_select select_w320">
-                                        <div class="cite">{$lang.please_select}</div>
+                                        <div class="cite">请选择</div>
                                         <ul>
-                                            <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.please_select}</a></li>
+                                            <li><a href="javascript:;" data-value="0" class="ftx-01">请选择</a></li>
                                             {foreach from=$lang_list item=data key=key}
                                             <li><a href="javascript:;" data-value="{$key}" class="ftx-01">{$data}</a></li>
                                             {/foreach}
@@ -49,7 +49,7 @@
                                     <div class="type-file-box">
                                         <div class="input">
                                             <input type="text" name="textfile" class="type-file-text" id="textfield" value="" readonly>
-                                            <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}" />
+                                            <input type="button" name="button" id="button" class="type-file-button" value="上传..." />
                                             <input type="file" class="type-file-file" id="file" name="file" data-state="csvfile" size="30" hidefocus="true" />
                                         </div>
                                     </div>
@@ -106,7 +106,7 @@
 			},
 			messages:{
 				textfile:{
-					required : '<i class="icon icon-exclamation-sign"></i>'+jl_pls_select_upload_file
+					required : '<i class="icon icon-exclamation-sign"></i>请选择上传文件'
 				}
 			}			
 		});

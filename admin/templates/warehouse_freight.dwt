@@ -9,7 +9,7 @@
             <div class="explanation" id="explanation">
                 <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                    <li>{$lang.operation_prompt_content.freight.0}</li>
+                    <li>可添加多个配送方式。</li>
                     <li>{$lang.operation_prompt_content_common}</li>
                 </ul>
             </div>
@@ -26,7 +26,7 @@
                                             <ul style="display: none;">
                                                 <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.select_please}</a></li>
                                                 {foreach from=$warehouse_list item=warehouse}
-                                                <li><a href="javascript:;" data-value="{$warehouse.region_id}" class="ftx-01">{$warehouse.region_name}</a></li>
+                                                    <li><a href="javascript:;" data-value="{$warehouse.region_id}" class="ftx-01">{$warehouse.region_name}</a></li>
                                                 {/foreach}
                                             </ul>
                                             <input name="warehouse_id" type="hidden" value="{$parent_id}" id="warehouse_val_id">
@@ -79,6 +79,7 @@
                                                 <div class="tDiv">
                                                     <div class="item">
                                                         <div class="label">{$lang.select_logistics_company}：</div>
+                                                        
                                                         <div class="label_value">
                                                             {foreach from=$freight_list item=freight name=nofreight}
                                                             <a href="warehouse_shipping_mode.php?act=list&shipping_id={$freight.shipping_id}&id={$freight.region_id}" class="blue">{$freight.shipping_name}</a>
@@ -99,70 +100,72 @@
             </div>
         </div>
     </div>
-    {include file ='library/pagefooter.lbi'}
-    <script type="text/javascript">
+ {include file ='library/pagefooter.lbi'}
+<script type="text/javascript">
 
-    $.divselect("#warehouse_id","#warehouse_val_id",function(obj){
-    	var val = obj.attr("data-value");
-    	var shipping_id = $("#shipping_id").val();
-    	area_freight(shipping_id,val);
-    });
+$.divselect("#warehouse_id","#warehouse_val_id",function(obj){
+	var val = obj.attr("data-value");
+	var shipping_id = $("#shipping_id").val();
+	area_freight(shipping_id,val);
+});
 
-     $.divselect("#shipping_id_box","#shipping_id",function(obj){
-    	var val = obj.attr("data-value");
-    	var warehouse_id = $("#warehouse_id").val();
-    	area_freight(val,warehouse_id);
-    });
+ $.divselect("#shipping_id_box","#shipping_id",function(obj){
+	var val = obj.attr("data-value");
+	var warehouse_id = $("#warehouse_id").val();
+	area_freight(val,warehouse_id);
+});
 
-    onload = function()
+onload = function()
+{
+	var shipping_id = $("#shipping_id").val();
+	var warehouse_id = $("#warehouse_id").val();
+	area_freight(shipping_id, warehouse_id);
+}
+/**
+ * 查询运费模式参数
+ */
+function area_freight(shipping_id, warehouse_id){
+
+	
+	var warehouse_id = $(":input[name='warehouse_id']").val();
+	var region_id = $("#regionId").val();
+	$.jqueryAjax('warehouse.php', 'act=get_freight_area&shipping_id=' + shipping_id + '&warehouse_id=' + warehouse_id + '&region_id=' + region_id, function(res){
+	   $("#freightArea").html(res.content);
+	}, "GET", "JSON");
+}  
+
+     // 配送费用计算方式
+function compute_mode(shipping_code,mode)
+{
+    var base_fee  = $("#base_fee");
+    var step_fee  = $("#step_fee");
+    var item_fee  = $("#item_fee");
+    if(shipping_code == 'post_mail' || shipping_code == 'post_express')
     {
-    	var shipping_id = $("#shipping_id").val();
-    	var warehouse_id = $("#warehouse_id").val();
-    	area_freight(shipping_id, warehouse_id);
+     var step_fee1  = $("#step_fee1");
     }
-    /**
-     * 查询运费模式参数
-     */
-    function area_freight(shipping_id, warehouse_id){
-    	var warehouse_id = $(":input[name='warehouse_id']").val();
-    	var region_id = $("#regionId").val();
-    	$.jqueryAjax('warehouse.php', 'act=get_freight_area&shipping_id=' + shipping_id + '&warehouse_id=' + warehouse_id + '&region_id=' + region_id, function(res){
-    	   $("#freightArea").html(res.content);
-    	}, "GET", "JSON");
-    }  
 
-    // 配送费用计算方式
-    function compute_mode(shipping_code,mode)
+    if(mode == 'number')
     {
-        var base_fee  = $("#base_fee");
-        var step_fee  = $("#step_fee");
-        var item_fee  = $("#item_fee");
-        if(shipping_code == 'post_mail' || shipping_code == 'post_express')
-        {
-         var step_fee1  = $("#step_fee1");
-        }
-
-        if(mode == 'number')
-        {
-          item_fee.css('display','');
-          base_fee.css('display','none');
-          step_fee.css('display','none');
-          if(shipping_code == 'post_mail' || shipping_code == 'post_express')
-          {
-              step_fee1.css('display','none');
-          }
-        }
-        else
-        {
-            item_fee.css('display','none');
-            base_fee.css('display','');
-            step_fee.css('display','');
-          if(shipping_code == 'post_mail' || shipping_code == 'post_express')
-          {
-              step_fee1.css('display','');
-          }
-        }
-    }  
+      item_fee.css('display','');
+      base_fee.css('display','none');
+      step_fee.css('display','none');
+      if(shipping_code == 'post_mail' || shipping_code == 'post_express')
+      {
+          step_fee1.css('display','none');
+      }
+    }
+    else
+    {
+        item_fee.css('display','none');
+        base_fee.css('display','');
+        step_fee.css('display','');
+      if(shipping_code == 'post_mail' || shipping_code == 'post_express')
+      {
+          step_fee1.css('display','');
+      }
+    }
+}  
     </script>
 </body>
 </html>

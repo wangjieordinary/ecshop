@@ -35,8 +35,7 @@
                                         <div id="parent_id1" class="imitate_select select_w145" ectype="typeCatSelect">
                                             <div class="cite">{$lang.top_level}</div>
                                             <ul>
-                                                <li><a href="javascript:;" data-value="{if $parent && $act eq 'insert'}{$type_cat.cat_id}{else}0{/if}" data-level='1' class="ftx-01">{if $parent && $act eq 'insert'}{$parent}{else}{$lang.top_level}{/if}</a></li>
-
+                                                <li><a href="javascript:;" data-value="{if $parent}{$type_cat.cat_id}{else}0{/if}" data-level='1' class="ftx-01">{if $parent}{$parent}{else}{$lang.top_level}{/if}</a></li>
                                                 {foreach from=$cat_level item=cat}
                                                 {if $type_cat.cat_name != $cat.cat_name}
                                                 <li><a href="javascript:;" data-value="{$cat.cat_id}" data-level={$cat.level} class="ftx-01">{$cat.cat_name}</a></li>

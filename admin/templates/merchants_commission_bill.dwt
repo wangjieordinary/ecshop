@@ -127,6 +127,12 @@
                                     <td><div class="tDiv">{if $bill.format_chargeoff_time}{$bill.format_chargeoff_time}{else}<em class="red">{$lang.chargeoff_status.3}</em>{/if}</div></td>
                                     <td><div class="tDiv">{$bill.format_start_time}</div></td>
                                     <td><div class="tDiv">{$bill.format_end_time}</div></td>
+                                    <td class="hide">
+                                    	<div class="tDiv tc handle">
+                                        	{$bill.notake_order_count}
+                                            <a href="merchants_commission.php?act=bill_notake_order&bill_id={$bill.id}&seller_id={$bill.seller_id}&commission_model={$filter.commission_model}" class="btn_see" title="{$lang.view}"><i class="sc_icon sc_icon_see"></i></a>
+                                        </div>
+                                    </td>
                                     <td>
                                     	<div class="tDiv red">
                                         	{if $bill.chargeoff_status eq 1}

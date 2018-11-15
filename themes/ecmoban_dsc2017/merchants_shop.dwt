@@ -41,7 +41,7 @@
                     </div>
                     <div class="shopHeader-dsr">
                     	<dl class="dl1">
-                            <dt>{$lang.Store_score}</dt>
+                            <dt>店铺评分</dt>
                             <dd>{$lang.goods}</dd>
                             <dd>{$lang.service}</dd>
                             <dd>{$lang.Invalid}</dd>
@@ -53,14 +53,14 @@
                             <dd>{$merch_cmt.cmt.commentDelivery.zconments.score}<i class="iconfont icon-arrow-{if $merch_cmt.cmt.commentDelivery.zconments.is_status eq 1}up{elseif $merch_cmt.cmt.commentDelivery.zconments.is_status eq 2}average{else}down{/if}"></i></dd>
                         </dl>
                         <dl class="dl3">
-                            <dt>{$lang.peer_comparison}</dt>
+                            <dt>同行相比</dt>
                             <dd>{$merch_cmt.cmt.commentRank.zconments.goodReview}%</dd>
                             <dd>{$merch_cmt.cmt.commentServer.zconments.goodReview}%</dd>
                             <dd>{$merch_cmt.cmt.commentDelivery.zconments.goodReview}%</dd>
                         </dl>
                     </div>
                     <div class="shopHeader-enter">
-                    	<a href="javascript:void(0);" ectype="collect_store" data-value='{"userid":{$user_id},"storeid":{$merchant_id}}' data-url="merchants_store.php?merchant_id={$merchant_id}" class="btn"><i class="iconfont{if $collect_store gt 0} icon-zan-alts{else} icon-zan-alt{/if}"></i>{$lang.follow_store}</a>
+                    	<a href="javascript:void(0);" ectype="collect_store" data-value='{"userid":{$user_id},"storeid":{$merchant_id}}' data-url="merchants_store.php?merchant_id={$merchant_id}" class="btn"><i class="iconfont{if $collect_store gt 0} icon-zan-alts{else} icon-zan-alt{/if}"></i>关注店铺</a>
                         <a href="{$shop_info.store_url}" target="_blank" class="btn">{$lang.enter_the_shop}</a>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
             	<div class="filter-wrap">
                 	<div class="filter-sort">
                         <a href="merchants_store_shop.php?id={$merchant_id}&price_min={$price_min}&price_max={$price_max}&page={$pager.page}&sort=goods_id&order=<!-- {if $pager.sort == 'goods_id' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list" class="sort-item {if $pager.sort == 'goods_id'}curr{/if}">{$lang.default}<i class="iconfont <!-- {if $pager.sort == 'goods_id' && $pager.order == 'DESC'} -->icon-arrow-down<!-- {else} -->icon-arrow-up<!-- {/if} -->"></i></a>
-                        <a href="merchants_store_shop.php?id={$merchant_id}&price_min={$price_min}&price_max={$price_max}&page={$pager.page}&sort=last_update&order=<!-- {if $pager.sort == 'last_update' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list" class="sort-item {if $pager.sort == 'last_update'}curr{/if}">{$lang.shelf_time}<i class="iconfont <!-- {if $pager.sort == 'last_update' && $pager.order == 'DESC'} -->icon-arrow-down<!-- {else} -->icon-arrow-up<!-- {/if} -->"></i></a>
+                        <a href="merchants_store_shop.php?id={$merchant_id}&price_min={$price_min}&price_max={$price_max}&page={$pager.page}&sort=last_update&order=<!-- {if $pager.sort == 'last_update' && $pager.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->#goods_list" class="sort-item {if $pager.sort == 'last_update'}curr{/if}">上架时间<i class="iconfont <!-- {if $pager.sort == 'last_update' && $pager.order == 'DESC'} -->icon-arrow-down<!-- {else} -->icon-arrow-up<!-- {/if} -->"></i></a>
                         <a href="merchants_store_shop.php?id={$merchant_id}&price_min={$price_min}&price_max={$price_max}&page={$pager.page}&sort=shop_price&order=<!-- {if $pager.sort == 'shop_price' && $pager.order == 'ASC'} -->DESC<!-- {else} -->ASC<!-- {/if} -->#goods_list" class="sort-item {if $pager.sort == 'shop_price'}curr{/if}">{$lang.price}<i class="iconfont <!-- {if $pager.sort == 'shop_price' && $pager.order == 'DESC'} -->icon-arrow-down<!-- {else} -->icon-arrow-up<!-- {/if} -->"></i></a>
                     </div>
                     <div class="filter-right crumbTitle">{$lang.total}<span>{$count}</span>{$lang.Relevant_goods}</div>

@@ -29,7 +29,7 @@
                             <div class="type-file-box">
                             	<div class="input">
                                     <input type="text" name="textfile" class="type-file-text" {if $attr.attr_img}value="../{$attr.attr_img}"{/if} id="textfield" autocomplete="off" readonly />
-                                    <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}" />
+                                    <input type="button" name="button" id="button" class="type-file-button" value="上传..." />
                                     <input type="file" class="type-file-file" id="ad_img" name="attr_img_{$key}" data-state="imgfile" size="30" hidefocus="true" value="" />
                                 </div>
                                 {if $attr.attr_img}

@@ -31,9 +31,9 @@
                     	<dt>{$lang.lab_end_date}：</dt>
                         <dd>
                         	<div class="imitate_select select_w85">
-                                <div class="cite">{$lang.please_select}</div>
+                                <div class="cite">请选择</div>
                                 <ul>
-                                    <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.please_select}</a></li>
+                                    <li><a href="javascript:;" data-value="0" class="ftx-01">请选择</a></li>
                                     {foreach from=$data_year item=data key=key}
                                     <li><a href="javascript:;" data-value="{$data}" class="ftx-01">{$data}</a></li>
                                     {/foreach}
@@ -41,9 +41,9 @@
                                 <input name="end_dateYear" type="hidden" value="{$data_time.year}" id="">
                             </div>
                             <div class="imitate_select select_w85">
-                                <div class="cite">{$lang.please_select}</div>
+                                <div class="cite">请选择</div>
                                 <ul>
-                                    <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.please_select}</a></li>
+                                    <li><a href="javascript:;" data-value="0" class="ftx-01">请选择</a></li>
                                     {foreach from=$data_month item=data key=key}
                                     <li><a href="javascript:;" data-value="{$data}" class="ftx-01">{$data}</a></li>
                                     {/foreach}
@@ -51,9 +51,9 @@
                                 <input name="end_dateMonth" type="hidden" value="{$data_time.month}" id="">
                             </div>
                             <div class="imitate_select select_w85">
-                                <div class="cite">{$lang.please_select}</div>
+                                <div class="cite">请选择</div>
                                 <ul>
-                                    <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.please_select}</a></li>
+                                    <li><a href="javascript:;" data-value="0" class="ftx-01">请选择</a></li>
                                     {foreach from=$data_day item=data key=key}
                                     <li><a href="javascript:;" data-value="{$data}" class="ftx-01">{$data}</a></li>
                                     {/foreach}
@@ -105,10 +105,10 @@ $(function(){
 		},
 		messages:{
 			card_sn:{
-				 required : '<i class="icon icon-exclamation-sign"></i>'+card_sn_null
+				 required : '<i class="icon icon-exclamation-sign"></i>请输入卡号序号'
 			},
 			card_password:{
-				 required : '<i class="icon icon-exclamation-sign"></i>'+card_password_null
+				 required : '<i class="icon icon-exclamation-sign"></i>请输入卡号密码'
 			}
 		}			
 	});

@@ -4,12 +4,12 @@
 
 <body class="iframe_body">
 	<div class="warpper">
-    	<div class="title"><a href="{$action_link.href}" class="s-back">{$lang.back}</a>{$lang.26_login} - {$ur_here}</div>
+    	<div class="title"><a href="{$action_link.href}" class="s-back">{$lang.back}</a>登录管理 - {$ur_here}</div>
         <div class="content">
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                	<li>{$lang.operation_prompt_content.install.0}</li>
+                	<li>填写在第三方申请的信息参数。</li>
                     <li>{$lang.operation_prompt_content_common}</li>
                 </ul>
             </div>

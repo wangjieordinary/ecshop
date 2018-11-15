@@ -1,4 +1,5 @@
 <?php
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $_LANG['post_express']          = '邮政快递包裹';
 $_LANG['post_express_desc']     = '邮政快递包裹的描述内容。';

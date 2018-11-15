@@ -35,7 +35,7 @@
                             <div class="type-file-box">
                             	<div class="input">
                                     <input type="text" name="textfile" class="type-file-text" {if $shopheader_info.headbg_img}value="{$shopheader_info.headbg_img}"{/if} id="textfield" readonly>
-                                    <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}">
+                                    <input type="button" name="button" id="button" class="type-file-button" value="上传...">
                                     <input type="file" class="type-file-file" name="img_url" size="30" hidefocus="true" value="">
                                 </div>
                                 {if $shopheader_info.headbg_img}

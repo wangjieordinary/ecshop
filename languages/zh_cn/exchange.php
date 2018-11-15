@@ -22,6 +22,7 @@ $_LANG['Distribution'] = '配　　送';
 $_LANG['Service'] = '服　　务';
 $_LANG['from'] = '由';
 
+$_LANG['After_sale_service'] = '发货并提供售后服务。';
 $_LANG['jf_Freight'] = '运费';
 $_LANG['jf_number'] = '数　　量';
 $_LANG['jf_Stock'] = '库存';
@@ -64,6 +65,7 @@ $_LANG['Novice_road'] = "新手上路";
 $_LANG['Privacy_statement'] = "隐私声明";
 $_LANG['Mobile_sense'] = "手机常识";
 
+//20161214
 $_LANG['Set_price'] = "套餐价";
 $_LANG['Already_preferential'] = "已优惠";
 $_LANG['collocation_shen'] = "搭配买共省";
@@ -71,24 +73,12 @@ $_LANG['collocation_price'] = "搭配价";
 $_LANG['combo_markPrice'] = "参考价";
 $_LANG['limit_shop'] = "限购";
 $_LANG['tao'] = "套";
-$_LANG['you'] = "由";
-
-$_LANG['exchange_name'] = "积分兑换";
-$_LANG['distribution_tit'] = "配送";
-$_LANG['like_exchange'] = "立刻兑换";
-$_LANG['user_love'] = "用户还喜欢";
-$_LANG['specification'] = "规格参数";
-$_LANG['comment_sunburn'] = "评论晒单";
-$_LANG['available_integral'] = "可用积分";
-$_LANG['balance_alt'] = "余额（元）";
-$_LANG['exchange_number'] = "兑换量";
-$_LANG['integral_value'] = "积分值";
-
 $_LANG['js_languages']['select_spe'] = '请选择商品属性';
 $_LANG['js_languages']['select_base'] = "请选择套餐基本件";
 $_LANG['js_languages']['select_shop'] = "请选择套餐商品";
 $_LANG['js_languages']['data_not_complete'] = "数据格式不完整";
 $_LANG['js_languages']['understock'] = "库存不足，请选择其他商品";
+//20161214
 
 $_LANG['js_languages']['shiping_prompt'] = "暂不支持配送";
 $_LANG['js_languages']['Have_goods'] = "有货"; 
@@ -99,5 +89,3 @@ $_LANG['js_languages']['most_exchange'] = "您最多可积分兑换";
 $_LANG['js_languages']['Piece_goods'] = "件商品";
 $_LANG['js_languages']['exchange_error_one'] = "对不起，您现有的积分值不够兑换本商品！";
 $_LANG['is_shipping_area'] = "[ 暂不支持配送 ]";
-
-?>

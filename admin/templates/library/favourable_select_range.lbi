@@ -5,7 +5,7 @@
             <a href="javascript:void(0);" class="sc-btn fl" ectype="{if $is_rs}changedmer{else}changedrs{/if}">{$lang.button_submit_alt}</a>
             <div class="checkobx-item">
                 <input type="checkbox" name="is_selected" id="is_selected" class="ui-checkbox" onclick="checkd_selected(this)"/>
-                <label class="ui-label" for="is_selected">{$lang.selected}{if $is_rs}{$lang.seller}{else}{$lang.18_region_store}{/if}</label>
+                <label class="ui-label" for="is_selected">已选择{if $is_rs}商家{else}卖场{/if}</label>
             </div>
         </div>
         <div class="table_list" ectype='rs_list'>
@@ -15,19 +15,19 @@
                     {foreach from=$range_list item=list}
                     <li class="on">
                         <div class="name">{$list.shop_name}</div>
-                        <div class="choose"><a href="javascript:void(0);" class="on" onclick="selected_mer(this,'{$list.user_id}')"><i class="iconfont icon-gou"></i>{$lang.selected}</a></div>
+                        <div class="choose"><a href="javascript:void(0);" class="on" onclick="selected_mer(this,'{$list.user_id}')"><i class="iconfont icon-gou"></i>已选择</a></div>
                     </li>
                     {foreachelse}
-                    <li class="notic">{$lang.please_search_seller}</li>
-                    {/foreach}
+                    <li class="notic">请先搜索商家</li>
+                    {/foreach}                    
                     {else}
                     {foreach from=$range_list item=list}
                     <li class="on">
                         <div class="name">{$list.rs_name}</div>
-                        <div class="choose"><a href="javascript:void(0);" class="on" onclick="selected_mer(this,'{$list.rs_id}')"><i class="iconfont icon-gou"></i>{$lang.selected}</a></div>
+                        <div class="choose"><a href="javascript:void(0);" class="on" onclick="selected_mer(this,'{$list.rs_id}')"><i class="iconfont icon-gou"></i>已选择</a></div>
                     </li>
                     {foreachelse}
-                    <li class="notic">{$lang.please_search_region_store}</li>
+                    <li class="notic">请先搜索卖场</li>
                     {/foreach}
                     {/if}
                 </ul>
@@ -102,7 +102,7 @@
 	   
 		if(obj.hasClass("on")){
 			obj.removeClass("on");
-			obj.html('<i class="iconfont icon-dsc-plus"></i>'+js_select);
+			obj.html('<i class="iconfont icon-dsc-plus"></i>选择');
 			arr = mer_ids.split(',');
 			for(var i =0;i<arr.length;i++){
 				if(arr[i] == mer_id){
@@ -111,7 +111,7 @@
 			}
 		}else{
 			$(obj).addClass('on');
-			$(obj).html('<i class="iconfont icon-gou"></i>'+js_selected);
+			$(obj).html('<i class="iconfont icon-gou"></i>已选择');
 			if(mer_ids){
 					arr = mer_ids + ','+mer_id;
 			}else{
@@ -188,7 +188,7 @@
 	   
 		if(obj.hasClass("on")){
 			obj.removeClass("on");
-			obj.html('<i class="iconfont icon-dsc-plus"></i>'+js_select);
+			obj.html('<i class="iconfont icon-dsc-plus"></i>选择');
 			arr = rs_ids.split(',');
 			for(var i =0;i<arr.length;i++){
 				if(arr[i] == rs_id){
@@ -197,7 +197,7 @@
 			}
 		}else{
 			$(obj).addClass('on');
-			$(obj).html('<i class="iconfont icon-gou"></i>'+js_selected);
+			$(obj).html('<i class="iconfont icon-gou"></i>已选择');
 			if(rs_ids){
 					arr = rs_ids + ','+rs_id;
 			}else{

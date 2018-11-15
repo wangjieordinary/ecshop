@@ -1032,8 +1032,6 @@ button.remove {
 
 .modal-body, .modal-footer {
     padding: 12px 22px;
-    height: 540px;
-    overflow-x: hidden;
 }
 
 .modal-footer-left {

@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>{$lang.admin_title}</title>
+<title>登录页</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link rel="shortcut icon" href="../favicon.ico" />
@@ -69,7 +69,7 @@ var {$key} = "{$item}";
                             </span>
                             {else}
                             <span class="submit_span">
-                            	<input type="submit" name="submit" class="sub sub_curr" value="{$lang.login}" />
+                            	<input style="border-radius: 50px;margin:0 auto;display: block;" type="submit"  name="submit" class="sub" value="{$lang.login}" />
                             </span>
                             {/if}
                             <input type="hidden" name="dsc_token" value="{$dsc_token}" autocomplete="off" />

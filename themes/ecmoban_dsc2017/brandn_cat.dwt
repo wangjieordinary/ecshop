@@ -25,22 +25,22 @@
                 <div class="attention-rate">
                     <div class="brand-logo"><img src="data/brandlogo/{$brand.brand_logo}"></div>
                     <div class="follow-info">
-                        <span class="follow-sum"><em id="collect_count">{$brand.collect_count}</em>人&nbsp;&nbsp;{$lang.follow}</span>
-                        <div class="go-follow" data-bid="{$brand_id}" ectype="coll_brand">{if $brand.is_collect gt 0}<i class="iconfont icon-zan-alts"></i><span ectype="follow_span">{$lang.follow_yes}</span>{else}<i class="iconfont icon-zan-alt"></i><span ectype="follow_span">{$lang.follow}</span>{/if}</div>
+                        <span class="follow-sum"><em id="collect_count">{$brand.collect_count}</em>人&nbsp;&nbsp;关注</span>
+                        <div class="go-follow" data-bid="{$brand_id}" ectype="coll_brand">{if $brand.is_collect gt 0}<i class="iconfont icon-zan-alts"></i><span ectype="follow_span">已关注</span>{else}<i class="iconfont icon-zan-alt"></i><span ectype="follow_span">关注</span>{/if}</div>
                     </div>
                 </div>
                 <div class="brand-cate-info">
                 	<div class="title">
-                    	<h3>{$lang.brand_desc}</h3>
+                    	<h3>品牌描述</h3>
                     </div>
-                    <div class="brand_desc" title="{$brand.brand_desc}">{if $brand.brand_desc}{$brand.brand_desc|truncate:240}{else}{$lang.brand_desc_notic}{/if}</div>
+                    <div class="brand_desc" title="{$brand.brand_desc}">{if $brand.brand_desc}{$brand.brand_desc|truncate:240}{else}此品牌还没有描述，请联系管理员添加品牌描述{/if}</div>
                 </div>
             </div>
         </div>
         <div class="brand-main">
             <div class="w w1200" ectype="goodslist">
             	<div class="brand-section">
-                    <div class="bl-title"><h2>{$lang.goods_list}<i></i></h2>{if $cat_id}<a href="category.php?id={$cat_id}&brand={$brand_id}" class="more ftx-05">{$lang.see_more}></a>{/if}</div>
+                    <div class="bl-title"><h2>商品列表<i></i></h2>{if $cat_id}<a href="category.php?id={$cat_id}&brand={$brand_id}" class="more ftx-05">查看更多></a>{/if}</div>
                     <div class="bl-content">
                         <div class="bd">
                             <ul>
@@ -57,7 +57,7 @@
                                 	<div class="no_records no_records_tc">
                                         <i class="no_icon_two"></i>
                                         <div class="no_info">
-                                            <h3>{$lang.brand_goods_notic}</h3>
+                                            <h3>该品牌下没有商品</h3>
                                         </div>
                                     </div>
                                 </li>

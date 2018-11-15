@@ -74,8 +74,7 @@
                     	<div class="refresh_span">{$lang.refresh_common}{$record_count}{$lang.record}</div>
                     </div>
 					<div class="search">
-                        <a href="javascript:void(0);" ectype="sync_import_goods" class="fl mr10" style="margin-top: 3px;"><div class="fbutton"><div class="add" title="{$lang.sync_import_goods}"><span><i class="icon icon-edit"></i>{$lang.sync_import_goods}</span></div></div></a>
-                    	<form action="javascript:;" name="searchForm" onSubmit="searchGoodsname(this);" class="fr">
+                    	<form action="javascript:;" name="searchForm" onSubmit="searchGoodsname(this);">
                     	<div class="input">
                         	<input type="text" name="keyword" class="text nofocus w140" placeholder="{$lang.search_keyword_placeholder}" autocomplete="off">
 							<input type="submit" class="btn" name="secrch_btn" ectype="secrch_btn" value="" />
@@ -100,8 +99,6 @@
                                     <th width="10%"><div class="tDiv">{$lang.goods_label}</div></th>
                                     <th width="6%"><div class="tDiv"><a href="javascript:listTable.sort('sort_order');">{$lang.sort_order}</a>{$sort_sort_order}</div></th>
                                     <th width="7%"><div class="tDiv">{$lang.sku_storage}</div></th>
-									<th width="4%"><div class="tDiv">真实销量</div></th>
-									<th width="4%"><div class="tDiv">虚拟销量</div></th>
                                     <th width="7%"><div class="tDiv">{$lang.audit_status}</div></th>
                                     <th width="17%" class="handle">{$lang.handler}</th>
                                 </tr>
@@ -264,18 +261,6 @@
                                             {/if}
                                     	</div>
                                     </td>
-									
-									<td>
-										<div class="tDiv">
-											 <span>{$goods.sales_volume}</span>
-										</div>
-									</td>
-									<td>
-										<div class="tDiv">                                    		
-											 <span onclick="listTable.edit(this, 'edit_sales_volume_base', {$goods.goods_id})">{$goods.sales_volume_base}</span>
-										</div>
-									</td>
-									
                                     <td>
                                     	<div class="tDiv">
                                             {if $goods.review_status eq 1}
@@ -693,6 +678,7 @@
 	
 	//SKU/库存 start
 	$(document).on("click","a[ectype='add_attr_sku']",function(){
+		
 		var goods_id = $(this).data('goodsid');
 		var product_id = $(this).data('product');
 		
@@ -731,6 +717,7 @@
 	
 	//商品审核 start
 	$(document).on("click","a[ectype='review_status']",function(){
+		
 		var goods_name = $(this).data('goodsname');
 		var goods_id = $(this).data('goodsid');
 		var type = $(this).data('type');
@@ -796,30 +783,6 @@
 		}
 	}
 	//商品审核 end
-
-    //贡云导入商品
-    $(document).on("click","*[ectype='sync_import_goods']",function(){
-        var content = '<div class="sync_import_dialog">' +
-        '<div class="foot_botton_div"><a href="http://q.url.cn/s/T3hNWVm" class="foot_btn" target="_blank">咨询链接</a><a href="http://help.ecmoban.com/article-8070.html" class="foot_a" target="_blank">查看使用教程</a></div><a class="scnc_import_close" ectype="scnc_import_close">X</a>' +
-        '</div>';
-
-        pb({
-            id:"sync_import_dialog",
-            width:600,
-            content:content,
-            ok_title:"{$lang.button_submit_alt}",
-            cl_title:"{$lang.cancel}",
-            drag:true,
-            head:false,
-            foot:false
-        });
-
-        $("#sync_import_dialog,#pb-mask").show();
-    });
-
-    $(document).on("click","*[ectype='scnc_import_close']",function(){
-        $("#sync_import_dialog,#pb-mask").hide();
-    })
 	</script>
     {/literal}
 </body>

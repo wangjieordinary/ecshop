@@ -35,16 +35,16 @@
 				{/if}
                 <div class="common-head order-coomon-head">
                 	<div class="order_state_tab">
-                        <a href="order.php?act=list{$seller_list}&serch_type=-1{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '-1'}class="current"{/if}>{$lang.all_order}{if $serch_type eq '-1'}<em>({$filter.record_count})</em>{/if}</a>
-                        <a href="order.php?act=list{$seller_list}&serch_type=0{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '0'}class="current"{/if}>{$lang.order_status_01}{if $serch_type eq '0'}<em>({$filter.record_count})</em>{/if}</a>
-                        <a href="order.php?act=list{$seller_list}&serch_type=1{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '1'}class="current"{/if}>{$lang.order_status_02}{if $serch_type eq '1'}<em>({$filter.record_count})</em>{/if}</a>
-                        <a href="order.php?act=list{$seller_list}&serch_type=8{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '8'}class="current"{/if}>{$lang.order_status_03}{if $serch_type eq '8'}<em>({$filter.record_count})</em>{/if}</a>
-                        <a href="order.php?act=list{$seller_list}&serch_type=2{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '2'}class="current"{/if}>待收货{if $serch_type eq '2'}<em>({$filter.record_count})</em>{/if}</a>
-                        <a href="order.php?act=list{$seller_list}&serch_type=3{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '3'}class="current"{/if}>{$lang.order_status_04}{if $serch_type eq '3'}<em>({$filter.record_count})</em>{/if}</a>
-                        <a href="order.php?act=list{$seller_list}&serch_type=4{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '4'}class="current"{/if}>付款中{if $serch_type eq '4'}<em>({$filter.record_count})</em>{/if}</a>
-                        <a href="order.php?act=list{$seller_list}&serch_type=5{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '5'}class="current"{/if}>取消{if $serch_type eq '5'}<em>({$filter.record_count})</em>{/if}</a>
-                        <a href="order.php?act=list{$seller_list}&serch_type=6{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '6'}class="current"{/if}>无效{if $serch_type eq '6'}<em>({$filter.record_count})</em>{/if}</a>
-                        <a href="order.php?act=list{$seller_list}&serch_type=7{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '7'}class="current"{/if}>退货{if $serch_type eq '7'}<em>({$filter.record_count})</em>{/if}</a>
+                        <a href="order.php?act=list{$seller_list}&serch_type=-1{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '-1'}class="current"{/if}>{$lang.all_order}<em>({$count_arr.-1|default:0})</em></a>
+                        <a href="order.php?act=list{$seller_list}&serch_type=0{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '0'}class="current"{/if}>{$lang.order_status_01}<em>({$count_arr.0|default:0})</em></a>
+                        <a href="order.php?act=list{$seller_list}&serch_type=1{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '1'}class="current"{/if}>{$lang.order_status_02}<em>({$count_arr.1|default:0})</em></a>
+                        <a href="order.php?act=list{$seller_list}&serch_type=8{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '8'}class="current"{/if}>{$lang.order_status_03}<em>({$count_arr.8|default:0})</em></a>
+                        <a href="order.php?act=list{$seller_list}&serch_type=2{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '2'}class="current"{/if}>待收货<em>({$count_arr.2|default:0})</span></a>
+                        <a href="order.php?act=list{$seller_list}&serch_type=3{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '3'}class="current"{/if}>{$lang.order_status_04}<em>({$count_arr.3|default:0})</em></a>
+                        <a href="order.php?act=list{$seller_list}&serch_type=4{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '4'}class="current"{/if}>付款中<em>({$count_arr.4|default:0})</em></a>
+                        <a href="order.php?act=list{$seller_list}&serch_type=5{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '5'}class="current"{/if}>取消<em>({$count_arr.5|default:0})</em></a>
+                        <a href="order.php?act=list{$seller_list}&serch_type=6{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '6'}class="current"{/if}>无效<em>({$count_arr.6|default:0})</em></a>
+                        <a href="order.php?act=list{$seller_list}&serch_type=7{if $user_id}&user_id={$user_id}{/if}" {if $serch_type eq '7'}class="current"{/if}>退货<em>({$count_arr.7|default:0})</em></a>
                     </div>
                     <div class="refresh">
                         <div class="refresh_tit" title="{$lang.refresh_data}" onclick="javascript:history.go(0)" ><i class="icon icon-refresh"></i></div>
@@ -76,7 +76,7 @@
                                     <th width="25%"><div class="tDiv">{$lang.order_sn}</div></th>
                                     <th width="6%"><div class="tDiv">{$lang.goods_price}</div></th>
                                     <th width="3%"><div class="tDiv">{$lang.goods_number}</div></th>
-                                    <th width="7%"><div class="tDiv">{$lang.op_after_service}</div></th>
+                                    <th width="7%"><div class="tDiv">售后</div></th>
                                     <th width="6%"><div class="tDiv">{$lang.goods_steps_name}</div></th>
                                     <th width="7%"><div class="tDiv">{$lang.user_name}</div></th>
                                     <th width="16%"><div class="tDiv">{$lang.consignee}</div></th>
@@ -152,7 +152,7 @@
                                                     
                                                 </div>
                                                 {if $list.goods_attr}<div class="attr"><span>{$list.goods_attr}</span></div>{/if}
-                                                <div>{$lang.goods_sku}：{if $list.product_sn}{$list.product_sn}{else}{$list.goods_sn}{/if}{if $list.trade_url}<a href="{$list.trade_url}" target="_blank" class="ml5"><span class="org">[{$lang.trade_snapshot}]</span></a>{/if}</div>
+                                                <div>商品编号：{if $list.product_sn}{$list.product_sn}{else}{$list.goods_sn}{/if}{if $list.trade_url}<a href="{$list.trade_url}" target="_blank" class="ml5"><span class="org">[{$lang.trade_snapshot}]</span></a>{/if}</div>
                                                 <div class="order_icon_items">
                                                     {if $order.is_stages eq 1}<div class="order_icon order_icon_bt" title="{$lang.baitiao_order}">{$lang.baitiao_order}</div>{/if}
                                                     {if $order.is_zc_order eq 1}<div class="order_icon order_icon_zc" title="{$lang.zc_order}">{$lang.zc_order}</div>{/if}
@@ -231,7 +231,7 @@
                                                 </a>
                                             </div>
                                         {else}
-                                        	<div>{if $list.is_reality eq 1}{$lang.is_reality}<br />{/if}{if $list.is_return eq 1}{$lang.is_return}<br />{/if}{if $list.is_fast eq 1}{$lang.is_fast}{/if}</div>
+                                        	<div>{if $list.is_reality eq 1}正品保证<br />{/if}{if $list.is_return eq 1}包退服务<br />{/if}{if $list.is_fast eq 1}闪速配送{/if}</div>
                                         {/if}
                                     </div>
                                     {/foreach}
@@ -277,7 +277,7 @@
                                             <div class="price-shipping">({if $order.shipping_name}{$order.shipping_name}{else}{$lang.wu}{/if}：{$order.shipping_fee})</div>
                                             <div class="price-shipping">
                                                 <p>{$lang.pay_name}：{if $order.pay_name}{$order.pay_name}{else}{$lang.wu}{/if}</p>
-                                                <p>{$lang.referer}：{if $order.referer eq 'mobile'}APP{elseif $order.referer eq 'touch'}{$lang.touch}{elseif $order.referer eq 'wxapp'}小程序{elseif $order.referer eq 'ecjia-cashdesk'}{$lang.cashdesk}{else}PC{/if}</p>
+                                                <p>{$lang.referer}：{if $order.referer eq 'mobile'}APP{elseif $order.referer eq 'touch'}微商城{elseif $order.referer eq 'wxapp'}小程序{elseif $order.referer eq 'ecjia-cashdesk'}收银台{else}PC{/if}</p>
                                             </div>        
                                         </div>    
                                     </td>
@@ -299,8 +299,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        {if $order.bill_sn}
-                        	{if $order.chargeoff_status eq 1 || $order.chargeoff_status eq 2}
+                        {if $order.chargeoff_status eq 1 || $order.chargeoff_status eq 2}
                         <table cellpadding="0" cellspacing="0" border="0">
                             <tbody>
                                 <tr class="tr_thead">
@@ -319,8 +318,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                        	{/if}
-                        {/if}    
+                        {/if}
 						{foreachelse}
                         <table cellpadding="0" cellspacing="0" border="0">
                             <tbody>

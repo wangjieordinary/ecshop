@@ -17,9 +17,9 @@
                         <form action="javascript:searchUser()" name="searchForm">
                             <div class="search-key">
                                 <div class="imitate_select select_w145">
-                                    <div class="cite">{$lang.select_please}</div>
+                                    <div class="cite">请选择...</div>
                                     <ul class="ps-container" style="display: none;">
-                                        <li><a href="javascript:;" data-value="-1">{$lang.please_select}</a></li>
+                                        <li><a href="javascript:;" data-value="-1">请选择</a></li>
                                         <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.complaint_state.1}</a></li>
                                         <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.complaint_state.2}</a></li>
                                         <li><a href="javascript:;" data-value="3" class="ftx-01">{$lang.complaint_state.3}</a></li>
@@ -55,7 +55,7 @@
                       <td>
                           <div class="tDiv">
                               {$complaint.complaint_id}
-                              {if $complaint.has_talk eq 1}<p class="red">{$lang.unread_information}</p>{/if}
+                              {if $complaint.has_talk eq 1}<p class="red">未读信息</p>{/if}
                           </div>
                       </td>
                                   <td><div class="tDiv"><a href="order.php?act=info&order_id={$complaint.order_id}">{$complaint.order_sn}</a></div></td>
@@ -75,9 +75,9 @@
                     </td>
                     <td align="center">{$lang.complaint_state.$complaint.complaint_state}</td>
                     <td class="ecsc-table-handle">
-                        <span><a href="complaint.php?act=view&complaint_id={$complaint.complaint_id}" class="btn-orange"><i class="icon sc_icon_see"></i><p>{$lang.view}</p></a></span>
+                        <span><a href="complaint.php?act=view&complaint_id={$complaint.complaint_id}" class="btn-orange"><i class="icon sc_icon_see"></i><p>查看</p></a></span>
                         {if $complaint.complaint_state eq 4}
-                        <span class="mr0"><a onclick="listTable.remove({$complaint.complaint_id}, '{$lang.drop_confirm}')" title="{$lang.remove}" class="btn-red"><i class="icon icon-trash"></i><p>{$lang.drop}</p></a></span>
+                        <span class="mr0"><a onclick="listTable.remove({$complaint.complaint_id}, '{$lang.drop_confirm}')" title="{$lang.remove}" class="btn-red"><i class="icon icon-trash"></i><p>删除</p></a></span>
                         {/if}
                     </td>
                   </tr>

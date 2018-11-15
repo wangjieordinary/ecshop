@@ -9,7 +9,7 @@
             <div class="explanation" id="explanation">
                 <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                    <li>{$lang.operation_prompt_content.info.0}</li>
+                    <li>请注意设置调查主题的日期。</li>
                     <li>{$lang.operation_prompt_content_common}</li>
                 </ul>
             </div>
@@ -28,11 +28,11 @@
                                 <div class="label">{$lang.begin_end_date}：</div>
                                 <div class="label_value">
                                     <div class="text_time" id="text_time1">
-                                        <input type="text" name="start_time" value="{$vote_arr.start_time}" id="start_time" class="text mr0" readonly />
+                                            <input type="text" name="start_time" value="{$vote_arr.start_time}" id="start_time" class="text mr0" readonly />
                                     </div>
                                     <span class="bolang">&nbsp;&nbsp;~&nbsp;&nbsp;</span>
                                     <div class="text_time" id="text_time2">
-                                        <input type="text" name="end_time" value="{$vote_arr.end_time}" id="end_time" class="text" readonly />
+                                            <input type="text" name="end_time" value="{$vote_arr.end_time}" id="end_time" class="text" readonly />
                                     </div>
                                 </div>
                             </div>
@@ -65,7 +65,7 @@
             </div>
         </div>
     </div>
-    {include file ='library/pagefooter.lbi'}
+ {include file ='library/pagefooter.lbi'}
     <script type="text/javascript">
 	//日期选择插件调用start sunle
 	var opts1 = {

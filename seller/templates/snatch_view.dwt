@@ -17,11 +17,11 @@
                         <i class="sc_icon sc_icon_lt"></i>
                         <i class="sc_icon sc_icon_rb"></i>
                         <div class="item">
-                            <div class="label">{$lang.label_act_name}</div>
+                            <div class="label">活动名称：</div>
                             <div class="value"><h4>{$info.snatch_name}</h4></div>
                         </div>
                         <div class="item">
-                            <div class="label">{$lang.start_end_time}：</div>
+                            <div class="label">活动起止时间：</div>
                             <div class="value">{$info.start_time}&nbsp;~&nbsp;{$info.end_time}</div>
                         </div>
                         {if $result}
@@ -47,10 +47,10 @@
                 <table class="ecsc-default-table mt20">
                 	<thead>
                     <tr>
-                        <th width="25%">{$lang.record_id}</th>
-                        <th width="25%">{$lang.bid_user}</th>
-                        <th width="25%">{$lang.bid_time}</th>
-                        <th width="25%">{$lang.bid_price}</th>
+                        <th width="25%">编号</th>
+                        <th width="25%">出价用户</th>
+                        <th width="25%">出价时间</th>
+                        <th width="25%">所出价格</th>
                     </tr>
                     </thead>
                     <tbody>

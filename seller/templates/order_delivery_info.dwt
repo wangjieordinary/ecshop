@@ -35,7 +35,7 @@
                         </dl>
                     </div>
                     <div class="order-step-info order-step-handle">
-                    	<div class="step-title"><i class="dian"></i><h3>{$lang.handler_information}</h3></div>
+                    	<div class="step-title"><i class="dian"></i><h3>操作信息</h3></div>
                         <div class="handle-info">
                         	<div class="handle-note"><textarea name="action_note" cols="80" rows="3" class="textarea" placeholder="{$lang.label_action_note}"></textarea></div>
                             {if $suppliers_list neq 0}

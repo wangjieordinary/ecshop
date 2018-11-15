@@ -94,7 +94,7 @@
                                                 {$basic_info.city}
                                             {/if} 
                                         </span>
-                                        <span>{$lang.zhi}</span>
+                                        <span>至</span>
                                         <div class="store-selector">
                                             <div class="text-select" id="area_address" ectype="areaSelect"></div>
                                         </div>
@@ -108,9 +108,9 @@
                                     <div class="si-warp">
                                         <div class="fl"> 
                                         {if $goods.user_id > 0}
-                                            {$lang.you} <a href="{$goods.store_url}" class="link-red" target="_blank">{$goods.rz_shopName}</a> {$lang.After_sale_service}
+                                            由 <a href="{$goods.store_url}" class="link-red" target="_blank">{$goods.rz_shopName}</a> 发货并提供售后服务
                                         {else}
-                                            {$lang.you} <a href="javascript:void(0)" class="link-red">{$goods.rz_shopName}</a> {$lang.After_sale_service}
+                                            由 <a href="javascript:void(0)" class="link-red">{$goods.rz_shopName}</a> 发货并提供售后服务
                                         {/if}
                                         </div>
                                         <div class="fl pl10" id="user_area_shipping"></div>
@@ -181,7 +181,7 @@
                                 <!-- {/foreach} -->
                             
                                 <div class="summary-item is-number">
-                                    <div class="si-tit">{$lang.number_to}</div>
+                                    <div class="si-tit">数量</div>
                                     <div class="si-warp">
                                         <div class="amount-warp">
                                             <input class="text buy-num" ectype="quantity" value="1" name="number" defaultnumber="1">
@@ -193,7 +193,6 @@
                                             </div>
                                             <input name="confirm_type" id="confirm_type" type="hidden" value="3" />
                                         </div>
-                                        <span class="lh30 ml10">{$lang.goods_inventory}&nbsp;<em ectype="goods_attr_num"></em>&nbsp;{if $goods.goods_unit}{$goods.goods_unit}{else}{$goods.measure_unit}{/if}</span>
                                     </div>
                                 </div>
                             	<div class="clear"></div>
@@ -250,22 +249,22 @@
                         </div>
                         <div class="g-s-parts">
                             <div class="parts-item parts-goods">
-                                <span class="col1">{$lang.evaluation_single}</span>
+                                <span class="col1">商品评价</span>
                                 <span class="col2 {if $merch_cmt.cmt.commentRank.zconments.is_status eq 1}ftx-01{elseif $merch_cmt.cmt.commentRank.zconments.is_status eq 2}average{else}ftx-02{/if}">{$merch_cmt.cmt.commentRank.zconments.score}<i class="iconfont icon-arrow-{if $merch_cmt.cmt.commentRank.zconments.is_status eq 1}up{elseif $merch_cmt.cmt.commentRank.zconments.is_status eq 2}average{else}down{/if}"></i></span>
                             </div>
                             <div class="parts-item parts-goods">
-                                <span class="col1">{$lang.service_attitude}</span>
+                                <span class="col1">服务态度</span>
                                 <span class="col2 {if $merch_cmt.cmt.commentServer.zconments.is_status eq 1}ftx-01{elseif $merch_cmt.cmt.commentServer.zconments.is_status eq 2}average{else}ftx-02{/if}">{$merch_cmt.cmt.commentServer.zconments.score}<i class="iconfont icon-arrow-{if $merch_cmt.cmt.commentServer.zconments.is_status eq 1}up{elseif $merch_cmt.cmt.commentServer.zconments.is_status eq 2}average{else}down{/if}"></i></span>
                             </div>
                             <div class="parts-item parts-goods">
-                                <span class="col1">{$lang.delivery_speed}</span>
+                                <span class="col1">发货速度</span>
                                 <span class="col2 {if $merch_cmt.cmt.commentDelivery.zconments.is_status eq 1}ftx-01{elseif $merch_cmt.cmt.commentDelivery.zconments.is_status eq 2}average{else}ftx-02{/if}">{$merch_cmt.cmt.commentDelivery.zconments.score}<i class="iconfont icon-arrow-{if $merch_cmt.cmt.commentDelivery.zconments.is_status eq 1}up{elseif $merch_cmt.cmt.commentDelivery.zconments.is_status eq 2}average{else}down{/if}"></i></span>
                             </div>
                         </div>
                     </div>
                     <div class="seller-item">
                     	<a href="javascript:void(0);" ectype="collect_store" data-type='goods' data-value='{"userid":{$user_id},"storeid":{$goods.user_id}}' class="gz-store" data-url="{$goods.goods_url}"></a>
-                        <a href="{$goods.store_url}" class="store-home"><i class="iconfont icon-home-store"></i>{$lang.seller_store}</a>
+                        <a href="{$goods.store_url}" class="store-home"><i class="iconfont icon-home-store"></i>店铺</a>
                         <input type="hidden" name="error" value="{$goods.error}" id="error"/>
                     </div>
                     <div class="seller-tel"><i class="iconfont icon-tel"></i>{$shop_information.kf_tel}</div>
@@ -334,7 +333,7 @@
                     <!-- {if $goods_store_cat} 店内分类-->
                     <div class="g-main g-store-cate">
                     	<div class="mt">
-                            <h3>{$lang.Store_cat}</h3>
+                            <h3>店内分类</h3>
                         </div>
                         <div class="mc">
                             <div class="g-s-cate-warp">
@@ -358,7 +357,7 @@
                     <!-- {if $goods_related_cat} 相关分类-->
                     <div class="g-main">
                     	<div class="mt">
-                            <h3>{$lang.relevant_cat}</h3>
+                            <h3>相关分类</h3>
                         </div>
                         <div class="mc">
                             <div class="mc-warp">
@@ -382,10 +381,10 @@
                 <div class="g-m-detail">
                 	<div class="gm-tabbox" ectype="gm-tabs">
                     	<ul class="gm-tab">
-                            <li class="curr" ectype="gm-tab-item">{$lang.Product_details}</li>
-                            <!-- {if $properties} --><li ectype="gm-tab-item-spec">{$lang.specification}</li><!--{/if}-->
-                            <li ectype="gm-tab-item">{$lang.user_comment}（<em class="ReviewsCount">{$comment_all.allmen}</em>）</li>
-                            <li ectype="gm-tab-item">{$lang.discuss_user}</li>
+                            <li class="curr" ectype="gm-tab-item">商品详情</li>
+                            <!-- {if $properties} --><li ectype="gm-tab-item-spec">规格参数</li><!--{/if}-->
+                            <li ectype="gm-tab-item">用户评论（<em class="ReviewsCount">{$comment_all.allmen}</em>）</li>
+                            <li ectype="gm-tab-item">网友讨论圈</li>
                         </ul>
                         <div class="extra">
                         	<div class="item">
@@ -406,7 +405,7 @@
                     <div class="gm-floors" ectype="gm-floors">
                         <div class="gm-f-item gm-f-details" ectype="gm-item">
                             <div class="gm-title">
-                                <h3>{$lang.Product_details}</h3>
+                                <h3>商品详情</h3>
                             </div>
                             <div class="goods-para-list">
                                 <dl class="goods-para">
@@ -441,7 +440,7 @@
                                 <!-- {/if} -->
                                 <!-- {if $properties} -->
                                 <p class="more-par">
-                                    <a href="javascript:void(0);" ectype="product-detail" class="ftx-05">{$lang.more_parameters}>></a>
+                                    <a href="javascript:void(0);" ectype="product-detail" class="ftx-05">更多参数>></a>
                                 </p>
                                 <!--{/if}-->
                             </div>
@@ -451,7 +450,7 @@
                         <!-- {if $properties} -->
                         <div class="gm-f-item gm-f-parameter" ectype="gm-item" id="product-detail" style="display:none;">
                             <div class="gm-title">
-                                <h3>{$lang.specification}</h3>
+                                <h3>规格参数</h3>
                             </div>
                             <div class="Ptable">
                                 <!-- {foreach from=$properties item=property_group key=key} -->
@@ -470,7 +469,7 @@
                         <!-- {/if} -->
                         <div class="gm-f-item gm-f-comment" ectype="gm-item">
                             <div class="gm-title">
-                                <h3>{$lang.comment_sunburn}</h3>
+                                <h3>评论晒单</h3>
                                 {* DSC 提醒您：动态载入goods_comment_title.lbi，显示首页分类小广告 *}{insert name='goods_comment_title' goods_id=$goods.goods_id}
                             </div>
                             <div class="gm-warp">
@@ -478,7 +477,7 @@
                                     <div class="rate">
                                         <strong>{$comment_all.goodReview}</strong>
                                         <span class="rate-span">
-                                            <span class="tit">{$lang.Rate_praise}</span>
+                                            <span class="tit">好评率</span>
                                             <span class="bf">%</span>
                                         </span>
                                     </div>
@@ -490,7 +489,7 @@
                                             <!--{/foreach}-->
                                         </dl>
                                         {else}
-                                        <div class="not_impression">{$lang.not_impression}</div>
+                                        <div class="not_impression">此商品还没有设置买家印象，陪我一起等下嘛~</div>
                                         {/if}
                                     </div>
                                 </div>
@@ -572,13 +571,13 @@
 						var total_goods = Number({$orderG_number|default:0});
 						
 						if(total_goods >= xuangou_num){
-							var message = json_languages.Already_buy + total_goods + json_languages.Already_buy_two;
+							var message = '已购买' + total_goods + '件商品达到限购条件,无法再购买';
 							is_ok = 0;
 						}else if(((qty >= total_goods && total_goods > 0) || qty > xuangou_num) && xuangou_num > 0 && xiangou == 1){
 							if ((qty >= total_goods && total_goods > 0) || total_goods >= xuangou_num){
-								var message = json_languages.Already_buy + '{$orderG_number}' + json_languages.Already_buy_two;
+								var message = '已购买{$orderG_number}件商品达到限购条件,无法再购买';
 							}else{
-								var message = json_languages.Purchase_quantity;
+								var message = '超过限购数量';
 							}
 							
 							is_ok = 0;
@@ -677,7 +676,7 @@
 			pbDialog(res.err_msg," ",0,450,80,50);
 		}else{
         	//document.forms['ECS_FORMBUY'].elements['number'].value = res.qty;
-		  console.log(res);
+		
 			//更新库存
 			if($("*[ectype='goods_attr_num']").length > 0){
 				$("*[ectype='goods_attr_num']").html(res.attr_number);

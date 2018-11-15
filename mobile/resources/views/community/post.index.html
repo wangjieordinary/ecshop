@@ -130,7 +130,7 @@
     <div class="goods-scoll-bg"></div>
 </form>
 <!--悬浮btn end-->
-
+<!--引用js-->
      <!--快捷导航-->
     {include file="float_nav"}
     {include file="float_nav_footer"}
@@ -144,26 +144,23 @@
         })
         var dis_title = $(".ect-select .active").html();
         $("input[name=title]").val(dis_title);
-
-        // 异步请求
-        var url = "{url('community/post/index')}";
-        var goods_id = $("input[name=goods_id]").val();
-        var infinite = $('.community-list').infinite({url: url + '&type=all&goods_id=' + goods_id, template: 'j-product'});
-
-        $('.ts-1').on('click', function () {
-            var dis_type = $(this).attr("data-commentid");
-            $("input[name=dis_type]").val(dis_type);
-            var dis_title = $(this).html();
-            $("input[name=title]").val(dis_title);
-        });
-
+        header_img()
+        window.onresize = function(){
+            header_img()
+        }
     });
 
-    header_img();
-    window.onresize = function(){
-        header_img();
-    }
+    // 异步请求
+    var url = "{url('community/post/index')}";
+    var goods_id = $("input[name=goods_id]").val();
+    var infinite = $('.community-list').infinite({url: url + '&type=all&goods_id=' + goods_id, template: 'j-product'});
 
+    $('.ts-1').on('click', function () {
+        var dis_type = $(this).attr("data-commentid");
+        $("input[name=dis_type]").val(dis_type);
+        var dis_title = $(this).html();
+        $("input[name=title]").val(dis_title);
+    });
 
     function check() {
         var dis_type = $(".ect-select .active").attr("data-commentid");

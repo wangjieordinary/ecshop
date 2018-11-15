@@ -115,9 +115,6 @@ $_LANG['overdue'] = '已过期';
 $_LANG['has_ended'] = '已结束';
 $_LANG['not_use'] = '未使用';
 $_LANG['had_use'] = '已使用';
-$_LANG['expired'] = '已失效';
-$_LANG['completed'] = '已完成';
-$_LANG['has_been_snatched'] = '已抢完';
 //ecmoban模板堂 --zhuo end
 
 /* 用户登录语言项 */
@@ -141,7 +138,6 @@ $_LANG['icp_number'] = 'ICP备案证书号';
 $_LANG['plugins_not_found'] = "插件 %s 无法定位";
 $_LANG['home'] = '首页';
 $_LANG['back_up_page'] = '返回上一页';
-$_LANG['back_list'] = '返回列表';
 $_LANG['illegal_operate'] = '非法操作';
 $_LANG['close_window'] = '关闭窗口';
 $_LANG['back_home'] = '返回首页';
@@ -153,12 +149,9 @@ $_LANG['promotion_goods'] = '促销商品';
 $_LANG['best_goods'] = '精品推荐';
 $_LANG['new_goods'] = '新品上市';
 $_LANG['hot_goods'] = '热销商品';
-$_LANG['hot_rankings'] = '热销排行';
 $_LANG['view_cart'] = "查看购物车";
 $_LANG['catalog'] = '所有分类';
 $_LANG['regist_login'] = '注册/登录';
-$_LANG['account_login'] = '账号登录';
-$_LANG['personal'] = '个人';
 $_LANG['profile'] = '个人资料';
 $_LANG['query_info'] = "共执行 %d 个查询，用时 %f 秒，在线 %d 人";
 $_LANG['gzip_enabled'] = '，Gzip 已启用';
@@ -182,14 +175,12 @@ $_LANG['add_to_cart'] = "加入购物车";
 $_LANG['return_to_cart'] = "放回购物车";
 $_LANG['search_goods'] = '商品搜索';
 $_LANG['search'] = '搜索';
-$_LANG['seller_search'] = '店内搜索';
 $_LANG['wholesale_search'] = '搜索批发商品';
 $_LANG['article_title'] = '文章标题';
 $_LANG['article_author'] = '作者';
 $_LANG['article_add_time'] = '添加日期';
 $_LANG['relative_file'] = '[ 相关下载 ]';
 $_LANG['category'] = '分类';
-$_LANG['category_icon'] = '分类图标';
 $_LANG['brand'] = '品牌';
 $_LANG['price_min'] = '最小价格';
 $_LANG['price_max'] = '最大价格';
@@ -211,7 +202,7 @@ $_LANG['edit'] = '编辑';
 $_LANG['drop'] = '删除';
 $_LANG['view'] = '查看';
 $_LANG['modify'] = '修改';
-$_LANG['set'] = '设置';
+$_LANG['is_cancel'] = '取消';
 $_LANG['amend_amount'] = '修改数量';
 $_LANG['end'] = '结束';
 $_LANG['require_field'] = '(必填)';
@@ -225,18 +216,6 @@ $_LANG['package_price'] = '礼包价：';
 $_LANG['then_old_price'] = '节  省：';
 $_LANG['free_goods'] = '免运费商品';
 $_LANG['back_auction_home'] = '返回拍卖首页';
-$_LANG['not_img']  = "暂无图片";
-$_LANG['matters_need_attention']  = "注意事项";
-$_LANG['setup_batch'] = "起批";
-$_LANG['batches'] = "起批量";
-$_LANG['volume'] = "成交量";
-$_LANG['contain_content'] = '包含内容';
-$_LANG['act_id'] = '活动编号';
-$_LANG['bid_time'] = '出价时间';
-$_LANG['bid_price'] = '出价价格';
-$_LANG['package_already'] = '礼包已下架';
-$_LANG['review_comments'] = '查看评论';
-$_LANG['snatch_desc'] = '夺宝详情';
 
 $_LANG['searchkeywords_notice'] = '匹配多个关键字全部，可用 "空格" 或 "AND" 连接。如 win32 AND unix<br />匹配多个关键字其中部分，可用"+"或 "OR" 连接。如 win32 OR unix';
 $_LANG['hidden_outstock'] = '隐藏已脱销的商品';
@@ -270,15 +249,9 @@ $_LANG['day'] = '天';
 $_LANG['hour'] = '小时';
 $_LANG['minute'] = '分钟';
 $_LANG['compare'] = '比较';
-$_LANG['residual'] = '剩余';
 $_LANG['volume_price'] = '购买商品达到以下数量区间时可享受的优惠价格';
 $_LANG['number_to'] = '数量';
 $_LANG['article_list'] = '文章列表';
-$_LANG['look_and_see'] = '看了又看';
-$_LANG['evaluation_single'] = '商品评价';
-$_LANG['delivery_speed'] = '发货速度';
-$_LANG['service_attitude'] = '服务态度';
-$_LANG['certificate_info'] = '证照信息';
 
 $_LANG['not'] = "无";
 $_LANG['open'] = "展开";
@@ -290,7 +263,6 @@ $_LANG['money_symbol'] = "￥";
 $_LANG['current_price'] = '当前价格';
 $_LANG['start_time'] = '开始时间';
 $_LANG['end_time'] = '结束时间';
-$_LANG['coming_end'] = '即将结束';
 $_LANG['con_cus_service'] = '联系客服';
 $_LANG['min_fare'] = '最低加价';
 $_LANG['max_fare'] = '最高加价';
@@ -300,11 +272,8 @@ $_LANG['comprehensive'] = '综合好评';
 $_LANG['branch'] = '分';
 $_LANG['score_detail'] = '评分明细';
 $_LANG['industry_compare'] = '行业相比';
-$_LANG['seller_score'] = '店铺评分';
-$_LANG['synthesize'] = '综合';
 $_LANG['goods'] = '商品';
 $_LANG['service'] = '服务';
-$_LANG['deliver_goods'] = '发货';
 $_LANG['prescription'] = '时效';
 $_LANG['store_total'] = '店铺总分';
 $_LANG['company'] = '公&nbsp;&nbsp;&nbsp;&nbsp;司';
@@ -313,40 +282,11 @@ $_LANG['online_service'] = '在线客服';
 $_LANG['enter_the_shop'] = '进入店铺';
 $_LANG['follow'] = '关注';
 $_LANG['follow_yes'] = '已关注';
-$_LANG['follow_goods'] = '关注商品';
 $_LANG['follow_store'] = '关注店铺';
-$_LANG['follow_number'] = '关注人数';
 $_LANG['assign'] = '确定';
-$_LANG['is_cancel'] = '取消';
 $_LANG['au_number'] = '次出价';
 $_LANG['brand_home'] = '品牌首页';
 $_LANG['brand_category'] = '品牌分类';
-$_LANG['brand_special_area'] = '品牌专区';
-$_LANG['main_brand'] = '主营品牌';
-$_LANG['brand_all'] = '全部品牌';
-$_LANG['returnTop'] = '返回顶部';
-$_LANG['current'] = '当前';
-$_LANG['all_comments'] = '全部评论';
-$_LANG['publish_reply'] = '发表回复';
-$_LANG['click_getinfo'] = '点击进入';
-
-$_LANG['upload_success'] = '上传成功';
-$_LANG['upload_fail'] = '上传失败';
-$_LANG['unknown_error']	= "未知错误，请重试";
-
-$_LANG['not_interface_power']	= "暂无该接口权限";
-$_LANG['secret_key_not_null']	= "密钥不能为空";
-$_LANG['illegal_entrance']	= "非法入口";
-$_LANG['please_login_member']	= "请登录会员";
-
-$_LANG['autograph_fail']	= "签名失败";
-$_LANG['does_not_exist']	= "插件不存在";
-$_LANG['not_date_back']	= "无数据返回";
-
-$_LANG['sort_parameter'] = "排好序的参数:";
-$_LANG['code_url'] = "请求的url:";
-$_LANG['code_json'] = "返回的json数据:<br>\r\n";
-$_LANG['code_value'] = "<br>\r\n取出showapi_res_code的值:<br>\r\n";
 
 $_LANG['look_new'] = '找新品';
 $_LANG['look_hot'] = '找热卖';
@@ -375,7 +315,6 @@ $_LANG['captcha_not'] = '验证码不能为空';
 $_LANG['captcha_xz'] = '请输入4位数的验证码';
 $_LANG['message_see'] = '【新消息】请查收!';
 $_LANG['message_not'] = '【　　　】请查收!';
-$_LANG['After_sale_service'] = '发货并提供售后服务。';
 
 /* 商品比较JS语言项 */
 $_LANG['compare_js']['button_compare'] = '比较选定商品';
@@ -555,15 +494,12 @@ $_LANG['use_bonus_kill'] = '使用线下红包';
 $_LANG['invoice'] = '开发票';
 $_LANG['invoice_type'] = '发票类型';
 $_LANG['invoice_title'] = '发票抬头';
-$_LANG['invoice_info'] = '发票信息';
-$_LANG['invoice_desc'] = '发票详情';
 $_LANG['invoice_content'] = '发票内容';
 $_LANG['order_postscript'] = '订单附言';
 $_LANG['booking_process'] = '缺货处理';
 $_LANG['complete_acquisition'] = '该订单完成后，您将获得';
 $_LANG['with_price'] = '以及价值';
 $_LANG['de'] = '的';
-$_LANG['rise'] = '抬头';
 $_LANG['bonus'] = '红包';
 $_LANG['goods_all_price'] = '商品总价';
 $_LANG['dis_amount'] = '商品优惠';
@@ -574,7 +510,6 @@ $_LANG['pack_fee'] = '包装费用';
 $_LANG['card_fee'] = '贺卡费用';
 $_LANG['total_fee'] = '应付款金额';
 $_LANG['self_site'] = '本站';
-$_LANG['total_amount_payable'] = '应付总额';
 $_LANG['order_gift_integral'] = '订单 %s 赠送的积分';
 
 /* 缺货处理 */
@@ -629,8 +564,6 @@ $_LANG['goods_js']['day'] = '天';
 $_LANG['goods_js']['hour'] = '小时';
 $_LANG['goods_js']['minute'] = '分钟';
 $_LANG['goods_js']['second'] = '秒';
-$_LANG['goods_js']['branch'] = '分';
-$_LANG['goods_js']['time'] = '时';
 $_LANG['goods_js']['end'] = '结束';
 
 /*商品语言JS start*/
@@ -654,9 +587,9 @@ $_LANG['gb_price_ladder'] = '价格阶梯：';
 $_LANG['gb_ladder_amount'] = '数量';
 $_LANG['gb_ladder_price'] = '价格';
 $_LANG['gb_deposit'] = '保证金：';
-$_LANG['gb_restrict_amount'] = '限购数量';
+$_LANG['gb_restrict_amount'] = '限购数量：';
 $_LANG['gb_limited'] = '限购';
-$_LANG['gb_gift_integral'] = '赠送积分';
+$_LANG['gb_gift_integral'] = '赠送积分：';
 $_LANG['gb_cur_price'] = '当前价格：';
 $_LANG['gb_valid_goods'] = '当前定购数量：';
 $_LANG['gb_final_price'] = '成交价格：';
@@ -733,9 +666,6 @@ $_LANG['rec_au'] = '推荐拍品';
 $_LANG['bid_number'] = '出价人次';
 $_LANG['au_end'] = '竞拍结束';
 $_LANG['more'] = '更多';
-$_LANG['login'] = '登录';
-$_LANG['register'] = '注册';
-
 
 /* 批发部分语言项 */
 $_LANG['ws_user_rank'] = '您的等级暂时无法查看批发方案';
@@ -789,9 +719,6 @@ $_LANG['reg_now'] = '立即注册';
 $_LANG['official_site'] = '官方网站：';
 $_LANG['brand_category'] = '分类浏览：';
 $_LANG['all_category'] = '所有分类';
-$_LANG['brand_desc'] = '品牌描述';
-$_LANG['notime_desc'] = '暂无描述';
-$_LANG['add_brand_info'] = '添加品牌信息';
 
 /* 商品分类页 */
 $_LANG['goods_filter'] = '商品筛选';
@@ -869,9 +796,9 @@ $_LANG['btn_collect'] = '收藏';
 $_LANG['btn_store_pick'] = '到店取货';
 $_LANG['btn_add_to_cart'] = "加入购物车";
 $_LANG['btn_add_to_collect'] = '添加收藏';
-$_LANG['cancel_collect'] = '取消收藏';
 
 $_LANG['stock_up'] = '缺货';
+
 
 $_LANG['hot_search'] = '热门搜索';
 
@@ -934,8 +861,6 @@ $_LANG['specifications'] = '规格';
 
 /* 相册JS语言项 */
 $_LANG['gallery_js']['close_window'] = '您是否关闭当前窗口';
-
-
 $_LANG['submit'] = '提 交';
 $_LANG['reset'] = '重 置';
 $_LANG['order_query'] = '订单查询';
@@ -963,7 +888,6 @@ $_LANG['promotion_info'] = '促销信息';
 $_LANG['price_grade'] = '价格范围';
 $_LANG['your_choice'] = '您的选择';
 $_LANG['system_info'] = '系统信息';
-$_LANG['system_error'] ='系统出错，请重试';
 $_LANG['all_tags'] = '所有标签';
 $_LANG['activity_list'] = '活动列表';
 $_LANG['package_list'] = '礼包列表';
@@ -979,24 +903,13 @@ $_LANG['wholesale_goods_list'] = '批发商品列表';
 $_LANG['bid_record'] = '出价记录';
 $_LANG['shipping_method'] = '配送方式';
 $_LANG['payment_method'] = '支付方式';
-$_LANG['wxpay_pay'] = "微信支付";
 $_LANG['goods_package'] = '商品包装';
 $_LANG['goods_card'] = '祝福贺卡';
 $_LANG['groupbuy_intro'] = '团购说明';
 $_LANG['groupbuy_goods_info'] = '团购商品详情';
 $_LANG['act_time'] = '起止时间';
-$_LANG['toprank'] = '排行榜';
 $_LANG['top10'] = '销售排行';
 $_LANG['service_guarantee'] = '服务保障';
-$_LANG['Commodity_number'] = '商品编号';
-$_LANG['snapshot_time'] = "快照时间";
-$_LANG['attr'] = "属性";
-$_LANG['specification'] = "规格参数";
-$_LANG['description'] = '商品详情';
-$_LANG['view_image'] = '查看图片';
-$_LANG['online_payment'] = '在线支付';
-$_LANG['remarks'] = '备注';
-$_LANG['latest_price'] = '最新价';
 
 /* 优惠活动 */
 $_LANG['label_act_name'] = '优惠活动名称：';
@@ -1090,7 +1003,6 @@ $_LANG['week'][6] = '星期六';
 $_LANG['week'][7] = '星期日';
 $_LANG['table_prompt'] = "表名称或表字段名称不能为空";
 $_LANG['presell'] = "预售";
-$_LANG['sold_alt'] = "已售";
 $_LANG['gift_card_exchange'] = "礼品卡兑换";
 $_LANG['project'] = "专题";
 $_LANG['rec_txt'][1] = '普通';
@@ -1102,15 +1014,12 @@ $_LANG['rec_txt'][6] = '预售';
 $_LANG['cat_list'] = '购物车';
 $_LANG['my_cart'] = '我的购物车';
 $_LANG['back'] = '返回';
-$_LANG['preservation'] = '保存';
 $_LANG['Since_some'] = "市自提点";
 $_LANG['implement_time'] = "执行时间：";
 $_LANG['information_null'] = "抱歉，没有找到符合条件的数据";
 $_LANG['Shopping_together_single'] = "购物凑单";
 $_LANG['Contact_us'] = "联系我们";
 $_LANG['submit_goods'] = '提交';
-$_LANG['submit_confirm'] = '确认提交';
-$_LANG['reset_alt'] = '重置';
 $_LANG['Mall_announcement'] = "商城公告";
 $_LANG['System_cat'] = "系统分类";
 $_LANG['Other_information'] = "其他信息";
@@ -1144,7 +1053,6 @@ $_LANG['Enter_brand_page'] = "进入品牌页";
 $_LANG['Prompt'] = "提示";
 $_LANG['Cancel_attention'] = "取消关注";
 $_LANG['check_all'] = '全选';
-$_LANG['check_all_back'] = '全选/反选';
 $_LANG['Share'] = "共有";
 $_LANG['pic_count'] = "张图片";
 $_LANG['cilck_view'] = "点击查看";
@@ -1174,9 +1082,7 @@ $_LANG['Local_area'] = '所在地区';
 $_LANG['address_info'] = "详细信息";
 $_LANG['input_address_info'] = "请您填写收货详细地址";
 $_LANG['phone_con'] = "手机号码";
-$_LANG['telephone'] = "电话";
 $_LANG['Fixed_telephone'] = "固定电话";
-$_LANG['not_set_telephone'] = "未设置电话";
 $_LANG['input_contact'] = "请您填写收货人联系方式";
 $_LANG['con_email'] = "邮箱";
 $_LANG['con_email_input'] = "请您填写邮箱";
@@ -1203,18 +1109,11 @@ $_LANG['Rate'] = '好评';
 $_LANG['zhong_p'] = '中评';
 $_LANG['Bad'] = '差评'; 
 $_LANG['share_flow'] = "分享";
-$_LANG['report'] = "举报";
-$_LANG['make_appointment'] = "预约";
-$_LANG['rob_make_appointment'] = "抢先预购";
 $_LANG['existing'] = "已有";
 $_LANG['No_goods'] = "无货";
 $_LANG['Customer_service_p'] = "客服";
 $_LANG['freight_p'] = '运费';
 $_LANG['jian'] = "件";
-$_LANG['yuan'] = "元";
-$_LANG['ge'] = "个";
-$_LANG['zhang'] = "张";
-$_LANG['seller']='商家';
 $_LANG['seller_Grade']='商家等级';
 $_LANG['brand_gm'] = '品&nbsp;&nbsp;&nbsp;&nbsp;牌';
 $_LANG['Go_to_store'] = "进店逛逛";
@@ -1222,8 +1121,6 @@ $_LANG['go_see'] = "去看看";
 $_LANG['Deliver_to'] = "送货至";
 $_LANG['Sold'] = "售出";
 $_LANG['his_bi'] = "件";
-$_LANG['mail'] = "邮";
-$_LANG['retreat'] = "退";
 $_LANG['go_shoping'] = "去购物";
 $_LANG['Flash_sale'] = "限时抢购";
 $_LANG['hour_two'] = '时';
@@ -1235,8 +1132,6 @@ $_LANG['Brand_Street'] = "品牌街";
 $_LANG['Mall_info'] = "商城资讯";
 $_LANG['people_participate'] = "人已参加";
 $_LANG['zhe'] = "折";
-$_LANG['shopping'] = "购";
-$_LANG['say'] = "说";
 $_LANG['Group_purchase_end'] = "团购结束";
 $_LANG['Group_purchase_now'] = "立即团";
 $_LANG['End_pitch'] = "距结束";
@@ -1248,7 +1143,6 @@ $_LANG['integral_coune'] = '人兑换';
 $_LANG['exchange_now'] = '立即兑换';
 $_LANG['Detailed_map'] = "详细地图";
 $_LANG['Track'] = "跟踪";
-$_LANG['all_order'] = "全部订单";
 $_LANG['View_all_orders'] = "查看全部订单";
 $_LANG['Distribution_limit'] = "商品暂时只支持配送至中国大陆地区";
 $_LANG['payment_is_cod'] = '货到付款';
@@ -1277,14 +1171,7 @@ $_LANG['zc_see_content'] = "点击显示更多回复内容";
 $_LANG['input_number_desc'] = "还可以输入";
 $_LANG['zi_zc'] = "字";
 $_LANG['zhuce'] = "免费注册";
-$_LANG['zhi'] = "至";
-$_LANG['distribution'] = "配送";
-$_LANG['comment_sunburn'] = "评论晒单";
-$_LANG['serch_goods'] = '搜商品';
-$_LANG['serch_shop'] = '搜店铺';
-$_LANG['serch_whole_station'] = '搜全站';
-$_LANG['serch_our_shop'] = '搜本店';
-$_LANG['serch_want_buy'] = '发布求购单';
+/*20161214  end*/
 
 $_LANG['switch'] = "切换";
 $_LANG['select_country'] = "选择国别";
@@ -1299,7 +1186,7 @@ $_LANG['value_card'] = "储值卡";
 $_LANG['value_card_bind'] = "储值卡绑定";
 $_LANG['in_value_card_bind'] = "已绑定储值卡";
 $_LANG['value_card_instructions'] = "<h3>储值卡绑定与说明</h3>
-                <p>1、在上侧输入储值卡卡号密码进行绑定</p>
+                <p>1、在右侧输入储值卡卡号密码进行绑定</p>
                 <p>2、请仔细查阅储值卡使用范围</p>";
 $_LANG['wu'] = "无";	
 $_LANG['checked_city'] = "切换城市";
@@ -1316,7 +1203,6 @@ $_LANG['working_time'] = "工作时间";
 $_LANG['change_choice'] = "更改选择";
 $_LANG['change_choice_desc'] = "该地区暂无门店或属性没有库存";
 $_LANG['select_store_info'] = "选择门店";
-$_LANG['select_store_info_notic'] = "请选择有货的门店，上门自提";
 $_LANG['wu'] = "无";	
 $_LANG['all_goods'] = '所有自营商品';
 $_LANG['spec_cat'] = '指定分类';
@@ -1338,7 +1224,6 @@ $_LANG['recommended_store'] = "推荐店铺";
 
 $_LANG['update_Success'] = "更新成功！";
 $_LANG['Submit_Success'] = "提交成功！";
-$_LANG['delete_success'] = "删除成功";
 $_LANG['Submit_fail'] = "提交失败，稍后在提交一次";
 
 $_LANG['indate'] = '有效期';
@@ -1348,206 +1233,22 @@ $_LANG['range_bonus'] = "范   围";
 $_LANG['settled_down'] = "我要入驻";
 $_LANG['settled_down_schedule_step'] = "进度查询";
 $_LANG['Only_have_inventory'] = "仅显示有货";
-$_LANG['staircase_price'] = "阶梯价";
-$_LANG['view_staircase_price'] = "查看阶梯价格";
-
-$_LANG['captcha_notic'] = "看不清，点击图片换一张";
-
-$_LANG['isHas_warehouse_num'] = "<strong>有货</strong>，下单后立即发货";
-
-/* 审核 */
-$_LANG['adopt_status'] = '审核状态';
-$_LANG['have_audited'] = '已审核';
-$_LANG['not_audited'] = '未审核';
-$_LANG['not_through'] = '未通过';
-$_LANG['yes_through'] = '通过';
-$_LANG['audited_adopt'] = '审核通过';
-$_LANG['audited_yes_adopt'] = '审核已通过';
-$_LANG['audited_not_adopt'] = '审核未通过';
-$_LANG['adopt_reply'] = '审核回复';
-$_LANG['wuxu_adopt'] = '无需审核';
-$_LANG['adopt_goods'] = '审核商品';
-$_LANG['adopt_brand'] = '审核品牌';
-$_LANG['adopt_edit'] = '审核修改';
-
 /* 秒杀活动 */
 $_LANG['merchant_rec'] = "店铺推荐";
+
 $_LANG['self_run'] = "自营";
 $_LANG['platform_self'] = '平台自营';
+
 $_LANG['all_merchants'] = '所有店铺';
 $_LANG['self_merchants'] = '自营店铺';
 $_LANG['assign_merchants'] = '指定店铺';
+
 $_LANG['overdue_login'] = '登陆过期，请重新登陆！';
-$_LANG['no_address'] = '收货地址不能为空!'; 
-$_LANG['no_priv_address'] = '您没有权限操作他人收货地址!';
-$_LANG['cat_not_null'] = "该分类下没有内容";
 
-$_LANG['ju_start'] = "距开始";
-$_LANG['ju_end'] = "距结束";
-$_LANG['more_secKill'] = "更多秒杀";
-
+$_LANG['no_address'] = '收货地址不能为空!';
 
 //b2b
-$_LANG['wholesale_more'] = '更多批发';
-$_LANG['immediate_purchase'] = '立即采购';
-$_LANG['purchase_time'] = '限时采购';
-$_LANG['adopt_edit'] = '立即采购';
-
 $_LANG['not_seller_user'] = '您不是商家用户，无权查看此页面!';
 $_LANG['not_login_user'] = '您还没有登录，无权查看此页面!';
 
-/* lbi文件 */
-$_LANG['browse'] = '浏览';
-$_LANG['not_discussion'] = '暂无讨论帖';
-$_LANG['click_browse_all'] = '点击浏览全部';
-$_LANG['not_evaluate'] = '暂无评价';
-$_LANG['not_conversation'] = '暂无谈话';
-$_LANG['not_data'] = '暂无数据';
-$_LANG['add_new_address'] = '添加新地址';
-$_LANG['darren_area'] = '达人专区';
-$_LANG['go_to_see'] = '去见识';
-$_LANG['not_set_attrtype_contrast'] = '没有设置属性类型无法对比';
-$_LANG['not_see_enough'] = '还没逛够';
-$_LANG['recommended_store_notic'] = '时尚新活力时尚新';
-
-//讨论圈lbi
-$_LANG['yu'] = "预";
-$_LANG['cumulative_comment'] = "累计评论";
-$_LANG['my_dispost_post'] = "我要发帖";
-$_LANG['hot_dispost_post'] = "热门帖子";
-
-// 发票lbi
-$_LANG['need_invoice'][0] = "普通发票";
-$_LANG['need_invoice'][1] = "增值税发票";
-
-$_LANG['invoice_ordinary'] = "普通发票（纸质）";
-
-$_LANG['iis_state_one'] = '您的增票资质已提交，等待审核。';
-$_LANG['iis_state_two'] = '恭喜！您的增票资质信息审核通过。';
-$_LANG['iis_state_three'] = '点击查看增票信息';
-$_LANG['iis_state_four'] = '抱歉！您的增票资质信息错误，审核不通过。';
-
-$_LANG['iis_state_tab_one'] = '选择开票方式';
-$_LANG['iis_state_tab_two'] = '填写或核对公司信息';
-$_LANG['iis_state_tab_three'] = '填写收票人信息';
-$_LANG['iis_state_tab_notic'] = '发票将在订单完成之后7-15个工作日寄出';
-
-$_LANG['invoice_mode'] = '开票方式';
-$_LANG['order_complete_invoice'] = '订单完成后开票';
-$_LANG['detailed'] = '明细';
-
-$_LANG['label_company_name'] = '单位名称';
-$_LANG['label_tax_id'] = '纳税人识别码';
-$_LANG['label_vat_name'] = '收票人姓名';
-$_LANG['label_vat_phone'] = '收票人手机号';
-$_LANG['label_bank_account'] = '银行账号';
-$_LANG['label_vat_address'] = '收票人详细地址';
-$_LANG['label_company_address'] = '注册地址';
-$_LANG['label_company_telephone'] = '注册电话';
-$_LANG['label_bank_of_deposit'] = '开户银行';
-
-//flow lbi
-$_LANG['address_prompt_two'] = '请填写收货地址';
-$_LANG['not_set_shipping'] = "未设置配送方式";
-
-$_LANG['new_arrivals'] = '新品推荐';
-$_LANG['new_first_start'] = '新品首发';
-$_LANG['sett_title'] = '马上入驻 开向未来';
-$_LANG['mobile_mall'] = '手机商城';
-$_LANG['bid_ci_number'] = '出价次数';
-$_LANG['rz_shopName'] = "送拍机构";
-$_LANG['cart_goods_number'] = "件商品，总商品金额";
-$_LANG['consulting_service'] = "咨询客服";
-$_LANG['characteristic_theme'] = "特色主题";
-$_LANG['modules_txt_promo'] = "促销活动";
-$_LANG['all_b2b_goods'] = "全部批发商品";
-$_LANG['b2b_home'] = "批发首页";
-$_LANG['want_buy_info'] = "求购信息";
-$_LANG['settlement_page'] = "结算页";
-$_LANG['fillin_order_info'] = "填写订单信息";
-$_LANG['submit_order_success'] = "成功提交订单";
-$_LANG['selection_brand'] = "精选大牌";
-$_LANG['brand_flagship'] = "品牌旗舰";
-
-$_LANG['gift_gard_notic'] = "每个礼品卡仅支持提货一次，提货成功后该礼品卡即失效，礼品卡商品不支持退换货，请谨慎选择";
-$_LANG['Apply_brand_two'] = "不存在，请点击“提交品牌资质”";
-$_LANG['not_voucher'] = "暂无可领取券";
-$_LANG['no_record'] = "暂无记录";
-$_LANG['snatch_price_null'] = "此活动还没有出价记录哟~";
-$_LANG['notic_store'] = "很抱歉，该区域暂无门店有货，正努力补货中•••";
-$_LANG['talk_content_notic'] = "该对话被管理员屏蔽";
-
-//goods lbi
-$_LANG['shanghai'] = "上海";
-$_LANG['beijing'] = "北京";
-$_LANG['chongqing'] = "重庆";
-$_LANG['nanjing'] = "南京";
-
-$_LANG['register_button'] = '我要开店';
-$_LANG['user_center'] = '进入会员中心';
-
-$_LANG['vip_entrance'] = '快捷入口';
-$_LANG['my_history_list'] = '我的浏览';
-$_LANG['my_collection_list'] = '我的收藏';
-$_LANG['my_order_list'] = '我的订单';
-$_LANG['my_account_safe'] = '账号安全';
-$_LANG['my_affiliate'] = '我要分享';
-$_LANG['my_merchants'] = '商家入驻';
-
-$_LANG['settled_step'] = '入驻流程';
-$_LANG['settled_agreement'] = '入驻协议';
-$_LANG['settled_help'] = '入驻帮助';
-$_LANG['understand_more'] = '了解更多';
-$_LANG['more_cat'] = '更多分类';
-
-$_LANG['specified_time'] = '指定时间';
-$_LANG['maximum_speed'] = '极速达';
-$_LANG['begin_minute'] = '即将开始';
-$_LANG['immediate_rush_buy'] = '立即抢购';
-
-$_LANG['city_alt'] = '城市';
-$_LANG['region'] = '区域';
-
-$_LANG['hot_sale_list'] = '热销榜';
-$_LANG['promotion_list'] = '促销榜';
-$_LANG['today_recommends'] = '今日推荐';
-$_LANG['today_deal'] = '今日特价';
-$_LANG['new_product'] = '新品到货';
-$_LANG['every_day'] = '新品到货';
-$_LANG['purchase_hand'] = '随手购';
-$_LANG['free_freight'] = '免运费';
-$_LANG['express'] = '快递';
-$_LANG['activity_center'] = '活动中心';
-$_LANG['account_center'] = '账户中心';
-$_LANG['confirm_shipping'] ='确认收货';
-
-$_LANG['setup_complete'] ='设为完成';
-$_LANG['service_charge'] ='手续费';
-
-$_LANG['go_pay'] = "去付款";
-$_LANG['not_paid'] = "未支付";
-$_LANG['Already_paid'] = "已支付";
-
-$_LANG['contact_username'] = '联系人';
-$_LANG['contact_phone'] = '联系电话';
-$_LANG['address_list'] = '收货地址';
-$_LANG['is_invoice'] = "是否开发票";
-$_LANG['inv_payee'] = '发票抬头';
-$_LANG['label_tax_id'] = '纳税人识别号';
-$_LANG['purchase_handle'] = '其他备注';
-
-$_LANG['my_import_bill'] = "我的进货单";
-$_LANG['view_import_bill'] = "查看进货单";
-$_LANG['jian_available_sale'] = "件可售";
-$_LANG['no_supporter'] = "暂无支持者";
-$_LANG['no_zc_goods'] = "暂无众筹商品";
-
-$_LANG['wholesale_order_notic'] = '主人，您现在还没有采购订单哟！';
-
-/* lbi文件end */
-$_LANG['With_a_gift'] = "满赠";
-$_LANG['Full_reduction'] = "满减";
-$_LANG['discount'] = "折扣";
-
-$_LANG['self_motion_goods'] = "自动确认收货";
-$_LANG['auto_system'] = "系统";
+?>

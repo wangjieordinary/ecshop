@@ -133,7 +133,7 @@
 #goodsMobile .table_list .ga-images-ul li .checked{ display:none; position:absolute; width:15px; height:15px; top:0; right:0; background:url(../images/admin-icon.png) -403px -429px no-repeat;}
 #goodsMobile .table_list .ga-images-ul li.current{ border-color:#ec5151;}
 #goodsMobile .table_list .ga-images-ul li.current .checked{ display:block;}
-#goodsMobile .table_list .ga-images-ul li.notic{ width:100%; height:210px; line-height:210px; border:0; text-align:center; font-size:16px; color:#1abb8c; margin:0;}
+#goodsMobile .table_list .ga-images-ul li.notic{ width:100%; height:210px; line-height:210px; border:0; text-align:center; font-size:16px; color:#f42424; margin:0;}
 
 #goodsMobile .dialogTextarea{ border:1px solid #dedede; width:743px; height:250px; resize:none; padding:10px; margin-top:20px;}
 #goodsMobile .table_list .icon-spin{font-size:30px;color:#31b4e1; position:absolute; top:45%; left:48%;z-index:9999999;}
@@ -195,7 +195,7 @@
 .tip-box h3{ font-family: 'microsoft yahei';font-size: 16px;line-height: 30px;padding:0;}
 .tip-box h3.rem{ line-height:48px;}
 .tip-box .op-btns{ margin-top: 20px;}
-.ftx-01{ color:#1abb8c;}
+.ftx-01{ color:#f42424;}
 .ftx-04{ color:#f68a00;}
 .ftx-16{ color:#7abd54;}
 
@@ -231,14 +231,3 @@
 .send_succpic .icon_succB, .send_succpic .icon_errorB{vertical-align: middle;}
 .icon_succB, .icon_warnB, .icon_questionB, .icon_rederrorB{ height: 44px;width: 44px;}
 .W_icon{ background-image: url("../images/purebox/icon48.png");background-repeat: no-repeat;display: inline-block;}
-
-/* 贡云商品导入 */
-#sync_import_dialog{ box-shadow: none; border: 0; }
-#sync_import_dialog .pb-bd{ padding: 0; }
-.sync_import_dialog{ height: 360px; background: url(../images/sync_import_goods_img.jpg) no-repeat; }
-.sync_import_dialog .foot_botton_div{ position: absolute; bottom: 60px; left:60px; }
-.sync_import_dialog .foot_botton_div .foot_btn{ width: 180px; height: 50px; line-height: 50px; font-size: 18px; color: #ff3000; background: #fff; border-radius: 5px; display: block; text-align: center; float: left;}
-.sync_import_dialog .foot_botton_div .foot_btn:hover{ background: #f9f9f9; }
-.sync_import_dialog .foot_botton_div .foot_a{ line-height: 50px; color: #fff; font-size: 18px; text-align: center; display: block; float: left; margin-left: 30px; }
-.sync_import_dialog .foot_botton_div .foot_a:hover{ text-decoration: underline; }
-.sync_import_dialog .scnc_import_close{ width: 40px; height: 40px; border-radius: 50%; background:rgba(0,0,0,.5); font-size: 16px; text-align: center; line-height: 40px; color: #fff; display: block; position: absolute; top: 20px; right: 20px; cursor: pointer;}

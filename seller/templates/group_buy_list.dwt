@@ -41,19 +41,19 @@
                                 <th width="8%">
                                 	<div class="first_all">
                                         <input onclick='listTable.selectAll(this, "checkboxes[]")' id="all" type="checkbox" class="ui-checkbox"/>
-                                        <label for="all" class="ui-label">{$lang.record_id}</label>
+                                        <label for="all" class="ui-label">编号</label>
                                     </div>
                                 </th>
-                                <th width="20%">{$lang.goods_name}</th>
-                                <th width="7%">{$lang.statu}</th>
-                                <th width="9%">{$lang.end_time}</th>
-                                <th width="6%">{$lang.deposit}</th>
-                                <th width="6%">{$lang.limit_buy}</th>
-                                <th width="6%">{$lang.valid_goods}</th>
-                                <th width="6%">{$lang.order_word}</th>
-                                <th width="8%">{$lang.current_price}</th>
+                                <th width="20%">商品名称</th>
+                                <th width="7%">状态</th>
+                                <th width="9%">结束时间</th>
+                                <th width="6%">保证金</th>
+                                <th width="6%">限购</th>
+                                <th width="6%">订购商品</th>
+                                <th width="6%">订单</th>
+                                <th width="8%">当前价格</th>
                                 <th width="10%">{$lang.adopt_status}</th>
-                                <th width="14%">{$lang.handler}</th>
+                                <th width="14%">操作</th>
                             </tr>
                         </thead>
                         <tbody>

@@ -11,7 +11,7 @@
            //阻止页面的滑动默认事件
            document.addEventListener("touchmove",defaultEvent,false);
           },false)
-
+         
           block.addEventListener("touchmove", function(e) {
            var touches = e.touches[0];
            //var oLeft = touches.clientX - oW;
@@ -31,12 +31,12 @@
             block.style.top = 440 + "px";
           }
           },false);
-
+           
           block.addEventListener("touchend",function() {
            document.removeEventListener("touchmove",defaultEvent,false);
           },false);
           function defaultEvent(e) {
-           // e.preventDefault();
+           e.preventDefault();
           }
     })
 </script>
@@ -54,29 +54,29 @@
                       <a href="{url('/')}">
                         <i class="iconfont icon-home"></i>
                         <p>首页</p>
-                      </a>
+                      </a>  
                 </li>
                 <li>
                     <a href="{url('search/index/index')}">
                          <i class="iconfont icon-sousuo"></i>
                          <p>搜索</p>
-                    </a>
+                    </a>  
                 </li>
                 <li>
                      <a href="{url('category/index/index')}">
                          <i class="iconfont icon-caidan"></i>
                          <p>分类</p>
-                     </a>
+                     </a> 
                 </li>
                 <li>
                      <a href="{url('cart/index/index')}">
                          <i class="iconfont icon-gouwuche"></i>
                          <p>购物车</p>
-                      </a>
+                      </a> 
                 </li>
                 <li>
                     <a href="{url('user/index/index')}">
                          <i class="iconfont icon-geren"></i>
                          <p>个人中心</p>
-                    </a>
+                    </a> 
                 </li>

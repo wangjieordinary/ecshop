@@ -5,13 +5,13 @@
 
 <body class="iframe_body">
 	<div class="warpper">
-    	<div class="title"><a href="javascript:;" ectype="goback" class="s-back">{$lang.back}</a>{$lang.10_priv_admin}-{$ur_here}</div>
+    	<div class="title"><a href="javascript:;" ectype="goback" class="s-back">{$lang.back}</a>权限-{$ur_here}</div>
         <div class="content">
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                	<li>{$lang.operation_prompt_content.log.0}</li>
-                    <li>{$lang.operation_prompt_content.log.1}</li>
+                	<li>该页面展示管理员的操作日志。</li>
+                    <li>侧边栏可进行高级搜索。</li>
                 </ul>
             </div>
             <div class="flexilist">
@@ -25,7 +25,7 @@
                     <div class="search">
                         <form action="javascript:;" name="searchForm" onSubmit="searchGoodsname(this);">
                         <div class="input">
-                            <input type="text" name="keywords" class="text nofocus" placeholder="{$lang.admin_name}" autocomplete="off" />
+                            <input type="text" name="keywords" class="text nofocus" placeholder="管理员名称" autocomplete="off" />
                             <input type="submit" class="btn" name="secrch_btn" ectype="secrch_btn" value="" />
                         </div>
                         </form>
@@ -83,11 +83,11 @@
             </div>
             <div class="gj_search">
                 <div class="search-gao-list" id="searchBarOpen">
-                    <i class="icon icon-zoom-in"></i>{$lang.advanced_handler}
+                    <i class="icon icon-zoom-in"></i>高级操作
                 </div>
                 <div class="search-gao-bar">
                     <div class="handle-btn" id="searchBarClose"><i class="icon icon-zoom-out"></i>{$lang.pack_up}</div>
-                    <div class="title"><h3>{$lang.advanced_handler}</h3></div>
+                    <div class="title"><h3>高级操作</h3></div>
                         <div class="searchContent">
                             <div class="layout-box">
                                 <form name="theForm" method="POST" action="admin_logs.php">
@@ -105,7 +105,7 @@
                                                <input name="ip" type="hidden" value="0" id="ip_list_val">
                                             </div>
                                         </dd>
-                                        <input type="submit" class="btn btn30 red_btn mt10" name="tj_search" value="{$lang.button_inquire}" />
+                                        <input type="submit" class="btn btn30 red_btn mt10" name="tj_search" value="提交查询" />
                                     </dl>
                                 </form>
                                 <form name="Form2" action="admin_logs.php?act=batch_drop" method="POST">
@@ -125,7 +125,7 @@
                                                 <input name="log_date" type="hidden" value="0" >
                                             </div>
                                         </dd>
-                                        <dt><input type="submit" class="btn btn30 red_btn mt10" name="drop_type_date" value="{$lang.drop_logs}" /></dt>
+                                        <dt><input type="submit" class="btn btn30 red_btn mt10" name="drop_type_date" value="清除日志" /></dt>
                                     </dl>
                                 </form>
                             </div>

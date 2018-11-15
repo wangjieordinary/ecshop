@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+    
         <!--{if $user_coupons}-->
         <div class="panl-top">
             <div class="panl-items">
@@ -8,12 +8,12 @@
                     <i class="i-left"></i>
                     <div class="panl-item-warp">
                         <div class="panl-item-top">
-                            {if $vo.cou_type neq 5}<strong>￥{if $vo.uc_money > 0}{$vo.uc_money}{else}{$vo.cou_money}{/if}</strong>{else}<em class="icon-my"></em>{/if}
+                            {if $vo.cou_type_name neq 5}<strong>￥{if $vo.uc_money}{$vo.uc_money}{else}{$vo.cou_money}{/if}</strong>{else}<em class="icon-my"></em>{/if}
                             <span>{$lang.full}{$vo.cou_man}</span>
                         </div>
                         <div class="panl-item-bot">
-                            <p>{$lang.range_bonus}：[{$vo.cou_type_name}][{$vo.cou_goods_name}]</p>
-                            <p>{$lang.seller}：{$vo.shop_name}</p>
+                            <p>{$lang.range_bonus}：[{$vo.cou_type}][{$vo.cou_goods_name}]</p>
+                            <p>商家：{$vo.shop_name}</p>
                             <p>{$lang.overdue_time}{$vo.cou_end_time}</p>
                         </div>
                     </div>
@@ -33,11 +33,11 @@
                     <i class="i-left"></i>
                     <div class="panl-item-warp">
                         <div class="panl-item-top">
-                            {if $vo.cou_type neq 5}<strong>￥{if $vo.uc_money > 0}{$vo.uc_money}{else}{$vo.cou_money}{/if}</strong>{else}<em class="icon-my"></em>{/if}
+                            {if $vo.cou_type_name neq 5}<strong>￥{if $vo.uc_money}{$vo.uc_money}{else}{$vo.cou_money}{/if}</strong>{else}<em class="icon-my"></em>{/if}
                             <span>{$lang.full}{$vo.cou_man}</span>
                         </div>
                         <div class="panl-item-bot">
-                            <p>{$lang.range_bonus}：[{$vo.cou_type_name}][{$vo.cou_goods_name}]</p>
+                            <p>{$lang.range_bonus}：[{$vo.cou_type}][{$vo.cou_goods_name}]</p>
                             <p>商家：{$vo.shop_name}</p>
                             <p>{$lang.overdue_time}：{$vo.cou_end_time}</p>
                         </div>
@@ -48,3 +48,4 @@
             </div>
         </div>
         <!--{/if}-->
+    

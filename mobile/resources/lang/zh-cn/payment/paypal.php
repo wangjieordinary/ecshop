@@ -1,8 +1,10 @@
 <?php
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $_LANG['paypal']                       = 'paypal';
 $_LANG['paypal_desc']                  = 'PayPal（www.paypal.com） 是在线付款解决方案的全球领导者，在全世界有超过七千一百六十万个帐户用户。' .
-        'PayPal 可在 56 个市场以 7 种货币（加元、欧元、英镑、美元、日元、澳元、港元）使用。';
+        'PayPal 可在 56 个市场以 7 种货币（加元、欧元、英镑、美元、日元、澳元、港元）使用。' .
+        '<br/><a href="http://www.paypal.com" target="_blank">立即在线申请</a>';
 $_LANG['paypal_account']               = '商户帐号';
 $_LANG['paypal_currency']              = '支付货币';
 $_LANG['paypal_currency_range']['AUD'] = '澳元';

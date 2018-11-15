@@ -33,7 +33,7 @@
         </dd>
 	</dl>
     <dl>
-        <dt><i class="square"></i><span>{$lang.account_center}</span></dt>
+        <dt><i class="square"></i><span>账户中心</span></dt>
 		<dd>
 			<p{if $action eq 'bonus'} class="current"{/if}><a href="user.php?act=bonus" target="_self">{$lang.label_bonus}</a></p>
 			{if $use_value_card eq 1}
@@ -46,7 +46,7 @@
         </dd>
     </dl>
 	<dl>
-        <dt><i class="square"></i><span>{$lang.activity_center}</span></dt>
+        <dt><i class="square"></i><span>活动中心</span></dt>
 		<dd>
 			<p{if $action eq 'auction_list' || $action eq 'auction' || $action eq 'auction_order_detail'} class="current"{/if}><a href="user.php?act=auction_list" target="_self">{$lang.label_auction}</a></p>
 			<p{if $action eq 'snatch_list'} class="current"{/if}><a href="user.php?act=snatch_list" target="_self">{$lang.label_snatch}</a></p>
@@ -61,10 +61,4 @@
 		</dd>
     </dl>
     {/if}
-	<dl>
-        <dt><i class="square"></i><span>{$lang.wholesale_centre}</span></dt>
-		<dd>
-            <p{if $action eq 'wholesale_buy'} class="current"{/if}><a href="user.php?act=wholesale_buy" target="_self">{$lang.my_purchase_order}</a></p>
-            <p{if $action eq 'wholesale_purchase' || $action eq 'purchase_info'} class="current"{/if}><a href="user.php?act=wholesale_purchase" target="_self">{$lang.want_buy_order}</a></p>
-        </dd>
 </div>

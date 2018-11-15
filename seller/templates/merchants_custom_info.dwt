@@ -27,17 +27,17 @@
                             	<div class="checkbox_items">
                                     <div class="checkbox_item">
                                     <input type="radio" name="wintype" class="ui-radio" value="0" id="wintype_0" {if $seller_win.win_type eq 0}checked="checked"{/if} />
-                                    <label class="ui-radio-label" for="wintype_0">{$lang.custom_content}</label>
+                                    <label class="ui-radio-label" for="wintype_0">自定义内容</label>
                                     </div>
                                     <div class="checkbox_item">
                                     <input type="radio" name="wintype" class="ui-radio" value="1" id="wintype_1" {if $seller_win.win_type eq 1}checked="checked"{/if}/>
-                                    <label class="ui-radio-label" for="wintype_1">{$lang.merchandise_cabinet}</label>
+                                    <label class="ui-radio-label" for="wintype_1">商品柜</label>
                                     </div>
                                 </div>
                             </dd>
                         </dl>
                         <dl id="goods_type" style="display:{if $seller_win.win_type neq 1}none{/if}">
-                        	<dt>{$lang.window_css}：</dt>
+                        	<dt>橱窗样式：</dt>
                             <dd>
                                 <div class="imitate_select select_w145">
                                   <div class="cite">{$lang.select_please}</div>
@@ -55,7 +55,7 @@
                         	<dt>{$lang.window_color}：</dt>
                             <dd class="relative">
                             	<input type="text" name="wincolor" maxlength="40" size="15" value="{$seller_win.win_color}" id="wincolor" class="text w120 mr10" />
-                                <input type="button" value="{$lang.select_color}" class="sc-btn btn30 sc-blueBg-btn go_color" />
+                                <input type="button" value="选色" class="sc-btn btn30 sc-blueBg-btn go_color" />
                             	<input type='text' id="full" style="display:none"/>
                             </dd>
                         </dl>
@@ -131,7 +131,7 @@ $(function(){
 		},
 		messages:{
 			winname:{
-				required : '<i class="icon icon-exclamation-sign"></i>'+jl_window_name_not_null
+				required : '<i class="icon icon-exclamation-sign"></i>橱窗名称不能为空'
 			}
 		}			
 	});

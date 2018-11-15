@@ -106,7 +106,6 @@ class Http
             'HTTP_ACCEPT_ENCODING' => '',
             'HTTP_COOKIE'          => '',
             'HTTP_CONNECTION'      => '',
-            'CONTENT_TYPE'         => '',
             'REMOTE_ADDR'          => '',
             'REMOTE_PORT'          => '0',
             'REQUEST_TIME'         => time()
@@ -185,9 +184,9 @@ class Http
         // Parse other HTTP action parameters
         if ($_SERVER['REQUEST_METHOD'] != 'GET' && $_SERVER['REQUEST_METHOD'] != "POST") {
             $data = array();
-            if ($_SERVER['CONTENT_TYPE'] === "application/x-www-form-urlencoded") {
+            if ($_SERVER['HTTP_CONTENT_TYPE'] === "application/x-www-form-urlencoded") {
                 parse_str($http_body, $data);
-            } elseif ($_SERVER['CONTENT_TYPE'] === "application/json") {
+            } elseif ($_SERVER['HTTP_CONTENT_TYPE'] === "application/json") {
                 $data = json_decode($http_body, true);
             }
             $_REQUEST = array_merge($_REQUEST, $data);
@@ -348,12 +347,13 @@ class Http
     /**
      * sessionCreateId
      *
+     * @param string|prefix  $prefix
+     *
      * @return string
      */
-    public static function sessionCreateId()
+    public static function sessionCreateId($prefix = null)
     {
-        mt_srand();
-        return bin2hex(pack('d', microtime(true)) . pack('N',mt_rand(0, 2147483647)));
+        return session_create_id($prefix);
     }
 
     /**
@@ -437,7 +437,7 @@ class Http
         self::tryGcSessions();
 
         if (HttpCache::$instance->sessionStarted) {
-            Worker::safeEcho("already sessionStarted\n");
+            echo "already sessionStarted\n";
             return true;
         }
         HttpCache::$instance->sessionStarted = true;

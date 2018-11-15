@@ -1,4 +1,5 @@
 <?php
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $_LANG['self_motion_goods'] = "自动确认收货";
 $_LANG['require_login'] = '非法入口。<br />必须登录才能完成操作。';
@@ -8,7 +9,7 @@ $_LANG['shot_message'] = "短消息";
 
 
 //退换货 start
-$_LANG['return_index'] = '售后申请';
+$_LANG['return'] = '售后申请';
 $_LANG['return_progres'] = '进度查询';
 $_LANG['user_return'] = '由用户寄回';
 $_LANG['get_goods'] = '退换商品已收到';
@@ -68,7 +69,8 @@ $_LANG['account_details'] = '详情';
 $_LANG['user_center'] = '会员中心';
 $_LANG['log_pwd_six'] = '密码不能小于6位';
 $_LANG['history'] = '浏览记录';
-
+$_LANG['user_real'] = '请先实名认证';
+$_LANG['msg_auth_code_error'] = '您输入的验证码有误';
 
 /* 会员余额(预付款) */
 $_LANG['add_surplus_log'] = '查看帐户明细';
@@ -106,17 +108,16 @@ $_LANG['confirm_remove_account'] = '您确定要删除此条记录吗？';
 $_LANG['back_page_up'] = '返回上一页';
 $_LANG['back_account_log'] = '返回帐户明细列表';
 $_LANG['amount_gt_zero'] = '请在“金额”栏输入大于0的数字';
-$_LANG['amount_gt_little'] = '提现金额不能小于最低可提现金额';
-$_LANG['amount_gt_pay'] = '充值金额不能小于最低可充值金额';
+$_LANG['amount_gt_little'] = '转出金额小于最低可提现金额';
+$_LANG['amount_gt_pay'] = '充值金额小于最低可充值金额';
 $_LANG['select_payment_pls'] = '请选择支付方式';
 $_LANG['account_detail'] = '账户明细';
 $_LANG['account_user_charge'] = '用户充值';
 $_LANG['account_charge'] = '账户充值';
 
-$_LANG['account_user_repay'] = '申请提现';
 $_LANG['account_withdraw_deposit'] = '请选择提现方式,';
 $_LANG['account_submit_information'] = '请重新提交资料';
-$_LANG['account_apply_record'] = '申请记录';
+$_LANG['account_apply_record'] = '提现记录';
 $_LANG['account_card_list'] = '我的银行卡';
 
 $_LANG['account_add_success'] = '添加成功';
@@ -125,9 +126,6 @@ $_LANG['account_back_list'] = '返回列表';
 $_LANG['account_add_continue'] = '继续添加';
 $_LANG['account_add_card'] = '添加银行卡';
 
-$_LANG['user_real'] = '请先实名认证';
-$_LANG['user_real_review'] = '实名认证未通过';
-$_LANG['msg_auth_code_error'] = '您输入的验证码有误';
 
 //JS语言项
 $_LANG['account_js']['surplus_amount_empty'] = '请输入您要操作的金额数量！';
@@ -529,7 +527,7 @@ $_LANG['your_account'] = '您的账户';
 $_LANG['your_notice'] = '用户提醒';
 $_LANG['your_surplus'] = '余额';
 $_LANG['credit_line'] = '信用额度';
-$_LANG['your_bonus'] = '红包';
+$_LANG['your_bonus'] = '优惠券';
 $_LANG['your_message'] = '留言';
 $_LANG['your_order'] = '订单';
 $_LANG['your_integral'] = '积分';
@@ -616,7 +614,7 @@ $_LANG['consigness_empty'] = '收货人姓名为空';
 $_LANG['address_empty'] = '收货地址详情为空';
 $_LANG['require_unconfirmed'] = '该订单状态下不能再修改地址';
 
-/* 优惠券详情 */
+/* 红包详情 */
 $_LANG['bonus_sn'] = '优惠券序号';
 $_LANG['bonus_name'] = '优惠券名称';
 $_LANG['bonus_amount'] = '优惠券金额';
@@ -628,12 +626,6 @@ $_LANG['not_start'] = '未开始';
 $_LANG['overdue'] = '已过期';
 $_LANG['not_use'] = '未使用';
 $_LANG['had_use'] = '已使用';
-
-//优惠券
-$_LANG['coupont_list'] = '优惠券';
-
-// 资金管理
-$_LANG['user_pay_points'] = '积分明细';
 
 /* 用户推荐 */
 $_LANG['affiliate_mode'] = '分成模式';
@@ -704,9 +696,12 @@ $_LANG['not_validated'] = '您还没有通过邮件认证';
 $_LANG['resend_hash_mail'] = '点此发送认证邮件';
 
 $_LANG['query_status'] = '查询状态';
+$_LANG['user_pay_points'] = '积分使用明细';
 
 $_LANG['change_payment'] = '改用其他在线支付方式';
+
 $_LANG['copy_to_clipboard'] = '已拷贝至剪贴板。';
+
 
 $_LANG['expire_unit']['hour'] = '小时';
 $_LANG['expire_unit']['day'] = '天';
@@ -814,13 +809,15 @@ $_LANG['cannot_buy'] = '商品您已购买过，无法再购买';
 $_LANG['coupon_in_account'] = '已把优惠券放入你的账户';
 $_LANG['no_coupon'] = '优惠券发完了';
 $_LANG['already_receive_coupons'] = '已领取过该优惠券';
+$_LANG['yet_login'] = '您没有登录';
 $_LANG['not_support_delivery'] = '该地区暂不支持配送';
 $_LANG['down_shelves'] = '该商品已下架';
 $_LANG['beyond_quota_limit'] = '该商品已经累计超过限购数量';
-$_LANG['no_login_attention'] = '请先登录，再关注';
 $_LANG['already_attention_check_shop'] = '已关注选中商品';
 $_LANG['cancel_attention'] = '已取消关注';
-$_LANG['cart_add_attention'] = '确定将商品加入收藏吗？'; //确定移入收藏吗？移入后商品将不在购物车中显示
+
+/* 分类 category */
+$_LANG['all_category'] = '全部分类';
 
 /* 社区  community */
 $_LANG['community_my'] = '我的帖子';
@@ -832,7 +829,8 @@ $_LANG['sunny_post'] = '晒单贴';
 $_LANG['post_detail'] = '帖子详情';
 $_LANG['write_answer'] = '请填写回复内容';
 $_LANG['reply_me'] = '回复我的';
-
+//优惠券
+$_LANG['coupont_list'] = '优惠券';
 
 //微筹
 $_LANG['crowd_user'] = '微筹中心';
@@ -847,7 +845,6 @@ $_LANG['back_input_code'] = "返回重新验证";
 $_LANG['application_withdrawal'] = "申请提现";
 
 /* 储值卡 */
-$_LANG['your_vc_card'] = "储值卡";
 $_LANG['no_use_record'] = '储值卡暂时没有使用记录';
 $_LANG['add_value_card_sucess'] = '绑定储值卡操作成功！';
 $_LANG['add_value_card_false'] = '绑定储值卡操作失败！';
@@ -859,7 +856,7 @@ $_LANG['vc_no_use_order'] = '该储值卡无法用于此订单！';
 $_LANG['vc_use_inspire'] = '该储值卡还未开始使用！';
 $_LANG['vc_limit_expire'] = '超出此类储值卡可绑定张数限制！';
 $_LANG['vc_list'] = '储值卡列表';
-$_LANG['vc_info'] = '储值卡使用详情';
+$_LANG['vc_info'] = '储值卡详情';
 $_LANG['add_vc'] = '绑定储值卡';
 $_LANG['pay_vc'] = '储值卡充值';
 
@@ -1055,11 +1052,4 @@ $_LANG['return_order_user'] = '您当前没有退换货订单';
 $_LANG['return_order_user_desc'] = '<h5>提示</h5>
                     <h5>1、请您尽快寄出退换货商品</h5>
                     <h5>2、请您寄出商品后填写快递信息，填写快递信息后，您的退换货业务将在我们收到退换货商品后第一时间为您受理</h5>';
-
-
-// 增值发票
-$_LANG['inv_info'] = '增值发票';
-
-
-
 return $_LANG;

@@ -21,6 +21,7 @@
             <div class="w w1200">
             	<div class="seckill-hot-goods">
 					<div class="seckill-warp">
+                    
 					{foreach from=$seckill_list item=tb name=sec}
                     	{if $tb.goods}
                     	<ul class="gb-index-list clearfix"{if !(!$tb.is_end && $tb.status)} style="display:none;"{/if}>
@@ -33,24 +34,24 @@
                                     <div class="p-del"><del>{$goods.market_price_formated}</del></div>
                                 </div>
                                 <div class="p-number clearfix">
-                                	<span>{$lang.Sold}{$goods.percent}%</span>
+                                	<span>已售{$goods.percent}%</span>
                                     <div class="timebar"><i style="width:{$goods.percent}%;"></i></div>
                                 </div>
 								{if !$tb.is_end && !$tb.status}
                                 <a href="javascript:;" {if !$goods.is_remind}ectype="collSecGoods"{/if} data-id="{$goods.id}" class="btn {if $goods.is_remind}sc-redBg-btn{else}sc-greenBg-btn{/if}">
-                                {if $goods.is_remind}{$lang.remind_goods_existed}{else}{$lang.remind_me}{/if}
+                                {if $goods.is_remind}已设置提醒{else}提醒我{/if}
                                 </a>
 								{elseif !$tb.is_end && $tb.status}
                                 {if $goods.sec_num le 0}
-                                <a href="javascript:;" class="btn sc-redBg-btn">{$lang.over_tobuy}</a>
+                                <a href="javascript:;" class="btn sc-redBg-btn">已抢完</a>
                                 {else}
                                 <a href="{$goods.url}"  target="_blank" class="btn sc-redBg-btn">
-                                {$lang.button_buy}
+                                立即购买
                                 </a>
                                 {/if}                   
 								{else}
                                 <a href="{$goods.url}"  target="_blank" class="btn sc-redBg-btn">
-								{$lang.has_ended}
+								已结束
                                 </a> 
 								{/if} 								
 
@@ -61,9 +62,9 @@
                         <div class="no_records no_records_tc"{if !(!$tb.is_end && $tb.status)} style="display:none;"{/if}>
                             <i class="no_icon_two"></i>
                             <div class="no_info no_info_line">
-                                <h3>{$lang.cat_not_null}</h3>
+                                <h3>该分类下没有内容</h3>
                                 <div class="no_btn">
-                                    <a href="index.php" class="btn sc-redBg-btn">{$lang.back_home}</a>
+                                    <a href="index.php" class="btn sc-redBg-btn">返回首页</a>
                                 </div>
                             </div>
                         </div>

@@ -4,13 +4,13 @@
 
 <body class="iframe_body">
 	<div class="warpper">
-    	<div class="title"><a href="{$action_link.href}" class="s-back">{$lang.back}</a>{if $ads_type eq 1}{$lang.ectouch}{else}{$lang.ad_type1}{/if} - {$ur_here}</div>
+    	<div class="title"><a href="{$action_link.href}" class="s-back">{$lang.back}</a>{if $ads_type eq 1}手机{else}广告{/if} - {$ur_here}</div>
         <div class="content">
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                    <li>{$lang.operation_prompt_content.adv_info.0}</li>
-                    <li>{$lang.operation_prompt_content_common}</li>
+                	<li>{$lang.operation_prompt_content_common}</li>
+                    <li>上传广告图片时请注意图片尺寸问题。</li>
                 </ul>
             </div>
             <div class="flexilist">
@@ -41,7 +41,7 @@
                                         <div class="form_prompt"></div>
                                         <div class="ad-set">
                                             <div class="num-set">
-                                                 <strong>{$lang.ads_name_xlh}：</strong>
+                                                 <strong>广告名称序号：</strong>
                                                  <div class="quantity-form">
                                                      <a href="javascript:void(0);" class="num_add">-</a>
                                                      <input type='text' value="1" class="itxt num_id" name="num_id">
@@ -50,8 +50,8 @@
                                              </div>
 											 <br/>
                                              <div class="cat-set" style="display:none">
-                                                <strong>{$lang.ads_select_cat_id}：</strong>
-												<input type='text' class="text text_2 cat_id" value="" class="cat_id" placeholder="{$lang.ads_shuru_cat_id}" name="cat_id">
+                                                <strong>选择广告分类ID：</strong>
+												<input type='text' class="text text_2 cat_id" value="" class="cat_id" placeholder="请输入分类ID" name="cat_id">
                                                 <div class="categorySelect fl">
                                                     <div class="selection">
                                                         <input type="text" name="category_name" id="category_name" class="text w250 valid" value="{$lang.select_cat}" autocomplete="off" readonly data-filter="cat_name" />

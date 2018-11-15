@@ -100,6 +100,14 @@
                                                     </div>
                                                 </div>
                                                 <input type="submit" value="{$lang.button_submit_alt}" name="remove" ectype="btnSubmit" class="btn btn_disabled" disabled="">
+
+
+                                                <!--<div class="shenhe">
+                                                    <input type="hidden" name="dis_id" value="{$dis_id}" />
+                                                    <input type="hidden" name="act" value="batch_drop" />
+                                                    <input type="hidden" name="sel_action" value="remove" />
+                                                    <input type="submit" name="drop" id="btnSubmit" value="{$lang.drop_select}" class="btn btn_disabled" disabled="true" ectype="btnSubmit" />
+                                                </div>-->
                                             </div>
                                             <div class="list-page">
                                                {include file="library/page.lbi"}

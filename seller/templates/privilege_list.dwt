@@ -41,7 +41,7 @@
                             {foreach from=$admin_list item=list}
                             <tr class="bd-line">
                                 <td class="first-cell" >{$list.user_name}</td>
-                                <td align="center">{if $list.ru_name}<font class="red">{$list.ru_name}</font>{else}<font class="blue3">{$lang.mall_admin}</font>{/if}</td>
+                                <td align="center">{if $list.ru_name}<font class="red">{$list.ru_name}</font>{else}<font class="blue3">商城管理员</font>{/if}</td>
                                 <td align="center">{$list.email}</td>
                                 <td align="center">{$list.add_time}</td>
                                 <td align="center">{$list.last_login|default:N/A}</td>

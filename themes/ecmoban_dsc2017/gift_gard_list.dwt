@@ -85,28 +85,28 @@ $(function(){
 			shipping_time = obj.find("[name='shipping_time']").val();
 			
 		if(consignee == ""){
-			pbDialog(json_languages.consignee,'',0);
+			pbDialog("请填写收货人信息",'',0);
 			return false;
 		}else if(country == 0){
-			pbDialog(json_languages.Country,'',0);
+			pbDialog("请选择所在国家",'',0);
 			return false;
 		}else if(province == 0){
-			pbDialog(json_languages.Province,'',0);
+			pbDialog("请选择所在省份",'',0);
 			return false;
 		}else if(city == 0){
-			pbDialog(json_languages.City,'',0);
+			pbDialog("请选择所在区域",'',0);
 			return false;
 		}else if(!$('#selDistricts_').is(":hidden") && district == 0){
-			pbDialog(json_languages.District,'',0);
+			pbDialog("请选择所在街道",'',0);
 			return false;
 		}else if(!$('#selStreets_').is(":hidden") && street == 0){
-			pbDialog(json_languages.Street,'',0);
+			pbDialog("请选择所在",'',0);
 			return false;
 		}else if(address == ""){
-			pbDialog(json_languages.Detailed_address_null,'',0);
+			pbDialog("详细地址不能为空",'',0);
 			return false;
 		}else if(!Utils.isTel(mobile) || mobile.length != 11){
-			pbDialog(json_languages.msg_phone_not,'',0);
+			pbDialog("手机号码不正确",'',0);
 			return false;
 		}else{
 			return true;

@@ -69,36 +69,29 @@
 <div class="goods-scoll-bg"></div>
 
 <script>
+/*店铺信息商品滚动*/
+var swiper = new Swiper('.j-g-s-p-con', {
+    scrollbarHide: true,
+    slidesPerView: 'auto',
+    centeredSlides: false,
+    grabCursor: true
+});
+//异步数据
 $(function(){
-    /*店铺信息商品滚动*/
-    var swiper = new Swiper('.j-g-s-p-con', {
-        scrollbarHide: true,
-        slidesPerView: 'auto',
-        centeredSlides: false,
-        grabCursor: true
-    });
-
     var url = "{url('community/index/index')}";
     $('.community-list').infinite({url: url, template:'j-product'});
-
-});
-
-    window.onload = function(){
-        header_img()
-    }
-    window.onresize = function(){
-        header_img()
-    }
-
+})
+</script>
+<script>
     function change_like_number(id) {
-        if ($("#red" + id).hasClass("active")) {
+        if($("#red" + id).hasClass("active")){
             $("#red" + id).removeClass("active");
-        } else {
+        }else{
             $("#red" + id).addClass("active");
         }
         var isclick = document.getElementById('isclick').value;
         $("#isclick").val(new Date().getTime());
-        if (isclick < (new Date().getTime()-1000)) {
+        if(isclick < (new Date().getTime()-1000)) {
             $.ajax({
                 type: "post",
                 url: "{url('like')}",
@@ -110,6 +103,7 @@ $(function(){
                 }
             });
         }
+
     }
 </script>
 </body>

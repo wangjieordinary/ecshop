@@ -72,7 +72,7 @@
                                 	<th width="5%"><div class="tDiv">{$lang.record_id}</div></th>
                                     <th width="5%"><div class="tDiv">{$lang.goods_steps_name}</div></th>
                                     <th width="20%"><div class="tDiv">{$lang.acti_title}</div></th>
-                                    <th width="7%"><div class="tDiv">{$lang.acti_state}</div></th>
+                                    <th width="7%"><div class="tDiv">活动状态</div></th>
 									<th width="15%"><div class="tDiv">{$lang.begin_time}</div></th>
                                     <th width="15%"><div class="tDiv">{$lang.end_time}</div></th>
 									<th width="7%"><div class="tDiv">{$lang.is_putaway}</div></th>
@@ -137,7 +137,7 @@
 												  <ul>
 													 <li><a href="javascript:;" data-value="" class="ftx-01">{$lang.select_please}</a></li>
 													 <li><a href="javascript:;" data-value="batch_remove" class="ftx-01">{$lang.drop}</a></li>
-													 <li><a href="javascript:;" data-value="review_to" class="ftx-01">{$lang.check}</a></li>
+													 <li><a href="javascript:;" data-value="review_to" class="ftx-01">审核</a></li>
 												  </ul>
 												  <input name="type" type="hidden" value=""  id="drop_val">
 												</div>
@@ -146,9 +146,9 @@
 												<div id="review_status_select" class="imitate_select select_w120">
 												  <div class="cite">{$lang.select_please}</div>
 												  <ul>
-													 <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.all}</a></li>
-													 <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.audited_not_adopt}</a></li>
-													 <li><a href="javascript:;" data-value="3" class="ftx-01">{$lang.audited_adopt}</a></li>
+													 <li><a href="javascript:;" data-value="0" class="ftx-01">全部</a></li>
+													 <li><a href="javascript:;" data-value="2" class="ftx-01">审核未通过</a></li>
+													 <li><a href="javascript:;" data-value="3" class="ftx-01">审核通过</a></li>
 												  </ul>
 												  <input name="review_status" type="hidden" value="0" id="review_status_val">
 												</div>
@@ -252,13 +252,14 @@
 	}
 	
 	$(document).on("click","a[ectype='add_goods_attr']",function(){
+		
 		var sec_id = $(this).data('secid');
 		
 		$.jqueryAjax('seckill.php', 'act=add_goods_attr' + '&sec_id=' + sec_id, function(data){
 			var content = data.content;
 			pb({
 				id:"categroy_dialog",
-				title:"{$lang.categroy_dialog_title}",
+				title:"编辑商品货品信息",
 				width:863,
 				content:content,
 				ok_title:"{$lang.button_submit_alt}",

@@ -1,4 +1,5 @@
 <?php
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $_LANG['tenpay']            = '财付通';
 $_LANG['tenpay_desc']       = '<b>财付通（www.tenpay.com） - 腾讯旗下在线支付平台，通过国家权威安全认证，支持各大银行网上支付，免支付手续费。</b>';

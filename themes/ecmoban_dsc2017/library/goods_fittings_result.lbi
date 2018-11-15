@@ -105,7 +105,7 @@
         <div class="tm-buy">
         	<form name="{$group}_result" method="post" action="" onSubmit="return false;"> 
                 <input type="hidden" name="stock" value="{$group_number}" />
-                {if $group_number > 0}<span class="mr20">{$lang.gb_limited} <em class="red">{$group_number}</em> {$lang.tao}</span>{/if}
+                {if $group_number > 0}<span class="mr20">限购 <em class="red">{$group_number}</em> {$lang.tao}</span>{/if}
                 <span>{$lang.btn_buy}</span>
                 <input value="{$number|default:1}" style="text-align:center" id="J_SComboAmount_group" name="{$group}_result_number">
                 <span>{$lang.tao}</span>

@@ -22,13 +22,13 @@
                 <div class="switch_info">
                     <div class="stat_order_search stat_order_search2">
                         <div class="section-module">
-                            <div class="common-head"><h3 class="common-h3-title">{$lang.integrate_stats}</h3></div>
+                            <div class="common-head"><h3 class="common-h3-title">行业分析概况</h3></div>
                             <div class="common-content">
                                 <div class="common-tabs">
                                     <ul>
-                                        <li class="current">{$lang.order_total}</li>
-                                        <li>{$lang.order_num}</li>
-                                        <li>{$lang.place_order_goods}</li>
+                                        <li class="current">订单金额</li>
+                                        <li>订单数量</li>
+                                        <li>下单商品数</li>
                                     </ul>
                                 </div>
                                 <div class="common-module-main">
@@ -40,7 +40,7 @@
                         </div>
                         <form action="" method="post" id="" name="selectForm">
                             <div class="search_item">
-                                <strong class="label_txt">{$lang.time}：</strong>
+                                <strong class="label_txt">时间：</strong>
                                 <div class="text_time" id="text_time_start">
                                     <input type="text" class="text" name="start_date" value="" id="start_date" value="" autocomplete="off" readonly>
                                 </div>
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                             <div class="search_item search_item">
-                                <strong class="label_txt">{$lang.03_category_manage}：</strong>
+                                <strong class="label_txt">商品分类：</strong>
                                 <div class="imitate_select select_w145">
                                     <div class="cite">{$lang.please_select}</div>
                                     <ul>
@@ -64,7 +64,7 @@
                             </div>
                             <div class="search_item">
                                 <strong class="label_txt">&nbsp</strong>
-                                <a href="javascript:void(0);" class="btn btn30 blue_btn ml0" ectype="searchButton"><i class="icon icon-search"></i>{$lang.btn_search}</a>
+                                <a href="javascript:void(0);" class="btn btn30 blue_btn ml0" ectype="searchButton"><i class="icon icon-search"></i>查询</a>
                             </div>
                             <input type="hidden" name="act" value="get_chart_data">
                         </form>
@@ -73,7 +73,7 @@
                         <div class="section-module">
                             <div class="common-head">
                                 <div class="fl">
-                                    <div class="fbutton m0" id="fbutton_1"><a href="javascript:void(0);"><div class="csv" title="{$lang.export_list}"><span><i class="icon icon-download-alt"></i>{$lang.export_list}<</span></div></a></div>
+                                    <div class="fbutton m0" id="fbutton_1"><a href="javascript:void(0);"><div class="csv" title="{$lang.export_list}"><span><i class="icon icon-download-alt"></i>导出列表</span></div></a></div>
                                 </div>
                                 <div class="refresh">
                                     <div class="refresh_tit" title="{$lang.refresh_data}"><i class="icon icon-refresh"></i></div>
@@ -85,15 +85,15 @@
                                 <table cellpadding="0" cellspacing="0" border="0">
                                     <thead>
                                     <tr>
-                                        <th width="10%"><div class="tDiv">{$lang.03_category_manage}</div></th>
-                                        <th width="10%"><div class="tDiv">{$lang.integrate_list_name.0}</div></th>
-                                        <th width="10%"><div class="tDiv">{$lang.integrate_list_name.1}</div></th>
-                                        <th width="10%"><div class="tDiv">{$lang.integrate_list_name.2}</div></th>
-                                        <th width="10%"><div class="tDiv">{$lang.integrate_list_name.3}</div></th>
-                                        <th width="10%"><div class="tDiv">{$lang.integrate_list_name.4}</div></th>
-                                        <th width="10%"><div class="tDiv">{$lang.integrate_list_name.5}</div></th>
-                                        <th width="10%"><div class="tDiv">{$lang.integrate_list_name.6}</div></th>
-                                        <th width="10%"><div class="tDiv">{$lang.integrate_list_name.7}</div></th>
+                                        <th width="10%"><div class="tDiv">商品分类</div></th>
+                                        <th width="10%"><div class="tDiv">销售额（元）</div></th>
+                                        <th width="10%"><div class="tDiv">有效销售额（元）</div></th>
+                                        <th width="10%"><div class="tDiv">总下单量</div></th>
+                                        <th width="10%"><div class="tDiv">有效下单量</div></th>
+                                        <th width="10%"><div class="tDiv">商品总数</div></th>
+                                        <th width="10%"><div class="tDiv">有销量商品数</div></th>
+                                        <th width="10%"><div class="tDiv">无销量商品数</div></th>
+                                        <th width="10%"><div class="tDiv">下单会员数</div></th>
                                     </tr>
                                     </thead>
                                     <tbody>

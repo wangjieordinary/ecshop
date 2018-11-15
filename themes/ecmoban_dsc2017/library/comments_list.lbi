@@ -95,7 +95,7 @@
 <!--{else}-->
 <div class="no_records no_comments_qt">
     <i class="no_icon no_icon_three"></i>
-    <span class="block">{$lang.not_evaluate}</span>
+    <span class="block">暂无评价</span>
 </div>
 <!--{/if}-->
 

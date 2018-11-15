@@ -9,9 +9,9 @@
     <div class="explanation mt20" id="explanation">
         <i class="sc_icon"></i>
         <ul>
-            <li>{$lang.operation_prompt_content.message_info.0}</li>
-            <li>{$lang.operation_prompt_content.message_info.1}</li>
-            <li>{$lang.operation_prompt_content.message_info.2}</li>
+            <li>标识“*”的选项为必填项，其余为选填项。</li>
+            <li>请填写正确无误的门店地址和电话信息，以免顾客线下提货时找不到门店。</li>
+            <li>门店图片请上传清晰无误的实景照片，利于顾客方便认出门店。</li>
         </ul>
     </div>
     <div class="mian-info mt20">
@@ -28,10 +28,10 @@
                 <div class="value">
                     <div id="dlcountry" class="ui-dropdown smartdropdown alien">
                         <input type="hidden" value="{$offline_store.country}" name="country" id="selcountry">
-                        <div class="txt">{$lang.country}</div>
+                        <div class="txt">国家</div>
                         <i class="down u-dropdown-icon"></i>
                         <div class="options clearfix" style="max-height:300px;">
-                            <span class="liv" data-text="{$lang.please_select}" data-type="0"  data-value="0">{$lang.please_select}</span>
+                            <span class="liv" data-text="选择国家.." data-type="0"  data-value="0">选择国家..</span>
                             {foreach from=$countries item=list}
                             <span class="liv" data-text="{$list.region_name}" data-type="1"  data-value="{$list.region_id}">{$list.region_name}</span>
                             {/foreach}
@@ -39,7 +39,7 @@
                     </div>
                     <div id="dlProvinces" class="ui-dropdown smartdropdown alien">
                         <input type="hidden" value="{$offline_store.province}" name="province" id="selProvinces">
-                        <div class="txt">{$lang.province_alt}</div>
+                        <div class="txt">省/直辖市</div>
                         <i class="down u-dropdown-icon"></i>
                         <div class="options clearfix" style="max-height:300px;">
                             {foreach from=$provinces item=list}
@@ -49,7 +49,7 @@
                     </div>
                     <div id="dlCity" class="ui-dropdown smartdropdown alien">
                         <input type="hidden" value="{$offline_store.city}" name="city" id="selCities">
-                        <div class="txt">{$lang.city}</div>
+                        <div class="txt">市</div>
                         <i class="down u-dropdown-icon"></i>
                         <div class="options clearfix" style="max-height:300px;">
                             {foreach from=$cities item=list}
@@ -59,7 +59,7 @@
                     </div>
                     <div id="dlRegion" class="ui-dropdown smartdropdown alien">
                         <input type="hidden" value="{$offline_store.district}" name="district" id="selDistricts">
-                        <div class="txt">{$lang.area_alt}</div>
+                        <div class="txt">区/县</div>
                         <i class="down u-dropdown-icon"></i>
                         <div class="options clearfix" style="max-height:300px;">
                             {foreach from=$districts item=list}
@@ -100,7 +100,8 @@
                         <p class="notic">{$lang.stores_traffic_line_dsc}</p>
                 </div>
             </div>
-			<input type="hidden" name='act' value="message_update" />	
+			<input type="hidden" name='act' value="message_update" />
+			<!--<input type="hidden" name="file_url" value="{$offline_store.stores_img}" />-->			
 		</form>
             <div class="item">
                 <div class="label">{$lang.stores_img}：</div>

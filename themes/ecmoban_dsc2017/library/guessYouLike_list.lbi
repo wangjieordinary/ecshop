@@ -7,13 +7,13 @@
     <div class="info">
         <div class="name"><a href="{$goods.url}">{$goods.goods_name}</a></div>
             <div class="price">
-                {if $goods.promote_price neq ''}
-                    {$goods.promote_price}
-                {else}
-                    {$goods.shop_price}
-                {/if}
+                    {if $goods.promote_price neq ''}
+                        {$goods.promote_price}
+                    {else}
+                        {$goods.shop_price}
+                    {/if}
             </div>
-        <div class="btn_hover"><a href="{$goods.url}">{$lang.button_buy}</a></div>
+        <div class="btn_hover"><a href="{$goods.url}">立即购买</a></div>
     </div>
 </li>
 {/foreach}
@@ -31,7 +31,7 @@
                         {$goods.shop_price}
                     {/if}
             </div>
-            <div class="btn_hover"><a href="{$goods.url}">{$lang.button_buy}</a></div>
+            <div class="btn_hover"><a href="{$goods.url}">立即购买</a></div>
         </div>
     </li>
 {/foreach}

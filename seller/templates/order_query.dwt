@@ -66,7 +66,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="label">{$lang.label_sure_collect_goods_time}</td>
+                            <td class="label">确认收货时间：</td>
                             <td colspan="3">
                               <div class="text_time" id="text_time3">
                               <input type="text" name="start_take_time" class="text" size="20" readonly="readonly" id="start_take_time_id" />
@@ -82,7 +82,7 @@
                             <td colspan="3">
                                 <div id="selCountries" class="ui-dropdown smartdropdown alien mr15">
                                     <input type="hidden" value="" name="order_country" id="selcountry">
-                                        <div class="txt">{$lang.country}</div>
+                                        <div class="txt">国家</div>
                                         <i class="down u-dropdown-icon"></i>
                                         <div class="options clearfix" style="max-height:300px;">
                                             {foreach from=$country_list item=list}
@@ -92,7 +92,7 @@
                                 </div>
                                 <div id="selProvinces" class="ui-dropdown smartdropdown alien">
                                     <input type="hidden" value="" name="order_province" id="selProvinces">
-                                        <div class="txt">{$lang.province_alt}</div>
+                                        <div class="txt">省/直辖市</div>
                                         <i class="down u-dropdown-icon"></i>
                                         <div class="options clearfix" style="max-height:300px;">
                                             {foreach from=$selProvinces_list item=list}
@@ -102,26 +102,26 @@
                                 </div>
                                 <div id="dlCity" class="ui-dropdown smartdropdown alien">
                                     <input type="hidden" value="0" name="order_city" id="selCities">
-                                        <div class="txt">{$lang.city}</div>
+                                        <div class="txt">市</div>
                                         <i class="down u-dropdown-icon"></i>
                                         <div class="options clearfix" style="max-height:300px;">
-                                            <span class="liv hide" data-text="{$lang.city}" data-value="0">{$lang.city}</span>
+                                            <span class="liv hide" data-text="市" data-value="0">市</span>
                                         </div>
                                 </div>
                                 <div id="dlRegion" class="ui-dropdown smartdropdown alien">
                                     <input type="hidden" value="0" name="order_district" id="selDistricts">
-                                        <div class="txt">{$lang.area_alt}</div>
+                                        <div class="txt">区/县</div>
                                         <i class="down u-dropdown-icon"></i>
                                         <div class="options clearfix" style="max-height:300px;">
-                                            <span class="liv hide" data-text="{$lang.area_alt}" data-value="0">{$lang.area_alt}</span>
+                                            <span class="liv hide" data-text="区/县" data-value="0">区/县</span>
                                         </div>
                                 </div>
                                 <div id="dlStreet" class="ui-dropdown smartdropdown alien">
                                     <input type="hidden" value="0" name="order_street" id="selStreet">
-                                        <div class="txt">{$lang.street}</div>
+                                        <div class="txt">街道</div>
                                         <i class="down u-dropdown-icon"></i>
                                         <div class="options clearfix" style="max-height:300px;">
-                                            <span class="liv hide" data-text="{$lang.street}" data-value="0">{$lang.street}</span>
+                                            <span class="liv hide" data-text="街道" data-value="0">街道</span>
                                         </div>
                                 </div>
                             </td>
@@ -130,7 +130,7 @@
                             <td class="label">{$lang.label_shipping}</td>
                             <td colspan="3">
                                 <div  class="imitate_select select_w145">
-                                    <div class="cite">{$lang.please_select}</div>
+                                    <div class="cite">请选择</div>
                                     <ul>
                                         <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.select_please}</a></li>
                                         {foreach from=$shipping_list item=shipping}
@@ -145,7 +145,7 @@
                             <td class="label">{$lang.label_payment}</td>
                             <td colspan="3">
                                 <div  class="imitate_select select_w145">
-                                    <div class="cite">{$lang.please_select}</div>
+                                    <div class="cite">请选择</div>
                                     <ul>
                                         <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.select_please}</a></li>
                                         {foreach from=$pay_list item=shipping}
@@ -160,7 +160,7 @@
                             <td class="label">{$lang.label_order_status}</td>
                             <td colspan="3">
                                 <div  class="imitate_select select_w145">
-                                    <div class="cite">{$lang.please_select}</div>
+                                    <div class="cite">请选择</div>
                                     <ul>
                                         <li><a href="javascript:;" data-value="-1" class="ftx-01">{$lang.select_please}</a></li>
                                         {foreach from=$os_list item=list key=key}
@@ -172,22 +172,22 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="label">{$lang.label_order_cate}</td>
+                            <td class="label">订单分类：</td>
                             <td colspan="3">
                                 <div  class="imitate_select select_w145">
-                                    <div class="cite">{$lang.please_select}</div>
+                                    <div class="cite">请选择</div>
                                     <ul>
 										 <li><a href="javascript:;" data-value="" class="ftx-01">{$lang.select_please}</a></li>
-										 <li><a href="javascript:;" data-value="stages" class="ftx-01">{$lang.baitiao_order}</a></li>
-										 <li><a href="javascript:;" data-value="zc" class="ftx-01">{$lang.zc_order}</a></li>
-										 <li><a href="javascript:;" data-value="store" class="ftx-01">{$lang.so_order}</a></li>
-										 <li><a href="javascript:;" data-value="other" class="ftx-01">{$lang.other_order}</a></li>
-										 <li><a href="javascript:;" data-value="dbdd" class="ftx-01">{$lang.db_order}</a></li>
-										 <li><a href="javascript:;" data-value="msdd" class="ftx-01">{$lang.ms_order}</a></li>
-										 <li><a href="javascript:;" data-value="tgdd" class="ftx-01">{$lang.tg_order}</a></li>
-										 <li><a href="javascript:;" data-value="pmdd" class="ftx-01">{$lang.pm_order}</a></li>
-										 <li><a href="javascript:;" data-value="jfdd" class="ftx-01">{$lang.jf_order}</a></li>
-										 <li><a href="javascript:;" data-value="ysdd" class="ftx-01">{$lang.ys_order}</a></li>
+										 <li><a href="javascript:;" data-value="stages" class="ftx-01">白条订单</a></li>
+										 <li><a href="javascript:;" data-value="zc" class="ftx-01">众筹订单</a></li>
+										 <li><a href="javascript:;" data-value="store" class="ftx-01">门店订单</a></li>
+										 <li><a href="javascript:;" data-value="other" class="ftx-01">促销订单</a></li>
+										 <li><a href="javascript:;" data-value="dbdd" class="ftx-01">夺宝订单</a></li>
+										 <li><a href="javascript:;" data-value="msdd" class="ftx-01">秒杀订单</a></li>
+										 <li><a href="javascript:;" data-value="tgdd" class="ftx-01">团购订单</a></li>
+										 <li><a href="javascript:;" data-value="pmdd" class="ftx-01">拍卖订单</a></li>
+										 <li><a href="javascript:;" data-value="jfdd" class="ftx-01">积分订单</a></li>
+										 <li><a href="javascript:;" data-value="ysdd" class="ftx-01">预售订单</a></li>
                                     </ul>
 									<input name="order_cat" type="hidden" value="">
                                 </div>
@@ -197,7 +197,7 @@
                             <td class="label">{$lang.label_pay_status}</td>
                             <td colspan="3">
                                 <div  class="imitate_select select_w145">
-                                    <div class="cite">{$lang.please_select}</div>
+                                    <div class="cite">请选择</div>
                                     <ul>
                                         <li><a href="javascript:;" data-value="-1" class="ftx-01">{$lang.select_please}</a></li>
                                         {foreach from=$ps_list item=list key=key}
@@ -212,7 +212,7 @@
                             <td class="label">{$lang.label_shipping_status}</td>
                             <td colspan="3">
                                 <div  class="imitate_select select_w145">
-                                    <div class="cite">{$lang.please_select}</div>
+                                    <div class="cite">请选择</div>
                                     <ul>
                                         <li><a href="javascript:;" data-value="-1" class="ftx-01">{$lang.select_please}</a></li>
                                         {foreach from=$ss_list item=list key=key}
@@ -300,15 +300,15 @@ $(document).on("click", "a[ectype='merge_order']", function () {
 				var content = data.content;
 				pb({
 					id:"merge_order",
-					title:jl_merge_order,
+					title:"合并订单",
 					width:788,
 					content:content,
-					ok_title:jl_merge,
+					ok_title:"合并",
 					drag:false,
 					foot:true,
 					cl_cBtn:false,
 					onOk:function(){
-                                            if (confirm(jl_sure_merge_order)) {
+                                            if (confirm('您确定合并这两个订单么？ ')) {
                                                 var fromOrderSn = document.getElementById('from_order_sn').value;
                                                 var toOrderSn = document.getElementById('to_order_sn').value;
                                                 Ajax.call('order.php?is_ajax=1&act=ajax_merge_order','from_order_sn=o' + fromOrderSn + '&to_order_sn=o' + toOrderSn, merge_orderResponse, 'POST', 'JSON');

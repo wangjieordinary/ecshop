@@ -54,7 +54,7 @@
                         <div class="fbutton"><a href="{$action_link.href}"><div class="csv" title="{$action_link.text}"><span><i class="icon icon-download-alt"></i>{$action_link.text}</span></div></a></div>
                         <div class="total_row">
                         	<div class="item">
-                                <span class="green">{$lang.current_commission_model}：{if $filter.commission_model}{$lang.category_model}{else}{$lang.seller_model}{/if}</span>
+                                <span class="green">当前佣金模式：{if $filter.commission_model}{$lang.category_model}{else}{$lang.seller_model}{/if}</span>
                                 {if !$commission_model}<span>{$lang.percent_value}：<font class="red" id="all_brokerage_amount">{$percent_value}</font></span>{/if}
     						</div>
                             <div class="item">
@@ -102,7 +102,7 @@
                             <td>
                                 <div class="tDiv">
                                     <p>{$order.order_sn}{if $order.return_amount > 0}<font class="red">({$lang.refund})</font>{/if}</p>
-                                    <p>{if $order.chargeoff_status neq 0}<font class="red">【{$lang.32_bill}：{$order.bill_sn}】</font>{/if}</p>
+                                    <p>{if $order.chargeoff_status neq 0}<font class="red">【账单：{$order.bill_sn}】</font>{/if}</p>
                                 </div>
                             </td>
                             <td><div class="tDiv">{$order.buyer|escape}<br />{$order.short_order_time}</div></td>	
@@ -111,7 +111,7 @@
                                 <div class="tDiv">
                                     <p>{$order.formated_order_total_fee}</p>
                                     <!-- {if $order.shipping_fee neq 0} -->
-                                    <p><em class="red">（{$lang.freight_charges}：{$order.formated_shipping_fee}）</em></p>
+                                    <p><em class="red">（含运费：{$order.formated_shipping_fee}）</em></p>
                                     <!-- {/if} -->
                                     
                                     <!-- {if $order.is_settlement eq 1} -->
@@ -119,10 +119,10 @@
                                     	{if !$order.account_log.percent_value && $order.is_rectified eq 1}
                                         <div class="editSpanInput" ectype="editSpanInput">
                                             <span onclick="listTable.edit(this, 'edit_percent_value', '{$order.order_id}'); return false;">{$order.account_log.percent_value|default:N/A}</span>
-                                            <i class="icon icon-edit" title="{$lang.correct_rate}"></i>
+                                            <i class="icon icon-edit" title="纠正比例"></i>
 										</div>
                                         {else}
-                                    	<em class="red2">【{$lang.shop_rate}：{$order.percent_value}%】</em>
+                                    	<em class="red2">【店铺比例：{$order.percent_value}%】</em>
                                         {/if}
                                     </p>
                                     <!-- {/if} -->
@@ -130,10 +130,10 @@
                             </td>
                             <td>
                                 <div class="tDiv">
-                                    <p>{$lang.down.discount}：-{$order.formated_discount}</p>
-                                    <p>{$lang.down.coupons}：-{$order.formated_coupons}</p>
-                                    <p>{$lang.down.integral_money}：-{$order.formated_integral_money}</p>
-                                    <p>{$lang.down.bonus}：-{$order.formated_bonus}</p>
+                                    <p>折扣：-{$order.formated_discount}</p>
+                                    <p>优惠券：-{$order.formated_coupons}</p>
+                                    <p>积分：-{$order.formated_integral_money}</p>
+                                    <p>红包：-{$order.formated_bonus}</p>
                                 </div>
                             </td>
                             
@@ -143,12 +143,12 @@
                             {/if}
                             <!--分销商品开关end -->
                                 
-                            <td><div class="tDiv">{$order.formated_return_amount}{if $order.return_amount > 0}<a href="order.php?act=return_list&order_id={$order.order_id}&return_type=1" target="_blank" style="color:#930">({$lang.view})</a>{/if}</div></td>
+                            <td><div class="tDiv">{$order.formated_return_amount}{if $order.return_amount > 0}<a href="order.php?act=return_list&order_id={$order.order_id}&return_type=1" target="_blank" style="color:#930">(查看)</a>{/if}</div></td>
                             <td>
                                 <div class="tDiv red">
                                 	{if $order.is_goods_rate eq 1}
-                                    	<p>{$order.formated_effective_amount}【{$lang.order_word}】</p>
-                                        <p>{$order.goods_rate.format_total_fee}【{$lang.goods}】</p>
+                                    	<p>{$order.formated_effective_amount}【订单】</p>
+                                        <p>{$order.goods_rate.format_total_fee}【商品】</p>
                                     {else}
                                     	<p>
                                     	<!-- {if $order.shipping_fee neq 0} -->
@@ -160,7 +160,7 @@
                                         </p>
                                         <!-- {/if} -->
                                     {/if}
-                                    <p><em class="org2">({$lang.freight_charges_not})</em></p>
+                                    <p><em class="org2">(不含运费)</em></p>
                                 </div>
                             </td>
                             <td>
@@ -177,7 +177,7 @@
                                     </p>
                                     {if $order.is_goods_rate}
                                         <p>
-                                            <em style=" color:#31b4e1;">({$lang.part_goods_rate})</em>
+                                            <em style=" color:#31b4e1;">(部分商品比例)</em>
                                         </p>
                                     {/if}
                                 </div>
@@ -197,7 +197,7 @@
                             </td>
                             <td class="handle">
                                 <div class="tDiv a2">
-                                    <a href="merchants_commission.php?act=handle_log&id={$order.order_id}&user_id={$user_id}" class="btn_see"><i class="sc_icon sc_icon_see"></i>{$lang.handle_log}</a>							
+                                    <a href="merchants_commission.php?act=handle_log&id={$order.order_id}&user_id={$user_id}" class="btn_see"><i class="sc_icon sc_icon_see"></i>操作日志</a>							
                                 </div>
                             </td>
                             </tr>
@@ -247,22 +247,22 @@
                         <dd><input type="text" value="" name="consignee" id="consignee" class="s-input-txt" autocomplete="off" /></dd>
                     </dl>
                     <dl>
-                        <dt>{$lang.order_category}</dt>
+                        <dt>订单分类</dt>
                         <dd>
                             <div id="order_cat" class="imitate_select select_w145">
                               <div class="cite">{$lang.select_please}</div>
                               <ul>
                                  <li><a href="javascript:;" data-value="">{$lang.select_please}</a></li>
-                                 <li><a href="javascript:;" data-value="stages">{$lang.baitiao_order}</a></li>
-                                 <li><a href="javascript:;" data-value="zc">{$lang.zc_order}</a></li>
-                                 <li><a href="javascript:;" data-value="store">{$lang.so_order}</a></li>
-                                 <li><a href="javascript:;" data-value="other">{$lang.other_order}</a></li>
-                                 <li><a href="javascript:;" data-value="dbdd">{$lang.db_order}</a></li>
-                                 <li><a href="javascript:;" data-value="msdd">{$lang.ms_order}</a></li>
-                                 <li><a href="javascript:;" data-value="tgdd">{$lang.tg_order}</a></li>
-                                 <li><a href="javascript:;" data-value="pmdd">{$lang.pm_order}</a></li>
-                                 <li><a href="javascript:;" data-value="jfdd">{$lang.jf_order}</a></li>
-                                 <li><a href="javascript:;" data-value="ysdd">{$lang.ys_order}</a></li>
+                                 <li><a href="javascript:;" data-value="stages">白条订单</a></li>
+                                 <li><a href="javascript:;" data-value="zc">众筹订单</a></li>
+                                 <li><a href="javascript:;" data-value="store">门店订单</a></li>
+                                 <li><a href="javascript:;" data-value="other">促销订单</a></li>
+                                 <li><a href="javascript:;" data-value="dbdd">夺宝订单</a></li>
+                                 <li><a href="javascript:;" data-value="msdd">秒杀订单</a></li>
+                                 <li><a href="javascript:;" data-value="tgdd">团购订单</a></li>
+                                 <li><a href="javascript:;" data-value="pmdd">拍卖订单</a></li>
+                                 <li><a href="javascript:;" data-value="jfdd">积分订单</a></li>
+                                 <li><a href="javascript:;" data-value="ysdd">预售订单</a></li>
                               </ul>
                             <input name="order_cat" type="hidden" value="" id="order_cat_val">
                             </div>
@@ -278,6 +278,7 @@
 </div>
 <input name="bill_seller" type="hidden" value="{$user_id|default:0}" />
 {include file ='library/pagefooter.lbi'}
+ <script type="text/javascript" src="js/jquery.purebox.js"></script>
 <script type="text/javascript">
     //检查结算账单
     checkBill();
@@ -291,7 +292,7 @@
 	listTable.filter.{$key} = '{$item}';
 	{/foreach}
 	function order_downloadList(){
-            page_downloadList("{$page_count}",'merchants_commission','ajax_download','merchants_commission','merchant_download','{$lang.merchant_download_notic}');
+            page_downloadList("{$page_count}",'merchants_commission','ajax_download','merchants_commission','merchant_download','订单结算导出弹窗');
         }
 
 	//日期选择插件调用start sunle

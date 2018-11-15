@@ -3,9 +3,9 @@
     <div id="dialogAlbum" ectype="album-warp">
         <div class="dialogTop" ectype="albumFilter">
             <div class="imitate_select select_w220" id="album_id">
-                <div class="cite">{$lang.select_album}</div>
+                <div class="cite">请选择图库...</div>
                 <ul style="display:none;" ectype="album_list_check">
-                    <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.select_please}</a></li>
+                    <li><a href="javascript:;" data-value="0" class="ftx-01">请选择...</a></li>
                     {foreach from=$cat_select item=list}
                     <li><a href="javascript:;" data-value="{$list.album_id}" class="ftx-01">{$list.name}</a></li>
                     {/foreach}
@@ -13,19 +13,19 @@
                 <input name="album_id" type="hidden" value="{$album_id|default:0}" id="album_id_val" ectype="album_id_val">
             </div>
             <div class="imitate_select select_w220" id="sort_name">
-                <div class="cite">{$lang.select_please}</div>
+                <div class="cite">请选择...</div>
                 <ul style="display: none;" class="ps-container">
-                    <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.sort_update_desc}</a></li>
-                    <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.sort_update_asc}</a></li>
-                    <li><a href="javascript:;" data-value="3" class="ftx-01">{$lang.sort_picsize_asc}</a></li>
-                    <li><a href="javascript:;" data-value="4" class="ftx-01">{$lang.sort_picsize_desc}</a></li>
-                    <li><a href="javascript:;" data-value="5" class="ftx-01">{$lang.sort_picname_asc}</a></li>
-                    <li><a href="javascript:;" data-value="6" class="ftx-01">{$lang.sort_picname_desc}</a></li>
+                    <li><a href="javascript:;" data-value="2" class="ftx-01">按上传时间从晚到早</a></li>
+                    <li><a href="javascript:;" data-value="1" class="ftx-01">按上传时间从早到晚</a></li>
+                    <li><a href="javascript:;" data-value="3" class="ftx-01">按图片从小到大</a></li>
+                    <li><a href="javascript:;" data-value="4" class="ftx-01">按图片从大到小</a></li>
+                    <li><a href="javascript:;" data-value="5" class="ftx-01">按图片名升序</a></li>
+                    <li><a href="javascript:;" data-value="6" class="ftx-01">按图片名降序</a></li>
                 </ul>
                 <input name="sort_name" type="hidden" value="2" id="sort_name_val">
             </div>
-            <div class="fl"><a href="javascript:void(0);"  class="btn red_btn btn30" ectype="add_album">{$lang.add_album}</a></div>
-            <div class="fl ml10"><a href="javascript:void(0);"  class="btn red_btn btn30" ectype="albumFile" id="albumFile">{$lang.upload_image}</a></div>
+            <div class="fl"><a href="javascript:void(0);"  class="btn red_btn btn30" ectype="add_album">添加图库</a></div>
+            <div class="fl ml10"><a href="javascript:void(0);"  class="btn red_btn btn30" ectype="albumFile" id="albumFile">上传图片</a></div>
 			<div class="fl album_Percent ml20 hide">
                 <div class="label_value">
                     <div class="text_div mr0 w120 pl0"><span class="Percent_pic" ></span></div><div class="Percent"></div>
@@ -38,7 +38,7 @@
                     {foreach from=$pic_list item=pic_album key=key}
                     <li data-url="{$pic_album.pic_file}"><div class="img-container"><img src="{$pic_album.pic_file}"></div><i class="checked"></i></li>
                     {foreachelse}
-                    <li class="notic">{$lang.no_image}</li>
+                    <li class="notic">暂无图片</li>
                     {/foreach}
                 </ul>
                 <div class="clear"></div>
@@ -56,7 +56,7 @@
 	<div id="dialogAlbum" ectype="album-warp" data-inid="{$inid}" data-act="gallery_album_list">
         <div class="dialogTop" ectype="albumFilter">
             <div class="imitate_select select_w220 mr0" id="album_file">
-                <div class="cite">{if $album_mame}{$album_mame}{else}{$lang.select_album}{/if}</div>
+                <div class="cite">{if $album_mame}{$album_mame}{else}请选择图库...{/if}</div>
                 <ul style="display:none;" ectype="album_list_check">
                     {foreach from=$cat_select item=list}
                     <li><a href="javascript:;" data-value="{$list.album_id}" class="ftx-01">{$list.name}</a></li>
@@ -64,8 +64,8 @@
                 </ul>
                 <input name="album_id" type="hidden" value="{$album_id|default:0}" ectype="album_id_val" id="album_file_val">
             </div>
-            <div class="fl ml10"><a href="javascript:void(0);"  class="btn red_btn btn30" ectype="add_album">{$lang.add_album}</a></div>
-            <div class="fl ml10"><a href="javascript:void(0);"  class="btn red_btn btn30" ectype="albumFile" id="albumFile">{$lang.upload_image}</a></div>
+            <div class="fl ml10"><a href="javascript:void(0);"  class="btn red_btn btn30" ectype="add_album">添加图库</a></div>
+            <div class="fl ml10"><a href="javascript:void(0);"  class="btn red_btn btn30" ectype="albumFile" id="albumFile">上传图片</a></div>
             <div class="fl album_Percent ml20 hide">
                 <div class="label_value">
                     <div class="text_div mr0 w120 pl0"><span class="Percent_pic" ></span></div><div class="Percent"></div>
@@ -78,7 +78,7 @@
                     {foreach from=$pic_list item=pic_album key=key}
                     <li data-url="{$pic_album.pic_file}" data-picid="{$pic_album.pic_id}"><div class="img-container"><img src="{$pic_album.pic_file}"></div><i class="checked"></i></li>
                     {foreachelse}
-                        <li class="notic">{$lang.no_image}</li>
+                        <li class="notic">暂无图片</li>
                     {/foreach}
                 </ul>
                 <div class="clear"></div>

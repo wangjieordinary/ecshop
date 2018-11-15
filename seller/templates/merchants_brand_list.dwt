@@ -67,7 +67,7 @@
 							</div>
 							<input type="hidden" value="0" name="">       
 						  </td>
-                          <td>{if $brand.audit_status eq 1}<font class="blue">{$lang.have_audited}</font>{elseif $brand.audit_status eq 2}<font class="red">{$lang.audited_not_adopt}</font>{else}<font class="org">{$lang.not_audited}</font>{/if}</td>
+                          <td>{if $brand.audit_status eq 1}<font class="blue">已审核</font>{elseif $brand.audit_status eq 2}<font class="red">审核未通过</font>{else}<font class="org">未审核</font>{/if}</td>
                           <td class="ecsc-table-handle tr">
                             <span><a href="merchants_brand.php?act=edit&id={$brand.brand_id}" title="{$lang.edit}" class="btn-green"><i class="icon icon-edit"></i><p>{$lang.edit}</p></a></span>
                             <span><a href="javascript:;" onclick="listTable.remove({$brand.brand_id}, '{$lang.drop_confirm}')" title="{$lang.drop}" class="btn-red"><i class="icon icon-trash"></i><p>{$lang.drop}</p></a></span>

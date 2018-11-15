@@ -69,7 +69,7 @@
                             <dd>
                                 <div id="dlcountry" class="ui-dropdown smartdropdown alien mr15">
                                     <input type="hidden" value="{$offline_store.country|default:0}" name="country" id="selcountry">
-                                    <div class="txt">{$lang.country}</div>
+                                    <div class="txt">国家</div>
                                     <i class="down u-dropdown-icon"></i>
                                     <div class="options clearfix" style="max-height:300px;">
                                         {foreach from=$countries item=list}
@@ -79,7 +79,7 @@
                                 </div>
                                 <div id="dlProvinces" class="ui-dropdown smartdropdown alien">
                                     <input type="hidden" value="{$offline_store.province}" name="province" id="selProvinces">
-                                    <div class="txt">{$lang.province_alt}</div>
+                                    <div class="txt">省/直辖市</div>
                                     <i class="down u-dropdown-icon"></i>
                                     <div class="options clearfix" style="max-height:300px;">
                                         {foreach from=$provinces item=list}
@@ -89,7 +89,7 @@
                                 </div>
                                 <div id="dlCity" class="ui-dropdown smartdropdown alien">
                                     <input type="hidden" value="{$offline_store.city}" name="city" id="selCities">
-                                    <div class="txt">{$lang.city}</div>
+                                    <div class="txt">市</div>
                                     <i class="down u-dropdown-icon"></i>
                                     <div class="options clearfix" style="max-height:300px;">
                                         {foreach from=$cities item=list}
@@ -99,7 +99,7 @@
                                 </div>
                                 <div id="dlRegion" class="ui-dropdown smartdropdown alien">
                                     <input type="hidden" value="{$offline_store.district}" name="district" id="selDistricts">
-                                    <div class="txt">{$lang.area_alt}</div>
+                                    <div class="txt">区/县</div>
                                     <i class="down u-dropdown-icon"></i>
                                     <div class="options clearfix" style="max-height:300px;">
                                         {foreach from=$city item=list}
@@ -157,7 +157,7 @@
                             	<div class="type-file-box">
                                 	<div class="input">
                                     <input type="text" name="textfile" class="type-file-text" id="textfield" value="{if $offline_store.stores_img}{$offline_store.stores_img|escape}{/if}" autocomplete="off" readonly />
-                                    <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}"/>
+                                    <input type="button" name="button" id="button" class="type-file-button" value="上传..."/>
                                     <input type="file" class="type-file-file" id="stores_img" name="stores_img" data-state="imgfile" size="30" hidefocus="true" value="" />
                                     </div>
                                     {if $offline_store.stores_img}
@@ -176,11 +176,11 @@
                             	<div class="checkbox_items">
                                 	<div class="checkbox_item">
                                     	<input type="radio" name="is_confirm" value="0" class="ui-radio" id="is_confirm_0" {if $offline_store.is_confirm eq 0}checked=""{/if} class="radio"/>
-                                        <label class="ui-radio-label" for="is_confirm_0">{$lang.close}</label>
+                                        <label class="ui-radio-label" for="is_confirm_0">关闭</label>
                                     </div>
                                     <div class="checkbox_item">
                                     	<input type="radio" name="is_confirm" value="1" class="ui-radio" id="is_confirm_1" {if $offline_store.is_confirm eq 1}checked=""{/if}/>
-                                        <label class="ui-radio-label" for="is_confirm_1">{$lang.open}</label>
+                                        <label class="ui-radio-label" for="is_confirm_1">开启</label>
                                     </div>
                                 </div>
                             </dd>

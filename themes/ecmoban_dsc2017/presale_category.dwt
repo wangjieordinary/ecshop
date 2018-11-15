@@ -92,7 +92,7 @@
                     <div class="no_info no_info_line">
                         <h3>{$lang.information_null}</h3>
                         <div class="no_btn">
-                            <a href="index.php" class="btn sc-redBg-btn">{$lang.back_home}</a>
+                            <a href="index.php" class="btn sc-redBg-btn">返回首页</a>
                         </div>
                     </div>
                 </div>

@@ -53,7 +53,6 @@
                                                 {/if}
                                                 <input type="text" name="textfile" class="type-file-text" id="textfield" {if $favourable.activity_thumb neq ""}value="../{$favourable.activity_thumb}"{/if} autocomplete="off" readonly />
                                             </div>
-                                            <div class="notic">{$lang.favourable_img}</div>
 										</div>
                                     </div>
                                     <div class="item">
@@ -495,8 +494,6 @@
 				$("#result").find("ul").append("<li><a href='javascript:;' data-value='"+goods[i].id+"' class='ftx-01'>"+goods[i].name+"</a></li>")
 			}
 			$("#result").find("ul").show();
-            $("#result").find("ul").perfectScrollbar("destroy");
-            $("#result").find("ul").perfectScrollbar();
 		}
 		return;
 	}
@@ -566,8 +563,6 @@
 				$("#result1").find("ul").append("<li><a href='javascript:;' data-value='"+goods[i].id+"' class='ftx-01'>"+goods[i].name+"</a></li>")
 			}
 			$("#result1").find("ul").show();
-            $("#result1").find("ul").perfectScrollbar("destroy");
-            $("#result1").find("ul").perfectScrollbar();
 		}
 	
 		return;

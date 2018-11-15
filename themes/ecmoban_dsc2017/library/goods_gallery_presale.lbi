@@ -24,16 +24,16 @@
         <!-- {if $cfg.show_goodssn} 显示商品货号--><div class="short-share-r bar_code hide">{$lang.bar_code}<em id="bar_code"></em></div><!-- {/if} -->
     	<div id="compare">
           <a href="javascript:;" class="btn-compare" id="compareLink" style=" margin-left:10px;">
-       	  	<input id="{$goods.goods_id}" type="checkbox" onClick="Compare.add(this, {$goods.goods_id},'{$goods.goods_name|escape:html}','{$goods.goods_type}', '{$goods.goods_thumb}', '{$goods.shop_price}', '{$goods.market_price}')" style=" vertical-align:middle; margin-left:8px;"/>&nbsp;&nbsp;<label for="{$goods.goods_id}" style=" line-height:25px; height:25px;">{$lang.compare}</label>
+       	  	<input id="{$goods.goods_id}" type="checkbox" onClick="Compare.add(this, {$goods.goods_id},'{$goods.goods_name|escape:html}','{$goods.goods_type}', '{$goods.goods_thumb}', '{$goods.shop_price}', '{$goods.market_price}')" style=" vertical-align:middle; margin-left:8px;"/>&nbsp;&nbsp;<label for="{$goods.goods_id}" style=" line-height:25px; height:25px;">对比</label>
           </a>
         </div>
-        <div class="collecting"><a href="javascript:void(0);" class="collection choose-btn-coll"  data-dialog="goods_collect_dialog" data-divid="goods_collect" data-url="user.php?act=collect" data-goodsid="{$goods.goods_id}"><b></b><em>{$lang.collect} (<i id="collect_count"></i>)</em></a></div>
+        <div class="collecting"><a href="javascript:void(0);" class="collection choose-btn-coll"  data-dialog="goods_collect_dialog" data-divid="goods_collect" data-url="user.php?act=collect" data-goodsid="{$goods.goods_id}"><b></b><em>收藏 (<i id="collect_count"></i>)</em></a></div>
         {if $is_http eq 2}
         <div class="bdsharebuttonbox">
-        	<a href="#" class="bds_more" data-cmd="more" style="background:url(themes/ecmoban_dsc2017/images/fx.png) 0px 10px no-repeat !important;color: #666;line-height: 25px;height: 25px;margin: 4px 15px 4px 10px;padding-left: 20px; padding-top:5px;display: block; float:right;">{$lang.share_flow}</a>
+        	<a href="#" class="bds_more" data-cmd="more" style="background:url(themes/ecmoban_dsc2017/images/fx.png) 0px 10px no-repeat !important;color: #666;line-height: 25px;height: 25px;margin: 4px 15px 4px 10px;padding-left: 20px; padding-top:5px;display: block; float:right;">分享</a>
         </div>
         {else}
-        	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="float:right;"><a class="bds_more" href="#none" style="background:url(../images/fx.png) 0px 10px no-repeat !important;color: #666;line-height: 25px;height: 25px;margin: 4px 15px 4px 10px;padding-left: 20px; padding-top:5px;display: block; float:right;">{$lang.share_flow}</a></div>
+        	<div id="bdshare" class="bdshare_t bds_tools get-codes-bdshare" style="float:right;"><a class="bds_more" href="#none" style="background:url(../images/fx.png) 0px 10px no-repeat !important;color: #666;line-height: 25px;height: 25px;margin: 4px 15px 4px 10px;padding-left: 20px; padding-top:5px;display: block; float:right;">分享</a></div>
         {/if}
     </div>
 </div>

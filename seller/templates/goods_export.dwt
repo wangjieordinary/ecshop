@@ -14,7 +14,7 @@
                     {include file ='library/seller_menu_tab.lbi'}
                     <div class="wrapper-list">
                         <div class="explanation" id="explanation">
-                            <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.instructions}</h4></div>
+                            <div class="ex_tit"><i class="sc_icon"></i><h4>使用说明</h4></div>
                             {$lang.user_guide}
                         </div>
                         <div class="step" data-filter="goods" ectype="filter">
@@ -23,7 +23,7 @@
                                     <div class="search_select">
                                         <div class="categorySelect">
                                             <div class="selection">
-                                                <input type="text" name="category_name" id="category_name" class="text w250 valid" value="{$lang.select_cat}" autocomplete="off" readonly data-filter="cat_name" />
+                                                <input type="text" name="category_name" id="category_name" class="text w250 valid" value="请选择分类" autocomplete="off" readonly data-filter="cat_name" />
                                                 <input type="hidden" name="category_id" id="category_id" value="0" data-filter="cat_id" />
                                             </div>
                                             <div class="select-container" style="display:none;">
@@ -34,7 +34,7 @@
                                     <div class="search_select">
                                         <div class="brandSelect">
                                             <div class="selection">
-                                                <input type="text" name="brand_name" id="brand_name" class="text w120 valid" value="{$lang.select_barnd}" autocomplete="off" readonly data-filter="brand_name" />
+                                                <input type="text" name="brand_name" id="brand_name" class="text w120 valid" value="请选择品牌" autocomplete="off" readonly data-filter="brand_name" />
                                                 <input type="hidden" name="brand_id" id="brand_id" value="0" data-filter="brand_id" />
                                             </div>
                                             <div class="brand-select-container" style="display:none;">
@@ -42,42 +42,42 @@
                                             </div>
                                         </div>                            
                                     </div>
-                                    <input type="text" name="keyword" class="text text_2 mr10" value="" placeholder="{$lang.input_keywords}" data-filter="keyword" autocomplete="off" />
+                                    <input type="text" name="keyword" class="text text_2 mr10" value="" placeholder="请输入关键字" data-filter="keyword" autocomplete="off" />
                                     <div style="border:1px dotted #f00; padding:0px 0px 0px 10px;" class="fl mr10 hide" ectype="limit_content">
                                         <input type="text" name="limit_start" class="text w50" value="0" placeholder="{$lang.limit_start}" data-filter="limit_start" autocomplete="off" />
                                         <input type="text" name="limit_number" class="text w50" value="50" placeholder="{$lang.limit_number}" data-filter="limit_number" autocomplete="off" />
                                     </div>
-                                    <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" ectype="limit_button">{$lang.range}</a>
-                                    <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" ectype="search">{$lang.search_word}</a>
+                                    <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" ectype="limit_button">范围</a>
+                                    <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" ectype="search">搜索</a>
                                 </div>
                                 <div class="clear"></div>
                                 <div class="tit">{$lang.export_condition}</div>
                                 <div class="move_div mt10">
                                     <div class="move_left">
-                                        <h4>{$lang.all_goods}</h4>
+                                        <h4>可选商品</h4>
                                         <div class="move_info">
                                             <div class="move_list">
                                                 {include file="library/move_left.lbi"}
                                             </div>
                                         </div>
                                         <div class="move_handle">
-                                            <a href="javascript:void(0);" class="btn btn25 moveAll" ectype="moveAll">{$lang.check_all}</a>
-                                            <a href="javascript:void(0);" class="btn btn25 red_btn" ectype="sub" data-operation="add_export_goods">{$lang.button_submit_alt}</a>
+                                            <a href="javascript:void(0);" class="btn btn25 moveAll" ectype="moveAll">全选</a>
+                                            <a href="javascript:void(0);" class="btn btn25 red_btn" ectype="sub" data-operation="add_export_goods">确定</a>
                                         </div>
                                     </div>
                                     <div class="move_middle">
                                         <div class="move_point" data-operation="add_export_goods"></div>
                                     </div>
                                     <div class="move_right">
-                                        <h4>{$lang.data_batch_export_goods}</h4>
+                                        <h4>数据批量导出的商品</h4>
                                         <div class="move_info">
                                             <div class="move_list" id="export_goods">
                                                 {include file="library/move_right.lbi"}
                                             </div>
                                         </div>
                                         <div class="move_handle">
-                                            <a href="javascript:void(0);" class="btn btn25 moveAll" ectype="moveAll">{$lang.check_all}</a>
-                                            <a href="javascript:void(0);" class="btn btn25 btn_red" ectype="sub" data-operation="drop_export_goods">{$lang.remove}</a>
+                                            <a href="javascript:void(0);" class="btn btn25 moveAll" ectype="moveAll">全选</a>
+                                            <a href="javascript:void(0);" class="btn btn25 btn_red" ectype="sub" data-operation="drop_export_goods">移除</a>
                                         </div>
                                     </div>
                                 </div>
@@ -86,7 +86,7 @@
                                         <div class="label">{$lang.export_format}：</div>
                                         <div class="value">
                                             <div id="dataformat_select" class="imitate_select select_w320">
-                                                <div class="cite">{$lang.please_select}</div>
+                                                <div class="cite">请选择</div>
                                                 <ul style="display: none;">
                                                     {foreach from=$data_format item=data key=key}
                                                     <li><a href="javascript:;" data-value="{$key}" class="ftx-01">{$data}</a></li>
@@ -108,7 +108,7 @@
                             <div class="label">{$lang.select_charset}：</div>
                             <div class="value">
                                 <div id="charset_select" class="imitate_select select_w320">
-                                    <div class="cite">{$lang.please_select}</div>
+                                    <div class="cite">请选择</div>
                                     <ul style="display: none;">
                                         <li><a href="javascript:;" data-value="UTF8" class="ftx-01">UTF8</a></li>
                                         <li><a href="javascript:;" data-value="GB2312" class="ftx-01">GB2312</a></li>
@@ -135,7 +135,7 @@
                         <form action="goods_export.php" method="post" name="theForm1" onsubmit="return formValidate1()">
                         <div class="item">
                             <div class="label">{$lang.goods_class}：</div>
-                            <div class="value"><input type="text" name="goods_class" class="text" value="0" autocomplete="off" /><div class="notic">{$lang.bb_id_tb_id}</div></div>
+                            <div class="value"><input type="text" name="goods_class" class="text" value="0" autocomplete="off" /><div class="notic">宝贝栏目ID为淘宝分类的ID，如若不确定，请填写0</div></div>
                         </div>
                         <div class="item">
                             <div class="label">{$lang.post_express}：</div>
@@ -166,7 +166,7 @@
                         <form action="goods_export.php" method="post" name="theForm3" onsubmit="return formValidate3()">
                         <div class="item">
                             <div class="label">{$lang.goods_class}：</div>
-                            <div class="value"><input type="text" name="goods_class" class="text" value="0" autocomplete="off" /><div class="notic">{$lang.bb_id_tb_id}</div></div>
+                            <div class="value"><input type="text" name="goods_class" class="text" value="0" autocomplete="off" /><div class="notic">宝贝栏目ID为淘宝分类的ID，如若不确定，请填写0</div></div>
                         </div>
                         <div class="item">
                             <div class="label">{$lang.post_express}：</div>
@@ -197,7 +197,7 @@
                         <form action="goods_export.php" method="post" name="theForm6" onsubmit="return formValidate6()">
                         <div class="item">
                             <div class="label">{$lang.goods_class}：</div>
-                            <div class="value"><input type="text" name="goods_class" class="text" value="0" autocomplete="off" /><div class="notic">{$lang.bb_id_tb_id}</div></div>
+                            <div class="value"><input type="text" name="goods_class" class="text" value="0" autocomplete="off" /><div class="notic">宝贝栏目ID为淘宝分类的ID，如若不确定，请填写0</div></div>
                         </div>
                         <div class="item">
                             <div class="label">{$lang.post_express}：</div>
@@ -276,7 +276,7 @@
                             <div class="label">{$lang.select_charset}：</div>
                             <div class="value">
                                 <div id="custom_charset_select" class="imitate_select select_w320">
-                                    <div class="cite">{$lang.please_select}</div>
+                                    <div class="cite">请选择</div>
                                     <ul style="display: none;">
                                         <li><a href="javascript:;" data-value="UTF8" class="ftx-01">UTF8</a></li>
                                         <li><a href="javascript:;" data-value="GB2312" class="ftx-01">GB2312</a></li>
@@ -291,20 +291,20 @@
                             <div class="step_content">									
                                 <div class="goods_search_div">
                                     <div class="imitate_select select_w170">
-                                        <div class="cite">{$lang.select_type}</div>
+                                        <div class="cite">选择类型</div>
                                         <ul style="display: none;">
-                                            <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.all_type}</a></li>
+                                            <li><a href="javascript:;" data-value="0" class="ftx-01">所有类型</a></li>
                                             {foreach from=$goods_type_list item=goods_type}
                                             <li><a href="javascript:;" data-value="{$goods_type.cat_id}" class="ftx-01">{$goods_type.cat_name}</a></li>
                                             {/foreach}
                                         </ul>
                                         <input name="goods_type" type="hidden" value="0" id="" data-filter="keyword" />
                                     </div>
-                                    <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" ectype="search">{$lang.search_word}</a>
+                                    <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" ectype="search">搜索</a>
                                 </div>									
                                 <div class="move_div">
                                     <div class="move_left">
-                                        <h4>{$lang.select_able_col}</h4>
+                                        <h4>可选数据列</h4>
                                         <div class="move_info">
                                             <div class="move_list">
                                                 <ul>
@@ -315,23 +315,23 @@
                                             </div>
                                         </div>
                                         <div class="move_handle">
-                                            <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">{$lang.check_all}</a>
-                                            <a href="javascript:void(0);" class="sc-btn btn25 sc-blueBg-btn" ectype="sub" data-operation="add_goods_fields">{$lang.button_submit_alt}</a>
+                                            <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">全选</a>
+                                            <a href="javascript:void(0);" class="sc-btn btn25 sc-blueBg-btn" ectype="sub" data-operation="add_goods_fields">确定</a>
                                         </div>
                                     </div>
                                     <div class="move_middle">
                                         <div class="move_point" data-operation="add_goods_fields"></div>
                                     </div>
                                     <div class="move_right">
-                                        <h4>{$lang.export_data_col}</h4>
+                                        <h4>输出数据列</h4>
                                         <div class="move_info">
                                             <div class="move_list" id="goods_type">
                                                 {include file="library/move_right.lbi"}
                                             </div>
                                         </div>
                                         <div class="move_handle">
-                                            <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">{$lang.check_all}</a>
-                                            <a href="javascript:void(0);" class="sc-btn btn25 sc-blueBg-btn" ectype="sub" data-operation="drop_goods_fields">{$lang.remove}</a>
+                                            <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">全选</a>
+                                            <a href="javascript:void(0);" class="sc-btn btn25 sc-blueBg-btn" ectype="sub" data-operation="drop_goods_fields">移除</a>
                                         </div>
                                     </div>
                                 </div>	
@@ -355,9 +355,9 @@
                       <table class="ecsc-default-table" id='listTable'>
                       	<thead>
                         <tr>
-                          <th>{$lang.page_count}</th>
-                          <th>{$lang.total_count}</th>
-                          <th>{$lang.time}</th>
+                          <th>页数</th>
+                          <th>总数</th>
+                          <th>时间</th>
                         </tr>
                         </thead>
                       </table>
@@ -434,7 +434,7 @@
            location.href = 'goods_export.php?act=act_export_ecshop&filter=' + filter + '&page=' + result.page + '&page_size=' + result.page_size + '&total=' + result.total+ '&mark=' + result.mark;
        }else
        {
-           alert(jl_uploaded_complete);
+           alert('已下载完成！');
        }
        
        //没有执行错误

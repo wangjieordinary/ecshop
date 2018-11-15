@@ -14,19 +14,19 @@
                             <form name="theForm" action="complaint.php" method="post" id="user_form">
                             	<div class="order-step" id="order-step">
                                     <dl class="step-first current">
-                                        <dt><i class="iconOk"></i><span>{$lang.new_complain}</span><i class="jt"></i></dt>
+                                        <dt><i class="iconOk"></i><span>新投诉</span><i class="jt"></i></dt>
                                     </dl>
                                     <dl {if $complaint_info.complaint_state gt 0}class="current"{/if}>
-                                        <dt><i class="iconOk"></i><span>{$lang.complaint_state.1}</span><i class="jt"></i></dt>
+                                        <dt><i class="iconOk"></i><span>待申诉</span><i class="jt"></i></dt>
                                     </dl>
                                     <dl {if $complaint_info.complaint_state gt 1}class="current"{/if}>
-                                        <dt><i class="iconOk"></i><span>{$lang.complaint_state.2}</span><i class="jt"></i></dt>
+                                        <dt><i class="iconOk"></i><span>对话中</span><i class="jt"></i></dt>
                                     </dl>
                                     <dl {if $complaint_info.complaint_state gt 2}class="current"{/if}>
-                                        <dt><i class="iconOk"></i><span>{$lang.complaint_state.3}</span><i class="jt"></i></dt>
+                                        <dt><i class="iconOk"></i><span>待仲裁</span><i class="jt"></i></dt>
                                     </dl>
                                     <dl {if $complaint_info.complaint_state gt 3}class="current"{/if}>
-                                        <dt><i class="iconOk"></i><span>{$lang.complaint_state.4}</span></dt>
+                                        <dt><i class="iconOk"></i><span>已完成</span></dt>
                                     </dl>
                                 </div>
                                 <div class="order-step-info">
@@ -82,7 +82,7 @@
                                                 	<td class="bdl">&nbsp;</td>
                                                     <td class="w50"><div class="pic-thumb"><a href="../{$goods.url}" target="_blank"><img src="{$goods.goods_thumb}"></a></div></td>
                                                     <td class="tl">
-                                                    	<a href="../{$goods.url}" target="_blank">{$goods.goods_name}</a>{if $goods.trade_id > 0}--<a target="_blank" href="../user.php?act=trade&tradeId={$goods.trade_id}&snapshot=true">{$lang.trade_snapshot}</a>{/if}
+                                                    	<a href="../{$goods.url}" target="_blank">{$goods.goods_name}</a>{if $goods.trade_id > 0}--<a target="_blank" href="../user.php?act=trade&tradeId={$goods.trade_id}&snapshot=true">交易快照</a>{/if}
                                                     </td>
                                                     <td>{$goods.goods_number}</td>
                                                     <td class="bdr">{$goods.goods_price}</td>
@@ -146,7 +146,7 @@
                                             <dd>
                                                 <div class="type-file-box">
                                                     <div class="input">
-                                                        <input type="button" name="button" id="uploadbutton" class="type-file-button type-file-button-radius" value="{$lang.upload_dot}">
+                                                        <input type="button" name="button" id="uploadbutton" class="type-file-button type-file-button-radius" value="上传...">
                                                     </div>
                                                     
                                                 </div>
@@ -165,7 +165,7 @@
                                                     </ul>                                    
                                                 </div>
                                                 <div class="form_prompt"></div>
-                                                <div class="notic m20">{$lang.press_ctrl_upload_max_5}</div>
+                                                <div class="notic m20">按住ctrl可以多张上传，最多上传5张。秉承公平公正，为了更好地了解纠纷详情，请上传相关证据，方便平台判断！</div>
                                             </dd>
                                         </dl>
                                         
@@ -174,7 +174,7 @@
                                             <dd>
                                                 <textarea class="textarea" name="appeal_messg" {if $complaint_info.complaint_state gt 1}disabled{/if}>{$complaint_info.appeal_messg}</textarea>
                                                 <div class="form_prompt"></div>
-                                                <div class="notic m20">{$lang.fair_submit_detail}</div>
+                                                <div class="notic m20">秉承公平公正，为了更好地了解纠纷详情，请提交详细说明，方便平台判断</div>
                                             </dd>
                                         </dl>
                                     </div>
@@ -227,14 +227,14 @@
                                              <input type="hidden" name="act"value="appeal_submit"/>
                                             <!--{if $complaint_info.complaint_state eq 1}-->
                                             <input type="hidden" name="state_type" class="button" value="0"/>
-                                            <input type="submit" name="appeal_start" id="submitBtn" class="sc-btn sc-blueBg-btn btn35" value="{$lang.appeal}" />
+                                            <input type="submit" name="appeal_start" id="submitBtn" class="sc-btn sc-blueBg-btn btn35" value="申诉" />
                                             <!--{/if}-->
                                             <!--{if $complaint_info.complaint_state eq 2}-->
                                             <input type="hidden" name="state_type" class="button" value="1"/>
-                                            <input type="submit" name="appeal_start" id="submitBtn" class="sc-btn sc-blueBg-btn btn35" value="{$lang.apply_arbitration}" />
+                                            <input type="submit" name="appeal_start" id="submitBtn" class="sc-btn sc-blueBg-btn btn35" value="申请仲裁" />
                                             <!--{/if}-->
                                             <!--{/if}-->
-                                            <a href="{$action_link.href}" class="sc-btn btn35 sc-blue-btn"> {$lang.back} </a>
+                                            <a href="{$action_link.href}" class="sc-btn btn35 sc-blue-btn"> 返回 </a>
                                         </dd>
                                     </dl>
                                 </div>
@@ -270,7 +270,7 @@
                                         len ++;
                                 });
                                 if(len > 5){
-                                        pbDialog(complaint_img_number,"",0);
+                                        pbDialog("最多只能上传5张图片","",0);
                                 }else{
                                         submitBtn();
                                 }
@@ -336,7 +336,7 @@
 			},
 			messages:{
 				appeal_messg :{
-					required : '<i class="icon icon-exclamation-sign"></i>'+complaint_content_no_empty
+					required : '<i class="icon icon-exclamation-sign"></i>申诉内容不能为空'
 				}
 			}			
 		});
@@ -359,7 +359,7 @@
                         $("textarea[name='talk_content']").val('');
                     }, 'POST', 'JSON');
                 }else{
-                    alert(conversation_null);
+                    alert('谈话内容不能为空！');
                 }
         })
        {if $complaint_info.complaint_state eq 2  || $complaint_info.complaint_state eq 3}

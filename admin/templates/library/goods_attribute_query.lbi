@@ -43,8 +43,8 @@
 <div id="turn-page" class="attr-turn-page">
     <div class="pagination">
         <ul>
-            <li>{literal}{if $filter.page neq 1}<a href="javascript:listTable.gotoPageFirst()">{/if}{/literal}<span>{$lang.00_home}</span>{if $filter.page neq 1}</a>{/if}</li>
-            <li{if $filter.page eq 1} class="curr"{/if}>{literal}{if $filter.page neq 1}<a href="javascript:listTable.gotoPagePrev()">{/if}{/literal}<span class="prev">{$lang.page_prev}</span>{if $filter.page neq 1}</a>{/if}</li>
+            <li>{literal}{if $filter.page neq 1}<a href="javascript:listTable.gotoPageFirst()">{/if}{/literal}<span>首页</span>{if $filter.page neq 1}</a>{/if}</li>
+            <li{if $filter.page eq 1} class="curr"{/if}>{literal}{if $filter.page neq 1}<a href="javascript:listTable.gotoPagePrev()">{/if}{/literal}<span class="prev">上一页</span>{if $filter.page neq 1}</a>{/if}</li>
             {foreach from=$page_count_arr item=page_count name=pageCount}
             {if $page_count eq $filter.page}
                 <li><span class="currentpage">{$page_count}</span></li>
@@ -52,21 +52,21 @@
                 <li><a href="javascript:listTable.gotoPage({$page_count})"><span>{$page_count}</span></a></li>
             {/if}
             {/foreach}
-            <li{if $filter.page eq $filter.page_count} class="curr"{/if}>{literal}{if $filter.page neq $filter.page_count}<a href="javascript:listTable.gotoPageNext()">{/if}{/literal}<span class="next">{$lang.page_next}</span>{if $filter.page neq $filter.page_count}</a>{/if}</li>
-            <li>{literal}{if $filter.page neq $filter.page_count}<a href="javascript:listTable.gotoPageLast()" class="last">{/if}{/literal}<span>{$lang.page_last}</span>{if $filter.page neq $filter.page_count}</a>{/if}</li>
+            <li{if $filter.page eq $filter.page_count} class="curr"{/if}>{literal}{if $filter.page neq $filter.page_count}<a href="javascript:listTable.gotoPageNext()">{/if}{/literal}<span class="next">下一页</span>{if $filter.page neq $filter.page_count}</a>{/if}</li>
+            <li>{literal}{if $filter.page neq $filter.page_count}<a href="javascript:listTable.gotoPageLast()" class="last">{/if}{/literal}<span>末页</span>{if $filter.page neq $filter.page_count}</a>{/if}</li>
         </ul>
     </div>    
 </div>
 <!--{/if}-->
-<span class="goods_attr_04_explain">{$lang.over2page_batch_upload}</span>
+<span class="goods_attr_04_explain">（说明：含有两页以上请用批量上传功能）</span>
 <div class="goods_attr_04_batch">
     {if $goods_model eq 1}
-        <a href="javascript:;" class="btn btn35 red_btn" id="produts_warehouse_batch">{$lang.batch_upload_csv}</a>
+        <a href="javascript:;" class="btn btn35 red_btn" id="produts_warehouse_batch">CSV批量上传</a>
     {elseif $goods_model eq 2}
-        <a href="javascript:;" class="btn btn35 red_btn" id="produts_area_batch">{$lang.batch_upload_csv}</a>
+        <a href="javascript:;" class="btn btn35 red_btn" id="produts_area_batch">CSV批量上传</a>
     {else}
-        <a href="javascript:;" class="btn btn35 red_btn" id="produts_batch">{$lang.batch_upload_csv}</a>
+        <a href="javascript:;" class="btn btn35 red_btn" id="produts_batch">CSV批量上传</a>
     {/if}
-    <a href="javascript:;" class="btn btn35 red_btn ml20" id="attr_refresh">{$lang.refresh}</a>
+    <a href="javascript:;" class="btn btn35 red_btn ml20" id="attr_refresh">刷新</a>
 </div> 
 <input name="arrt_page_count" type="hidden" value='{$filter.page_count}'>

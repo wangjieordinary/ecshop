@@ -12,9 +12,9 @@
                 {include file ='library/url_here.lbi'}
 				{include file ='library/seller_menu_tab.lbi'}
                 <div class="explanation clear" id="explanation">
-                    <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                    <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                     <ul>
-                    	<li>{$lang.warn_submit_will_rechcek}</li>
+                    	<li>温馨提示：提交操作将会重新审核，请慎重提交确定。</li>
                     </ul>
                 </div>
                 <div class="ecsc-form-goods">
@@ -82,7 +82,7 @@
                                 	<div class="fl lh"{if $cou_type gt 2} style="display:none;"{/if} id="not_comm">{$lang.one}</div>
 									<div id="comm"{if $cou_type lt 3} style="display:none;"{/if}>
                                     	<input type="text" class="text w50 mr10" name="cou_user_num" value="{$cou.cou_user_num}">
-                                        <div class="fl lh">{$lang.unit_paper}</div>
+                                        <div class="fl lh">张</div>
                                     </div>
                                 </dd>
                             </dl>
@@ -132,11 +132,11 @@
                             <dl class="hide" id="range_search">
                             	<dt>{$lang.add_goods}：</dt>
                                 <dd>
-                                    <input type="button" class="sc-btn btn30 sc-blueBg-btn" value="{$lang.set_goods}" ectype="setupGroupGoods" data-diffeseller="1" data-pbmode="setgoods_content" data-pbtype="coupons"/>
+                                    <input type="button" class="sc-btn btn30 sc-blueBg-btn" value="设置商品" ectype="setupGroupGoods" data-diffeseller="1" data-pbmode="setgoods_content" data-pbtype="coupons"/>
                                 	<!--<input name="keyword1" type="text" id="keyword1" class="text text_2 mr10 mb10" autocomplete="off" />
                                     <input name="search1" type="button" id="search1" value="{$lang.button_search}" class="sc-btn btn30 sc-blueBg-btn" onclick="searchItem1()" />
                                     <div id="result1" class="imitate_select select_w320">
-                                        <div class="cite">{$lang.please_select}</div>
+                                        <div class="cite">请选择</div>
                                         <ul>
                                             <li class="li_not">请先搜索商品</li>
                                         </ul>
@@ -154,7 +154,7 @@
                                         <div class="search_select">
                                             <div class="categorySelect">
                                                 <div class="selection">
-                                                    <input type="text" name="category_name" id="category_name" class="text w250 valid" value="{$lang.select_cat}" autocomplete="off" readonly data-filter="cat_name" />
+                                                    <input type="text" name="category_name" id="category_name" class="text w250 valid" value="请选择分类" autocomplete="off" readonly data-filter="cat_name" />
                                                     <input type="hidden" name="category_id" id="category_id" value="0" data-filter="cat_id" />
                                                 </div>
                                                 <div class="select-container" style="display:none;">
@@ -248,11 +248,11 @@
                                 <dl class="hide" id="range_search2">
                                     <dt>{$lang.add_goods}：</dt>
                                     <dd>
-                                        <input type="button" class="sc-btn btn30 sc-blueBg-btn" value="{$lang.set_goods}" ectype="setupGroupGoods" data-diffeseller="1" data-pbmode="setgoods_appoint" data-pbtype="coupons_appoint"/>
+                                        <input type="button" class="sc-btn btn30 sc-blueBg-btn" value="设置商品" ectype="setupGroupGoods" data-diffeseller="1" data-pbmode="setgoods_appoint" data-pbtype="coupons_appoint"/>
 <!--                                    	<input name="keyword2" type="text" id="keyword2" class="text text_2 mr10 mb10" autocomplete="off" />
 										<input name="search2" type="button" id="search2" value="{$lang.button_search}" class="sc-btn btn30 sc-blueBg-btn" onclick="searchItem2()" />
 										<div id="result2" class="imitate_select select_w320">
-											<div class="cite">{$lang.please_select}</div>
+											<div class="cite">请选择</div>
 											<ul>
 											</ul>
 											<input name="result2" type="hidden" value="0" id="result2_val">
@@ -268,7 +268,7 @@
                                             <div class="search_select">
                                                 <div class="categorySelect">
                                                     <div class="selection">
-                                                        <input type="text" name="category_name" id="category_name" class="text w250 valid" value="{$lang.select_cat}" autocomplete="off" readonly data-filter="cat_name" />
+                                                        <input type="text" name="category_name" id="category_name" class="text w250 valid" value="请选择分类" autocomplete="off" readonly data-filter="cat_name" />
                                                         <input type="hidden" name="category_id" id="category_id" value="0" data-filter="cat_id" />
                                                     </div>
                                                     <div class="select-container" style="display:none;">
@@ -296,7 +296,7 @@
 											</div>
 											{/foreach}
 										</div>
-										<div class="notic">{$lang.allow_level_no_select_no_join}</div>
+										<div class="notic">允许参与的会员等级,一个不选表示没有任何会员能参与</div>
 										<div class="form_prompt"></div>
                                     </dd>
                                 </dl>
@@ -316,13 +316,13 @@
                                         </div>
                                         {/foreach}
                                     </div>
-                                    <div class="notic">{$lang.allow_level_no_select_no_join}</div>
+                                    <div class="notic">允许参与的会员等级,一个不选表示没有任何会员能参与</div>
                                     <div class="form_prompt"></div>
                                 </dd>
                             </dl>
                             <dl>
                             	<dt>{$lang.coupons_intro}：</dt>
-                                <dd><textarea name="cou_intro" rows="3" class="textarea" placeholder="{$lang.memo_info}"></textarea></dd>
+                                <dd><textarea name="cou_intro" rows="3" class="textarea" placeholder="备注信息"></textarea></dd>
                             </dl>
                             {if $cou.cou_id}
                             <dl>
@@ -463,7 +463,7 @@ $(function(){
 	$("*[ectype='set_free_shipping']").click(function(){
 		var region_ids = $("input[name='free_value']").val();
 		Ajax.call('dialog.php', "act=set_free_shipping&region_ids=" + region_ids, function(result){
-			goods_visual_desc(jl_region_select,915,result.content,function(){
+			goods_visual_desc("地区选择",915,result.content,function(){
 				var region_list = '';
 				var region_name = '';
 				$("input[name='region_id[]']:checked").each(function(){
@@ -798,7 +798,7 @@ $(function(){
 		  $(":input[name='vc_cat[]']").each(function(index, element) {
 			  
 			  if(id == $(this).val()){
-				  alert(coupons_cat_exist);
+				  alert("分类已经存在了");
 				  exists = 1;
 			  }
 			  
@@ -826,7 +826,7 @@ $(function(){
 		  $(":input[name='vc_ok_cat[]']").each(function(index, element) {
 			  
 			  if(id == $(this).val()){
-				  alert(coupons_cat_exist);
+				  alert("分类已经存在了");
 				  exists = 1;
 			  }
 			  

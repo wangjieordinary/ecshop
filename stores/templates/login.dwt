@@ -2,11 +2,9 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>{$lang.login_title}</title>
+<title>登录页</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<link rel="shortcut icon" href="../favicon.ico" />
-<link rel="icon" href="../animated_favicon.gif" type="image/gif" />
 <link href="css/login.css" rel="stylesheet" type="text/css" />
 <link href="css/purebox.css" rel="stylesheet" type="text/css">
 <script type="text/javascript" src="js/jquery.js"></script>
@@ -27,16 +25,16 @@
             <div class="formInfo">
             	<div class="formText">
                 	<i class="icon icon-user"></i>
-                    <input type="text" name="stores_user" autocomplete="off" class="input-text" value="" placeholder="{$lang.stores_user}">
+                    <input type="text" name="stores_user" autocomplete="off" class="input-text" value="" placeholder="用户名">
                 </div>
                 <div class="formText mb10">
                 	<i class="icon icon-pwd"></i>
                         <input type="password" style="display:none"/>
-                    <input type="password" name="stores_pwd" autocomplete="off" class="input-text" value="" placeholder="{$lang.stores_pwd}">
+                    <input type="password" name="stores_pwd" autocomplete="off" class="input-text" value="" placeholder="密  码">
                 </div>
                 <div class="formText mb10">
                 	<input type="checkbox" name="remember" class="ui-checkbox" id="remember" />
-                    <label for="remember" class="ui-label">{$lang.remember}</label>
+                    <label for="remember" class="ui-label">保存信息</label>
                 </div>
                 <div class="formText submitDiv mb10">
                 	{if $gd_version > 0}
@@ -45,17 +43,17 @@
                             <div class="arrow"></div>
                             <div class="code-img"><img src="index.php?act=captcha&{$random}" onclick= this.src="index.php?act=captcha&"+Math.random() title="{$lang.click_for_another}"  name="codeimage" border="0" id="codeimage"></div>
                         </div>
-                        <input type="text" name="captcha" class="input-yzm" placeholder="{$lang.input_yzm}" value="">
+                        <input type="text" name="captcha" class="input-yzm" placeholder="输入验证码" value="">
                     </span>
                     {/if}
                     <span class="submit_span">
                     	<input type="hidden" name="act" value="signin" />
                         <input type="hidden" name="dsc_token" value="{$dsc_token}" autocomplete="off" />
-                        <input type="button" name="submit" class="sub" value="{$lang.login}" onclick="send_form_data('form[name=theForm]')">
+                        <input type="button" name="submit" class="sub" value="登录" onclick="send_form_data('form[name=theForm]')">
                     </span>
                 </div>
                 <div class="formText">
-                	<a href="get_password.php?act=forget_pwd" class="not_pwd" target="_blank">{$lang.forget_password_alt}</a>
+                	<a href="get_password.php?act=forget_pwd" class="not_pwd" target="_blank">忘记密码？</a>
                 </div>
             </div>
         </div>

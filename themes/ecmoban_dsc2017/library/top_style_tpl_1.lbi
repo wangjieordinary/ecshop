@@ -6,8 +6,8 @@
 	<!-- 限时抢购 -->
 	<div class="limitime" id="limitime">
 		<div class="hd">
-			<h2>{$lang.Flash_sale}</h2>
-			<h3>{$lang.every_day}</h3>
+			<h2>限时抢购</h2>
+			<h3>每日精彩不断</h3>
 		</div>
 		<div class="bd">
 			<ul class="limitime-list clearfix">
@@ -37,7 +37,7 @@
 	<!-- 随手购 -->
     <div class="atwillgo" id="atwillgo">
             <div class="awg-hd">
-                <h2>{$lang.purchase_hand}</h2>
+                <h2>随手购</h2>
             </div>
             <div class="awg-bd">
                 <div class="atwillgo-slide">
@@ -59,7 +59,7 @@
                                     {/if}
                                 </div>
                                 <div class="p-name"><a href="{$look.url}" target="_blank" title="{$look.name|escape:html}">{$look.name}</a></div>
-                                <div class="p-btn"><a href="{$look.url}" target="_blank">{$lang.View_details}</a></div>
+                                <div class="p-btn"><a href="{$look.url}" target="_blank">查看详情</a></div>
                             </li>
                             <!--{/foreach}-->
                         </ul>
@@ -71,11 +71,11 @@
 	<!-- 楼层电梯 -->
 	<div class="catetop-lift lift-hide" ectype="lift">
     	<div class="lift-list" ectype="liftList">
-        	<div class="catetop-lift-item lift-item-current" ectype="liftItem" data-target="#limitime"><span>{$lang.Flash_sale}</span></div>
+        	<div class="catetop-lift-item lift-item-current" ectype="liftItem" data-target="#limitime"><span>限时抢购</span></div>
         	<!--{foreach from=$categories_child item=cat name=child}-->
             <div class="catetop-lift-item lift-floor-item" ectype="liftItem"><span>{$cat.name}</span></div>
             <!--{/foreach}-->
-            <div class="catetop-lift-item" ectype="liftItem" data-target="#atwillgo"><span>{$lang.purchase_hand}</span></div>
+            <div class="catetop-lift-item" ectype="liftItem" data-target="#atwillgo"><span>随手购</span></div>
         	<div class="catetop-lift-item lift-item-top" ectype="liftItem"><span><i class="iconfont icon-up"></i></span></div>
         </div>
     </div>

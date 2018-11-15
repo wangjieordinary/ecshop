@@ -274,7 +274,7 @@
                                         <div class="step_value">
                                             <div class="selection">
                                                 <input type="text" name="brand_name" id="brand_name" class="text w140 valid" data-filter="brand_name" ectype="require" autocomplete="off" value="{if $brand_name}{$brand_name}{else}{$lang.please_select}{/if}" readonly />
-                                                <a href="javascript:void(0);" class="btn btn30 blue_btn" ectype="ajaxBrand">{$lang.add}</a>
+                                                <a href="javascript:void(0);" class="btn btn30 blue_btn" ectype="ajaxBrand">添加</a>
                                                 <input type="hidden" name="brand_id" id="brand_id" value="{$goods.brand_id}" data-filter="brand_id" />
                                                 <div class="form_prompt"></div>
                                             </div>    
@@ -304,12 +304,8 @@
                                     <div class="item item_wenzi">
                                         <div class="step_label"><em class="require-field">*</em>{$lang.goods_img}：</div>
                                         <div class="step_value">
-                                            <div id="goods_figure" class="update_images mr10"><div class="img"><img src="{if $goods.goods_thumb}{$goods.goods_thumb}{else}images/update_images.jpg{/if}" /></div></div><<div class="form_prompt">
-                                                <p>{$lang.notice_goods_image_1}</p>
-                                                <p>{$lang.notice_goods_image_2}</p>
-                                                <p>{$lang.notice_goods_image_3}</p>
-                                            </div>
-											<div class="notic ml70"></div>
+                                            <div id="goods_figure" class="update_images mr10"><div class="img"><img src="{if $goods.goods_thumb}{$goods.goods_thumb}{else}images/update_images.jpg{/if}" /></div></div><div class="form_prompt"></div>
+											<div class="notic ml70">{$lang.lab_goods_img_notic}</div>
                                             <input type="hidden" name="original_img" value="">
 											<input type="hidden" name="goods_img" value="">
 											<input type="hidden" name="goods_thumb" value="">
@@ -335,7 +331,11 @@
                                                 <div class="video_default"></div>
                                                 <a href="javascript:void(0);" class="video_remove" ectype="video_remove"><i class="icon icon-remove"></i></a>
                                             </div>
-                                            <div class="form_prompt">{$lang.form_prompt_notice}</div>
+                                            <div class="form_prompt">
+                                                <p>像素：398px * 398px</p>
+                                                <p>大小：10MB，10秒以内的视频</p>
+                                                <p>格式：只支持MP4格式</p>
+                                            </div>
                                         	<input type="hidden" name="goods_video" value="{$goods.goods_video}">
                                         </div>
                                     </div>
@@ -382,8 +382,8 @@
 												</ul>
 												<input name="tid" type="hidden" value="{$goods.tid}">
 											</div>	
-                                            <a href="javascript:;" class="btn btn30 blue_btn fl mr5" ectype="ajaxTransport">{$lang.add}</a>
-                                            <a href="javascript:;" class="btn btn30 blue_btn fl" data-attr="edit" ectype="ajaxTransport">{$lang.edit}</a>
+                                            <a href="javascript:;" class="btn btn30 blue_btn fl mr5" ectype="ajaxTransport">添加</a>
+                                            <a href="javascript:;" class="btn btn30 blue_btn fl" data-attr="edit" ectype="ajaxTransport">编辑</a>
                                             </div>
 										</div>
                                     </div>	
@@ -798,7 +798,6 @@
                                                 <div class="circle"></div>
                                             </div>
                                             <input type="hidden" value="{$goods.is_on_sale}" name="is_on_sale">
-                                            <div class="notic" style="margin-left:10px;">{if $goods.notification}{$lang.cloud_not_sale}{$goods.notification}{/if}</div>
                                         </div>
                                     </div>
                                     <div class="item">
@@ -1062,7 +1061,7 @@
                                     <div class="goods_search_div">
                                         <input type="text" name="keyword" class="text w150" value="" placeholder="{$lang.article_title}" data-filter="keyword" autocomplete="off" />
                                         <a href="javascript:void(0);" class="btn btn30 mr10" ectype="search"><i class="icon icon-search"></i>{$lang.search_word}</a>
-                                        <a href="javascript:void(0);" class="btn btn30 red_btn" ectype="ajaxArticle">{$lang.add_article}</a>
+                                        <a href="javascript:void(0);" class="btn btn30 red_btn" ectype="ajaxArticle">添加新文章</a>
                                     </div>
                                     <div class="move_div">
                                         <div class="move_left">
@@ -1116,7 +1115,7 @@
                                             </div>
                                         </div>
                                         <a href="javascript:void(0);" class="btn btn30 mr10" ectype="search"><i class="icon icon-search"></i>{$lang.search_word}</a>
-                                        <a href="javascript:void(0);" class="btn btn30 red_btn" ectype="ajaxArea">{$lang.add_new_region}</a>
+                                        <a href="javascript:void(0);" class="btn btn30 red_btn" ectype="ajaxArea">添加新地区</a>
                                     </div>
                                     <div class="move_div">
                                         <div class="move_left">
@@ -2180,7 +2179,7 @@
 				  $("#promote_start_date").parent().removeClass("time_disabled");
 				  
 				  {if $goods.user_id}
-				 // priceSetted();
+				  priceSetted();
 				  {/if}
 				  
 				  shop_price = Number(parseFloat($("input[name='promote_price']").val()));
@@ -2296,7 +2295,6 @@
 		{
 		  document.getElementById(inputName).value = shopPrice;
 		}
-        console.log(shopPrice);
 	}
 
 	function set_price_note(rank_id)
@@ -3293,12 +3291,12 @@
     /* 异步添加各类信息 begin */
     //添加运费模板
 	$(document).on("click","[ectype='ajaxTransport']",function(){
-        var name = "{$lang.add_transport}";
+        var name = "添加运费模板";
         var act = 'act=ajaxTransport';
         var _this = $(this);
         if(_this.data('attr') == 'edit'){
             var tid = $('#transport_div').find("input[name='tid']").val();
-            name = "{$lang.edit_transport}";
+            name = "编辑运费模板";
             act = 'act=ajaxTransport&tid=' + tid;
         }
         
@@ -3310,7 +3308,7 @@
                 var fald = true;
 				
                 if(title.val() == ""){
-                    error_div("#transport_dialog input[name='title']","{$lang.transport_not_null}");
+                    error_div("#transport_dialog input[name='title']","运费模板标题不能为空");
 					fald = false;
                 }else{
                     form.ajaxSubmit({
@@ -3337,17 +3335,17 @@
     //添加文章
 	$(document).on("click","[ectype='ajaxArticle']",function(){
         $.jqueryAjax('dialog.php', 'act=ajaxArticle', function(data){
-            goods_visual_desc("{$lang.add_article}",1000,data.content,function(){
+            goods_visual_desc("添加文章",1000,data.content,function(){
                 var form = $("#article_dialog").find("form[name='theForm']");
                 var title = form.find("input[name='title']");
                 var article_cat = form.find("input[name='article_cat']");
                 var fald = true;
                 
                 if(title.val() == ""){
-                    error_div("#article_dialog input[name='title']","{$lang.article_not_null}");
+                    error_div("#article_dialog input[name='title']","文章标题不能为空");
 					fald = false;
                 }else if(article_cat.val() == ""){
-                    error_div("#article_dialog input[name='article_cat']","{$lang.select_article_cat}");
+                    error_div("#article_dialog input[name='article_cat']","请选择文章分类");
 					fald = false;
                 }else{
                     form.ajaxSubmit({
@@ -3371,7 +3369,7 @@
     //添加地区
 	$(document).on("click","[ectype='ajaxArea']",function(){
         $.jqueryAjax('dialog.php', 'act=ajaxArea', function(data){
-            goods_visual_desc("{$lang.add_region}",1000,data.content,function(){
+            goods_visual_desc("添加区域",1000,data.content,function(){
                 var form = $("#area_dialog").find("form[name='theForm']");
                 form.ajaxSubmit({
                     type: "POST",
@@ -3388,17 +3386,17 @@
     //添加品牌
 	$(document).on("click","[ectype='ajaxBrand']",function(){
         $.jqueryAjax('dialog.php', 'act=ajaxBrand', function(data){
-            goods_visual_desc("{$lang.rapid_add_brand}",1000,data.content,function(){
+            goods_visual_desc("添加品牌",1000,data.content,function(){
                 var form = $("#brand_dialog").find("form[name='theForm']");
                 var brand_name = form.find("input[name='brand_name']");
                 var brand_logo = form.find("input[name='brand_logo']");
                 var fald = true;
                 
                 if(brand_name.val() == ""){
-                    error_div("#brand_dialog input[name='brand_name']","{$lang.brand_not_null}");
+                    error_div("#brand_dialog input[name='brand_name']","品牌名称不能为空");
 					fald = false;
                 }else if(brand_logo.val() == ""){
-                    error_div("#brand_dialog input[name='brand_logo']","{$lang.brand_log_null}");
+                    error_div("#brand_dialog input[name='brand_logo']","品牌LOGO不能为空");
 					fald = false;
                 }else{
                     form.ajaxSubmit({
@@ -3422,13 +3420,13 @@
     //添加分类
 	$(document).on("click","[ectype='ajaxCate']",function(){
         $.jqueryAjax('dialog.php', 'act=ajaxCate', function(data){
-            goods_visual_desc("{$lang.rapid_add_cat}",1000,data.content,function(){
+            goods_visual_desc("添加分类",1000,data.content,function(){
                 var form = $("#cate_dialog").find("form[name='theForm']");
                 var cat_name = form.find("input[name='cat_name']");
                 var fald = true;
                 
                 if(cat_name.val() == ""){
-                    error_div("#cate_dialog input[name='cat_name']","{$lang.cat_name_not_null}");
+                    error_div("#cate_dialog input[name='cat_name']","分类名称不能为空");
 					fald = false;
                 }else{
                     form.ajaxSubmit({

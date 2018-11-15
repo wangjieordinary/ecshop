@@ -17,7 +17,7 @@
         </div>
         {/if}
         <div class="login-box">
-            <div class="tit"><h3>{$lang.account_login}</h3><span></span></div>
+            <div class="tit"><h3>账号登录</h3><span></span></div>
             <div class="msg-wrap"></div>
             <div class="form">
             	<form name="formLogin" action="{$site_domain}user.php" method="post" onSubmit="userLogin();return false;">
@@ -30,7 +30,7 @@
                     <div class="item">
                         <div class="item-info">
                             <i class="iconfont icon-password"></i>
-                            <input type="password" style="display:none"/>
+                            <input type="password"   style="display:none"/>
                             <input type="password" id="nloginpwd" name="password" value="" class="text" placeholder="{$lang.label_password}" />
                         </div>
                     </div>

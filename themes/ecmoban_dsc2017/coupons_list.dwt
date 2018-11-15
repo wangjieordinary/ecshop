@@ -22,14 +22,14 @@
             <div class="quan-filter mb30">
                 <div class="f-sort">
                     <a href="coupons.php?act=coupons_list" {if empty($smarty.get.field)}class="selted"{/if} data-param="st" data-id="0">{$lang.default}</a>
-                    <a href="coupons.php?act=coupons_list&field=cou_end_time" {if $smarty.get.field=='cou_end_time'}class="selted"{/if}>{$lang.Will_expire}</a>
-                    <a href="coupons.php?act=coupons_list&field=cou_money"  {if $smarty.get.field=='cou_money'}class="selted"{/if}>{$lang.max_Face}</a>
+                    <a href="coupons.php?act=coupons_list&field=cou_end_time" {if $smarty.get.field==cou_end_time}class="selted"{/if}>{$lang.Will_expire}</a>
+                    <a href="coupons.php?act=coupons_list&field=cou_money"  {if $smarty.get.field==cou_money}class="selted"{/if}>{$lang.max_Face}</a>
                 </div>
                 <div class="f-types">
-                    <a href="javascript:void(0);" {if empty($smarty.get.type) || $smarty.get.type=='undefined'}class="selted"{/if} data-id="3,4"><i></i>{$lang.type_all}</a>
-                    <a href="javascript:void(0);" {if $smarty.get.type=='all'}class="selted"{/if} data="all"><i></i>{$lang.vouchers_all}</a>
-                    <a href="javascript:void(0);" {if $smarty.get.type=='member'}class="selted"{/if} data="member"><i></i>{$lang.vouchers_user}</a>
-                    <a href="javascript:void(0);" {if $smarty.get.type=='shipping'}class="selted"{/if} data="shipping"><i></i>{$lang.vouchers_shipping}</a>
+                    <a href="javascript:void(0);" {if empty($smarty.get.type) || $smarty.get.type==undefined}class="selted"{/if} data-id="3,4"><i></i>{$lang.type_all}</a>
+                    <a href="javascript:void(0);" {if $smarty.get.type==all}class="selted"{/if} data="all"><i></i>{$lang.vouchers_all}</a>
+                    <a href="javascript:void(0);" {if $smarty.get.type==member}class="selted"{/if} data="member"><i></i>{$lang.vouchers_user}</a>
+                    <a href="javascript:void(0);" {if $smarty.get.type==shipping}class="selted"{/if} data="shipping"><i></i>{$lang.vouchers_shipping}</a>
                 </div>
             </div>
             <div class="quan-list">

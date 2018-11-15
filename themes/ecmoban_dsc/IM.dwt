@@ -56,7 +56,7 @@
 <script type="text/javascript">
     $(function(){
         setTimeout(function(){
-            $('.wkit-powered-by a').html(' Powered by 月梦网络').attr({'href':'javascript:;','target':''});
+            $('.wkit-powered-by a').html(' Powered by 大商创').attr({'href':'javascript:;','target':''});
         },200)
 
     })

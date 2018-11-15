@@ -1,4 +1,4 @@
-/** 
+/**
  * 商创 平台后台商家后台共用js库
  * ============================================================================
  * * 版权所有 2005-2016 上海商创网络科技有限公司，并保留所有权利。
@@ -1164,10 +1164,9 @@ function get_childcat(obj,type,currid,obj_type,type_id){
 	//2表示筛选出某个属性类型分类下的类型填充到某个容器中（用于后台编辑商品详情->商品属性 根据属性分类筛选出以下属性类型等）
 	
 	var val = obj.data("value"),
-			level = obj.data("level"),
-      typeCat = obj.data("cat"),
-			imi_select = obj.parents(".imitate_select"),
-			item = obj.parents("*[ectype='item']");
+		level = obj.data("level"),
+        typeCat = obj.data("cat"),
+		imi_select = obj.parents(".imitate_select");
 
 	//初始化
 	imi_select.nextAll(".imitate_select").remove();
@@ -1202,23 +1201,11 @@ function get_childcat(obj,type,currid,obj_type,type_id){
 	if(type == 2){
 		Ajax.call('goods_type.php?is_ajax=1&act=get_childtype', 'cat_id=' + val + "&typeCat=" + typeCat + where, function(data){
 			if(data.error == 0){
-				if($("*[ectype='attrTypeSelect']").length > 1){
-					item.find("*[ectype='attrTypeSelect'] .cite").html("请选择商品类型");
-					item.find("*[ectype='attrTypeSelect']").next(".imitate_select").find('.cite').html("请选择筛选属性");
-					item.find("*[ectype='attrTypeSelect']").next(".imitate_select").find('li').remove();
-					item.find("*[ectype='attrTypeSelect'] ul").html(data.content);
-					item.find("*[ectype='attrTypeSelect'] ul").siblings("input[name='goods_type']").val(0);
-					item.find("*[ectype='attrTypeSelect'] ul").perfectScrollbar("destroy");
-					item.find("*[ectype='attrTypeSelect'] ul").perfectScrollbar();
-				}else{
-					$("*[ectype='attrTypeSelect'] .cite").html("请选择商品类型");
-					$("*[ectype='attrTypeSelect']").next(".imitate_select").find('.cite').html("请选择筛选属性");
-					$("*[ectype='attrTypeSelect']").next(".imitate_select").find('li').remove();
-					$("*[ectype='attrTypeSelect'] ul").html(data.content);
-					$("*[ectype='attrTypeSelect'] ul").siblings("input[name='goods_type']").val(0);
-					$("*[ectype='attrTypeSelect'] ul").perfectScrollbar("destroy");
-					$("*[ectype='attrTypeSelect'] ul").perfectScrollbar();
-				}
+				$("*[ectype='attrTypeSelect'] .cite").html("请选择商品类型");
+				$("*[ectype='attrTypeSelect'] ul").html(data.content);
+				$("*[ectype='attrTypeSelect'] ul").siblings("input[name='goods_type']").val(0);
+				$("*[ectype='attrTypeSelect'] ul").perfectScrollbar("destroy");
+				$("*[ectype='attrTypeSelect'] ul").perfectScrollbar();
 			}
 			
 			if(obj_type == 'add_goods_type') {

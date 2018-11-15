@@ -36,9 +36,9 @@
                         <!--{/if}-->
                         <!--{if $goods.gmt_end_time}-->
                         <div class="activity-title" {if $promo_count >1} style="display:none;"{/if}>
-                            <div class="activity-type"><i class="icon icon-promotion"></i>{$lang.promotion_time}</div>
+                            <div class="activity-type"><i class="icon icon-promotion"></i>促销时间</div>
                             <div class="sk-time-cd">
-                                <div class="sk-cd-tit">{$lang.distance_end}</div>
+                                <div class="sk-cd-tit">距结束</div>
                                 <div class="cd-time" ectype="time" data-time="{$goods.promote_end_time}">
                                     <div class="days">00</div>
                                     <span class="split">:</span>
@@ -55,7 +55,7 @@
                             <div class="summary-price-wrap">
                                 <div class="s-p-w-wrap">
                                     <div class="summary-item si-shop-price">
-                                        <div class="si-tit">{if $goods.gmt_end_time}{$lang.promote_price}{else}{$lang.shop_price}{/if}</div>
+                                        <div class="si-tit">{if $goods.gmt_end_time}促 销 价{else}商 城 价{/if}</div>
                                         <div class="si-warp">
                                             <strong class="shop-price" id="ECS_SHOPPRICE" ectype="SHOP_PRICE"></strong>
                                             <span class="price-notify" data-userid="{$user_id}" data-goodsid="{$goods.goods_id}" ectype="priceNotify">{$lang.price_notice}</span>
@@ -63,7 +63,7 @@
                                     </div>
                                     <!--{if $cfg.show_marketprice}-->
                                     <div class="summary-item si-market-price">
-                                        <div class="si-tit">{$lang.market_prices}</div>
+                                        <div class="si-tit">市 场 价</div>
                                         <div class="si-warp"><div class="m-price" id="ECS_MARKETPRICE"></div></div>
                                     </div>
                                     <!--{/if}-->
@@ -83,11 +83,11 @@
                                     <!--{/if}-->
                                     <!--{if $goods_coupons}-->
                                     <div class="summary-item si-coupon">
-                                        <div class="si-tit">{$lang.Collar_ticket_alt}</div>
+                                        <div class="si-tit">领 券</div>
                                         <div class="si-warp">
                                             <!--{foreach from=$goods_coupons item=vo}-->
                                             <a class="J-open-tb" href="#none" data-goodsid="{$goods_id}">
-                                                <div class="quan-item"><i class="i-left"></i>{$lang.man}{$vo.cou_man}{$lang.minus}{$vo.cou_money}<i class="i-right"></i></div>
+                                                <div class="quan-item"><i class="i-left"></i>满{$vo.cou_man}减{$vo.cou_money}<i class="i-right"></i></div>
                                             </a>
                                             <!--{/foreach}-->
                                         </div>
@@ -96,7 +96,7 @@
 
                                     <!-- {if $promotion || $goods.consumption} -->
                                     <div class="summary-item si-promotion"{if $promo_count >2} ectype="view-prom"{/if}{if $promo_count <2} style="height:24px;"{/if}>
-                                        <div class="si-tit">{$lang.promotion_alt}</div>
+                                        <div class="si-tit">促 销</div>
                                         <div class="si-warp">
                                             <div class="prom-items">
                                                 <!-- {foreach from=$promotion item=item key=key name=nopromotion} -->
@@ -134,7 +134,7 @@
                                             </div>
                                             <!--{if $promo_count >2}-->
                                             <div class="view-all-promotions">
-                                                <span class="prom-sum">{$lang.total}<em class="prom-number">{$promo_count}</em>{$lang.Item_promotion}</span>
+                                                <span class="prom-sum">共<em class="prom-number">{$promo_count}</em>项促销</span>
                                                 <i class="iconfont icon-down"></i>
                                             </div>
                                             <!-- {/if} -->
@@ -188,7 +188,7 @@
                                 <!-- {/if} -->
 
                                 <div class="summary-item is-stock">
-                                    <div class="si-tit">{$lang.distribution}</div>
+                                    <div class="si-tit">配送</div>
                                     <div class="si-warp">
                                         <span class="initial-area">
                                             {if $adress.city}
@@ -208,13 +208,13 @@
                                     </div>
                                 </div>
                                 <div class="summary-item is-service">
-                                    <div class="si-tit">{$lang.service}</div>
+                                    <div class="si-tit">服务</div>
                                     <div class="si-warp">
                                         <div class="fl">
                                         {if $goods.user_id > 0}
-                                            {$lang.you} <a href="{$goods.store_url}" class="link-red" target="_blank">{$goods.rz_shopName}</a> {$lang.After_sale_service}
+                                            由 <a href="{$goods.store_url}" class="link-red" target="_blank">{$goods.rz_shopName}</a> 发货并提供售后服务
                                         {else}
-                                            {$lang.you} <a href="javascript:void(0)" class="link-red">{$goods.rz_shopName}</a> {$lang.After_sale_service}
+                                            由 <a href="javascript:void(0)" class="link-red">{$goods.rz_shopName}</a> 发货并提供售后服务
                                         {/if}
                                         </div>
                                         <div class="fl pl10" id="user_area_shipping"></div>
@@ -222,25 +222,25 @@
                                 </div>
                                 <!-- {if $cfg.show_brand && $goods.user_id && $goods.goods_brand} 显示商品品牌-->
                                 <div class="summary-item is-brand">
-                                    <div class="si-tit">{$lang.brand}</div>
+                                    <div class="si-tit">品牌</div>
                                     <div class="si-warp"><a href="{$goods.goods_brand_url}" target="_blank">{$goods.goods_brand}</a></div>
                                 </div>
                                 <!-- {/if} -->
                                 <!-- {if $cfg.use_integral} 购买此商品可使用积分-->
                                 <div class="summary-item is-integral">
-                                    <div class="si-tit">{$lang.keyong_integral}</div>
-                                    <div class="si-warp">{$lang.keyong} <span class="integral">{$goods.integral}</span></div>
+                                    <div class="si-tit">可用积分</div>
+                                    <div class="si-warp">可用 <span class="integral">{$goods.integral}</span></div>
                                 </div>
                                 <!-- {/if} -->
                                 <!-- {if $goods.give_integral && $cfg.show_give_integral} 购买此商品可获得的消费积分-->
                                 <div class="summary-item is-integral">
-                                    <div class="si-tit">{$lang.is_integral}</div>
+                                    <div class="si-tit">赠送积分</div>
                                     <div class="si-warp"><span class="integral">{$goods.give_integral}</span></div>
                                 </div>
                                 <!-- {/if} -->
                                 <!-- {if $goods.goods_extends.is_reality || $goods.goods_extends.is_return || $goods.goods_extends.is_fast} -->
                                 <div class="summary-item">
-                                    <div class="si-tit">{$lang.promise}</div>
+                                    <div class="si-tit">承诺</div>
                                     <div class="si-warp">
                                         <ul class="tips-list">
                                             {if $goods.goods_extends.is_reality}<li class="choose-item choose-zp"><i class="iconfont icon-zheng"></i>{$lang.is_reality}</li>{/if}
@@ -252,7 +252,7 @@
                                 <!-- {/if} -->
                                 <!-- {if $goods.is_xiangou eq 1&& $xiangou eq 1} 商品限购数量-->
                                 <div class="summary-item is-xiangou">
-                                    <div class="si-tit">{$lang.limit_shop}</div>
+                                    <div class="si-tit">限购</div>
                                     <div class="si-warp">
                                         <em id="restrict_amount" ectype="restrictNumber" data-value="{$goods.xiangou_num}">{$goods.xiangou_num}</em>
                                         <span>{if $goods.goods_unit}{$goods.goods_unit}{elseif $goods.measure_unit}{$goods.measure_unit}{/if}</span>
@@ -262,10 +262,10 @@
                                 <!-- {/if} -->
                                 <!-- {if $area_position_list && $goods.store_count > 0} 门店自提-->
                                 <div class="summary-item is-since" ectype="list-store-pick">
-                                    <div class="si-tit">{$lang.self_lifting}</div>
+                                    <div class="si-tit">自提</div>
                                     <div class="si-warp">
-                                        <a href="javascript:void(0);" ectype="seller_store" class="link-red"><i class="iconfont icon-store-alt"></i>{$lang.select_store_info}</a>
-                                        <span class="ml10">{$lang.select_store_info_notic}</span>
+                                        <a href="javascript:void(0);" ectype="seller_store" class="link-red"><i class="iconfont icon-store-alt"></i>选择门店</a>
+                                        <span class="ml10">请选择有货的门店，上门自提</span>
                                     </div>
                                 </div>
                                 <!-- {/if} -->
@@ -327,7 +327,7 @@
 
                                 <!-- {if $stages} 白条分期-->
                                 <div class="summary-item is-ious" ectype="is-ious">
-                                    <div class="si-tit">{$lang.biaotiao}</div>
+                                    <div class="si-tit">白条</div>
                                     <div class="si-warp">
                                         <!-- {foreach from=$stages item=vo key=k} -->
                                         <!-- {if $k eq 1} -->
@@ -353,8 +353,8 @@
                                             <div class="tips">
                                                 <div class="sprite-arrow"></div>
                                                 <div class="content">
-                                                    <p>{$lang.bt_stages_one}</p>
-                                                    <p>{$lang.bt_stages_two}</p>
+                                                    <p>1､实际分期金额及手续费以白条剩余额度及收银台优惠为准</p>
+                                                    <p>2､什么是白条分期？<br>白条分期是商城推出的一种“先消费，后付款”的全新支付方式。使用白条进行付款，可以享受最长30天的延后付款期或最长24期的分期付款方式。</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -363,7 +363,7 @@
                                 </div>
                                 <!-- {/if} -->
                                 <div class="summary-item is-number">
-                                    <div class="si-tit">{$lang.number_to}</div>
+                                    <div class="si-tit">数量</div>
                                     <div class="si-warp">
                                         <div class="amount-warp">
                                             <input class="text buy-num" ectype="quantity" value="1" name="number" defaultnumber="1">
@@ -384,16 +384,16 @@
                             </div>
                             <div class="choose-btns{if !$area_position_list || $goods.store_count <= 0 || !$stages || $goods.is_on_sale eq 0 } ml60{/if} clearfix">
                                 {if $shop_close eq 0 && $goods.user_id neq 0}
-                                	<a class="btn-invalid" href="javascript:void(0);">{$lang.shop_close}</a>
+                                	<a class="btn-invalid" href="javascript:void(0);">此店铺已关闭</a>
                                 {else}
                                     {if $goods.is_alone_sale eq 0}
-                                    <a href="category.php?id=347" class="btn-buynow">{$lang.is_alone_sale}</a>
+                                    <a href="category.php?id=347" class="btn-buynow">查看类似商品</a>
                                     {else}
                                         {if $goods.review_status <= 2 || $goods.is_on_sale eq 0}
-                                            <a id="sold_out" class="btn-invalid" href="javascript:void(0);">{$lang.is_on_sale}</a>
+                                            <a id="sold_out" class="btn-invalid" href="javascript:void(0);">此商品已下架</a>
                                         {else}
                                             {if $goods_area eq 1}
-                                                <a href="{if $user_id <= 0 && $one_step_buy}#none{else}javascript:bool=0;addToCart({$goods.goods_id}){/if}" data-type="{$one_step_buy}" class="btn-buynow" ectype="btn-buynow">{$lang.button_buy}</a>
+                                                <a href="{if $user_id <= 0 && $one_step_buy}#none{else}javascript:bool=0;addToCart({$goods.goods_id}){/if}" data-type="{$one_step_buy}" class="btn-buynow" ectype="btn-buynow">立即购买</a>
                                                 {if !$one_step_buy}
                                                     <a href="javascript:bool=0;addToCartShowDiv({$goods.goods_id})" class="btn-append" ectype="btn-append"><i class="iconfont icon-carts"></i>{$lang.btn_add_to_cart}</a>
                                                 {/if}
@@ -403,19 +403,20 @@
                                                 {/if}
                                                 <!--分期购按钮 end-->
                                             {else}
-                                            <a id="no_addToCart" class="btn-invalid btn_disabled" href="javascript:void(0);">{$lang.temporarily_stock}</a>
+                                            <a id="no_addToCart" class="btn-invalid btn_disabled" href="javascript:void(0);">暂时无货</a>
                                             {/if}
                                         {/if}
                                     {/if}
                                 {/if}
                                 <!-- {if $area_position_list && $goods.store_count > 0} 门店 -->
+                                <input type="hidden" name="ru_id" value="{$goods.user_id}">
                                 <a href="javascript:void(0);" class="btn-since" ectype="btn-store-pick">{$lang.btn_store_pick}</a>
                                 <!-- {/if} 门店 -->
                             </div>
                             <!-- {if $goods.goods_tag} -->
                             <div class="summary-basic-info">
                                 <div class="summary-item is-service">
-                                    <div class="si-tit">{$lang.service_promise}</div>
+                                    <div class="si-tit">服务承诺</div>
                                     <div class="si-warp">
                                         <!-- {foreach from=$goods.goods_tag item=tag} -->
                                         <span class="tary">{$tag}</span>
@@ -427,13 +428,13 @@
                             <!--{if !$goods.goods_extends.is_return || $goods.is_alone_sale eq 0}-->
                             <div class="summary-basic-info">
                                 <div class="summary-item is-service">
-                                    <div class="si-tit">{$lang.reminder}</div>
+                                    <div class="si-tit">温馨提示</div>
                                     <div class="si-warp gray">
                                         <!--{if $goods.is_alone_sale eq 0}-->
-                                        <p>{$lang.is_alone_sale_notic}</p>
+                                        <p>·该商品不支持单独销售</p>
                                         <!--{/if}-->
                                         <!--{if !$goods.goods_extends.is_return}-->
-                                        <p>{$lang.is_return_notic}</p>
+                                        <p>·不支持退换货服务</p>
                                         <!--{/if}-->
                                     </div>
                                 </div>
@@ -484,25 +485,25 @@
                         </div>
                         <div class="g-s-parts">
                             <div class="parts-item parts-goods">
-                                <span class="col1">{$lang.evaluation_single}</span>
+                                <span class="col1">商品评价</span>
                                 <span class="col2 {if $merch_cmt.cmt.commentRank.zconments.is_status eq 1}ftx-01{elseif $merch_cmt.cmt.commentRank.zconments.is_status eq 2}average{else}ftx-02{/if}">{$merch_cmt.cmt.commentRank.zconments.score}<i class="iconfont icon-arrow-{if $merch_cmt.cmt.commentRank.zconments.is_status eq 1}up{elseif $merch_cmt.cmt.commentRank.zconments.is_status eq 2}average{else}down{/if}"></i></span>
                             </div>
                             <div class="parts-item parts-goods">
-                                <span class="col1">{$lang.service_attitude}</span>
+                                <span class="col1">服务态度</span>
                                 <span class="col2 {if $merch_cmt.cmt.commentServer.zconments.is_status eq 1}ftx-01{elseif $merch_cmt.cmt.commentServer.zconments.is_status eq 2}average{else}ftx-02{/if}">{$merch_cmt.cmt.commentServer.zconments.score}<i class="iconfont icon-arrow-{if $merch_cmt.cmt.commentServer.zconments.is_status eq 1}up{elseif $merch_cmt.cmt.commentServer.zconments.is_status eq 2}average{else}down{/if}"></i></span>
                             </div>
                             <div class="parts-item parts-goods">
-                                <span class="col1">{$lang.delivery_speed}</span>
+                                <span class="col1">发货速度</span>
                                 <span class="col2 {if $merch_cmt.cmt.commentDelivery.zconments.is_status eq 1}ftx-01{elseif $merch_cmt.cmt.commentDelivery.zconments.is_status eq 2}average{else}ftx-02{/if}">{$merch_cmt.cmt.commentDelivery.zconments.score}<i class="iconfont icon-arrow-{if $merch_cmt.cmt.commentDelivery.zconments.is_status eq 1}up{elseif $merch_cmt.cmt.commentDelivery.zconments.is_status eq 2}average{else}down{/if}"></i></span>
                             </div>
                         </div>
                     </div>
                     <div class="seller-item">
                     	<a href="javascript:void(0);" ectype="collect_store" data-type='goods' data-value='{"userid":{$user_id},"storeid":{$goods.user_id}}' class="gz-store" data-url="{$goods.goods_url}"></a>
-                        <a href="{$goods.store_url}" class="store-home"><i class="iconfont icon-home-store"></i>{$lang.seller_store}</a>
+                        <a href="{$goods.store_url}" class="store-home"><i class="iconfont icon-home-store"></i>店铺</a>
                         <input type="hidden" name="error" value="{$goods.error}" id="error"/>
                     </div>
-                    <div class="seller-tel"><i class="iconfont icon-tel"></i>{if $shop_information.kf_tel}{$shop_information.kf_tel}{else}{$lang.kf_tel_zanwu}{/if}</div>
+                    <div class="seller-tel"><i class="iconfont icon-tel"></i>{if $shop_information.kf_tel}{$shop_information.kf_tel}{else}暂无联系方式{/if}</div>
                 </div>
                 {/if}
                 <div class="clear"></div>
@@ -542,7 +543,7 @@
                     <!-- {if $goods_store_cat} 店内分类-->
                     <div class="g-main g-store-cate">
                     	<div class="mt">
-                            <h3>{$lang.Store_cat}</h3>
+                            <h3>店内分类</h3>
                         </div>
                         <div class="mc">
                             <div class="g-s-cate-warp">
@@ -566,7 +567,7 @@
                     <!-- {if $goods_related_cat} 相关分类-->
                     <div class="g-main">
                     	<div class="mt">
-                            <h3>{$lang.Relevant_cat}</h3>
+                            <h3>相关分类</h3>
                         </div>
                         <div class="mc">
                             <div class="mc-warp">
@@ -585,7 +586,7 @@
                     <!--{if $goods_brand} 同类其他品牌-->
                     <div class="g-main">
                     	<div class="mt">
-                            <h3>{$lang.Other_brands}</h3>
+                            <h3>同类其他品牌</h3>
                         </div>
                         <div class="mc">
                             <div class="mc-warp">
@@ -726,10 +727,10 @@
                 <div class="g-m-detail">
                 	<div class="gm-tabbox" ectype="gm-tabs">
                     	<ul class="gm-tab">
-                            <li class="curr" ectype="gm-tab-item">{$lang.description}</li>
-                            <!-- {if $properties} --><li ectype="gm-tab-item-spec">{$lang.specification}</li><!--{/if}-->
-                            <li ectype="gm-tab-item">{$lang.user_comment}（<em class="ReviewsCount">{$comment_all.allmen}</em>）</li>
-                            <li ectype="gm-tab-item">{$lang.discuss_user}</li>
+                            <li class="curr" ectype="gm-tab-item">商品详情</li>
+                            <!-- {if $properties} --><li ectype="gm-tab-item-spec">规格参数</li><!--{/if}-->
+                            <li ectype="gm-tab-item">用户评论（<em class="ReviewsCount">{$comment_all.allmen}</em>）</li>
+                            <li ectype="gm-tab-item">网友讨论圈</li>
                         </ul>
                         <div class="extra">
                         	<div class="item">
@@ -749,7 +750,7 @@
                                     	<span class="arrow-top"></span>
                                         <div class="tb-popsku-content">
                                         	<div class="tb-list">
-                                            	<div class="tb-label">{$lang.price}：</div>
+                                            	<div class="tb-label">价格：</div>
                                                 <div class="tb-value"><strong class="shop-price" ectype="SHOP_PRICE"></strong></div>
                                             </div>
                                             <!-- {foreach from=$specification item=spec key=spec_key} -->
@@ -805,7 +806,7 @@
                                             <!-- {/if} -->
                                             <!-- {/foreach} -->
                                         	<div class="tb-list">
-                                            	<div class="tb-label">{$lang.number_to}：</div>
+                                            	<div class="tb-label">数量：</div>
 												<div class="tb-value">
 													<div class="amount-warp">
 														<input class="text buy-num" ectype="quantity" value="1" name="number" defaultnumber="1">
@@ -821,8 +822,8 @@
                                             <div class="tb-list">
                                             	<div class="tb-label">&nbsp;</div>
                                                 <div class="tb-value">
-													<a href="javascript:bool=0;addToCartShowDiv({$goods.goods_id})" class="cz-btn cz-btn-true" ectype="btn-append">{$lang.assign}</a>
-                                                    <a href="javascript:void(0);" class="cz-btn cz-btn-false" ectype="tb-cancel">{$lang.is_cancel}</a>
+													<a href="javascript:bool=0;addToCartShowDiv({$goods.goods_id})" class="cz-btn cz-btn-true" ectype="btn-append">确定</a>
+                                                    <a href="javascript:void(0);" class="cz-btn cz-btn-false" ectype="tb-cancel">取消</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -835,7 +836,7 @@
                     <div class="gm-floors" ectype="gm-floors">
                         <div class="gm-f-item gm-f-details" ectype="gm-item">
                             <div class="gm-title">
-                                <h3>{$lang.description}</h3>
+                                <h3>商品详情</h3>
                             </div>
                             <div class="goods-para-list">
                                 <dl class="goods-para">
@@ -870,7 +871,7 @@
                                 <!-- {/if} -->
                                 <!-- {if $properties} -->
                                 <p class="more-par">
-                                    <a href="javascript:void(0);" ectype="product-detail" class="ftx-05">{$lang.more_parameters}>></a>
+                                    <a href="javascript:void(0);" ectype="product-detail" class="ftx-05">更多参数>></a>
                                 </p>
                                 <!--{/if}-->
                             </div>
@@ -880,7 +881,7 @@
                         <!-- {if $properties} -->
                         <div class="gm-f-item gm-f-parameter" ectype="gm-item" id="product-detail" style="display:none;">
                             <div class="gm-title">
-                                <h3>{$lang.specification}</h3>
+                                <h3>规格参数</h3>
                             </div>
                             <div class="Ptable">
                                 <!-- {foreach from=$properties item=property_group key=key} -->
@@ -899,7 +900,7 @@
                         <!-- {/if} -->
                         <div class="gm-f-item gm-f-comment" ectype="gm-item">
                             <div class="gm-title">
-                                <h3>{$lang.comment_sunburn}</h3>
+                                <h3>评论晒单</h3>
                                 {* DSC 提醒您：动态载入goods_comment_title.lbi，显示首页分类小广告 *}{insert name='goods_comment_title' goods_id=$goods.goods_id}
                             </div>
                             <div class="gm-warp">
@@ -907,20 +908,20 @@
                                     <div class="rate">
                                         <strong>{$comment_all.goodReview}</strong>
                                         <span class="rate-span">
-                                            <span class="tit">{$lang.Rate_praise}</span>
+                                            <span class="tit">好评率</span>
                                             <span class="bf">%</span>
                                         </span>
                                     </div>
                                     <div class="actor-new">
                                         {if $goods.impression_list}
                                         <dl>
-                                            <dd ectype="comment_tag" data-type="1"><span class="red">{$lang.all_attribute}</span></dd>
+                                            <dd ectype="comment_tag" data-type="1"><span class="red">全部</span></dd>
                                             <!--{foreach from=$goods.impression_list item=tag}-->
                                             <dd ectype="comment_tag"><span>{$tag.txt}</span>({$tag.num})</dd>
                                             <!--{/foreach}-->
                                         </dl>
                                         {else}
-                                        <div class="not_impression">{$lang.not_impression}</div>
+                                        <div class="not_impression">此商品还没有设置买家印象，陪我一起等下嘛~</div>
                                         {/if}
                                     </div>
                                 </div>
@@ -1071,7 +1072,6 @@
 		var attr = '';
 		var region_id = $(":input[name='region_id']").val();
 		var area_id = $(":input[name='area_id']").val();
-        var area_city = $("input[name='area_city']").val();
 
 		if(!region_id){
 		   region_id = {$region_id|default:0};
@@ -1226,15 +1226,23 @@
 				$("*[ectype='SHOP_PRICE']").html(res.result);
 			}
 
-            $(".ECS_fittings_interval").html(res.result);
+			if(add_shop_price == 1){
+				$(".ECS_fittings_interval").html(res.shop_price);
+			}else{
+				if(res.show_goods == 1){
+					$(".ECS_fittings_interval").html(res.spec_price);
+				}else{
+					$(".ECS_fittings_interval").html(res.shop_price);
+				}
+			}
 
 			//更新白条分期购每期的价格 start
 			if(res.stages){
 				var i = 0;
 				$.each(res.stages,function(k,v){
 					if(k!=1) {
-                        $("*[ectype='is-ious'] .item i").eq(i).html('￥' + v + '×' + k + json_languages.qi);
-                        $("*[ectype='is-ious'] .item i").eq(i).next('span').html(json_languages.free_desc+'{$goods.stages_rate}%，￥' + v + '×' + k + json_languages.qi);
+						$('#chooseStages dd strong').eq(i).html('￥' + v + '×' + k + qi);
+						$('#chooseStages dd strong').eq(i).next('span').html(free_desc+'{$goods.stages_rate}%，￥' + v + '×' + k + qi);
 					}
 					i++;
 				});
@@ -1250,6 +1258,7 @@
 
 	/* 商品看了又看 start */
 	function seeMoreGoods(){
+
 		var region_id = $(":input[name='region_id']").val();
 		var area_id = $(":input[name='area_id']").val();
 

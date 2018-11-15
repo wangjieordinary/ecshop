@@ -60,7 +60,7 @@
                         	<td colspan="20" class="td_border">
                             	<div class="shenhe">
                                     <input type="submit" name="drop" id="btnSubmit" value="{$lang.drop}" class="sc-btn btn_disabled" disabled="true" />
-                                    <input type="submit" name="configure_goods" id="btnSubmit1" value="{$lang.config_goods}" class="sc-btn btn_disabled" disabled="true" />
+                                    <input type="submit" name="configure_goods" id="btnSubmit1" value="配置商品" class="sc-btn btn_disabled" disabled="true" />
                                     <input type="hidden" name="type_id" id="type_id" value="{}" />
                               	</div>
                             </td>

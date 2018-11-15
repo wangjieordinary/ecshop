@@ -33,13 +33,3 @@ $_LANG['existing'] = "已有";
 $_LANG['No_goods'] = "无货";
 $_LANG['service'] = "客服";
 $_LANG['Recommendation'] = "掌柜推荐";
-
-$_LANG['home_shop'] = "家店铺";
-$_LANG['jian_goods'] = "件商品";
-
-$_LANG['search_goods'] = "搜索商品";
-$_LANG['search_store'] = "搜索店铺";
-
-$_LANG['not_search_goods'] = "无法搜索到商品，请重新输入！";
-
-?>

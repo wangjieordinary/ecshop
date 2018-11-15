@@ -4,13 +4,13 @@
 <div id="merge_dialog">
 	<div class="items merge_items">
 		<div class="item">
-			<div class="label">{$lang.label_goods_name}</div>
+			<div class="label">商品名称：</div>
 			<div class="value lh30">
 				{$goods_info.goods_name}
 			</div>
 		</div>
         <div class="item">
-			<div class="label">{$lang.label_product_id}</div>
+			<div class="label">货品编号：</div>
 			<div class="value lh30">
 				{$product.product_sn}
 			</div>
@@ -18,14 +18,14 @@
         
         {if $warehouse}
         <div class="item">
-			<div class="label">{$lang.label_warehouse_name}</div>
+			<div class="label">仓库名称：</div>
 			<div class="value lh30">
 				{$warehouse.region_name}
 			</div>
 		</div>
         	{if $warehouse.area_name}
             <div class="item">
-                <div class="label">{$lang.label_area_name}</div>
+                <div class="label">地区名称：</div>
                 <div class="value lh30">
                     {$warehouse.area_name}
                 </div>
@@ -40,13 +40,13 @@
 			<div class="label">【{$attr.attr_value}】：</div>
 			<div class="value lh30">
             	{if $editInput neq ''}
-            	<input type="text" name="attr_price" value="{$attr.attr_price|default:0.00}" class="text w120" onBlur="listTable.editInput(this, '{$editInput}', {$attr.goods_attr_id});" placeholder="{$lang.attr_price}" />
+            	<input type="text" name="attr_price" value="{$attr.attr_price|default:0.00}" class="text w120" onBlur="listTable.editInput(this, '{$editInput}', {$attr.goods_attr_id});" placeholder="属性价格" />
                 {else}
                 	{if $goods_info.model_attr eq 1}
-                	<input name="attr_price_{$attr.goods_attr_id}" value="{$attr.attr_price|default:0.00}" type="text" class="text w120" placeholder="{$lang.attr_price}" />
+                	<input name="attr_price_{$attr.goods_attr_id}" value="{$attr.attr_price|default:0.00}" type="text" class="text w120" placeholder="属性价格" />
                 	<input type="hidden" name="goods_attr_id[]" value="{$attr.goods_attr_id}" />
                     {elseif $goods_info.model_attr eq 2}
-                    <input name="attrPrice_{$attr.goods_attr_id}" value="{$attr.attr_price|default:0.00}" type="text" class="text w120" placeholder="{$lang.attr_price}" />
+                    <input name="attrPrice_{$attr.goods_attr_id}" value="{$attr.attr_price|default:0.00}" type="text" class="text w120" placeholder="属性价格" />
                 	<input type="hidden" name="goods_attr_id[]" value="{$attr.goods_attr_id}" />
                     {/if}
                 {/if}

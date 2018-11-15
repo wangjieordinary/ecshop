@@ -40,26 +40,9 @@ $_LANG['End_pitch'] = "距结束";
 $_LANG['Wait_au'] = "等待开拍";
 $_LANG['Popular_recommendation'] = "热门推荐";
 $_LANG['Change_set'] = "换一组";
+
+//20161214
 $_LANG['Latest_price'] = "最新价";
+//20161214
 
-$_LANG['underway'] = "正在进行";
-$_LANG['snatch_mechanism'] = "夺宝机构";
-$_LANG['cost_points_notic'] = "每次出价消耗";
-$_LANG['snatch_goods_notic'] = "件商品已被拍出";
-$_LANG['bid_number'] = "出价次数";
-$_LANG['all_snatch'] = "全部夺宝";
-
-$_LANG['apb_01'] = "获取资格";
-$_LANG['apb_02'] = "夺得商品";
-$_LANG['apb_03'] = "确认订单";
-$_LANG['apb_04'] = "支付订单";
-$_LANG['apb_05'] = "交易完成";
-
-$_LANG['snatch_detail_notic'] = "此活动当前未设置夺宝详情信息哟~";
-$_LANG['service_guarantee_notic'] = "此活动当前未设置服务保障哟~";
-$_LANG['Indiana_snatch_notic'] = "此活动当前未设置竞拍攻略哟~";
-
-/* 夺宝奇兵 */
-$_LANG['js_languages']['snatch']['buy_error'] = '很抱歉，您夺宝的商品暂时缺货，请及时联系客服！';
-
-?>
+$_LANG['buy_error'] = "很抱歉，您夺宝的商品暂时缺货，请及时联系客服！";

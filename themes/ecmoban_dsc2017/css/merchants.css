@@ -35,7 +35,7 @@
 .panel-body{ /*min-height:239px; padding:30px 45px 40px;*/ background-color:#fff; margin-bottom:25px; padding:0 40px;}
 .panel-body .cue{ color:#ec5051; width:100%; margin-top:10px;}
 .panel-body .cue a{ color:#31b4e1;}
-.panel-body .cue a:hover{ color:#1abb8c;}
+.panel-body .cue a:hover{ color:#f42424;}
 .panel-body .panel-tit{ font-size:14px; font-weight:bold; color:#333; margin:0;}
 .panel-body .list{ margin-top:20px;}
 .merSteps .panel:after,.panel .panel-body:after,.panel-body .list:after{ content: '';display: block;clear: both;height: 0;overflow: hidden;visibility: hidden;}
@@ -50,7 +50,7 @@
 .panel-body .item .value .text-2{ width:151px; cursor:pointer; float:none;}
 .panel-body .item .value .text-3{ width:151px; padding-top:0; padding-bottom:0;}
 .panel-body .item .value .jdate{ background-color:#fff;}
-.panel-body .item .value .chakan:hover{ color:#1abb8c;}
+.panel-body .item .value .chakan:hover{ color:#f42424;}
 .panel-body .item .value select{ height:30px; line-height:30px; margin-left:10px; border: 1px solid #d2d2d2; width: 102px; float:left;}
 .panel-body .item .value select:first-child{ margin-left:0}
 .panel-body .item .value select.select2{ width:130px;}
@@ -77,14 +77,14 @@
 .btn-group .btn{ background-color:#ec5051; color:#fff; border-radius:5px; padding:0 20px; height:36px; line-height:36px; cursor:pointer; border:1px solid #ec5051; outline:0;filter:chroma(color=#000000); float:left; font-size:14px; margin-right:0;}
 .btn-group .btn-w{ background:#fff; color:#ec5051; margin-right:20px;}
 .btns{ border:0; height:30px; line-height:30px; padding:0 15px; background:#f68a00; width:auto; color:#fff; border-radius:4px; cursor:pointer;}
-label.error{ color:#1abb8c; margin-left:10px;}
+label.error{ color:#f42424; margin-left:10px;}
 .yel-tip{ margin:10px 0; line-height:25px;}
 .yel-tip a,.link-blue{ color:#3a78bf;}
 .btn-add{ height:30px; line-height:30px; padding:0 14px; background:#f68a00; border-radius:4px; display:block; float:left; color:#fff;}
 .orange {color: #f7a750;}
 .orange2{ color:#f68a00;}
 .verify{ float:left; margin-left:10px; color:#ec5051;}
-.prompt{ padding:0 40px; color:#1abb8c; margin-bottom:10px;}
+.prompt{ padding:0 40px; color:#f42424; margin-bottom:10px;}
 .prompt .yel-tip{ color:#555;}
 .prompt .yel-tip .content{ padding-bottom:20px;}
 

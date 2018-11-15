@@ -38,13 +38,13 @@
             </div>
         </div>
         {foreachelse}
-            <div class="no_content">{$lang.you_no_warehouse_add_first}</div>        
+            <div class="no_content">您现在还没有仓库，请先添加仓库</div>        
         {/foreach}
     </div>
     {if $is_list neq 1}  
     <input type="hidden" name="warehouse_id" value="{$warehouse_id}" />
     <div class="button" id="addWarehouse" dsctype="dialog" data-url="dialog.php?act=dialog_warehouse&temp=addWarehouse&user_id={$goods.user_id}" title="{$lang.add_warehouse}"><span>{$lang.add_warehouse}</span></div>
     <div class="button" id="addBatchWarehouse" dsctype="dialog" data-url="dialog.php?act=dialog_warehouse&temp=addBatchWarehouse" title="{$lang.add_batch_warehouse}"><span>{$lang.add_batch_warehouse}</span></div>
-    <a href="goods_warehouse_batch.php?act=add&goods_id={$goods.goods_id}" class="button">{$lang.batch_upload_csv}</a>
+    <a href="goods_warehouse_batch.php?act=add&goods_id={$goods.goods_id}" class="button">CSV批量上传</a>
     {/if}
 </div>

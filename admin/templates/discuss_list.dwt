@@ -17,7 +17,7 @@
             <div class="flexilist">
                 <div class="common-head">
                     <div class="fl">
-                    	<a href="discuss_circle.php?act=add"><div class="fbutton"><div class="add" title="{$lang.discuss_add}"><span><i class="icon icon-plus"></i>{$lang.discuss_add}</span></div></div></a>
+                    	<a href="discuss_circle.php?act=add"><div class="fbutton"><div class="add" title="添加主题"><span><i class="icon icon-plus"></i>添加主题</span></div></div></a>
                     </div>				
                     <div class="refresh">
                     	<div class="refresh_tit" title="{$lang.refresh_data}"><i class="icon icon-refresh"></i></div>
@@ -26,7 +26,7 @@
 					<div class="search">
                     	<form action="javascript:;" name="searchForm" onSubmit="searchGoodsname(this);">
                     	<div class="input">
-                        	<input type="text" name="keywords" class="text nofocus" placeholder="{$lang.keywords}" autocomplete="off">
+                        	<input type="text" name="keywords" class="text nofocus" placeholder="关键字" autocomplete="off">
 							<input type="submit" class="btn" name="secrch_btn" ectype="secrch_btn" value="" />
                         </div>
                         </form>
@@ -69,8 +69,8 @@
                                     <td><div class="tDiv">{$discuss.add_time}</div></td>                       
                                     <td class="handle">
                                         <div class="tDiv ht_tdiv">
-                                            <a href="discuss_circle.php?act=reply&amp;id={$discuss.dis_id}" class="btn_see"><i class="sc_icon sc_icon_see"></i>{$lang.view}</a>
-                                            <a href="discuss_circle.php?act=user_reply&amp;id={$discuss.dis_id}" class="btn_edit"><i class="icon icon-edit"></i>{$lang.reply}</a>
+                                            <a href="discuss_circle.php?act=reply&amp;id={$discuss.dis_id}" class="btn_see"><i class="sc_icon sc_icon_see"></i>查看</a>
+                                            <a href="discuss_circle.php?act=user_reply&amp;id={$discuss.dis_id}" class="btn_edit"><i class="icon icon-edit"></i>回复</a>
                                             <a href="javascript:" onclick="listTable.remove({$discuss.dis_id}, '{$lang.drop_confirm}')" class="btn_trash"><i class="icon icon-trash"></i>{$lang.drop}</a>
                                         </div>
                                     </td>

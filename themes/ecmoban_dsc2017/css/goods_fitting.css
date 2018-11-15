@@ -42,7 +42,7 @@
 .goods_fittings_main .header .tm-combo-info p{ height:20px; line-height:20px;}
 .goods_fittings_main .header .tm-combo-info p s{ text-decoration:none;}
 
-.goods_fittings_main .header .tm-combo-info .tm-combo-price { color:#1abb8c; display:inline-block; *display:inline; *zoom:1; font-size:12px;}
+.goods_fittings_main .header .tm-combo-info .tm-combo-price { color:#f42424; display:inline-block; *display:inline; *zoom:1; font-size:12px;}
 .goods_fittings_main .header .tm-combo-info .tm-combo-price i { font-style:normal; font-size:16px;}
 .goods_fittings_main .header .tm-combo-info .tm-combo-price s {font-size:16px;}
 
@@ -52,7 +52,7 @@
 
 .goods_fittings_main .header .tm-combo-info .tm-original-price s{ color:#999}
 
-.goods_fittings_main .header .tm-combo-warnning { display:none; color:#1abb8c; margin-top:20px; line-height:20px; float:left; margin-left:10px;}
+.goods_fittings_main .header .tm-combo-warnning { display:none; color:#f42424; margin-top:20px; line-height:20px; float:left; margin-left:10px;}
 
 .goods_fittings_main .header.warnning {background-color:#ffe159;}
 .goods_fittings_main .header.warnning .tm-combo-warnning {display:block;}
@@ -83,7 +83,7 @@
 .goods_fittings_main .body .tm-combo-item .tm-meta dd ul{ margin-top:-10px;}
 .goods_fittings_main .body .tm-combo-item .tm-meta dd li{ float:left; border:1px solid #d2d2d2; padding:2px; margin:10px 10px 0 0; position:relative;}
 .goods_fittings_main .body .tm-combo-item .tm-meta dd li:last-child{ margin-right:0;}
-.goods_fittings_main .body .tm-combo-item .tm-meta dd li.selected,.goods_fittings_main .body .tm-combo-item .tm-meta dd li:hover{border-color: #1abb8c;}
+.goods_fittings_main .body .tm-combo-item .tm-meta dd li.selected,.goods_fittings_main .body .tm-combo-item .tm-meta dd li:hover{border-color: #f42424;}
 .goods_fittings_main .body .tm-combo-item .tm-meta dd li b{ position: absolute;bottom: 0;right: 0;display: none;width: 15px;height: 15px;background: url(../images/dsc-icon.png) 0 0 no-repeat;}
 .goods_fittings_main .body .tm-combo-item .tm-meta dd li.selected b{ display:block;}
 .goods_fittings_main .body .tm-combo-item .tm-meta dd li a{ display:block; overflow:hidden;}
@@ -97,9 +97,9 @@
 .goods_fittings_main .body .tm-combo-item .tm-notice {display:none}
 
 .goods_fittings_main .body .tm-combo-item.hover {border:1px dashed red;position:relative}
-.goods_fittings_main .body .tm-combo-item.hover .tm-notice {position:absolute;right:0;top:0;z-index:1;background-color:#1abb8c;color:#fff;padding:2px 4px;display:block}
+.goods_fittings_main .body .tm-combo-item.hover .tm-notice {position:absolute;right:0;top:0;z-index:1;background-color:#f42424;color:#fff;padding:2px 4px;display:block}
 
-.goods_fittings_main .body .notic{ height:360px; line-height:360px; text-align:center; font-size:16px; color:#1abb8c;}
+.goods_fittings_main .body .notic{ height:360px; line-height:360px; text-align:center; font-size:16px; color:#f42424;}
 
 .goods_fittings_main .footer {*zoom:1;height:70px;width:100%;background-color:#000;color:#999; margin:0;}
 .goods_fittings_main .footer:after {display:block;clear:both;height:0;content:' '}
@@ -111,11 +111,11 @@
 .goods_fittings_main .footer .tm-delivery .mui_addr_tri .mui_addr_tri_2 {color:#fff;padding-right:12px;cursor:pointer;background:0 0;border:0;position:relative;z-index:2}
 .goods_fittings_main .footer .tm-buy {float:right;margin:10px;line-height:40px;position:relative;z-index:1}
 .goods_fittings_main .footer .tm-buy .tm-combo-totalPrice{ margin-left:20px;}
-.goods_fittings_main .footer .tm-buy .tm-combo-totalPrice i {font-family:arial, verdana, sans-serif!important;font-style:normal;font-weight:bolder;color:#1abb8c}
-.goods_fittings_main .footer .tm-buy .tm-combo-totalPrice s {text-decoration:none;font-weight:bolder;font-size:18px;color:#1abb8c; margin-right:5px;position: relative;top: 2px;}
+.goods_fittings_main .footer .tm-buy .tm-combo-totalPrice i {font-family:arial, verdana, sans-serif!important;font-style:normal;font-weight:bolder;color:#f42424}
+.goods_fittings_main .footer .tm-buy .tm-combo-totalPrice s {text-decoration:none;font-weight:bolder;font-size:18px;color:#f42424; margin-right:5px;position: relative;top: 2px;}
 .goods_fittings_main .footer .tm-buy .tm-combo-totalPrice s em{ font-size:12px;}
 .goods_fittings_main .footer .tm-buy input {width:35px;line-height:20px;margin:0 5px; height:20px;}
-.goods_fittings_main .footer .tm-buy button {line-height:40px;background-color:#1abb8c;overflow:visible;border:0;color:#fff;padding:0 15px;border-radius:1px;cursor:pointer; outline:0;}
+.goods_fittings_main .footer .tm-buy button {line-height:40px;background-color:#f42424;overflow:visible;border:0;color:#fff;padding:0 15px;border-radius:1px;cursor:pointer; outline:0;}
 .goods_fittings_main .footer .tm-buy button.disabled {background-color:#818181}
 
-.goods_fittings_main .footer .tm-combo-notice{ background-color:#fee; color:#1abb8c; border:1px solid #f9b3ac; float:left; height:30px; line-height:30px; padding:0 20px; margin:18px 0 0 20px; display:none;}
+.goods_fittings_main .footer .tm-combo-notice{ background-color:#fee; color:#f42424; border:1px solid #f9b3ac; float:left; height:30px; line-height:30px; padding:0 20px; margin:18px 0 0 20px; display:none;}

@@ -27,22 +27,22 @@
                     </div>
                     <div class="score-info">
                         <div class="item">
-                            <p>{$lang.available_integral}</p>
+                            <p>可用积分</p>
                             <div class="num">{$info.pay_points}</div>
                         </div>
                         <div class="item">
-                            <p>{$lang.balance_alt}</p>
+                            <p>余额（元）</p>
                             <div class="num">{$info.user_money}</div>
                         </div>
                     </div>
                     {else}
                     <div class="u-info">
                         <a href="user.php" class="u-avatar"><img src="themes/<?php echo $GLOBALS['_CFG']['template']; ?>/images/touxiang.jpg" alt=""></a>
-                        <div class="u-name"><strong>Hi,{$lang.Welcome_to}<?php echo $GLOBALS['_CFG']['shop_name']; ?></strong></div>
+                        <div class="u-name"><strong>Hi,欢迎来到<?php echo $GLOBALS['_CFG']['shop_name']; ?></strong></div>
                     </div>
                     <div class="score-info">
                         <a href="{$site_domain}user.php" class="login-button">{$lang.please_login}</a>
-                        <a href="user.php?act=register" class="register_button">{$lang.reg_now}</a>
+                        <a href="user.php?act=register" class="register_button">立即注册</a>
                     </div>
                     {/if}
                 </div>
@@ -51,7 +51,7 @@
         <div class="exchange-cate">
             <div class="w w1200">
                 <a href="exchange.php" {if $cat_id eq 0}class="curr"{/if}>{$lang.all}</a><i class="point">·</i>
-                <!--{foreach from=$categories_pro item=cat name=name}-->
+                <!--{foreach from=$category_list item=cat name=name}-->
                 <a {if $cat_id eq $cat.cat_id}class="curr"{/if} href="exchange.php?sort={$pager.search.sort}&cat_id={$cat.cat_id}#exchange_list">{if $cat.cat_alias_name}{$cat.cat_alias_name}{else}{$cat.cat_name}{/if}</a>{if !$smarty.foreach.name.last}<i class="point">·</i>{/if}
                 <!--{/foreach}-->
             </div>
@@ -59,11 +59,11 @@
         <div class="exchange-main">
             <div class="w w1200">
                 <div class="mod-list-sort">
-                    <div class="sort-t">{$lang.sort}：</div>
+                    <div class="sort-t">排序：</div>
                     <div class="sort-l">
-                        <a href="exchange.php?sort=goods_id&order=<!--{if $pager.search.sort eq 'goods_id' && $pager.search.order eq 'ASC'}-->DESC<!--{else}-->ASC<!--{/if}-->#exchange_list" class="sort-item {if $pager.search.sort eq 'goods_id'} curr{/if}">{$lang.default}<i class="iconfont <!--{if $pager.search.sort eq 'goods_id' && $pager.search.order eq 'ASC'}-->icon-up1<!--{else}-->icon-down1<!--{/if}-->"></i></a>
-                        <a href="exchange.php?sort=sales_volume&order=<!--{if $pager.search.sort eq 'sales_volume' && $pager.search.order eq 'ASC'}-->DESC<!--{else}-->ASC<!--{/if}-->#exchange_list" class="sort-item {if $pager.search.sort eq 'sales_volume'}curr{/if}">{$lang.exchange_number}<i class="iconfont <!--{if $pager.search.sort eq 'sales_volume' && $pager.search.order eq 'ASC'}-->icon-up1<!--{else}-->icon-down1<!--{/if}-->"></i></a>
-                        <a href="exchange.php?sort=exchange_integral&order=<!--{if $pager.search.sort eq 'exchange_integral' && $pager.search.order eq 'ASC'}-->DESC<!--{else}-->ASC<!--{/if}-->#exchange_list" class="sort-item {if $pager.search.sort eq 'exchange_integral'}curr{/if}">{$lang.integral_value}<i class="iconfont <!--{if $pager.search.sort eq 'exchange_integral' && $pager.search.order eq 'ASC'}-->icon-up1<!--{else}-->icon-down1<!--{/if}-->"></i></a>
+                        <a href="exchange.php?sort=goods_id&order=<!--{if $pager.search.sort eq 'goods_id' && $pager.search.order eq 'ASC'}-->DESC<!--{else}-->ASC<!--{/if}-->#exchange_list" class="sort-item {if $pager.search.sort eq 'goods_id'} curr{/if}">默认<i class="iconfont <!--{if $pager.search.sort eq 'goods_id' && $pager.search.order eq 'ASC'}-->icon-up1<!--{else}-->icon-down1<!--{/if}-->"></i></a>
+                        <a href="exchange.php?sort=sales_volume&order=<!--{if $pager.search.sort eq 'sales_volume' && $pager.search.order eq 'ASC'}-->DESC<!--{else}-->ASC<!--{/if}-->#exchange_list" class="sort-item {if $pager.search.sort eq 'sales_volume'}curr{/if}">兑换量<i class="iconfont <!--{if $pager.search.sort eq 'sales_volume' && $pager.search.order eq 'ASC'}-->icon-up1<!--{else}-->icon-down1<!--{/if}-->"></i></a>
+                        <a href="exchange.php?sort=exchange_integral&order=<!--{if $pager.search.sort eq 'exchange_integral' && $pager.search.order eq 'ASC'}-->DESC<!--{else}-->ASC<!--{/if}-->#exchange_list" class="sort-item {if $pager.search.sort eq 'exchange_integral'}curr{/if}">积分值<i class="iconfont <!--{if $pager.search.sort eq 'exchange_integral' && $pager.search.order eq 'ASC'}-->icon-up1<!--{else}-->icon-down1<!--{/if}-->"></i></a>
                     </div>
                 </div>
                 <!--{if $goods_list}-->

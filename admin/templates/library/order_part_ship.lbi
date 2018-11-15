@@ -5,27 +5,27 @@
 <div class="mian-info">
 	<div class="switch_info" id="conent_area">
 		<div class="item">
-			<div class="label">{$lang.label_goods_name}</div>
+			<div class="label">商品名称：</div>
 			<div class="label_value">
 				{$order_goods.goods_name}
 			</div>
 		</div>
 		{if $order_goods.goods_attr}
 		<div class="item">
-			<div class="label">{$lang.label_goods_attr}</div>
+			<div class="label">商品属性：</div>
 			<div class="label_value">
 				{$order_goods.goods_attr}
 			</div>
 		</div>	
 		{/if}
 		<div class="item">
-			<div class="label">{$lang.label_goods_stock}</div>
+			<div class="label">商品库存：</div>
 			<div class="label_value">
 				{$order_goods.storage}
 			</div>
 		</div>		
 		<div class="item">
-			<div class="label">{$lang.label_deliver_count}</div>
+			<div class="label">发货数量：</div>
 			<div class="label_value">
 				<input type="text" name="send_number[{$order_goods.rec_id}]" class="text" value="{$order_goods.left_number|default:0}" autocomplete="off" /><div class="notic m20"></div>
 			</div>
@@ -37,7 +37,7 @@
 			</div>
 		</div>-->
 		<div class="item">
-			<div class="label">{$lang.label_operat_remark}</div>
+			<div class="label">操作备注：</div>
 			<div class="label_value">
 				<textarea name="action_note" class="textarea"></textarea><div class="notic m20"></div>
 			</div>

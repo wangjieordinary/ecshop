@@ -32,7 +32,7 @@ var {$key} = "{$item}";
             </div>
             <div class="header-href">
             {if $shop_reg_closed neq 1}
-                <span>{$lang.not_account_number}<a href="user.php?act=register" class="jump">{$lang.Free_registration}</a></span>
+                <span>还没有账号<a href="user.php?act=register" class="jump">{$lang.Free_registration}</a></span>
             {/if}
             </div>
         </div>
@@ -56,7 +56,7 @@ var {$key} = "{$item}";
                     {/if}
                     </div>
                     <div class="login-box">
-                        <div class="tit"><h3>{$lang.account_login}</h3><span></span></div>
+                        <div class="tit"><h3>账号登录</h3><span></span></div>
                         <div class="msg-wrap">
                             <div class="msg-error" style="display:none">{$lang.passport_one}</div>
                         </div>
@@ -109,7 +109,7 @@ var {$key} = "{$item}";
                 </div>
             </div>
             <div class="header-href">
-                <span>{$lang.label_registered}<a href="user.php" class="jump">{$lang.login_here}</a></span>
+                <span>已注册可<a href="user.php" class="jump">{$lang.login_here}</a></span>
             </div>
         </div>
     </div>
@@ -187,7 +187,7 @@ var {$key} = "{$item}";
                                 <div class="input-tip"></div>
                             </div>
                             <!-- {else} -->
-                            {if $field.reg_field_name neq $lang.mobile}
+                            {if $field.reg_field_name neq '手机'}
                             <div class="item">
                                 <div class="item-label">{$field.reg_field_name}</div>
                                 <div class="item-info">
@@ -199,6 +199,16 @@ var {$key} = "{$item}";
                             <!-- {/if} -->
                             <!-- {/foreach} -->
                             
+                            <!-- {if $enabled_captcha} 判断是否启用验证码-->
+                            <div class="item">
+                                <div class="item-label">{$lang.Code_bind}</div>
+                                <div class="item-info">
+                                    <input type="text" id="captcha" name="captcha" class="text text-2 fl" value="" autocomplete="off" />
+                                    <img src="captcha_verify.php?captcha=is_register_phone&{$rand}" class="captcha_img fl" onClick="this.src='captcha_verify.php?captcha=is_register_phone&'+Math.random()">
+                                </div>
+                                <div class="input-tip"></div>
+                            </div>
+                            <!--{/if}-->
                             <!-- {if $sms_register} 判断是否启用手机短信验证码-->
                             <div class="item" id="code_mobile">
                                 <div class="item-label">{$lang.bindMobile_code}</div>
@@ -218,17 +228,6 @@ var {$key} = "{$item}";
                                 </div>
                                 <div class="input-tip"></div>
                             </div>
-                            
-                            <!-- {if $enabled_captcha} 判断是否启用验证码-->
-                            <div class="item">
-                                <div class="item-label">{$lang.Code_bind}</div>
-                                <div class="item-info">
-                                    <input type="text" id="captcha" name="captcha" class="text text-2 fl" value="" autocomplete="off" />
-                                    <img src="captcha_verify.php?captcha=is_register_phone&{$rand}" class="captcha_img fl" onClick="this.src='captcha_verify.php?captcha=is_register_phone&'+Math.random()">
-                                </div>
-                                <div class="input-tip"></div>
-                            </div>
-                            <!--{/if}-->
                             
                             <div class="item item2">
                                 <div class="item-checkbox">
@@ -270,7 +269,7 @@ var {$key} = "{$item}";
                 </div>
             </div>
             <div class="header-href">
-                <span>{$lang.label_registered}<a href="user.php" class="jump">{$lang.login_here}</a></span>
+                <span>已注册可<a href="user.php" class="jump">{$lang.login_here}</a></span>
             </div>
         </div>
     </div>
@@ -284,8 +283,8 @@ var {$key} = "{$item}";
                             <div class="item-label">&nbsp;</div>
                             <div class="gp-tab{foreach from=$extend_info_list item=field}{if $field.id eq 6} gptabThree{/if}{/foreach}" ectype="gpTab">
                                 <ul>
-                                    <li class="curr"><i class="iconfont icon-mobile-phone"></i><span>{$lang.mobile_retrieve}</span></li>
-                                    <li><i class="iconfont icon-email"></i><span>{$lang.email_retrieve}</span></li>
+                                    <li class="curr"><i class="iconfont icon-mobile-phone"></i><span>手机找回</span></li>
+                                    <li><i class="iconfont icon-email"></i><span>邮箱找回</span></li>
                                     {foreach from=$extend_info_list item=field}{if $field.id eq 6}<li ectype="gptabLast"><i class="iconfont icon-icon02"></i><span>{$lang.Regist_problem}</span></li>{/if}{/foreach}
                                 </ul>
                             </div>
@@ -305,13 +304,13 @@ var {$key} = "{$item}";
                                             <input type="hidden" name="seKey" value="get_phone_password" autocomplete="off" />
                                             <input type="text" id="mobile_captcha" name="captcha" class="text text-2 fl" value="" maxlength="6"  placeholder="{$lang.comment_captcha}" autocomplete="off" />
                                             <img src="captcha_verify.php?captcha=is_get_phone_password&{$rand}" alt="captcha" name="img_captcha" onClick="this.src='captcha_verify.php?captcha=is_get_phone_password&'+Math.random()" data-key="get_phone_password" class="captcha_img fl">
-                                        	<span class="fr lh30 red">{$lang.captcha_notic}</span>
+                                        	<span class="fr lh30 red">看不清，点击图片换一张</span>
                                         </div>
                                         <div class="input-tip"></div>
                                     </div>
                                     <!-- {/if} -->
                                     <div class="item">
-                                        <div class="item-label">{$lang.bindMobile_code}</div>
+                                        <div class="item-label">手机验证码</div>
                                         <div class="item-info phone_code">
                                             <input name="sms_value" id="sms_value" type="hidden" value="sms_find_signin" autocomplete="off" />
                                             <input type="text" id="sms" name="mobile_code" class="text text-2"  maxlength="6" value="" autocomplete="off" placeholder="{$lang.msg_mobile_code}"/>
@@ -323,7 +322,7 @@ var {$key} = "{$item}";
                                         <input type="hidden" name="flag" id="flag" value='forget' autocomplete="off" />
                                         <input type="hidden" name="seccode" id="seccode" value="{$sms_security_code}" autocomplete="off" />
                                         <input type="hidden" name="act" value="get_pwd_mobile" autocomplete="off" />
-                                        <input type="submit" name="submit" id="get-phone-submit" value="{$lang.submit}" class="btn sc-redBg-btn" ectype="submitBtn">
+                                        <input type="submit" name="submit" id="get-phone-submit" value="提&nbsp;交" class="btn sc-redBg-btn" ectype="submitBtn">
                                     </div>
                                 </form>
                             </div>
@@ -335,7 +334,7 @@ var {$key} = "{$item}";
                                         <div class="input-tip"></div>
                                     </div>
                                     <div class="item">
-                                        <div class="item-label">{$lang.email_account}</div>
+                                        <div class="item-label">邮 箱 账 号</div>
                                         <div class="item-info"><input type="text" name="email" id="email" class="text" placeholder="{$lang.email_reset}" autocomplete="off" /></div>
                                         <div class="input-tip"></div>
                                     </div>
@@ -346,7 +345,7 @@ var {$key} = "{$item}";
                                         <div class="item-info">
                                             <input type="text" id="captcha" name="captcha" class="text text-2 fl" value="" maxlength="6"  placeholder="{$lang.comment_captcha}" autocomplete="off" />
                                             <img src="captcha_verify.php?captcha=is_get_password&{$rand}" alt="captcha" name="img_captcha" onClick="this.src='captcha_verify.php?captcha=is_get_password&'+Math.random()" data-key="get_password" class="captcha_img fl">
-                                        	<span class="fr lh30 red">{$lang.captcha_notic}</span>
+                                        	<span class="fr lh30 red">看不清，点击图片换一张</span>
                                         </div>
                                         <div class="input-tip"></div>
                                     </div>
@@ -355,7 +354,7 @@ var {$key} = "{$item}";
                                         <input type="hidden" name="act" value="send_pwd_email" autocomplete="off"/>
                                         <input type="hidden" id="captcha_verification" name="captcha_verification" value="" autocomplete="off" />
                                         <input type="hidden" id="email_enabled_captcha" value="{$enabled_captcha}" autocomplete="off" />
-                                        <input type="submit" name="submit" id="get-phone-submit" value="{$lang.submit}" class="btn sc-redBg-btn" ectype="submitBtn">
+                                        <input type="submit" name="submit" id="get-phone-submit" value="提&nbsp;交" class="btn sc-redBg-btn" ectype="submitBtn">
                                     </div>
                                 </form>
                             </div>
@@ -370,7 +369,7 @@ var {$key} = "{$item}";
                                 <!-- {foreach from=$extend_info_list item=field} -->
                                 <!-- {if $field.id eq 6} -->
                                 <div class="item">
-                                	<div class="item-label">{$lang.Prompt_problem}：</div>
+                                	<div class="item-label">提示问题：</div>
                                     <div class="fl">
                                         <div id="divselect" class="divselect">
                                           <div class="cite"><span>{$lang.passwd_question}</span></div>
@@ -386,7 +385,7 @@ var {$key} = "{$item}";
                                     <div class="input-tip"></div>
                                 </div>
                                 <div class="item">
-                                	<div class="item-label">{$lang.passwd_answer_useer}：</div>
+                                	<div class="item-label">问题答案：</div>
                                     <div class="item-info">
                                         <input name="passwd_answer" type="text" size="25" class="text" maxlengt='20' placeholder="{$lang.passwd_answer}" autocomplete="off" />
                                     </div>
@@ -401,14 +400,14 @@ var {$key} = "{$item}";
                                         <input type="hidden" name="seKey" value="get_password" autocomplete="off" />
                                         <input type="text" id="mobile_captcha" name="captcha" class="text text-2 fl" value="" maxlength="6"  placeholder="{$lang.comment_captcha}" autocomplete="off" />
                                         <img src="captcha_verify.php?captcha=get_pwd_question&{$rand}" alt="captcha" name="img_captcha" onClick="this.src='captcha_verify.php?captcha=get_pwd_question&'+Math.random()" data-key="psw_question" class="captcha_img fl">
-                                        <span class="fr lh30 red">{$lang.captcha_notic}</span>
+                                        <span class="fr lh30 red">看不清，点击图片换一张</span>
                                     </div>
                                     <div class="input-tip"></div>
                                 </div>
                                 <!-- {/if} -->
                                 <div class="item item2 item-button">
                                     <input type="hidden" name="act" value="check_answer" autocomplete="off" />
-                                    <input type="submit" name="submit" value="{$lang.submit}" class="btn sc-redBg-btn" ectype="submitBtn">
+                                    <input type="submit" name="submit" value="提&nbsp;交" class="btn sc-redBg-btn" ectype="submitBtn">
                                 </div>
                                 </form>
                             </div>
@@ -432,7 +431,7 @@ var {$key} = "{$item}";
                 </div>
             </div>
             <div class="header-href">
-                <span>{$lang.label_registered}<a href="user.php" class="jump">{$lang.login_here}</a></span>
+                <span>已注册可<a href="user.php" class="jump">{$lang.login_here}</a></span>
             </div>
         </div>
     </div>
@@ -450,7 +449,7 @@ var {$key} = "{$item}";
                             <div class="gp-content">
                                 <div class="gp-warp" style="display:block;">
                                     <div class="item">
-                                        <div class="item-label">{$lang.bind_password}</div>
+                                        <div class="item-label">设 置 密 码</div>
                                         <div class="item-info">
                                             <input type="password" style="display:none"/>
                                             <input name="new_password" type="password" id="pwd" class="text" autocomplete="off" placeholder="{$lang.new_password}"/>
@@ -458,7 +457,7 @@ var {$key} = "{$item}";
                                         <div class="input-tip"></div>
                                     </div>
                                     <div class="item">
-                                        <div class="item-label">{$lang.bind_password2}</div>
+                                        <div class="item-label">确 认 密 码</div>
                                         <div class="item-info">
                                             <input type="password" style="display:none"/>
                                             <input name="confirm_password" type="password" id="pwdRepeat" class="text" autocomplete="off"placeholder="{$lang.confirm_password}" />
@@ -471,7 +470,7 @@ var {$key} = "{$item}";
                                         <div class="item-info">
                                             <input type="text" id="captcha" name="captcha" class="text text-2 fl" value="" autocomplete="off" maxlength="6"  placeholder="{$lang.comment_captcha}"/>
                                             <img src="captcha_verify.php?captcha=is_get_password&{$rand}" alt="captcha" name="img_captcha" onClick="this.src='captcha_verify.php?captcha=is_get_password&'+Math.random()" class="captcha_img fl" data-key="get_password">
-                                        	<span class="fr lh30 red">{$lang.captcha_notic}</span>
+                                        	<span class="fr lh30 red">看不清，点击图片换一张</span>
                                         </div>
                                         <div class="input-tip"></div>
                                     </div>

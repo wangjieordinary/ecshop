@@ -29,7 +29,7 @@
                             <div class="stat_order_search stat_order_search2">
                                 <form action="" method="post" id="" name="selectForm">
                                     <div class="search_item">
-                                        <strong class="label_txt">{$lang.time}：</strong>
+                                        <strong class="label_txt">时间：</strong>
                                         <div class="text_time" id="text_time_start">
                                             <input type="text" class="text" name="start_date" value="" id="start_date" value="" autocomplete="off" readonly>
                                         </div>
@@ -37,7 +37,7 @@
                                         <div class="text_time" id="text_time_end">
                                             <input type="text" class="text" name="end_date" value="" id="end_date" value="" autocomplete="off" readonly>
                                         </div>
-                                        <a href="javascript:void(0);" class="btn btn30 blue_btn" ectype="searchButton"><i class="icon icon-search"></i>{$lang.btn_search}</a>
+                                        <a href="javascript:void(0);" class="btn btn30 blue_btn" ectype="searchButton"><i class="icon icon-search"></i>查询</a>
                                     </div>
                                     <input name="act" type="hidden" value="balance_total_stats">
                                 </form>
@@ -48,38 +48,38 @@
                                         <ul class="module_ss_ul">
                                             <li>
                                                 <div class="desc desc-tc">
-                                                    <h2>{$lang.stats_recharge_money}</h2>
-                                                    <div class="price"><font ectype='stats_recharge_money'>{$total_stats.recharge_money}</font><span>{$lang.yuan}</span></div>
+                                                    <h2>存入总金额</h2>
+                                                    <div class="price"><font ectype='stats_recharge_money'>{$total_stats.recharge_money}</font><span>元</span></div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="desc desc-tc">
-                                                    <h2>{$lang.stats_consumption_money}</h2>
-                                                    <div class="price"><font ectype='stats_consumption_money'>{$total_stats.consumption_money}</font><span>{$lang.yuan}</span></div>
+                                                    <h2>消费总金额</h2>
+                                                    <div class="price"><font ectype='stats_consumption_money'>{$total_stats.consumption_money}</font><span>元</span></div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="desc desc-tc">
-                                                    <h2>{$lang.stats_cash_money}</h2>
-                                                    <div class="price"><font ectype='stats_cash_money'>{$total_stats.cash_money}</font><span>{$lang.yuan}</span></div>
+                                                    <h2>提现总金额</h2>
+                                                    <div class="price"><font ectype='stats_cash_money'>{$total_stats.cash_money}</font><span>元</span></div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="desc desc-tc">
-                                                    <h2>{$lang.stats_return_money}</h2>
-                                                    <div class="price"><font ectype='stats_return_money'>{$total_stats.return_money}</font><span>{$lang.yuan}</span></div>
+                                                    <h2>退款总金额</h2>
+                                                    <div class="price"><font ectype='stats_return_money'>{$total_stats.return_money}</font><span>元</span></div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="desc desc-tc">
-                                                    <h2>{$lang.stats_user_money}</h2>
-                                                    <div class="price"><font ectype='stats_user_money'>{$total_stats.user_money}</font><span>{$lang.yuan}</span></div>
+                                                    <h2>剩余总余额</h2>
+                                                    <div class="price"><font ectype='stats_user_money'>{$total_stats.user_money}</font><span>元</span></div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="desc desc-tc">
-                                                    <h2>{$lang.stats_user_num}</h2>
-                                                    <div class="price"><font ectype='stats_user_num'>{$total_stats.user_num}</font><span>{$lang.ge}</span></div>
+                                                    <h2>使用总人数</h2>
+                                                    <div class="price"><font ectype='stats_user_num'>{$total_stats.user_num}</font><span>个</span></div>
                                                 </div>
                                             </li>
                                         </ul>

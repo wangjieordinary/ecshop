@@ -30,13 +30,13 @@
                             {else}
                                 {if $log_info.log_type neq 1 && $log_info.log_type neq 4}
                                 <div class="item">
-                                    <div class="label">{if $log_info.payment_info.pay_name eq $lang.bank_remittance}{$lang.label_topup}{else}{$lang.label_deposit_balance}{/if}：</div>
+                                    <div class="label">{if $log_info.payment_info.pay_name eq '银行汇款/转帐'}{$lang.label_topup}{else}{$lang.label_deposit_balance}{/if}：</div>
                                     <div class="label_value">{$seller_shopinfo.seller_money}</div>
                                 </div>
                                 {/if}
                             <div class="item">
-                                <div class="label">{if $log_info.payment_info.pay_name eq $lang.bank_remittance}{$lang.label_topup_account}{else}{$lang.label_deposit_account}{/if}：</div>
-                                <div ectype="log_amount" class="label_value">
+                                <div class="label">{if $log_info.payment_info.pay_name eq '银行汇款/转帐'}{$lang.label_topup_account}{else}{$lang.label_deposit_account}{/if}：</div>
+                                <div class="label_value">
                                     {$log_info.amount}
                                 </div>
                             </div>
@@ -53,7 +53,7 @@
                                     {$real.self_num}
                                 </div>
                             </div>		
-                            {if $log_info.payment_info.pay_name eq $lang.bank_remittance}						
+                            {if $log_info.payment_info.pay_name eq '银行汇款/转帐'}						
                             <div class="item">
                                 <div class="label">{$lang.label_pay_type}：</div>
                                 <div class="label_value">
@@ -123,7 +123,7 @@
                                 </div>
                             </div>
                             {if $log_info.log_type neq 5}
-                                {if $log_info.payment_info.pay_name eq $lang.bank_remittance}				
+                                {if $log_info.payment_info.pay_name eq '银行汇款/转帐'}				
                                 <div class="item">
                                     <div class="label">{$lang.transfer_certificate}：</div>
                                     <div class="label_value">{if $log_info.certificate_img}<a href="../{$log_info.certificate_img}" target="_blank">{$lang.check}</a>{else}{$lang.no_wu}{/if}</div>
@@ -218,7 +218,6 @@
                                     <input type="hidden" name="act_type" value="account_log" />
                                     {/if}
                                     <input type="hidden" name="log_id" value="{$log_id}" />
-                                    <input type="hidden" name="frozen_money" value="{$seller_shopinfo.frozen_money}" />
                                 </div>
                             </div>
                             {/if}		
@@ -233,26 +232,10 @@
 <script type="text/javascript">
 $(function(){
     //表单验证
-	$(document).on('click','#submitBtn',function(){
+	$("#submitBtn").click(function(){
 		if($("#submitForm").valid()){
-            var frozen_money = $("input[name='frozen_money']").val();
-            var log_status = $("input[name='log_status']:checked").val();
-            var amount = {$log_info.amount};
-            var log_id = {$log_id};
 			//防止表单重复提交
 			if(checkSubmit() == true){
-                if(log_status == 1){
-                    if(frozen_money < amount){
-                        pbDialog(deposit_notice,deposit_notice_comment, 0, '','','',true,function(data){
-                            Ajax.call('merchants_account.php?act=change_amount', 'log_id=' + log_id + '&frozen_money=' + frozen_money, function(data){
-                                if(data.error == 0){
-                                    location.reload();                                    
-                                }
-                            }, "GET", "JSON");
-                        }); 
-                        return false;                   
-                    }                    
-                }
 				$(this).parents("form").submit();
 			}else{
 				return false;

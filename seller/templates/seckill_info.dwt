@@ -31,9 +31,9 @@
 				{/if}
                 
                 <div class="explanation clear" id="explanation">
-                    <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                    <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                     <ul>
-                    	<li>{$lang.warn_submit_will_rechcek}</li>
+                    	<li>温馨提示：提交操作将会重新审核，请慎重提交确定。</li>
                     </ul>
                 </div>
                 
@@ -67,11 +67,11 @@
                                     <div class="checkbox_items">
                                         <div class="checkbox_item"> 
                                             <input name="is_putaway" type="radio" class="ui-radio" value="0" id="is_putaway_0"{if $sec.is_putaway eq 0}checked="checked"{/if} />
-                                            <label for="is_putaway_0" class="ui-radio-label">{$lang.out_sale}</label>
+                                            <label for="is_putaway_0" class="ui-radio-label">下架</label>
                                         </div>
                                         <div class="checkbox_item"> 
                                             <input name="is_putaway" type="radio" class="ui-radio" value="1" id="is_putaway_1" {if $sec.is_putaway || $sec.is_putaway eq ''}checked="checked"{/if} />
-                                            <label for="is_putaway_1" class="ui-radio-label">{$lang.on_sale}</label>
+                                            <label for="is_putaway_1" class="ui-radio-label">上线</label>
                                         </div>
                                     </div>
                                 </dd>
@@ -131,7 +131,7 @@ $(function(){
 		},
 		messages:{
 			acti_title:{
-				 required : '<i class="icon icon-exclamation-sign"></i>'+acti_title_not_null
+				 required : '<i class="icon icon-exclamation-sign"></i>秒杀活动标题不能为空'
 			},
 			begin_time :{
 				required : '<i class="icon icon-exclamation-sign"></i>'+start_data_notnull

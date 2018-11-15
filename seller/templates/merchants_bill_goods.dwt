@@ -14,11 +14,11 @@
 				{include file ='library/seller_menu_tab.lbi'}
                 
                 <div class="explanation clear mb20" id="explanation">
-                    <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.reminder}</h4></div>
+                    <div class="ex_tit"><i class="sc_icon"></i><h4>温馨提示</h4></div>
                     <ul>
-                    	<li>{$lang.operation_prompt_content.list.0}</li>
-                    	<li>{$lang.operation_prompt_content.bill_goods.2}</li>
-                    	<li>{$lang.operation_prompt_content.bill_goods.3}</li>
+                    	<li>商城所有店铺结算订单相关信息管理。</li>
+                    	<li>【订单】：表示是按店铺佣金比例或者分类佣金比例</li>
+                    	<li>【商品】：表示是商品单独设置佣金比例</li>
                     </ul>
                 </div>
                 
@@ -29,16 +29,16 @@
                     <thead>
                     <tr>
                       <th width="6%">{$lang.record_id}</th>
-                      <th width="15%">{$lang.goods_id}</th>
-                      <th width="35%" class="tl">{$lang.goods_name}</th>
-                      <th>{$lang.cate_name}</th>
+                      <th width="15%">商品编号</th>
+                      <th width="35%" class="tl">商品名称</th>
+                      <th>分类名称</th>
                       {if $filter.commission_model eq 1}
-                      <th>{$lang.commission_rate}</th>
+                      <th>佣金比例</th>
                       {/if}
-                      <th>{$lang.goods_price}</th>
-                      <th>{$lang.goods_number}</th>
+                      <th>商品价格</th>
+                      <th>商品数量</th>
                       {if $is_dir}
-                      <th>{$lang.drp_money}</th>
+                      <th>分销金额</th>
                       {/if}
                     </tr>
                     </thead>
@@ -52,10 +52,10 @@
                       <td class="tl">
                       	<p>
                       	{$goods.goods_name}
-                        {if $goods.is_return}<em class="red">{$lang.returned_k}</em>{/if}
+                        {if $goods.is_return}<em class="red">【已退货】</em>{/if}
                         </p>
                       	{if $goods.commission_rate}
-                        <p><em style="color:#31b4e1;">{$lang.label_goods_k}{$goods.commission_rate}%</em></p>
+                        <p><em style="color:#31b4e1;">【商品】：{$goods.commission_rate}%</em></p>
                         {/if}
                       </td>
                       <td>{$goods.cat_name}</td>

@@ -39,7 +39,7 @@
                                 {if $vo.is_overtime eq 1}
                                 <span>{$lang.remaining}</span><span class="days">00</span>{$lang.day}<span class="hours">00</span>{$lang.hour_two}<span class="minutes">00</span>{$lang.minute}<span class="seconds">00</span>{$lang.seconds}
                                 {else}
-                                <span>{$lang.has_ended}</span>
+                                <span>已结束</span>
                                 {/if}
                             </div>
                         </div>

@@ -1,5 +1,6 @@
 {include file="page_header"}
 
+
 	<div class="con mb-7">
 		<div class="brand-list-info">
 			<!--<header>-->
@@ -27,8 +28,11 @@
 								<a href="# ">进入专区</a>
 							</div>-->
 						</section>
-                        <img class="bg " src="{$brand_info.brand_bg}">
-
+                                            <!--{if !empty($brand_info.brand_bg)}-->
+                                                 <img class="bg " src="{$brand_info.brand_bg}">
+                                            <!--{else}-->
+						<!--<img class="bg " src="{elixir('img/shopping_info_b.png ')}">-->
+                                            <!--{/if}-->
 					</div>
 				</div>
 			</div>
@@ -137,19 +141,19 @@
         </div>
 	</div>
 <!--快捷导航-->
-	{include file="float_nav"}
+	{include file="float_nav"} 
 	<li>
         <a href="{url('brand/index/index')}">
              <i class="iconfont icon-pinpai1"></i>
              <p>品牌街</p>
-        </a>
-     </li>
+        </a> 
+     </li>  
      <li>
         <a href="{url('brand/index/nav')}">
              <i class="iconfont icon-pinpai"></i>
              <p>全部品牌</p>
-        </a>
-     </li>
+        </a> 
+     </li>  
     {include file="float_nav_footer"}
 
 	<script>

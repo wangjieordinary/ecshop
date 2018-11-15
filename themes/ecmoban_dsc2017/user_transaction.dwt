@@ -54,10 +54,10 @@
         <div class="user-mod">
             <div class="user-account-warp">
                 <div class="user-title">
-                    <h2>{$lang.users_log}</h2>
+                    <h2>操作日志</h2>
 					<ul class="tabs">
                         <li><a href="user.php?act=profile">{$lang.profile}</a></li>
-                        <li class="active"><a href="user.php?act=users_log">{$lang.users_log}</a></li>
+                        <li class="active"><a href="user.php?act=users_log">操作日志</a></li>
                     </ul>
                 </div>
                 <div class="account-main account-not">
@@ -118,7 +118,7 @@
                 <h2>{$lang.profile}</h2>
 				<ul class="tabs">
                     <li class="active"><a href="user.php?act=profile">{$lang.profile}</a></li>
-                    <li><a href="user.php?act=users_log">{$lang.users_log}</a></li>
+                    <li><a href="user.php?act=users_log">操作日志</a></li>
                 </ul>
             </div>
             <div class="user-profile-info">
@@ -139,7 +139,7 @@
                             <div class="label">{$lang.Birthday_user}：</div>
                             <div class="value">
                                 <div id="birthdayYear" class="imitate_select w90 mr10">
-                                    <div class="cite"><span>{if $profile.year}{$profile.year}{else}{$lang.please_select}{/if}</span><i class="iconfont icon-down"></i></div>
+                                    <div class="cite"><span>{if $profile.year}{$profile.year}{else}请选择{/if}</span><i class="iconfont icon-down"></i></div>
                                     <ul>
                                         {foreach from=$select_date.year item=year}
                                         <li><a href="javascript:void(0);" data-value="{$year}">{$year}</a></li>
@@ -148,7 +148,7 @@
                                     <input type="hidden" name="birthdayYear" value="{$profile.year}" id="birthdayYear_val"/>
                                 </div>
                                 <div class="imitate_select w90 mr10">
-                                    <div class="cite"><span>{if $profile.month}{$profile.month}{else}{$lang.please_select}{/if}</span><i class="iconfont icon-down"></i></div>
+                                    <div class="cite"><span>{if $profile.month}{$profile.month}{else}请选择{/if}</span><i class="iconfont icon-down"></i></div>
                                     <ul>
                                         {foreach from=$select_date.month item=month}
                                         <li><a href="javascript:void(0);" data-value="{$month}">{$month}</a></li>
@@ -157,7 +157,7 @@
                                     <input type="hidden" name="birthdayMonth" value="{$profile.month}"/>
                                 </div>
                                 <div class="imitate_select w90">
-                                    <div class="cite"><span>{if $profile.day}{$profile.day}{else}{$lang.please_select}{/if}</span><i class="iconfont icon-down"></i></div>
+                                    <div class="cite"><span>{if $profile.day}{$profile.day}{else}请选择{/if}</span><i class="iconfont icon-down"></i></div>
                                     <ul>
                                         {foreach from=$select_date.day item=data}
                                         <li><a href="javascript:void(0);" data-value="{$data}">{$data}</a></li>
@@ -218,7 +218,7 @@
                             <div class="label">{$lang.passwd_question}：</div>
                             <div class="value">
                                 <div class="imitate_select w200">
-                                    <div class="cite"><span>{if $profile.passwd_question}{$profile.passwd_question}{else}{$lang.please_select}{/if}</span><i class="iconfont icon-down"></i></div>
+                                    <div class="cite"><span>{if $profile.passwd_question}{$profile.passwd_question}{else}请选择{/if}</span><i class="iconfont icon-down"></i></div>
                                     <ul>
                                         <li><a href="javascript:void(0);" data-value="0">{$lang.sel_question}</a></li>
                                         {foreach from=$passwd_questions item=data}
@@ -236,8 +236,8 @@
                             </div>
                         </div>
                         <!-- {else} -->
-                        {if $field.reg_field_name neq $lang.mobile}
-                        <div class="item mr10">
+                        {if $field.reg_field_name neq '手机'}
+                        <div class="item" style="margin-top:10px;">
                             <div class="label" {if $field.is_need} id="extend_field{$field.id}i"{/if} >{$field.reg_field_name}：</div>
                             <div class="value">
                                 <input name="extend_field{$field.id}" id="extend_field{$field.id}" type="text" class="text text-1" value="{$field.content}"/>
@@ -258,6 +258,7 @@
                     </form>
                 </div>
                 <div class="avatar_change" ectype="upImgTouch">
+                	
                     {if $profile.user_picture}
                     <img class="am-circle" src="{$profile.user_picture}?&'+Math.random();" width="120" height="120">
                     {else}
@@ -272,14 +273,14 @@
         <div class="am-modal" ectype="docMdal">
             <div class="am-modal-dialog">
                 <div class="am-modal-hd">
-                    <label>{$lang.Modify_Avatar}</label>
+                    <label>修改头像</label>
                     <a href="javascript: void(0)" class="am-close am-close-spin" data-am-modal-close>&times;</a>
                 </div>
                 <div class="am-modal-bd">
                     <div class="am-g am-fl">
                         <div class="am-form-group am-form-file">
                             <div class="am-fl">
-                                <button type="button" class="am-btn am-btn-default"><i class="iconfont icon-cloud-upload-alt"></i> {$lang.select_upload_file}</button>
+                                <button type="button" class="am-btn am-btn-default"><i class="iconfont icon-cloud-upload-alt"></i> 选择要上传的文件</button>
                             </div>
                             <input type="file" ectype="fileImage" id="inputImage">
                         </div>
@@ -303,7 +304,7 @@
         <div class="am-modal am-modal-alert" ectype="modalAlert">
             <div class="am-modal-dialog">
                 <div class="am-modal-bd" ectype="alertContent"></div>
-                <div class="am-modal-footer"><span class="am-modal-btn">{$lang.assign}</span></div>
+                <div class="am-modal-footer"><span class="am-modal-btn">确定</span></div>
             </div>
         </div>
         <!-- {/if} -->
@@ -314,7 +315,7 @@
         <div class="user-mod">
             <!--{if $type eq 'default'}-->
             <div class="user-title">
-                <h2>{$lang.account_safe}</h2>
+                <h2>账户安全</h2>
                 <div class="user-safe-level level-{$security_rating.count}">
                     <div class="level-word">{$security_rating.count_info}</div>
                     <div class="level-progress"></div>
@@ -346,7 +347,7 @@
                         <div class="info-name">{$lang.email_yanzheng}</div>
                         <p>{$lang.Email_authent_desc}</p>
                     </div>
-                    <div class="item-handle"><a href="user.php?act=account_safe&type=change_email" class="handle-btn handle-btn-red">{$lang.Immediately_verify}</a></div>
+                    <div class="item-handle"><a href="user.php?act=account_safe&type=change_email" class="handle-btn handle-btn-red">立即{$lang.is_validated}</a></div>
                     <!-- {/if} -->
                 </div>
                 <div class="item">
@@ -1115,7 +1116,7 @@
                         <!-- {if $validate_info.pay_password} -->
                         <dd class="s-text">{$lang.edit_pay_password}<s></s><b></b></dd>
                         <!-- {else} -->
-                        <dd class="s-text">{if $password_type eq 1}{$lang.reset_pay_password}{else}{$lang.Enable_pay_password}{/if}<s></s><b></b></dd>
+                        <dd class="s-text">{if $password_type eq 1}重置支付密码{else}{$lang.Enable_pay_password}{/if}<s></s><b></b></dd>
                         <!-- {/if} -->
                     </dl>
                     
@@ -1305,6 +1306,10 @@
                             <div class="form-rowm mt0">
                                 <div class="form-label">&nbsp;</div>
                                 <div class="form-value">
+                                    <!--<div class="fl mr10">
+                                        <input type="checkbox" {if $user_paypwd.pay_online} checked="checked" {/if} name="pay_online" id="pay_online" value="1" class="ui-checkbox">
+                                        <label class="ui-label" for="pay_online">{$lang.pay_online}</label>
+                                    </div>-->
                                     <div class="fl">
                                         <input type="checkbox" {if $user_paypwd.user_surplus} checked="checked" {/if} name="user_surplus" id="user_surplus" value="1" class="ui-checkbox">
                                         <label class="ui-label" for="user_surplus">{$lang.balance_pay}</label>
@@ -1363,7 +1368,7 @@
                                 <div class="label"><em class="red">*</em>{$lang.bank}：</div>
                                 <div class="value">
                                     <input class="text text-1" type="text" id="bank_name" name="bank_name" value="{$real_user.bank_name}">
-                                    <div class="notic">{$lang.bank_name_notic}</div>
+                                    <div class="notic">请填写开户行详情名称：中国工商银行（徐汇支行）</div>
                                   	<div class="form_prompt"></div>
                                 </div>
                             </div>
@@ -1377,7 +1382,7 @@
                             </div>
                             
                             <div class="item">
-                                <div class="label"><em class="red">*</em>{$lang.front_of_id_card}：</div>
+                                <div class="label"><em class="red">*</em>身份证正面：</div>
                                 <div class="value">
                                 	<div class="type-file-box">
                                         <input type="button" name="button" id="button" class="type-file-button">
@@ -1389,7 +1394,7 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="label"><em class="red">*</em>{$lang.reverse_of_id_card}：</div>
+                                <div class="label"><em class="red">*</em>身份证反面：</div>
                                 <div class="value">
                                 	<div class="type-file-box">
                                         <input type="button" name="button" id="button" class="type-file-button">
@@ -1429,7 +1434,8 @@
                                     <input type="hidden" value="real_name" name="type">
                                     <input type="hidden" value="second" name="step">
                                     <input type="hidden" value="{$operate}" name="operate">
-                                    <input type="submit" id="authSubmit" class="sc-btn sc-redBg-btn" value="{$lang.submit_goods}">
+                                    <input type="submit" id="authSubmit" class="sc-btn sc-redBg-btn" value="提交">
+                                    <!--<input type="button" id="goback_real_name" class="sc-btn sc-redBg-btn" value="返回上一页">-->
                                 </div>
                             </div>
                         </form>
@@ -1464,7 +1470,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="label">{$lang.front_of_id_card}：</div>
+                            <div class="label">身份证正面：</div>
                             <div class="value">
                                 <a href="{$real_user.front_of_id_card}" target="_blank" class="nyroModal fl mt5">
                                 	<i class="iconfont icon-picture" onmouseover="toolTip('<img src={$real_user.front_of_id_card}>')" onmouseout="toolTip()"></i>
@@ -1472,7 +1478,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="label">{$lang.reverse_of_id_card}：</div>
+                            <div class="label">身份证反面：</div>
                             <div class="value">
                                 <a href="{$real_user.reverse_of_id_card}" target="_blank" class="nyroModal fl mt5">
                                 	<i class="iconfont icon-picture" onmouseover="toolTip('<img src={$real_user.reverse_of_id_card}>')" onmouseout="toolTip()"></i>
@@ -1494,7 +1500,7 @@
                         
                         {if $real_user.review_content && $real_user.review_status eq 2}
                         <div class="item">
-                            <div class="label">{$lang.audit_statement}：</div>
+                            <div class="label">审核说明：</div>
                             <div class="value">
                                 <span class="txt-lh red">{$real_user.review_content}</span>
                             </div>
@@ -1504,7 +1510,7 @@
                         <div class="item item-button">
                             <div class="label">&nbsp;</div>
                             <div class="value">
-                                <a href="{$edit_user}" class="sc-btn sc-redBg-btn">{$lang.edit_real_complete}</a>
+                                <a href="{$edit_user}" class="sc-btn sc-redBg-btn">修改实名认证</a>
                             </div>
                         </div>
                     </div>
@@ -1520,9 +1526,9 @@
         <!-- {if $action eq 'order_list' || $action eq 'order_recycle'} -->
         <div class="user-mod">
             <div class="user-title">
-                <h2>{$lang.order_list}</h2>
+                <h2>我的订单</h2>
                 <ul class="tabs">
-                    <li {if $order_type neq toBe_confirmed && $order_type neq toBe_pay && $order_type neq toBe_confirmed && $order_type neq toBe_finished}class="active"{/if}><a href="user.php?act=order_list">{$lang.all_order}({$allorders})</a></li>
+                    <li {if $order_type neq toBe_confirmed && $order_type neq toBe_pay && $order_type neq toBe_confirmed && $order_type neq toBe_finished}class="active"{/if}><a href="user.php?act=order_list">全部订单({$allorders})</a></li>
                     <li class="user-count3 {if $order_type eq to_unconfirmed}active{/if}" onclick="get_OrderSearch('to_unconfirmed', '{$action}', 'toBe_unconfirmed','','.user-count3')">
                     <a href="javascript:void(0);">{$lang.cs.0}({$unconfirmed})</a>
                     <input name="to_unconfirmed" id="to_unconfirmed" type="hidden" value="0" />
@@ -1532,7 +1538,7 @@
                     <input name="toBe_pay" id="payId" type="hidden" value="100" />
                     </li>
                     <li class="user-count2 {if $order_type eq toBe_confirmed}active{/if}" onclick="get_OrderSearch('to_confirm_order', '{$action}', 'toBe_confirmed','','.user-count2')">
-                    <a href="javascript:void(0);">{$lang.receipt_not}({$to_confirm_order})</a>
+                    <a href="javascript:void(0);">待收货({$to_confirm_order})</a>
                     <input name="to_confirm_order" id="to_confirm_order" type="hidden" value="103" />
                     </li>
                     <li class="user-count4 {if $order_type eq toBe_finished}active{/if}" onclick="get_OrderSearch('to_finished', '{$action}', 'toBe_finished','','.user-count4')">
@@ -1588,7 +1594,7 @@
         <!-- {if $action eq 'order_detail' || $action eq 'auction_order_detail'} -->
         <div class="user-mod user-order-detail">
             <div class="user-title">
-                <h2>{$lang.order_detail}</h2>
+                <h2>订单详情</h2>
                 <a href="user.php?act=message_list&is_order=1&order_id={$order.order_id}" class="more">{$lang.type.0}<em>&nbsp;&nbsp;(&nbsp;{$feedback_num}&nbsp;)</em></a>
             </div>
             <div class="order-detail-statu">
@@ -1612,17 +1618,17 @@
                 </div>
                 <div class="statu-right mt10">
                     {if $order.affirm_received}
-                    <a href="{$order.affirm_received}" onclick="if (!confirm('{$lang.confirm_received}')) return false;" class="sc-btn sc-blue-btn">{$lang.received}</a>
+                    <a href="{$order.affirm_received}" onclick="if (!confirm('你确认已经收到货物了吗？否则财物两空哦！')) return false;" class="sc-btn sc-blue-btn">确认收货</a>
                     {/if}
                 </div>
             </div>
             
             <ul class="order-detail-progress progress-{$order.order_tracking}">
                 <li>{$lang.order_addtime}<div class="tip">{$order.add_time}</div></li>
-                <li>{$lang.pay}<div class="tip">{$order.pay_time}</div></li>
-                <li>{$lang.deliver_goods}<div class="tip">{$order.shipping_time}</div></li>
-                <li>{$lang.collect_goods}<div class="tip">{$order.confirm_take_time}</div></li>
-                <li>{$lang.complete}<div class="tip"></div></li>
+                <li>付款<div class="tip">{$order.pay_time}</div></li>
+                <li>发货<div class="tip">{$order.shipping_time}</div></li>
+                <li>收货<div class="tip">{$order.confirm_take_time}</div></li>
+                <li>完成<div class="tip"></div></li>
             </ul>
             <div class="user-info-list">
                 <div class="info-title"><h2>{$lang.consignee_info}</h2></div>
@@ -1644,8 +1650,9 @@
             
             {if $order.store_id}
             <div class="user-info-list">
-                <div class="info-title"><h2>{$lang.offline_store_information}</h2></div>
+                <div class="info-title"><h2>门店信息</h2></div>
                 <div class="info-content">
+                    
                     {if $order.pick_code && $order.pay_status eq 2}
                     <div class="info-item">
                         <div class="item-label">{$lang.pick_code}：</div>
@@ -1681,7 +1688,7 @@
                     {if $offline_store.stores_img}
                     <div class="info-item">
                         <div class="item-label">{$lang.stores_img}：</div>
-                        <div class="item-value"><a href="{$offline_store.stores_img}" class="nyroModal ftx-05">{$lang.view_image}</a></div>
+                        <div class="item-value"><a href="../{$offline_store.stores_img}" class="nyroModal ftx-05">查看图片</a></div>
                     </div>
                     {/if}
                     {/if}
@@ -1691,7 +1698,7 @@
             
             {if $order.extension_code neq 'wholesale'}
             <div class="user-info-list">
-                <div class="info-title"><h2>{$lang.pay_info}</h2></div>
+                <div class="info-title"><h2>付款信息</h2></div>
 				{if !$seckill_status || $order.pay_time}
                 <div class="info-content">
                     <div class="info-item">
@@ -1706,7 +1713,7 @@
                             <!--{if $is_onlinepay}--><!--只有当用户开启了在线支付,才显示在线支付的一系列方法-->
                                 <!--{if $payment_list}-->
                                 <div class="info-item">
-                                    <div class="item-label lh30">{$lang.pay_noline}：</div>
+                                    <div class="item-label lh30">在线支付：</div>
                                     <div class="item-value">
                                         <form name="payment" method="post" action="user.php">
                                         <select name="pay_id">
@@ -1784,19 +1791,19 @@
                             <!--{/if}-->
                         <!--{elseif $settle_status lt 0}-->
                         <div class="info-item">
-                            <div class="item-label">{$lang.pay_prompt}：</div>
+                            <div class="item-label">支付提示：</div>
                             <div class="item-value">{$lang.end_pay_time}：<span class="ftx-01">{$pay_end_time}</span>！</div>
                         </div>                           
                         <!--{/if}-->
                         <div class="info-item">
-                            <div class="item-label">{$lang.pay_prompt}：</div>
+                            <div class="item-label">支付提示：</div>
                             <div class="item-value">{$lang.pay_end_one}<span style='color:red'>{$pay_start_time}</span >{$lang.zhi}<span style='color:red'>{$pay_end_time}</span>{$lang.pay_end_two}</div>
                         </div>
                     <!--{else}-->
                         <!--{if $is_onlinepay}--><!--只有当用户开启了在线支付,才显示在线支付的一系列方法-->
                             <!--{if $payment_list}-->
                                 <div class="info-item">
-                                    <div class="item-label lh30">{$lang.pay_noline}：</div>
+                                    <div class="item-label lh30">在线支付：</div>
                                     <div class="item-value">
                                         <form name="payment" method="post" action="user.php">
                                             <select name="pay_id" class="select">
@@ -1898,30 +1905,30 @@
                     </div>
                     {if $order.pay_time}
                     <div class="info-item">
-                        <div class="item-label">{$lang.pay_time_alt}：</div>
+                        <div class="item-label">付款时间：</div>
                         <div class="item-value">{$order.pay_time}</div>
                     </div>
                     {/if}
                 </div>
 				{else}
                 <div class="statu-left">
-                    <p class="red">{$lang.order_prompt_notic}</p>
+                    <p class="red">该订单已失效，请重新下单！</p>
                 </div>
 				{/if}
             </div>
             {/if}
             <div class="user-info-list">
                 <div class="info-title">
-                    <h2>{$lang.shipping_info}</h2>
-                    <!-- {if $order.dsc_shipping_status eq 1 && $open_order_delay eq 1 && $order.allow_order_delay eq 1} --><a href="javascript:void(0);" class="sc-btn sc-blue-btn ml10" data-id="{$order.order_id}" id="sbumit_order_delay">{$lang.order_delayed}</a><!--{/if}-->
+                    <h2>配送信息</h2>
+                    <!-- {if $order.dsc_shipping_status eq 1 && $open_order_delay eq 1 && $order.allow_order_delay eq 1} --><a href="javascript:void(0);" class="sc-btn sc-blue-btn ml10" data-id="{$order.order_id}" id="sbumit_order_delay">延迟收货</a><!--{/if}-->
                 </div>
                 <div class="info-content">
                     <div class="info-item">
                         <div class="item-label">{$lang.shipping}：</div>
 						{if $order.store_id}
-						<div class="item-value" id="shipping_name_{$order.order_id}">{$lang.self_lift}</div>
+						<div class="item-value" id="shipping_name_{$order.order_id}">自提</div>
 						{else}
-						<div class="item-value" id="shipping_name_{$order.order_id}">{$order.shipping_name}{if $order.point}<a class="ml10" href="javascript:;" ectype="btn-selfPoint">{$lang.view_self_lift}</a>{/if}</div>
+						<div class="item-value" id="shipping_name_{$order.order_id}">{$order.shipping_name}{if $order.point}<a class="ml10" href="javascript:;" ectype="btn-selfPoint">查看自提点信息</a>{/if}</div>
 						{/if}
                         
                     </div>
@@ -1933,7 +1940,7 @@
 								{foreach from=$order.invoice_no_list item=invoice_no_item}
 								<li data-invoice_no="{$invoice_no_item}">
 									<span>{$invoice_no_item}</span>
-									{if $order.invoice_no_count gt 1}<a href="javascript:view_logistics_info('{$order.order_id}', '{$invoice_no_item}');" class="ml10">{$lang.view_logistics}</a>{/if}
+									{if $order.invoice_no_count gt 1}<a href="javascript:view_logistics_info('{$order.order_id}', '{$invoice_no_item}');" class="ml10">查看物流</a>{/if}
 								</li>
 								{/foreach}
 							</ul>
@@ -1953,7 +1960,7 @@
 
 					<!-- {if $order.dsc_shipping_status eq 1} -->
 					<div class="info-item">
-						<div class="item-label">{$lang.received}：</div>
+						<div class="item-label">确认收货：</div>
 						<div class="item-value">
 							<div class="time" ectype="time" data-time="{$order.auto_delivery_time}">
 								<span></span>
@@ -1976,7 +1983,7 @@
                     <!-- {/if} -->
                     {if $order.best_time}
                     <div class="info-item">
-                        <div class="item-label">{$lang.deliver_time}：</div>
+                        <div class="item-label">送货时间：</div>
                         <div class="item-value">{$order.best_time}</div>
                     </div>
                     {/if}
@@ -1985,27 +1992,27 @@
 						<div class="user-info-list">
 							<div class="info-content">
 								<div class="info-item">
-									<div class="item-label">{$lang.pay_name}：</div>
+									<div class="item-label">名称：</div>
 									<div class="item-value">{$order.point.name}</div>
 								</div>
 								<div class="info-item">
-									<div class="item-label">{$lang.contact_username}：</div>
+									<div class="item-label">联系人：</div>
 									<div class="item-value">{$order.point.user_name}</div>
 								</div>
 								<div class="info-item">
-									<div class="item-label">{$lang.contact_phone}：</div>
+									<div class="item-label">联系电话：</div>
 									<div class="item-value">{$order.point.mobile}</div>
 								</div>
 								<div class="info-item">
-									<div class="item-label">{$lang.user_address}：</div>
+									<div class="item-label">地址：</div>
 									<div class="item-value">{$order.point.address}</div>
 								</div>
 								<div class="info-item">
-									<div class="item-label">{$lang.line_of_arrival}：</div>
+									<div class="item-label">到达线路：</div>
 									<div class="item-value">{$order.point.line}</div>
 								</div>
 								<div class="info-item">
-									<div class="item-label">{$lang.self_lift_time}：</div>
+									<div class="item-label">自提时间：</div>
 									<div class="item-value">{$order.point.pickDate}</div>
 								</div>
 							</div>
@@ -2017,7 +2024,7 @@
 							var content = $("#selfPoint").html();
 							pb({
 								id:divId,
-								title:'{$lang.since_some_info}',
+								title:'自提信息',
 								width:400,
 								height:250,
 								content:content,
@@ -2031,7 +2038,7 @@
             </div>
             {if $order.invoice_no}
             <div class="user-info-list">
-                <div class="info-title"><h2>{$lang.logistics_tracking}</h2></div>
+                <div class="info-title"><h2>物流跟踪</h2></div>
                 <div class="info-content">
                     <div class="logistics-items" id="retData_{$order.order_id}"></div>
                 </div>
@@ -2061,7 +2068,7 @@
 					$.jqueryAjax('get_ajax_content.php', 'act=view_logistics_info&order_id='+order_id+'&invoice_no='+invoice_no, function(result){
 						pb({
 							id:'logistics_info_dialog',
-							title:'{$lang.search_logistics}',
+							title:'查询物流',
 							width:500,
 							height:60,
 							content:'',
@@ -2089,20 +2096,20 @@
 				{if $order.invoice_type eq 0}
                 <div class="info-content">
                     <div class="info-item">
-                        <div class="item-label">{$lang.invoice_type}：</div>
-                        <div class="item-value">{if $order.extension_code neq exchange_goods}{$lang.need_invoice.$order.invoice_type}{else}{$lang.wu}{/if}</div>
+                        <div class="item-label">发票类型：</div>
+                        <div class="item-value">{if $order.extension_code neq exchange_goods}{$lang.need_invoice.$order.invoice_type}{else}无{/if}</div>
                     </div>
                     <div class="info-item">
                         <div class="item-label">{$lang.invoice_content}：</div>
-                        <div class="item-value">{if $order.extension_code neq exchange_goods}{$order.inv_content}{else}{$lang.wu}{/if}</div>
+                        <div class="item-value">{if $order.extension_code neq exchange_goods}{$order.inv_content}{else}无{/if}</div>
                     </div>
                     <div class="info-item">
                         <div class="item-label">{$lang.invoice_title}：</div>
-                        <div class="item-value">{if $order.extension_code neq exchange_goods}{$order.inv_payee}{else}{$lang.wu}{/if}</div>
+                        <div class="item-value">{if $order.extension_code neq exchange_goods}{$order.inv_payee}{else}无{/if}</div>
                     </div>
 					{if $order.tax_id}
 					<div class="info-item">
-                        <div class="item-label">{$lang.tax_id}：</div>
+                        <div class="item-label">识别号：</div>
                         <div class="item-value">{$order.tax_id}</div>
                     </div>
 					{/if}
@@ -2110,27 +2117,27 @@
 				{else}
 				<div class="info-content">
                     <div class="info-item">
-                        <div class="item-label">{$lang.invoice_type}：</div>
+                        <div class="item-label">发票类型：</div>
                         <div class="item-value">{$lang.need_invoice.$order.invoice_type}</div>
                     </div>
 					<div class="info-item">
-                        <div class="item-label">{$lang.adopt_status}：</div>
+                        <div class="item-label">审核状态：</div>
                         <div class="item-value">
 							{if $vat_info.audit_status eq 0}
-								{$lang.not_audited}
+								未审核
 							{elseif $vat_info.audit_status eq 1}
-								{$lang.audited_adopt}
+								审核通过
 							{elseif $vat_info.audit_status eq 2}
-								{$lang.audited_not_adopt}
+								审核未通过
 							{/if}
 						</div>
                     </div>
                     <div class="info-item">
-                        <div class="item-label">{$lang.label_company_name}：</div>
+                        <div class="item-label">单位名称：</div>
                         <div class="item-value">{$vat_info.company_name}</div>
                     </div>
                     <div class="info-item">
-                        <div class="item-label">{$lang.tax_id}：</div>
+                        <div class="item-label">识别码：</div>
                         <div class="item-value">{$vat_info.tax_id}</div>
                     </div>
                 </div>
@@ -2159,7 +2166,7 @@
                 <a href="http://wpa.qq.com/msgrd?v=3&uin={$order.kf_qq}&site=qq&menu=yes" class="iconfont icon-kefu user-shop-kefu" target="_blank"></a>
                 {/if}
                 {/if}
-                {if $order.return_url}<a href="{$order.return_url}" class="more">{$lang.return_apply}</a>{/if}
+                {if $order.return_url}<a href="{$order.return_url}" class="more">申请售后</a>{/if}
             </div>
             {if $order.is_zc_order eq 1}
             <table class="user-table user-table-detail-goods">
@@ -2354,7 +2361,7 @@
                 <!-- {/if} -->
                 <!-- {if $order.integral_money gt 0} -->
                 <dl class="total-row">
-                    <dt class="total-label">{$lang.integral_offset}：</dt>
+                    <dt class="total-label">积分抵用：</dt>
                     <dd class="total-value">- {$order.formated_integral_money}</dd>
                 </dl>
                 <!-- {/if} -->
@@ -2386,27 +2393,7 @@
                 </dl>
             </div>
         </div>
-        <script type="text/javascript">
-        var timer;
-        function checkOrder(){
-            var log_id = '{$order.log_id|default:0}';
-            var pay_code = '{$order.pay_code|default:0}';
-            
-            if(pay_code == 'wxpay'){
-                var url = "user.php?act=checkorder&log_id=" + log_id+ "&pay_code=" + pay_code;
-                $.get(url, {}, function(data){
-                    //已付款
-                    if(data.code == 1){
-                        clearTimeout(timer);
-                        location.href = "user.php?act=order_detail&order_id="+{$order.order_id};
-                    }
-                },'json');
-                timer = setTimeout("checkOrder()", 5000);
-            }
-        }
-        checkOrder();  
-        </script>
-        <!--{/if}-->
+        <!--{/if}--> 
         <!--#订单详情页面 end -->	
 
         <!--#退换货订单详情页面 -->
@@ -2483,14 +2470,14 @@
                 <div class="user-order-list">
                     <dl class="item relative">
                         <dt class="item-t b-b-0">
-                            <div class="t-statu">{if $goods.return_status1 eq 4}{$lang.is_confirmed}{else}{$lang.zc_ss}{/if}</div>
+                            <div class="t-statu">{if $goods.return_status1 eq 4}已完成{else}发货中{/if}</div>
                             <div class="t-info">
                                 <span class="info-item">{$lang.order_number}：{$goods.order_sn}</span>
                                 <span class="info-item">{$lang.Waybill}：{if $goods.out_invoice_no != ""}{$goods.out_invoice_no}{else}&nbsp;{/if}</span>
                                 <span class="info-item">{$lang.Logistics_company}：{if $goods.out_invoice_no != ""}{$goods.out_shipp_shipping}{else}&nbsp;{/if}</span>
                             </div>
                             <div class="t-right" ectype="track-packages-btn">
-                                <a href="javascript:void(0)" class="sc-btn"><i class="iconfont icon-truck"></i>{$lang.track}</a>
+                                <a href="javascript:void(0)" class="sc-btn"><i class="iconfont icon-truck"></i>跟踪</a>
                                 <div class="comment-box" ectype="track-packages-info">
                                     <i class="box-i"></i>
                                     <div class="conmment-box-content">
@@ -2507,7 +2494,7 @@
                 </div>
             </div>
             {if $goods.out_invoice_no}          
-            <script language="javascript">
+          <script language="javascript">
                 $("#seller_deliveryInfo").html("<center>"+json_languages.logistics_tracking_in+"</center>");
                 if(document.getElementById("shipping_name_{$goods.order_id}"))
                 {
@@ -2524,12 +2511,12 @@
                      error: function(o){
                     }
                 });
-            </script> 
+                </script> 
             {/if}
             {/if}
 	    {if $return_info}
 			<div class="user-info-list">
-                <div class="info-title"><h2>{$lang.seller_custome_info}</h2></div>
+                <div class="info-title"><h2>商家售后信息</h2></div>
                 <div class="info-content">
                     <div class="info-item">
                         <div class="item-label">{$lang.contact_username}：</div>
@@ -2612,7 +2599,7 @@
             {/if}
             {if $goods.img_list}
             <div class="user-info-list">
-                <div class="info-title"><h2>{$lang.pic_voucher}</h2></div>
+                <div class="info-title"><h2>图片凭证</h2></div>
                 <div class="info-content">
                     <div class="info-item">
                         {foreach from=$goods.img_list item=img}
@@ -2705,8 +2692,8 @@
         <!-- {if $action eq 'address_list'} -->
         <div class="user-mod">
             <div class="user-title">
-                <h2>{$lang.label_address}</h2>
-                <h3>{$lang.add_consignee_one}<span class="red">{$count_consignee}</span>{$lang.add_consignee_two}<span class="red">10</span>个</h3>
+                <h2>收货地址</h2>
+                <h3>您已创建<span class="red">{$count_consignee}</span>个收货地址，最多可创建<span class="red">10</span>个</h3>
             </div>
             <ul class="cosignee-list">
                 {if $count_consignee < 11}
@@ -2741,7 +2728,7 @@
                                     {$consignee.city_name}
                                 <!-- {/if}  -->
                                 </span>
-                                {if $consignee.address_id eq $address && $address > 0}<span class="tag">{$lang.default_address}</span>{/if}
+                                {if $consignee.address_id eq $address && $address > 0}<span class="tag">默认地址</span>{/if}
                             </div>
                         </div>
                         <div class="body">
@@ -2837,7 +2824,7 @@
                         <div class="form-value"><input type="text" name="address" value="{$consignee.address}" class="form-input form-input-long"><div class="form_prompt"></div></div>
                     </div>
                     <div class="form-row">
-                        <div class="form-label"><span class="red">&nbsp;&nbsp;</span>{$lang.email_reset}：</div>
+                        <div class="form-label"><span class="red">*</span>{$lang.email_reset}：</div>
                         <div class="form-value"><input type="text" name="email" value="{$consignee.email}" class="form-input"><div class="form_prompt"></div></div>
                     </div>
                     <div class="form-row">
@@ -2850,7 +2837,7 @@
                     </div>
                     <div class="form-btn-wp">
                         <input type="button" name="button" class="form-btn" value="{$lang.submit_address}" id="submitAddress"/>
-                        <input type="reset" name="reset" class="form-btn form-btn-gray" value="{$lang.reset}">
+                        <input type="reset" name="reset" class="form-btn form-btn-gray" value="重置">
                         <input type="hidden" name="address_id" value="{$consignee.address_id}" />
                         <input type="hidden" name="act" value="act_edit_address" />
                         <input type="hidden" name="count_consignee" value="{$count_consignee}" />
@@ -2882,14 +2869,14 @@
         <!--{if $action eq 'goods_order' } -->
         <div class="user-mod">
             <div class="user-title">
-                <h2>{$lang.return_policy_apply}</h2>
+                <h2>退换货申请</h2>
             </div>
 			<form method="post" action="user.php" name="theFrom" id="theFrom">
 				<div class="uaer-return-app clearfix">
 					<!-- {if $package_buy} -->
 					<div class="no_records">
 						<i class="no_icon_two"></i>
-						<div class="no_info"><h3>{$lang.package_buy_notic}</h3></div>
+						<div class="no_info"><h3>超值礼包暂不支持退换商品。</h3></div>
 					</div>				
 					<!-- {else} -->			
 					<!-- {foreach from=$goods_list item=goods} -->
@@ -2920,18 +2907,16 @@
 								</div>
 							</div>
 							<div class="t-statu">
-                            {if $goods.goods_cause}
 							{if $goods.is_refound gt 0}
 								<span class="ftx-01 fs14">{$lang.Have_applied}</span> 
 							{else} 
                                 {if $goods.extension_code eq 'virtual_card'}
-                                <span class="ftx-01 fs14">{$lang.virtual_card_notic}</span> 
+                                <span class="ftx-01 fs14">虚拟商品不支持售后</span> 
                                 {else}
                                 <a href="user.php?act=apply_return&rec_id={$goods.rec_id}&order_id={$order_id}" class="sc-btn">{$lang.applied}</a>
                                 {/if}
 								 
 							{/if}
-                            {/if}
 							</div>
 						</div>
 						<div class="item-f">
@@ -2944,7 +2929,7 @@
 							</div>
                             {/if}
 							<div class="f-right">
-                            	<span class="red mr50">{if $goods.goods_cause}{$lang.only_support}：{foreach from=$goods.goods_cause item=cause name=goods_cause}{if !$smarty.foreach.goods_cause.last}{$cause.lang}、{else}{$cause.lang}{/if}{/foreach}{else}{$lang.no_support_return}{/if}</span>
+                            	<span class="red mr50">{if $goods.goods_cause}仅支持：{foreach from=$goods.goods_cause item=cause name=goods_cause}{if !$smarty.foreach.goods_cause.last}{$cause.lang}、{else}{$cause.lang}{/if}{/foreach}{else}暂不支持退换货{/if}</span>
                             	<span>{$lang.shopping_money}<!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} -->：{$goods.subtotal}</span>
                             </div>
 						</div>
@@ -2952,20 +2937,18 @@
 					<!-- {foreachelse} -->
 					<div class="no_records">
 						<i class="no_icon_two"></i>
-						<div class="no_info"><h3>{$lang.order_not_notic}</h3></div>
+						<div class="no_info"><h3>您的订单无可退换商品。</h3></div>
 					</div>
 					<!-- {/foreach} -->
-                    <!-- {if $goods.goods_cause} -->
                     <div class="tl-tfoor">
                         <div class="checkbox">
                             <input type="checkbox" name="all_list" class="ui-checkbox" id="checkbox_stars" />
-                            <label for="checkbox_stars" class="ui-label">{$lang.check_all}</label>
+                            <label for="checkbox_stars" class="ui-label">全选</label>
                         </div>
                         <a href="javascript:;" class="sc-btn" ectype="submitBtn" >{$lang.batch_applied}</a>
                         <input type="hidden" name="act" value="batch_applied">
                         <input type="hidden" name="order_id" value="{$order_id}">
                     </div>
-                    <!-- {/if} -->
 					<!-- {/if} -->
 				</div>
 			</form>
@@ -2977,8 +2960,8 @@
         <!-- {if $action eq 'service_detail'} -->
         <div class="user-mod">
             <div class="user-title">
-                <h2>{$lang.service_note}</h2>
-                <a href="javascript:history.go(-1);" class="more">{$lang.back}</a>
+                <h2>服务说明</h2>
+                <a href="javascript:history.go(-1);" class="more">返回</a>
             </div>
             <table class="user-table user-table-detail-goods">
                 <colgroup>
@@ -3049,7 +3032,7 @@
         <div class="user-mod user_apply_return">
             <div class="user-title">
                 <h2>{$lang.return_list}</h2>
-                <a href="user.php?act=service_detail" class="more">{$lang.service_note}</a>
+                <a href="user.php?act=service_detail" class="more">服务说明</a>
             </div>
             <div class="uaer-return-app clearfix">
                 <div class="tl-item">
@@ -3128,17 +3111,6 @@
                                         <div class="type_item">{$lang.return_number}：</div>
                                         <div class="type_con">
                                             <a onclick="buyNumber.minus(this, 1)" href="javascript:;" id="decrease" class="plus_minus"><i class="iconfont icon-reduce"></i></a>
-                                            <input type="text" class="return_num" defaultnumber="1" value="1" id="returnid_{$goods_return.rec_id}" name="attr_num" onblur="check_return_num(this,{$goods_return.goods_number} ,{$goods_return.rec_id}, 2)" />
-                                            <a onclick="buyNumber.plus(this, 1)" href="javascript:;" id="increase" class="plus_minus"><i class="iconfont icon-plus"></i></a>
-                                            <div class="return_sm">({$lang.return_one}<span>{$goods_return.goods_number}</span>{$lang.return_two}<span id="retired_{$goods_return.rec_id}" name="retired">1</span>{$lang.jian})</div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="return_div" ectype="return_div" style="display:none;">
-                                    <div class="type_box1" name="type_box1" id="changeid_{$goods_return.rec_id}">
-                                        <div class="type_item">{$lang.return_one}：</div>
-                                        <div class="type_con">
-                                            <a onclick="buyNumber.minus(this, 1)" href="javascript:;" id="decrease" class="plus_minus"><i class="iconfont icon-reduce"></i></a>
                                             <input type="text" class="return_num" defaultnumber="1" value="1" id="returnid_{$goods_return.rec_id}" name="return_num" onblur="check_return_num(this,{$goods_return.goods_number} ,{$goods_return.rec_id}, 2)" />
                                             <a onclick="buyNumber.plus(this, 1)" href="javascript:;" id="increase" class="plus_minus"><i class="iconfont icon-plus"></i></a>
                                             <div class="return_sm">({$lang.return_one}<span>{$goods_return.goods_number}</span>{$lang.return_two}<span id="retired_{$goods_return.rec_id}" name="retired">1</span>{$lang.jian})</div>
@@ -3146,14 +3118,10 @@
                                     </div>
                                 </div>
                                 <div class="return_div" ectype="return_div" style="display:none;">
-                                    <div class="type_box1" name="type_box1" id="changeid_{$goods_return.rec_id}">
-                                        <div class="type_item">{$lang.return_g_number}：</div>
-                                        <div class="type_con">
-                                            <a onclick="buyNumber.minus(this, 1)" href="javascript:;" id="decrease" class="plus_minus"><i class="iconfont icon-reduce"></i></a>
-                                            <input type="text" class="return_num" defaultnumber="1" value="1" id="returnid_{$goods_return.rec_id}" name="only_return_number" onblur="check_return_num(this,{$goods_return.goods_number} ,{$goods_return.rec_id}, 2)" />
-                                            <a onclick="buyNumber.plus(this, 1)" href="javascript:;" id="increase" class="plus_minus"><i class="iconfont icon-plus"></i></a>
-                                            <div class="return_sm">({$lang.return_one}<span>{$goods_return.goods_number}</span>{$lang.return_two}<span id="retired_{$goods_return.rec_id}" name="retired">1</span>{$lang.jian})</div>
-                                        </div>
+                                    <div class="spec_div" id="spec_{$goods_return.rec_id}" style="display:none"></div>
+                                    <div class="spec_list" id="splist_{$goods_return.rec_id}" style="display:none"></div>
+                                    <div name="type_box2" class="type_box2" id="changeid_{$goods_return.rec_id}">
+                                        <div class="return_sm">({$lang.return_one}<span>{$goods_return.goods_number}</span>{$lang.change_two}<span id="retired1_{$goods_return.rec_id}">1</span>{$lang.jian})</div>
                                     </div>
                                 </div>
                             </div>
@@ -3302,7 +3270,7 @@
                         {else}
                         <div class="no_records">
                             <i class="no_icon_two"></i>
-                            <div class="no_info"><h3>{$lang.no_support_return}</h3></div>
+                            <div class="no_info"><h3>暂不支持退换货</h3></div>
                         </div>
                         {/if}
                     </div>
@@ -3318,7 +3286,7 @@
             <form id="formReturn" name="formReturn" method="post" action="user.php" onsubmit="return check_sub()">		
             <div class="user-title">
                 <h2>{$lang.return_list}</h2>
-                <a href="user.php?act=service_detail" class="more">{$lang.service_note}</a>
+                <a href="user.php?act=service_detail" class="more">服务说明</a>
             </div>
             <div class="uaer-return-app clearfix">
 			<!-- {foreach from=$goods_return item=goods} -->
@@ -3372,11 +3340,12 @@
 				<div class="item item1 first">
 					<div class="label"><em>*</em>{$lang.Service_type}：</div>
 					<div class="value value-checkbox">
+						
 						{foreach from=$goods_cause item=goods}
-						<div class="value-item {if $goods.is_checked eq 1}selected{/if}">
-							<input type="radio" id="service-{$goods.cause}" name="return_type" value="{$goods.cause}" class="ui-radio" autocomplete="off" {if $goods.is_checked eq 1}checked{/if} />
-							<label for="service-{$goods.cause}" class="ui-radio-label">{$goods.lang}</label>
-						</div>
+							<div class="value-item {if $goods.is_checked eq 1}selected{/if}">
+								<input type="radio" id="service-{$goods.cause}" name="return_type" value="{$goods.cause}" class="ui-radio" autocomplete="off" {if $goods.is_checked eq 1}checked{/if} />
+								<label for="service-{$goods.cause}" class="ui-radio-label">{$goods.lang}</label>
+							</div>
 						{/foreach}
 					</div>
 				</div>
@@ -3511,7 +3480,7 @@
 				{else}
 				<div class="no_records">
 					<i class="no_icon_two"></i>
-					<div class="no_info"><h3>{$lang.no_support_return}</h3></div>
+					<div class="no_info"><h3>暂不支持退换货</h3></div>
 				</div>
 				{/if}
 				</div>
@@ -3526,21 +3495,21 @@
 		<!-- {if $action eq 'auction_list'} -->
 		<div class="user-mod">
 			<div class="user-title">
-                <h2>{$lang.my_auction}</h2>
+                <h2>我的拍卖</h2>
                 <ul class="tabs">
-					<li {if $action eq 'auction_list'}class="active"{/if}><a href="user.php?act=auction_list">{$lang.auction_list}</a></li>
-                    <li {if $action eq 'auction'}class="active"{/if}><a href="user.php?act=auction">{$lang.auction_order}</a></li>
+					<li {if $action eq 'auction_list'}class="active"{/if}><a href="user.php?act=auction_list">拍卖列表</a></li>
+                    <li {if $action eq 'auction'}class="active"{/if}><a href="user.php?act=auction">拍卖订单</a></li>
                 </ul>
             </div>
 			<div class="user-title">
                 <ul class="tabs">
-                    <li class="active"><a href="">{$lang.auction_all}({$all_auction})</a></li>
+                    <li class="active"><a href="">全部拍卖({$all_auction})</a></li>
                     <li class="user-count3" onclick="get_AuctionSearch('is_going', '{$action}', 'is_going','','.user-count3')">
-						<a href="javascript:void(0);">{$lang.auction_staues.1}({$is_going})</a>
+						<a href="javascript:void(0);">进行中({$is_going})</a>
 						<input name="is_going" id="is_going" type="hidden" value="1" />
                     </li>
                     <li class="user-count1" onclick="get_AuctionSearch('is_finished', '{$action}', 'is_finished','','.user-count1')">
-						<a href="javascript:void(0);">{$lang.auction_staues.3}({$is_finished})</a>
+						<a href="javascript:void(0);">已结束({$is_finished})</a>
 						<input name="is_finished" id="is_finished" type="hidden" value="3" />
                     </li>
                 </ul>
@@ -3558,15 +3527,15 @@
         <!-- {if $action eq 'auction' || $action eq 'auction_order_recycle'} -->
         <div class="user-mod">
 			<div class="user-title">
-                <h2>{$lang.my_auction}</h2>
+                <h2>我的拍卖</h2>
                 <ul class="tabs">
-					<li {if $action eq 'auction_list'}class="active"{/if}><a href="user.php?act=auction_list">{$lang.auction_list}</a></li>
-                    <li {if $action eq 'auction'}class="active"{/if}><a href="user.php?act=auction">{$lang.auction_order}</a></li>
+					<li {if $action eq 'auction_list'}class="active"{/if}><a href="user.php?act=auction_list">拍卖列表</a></li>
+                    <li {if $action eq 'auction'}class="active"{/if}><a href="user.php?act=auction">拍卖订单</a></li>
                 </ul>
             </div>
             <div class="user-title">
                 <ul class="tabs">
-                    <li class="active"><a href="">{$lang.all_order}({$allorders})</a></li>
+                    <li class="active"><a href="">全部订单({$allorders})</a></li>
                     <li class="user-count3" onclick="get_OrderSearch('to_unconfirmed', '{$action}', 'toBe_unconfirmed','','.user-count3')">
                     <a href="javascript:void(0);">{$lang.cs.0}({$unconfirmed})</a>
                     <input name="to_unconfirmed" id="to_unconfirmed" type="hidden" value="0" />
@@ -3576,7 +3545,7 @@
                     <input name="toBe_pay" id="payId" type="hidden" value="100" />
                     </li>
                     <li class="user-count2" onclick="get_OrderSearch('to_confirm_order', '{$action}', 'toBe_confirmed','','.user-count2')">
-                    <a href="javascript:void(0);">{$lang.receipt_not}({$to_confirm_order})</a>
+                    <a href="javascript:void(0);">待收货({$to_confirm_order})</a>
                     <input name="to_confirm_order" id="to_confirm_order" type="hidden" value="103" />
                     </li>
                     <li class="user-count4" onclick="get_OrderSearch('to_finished', '{$action}', 'toBe_finished','','.user-count4')">
@@ -3627,15 +3596,15 @@
 		<!-- {if $action eq 'snatch_list'} -->
 		<div class="user-mod">
 			<div class="user-title">
-				<h2>{$lang.my_snatch}</h2>
+				<h2>我的夺宝</h2>
                 <ul class="tabs">
-                    <li class="active"><a href="">{$lang.snatch_all}({$all_snatch|default:0})</a></li>
+                    <li class="active"><a href="">全部夺宝({$all_snatch|default:0})</a></li>
                     <li class="user-count3" onclick="get_SnatchSearch('is_going', '{$action}', 'is_going','','.user-count3')">
-						<a href="javascript:void(0);">{$lang.auction_staues.1}({$is_going})</a>
+						<a href="javascript:void(0);">进行中({$is_going})</a>
 						<input name="is_going" id="is_going" type="hidden" value="1" />
                     </li>
                     <li class="user-count1" onclick="get_SnatchSearch('is_finished', '{$action}', 'is_finished','','.user-count1')">
-						<a href="javascript:void(0);">{$lang.auction_staues.3}({$is_finished})</a>
+						<a href="javascript:void(0);">已结束({$is_finished})</a>
 						<input name="is_finished" id="is_finished" type="hidden" value="3" />
                     </li>
                 </ul>
@@ -3671,23 +3640,23 @@
                                 <i class="i-left"></i>
                                 <div class="c-t-cont">
                                     <div class="c-t-c-top">
-                                        {if $vo.cou_type neq 5}<strong><em>￥</em>{if $vo.order_sn neq ''}{$vo.order_coupons}{else}{if $vo.uc_money neq 0}{$vo.uc_money}{else}{$vo.cou_money}{/if}{/if}</strong>{else}<i class="icon-my"></i>{/if}
+                                        {if $vo.cou_type neq 5}<strong><em>￥</em>{if $vo.order_sn neq ''}{$vo.order_coupons}{else}{if vo.uc_money neq 0}{$vo.uc_money}{else}{$vo.cou_money}{/if}{/if}</strong>{else}<i class="icon-my"></i>{/if}
                                         <span>{$lang.Consumption_full}{$vo.cou_man}{$lang.yuan}&nbsp;{$lang.keyong}</span>
                                     </div>
                                     <div class="c-t-c-bot">
                                         <p>{$lang.Platform_limit}：{if $vo.store_name}{$vo.store_name}{else}{$lang.whole_platform}{/if}</p>
-                                        <p>{$lang.range_bonus}：[{$vo.cou_type_name}][{$vo.cou_goods_name}]</p>
+                                        <p>范   围：[{$vo.cou_type_name}][{$vo.cou_goods_name}]</p>
                                         <p>{$vo.cou_start_time_date} ~ {$vo.cou_end_time_date}</p>
                                     </div>
                                 </div>
                                 {if $will_passed}
                                 <i class="i-right"></i>
-                                <i class="i-soon">{$lang.About_expire}</i>
+                                <i class="i-soon">即将到期</i>
                                 {/if}
                             </div>
                             {if $is_used}
                             <div class="c-msg">
-                                <span class="not">{$lang.had_use}</span>
+                                <span class="not">已使用</span>
                             </div>
                             {else}
                             <div class="c-msg">
@@ -3716,23 +3685,23 @@
                                 <i class="i-left"></i>
                                 <div class="c-t-cont">
                                     <div class="c-t-c-top">
-                                        {if $vo.cou_type neq 5}<strong><em>￥</em>{if $vo.order_sn neq ''}{$vo.order_coupons}{else}{if $vo.uc_money neq 0}{$vo.uc_money}{else}{$vo.cou_money}{/if}{/if}</strong>{else}<i class="icon-my"></i>{/if}
+                                        {if $vo.cou_type neq 5}<strong><em>￥</em>{if $vo.order_sn neq ''}{$vo.order_coupons}{else}{if vo.uc_money neq 0}{$vo.uc_money}{else}{$vo.cou_money}{/if}{/if}</strong>{else}<i class="icon-my"></i>{/if}
                                         <span>{$lang.Consumption_full}{$vo.cou_man}{$lang.yuan}&nbsp;{$lang.keyong}</span>
                                     </div>
                                     <div class="c-t-c-bot">
                                         <p>{$lang.Platform_limit}：{if $vo.store_name}{$lang.xian}{$vo.store_name}{else}{$lang.whole_platform}{/if}</p>
-                                        <p>{$lang.range_bonus}：[{$vo.cou_type_name}][{$vo.cou_goods_name}]</p>
+                                        <p>范   围：[{$vo.cou_type_name}][{$vo.cou_goods_name}]</p>
                                         <p>{$vo.cou_start_time_date} ~ {$vo.cou_end_time_date}</p>
                                     </div>
                                 </div>
                                 {if $will_passed}
                                 <i class="i-right"></i>
-                                <i class="i-soon">{$lang.About_expire}</i>
+                                <i class="i-soon">即将到期</i>
                                 {/if}
                             </div>
                             {if $is_used}
                             <div class="c-msg">
-                                <span class="not">{$lang.had_use}</span>
+                                <span class="not">已使用</span>
                             </div>
                             {else}
                             <div class="c-msg">
@@ -3758,23 +3727,23 @@
                                 <i class="i-left"></i>
                                 <div class="c-t-cont">
                                     <div class="c-t-c-top">
-                                        {if $vo.cou_type neq 5}<strong><em>￥</em>{if $vo.order_sn neq ''}{$vo.order_coupons}{else}{if $vo.uc_money neq 0}{$vo.uc_money}{else}{$vo.cou_money}{/if}{/if}</strong>{else}<i class="icon-my"></i>{/if}
+                                        {if $vo.cou_type neq 5}<strong><em>￥</em>{if $vo.order_sn neq ''}{$vo.order_coupons}{else}{if vo.uc_money neq 0}{$vo.uc_money}{else}{$vo.cou_money}{/if}{/if}</strong>{else}<i class="icon-my"></i>{/if}
                                         <span>{$lang.Consumption_full}{$vo.cou_man}{$lang.yuan}&nbsp;{$lang.keyong}</span>
                                     </div>
                                     <div class="c-t-c-bot">
                                         <p>{$lang.Platform_limit}：{if $vo.store_name}{$lang.xian}{$vo.store_name}{else}{$lang.whole_platform}{/if}</p>
-                                        <p>{$lang.range_bonus}：[{$vo.cou_type_name}][{$vo.cou_goods_name}]</p>
+                                        <p>范   围：[{$vo.cou_type_name}][{$vo.cou_goods_name}]</p>
                                         <p>{$vo.cou_start_time_date} ~ {$vo.cou_end_time_date}</p>
                                     </div>
                                 </div>
                                 {if $will_passed}
                                 <i class="i-right"></i>
-                                <i class="i-soon">{$lang.About_expire}</i>
+                                <i class="i-soon">即将到期</i>
                                 {/if}
                             </div>
                             {if $is_used}
                             <div class="c-msg">
-                                <span class="not">{$lang.had_use}</span>
+                                <span class="not">已使用</span>
                             </div>
                             {else}
                             <div class="c-msg">
@@ -3800,23 +3769,23 @@
                                 <i class="i-left"></i>
                                 <div class="c-t-cont">
                                     <div class="c-t-c-top">
-                                        {if $vo.cou_type neq 5}<strong><em>￥</em>{if $vo.order_sn neq ''}{$vo.order_coupons}{else}{if $vo.uc_money neq 0}{$vo.uc_money}{else}{$vo.cou_money}{/if}{/if}</strong>{else}<i class="icon-my"></i>{/if}
+                                        {if $vo.cou_type neq 5}<strong><em>￥</em>{if $vo.order_sn neq ''}{$vo.order_coupons}{else}{if vo.uc_money neq 0}{$vo.uc_money}{else}{$vo.cou_money}{/if}{/if}</strong>{else}<i class="icon-my"></i>{/if}
                                         <span>{$lang.Consumption_full}{$vo.cou_man}{$lang.yuan}&nbsp;{$lang.keyong}</span>
                                     </div>
                                     <div class="c-t-c-bot">
                                         <p>{$lang.Platform_limit}：{if $vo.store_name}{$lang.xian}{$vo.store_name}{else}{$lang.whole_platform}{/if}</p>
-                                        <p>{$lang.range_bonus}：[{$vo.cou_type_name}][{$vo.cou_goods_name}]</p>
+                                        <p>范   围：[{$vo.cou_type_name}][{$vo.cou_goods_name}]</p>
                                         <p>{$vo.cou_start_time_date} ~ {$vo.cou_end_time_date}</p>
                                     </div>
                                 </div>
                                 {if $will_passed}
                                 <i class="i-right"></i>
-                                <i class="i-soon">{$lang.About_expire}</i>
+                                <i class="i-soon">即将到期</i>
                                 {/if}
                             </div>
                             {if $is_used}
                             <div class="c-msg">
-                                <span class="not">{$lang.had_use}</span>
+                                <span class="not">已使用</span>
                             </div>
                             {else}
                             <div class="c-msg">
@@ -3873,11 +3842,11 @@
                             <!--{/foreach}-->
                             {if $goods_count gt 3}
                             <span class="ellipsis">......</span>
-                            <a href="javascript:void(0);" class="order-prolist-more" ectype="opm">{$lang.see_more}︾</a>
+                            <a href="javascript:void(0);" class="order-prolist-more" ectype="opm">查看更多︾</a>
                             {/if}
                         </div>
                         <div class="c-handle" ectype="track-packages-btn">
-                            <a href="javascript:void(0)" class="sc-btn"><i class="iconfont icon-truck"></i>{$lang.Track}</a>
+                            <a href="javascript:void(0)" class="sc-btn"><i class="iconfont icon-truck"></i>跟踪</a>
                             <div class="comment-box" ectype="track-packages-info">
                                 <i class="box-i"></i>
                                 {if $item.invoice_no}
@@ -3910,55 +3879,56 @@
             <div class="user-account-warp">
                 <!--第一步 未开通资金管理-->
                 <div class="user-title">
-                    <h2>{$lang.account_log}</h2>
+                    <h2>资金管理</h2>
                 </div>
                 <div class="account-main account-not">
-                    <div class="account-price"><strong>{$lang.account_balance}：</strong><span class="a-price">{$info.surplus}</span></div>
+                    <div class="account-price"><strong>账户余额：</strong><span class="a-price">{$info.surplus}</span></div>
                     <div class="account-btn">
-                        <a href="user.php?act=account_deposit" class="sc-btn sc-redBg-btn">{$lang.online_recharge}</a>
-                        <a href="user.php?act={if $validate_info.real_name}account_raply{else}account_safe&type=real_name&step=first{/if}" class="sc-btn">{$lang.Application_withdrawal}</a>
+                        <a href="user.php?act=account_deposit" class="sc-btn sc-redBg-btn">在线充值</a>
+                        <a href="user.php?act={if $validate_info.real_name}account_raply{else}account_safe&type=real_name&step=first{/if}" class="sc-btn">申请提现</a>
                     </div>
 
                     <div class="a-m-bot">
                         <div class="user-frame-items">
                             <div class="item">
 								<a href="user.php?act=bonus">
-									<span>{$lang.label_bonus}</span>
+									<span>我的红包</span>
 									<span class="b-price">{$info.bonus_count}</span>
 								</a>
                             </div>
                             <div class="item">
 								<a href="user.php?act=coupons">
-									<span>{$lang.label_coupons}</span>
+									<span>我的优惠券</span>
 									<span class="b-price">{$coupons.num}</span>
 								</a>
                             </div>
                             <div class="item">
 								<a href="user.php?act=value_card">
-									<span>{$lang.label_value_card}</span>
+									<span>我的储值卡</span>
 									<span class="b-price">{$value_card.num}</span>
 								</a>
                             </div>
                             <div class="item">
-								<span>{$lang.consume_integral}</span>
+								<span>消费积分</span>
 								<span class="b-price">{$info.integral}</span>
                             </div>
                         </div>
                     </div>
                     <!--{if $action eq 'account_log'}-->
                     <div class="user-prompt mt50">
-                        <div class="tit"><span>{$lang.account_log_notic_title}</span><i class="iconfont icon-down"></i></div>
+                        <div class="tit"><span>资金管理注意事项</span><i class="iconfont icon-down"></i></div>
                         <div class="info">
-                            {$lang.account_log_notic}
+                            <p>1 请先绑定银行卡，开通资金管理</p>
+                            <p>2 账户余额是您在本网站可用于支付的金额，您可在线充值、申请提现</p>
                         </div>
                     </div>
                     <!-- {/if} -->
                     <div class="user-title mt30">
                         <ul class="tabs">
-                            <li {if $action eq 'account_log'}class="active"{/if}><a href="user.php?act=account_log">{$lang.05_seller_account_log}</a></li>
-                            <li {if $action eq 'account_detail'}class="active"{/if}><a href="user.php?act=account_detail">{$lang.account_detail}</a></li>
-                            <li {if $action eq 'account_paypoints'}class="active"{/if}><a href="user.php?act=account_paypoints">{$lang.consume_integral}</a></li>
-                            <li {if $action eq 'account_rankpoints'}class="active"{/if}><a href="user.php?act=account_rankpoints">{$lang.rank_integral}</a></li>
+                            <li {if $action eq 'account_log'}class="active"{/if}><a href="user.php?act=account_log">申请记录</a></li>
+                            <li {if $action eq 'account_detail'}class="active"{/if}><a href="user.php?act=account_detail">账户明细</a></li>
+                            <li {if $action eq 'account_paypoints'}class="active"{/if}><a href="user.php?act=account_paypoints">消费积分</a></li>
+                            <li {if $action eq 'account_rankpoints'}class="active"{/if}><a href="user.php?act=account_rankpoints">等级积分</a></li>
                         </ul>
                     </div>
                     <!--{if $action eq 'account_log'}-->
@@ -3988,7 +3958,7 @@
                             <!--{foreach from=$account_log item=item}-->
                                 <tr>
                                     <td>{$item.add_time}<br><div class="ftx-01">{$item.type}</div></td>
-                                    <td>{$item.amount}{if $item.deposit_fee neq 0}<br/><span class='red'>({$lang.pay_fee}：{$item.deposit_fee})</span>{/if}</td>
+                                    <td>{$item.amount}{if $item.deposit_fee neq 0}<br/><span class='red'>(手续费：{$item.deposit_fee})</span>{/if}</td>
                                     <td>{$item.payment|default:N/A}</td>
                                     <td>{$item.short_user_note}</td>
                                     <td>{$item.short_admin_note}</td>
@@ -4051,7 +4021,7 @@
                                 <tr>
                                     <td>{$item.change_time}</td>
                                     <td>{$item.type}</td>
-                                    <td>{$item.amount}{if $item.deposit_fee neq 0}<br/><span class='red'>({$lang.pay_fee}：{$item.deposit_fee})</span>{/if}</td>
+                                    <td>{$item.amount}{if $item.deposit_fee neq 0}<br/><span class='red'>(手续费：{$item.deposit_fee})</span>{/if}</td>
                                     <td>{$item.short_change_desc}</td>
                                 </tr>
                             <!--{foreachelse}-->
@@ -4147,33 +4117,33 @@
         <div class="user-mod">
         	<div class="type">
                 <div class="user-title">
-                    <h2>{$lang.account_appeal}</h2>
+                    <h2>充值申诉</h2>
                 </div>
                 <div class="account-main account-bind">
                     <div class="user-items">
                         <form name="account_complaint" method="post" action="user.php" enctype="multipart/form-data" class="user-form user-form-safe">
                             <div class="item">
-                                <div class="label">{$lang.account_time}：</div>
+                                <div class="label">充值时间：</div>
                                 <div class="value">
                                 	<span class="txt-lh">{$user_account.add_time}</span>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="label">{$lang.deposit_money}：</div>
+                                <div class="label">充值金额：</div>
                                 <div class="value">
                                 	<span class="txt-lh">{$user_account.amount}</span>
                                 </div>
                             </div>
                             
                             <div class="item">
-                                <div class="label">{$lang.payment}：</div>
+                                <div class="label">支付方式：</div>
                                 <div class="value">
                                 	<span class="txt-lh">{$user_account.payment}</span>
                                 </div>
                             </div>
                             
                             <div class="item">
-                                <div class="label"><em class="red">*</em>{$lang.appeal_credential}：</div>
+                                <div class="label"><em class="red">*</em>申诉凭据：</div>
                                 <div class="value">
                                 	<div class="type-file-box">
                                         {if $user_account.complaint_imges}
@@ -4189,7 +4159,7 @@
                             </div>
                             
                             <div class="item">
-                                <div class="label">{$lang.appeal_explain}：</div>
+                                <div class="label">申诉说明：</div>
                                 <div class="value">
                                 	<span class="txt-lh">
 										<textarea name="complaint_details" class="text text-2" style="height:100px; line-height:20px; padding-top:3px; padding-bottom:3px; font-size:12px;">{$user_account.complaint_details}</textarea>
@@ -4218,13 +4188,13 @@
         <div class="user-mod">
             <div class="user-account-warp">
                 <div class="user-title">
-                    <h2>{$lang.online_recharge}</h2>
+                    <h2>在线充值</h2>
                 </div>
                 <form name="formSurplus" method="post" action="user.php" id="formSurplus">
                 <div class="account-main account-deposit">
                     <div class="user-items">
                         <div class="item">
-                            <div class="label">{$lang.account_balance}：</div>
+                            <div class="label">账户余额：</div>
                             <div class="value"><span class="txt-lh ftx-01">{$user_info.surplus}</span></div>
                         </div>
                         <div class="item">
@@ -4257,7 +4227,7 @@
                                 <input type="hidden" name="rec_id" value="{$order.id|default:0}" />
                                 <input type="hidden" name="act" value="act_account" />
                                 <input type="submit" class="sc-btn sc-redBg-btn" name="submit" id="submitBtn" value="{$lang.Determine_Recharge}" />
-                                <input type="button" id="goback_account_log" class="sc-btn sc-redBg-btn" value="{$lang.back_up_page}">
+                                <input type="button" id="goback_account_log" class="sc-btn sc-redBg-btn" value="返回上一页">
                             </div>
                         </div>
                     </div>
@@ -4295,12 +4265,12 @@
                             <div class="label"><em class="red">*</em>{$lang.repay_money}：</div>
                             <div class="value">
                                 <input type="text" name="amount" class="text text-2" ectype="deposit_amout"/>
-                                <span class="ts">{$lang.yuan}{$lang.renmingni}{if $buyer_cash gt 0}{$lang.forward_total_lowest}{$buyer_cash}{$lang.yuan}{/if}</span>
+                                <span class="ts">{$lang.yuan}{$lang.renmingni}{if $buyer_cash gt 0}提现金额最低为{$buyer_cash}元{/if}</span>
                                 <div class="form_prompt"></div>
                             </div>
                         </div>
 						 <div class="item hide" ectype="deposit_fee">
-                            <div class="label">{$lang.forward_pay_fee}：</div>
+                            <div class="label">提现手续费：</div>
                             <div class="value"><span class="txt-lh" ectype="deposit_fee_value"></span><input type="hidden" value="" name="deposit_money" /></div>
                         </div>
                         <div class="item">
@@ -4344,7 +4314,7 @@
                                 <input type="hidden" name="sc_guid" value="{$sc_guid}">
                                 <input type="hidden" name="sc_rand" value="{$sc_rand}">
 								<input type="hidden" value="{$deposit_fee}" name="deposit_fee" />
-                                <input type="hidden" value="{$buyer_cash}" name="buyer_cash" />
+                                                                <input type="hidden" value="{$buyer_cash}" name="buyer_cash" />
                                 <input type="submit" class="sc-btn sc-redBg-btn" value="{$lang.Application_withdrawal}" id="submitBtn" />
                                 <input type="reset" class="sc-btn sc-redBg-btn" value="{$lang.Reset_Form}" />
                                 <div class="form_prompt"></div>
@@ -4410,6 +4380,7 @@
                     },'json');
                     timer = setTimeout("checkOrder()", 5000);
                 }
+                
             }
             checkOrder();              
         </script> 
@@ -4462,8 +4433,8 @@
             
                 <div class="user-title mt30 width_860 fl">
                     <ul class="tabs">
-                        <li {if $action eq 'baitiao'}class="active"{/if}><a href="user.php?act=baitiao">{$lang.Transaction_detail}</a></li>
-                        <li {if $action eq 'baitiao_pay_log'}class="active"{/if}><a href="user.php?act=baitiao_pay_log">{$lang.repayment_record}</a></li>
+                        <li {if $action eq 'baitiao'}class="active"{/if}><a href="user.php?act=baitiao">交易明细</a></li>
+                        <li {if $action eq 'baitiao_pay_log'}class="active"{/if}><a href="user.php?act=baitiao_pay_log">还款记录</a></li>
                     </ul>
                 </div>
             
@@ -4496,7 +4467,7 @@
                                     {$bt_log.order_sn}
                                     </a>
                                     
-                                    <br/><a href="user.php?act=baitiao_pay_log&log_id={$bt_log.log_id}" class="sc-btn">{$lang.view_repayment_record}</a>
+                                    <br/><a href="user.php?act=baitiao_pay_log&log_id={$bt_log.log_id}" class="sc-btn">查看还款记录</a>
                                 </td>
                                 <td class="tc">
                                     {$bt_log.use_date}
@@ -4599,7 +4570,7 @@
         <div class="user-mod">
             <div class="user-item-temp">
                 <div class="user-title">
-                    <h2>{$lang.repay_bt}</h2>
+                    <h2>白条还款</h2>
                 </div>
                 <div class="user-baitiao-hk">
                     <div class="user-items">
@@ -4628,7 +4599,7 @@
                         </div>
                         {/if}
                         <div class="item">
-                            <div class="label">{$lang.amount_payable}：</div>
+                            <div class="label">应还金额：</div>
                             <div class="value">
                                 {if $stages_info.is_stages eq 1}
                                 <span class="ftx-01 txt-lh">{$stages_info.format_stages_one_price}</span>
@@ -4734,12 +4705,12 @@
                             <td class="tc">{if $item.grade_img}<a href="{$item.grade_img}"  title="{$lang.grade_img}" target="_blank"><img src="{$item.grade_img}" width="30" height="30"></a>{/if}</td>
                             <td class="tc">
                                 {if $item.id eq $grade_id}
-                                    <a href="javascript:void(0);" class="sc-btn sc-btn-disabled">{$lang.now_grade}</a>
+                                    <a href="javascript:void(0);" class="sc-btn sc-btn-disabled">当前等级</a>
                                 {else}        
                                     {if $is_expiry}   
                                     <a href="user.php?act=application_grade&grade_id={$item.id}" class="sc-btn">{$lang.once}</a>
                                     {else}
-                                    <span>{$lang.not_to_apply}</span>
+                                    <span>不可申请</span>
                                     {/if}
                                 {/if}
                             </td>
@@ -4848,35 +4819,35 @@
                     <div class="user-grade-warp">
                         <div class="user-items">
                         	<div class="item">
-                            	<div class="label">{$lang.apply_seller_Grade}：</div>
+                            	<div class="label">申请商家等级：</div>
                                 <div class="value"><span class="txt-lh">{$grade_name}</span></div>
                             </div>
                             {if $action eq 'application_grade_edit'}
                             <div class="item">
-                                <div class="label">{$lang.adopt_status}：</div>
+                                <div class="label">审核状态：</div>
                                 <div class="value">
                                 	{if $seller_apply_info.apply_status eq 0}
-                                    <span class="txt-lh red">{$lang.not_audited}</span>
+                                    <span class="txt-lh red">未审核</span>
                                     {elseif $seller_apply_info.apply_status eq 2}
-                                    <span class="txt-lh red">{$lang.audited_not_adopt}</span>
+                                    <span class="txt-lh red">审核未通过</span>
                                     {elseif $seller_apply_info.apply_status eq 3}
-                                    <span class="txt-lh red">{$lang.invalid_input}</span>
+                                    <span class="txt-lh red">无效</span>
                                     {/if}
                                 </div>
                             </div>
                             {/if}
                             {if $seller_apply_info.apply_status eq 2 || $seller_apply_info.apply_status eq 3}
                             <div class="item">
-                                <div class="label">{$lang.not_adopt_reason}：</div>
+                                <div class="label">未通过原因：</div>
                                 <div class="value"><span class="txt-lh">{$seller_apply_info.reply_seller}</span></div>
                             </div>
 							<div class="item">
-                                <div class="label">{$lang.Prompt}：</div>
+                                <div class="label">提示：</div>
                                 <div class="value">
                                 	{if $seller_apply_info.apply_status eq 2}
-                                	<span class="txt-lh red">{$lang.not_adopt_reason_Prompt.0}</span>
+                                	<span class="txt-lh red">审核未通过，请重新申请</span>
                                     {elseif $seller_apply_info.apply_status eq 3}
-                                    <span class="txt-lh red">{$lang.not_adopt_reason_Prompt.1}</span>
+                                    <span class="txt-lh red">审核无效，请重新申请</span>
                                     {/if}
                                 </div>
                             </div>
@@ -4938,7 +4909,7 @@
                                 <!--{elseif $child.type eq 'select'}-->
                                 <div class="value">
                                     <div class="imitate_select">
-                                        <div class="cite"><span>{$lang.please_select}</span><i class="iconfont icon-down"></i></div>
+                                        <div class="cite"><span>请选择</span><i class="iconfont icon-down"></i></div>
                                         <ul>
                                             <li><a href="javascript:void(0);" data-value="0">{$lang.please_select}{$name_of_region[0]}</a></li>
                                             <!--{foreach from=$child.option_value item=value}-->
@@ -4957,7 +4928,7 @@
                                 <!--{elseif $child.type eq 'file'}-->
                                 <div class="value">
                                     <div class="value-file">
-                                        <input class="btn fl" value="{$lang.Select_file}" type="button">
+                                        <input class="btn fl" value="选择文件" type="button">
                                         {if $apply_criteria.$child.id}
                                         <a href="../{$apply_criteria.$child.id}" class="nyroModal fl ml10 mt3"><i class="iconfont icon-picture" onmouseover="toolTip('<img src={$apply_criteria.$child.id}>')" onmouseout="toolTip()"></i></a>
                                         {/if}
@@ -5045,7 +5016,7 @@
                                     {if $seller_apply_info.pay_status eq 0 && $seller_apply_info.apply_status eq 0}
                                     <a href="javascript:void(0);" class="sc-btn sc-redBg-btn" ectype="submit">{$lang.submit_request}</a>
 									{else}
-									<a href="user.php?act=merchants_upgrade_log" class="sc-btn sc-redBg-btn">{$lang.back}</a>
+									<a href="user.php?act=merchants_upgrade_log" class="sc-btn sc-redBg-btn">返回</a>
                                     {/if}
 									
 									<input type="hidden" name="sc_guid"  value="{$sc_guid|default:0}"/>
@@ -5085,13 +5056,13 @@
                 <form action="" method="post">
                 <div class="user-items">
                     <div class="item">
-                        <div class="label"><em>*</em>{$lang.bonus_card_number}：</div>
+                        <div class="label"><em>*</em>红包卡号：</div>
                         <div class="value">
                             <input type="text" name="bonus_sn" class="text text-2 txt_input_cardnum">
                         </div>
                     </div>
                     <div class="item">
-                        <div class="label"><em>*</em>{$lang.bonus_pwd}：</div>
+                        <div class="label"><em>*</em>红包密码：</div>
                         <div class="value">
                             <input type="text" name="bonus_password" class="text text-2 txt_input_cardpw">
                         </div>
@@ -5131,7 +5102,7 @@
                                 <div class="b-price">{$item.type_money}</div>
                                 <div class="b-i-bot">
                                     <div class="storeName">{$item.shop_name}</div>
-                                    <p>{$lang.card_number_label}：{$item.bonus_sn|default:N/A} - {$lang.order_limit}：{$item.min_goods_amount}</p>
+                                    <p>卡号：{$item.bonus_sn|default:N/A} - 订单限额：{$item.min_goods_amount}</p>
                                     <p>{$item.use_startdate} ~ {$item.use_enddate}</p>
                                 </div>
                                 {if $item.usebonus_type}<i class="i-soon">{$lang.general_audience}</i>{/if}
@@ -5156,10 +5127,10 @@
                             <div class="b-price">{$item.type_money}</div>
                             <div class="b-i-bot">
                                 <div class="storeName">{$item.shop_name}</div>
-                                <p>{$lang.card_number_label}：{$item.bonus_sn|default:N/A} - {$lang.order_limit}：{$item.min_goods_amount}</p>
+                                <p>卡号：{$item.bonus_sn|default:N/A} - 订单限额：{$item.min_goods_amount}</p>
                                 <p>{$item.use_startdate} ~ {$item.use_enddate}</p>
                             </div>
-                            <i class="i-soon">{$lang.About_expire}</i>
+                            <i class="i-soon">即将到期</i>
                         </div>
                         <!--{/foreach}-->
                         </div>
@@ -5180,10 +5151,10 @@
                             <div class="b-price">{$item.type_money}</div>
                             <div class="b-i-bot">
                                 <div class="storeName">{$item.shop_name}</div>
-                                <p>{$lang.card_number_label}：{$item.bonus_sn|default:N/A} - {$lang.order_limit}：{$item.min_goods_amount}</p>
+                                <p>卡号：{$item.bonus_sn|default:N/A} - 订单限额：{$item.min_goods_amount}</p>
                                 <p>{$item.use_startdate} ~ {$item.use_enddate}</p>
                             </div>
-                            <i class="i-soon">{$lang.had_use}</i>
+                            <i class="i-soon">已经使用</i>
                         </div>
                         <!--{/foreach}-->
                         </div>
@@ -5199,7 +5170,7 @@
                 </div>
             </div>
             <div class="user-prompt mt20">
-                <div class="tit"><span>{$lang.bonus}{$lang.reminder}</span><i class="iconfont icon-down"></i></div>
+                <div class="tit"><span>红包温馨提示</span><i class="iconfont icon-down"></i></div>
                 <div class="info">
                     {$lang.bonus_info}
                 </div>
@@ -5212,18 +5183,18 @@
         <!--{if $action eq 'value_card'}-->
         <div class="user-mod">
             <div class="user-title">
-                <h2>{$lang.bound_stored_card}</h2>
+                <h2>绑定储值卡</h2>
             </div>
             <div class="value-card-warp">
                 <div class="user-items">
                     <div class="item">
-                        <div class="label"><em>*</em>{$lang.stored_card_sn}：</div>
+                        <div class="label"><em>*</em>储值卡卡号：</div>
                         <div class="value">
                             <input type="text" name="card_sn" class="text text-2 txt_input_cardnum">
                         </div>
                     </div>
                     <div class="item">
-                        <div class="label"><em>*</em>{$lang.stored_card_pwd}：</div>
+                        <div class="label"><em>*</em>储值卡密码：</div>
                         <div class="value">
                             <input type="text" name="card_password" class="text text-2 txt_input_cardpw">
                         </div>
@@ -5262,12 +5233,12 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th class="tc">{$lang.card_number_label}</th>
-                            <th>{$lang.face_value_label}</th>
-                            <th>{$lang.money}</th>
-                            <th>{$lang.is_paid}</th>
-                            <th>{$lang.Expiration_time}</th>
-                            <th>{$lang.handle}</th>
+                            <th class="tc">卡号</th>
+                            <th>面值</th>
+                            <th>金额</th>
+                            <th>状态</th>
+                            <th>过期时间</th>
+                            <th>操作</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -5276,7 +5247,7 @@
                             <td class="tc">{$vo.value_card_sn}</td>
                             <td class="tc">{$vo.vc_value}</td>
                             <td class="tc">{$vo.card_money}</td>
-                            <td class="tc">{$lang.had_activated}</td>
+                            <td class="tc">已激活</td>
                             <td class="tc">{$vo.end_time}</td>
                             <td class="tc c-handle">
                                 <a href="user.php?act=value_card_info&vid={$vo.vid}" class="sc-btn">{$lang.View_details}</a>
@@ -5296,7 +5267,7 @@
                 {/if}
             </div>
             <div class="user-prompt mt50">
-                <div class="tit"><span>{$lang.value_card}{$lang.reminder}</span><i class="iconfont icon-down"></i></div>
+                <div class="tit"><span>储值卡温馨提示</span><i class="iconfont icon-down"></i></div>
                 <div class="info">
                     <p>1、{$lang.card_desc.one}</p>
                     <p>2、{$lang.card_desc.two}</p>
@@ -5310,18 +5281,18 @@
         <!--{if $action eq 'to_paid'}-->
         <div class="user-mod">
             <div class="user-title">
-                <h2>{$lang.value_card_filling}</h2>
+                <h2>储值卡充值</h2>
             </div>
             <div class="value-card-warp">
                 <div class="user-items">
                     <div class="item">
-                        <div class="label"><em>*</em>{$lang.rechargeable_card_sn}：</div>
+                        <div class="label"><em>*</em>充值卡卡号：</div>
                         <div class="value">
                             <input type="text" name="pay_card_sn" class="text text-2 txt_input_cardnum2">
                         </div>
                     </div>
                     <div class="item">
-                        <div class="label"><em>*</em>{$lang.rechargeable_card_pwd}：</div>
+                        <div class="label"><em>*</em>充值卡密码：</div>
                         <div class="value">
                             <input type="text" name="pay_card_password" class="text text-2 txt_input_cardpw2">
                         </div>
@@ -5332,13 +5303,14 @@
                             <div class="sm-input">
                                 <input type="text" name="captcha" class="captcha_input captcha_error2" size="4">
                                 <img src="captcha_verify.php?captcha=is_pay_card&width=100&height=32&font_size=14&{$rand}" onClick="this.src='captcha_verify.php?captcha=is_pay_card&width=100&height=28&font_size=14&'+Math.random()" class="captcha_img">
+                                
                             </div>
                         </div>
                     </div>
                     <div class="item item-button">
                         <div class="label"></div>
                         <div class="value">
-                            <a href="javascript:void(0);" class="sc-btn sc-redBg-btn" ectype="submitVC">{$lang.recharge}</a>
+                            <a href="javascript:void(0);" class="sc-btn sc-redBg-btn" ectype="submitVC">去充值</a>
                         </div>
                     </div>          
                 </div>
@@ -5356,7 +5328,7 @@
                     <span class="fl mr5">{$explain}</span>
                     {if $rz_shopNames}
                     <div class="vcard_info" ectype='value_see'>
-                        <span class="red">({$lang.view})</span>
+                        <span class="red">(查看)</span>
                         <div class="value_shop" ectype='value_shop'>
                               <!--{foreach from=$rz_shopNames item=list name=shop}-->     
                               <a href="{$list.shop_url}" target="_blank">{$list.shop_name}</a>{if !$smarty.foreach.shop.last},{/if}
@@ -5416,9 +5388,9 @@
                     <span>{$lang.bind_qq}</span>
                     <div class="b-btn">
                         {if $qq_info}
-                            <a data-title="{$lang.Un_bind}" data-id="{$qq_info.id}" data-divid="qq_remove" data-dialog="oathdialog" href="javascript:void(0);" class="qq-remove sc-btn" data-username="{$info.username}"  data-identity="{$info.username}">{$lang.Un_bind}</a>
+                            <a data-title="{$lang.Un_bind}" data-id="{$qq_info.id}" data-divid="qq_remove" data-dialog="oathdialog" href="javascript:void(0);" class="qq-remove sc-btn" data-username="{$info.username}"  data-identity="QQ">解除绑定</a>
                         {else}
-                            <a href="user.php?act=oath&type=qq" class="sc-btn">{$lang.add_bind}</a>
+                            <a href="user.php?act=oath&type=qq" class="sc-btn">添加绑定</a>
                         {/if}
                     </div>
                     <div class="b-type"><i class="iconfont{if $qq_info} icon-ok{else} icon-info-sign{/if}"></i>{if $qq_info}{$lang.Bound}{else}{$lang.not_Bound}{/if}</div>
@@ -5431,9 +5403,9 @@
                     <span>{$lang.weibo_one}</span>
                     <div class="b-btn">
                     {if $weibo_info}
-                    	<a data-title="{$lang.Un_bind}" data-id="{$weibo_info.id}" data-divid="weixin_remove" data-dialog="oathdialog" href="javascript:void(0);" class="weibo-remove sc-btn" data-username="{$info.username}"  data-identity="{$info.username}">{$lang.Un_bind}</a>
+                    	<a data-title="{$lang.Un_bind}" data-id="{$weibo_info.id}" data-divid="weixin_remove" data-dialog="oathdialog" href="javascript:void(0);" class="weibo-remove sc-btn" data-username="{$info.username}"  data-identity="微博">解除绑定</a>
                     {else}
-                    	<a href="user.php?act=oath&type=weibo" class="sc-btn">{$lang.add_bind}</a>
+                    	<a href="user.php?act=oath&type=weibo" class="sc-btn">添加绑定</a>
                     {/if}
                     </div>
                     <div class="b-type"><i class="iconfont{if $weibo_info} icon-ok{else} icon-info-sign{/if}"></i>{if $weibo_info}{$lang.Bound}{else}{$lang.not_Bound}{/if}</div>
@@ -5446,9 +5418,9 @@
                     <span>{$lang.weixin_one}</span>
                     <div class="b-btn">
                     {if $weixin_info}
-                    	<a data-title="{$lang.Un_bind}" data-id="{$weixin_info.id}" data-divid="weibo_remove" data-dialog="oathdialog" href="javascript:void(0);" class="weixin-remove sc-btn" data-username="{$info.username}"  data-identity="{$info.username}">{$lang.Un_bind}</a>
+                    	<a data-title="{$lang.Un_bind}" data-id="{$weixin_info.id}" data-divid="weibo_remove" data-dialog="oathdialog" href="javascript:void(0);" class="weixin-remove sc-btn" data-username="{$info.username}"  data-identity="微信">解除绑定</a>
                     {else}
-                    	<a href="wechat_oauth.php?act=login&user_id={$user_id}" class="sc-btn">{$lang.add_bind}</a>
+                    	<a href="wechat_oauth.php?act=login&user_id={$user_id}" class="sc-btn">添加绑定</a>
                     {/if}
                     </div>
                     <div class="b-type"><i class="iconfont{if $weixin_info} icon-ok{else} icon-info-sign{/if}"></i>{if $weixin_info}{$lang.Bound}{else}{$lang.not_Bound}{/if}</div>
@@ -5494,8 +5466,8 @@
                                     <thead>
                                         <tr>
                                             <th>{$lang.Project_info}</th>
-                                            <th>{$lang.order_number}</th>
-                                            <th>{$lang.is_confirmed}</th>
+                                            <th>订单号</th>
+                                            <th>已完成</th>
                                             <th>{$lang.zc_raise}</th>
                                             <th>{$lang.residual_time}</th>
                                             <th>{$lang.handle}</th>
@@ -5537,7 +5509,7 @@
                                                 <p>{$lang.zc_ss}</p>                                           
                                                 {elseif $vo.shipping_status == 1}
                                                 <p>{$lang.ss.1}</p>
-                                                <a target="_blank" class="sc-btn" href="user.php?act=affirm_received&order_id={$vo.order_id}&action=crowdfunding" onclick="if (!confirm('{$lang.confirm_received}')) return false;">{$lang.received}</a>
+                                                <a target="_blank" class="sc-btn" href="user.php?act=affirm_received&order_id={$vo.order_id}&action=crowdfunding" onclick="if (!confirm('你确认已经收到货物了吗？')) return false;">确认收货</a>
                                                 {elseif $vo.shipping_status == 2}
                                                 <p>{$lang.Received_goods}</p>
                                                 {/if} 
@@ -5572,8 +5544,8 @@
                                     <thead>
                                         <tr>
                                             <th>{$lang.Project_info}</th>
-                                            <th>{$lang.order_number}</th>
-                                            <th>{$lang.is_confirmed}</th>
+                                            <th>订单号</th>
+                                            <th>已完成</th>
                                             <th>{$lang.zc_raise}</th>
                                             <th>{$lang.residual_time}</th>
                                             <th>{$lang.handle}</th>
@@ -5614,7 +5586,7 @@
                                                 <p>{$lang.zc_ss}</p>                                           
                                                 {elseif $vo.shipping_status == 1}
                                                 <p>{$lang.ss.1}</p>
-                                                <a target="_blank" class="sc-btn" href="user.php?act=affirm_received&order_id={$vo.order_id}" onclick="if (!confirm('{$lang.confirm_received}')) return false;">{$lang.received}</a>
+                                                <a target="_blank" class="sc-btn" href="user.php?act=affirm_received&order_id={$vo.order_id}" onclick="if (!confirm('你确认已经收到货物了吗？')) return false;">确认收货</a>
                                                 {elseif $vo.shipping_status == 2}
                                                 <p>{$lang.Received_goods}</p>
                                                 {/if}   
@@ -5649,8 +5621,8 @@
                                     <thead>
                                         <tr>
                                             <th>{$lang.Project_info}</th>
-                                            <th>{$lang.order_number}</th>
-                                            <th>{$lang.is_confirmed}</th>
+                                            <th>订单号</th>
+                                            <th>已完成</th>
                                             <th>{$lang.zc_raise}</th>
                                             <th>{$lang.residual_time}</th>
                                             <th>{$lang.handle}</th>
@@ -5691,7 +5663,7 @@
                                                 <span>{$lang.zc_ss}</span>                                           
                                                 {elseif $vo.shipping_status == 1}
                                                 <span>{$lang.ss.1}</span>
-                                                <a target="_blank" class="sc-btn" href="user.php?act=affirm_received&order_id={$vo.order_id}" onclick="if (!confirm('{$lang.confirm_received}')) return false;">{$lang.received}</a>
+                                                <a target="_blank" class="sc-btn" href="user.php?act=affirm_received&order_id={$vo.order_id}" onclick="if (!confirm('你确认已经收到货物了吗？')) return false;">确认收货</a>
                                                 {elseif $vo.shipping_status == 2}
                                                 <span>{$lang.Received_goods}</span>
                                                 {/if} 
@@ -5702,13 +5674,13 @@
                                 </table>
                             </div>
                             {else}
-                            <div class="no_records">
-                                <i class="no_icon_two"></i>
-                                <div class="no_info no_info_line">
-                                    <h3>{insert name='get_page_no_records' filename=$filename act=$action}</h3>
-                                    <div class="no_btn"><a href="crowdfunding.php" class="sc-btn">{$lang.zc_home}</a></div>
+                                <div class="no_records">
+                                    <i class="no_icon_two"></i>
+                                    <div class="no_info no_info_line">
+                                        <h3>{insert name='get_page_no_records' filename=$filename act=$action}</h3>
+                                        <div class="no_btn"><a href="crowdfunding.php" class="sc-btn">{$lang.zc_home}</a></div>
+                                    </div>
                                 </div>
-                            </div>
                             {/if}
                         </div>
                     </div>
@@ -5750,6 +5722,7 @@
                                                <a target="_blank" class="sc-btn" href="crowdfunding.php?act=detail&id={$vo.id}">{$lang.To_support}</a>
                                                <br/>
                                                <a href="javascript:void(0);" class="sc-btn" data-dialog="zc_focus_dialog" data-divid="zc_focus_dialog" data-url="user.php?act=delete_zc_focus&rec_id={$vo.id}">{$lang.no_attention}</a>
+                                               <!--<a href="crowdfunding.php?act=rm_focus&id={$vo.id}">取消关注</a>-->
                                                {else}
                                                <span>{$lang.has_ended}</span>
                                                {/if}
@@ -5787,8 +5760,8 @@
                         <div class="cite"><span>{$lang.all_status}</span><i class="iconfont icon-down"></i></div>
                         <ul>
                             <li id="wholesale_order_status_-1"><a href="javascript:void(0);" data-idtxt="wholesale_status_list" data-action="{$action}" data-type="order_status" data-id="-1" data-value='-1'>{$lang.all_status}</a></li>
-                            <li id="wholesale_order_status_0"><a href="javascript:void(0);" data-idtxt="wholesale_status_list" data-action="{$action}" data-type="order_status" data-id="0" data-value='0'>{$lang.no_confirmed}</a></li>
-                            <li id="wholesale_order_status_1"><a href="javascript:void(0);" data-idtxt="wholesale_status_list" data-action="{$action}" data-type="order_status" data-id="1" data-value='1'>{$lang.is_confirmed}</a></li>
+                            <li id="wholesale_order_status_0"><a href="javascript:void(0);" data-idtxt="wholesale_status_list" data-action="{$action}" data-type="order_status" data-id="0" data-value='0'>未完成</a></li>
+                            <li id="wholesale_order_status_1"><a href="javascript:void(0);" data-idtxt="wholesale_status_list" data-action="{$action}" data-type="order_status" data-id="1" data-value='1'>已完成</a></li>
                         </ul>
                         <input name="wholesale_order_status_list" type="hidden" value="-1" id="wholesale_order_status_val">
                     </div>
@@ -5805,7 +5778,7 @@
                     </div>
                 </div>
                 <div class="user-list-search">
-                    <input type="text" id="ip_keyword" class="text" onkeydown="javascript:if(event.keyCode==13) get_WholesaleOrderSearch('ip_keyword', 'order_list', 'text');" onblur="if (this.value=='') this.value=this.defaultValue; this.style.color='#999'" onfocus="if (this.value==this.defaultValue)this.value='';this.style.color='#666'" placeholder="{$lang.search_oreder_user}" name="" style="color: rgb(153, 153, 153);">
+                    <input type="text" id="ip_keyword" class="text" onkeydown="javascript:if(event.keyCode==13) get_WholesaleOrderSearch('ip_keyword', 'order_list', 'text');" onblur="if (this.value=='') this.value=this.defaultValue; this.style.color='#999'" onfocus="if (this.value==this.defaultValue)this.value='';this.style.color='#666'" placeholder="输入商品名称或者订单号搜索" name="" style="color: rgb(153, 153, 153);">
                     <button type="button" onclick="get_WholesaleOrderSearch('ip_keyword', 'order_list', 'text')"><i class="iconfont icon-search"></i></button>
                 </div>
             </div>
@@ -5814,11 +5787,11 @@
             </div>
         </div>
         <script type="text/javascript">
-            //删除
+            //删除                                                                                                                                                                                                                                                                                                  //
             function delete_wholesale_order(order_id){
                 var order = new Object();
                 order.order_id   = order_id; 
-				pbDialog("{$lang.is_confirmed_who_buy}","",0,"","","",true,function(){
+				pbDialog("是否确定删除采购单？","",0,"","","",true,function(){
 					Ajax.call('user.php?act=delete_wholesale_order', 'order=' + $.toJSON(order), orderResponse, 'POST', 'JSON');
 				});
             } 
@@ -5871,6 +5844,7 @@
 					var height_l = $(this).find(".itemc-left").height();
 					var height_r = $(this).find(".itemc-right").height();
 					
+					
 					if(height_l < height_r){
 						$(this).find(".itemc-right").addClass("borderLeft");
 					}else if(height_l > height_r){
@@ -5897,17 +5871,17 @@
             <div class="user-list-title clearfix">
                 <div class="user-list-filter user-wantbut-filter">
                     <div class="text_time" id="text_time1">
-                        <input type="text" class="text mr0" name="start_date" id="start_date" value="{$smarty.get.start_date}" placeholder="{$lang.select_date}" autocomplete="off" readonly>
+                        <input type="text" class="text mr0" name="start_date" id="start_date" value="{$smarty.get.start_date}" placeholder="请选择日期" autocomplete="off" readonly>
                     </div>
                     <span class="bolang">&nbsp;&nbsp;~&nbsp;&nbsp;</span>
                     <div class="text_time" id="text_time2">
-                        <input type="text" class="text mr0" name="end_date" id="end_date" value="{$smarty.get.end_date}" placeholder="{$lang.select_date}" autocomplete="off" readonly>
+                        <input type="text" class="text mr0" name="end_date" id="end_date" value="{$smarty.get.end_date}" placeholder="请选择日期" autocomplete="off" readonly>
                     </div>
                 </div>
                 <div class="user-list-search user-list-search-wantbut">
                     <input type="hidden" name="review_status" value="{$smarty.get.review_status}">
-                    <input type="text" id="ip_keyword" class="text" placeholder="{$lang.wholesale_purchase_placeholder}" name="keyword" value="{$smarty.get.keyword}" onkeydown="javascript:if(event.keyCode==13) purchase_search();" style="color: rgb(153, 153, 153);">
-                    <button type="button" onclick="purchase_search()">{$lang.search}</button>
+                    <input type="text" id="ip_keyword" class="text" placeholder="输入求购单标题搜索" name="keyword" value="{$smarty.get.keyword}" onkeydown="javascript:if(event.keyCode==13) purchase_search();" style="color: rgb(153, 153, 153);">
+                    <button type="button" onclick="purchase_search()">搜索</button>
                 </div>
             </div>
             <div class="user-wantbut-list">
@@ -5920,10 +5894,10 @@
                     </colgroup>
                     <thead>
                         <tr>
-                            <th>{$lang.want_to_buy_goods}</th>
-                            <th>{$lang.want_to_buy_time}</th>
-                            <th>{$lang.adopt_status}</th>
-                            <th>{$lang.handle}</th>
+                            <th>求购商品</th>
+                            <th>求购时间</th>
+                            <th>审核状态</th>
+                            <th>操作</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -5934,14 +5908,14 @@
                                     <div class="p-img"><a href="wholesale_purchase.php?act=info&purchase_id={$purchase.purchase_id}" target="_blank"><img src="{if $purchase.img}{$purchase.img}{else}themes/<?php echo $GLOBALS['_CFG']['template']; ?>/images/brand_defalut.jpg{/if}"></a></div>
                                     <div class="p-info">
                                         <div class="p-name"><a href="wholesale_purchase.php?act=info&purchase_id={$purchase.purchase_id}" title="{$purchase.subject|escape:html}" target="_blank">{$purchase.subject}</a></div>
-                                        <div class="p-num">{$lang.want_to_buy_num}：{$purchase.goods_number}{$lang.jian}</div>
+                                        <div class="p-num">求购数量：{$purchase.goods_number}件</div>
                                     </div>
                                 </div>
                             </td>
                             <td>
                                 <div class="p-time">
                                     <p>{$purchase.add_time_complete} 〜 {$purchase.end_time_complete}</p>
-                                    <p>{$lang.residual}{$purchase.left_day}{$lang.day}</p>
+                                    <p>剩余{$purchase.left_day}天</p>
                                 </div>
                             </td>
                             <td>
@@ -5950,12 +5924,12 @@
                                 </div>
                             </td>
                             <td>
-                                <a href="user.php?act=purchase_info&purchase_id={$purchase.purchase_id}" class="sc-btn">{$lang.view}</a>
-                                <a href="user.php?act=purchase_delete&purchase_id={$purchase.purchase_id}" class="sc-btn">{$lang.drop}</a>
+                                <a href="user.php?act=purchase_info&purchase_id={$purchase.purchase_id}" class="sc-btn">查看</a>
+                                <a href="user.php?act=purchase_delete&purchase_id={$purchase.purchase_id}" class="sc-btn">删除</a>
                             </td>
                         </tr>
                         {foreachelse}
-                        <tr><td colspan="4">{$lang.wholesale_purchase_null}</td></tr>
+                        <tr><td colspan="4">当前还没有求购数据哟</td></tr>
                         {/foreach}
                     </tbody>
                 </table>
@@ -5993,7 +5967,7 @@
                 <div class="user-wantbuy-content">
                     <div class="title">
                     	<h3>{$lang.review_status.$purchase_info.review_status}－{$lang.purchase_status.$purchase_info.status}</h3>
-                        <span>{$lang.wholesale_purchase_residual}<em>{$purchase_info.left_day}</em>{$lang.day}</span>
+                        <span>距求购结束还剩<em>{$purchase_info.left_day}</em>天</span>
                     </div>
                     <div class="user-wantbuy-table">
                     	<div class="tit">{$purchase_info.subject}<em>{$lang.purchase_type.$purchase_info.type}</em></div>
@@ -6007,11 +5981,11 @@
                             </colgroup>
                             <thead>
                             	<tr>
-                                    <th>{$lang.purchase_name}</th>
-                                    <th>{$lang.purchase_cat}</th>
-                                    <th>{$lang.purchase_num}</th>
-                                    <th>{$lang.purchase_price}</th>
-                                    <th>{$lang.purchase_remarks}</th>
+                                    <th>采购商品名称</th>
+                                    <th>采购商品分类</th>
+                                    <th>采购数量</th>
+                                    <th>目标单价</th>
+                                    <th>其他备注</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -6019,8 +5993,8 @@
                             	<tr>
                                     <td>{$goods.goods_name}</td>
                                     <td><div class="tDiv">{$goods.cat_name}</div></td>
-                                    <td>{$goods.goods_number}{$lang.jian}</td>
-                                    <td>{$goods.goods_price}{$lang.yuan}</td>
+                                    <td>{$goods.goods_number}件</td>
+                                    <td>{$goods.goods_price}元</td>
                                     <td>
                                     	<div class="t-desc"><span>{$goods.remarks}</span></div>
                                         <div class="t-images">
@@ -6043,29 +6017,33 @@
                                     <td colspan="5">
                                     	<div class="tfoot-left">
                                             <div class="lie">
-                                            	<div class="label">{$lang.contact_username}：</div>
+                                            	<div class="label">联系人：</div>
                                                 <div class="value">{$purchase_info.contact_name} {$lang.contact_gender.$purchase_info.contact_gender}</div>
                                             </div>
                                             <div class="lie">
-                                            	<div class="label">{$lang.contact_phone}：</div>
+                                            	<div class="label">联系电话：</div>
                                                 <div class="value">{$purchase_info.contact_phone}</div>
                                             </div>
                                             <div class="lie">
-                                            	<div class="label">{$lang.email_reset}：</div>
+                                            	<div class="label">电子邮箱：</div>
                                                 <div class="value">{$purchase_info.contact_email}</div>
                                             </div>
                                         </div>
                                         <div class="tfoot-right">
                                             <div class="lie">
-                                            	<div class="label">{$lang.Invoice_information}：</div>
-                                                <div class="value">{$lang.need_invoice.$purchase_info.need_invoice} {if $purchase_info.invoice_tax_rate}{$lang.tax_rate}{$purchase_info.invoice_tax_rate}{/if}</div>
+                                            	<div class="label">发票信息：</div>
+                                                <div class="value">{$lang.need_invoice.$purchase_info.need_invoice} {if $purchase_info.invoice_tax_rate}税率{$purchase_info.invoice_tax_rate}{/if}</div>
                                             </div>
+                                            <!--<div class="lie">
+                                            	<div class="label">收货地区：</div>
+                                                <div class="value">{$purchase_info.consignee_region}</div>
+                                            </div>-->
                                             <div class="lie">
-                                            	<div class="label">{$lang.label_address}：</div>
+                                            	<div class="label">收货地址：</div>
                                                 <div class="value">{$purchase_info.consignee_region} {$purchase_info.consignee_address}</div>
                                             </div>											
                                             <div class="lie">
-                                            	<div class="label">{$lang.label_supplement_explain}：</div>
+                                            	<div class="label">补充说明：</div>
                                                 <div class="value">{$purchase_info.description}</div>
                                             </div>
                                         </div>
@@ -6083,20 +6061,20 @@
                     <div class="user-items">
 						{if $purchase_info.status neq 1}
                     	<div class="item">
-                            <div class="label">{$lang.corporate_name}：</div>
+                            <div class="label">公司名称：</div>
                             <div class="value"><input type="text" name="supplier_company_name" value="{$purchase_info.supplier_company_name}" class="text"></div>
                         </div>
                         <div class="item">
-                            <div class="label">{$lang.contact_phone}：</div>
+                            <div class="label">联系电话：</div>
                             <div class="value"><input type="text" name="supplier_contact_phone" value="{$purchase_info.supplier_contact_phone}" class="text"></div>
                         </div>
 						{else}
 						<div class="item">
-                            <div class="label">{$lang.corporate_name}：</div>
+                            <div class="label">公司名称：</div>
                             <div class="value"><span class="lh30">{$purchase_info.supplier_company_name}</span></div>
                         </div>
                         <div class="item">
-                            <div class="label">{$lang.contact_phone}：</div>
+                            <div class="label">联系电话：</div>
                             <div class="value"><span class="lh30">{$purchase_info.supplier_contact_phone}</span></div>
                         </div>
 						{/if}
@@ -6106,7 +6084,7 @@
                             <div class="value">
                                 <input type="hidden" name="purchase_id" value="{$purchase_info.purchase_id}">
                                 <input type="hidden" name="act" value="purchase_edit">
-                            	<input type="submit" class="sc-btn sc-redBg-btn" name="submit" value="{$lang.purchase_order}">
+                            	<input type="submit" class="sc-btn sc-redBg-btn" name="submit" value="完成求购单">
                             </div>
                         </div>
                         {/if}
@@ -6121,7 +6099,7 @@
         <!--{if $action eq 'apply_suppliers'}-->
         <div class="user-mod">
             <div class="user-title">
-                <h2>{$lang.supplier_entry}</h2>
+                <h2>供应商入驻</h2>
             </div>
             <div class="account-main account-bind">
                 <div class="user-items">
@@ -6143,7 +6121,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="label"><em class="red">*</em>{$lang.corporate_name}：</div>
+                            <div class="label"><em class="red">*</em>公司名称：</div>
                             <div class="value">
                                 <input class="text text-1" type="text" id="company_name" name="company_name" value="{$supplier.company_name}">
                                 <div class="notic"></div>
@@ -6152,14 +6130,14 @@
                         </div>
                         
                         <div class="item">
-                            <div class="label"><em class="red">*</em>{$lang.company_address}：</div>
+                            <div class="label"><em class="red">*</em>公司地址：</div>
                             <div class="value">
                                 <input class="text text-5" type="text" id="company_address" value="{$supplier.company_address}" name="company_address" ectype="company_address">
                                 <div class="form_prompt"></div>
                             </div>
                         </div>
                         <div class="item">
-                            <div class="label"><em class="red">*</em>{$lang.select_region}：</div>
+                            <div class="label"><em class="red">*</em>选择区域：</div>
                             <div class="value">
                                 <dl class="mod-select mod-select-small fl" ectype="smartdropdown">
                                     <dt>
@@ -6194,7 +6172,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="label"><em class="red">*</em>{$lang.cat_name}：</div>
+                            <div class="label"><em class="red">*</em>详细类目：</div>
                             <div class="value"> 
                                 <div id="first_cate" class="imitate_select w200 mr10">
                                     <div class="cite"><span>{$lang.please_select}</span><i class="iconfont icon-down"></i></div>
@@ -6211,7 +6189,7 @@
                                     <div class="m-category-handle">
                                         <div class="checkbox_item" style="width:auto;">
                                             <input type="checkbox" name="all_list" class="ui-checkbox" id="allList" />
-                                            <label for="allList" class="ui-label">{$lang.check_all_back}</label>
+                                            <label for="allList" class="ui-label">全选/反选</label>
                                         </div>
                                         <a href="javascript:void(0);" class="btn btn30 btn_blue" onclick="selectChildCate_cheked()" >{$lang.add}</a>
                                     </div>
@@ -6250,7 +6228,7 @@
                                                 <td><div class="tDiv"><a class="btn_trash" href="javascript:void(0);" onClick="deleteChildCate({$category.ct_id})"><i class="icon icon-trash"></i>{$lang.drop}</a></div></td>
                                             </tr>
                                         {foreachelse}
-                                            <tr><td colspan='4'>{$lang.temporary_not_cat}</td></tr>
+                                            <tr><td colspan='4'>暂时没有分类</td></tr>
                                         {/foreach}
                                         </tbody>
                                     </table>
@@ -6258,7 +6236,7 @@
                             </div>
                         </div>                       
                         <div class="item">
-                            <div class="label"><em class="red">*</em>{$lang.front_of_id_card}：</div>
+                            <div class="label"><em class="red">*</em>身份证正面：</div>
                             <div class="value">
                                 <div class="type-file-box">
                                     <input type="button" name="button" id="button" class="type-file-button">
@@ -6270,7 +6248,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="label"><em class="red">*</em>{$lang.reverse_of_id_card}：</div>
+                            <div class="label"><em class="red">*</em>身份证反面：</div>
                             <div class="value">
                                 <div class="type-file-box">
                                     <input type="button" name="button" id="button" class="type-file-button">
@@ -6282,7 +6260,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="label">{$lang.business_license}：</div>
+                            <div class="label">营业执照：</div>
                             <div class="value">
                                 <div class="type-file-box">
                                     <input type="button" name="button" id="button" class="type-file-button">
@@ -6294,7 +6272,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="label">{$lang.institutional_code_certificate}：</div>
+                            <div class="label">机构代码证：</div>
                             <div class="value">
                                 <div class="type-file-box">
                                     <input type="button" name="button" id="button" class="type-file-button">
@@ -6306,7 +6284,7 @@
                             </div>
                         </div>
                         <div class="item">
-                            <div class="label">{$lang.account_opening_permit}：</div>
+                            <div class="label">开户许可证：</div>
                             <div class="value">
                                 <div class="type-file-box">
                                     <input type="button" name="button" id="button" class="type-file-button">
@@ -6342,12 +6320,12 @@
                             <div class="value">
                                 <input id="flag" type="hidden" value="change_password_f" name="flag">
                                 <input type="hidden" value="supplier_info" name="act">
-                                <input type="submit" id="authSubmit" class="sc-btn sc-redBg-btn" value="{$lang.submit_goods}">
+                                <input type="submit" id="authSubmit" class="sc-btn sc-redBg-btn" value="提交">
                             </div>
                         </div>
                     </form>
                     <!-- {else} -->
-                    {$lang.submit_apply}
+                    已提交申请
                     <!-- {/if} -->
                 </div>
             </div>
@@ -6363,7 +6341,7 @@
             <form id="formReturn" name="formReturn" method="post" action="user.php" onsubmit="return check_sub()">      
             <div class="user-title">
                 <h2>{$lang.return_list}</h2>
-                <a href="user.php?act=service_detail" class="more">{$lang.service_note}</a>
+                <a href="user.php?act=service_detail" class="more">服务说明</a>
             </div>
             <div class="uaer-return-app clearfix">
             <!-- {foreach from=$goods_return item=goods} -->
@@ -6417,11 +6395,12 @@
                 <div class="item item1 first">
                     <div class="label"><em>*</em>{$lang.Service_type}：</div>
                     <div class="value value-checkbox">
+                        
                         {foreach from=$goods_cause item=goods}
-                        <div class="value-item {if $goods.is_checked eq 1}selected{/if}">
-                            <input type="radio" id="service-{$goods.cause}" name="return_type" value="{$goods.cause}" class="ui-radio" autocomplete="off" {if $goods.is_checked eq 1}checked{/if} />
-                            <label for="service-{$goods.cause}" class="ui-radio-label">{$goods.lang}</label>
-                        </div>
+                            <div class="value-item {if $goods.is_checked eq 1}selected{/if}">
+                                <input type="radio" id="service-{$goods.cause}" name="return_type" value="{$goods.cause}" class="ui-radio" autocomplete="off" {if $goods.is_checked eq 1}checked{/if} />
+                                <label for="service-{$goods.cause}" class="ui-radio-label">{$goods.lang}</label>
+                            </div>
                         {/foreach}
                     </div>
                 </div>
@@ -6556,7 +6535,7 @@
                 {else}
                 <div class="no_records">
                     <i class="no_icon_two"></i>
-                    <div class="no_info"><h3>{$lang.no_support_return}</h3></div>
+                    <div class="no_info"><h3>暂不支持退换货</h3></div>
                 </div>
                 {/if}
                 </div>
@@ -6653,14 +6632,14 @@
                 <div class="user-order-list">
                     <dl class="item relative">
                         <dt class="item-t b-b-0">
-                            <div class="t-statu">{if $goods.return_status1 eq 4}{$lang.is_confirmed}{else}{$lang.zc_ss}{/if}</div>
+                            <div class="t-statu">{if $goods.return_status1 eq 4}已完成{else}发货中{/if}</div>
                             <div class="t-info">
                                 <span class="info-item">{$lang.order_number}：{$goods.order_sn}</span>
                                 <span class="info-item">{$lang.Waybill}：{if $goods.out_invoice_no != ""}{$goods.out_invoice_no}{else}&nbsp;{/if}</span>
                                 <span class="info-item">{$lang.Logistics_company}：{if $goods.out_invoice_no != ""}{$goods.out_shipp_shipping}{else}&nbsp;{/if}</span>
                             </div>
                             <div class="t-right" ectype="track-packages-btn">
-                                <a href="javascript:void(0)" class="sc-btn"><i class="iconfont icon-truck"></i>{$lang.Track}</a>
+                                <a href="javascript:void(0)" class="sc-btn"><i class="iconfont icon-truck"></i>跟踪</a>
                                 <div class="comment-box" ectype="track-packages-info">
                                     <i class="box-i"></i>
                                     <div class="conmment-box-content">
@@ -6677,24 +6656,24 @@
                 </div>
             </div>
             {if $goods.out_invoice_no}          
-            <script language="javascript">
-            $("#seller_deliveryInfo").html("<center>"+json_languages.logistics_tracking_in+"</center>");
-            if(document.getElementById("shipping_name_{$goods.order_id}"))
-            {
-                var expressid = document.getElementById("shipping_name_{$goods.order_id}").innerHTML;
-                var expressno = document.getElementById("invoice_no_{$goods.order_id}").innerHTML;
-            }
-            $.ajax({
-                url: "plugins/kuaidi/express.php",
-                type: "post",
-                data:'com=' + expressid + '&nu=' + expressno,
-                success: function(data,textStatus){
-                    $("#seller_deliveryInfo").html(data);
-                },
-                 error: function(o){
+          <script language="javascript">
+                $("#seller_deliveryInfo").html("<center>"+json_languages.logistics_tracking_in+"</center>");
+                if(document.getElementById("shipping_name_{$goods.order_id}"))
+                {
+                    var expressid = document.getElementById("shipping_name_{$goods.order_id}").innerHTML;
+                    var expressno = document.getElementById("invoice_no_{$goods.order_id}").innerHTML;
                 }
-            });
-            </script> 
+                $.ajax({
+                    url: "plugins/kuaidi/express.php",
+                    type: "post",
+                    data:'com=' + expressid + '&nu=' + expressno,
+                    success: function(data,textStatus){
+                        $("#seller_deliveryInfo").html(data);
+                    },
+                     error: function(o){
+                    }
+                });
+                </script> 
             {/if}
             {/if}
             
@@ -6806,13 +6785,13 @@
                 </table>
                 {if $goods.return_type eq 1 || $goods.return_type eq 3}
                     {if $goods.return_shipping_fee && $goods.refound_status1 eq 1}
-                    <div class="user-order-detail-total" style="margin-bottom:0px;">
+                    <div class="user-order-detail-total" style=" margin-bottom:0px;">
                         <dl class="total-row" style="margin-top:0px; margin-bottom:0px;">
                             <dt class="total-label">{$lang.amount_return}：</dt>
                             <dd class="total-value" style="font-size:14px; font-weight:normal; color:#999"> + {$goods.formated_should_return}</dd>
                         </dl>
                     </div>
-                    <div class="user-order-detail-total" style="margin-top:0px;">
+                    <div class="user-order-detail-total" style=" margin-top:0px;">
                         <dl class="total-row" style="margin-top:0px;">
                             <dt class="total-label">{$lang.return_total}：</dt>
                             <dd class="total-value" style="font-size:18px; font-weight:normal">{$goods.formated_return_amount}</dd>
@@ -6830,7 +6809,7 @@
             </div>
             {if $goods.img_list}
             <div class="user-info-list b-t-0">
-                <div class="info-title"><h2>{$lang.pic_voucher}</h2></div>
+                <div class="info-title"><h2>图片凭证</h2></div>
                 <div class="info-content">
                     <div class="info-item info-item-100">
                         {foreach from=$goods.img_list item=img}
@@ -6850,14 +6829,14 @@
         <!--{if $action eq 'wholesale_goods_order' } -->
         <div class="user-mod">
             <div class="user-title">
-                <h2>{$lang.return_policy_apply}</h2>
+                <h2>退换货申请</h2>
             </div>
             <form method="post" action="user.php" name="theFrom" id="theFrom">
                 <div class="uaer-return-app clearfix">
                     <!-- {if $package_buy} -->
                     <div class="no_records">
                         <i class="no_icon_two"></i>
-                        <div class="no_info"><h3>{$lang.package_buy_notic}</h3></div>
+                        <div class="no_info"><h3>超值礼包暂不支持退换商品。</h3></div>
                     </div>              
                     <!-- {else} -->         
                     <!-- {foreach from=$goods_list item=goods} -->
@@ -6903,7 +6882,7 @@
                                 </div>
                             </div>
                             <div class="f-right">
-                                <span class="red mr50">{if $goods.goods_cause}{$lang.only_support}：{foreach from=$goods.goods_cause item=cause name=goods_cause}{if !$smarty.foreach.goods_cause.last}{$cause.lang}、{else}{$cause.lang}{/if}{/foreach}{else}{$lang.no_support_return}{/if}</span>
+                                <span class="red mr50">{if $goods.goods_cause}仅支持：{foreach from=$goods.goods_cause item=cause name=goods_cause}{if !$smarty.foreach.goods_cause.last}{$cause.lang}、{else}{$cause.lang}{/if}{/foreach}{else}暂不支持退换货{/if}</span>
                                 <span>{$lang.shopping_money}<!-- {if $order.extension_code eq "group_buy"} -->{$lang.gb_deposit}<!-- {/if} -->：{$goods.subtotal}</span>
                             </div>
                         </div>
@@ -6911,13 +6890,13 @@
                     <!-- {foreachelse} -->
                     <div class="no_records">
                         <i class="no_icon_two"></i>
-                        <div class="no_info"><h3>{$lang.order_not_notic}</h3></div>
+                        <div class="no_info"><h3>您的订单无可退换商品。</h3></div>
                     </div>
                     <!-- {/foreach} -->
                     <div class="tl-tfoor">
                         <div class="checkbox">
                             <input type="checkbox" name="all_list" class="ui-checkbox" id="checkbox_stars" />
-                            <label for="checkbox_stars" class="ui-label">{$lang.all}</label>
+                            <label for="checkbox_stars" class="ui-label">全选</label>
                         </div>
                         <a href="javascript:;" class="sc-btn" ectype="submitBtn" >{$lang.batch_applied}</a>
                         <input type="hidden" name="act" value="wholesale_batch_applied">
@@ -6935,7 +6914,7 @@
         <div class="user-mod user_apply_return">
             <div class="user-title">
                 <h2>{$lang.return_list}</h2>
-                <a href="user.php?act=service_detail" class="more">{$lang.service_note}</a>
+                <a href="user.php?act=service_detail" class="more">服务说明</a>
             </div>
             <div class="uaer-return-app clearfix">
                 <div class="tl-item">
@@ -6985,6 +6964,7 @@
                         <div class="item item1 first">
                             <div class="label"><em>*</em>{$lang.Service_type}：</div>
                             <div class="value value-checkbox">
+                                
                                 {foreach from=$goods_cause item=goods}
                                     {if $order.shipping_status eq 1 || ($order.shipping_status neq 1 && $goods.cause eq 3)}
                                     <div class="value-item {if $goods.is_checked eq 1}selected{/if}">
@@ -6993,6 +6973,7 @@
                                     </div>
                                     {/if }
                                 {/foreach}
+                                
                                 <input name="return_rec_id" value="{$goods_return.rec_id}" type="hidden" />
                                 <input name="return_g_id" value="{$goods_return.goods_id}" type="hidden" />
                                 <input name="return_g_number" value="{$goods_return.goods_number}" type="hidden" />
@@ -7173,7 +7154,7 @@
                         {else}
                         <div class="no_records">
                             <i class="no_icon_two"></i>
-                            <div class="no_info"><h3>{$lang.no_support_return}</h3></div>
+                            <div class="no_info"><h3>暂不支持退换货</h3></div>
                         </div>
                         {/if}
                     </div>
@@ -7213,7 +7194,7 @@ $(function(){
 		var content = $("#wxpay_dialog").html();
 		pb({
 			id: "scanCode",
-			title: "{$lang.wxpay_pay}",
+			title: "",
 			width: 716,
 			content: content,
 			drag: true,
@@ -7581,9 +7562,9 @@ $(function(){
 		},
 		messages : {
 			amount : {
-				required : json_languages.recharge_amount_null,
-				number:json_languages.recharge_amount_wrongful,
-				min:json_languages.recharge_amount_lower+{$buyer_recharge}+"{$lang.yuan}"
+				required : "充值金额不能为空",
+				number:"必须输入合法的数字",
+				min:"充值金额不能低于"+{$buyer_recharge}+"元"
 			}
 		}
 	});
@@ -7636,14 +7617,14 @@ $(function(){
 			},
 			messages : {
 				amount : {
-					required : json_languages.amount_of_cash_null,
-					number:json_languages.amount_of_cash_wrongful,
-                    min:json_languages.amount_of_cash_min+{$buyer_cash}+"{$lang.yuan}",
-					max:json_languages.amount_of_cash_max+{$user_info.user_money}+"{$lang.yuan}"
+					required : "提现金额不能为空",
+					number:"必须输入合法的数字",
+                    min:"提现金额不能小于"+{$buyer_cash}+"元",
+					max:"提现金额不能大于"+{$user_info.user_money}+"元"
 				},
 				mobile_code : {
-					required : json_languages.mobile_code_null,
-					remote:json_languages.mobile_code_incorrect
+					required : "手机验证码不能为空",
+					remote:"短信验证码不正确"
 				}
 			}
 		});
@@ -7752,7 +7733,7 @@ $(function(){
 						}).cropper('reset').cropper('replace', blobURL);
 						//$inputImage.val('');
 					}else{
-						window.alert('{$lang.select_img_file}');
+						window.alert('请选择图片文件！');
 					}
 				}
 				
@@ -7778,7 +7759,7 @@ $(function(){
 			//判断上传图片是否为空
 			if(img_src == ""){
 				//提示层赋值后，弹出提示
-				$alertContent.html("<div class='error'>{$lang.not_select_img_file}</div>");
+				$alertContent.html("<div class='error'>没有选择上传的图片</div>");
 				$modalAlert.modal();
 				return false;
 			}
@@ -7802,7 +7783,7 @@ $(function(){
 				},
 				error: function(){
 					//提示层赋值后，弹出提示
-					$alertContent.html("<div class='error'>{$lang.update_file_error}</div>");
+					$alertContent.html("<div class='error'>上传文件失败了！</div>");
 					$modalAlert.modal();
 				}  
 			});
@@ -7823,7 +7804,7 @@ $(function(){
 				$image.cropper('rotate', val);
 			}else{
 				//提示层赋值后，弹出提示
-				$alertContent.html("<div class='error'>{$lang.select_img_file}</div>");
+				$alertContent.html("<div class='error'>请先上传图片！</div>");
 				$modalAlert.modal();
 			}
 		});
@@ -7895,7 +7876,7 @@ var uploader_gallery = new plupload.Uploader({//创建实例的构造方法
 				len ++;
 			});
 			if(len > 10){
-				pbDialog(json_languages.comment_img_number,"",0);
+				pbDialog("最多只能上传10张图片","",0);
 			}else{
 				//开始上传单张循环上传
 				submitBtn();
@@ -7904,7 +7885,7 @@ var uploader_gallery = new plupload.Uploader({//创建实例的构造方法
 		FileUploaded: function(up, file, info) { //文件上传成功的时候触发
 			var data = eval("(" + info.response + ")");
 			if(data.error == 2){
-				pbDialog(json_languages.login_error,"",0);
+				pbDialog("登陆失效，请重新登陆","",0);
 				return;
 			}else{
 				$(".mslist").html(data.content);
@@ -7940,9 +7921,7 @@ $(function(){
 			$("*[ectype='return-type']").hide();
 		}else if(val == 2){
 			$("*[ectype='return-type']").show();
-			// get_spec();
-		}else if(val == 3){
-			$("*[ectype='return-type']").hide();
+			get_spec();
 		}else{
 			$("*[ectype='return-type']").hide();
 			div.hide();
@@ -8210,7 +8189,7 @@ var uploader_gallery = new plupload.Uploader({//创建实例的构造方法
 				len ++;
 			});
 			if(len > 10){
-				pbDialog(json_languages.comment_img_number,"",0);
+				pbDialog("最多只能上传10张图片","",0);
 			}else{
 				//开始上传单张循环上传
 				submitBtn();
@@ -8219,7 +8198,7 @@ var uploader_gallery = new plupload.Uploader({//创建实例的构造方法
 		FileUploaded: function(up, file, info) { //文件上传成功的时候触发
 			var data = eval("(" + info.response + ")");
 			if(data.error == 2){
-				pbDialog(json_languages.login_error,"",0);
+				pbDialog("登陆失效，请重新登陆","",0);
 				return;
 			}else{
 				$(".mslist").html(data.content);
@@ -8565,11 +8544,11 @@ function new_addPC(){
 	pc.captcha = $(".captcha_error2").val();
 	
 	if(pc.pay_card_sn == ''){
-		message = json_languages.card_number_null;
+		message = '卡号不能为空';
 	}else if(pc.password == ''){
-		message = json_languages.Real_name_password_null;
+		message = '密码不能为空';
 	}else if(pc.captcha == ''){
-		message = json_languages.null_captcha_login;
+		message = '验证码不能为空';
 	}
 	
 	if(pc.pay_card_sn != '' && pc.password != '' && pc.captcha != ''){
@@ -8683,8 +8662,8 @@ function oath_removeResponse(result){
 				}
 			},
 			messages : {
-				required : json_languages.null_captcha_login,
-				remote : json_languages.null_captcha_error
+				required : "验证码不能为空",
+				remote : "验证码不正确"
 			}
 		});
 		
@@ -8695,13 +8674,13 @@ function oath_removeResponse(result){
 				re_newpass_yz = "";
 			
 			if(formName == "change_password_s"){
-				newpass = json_languages.new_login_pwd_null;
-				re_newpass = json_languages.new_login_pwd_error;
-				re_newpass_yz = json_languages.secondary_login_pwd_error;
+				newpass = "新登录密码不能为空";
+				re_newpass = "请填写确认登录密码";
+				re_newpass_yz = "两次输入密码不一致";
 			}else{
-				newpass = json_languages.new_pay_pwd_null;
-				re_newpass = json_languages.new_pay_pwd_error;
-				re_newpass_yz = json_languages.secondary_pay_pwd_error;
+				newpass = "新支付密码不能为空";
+				re_newpass = "请填写确认支付密码";
+				re_newpass_yz = "两次输入支付密码不一致";
 			}
 			
 			//新密码
@@ -8730,8 +8709,8 @@ function oath_removeResponse(result){
 				required : true,
 				isMobile : true,
 				messages : {
-					required : json_languages.msg_phone_blank,
-					isMobile : json_languages.msg_phone_not
+					required : "请填写手机号码",
+					isMobile : "请填写有效手机号码"
 				}
 			});
 			
@@ -8750,8 +8729,8 @@ function oath_removeResponse(result){
 					}
 				},
 				messages : {
-					required : json_languages.null_captcha_login_phone,
-					remote : json_languages.error_captcha_login_phone
+					required : "请填写手机验证码",
+					remote : "手机验证码不正确"
 				}
 			});
 		}
@@ -8773,8 +8752,8 @@ function oath_removeResponse(result){
 					}
 				},
 				messages : {
-					required : json_languages.pay_password_packup_null,
-					remote : json_languages.pay_password_packup_error
+					required : "支付密码不能为空",
+					remote : "支付密码不正确"
 				}
 			});
 		}
@@ -8786,8 +8765,8 @@ function oath_removeResponse(result){
 				required : true,
 				email : true,
 				messages : {
-					required : json_languages.null_email_user,
-					email:json_languages.email_error
+					required : "邮箱不能为空",
+					email:"请输入正确格式邮箱"
 				}
 			});
 		}
@@ -8832,7 +8811,8 @@ function oath_removeResponse(result){
 				required : true
 			},
 			bank_card:{
-				required : true
+				required : true,
+				bankCardNum : true
 			},
 			textfile_zheng:{
 				required : true
@@ -8861,31 +8841,32 @@ function oath_removeResponse(result){
 		},
 		messages : {
 			real_name : {
-				required : json_languages.Real_name_null
+				required : "真实姓名不能为空"
 			},
 			self_num:{
-				required : json_languages.number_ID_null,
-				isIdCardNo:json_languages.number_ID_error
+				required : "身份证号码不能为空",
+				isIdCardNo:"身份证号码不正确"
 			},
 			bank_name:{
-				required : json_languages.bank_of_deposit_null
+				required : "请填写开户银行名称"
 			},
 			bank_card:{
-				required : json_languages.bank_number_null
+				required : "请填写银行卡卡号",
+				bankCardNum : "银行卡卡号不正确"
 			},
 			textfile_zheng:{
-				required : json_languages.front_pic_null
+				required : "请上传身份证正面图片"
 			},
 			textfile_fan:{
-				required : json_languages.reverse_pic_null
+				required : "请上传身份证反面图片"
 			},
 			mobile_phone : {
-				required : json_languages.msg_phone_blank,
-				isMobile : json_languages.msg_phone_not,
+				required : "手机号码不能为空",
+				isMobile : "手机号码不正确",
 			},
 			mobile_code : {
-				required : json_languages.null_captcha_login_phone,
-				remote : json_languages.error_captcha_login_phone
+				required : "请填写手机验证码",
+				remote : "手机验证码不正确"
 			}
 		}
 	});
@@ -8957,7 +8938,7 @@ function oath_removeResponse(result){
 				$(this).parents("form[name='theForm']").submit();
 			}
 		}else{
-			pbDialog(json_languages.add_address_10,"",0);
+			pbDialog("最多只能添加10个收货地址","",0);
 		}
 	});
 	
@@ -8990,6 +8971,10 @@ function oath_removeResponse(result){
 			},
 			address : {
 				required : true
+			},
+			email:{
+				required : true,
+				email:true
 			}
 		},
 		messages : {
@@ -9014,6 +8999,10 @@ function oath_removeResponse(result){
 			},
 			address : {
 				required : json_languages.Detailed_address_null
+			},
+			email:{
+				required : json_languages.null_email_goods,
+				email:json_languages.email_error
 			}
 		}
 	});
@@ -9080,35 +9069,35 @@ function oath_removeResponse(result){
         },
         messages : {
             real_name : {
-                required : json_languages.Real_name_null
+                required : "真实姓名不能为空"
             },
             self_num:{
-                required : json_languages.number_ID_null,
-                isIdCardNo:json_languages.number_ID_error
+                required : "身份证号码不能为空",
+                isIdCardNo:"身份证号码不正确"
             },
             company_name:{
-                required : json_languages.company_name_notic,
+                required : "请填写公司名称"
             },
             company_address:{
-                required : json_languages.company_address_notic,
+                required : "请填写公司地址"
             },
             city:{
-                required : json_languages.enter_region,
-                min : json_languages.enter_region
+                required : "请选择入驻区域",
+                min : "请选择入驻区域"
             },            
             textfile_zheng:{
-                required : json_languages.front_pic_null
+                required : "请上传身份证正面图片"
             },
             textfile_fan:{
-                required : json_languages.reverse_pic_null
+                required : "请上传身份证反面图片"
             },
             mobile_phone : {
-                required : json_languages.msg_phone_blank,
-                isMobile : json_languages.msg_phone_not,
+                required : "手机号码不能为空",
+                isMobile : "手机号码不正确",
             },
             mobile_code : {
-                required : json_languages.null_captcha_login_phone,
-                remote : json_languages.error_captcha_login_phone
+                required : "请填写手机验证码",
+                remote : "手机验证码不正确"
             }
         }
     });

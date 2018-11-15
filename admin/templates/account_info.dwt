@@ -9,8 +9,8 @@
         <div class="explanation" id="explanation">
             <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
             <ul>
-                <li>{$lang.operation_prompt_content.info.0}</li>
-                <li>{$lang.operation_prompt_content.info.1}</li>
+                <li>管理员对会员账户进行资金、等级积分、消费积分进行调整。</li>
+                <li>涉及资金方面管理员要谨慎操作。</li>
             </ul>
         </div>
         <div class="flexilist">

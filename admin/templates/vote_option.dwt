@@ -10,8 +10,8 @@
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                	<li>{$lang.operation_prompt_content.option.0}</li>
-                    <li>{$lang.operation_prompt_content.option.1}</li>
+                	<li>调查选项为调查主题配置，请合理设置。</li>
+                    <li>调查主题可根据关键字搜索。</li>
                 </ul>
             </div>
             <div class="flexilist">
@@ -21,7 +21,7 @@
                         <form method="post" action="javascript:newVoteOption()" name="theForm">
                             <input type="text" name="option_name" class="text" placeholder="{$lang.add_vote_option}" autocomplete="off" />
                             <input type="hidden" name="id" value="{$id}" size="30" />
-                            <input type="submit" value="{$lang.add}" class="btn btn30 red_btn"/>
+                            <input type="submit" value="添加" class="btn btn30 red_btn"/>
                         </form>
                     </div>
                 </div>

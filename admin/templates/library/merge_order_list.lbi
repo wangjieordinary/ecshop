@@ -1,6 +1,6 @@
 <div id="merge_dialog">
 	<div class="prompt mt20">
-		<span>{$lang.pagetip_merge_order_list}</span>
+		<span>当两个订单不一致时，合并后的订单信息（如：支付方式、配送方式、包装、贺卡、红包等）以主订单为准。</span>
 	</div>
 	<div class="items">
 		<div class="item mb30">

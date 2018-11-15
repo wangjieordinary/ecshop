@@ -28,8 +28,8 @@
                     </div>
                     <div class="info">
                         <div class="info-p clearfix">
-                            <div class="fl">{$lang.package_number}：<b class="red">{$val.package_number|default:1}件</b></div>
-                            <div class="fr">{$lang.package_time}：{$val.start_time} ～ {$val.end_time}</div>
+                            <div class="fl">商品数量：<b class="red">{$val.package_number|default:1}件</b></div>
+                            <div class="fr">活动时间：{$val.start_time} ～ {$val.end_time}</div>
                         </div>
                         <div class="info-slide clearfix">
                             <a href="javascript:;" class="prev"></a>
@@ -52,7 +52,7 @@
                             </div>
                             <div class="fr">
                                 <a href="javascript:addPackageToCart({$val.act_id})" class="pack-btn">{$lang.button_buy} &gt;</a>
-                                <span class="red">{$lang.sheng}{$val.saving}</span>
+                                <span class="red">省{$val.saving}</span>
                             </div>
                         </div>
                     </div>

@@ -1,9 +1,9 @@
 <table class="t-tab mt10">
     <tr>
-        <th width="15%">{$lang.03_shipping_list}</th>
-        <th width="20%">{$lang.region_name}</th>
-        <th width="40%">{$lang.jurisd_area}</th>
-        <th width="15%" class="handle">{$lang.handler}</th>
+        <th width="15%">配送方式</th>
+        <th width="20%">区域名称</th>
+        <th width="40%">所辖地区</th>
+        <th width="15%" class="handle">操作</th>
     </tr>
     
     {foreach from=$shipping_tpl item=shipping}
@@ -12,7 +12,7 @@
         <tr data-shipping_id="{$shipping.shipping_id}">
             <td rowspan="{$shipping.area_count}">
                 <p>
-                    <strong>{$lang.label_express_name}</strong>
+                    <strong>快递名称：</strong>
                     <span calss="shipping_name">{$shipping.shipping_name}</span>
                 </p>
                 <p><input type="button" value="{$lang.add_area}" class="button" data-role="add_shipping_area" ectype="add_shipping_area"></p>
@@ -20,8 +20,8 @@
             <td align="center">{$list.tpl_name}</td>
             <td><div class="tpl_region">{$list.region_list}</div></td>
             <td align="center">
-                <input type="button" value="{$lang.edit}" class="button" ectype="edit_shipping" data-id="{$list.id}" data-role="edit_shipping">
-                <input type="button" value="{$lang.drop}" class="button" ectype="drop_shipping" data-id="{$list.id}" data-role="drop_shipping">
+                <input type="button" value="编辑" class="button" ectype="edit_shipping" data-id="{$list.id}" data-role="edit_shipping">
+                <input type="button" value="删除" class="button" ectype="drop_shipping" data-id="{$list.id}" data-role="drop_shipping">
             </td>
         </tr>
         {else}
@@ -29,8 +29,8 @@
         	<td align="center">{$list.tpl_name}</td>
             <td><div class="tpl_region">{$list.region_list}</div></td>
             <td align="center">
-                <input type="button" value="{$lang.edit}" class="button" ectype="edit_shipping" data-id="{$list.id}" data-role="edit_shipping">
-                <input type="button" value="{$lang.drop}" class="button" ectype="drop_shipping" data-id="{$list.id}" data-role="drop_shipping">
+                <input type="button" value="编辑" class="button" ectype="edit_shipping" data-id="{$list.id}" data-role="edit_shipping">
+                <input type="button" value="删除" class="button" ectype="drop_shipping" data-id="{$list.id}" data-role="drop_shipping">
             </td>
         </tr>
         {/if}

@@ -15,34 +15,34 @@
                     <table border="0" cellpadding='1' cellspacing='1' class="ecsc-default-table ecsc-table-seller application_grade mt20">
                         {if $seller_apply_info.apply_status neq 1}
                             <tr>
-                                <th colspan="2">{$lang.audit_info}</th>
+                                <th colspan="2">审核信息</th>
                             </tr>
                             <tr>
-                                <td class="label">{$lang.label_apply_seller_level}</td>
+                                <td class="label">申请商家等级：</td>
                                 <td class="red">{$grade_name}</td>
                             </tr>
                             {if $action eq 'edit'}
                             <tr>
-                            	<td class="label">{$lang.label_audit_state}</td>
+                            	<td class="label">审核状态：</td>
                                 <td class="red">
                                 	{if $seller_apply_info.apply_status eq 0}
-                                    {$lang.not_audited}
+                                    未审核
                                     {elseif $seller_apply_info.apply_status eq 2}
-                                    {$lang.audited_not_adopt}
+                                    审核未通过
                                     {elseif $seller_apply_info.apply_status eq 3}
-                                    {$lang.invalid}
+                                    无效
                                     {/if}
                                 </td>
                             </tr>
                             {/if}
                             {if $seller_apply_info.apply_status eq 2 || $seller_apply_info.apply_status eq 3}
                             <tr>
-                                <td class="label">{$lang.label_fail_pass_reason}</td>
+                                <td class="label">未通过原因：</td>
                                 <td class="total">{$seller_apply_info.reply_seller}</td>
                             </tr>
                             <tr>
-                                <td class="label">{$lang.label_tips}</td>
-                                <td class="total">{if $seller_apply_info.apply_status eq 2}{$lang.audit_fail_reaudit}{elseif $seller_apply_info.apply_status eq 3}{$lang.audit_invalid_reaudit}{/if}</td>
+                                <td class="label">提示：</td>
+                                <td class="total">{if $seller_apply_info.apply_status eq 2}审核未通过，请重新申请{elseif $seller_apply_info.apply_status eq 3}审核无效，请重新申请{/if}</td>
                             </tr>
                             {/if}
                         {/if}
@@ -108,7 +108,7 @@
                                 <div class="type-file-box">
                                     <div class="input">
                                         <input type="text" name="textfile_{$child.id}" class="type-file-text" {if $apply_criteria.$child.id}value="{$apply_criteria.$child.id}"{/if} id="textfield" readonly>
-                                        <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}">
+                                        <input type="button" name="button" id="button" class="type-file-button" value="上传...">
                                         <input type="file" class="type-file-file" name="value[{$child.id}]" size="30" hidefocus="true" {if $act neq 'edit'} ectype="validate" data-required="{$child.criteria_name}"{/if}>
                                     </div>
                                     {if $apply_criteria.$child.id}
@@ -123,7 +123,7 @@
                             </td>
                             {elseif $child.type eq 'charge' &&  $child.charge > 0}
                             <td>
-                                <span class="red">{$child.charge}/{$lang.nian}</span>
+                                <span class="red">{$child.charge}/年</span>
                                 <input type="hidden" value="{$child.charge}" name='single_charge_{$child.id}'>
                             </td>
                             {/if}
@@ -137,7 +137,7 @@
                         	<th colspan="2">{$lang.information_count}</th>
                         </tr>
                         <tr>
-                            <td class="label">{$lang.label_residence_time}</td>
+                            <td class="label">入驻年限：</td>
                             <td>
                             	<input type="button" value="-" class="jian" onclick="add_charge('reduce')" >
                                 <input type='text' class="nian_number text" value="{if $seller_apply_info.fee_num}{$seller_apply_info.fee_num}{else}1{/if}" name="fee_num" value="1" onkeyup="add_charge('keyup')">
@@ -147,7 +147,7 @@
                         </tr>
 
                         <tr>
-                            <td class="label">{$lang.require_field}&nbsp;{$lang.label_payment_method}</td>
+                            <td class="label">{$lang.require_field}&nbsp;支付方式：</td>
                             <td align="left" >
                             <!--{foreach from=$pay item=pay name=payName}-->
                                 {if $pay.pay_code neq 'onlinepay' && $pay.pay_code neq 'chunsejinrong'}
@@ -159,7 +159,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td class="label">{$lang.label_total}</td>
+                            <td class="label">合计：</td>
                             <td class="total">￥<em id="count_charge">{$entry_criteriat_info.count_charge}</em></td>
                         </tr>
                     	{/if}
@@ -174,7 +174,7 @@
                                 <input type="submit" class="sc-btn sc-blueBg-btn btn35" name="sub" value="{$lang.button_submit}" id="submitBtn" />
                                 <input type="reset" class="sc-btn btn35 sc-blue-btn" value="{$lang.button_reset}" onclick="add_charge('reset')" />
                                 {else}
-                                <a href="seller_apply.php?act=list&ru_id={$seller_apply_info.ru_id}" class="sc-btn sc-blueBg-btn btn35">{$lang.back}</a>
+                                <a href="seller_apply.php?act=list&ru_id={$seller_apply_info.ru_id}" class="sc-btn sc-blueBg-btn btn35">返回</a>
                                 {/if}
                                 <input type="hidden" name="grade_id" value="{$grade_id}"/>
                                 <input type="hidden" name="all_count_charge"  value="{$seller_apply_info.total_amount}"/>
@@ -216,7 +216,7 @@ $(function(){
 			$(this).rules("add",{
                 required : true,
                 messages : {
-                    required : '<i class="icon icon-exclamation-sign"></i>' + req + jl_not_null
+                    required : '<i class="icon icon-exclamation-sign"></i>' + req + '不能为空'
                 }
             });
             var data_type =$(this).data('type');
@@ -224,14 +224,14 @@ $(function(){
                 $(this).rules("add",{
                     isTel : true,
                     messages : {
-                        isTel : '<i class="icon icon-exclamation-sign"></i>' + req + jl_format_wrong
+                        isTel : '<i class="icon icon-exclamation-sign"></i>' + req + '格式不正确'
                     }
                 });
             }else if(data_type == 2){//邮箱
                 $(this).rules("add",{
                     email : true,
                     messages : {
-                        email : '<i class="icon icon-exclamation-sign"></i>' + req + jl_format_wrong
+                        email : '<i class="icon icon-exclamation-sign"></i>' + req + '格式不正确'
                     }
                 });
             }
@@ -240,7 +240,7 @@ $(function(){
 		$("input[name='pay_id']").rules("add",{
 			required : true,
 			messages : {
-				required : '<i class="icon icon-exclamation-sign"></i>'+jl_payment_not_null,
+				required : '<i class="icon icon-exclamation-sign"></i>支付方式不能为空',
 			}
 		});
 	});
@@ -270,7 +270,7 @@ function add_charge(i){
 	  
 	if(i == 'reduce'){
 		if(num.value == 1){
-			alert(jl_pay_year_not_small_1);
+			alert("缴纳年限不能小于1");
 		}else{
 			if(num.value > 1){
 				price_one = Number(price_one) - Number(no_cumulative_price);
@@ -289,7 +289,7 @@ function add_charge(i){
 		all_count_charge.value  = count.innerHTML = Number(count.innerHTML) + Number(price_one);
 	}else if(i == 'keyup'){
 		if(!re.test(num.value)){
-			alert(jl_input_content_wrongful);
+			alert('输入内容不合法');
 		}else{
             price_one = Number(price_one) - Number(no_cumulative_price);
 			all_count_charge.value =  count.innerHTML = parseInt(num.value) * Number(price_one) + Number(no_cumulative_price);

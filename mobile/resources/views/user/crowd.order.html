@@ -125,6 +125,7 @@
 
 		function delect(){
 			 var order_id = $(".delect").attr('data-item');
+			 alert(order_id);
              var url='{url("user/order/delorder")}';
                layer.open({
                     content: '是否删除此订单',

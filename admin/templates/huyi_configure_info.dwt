@@ -162,16 +162,14 @@ function loadTemplateResponse(result, textResult)
 	}else if(result.tpl == 'sms_find_signin' || result.tpl == 'sms_code'){
 		company = "code({$lang.verification_code})";
 	}else if(result.tpl == 'sms_price_notic'){
-        company = "user_name({$lang.username}), goodsname({$lang.goodsname}), goodsprice({$lang.goodsprice})";
+		company = "user_name({$lang.verification_code}), goods_sn({$lang.goods_number})";
 	}else if(result.tpl == 'sms_seller_signin'){
 		company = "seller_name( {$lang.goods_steps_name}), login_name({$lang.login_account}),password({$lang.login_password})";
 	}else if(result.tpl == 'store_order_code'){
 		company = "user_name( {$lang.goods_steps_name}), order_sn({$lang.order_id}),code({$lang.code}),store_address({$lang.store_address})";
 	}else if(result.tpl == 'user_account_code'){
 		company = "user_name({$lang.username}),add_time({$lang.add_time}),fmt_amount({$lang.fmt_amount}),process_type({$lang.process_type}),op_time({$lang.op_time}),examine({$lang.examine}),user_money({$lang.user_money})";
-	} else if(result.tpl == 'sms_seller_grade_time'){
-        company = "username({$lang.username}),gradeendtime({$lang.grade_end_time})";
-    }
+	}
 	
 	if(result.tpl){
 		$(".str_variable").show();

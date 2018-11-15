@@ -38,7 +38,7 @@
                                 <div class="item-label">&nbsp;</div>
                                 <div class="gp-tab">
                                     <ul>
-                                        <li class="curr"><i class="iconfont icon-mobile-phone"></i>{$lang.email_yanzheng}</li>
+                                        <li class="curr"><i class="iconfont icon-mobile-phone"></i>邮箱验证</li>
                                         <li></li>
                                     </ul>
                                 </div>

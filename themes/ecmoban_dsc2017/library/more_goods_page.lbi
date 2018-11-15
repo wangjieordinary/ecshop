@@ -1,29 +1,29 @@
 <!--{if $type eq 'group_buy'} 团购活动 start-->
 <!-- {foreach from=$gb_list item=group_buy name=foo} 循环团购活动开始 --> 
 <li class="mod-shadow-card">
-    <a href="{$group_buy.url}" target="_blank" class="img"><img src="{$group_buy.goods_thumb}" alt="{$group_buy.goods_name|escape:html}" title="{$group_buy.goods_name|escape:html}"></a>
-    <div class="clearfix">
-        <div class="price">¥{$group_buy.price_ladder.0.price}</div>
-        <div class="man">{$group_buy.cur_amount}{$lang.people_participate}</div>
-    </div>
-    <a href="{$group_buy.url}" target="_blank" class="name" title="{$group_buy.goods_name|escape:html}">{$group_buy.goods_name|escape:html}</a>
-    <div class="lefttime" data-time='{$group_buy.formated_end_date}'>
-        <i class="iconfont icon-time"></i>
-        <span>{$lang.residue_time}</span>
-        <span class="days"></span>
-        <em>:</em>
-        <span class="hours"></span>
-        <em>:</em>
-        <span class="minutes"></span>
-        <em>:</em>
-        <span class="seconds"></span>
-    </div>
-    <!-- {if $group_buy.is_end eq 1} -->
-    <a href="{$group_buy.url}" class="gb-btn bid_end">{$lang.Group_purchase_end}</a>
-    <!-- {else} -->
-    <a href="{$group_buy.url}" class="gb-btn">{$lang.Group_purchase_now}</a>
-    <!-- {/if} -->
-</li>
+                        <a href="{$group_buy.url}" target="_blank" class="img"><img src="{$group_buy.goods_thumb}" alt="{$group_buy.goods_name|escape:html}" title="{$group_buy.goods_name|escape:html}"></a>
+                        <div class="clearfix">
+                            <div class="price">¥{$group_buy.price_ladder.0.price}</div>
+                            <div class="man">{$group_buy.cur_amount}{$lang.people_participate}</div>
+                        </div>
+                        <a href="{$group_buy.url}" target="_blank" class="name" title="{$group_buy.goods_name|escape:html}">{$group_buy.goods_name|escape:html}</a>
+                        <div class="lefttime" data-time='{$group_buy.formated_end_date}'>
+                            <i class="iconfont icon-time"></i>
+                            <span>{$lang.residue_time}</span>
+                            <span class="days"></span>
+                            <em>:</em>
+                            <span class="hours"></span>
+                            <em>:</em>
+                            <span class="minutes"></span>
+                            <em>:</em>
+                            <span class="seconds"></span>
+                        </div>
+                        <!-- {if $group_buy.is_end eq 1} -->
+                        <a href="{$group_buy.url}" class="gb-btn bid_end">{$lang.Group_purchase_end}</a>
+                        <!-- {else} -->
+                        <a href="{$group_buy.url}" class="gb-btn">{$lang.Group_purchase_now}</a>
+                        <!-- {/if} -->
+                    </li>
 <!-- {/foreach}-->
 <!--{/if} 团购活动 end-->
 <!--{if $type eq 'snatch'} 夺宝奇兵 start-->
@@ -43,7 +43,7 @@
             <em>:</em>
             <span class="seconds">10</span>
         </p>
-        <p><em>{$lang.bid_ci_number}：</em><span>{$list.price_list_count}</span></p>
+        <p><em>出价次数：</em><span>{$list.price_list_count}</span></p>
     </div>
     <!-- {if $list.current_time lt $list.end_time and $list.current_time gt $list.start_time } -->
     <a href="{$list.url}" target="_blank" class="sn-btn"><em></em>{$lang.me_bid}<s></s></a>
@@ -63,12 +63,12 @@
         <a href="{$auction.url}" class="name" target="_blank" title="{$auction.goods_name|escape:html}">{$auction.act_name|escape:html}</a>
         <div class="desc">
             <p>
-                <span>{$lang.rz_shopName}：</span>
+                <span>送拍机构：</span>
                 {$auction.rz_shopName}
             </p>
             <p>
                 <span class="fr red">{$auction.count}{$lang.au_number}</span>
-                <span>{$lang.residual_time}：</span>
+                <span>剩余时间：</span>
                 <span class="<!-- {if $auction.status_no eq 1} 进行中 -->lefttime<!-- {/if} -->" data-time="{$auction.end_time}">
                     <span class="days">00</span>
                     <em>:</em>

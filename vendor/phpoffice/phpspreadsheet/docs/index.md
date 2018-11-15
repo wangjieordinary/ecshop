@@ -95,8 +95,6 @@ architecture](./topics/architecture.md),
 [accessing cells](./topics/accessing-cells.md) and
 [reading and writing to files](./topics/reading-and-writing-to-file.md).
 
-Or browse the [API documentation](https://phpoffice.github.io/PhpSpreadsheet/master).
-
 # Credits
 
 Please refer to the [contributor

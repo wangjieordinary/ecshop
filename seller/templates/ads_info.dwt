@@ -37,18 +37,18 @@
                                 <div class="notic m20">{$lang.ad_name_notic}</div>
                                 <div class="ad-set">
                                     <div class="num-set">
-                                        <strong>{$lang.label_ad_name_id}</strong>
+                                        <strong>广告名称序号：</strong>
                                         <input type="button" value="-" class="num_add">
                                         <input type='text' value="1" class="num_id text" name="num_id">
                                         <input type="button" value="+" class="num_reduce">
                                     </div>
                                     
                                      <div class="cat-set" style="display:none">
-                                        <strong>{$lang.label_select_cate_ad_id}</strong>
-                                        <input type='text' class="text text_4 mr10" value="" class="cat_id" placeholder="{$lang.please_input_cate_id}" name="cat_id">
+                                        <strong>选择广告分类ID：</strong>
+                                        <input type='text' class="text text_4 mr10" value="" class="cat_id" placeholder="请输入分类ID" name="cat_id">
                                         <div class="categorySelect fl">
                                             <div class="selection">
-                                                <input type="text" name="category_name" id="category_name" class="text w250 valid" value="{$lang.please_select_cate}" autocomplete="off" readonly data-filter="cat_name" />
+                                                <input type="text" name="category_name" id="category_name" class="text w250 valid" value="请选择分类" autocomplete="off" readonly data-filter="cat_name" />
                                                 <input type="hidden" name="category_id" id="category_id" value="0" data-filter="cat_id" />
                                             </div>
                                             <div class="select-container" style="display:none;">
@@ -82,7 +82,7 @@
                                         <li><a href="javascript:;" data-value="{$key}" class="ftx-01">{$list}</a></li>
                                         {/foreach}
                                     </ul>
-                                    <input name="position_id" value="{$position_id|default:0}" type="hidden" />
+                                    <input name="position_id" type="hidden" />
                                 </div>
                             </dd>
                         </dl>
@@ -109,7 +109,7 @@
                                 <div class="type-file-box">
                                 	<div class="input">
                                         <input type="text" name="textfile" class="type-file-text" id="textfield" autocomplete="off" value="{if $ads.ad_code}../data/afficheimg/{$ads.ad_code}{/if}" readonly />
-                                        <input type="button" name="button" id="button" class="type-file-button" value="{$lang.uploading}" />
+                                        <input type="button" name="button" id="button" class="type-file-button" value="上传..." />
                                         <input type="file" class="type-file-file" id="ad_img" name="ad_img" data-state="imgfile" size="30" hidefocus="true" value="" />
                                     </div>
                                     {if $ads.ad_code}
@@ -134,7 +134,7 @@
                                 <div class="type-file-box">
                                     <div class="input">
                                         <input type="text" name="flash_textfile" class="type-file-text" id="textfield" value="{if $ads.ad_code}{$ads.ad_code|escape}{/if}" autocomplete="off" readonly />
-                                        <input type="button" name="button" id="button" class="type-file-button" value="{$lang.uploading}" />
+                                        <input type="button" name="button" id="button" class="type-file-button" value="上传..." />
                                         <input type="file" class="type-file-file" id="upfile_flash" name="upfile_flash" data-state="imgfile" size="30" hidefocus="true" value="" />
                                     </div>
                                     {if $ads.ad_code}
@@ -282,7 +282,7 @@
 			}
 			else
 			{
-				alert(ad_id_min_1);
+				alert('广告序号最小为1');
 				numId.val(1);
 			}
 			changeSet();

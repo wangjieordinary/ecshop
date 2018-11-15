@@ -1,6 +1,6 @@
 {if $attribute_list.attr}
 <div class="step_item_left">
-	<h5>{$lang.label_goods_attr}</h5>
+	<h5>商品属性：</h5>
 </div>
 <div class="step_item_right">
     {foreach from=$attribute_list.attr item=val key=key}
@@ -32,7 +32,7 @@
 
 {if $attribute_list.spec}
 <div class="step_item_left">
-	<h5>{$lang.label_goods_specifications}</h5>
+	<h5>商品规格：</h5>
 </div>
 <div class="step_item_right">
     {foreach from=$attribute_list.spec item=val key=key}
@@ -55,7 +55,7 @@
                 {/foreach}
                 {if $val.attr_input_type eq 0}
                 <div class="checkbox_item">
-                <a href="javascript:void(0);" class="sc-btn btn28 sc-blueBg-btn" data-attrid="{$val.attr_id}" ectype="attr_input">{$lang.custom}</a>
+                <a href="javascript:void(0);" class="sc-btn btn28 sc-blueBg-btn" data-attrid="{$val.attr_id}" ectype="attr_input">自定义</a>
                 </div>
                 {/if}
             </div>
@@ -82,7 +82,7 @@
         </div>
         {/if}
         {/foreach}
-        <a href="javascript:void(0);" class="sc-btn btn28 sc-blueBg-btn" ectype="search_attr">{$lang.search_word}</a>
+        <a href="javascript:void(0);" class="sc-btn btn28 sc-blueBg-btn" ectype="search_attr">搜索</a>
     </div>
 </div>
 {/if}

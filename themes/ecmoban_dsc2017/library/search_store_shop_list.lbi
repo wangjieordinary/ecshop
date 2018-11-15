@@ -34,7 +34,7 @@
                             <p>{$lang.seat_of}：{$shop.address}</p>
                         </div>
                         <div class="ss-btn">
-                            <a onclick="get_collect_store(2, {$shop.ru_id});" href="javascript:void(0);" class="btn">{$lang.follow_store}</a>
+                            <a onclick="get_collect_store(2, {$shop.ru_id});" href="javascript:void(0);" class="btn">关注店铺</a>
                             <a href="{$shop.shop_url}" class="btn">{$lang.enter_the_shop}</a>
                         </div>
                     </div>

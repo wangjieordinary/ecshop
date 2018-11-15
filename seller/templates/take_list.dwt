@@ -16,7 +16,7 @@
                     <div class="search-form">
                         <form action="javascript:searchSnatch()" name="searchForm">
                             <div class="search-key">
-                                <input type="text" name="keyword" class="text text_2" placeholder="{$lang.keywords_placeholder}" />                    
+                                <input type="text" name="keyword" class="text text_2" placeholder="序列号/联系人/联系电话" />                    
                                 <input type="submit" value="{$lang.button_search}" class="submit" />
                             </div>
                         </form>
@@ -47,14 +47,14 @@
                       <td class="tl">
                       	<p>{$bonus.address}</p>
                       	<p>{$lang.consignee_name}：{$bonus.consignee_name}</p>
-                        <p>{$lang.contact_way}：{$bonus.mobile}</p>
+                        <p>联系方式：{$bonus.mobile}</p>
                       </td>
-                      <td>{if $bonus.user_name}{$bonus.user_name}{else}{$lang.anonymous_user}{/if}</td>
+                      <td>{if $bonus.user_name}{$bonus.user_name}{else}匿名用户{/if}</td>
                       <td><img src="images/{if $bonus.status eq 2 || $bonus.status eq 3}yes{else}no{/if}.png" /></td>
-                      <td>{if $bonus.status eq 1}{$lang.bonus_status_1}{elseif $bonus.status eq 2}{$lang.bonus_status_2}{elseif $bonus.status eq 3}{$lang.status_ok}{else}{$lang.bonus_status_3}{/if}</td>
+                      <td>{if $bonus.status eq 1}已提货,未发货{elseif $bonus.status eq 2}已提货,已发货{elseif $bonus.status eq 3}已完成{else}未提货{/if}</td>
                       <td>
                       	{if $bonus.status neq 2 && $bonus.status neq 3}
-                        <a href="javascript:;" class="btn_edit mr10"  onclick="listTable.remove({$bonus.gift_gard_id}, '{if $bonus.status eq 2}{$lang.bonus_handle_1}{elseif $bonus.status eq 1}{$lang.bonus_handle_2}{elseif $bonus.status eq 3}{$lang.bonus_handle_3}{/if}', 'confirm_ship')">{$lang.bonus_handle_4}</a>
+                        <a href="javascript:;" class="btn_edit mr10"  onclick="listTable.remove({$bonus.gift_gard_id}, '{if $bonus.status eq 2}此订单已发货，您确定取消发货吗？{elseif $bonus.status eq 1}确定发货吗？{elseif $bonus.status eq 3}此订单已完成，不能修改发货状态{/if}', 'confirm_ship')">发货</a>
                         {/if}
                         <a href="gift_gard.php?act=handle_log&id={$bonus.gift_gard_id}" class="blue">{$lang.handle_log}</a>
                       </td>

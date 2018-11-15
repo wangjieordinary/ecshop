@@ -1,8 +1,11 @@
 {include file="page_header"}
 <style>
-    .user-cont-p p { height: 3rem; line-height: 3.1rem; }
+    .user-cont-p p {
+        height: 3rem;
+        line-height: 3.1rem;
+    }
 </style>
-
+<body>
 <div class="con mb-7" id="checkPage">
     <section class="j-f-tel  user-cont-p b-color-f m-top08 f-06">
         <div class="padding-all col-7">增票资质信息</div>
@@ -73,7 +76,6 @@
                 <i class="iconfont icon-guanbi1 close-common j-is-null"></i>
             </div>
         </div>
-
         <!--address-start-->
         <div class="text-all" id="editAddressForm" style="padding-left: 1.1rem;">
             <input type="hidden" id="province_id" name="province_region_id" value="{$vat_info.province}">
@@ -99,34 +101,18 @@
                 <p class="j-input-text inputcard">{$vat_info.consignee_address}</p>
                 <i class="iconfont icon-guanbi1 close-common j-is-null"></i>
             </div>
-            </div>
         {/if}
-        <div class="text-all dis-box j-text-all bank_region margin-lr">
-            <label>审核状态：</label>
-            <div class="box-flex input-text color-red">
-                {if $vat_info.audit_status == 0}
-                <p class="j-input-text inputcard">未审核</p>
-                {elseif $vat_info.audit_status == 1}
-                <p class="j-input-text inputcard">通过审核</p>
-                {elseif $vat_info.audit_status == 2}
-                <p class="j-input-text inputcard">审核未通过</p>
-                {/if}
-                <i class="iconfont icon-guanbi1 close-common j-is-null"></i>
-            </div>
-        </div>
-
         <div class="dis-box  filter-btn">
             {if $vat_info}
-            <a data-del="{$vat_info.id}" class="btn-submit box-flex del-inv" style="background:#fff;color:#333">删除</a>
             <a href="{url('user/index/inv_form',array('id'=>$vat_info.id))}" class="box-flex btn-submit ">修改</a>
+            <a data-del="{$vat_info.id}" class="btn-submit box-flex del-inv" style="background:#fff;color:#333">删除</a>
             {else}
             <a href="{url('user/index/inv_form')}" class="btn-submit   box-flex">新增</a>
             {/if}
         </div>
-
     </section>
 
-
+</div>
 <!--地区选择 s-->
 {include file="address"}
 <!--地区选择 e-->
@@ -153,7 +139,6 @@
             return false;
         }
     }
-
     $('.del-inv').click(function () {
         var id = $(this).attr('data-del');
         var url = "{url('user/index/del_inv')}";
@@ -162,17 +147,21 @@
             btn: ['确定', '取消'],
             shadeClose: false,
             yes: function () {
-                $.post(url, {vat_id: id}, function (result) {
-                    if (result.status == 1) {
-                        window.location.href = "{url('user/index/inv_form')}";
-                    }
-                }, 'json');
+                $.post(url, {vat_id: id},
+                        function (result) {
+                            if (result.status == 1) {
+                                window.location.href = "{url('user/index/inv_form')}";
+                            }
+                        }, 'json');
 
             },
             no: function () {
             }
         });
+
+
     });
 </script>
 </body>
+
 </html>

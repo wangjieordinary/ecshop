@@ -43,7 +43,7 @@
                                 <!--{if $goodsRu.offline_store.stores_img}-->
                                 <div class="item">
                                     <div class="tit">{$lang.store_pic}：</div>
-                                    <div class="value"><!--{if $goodsRu.offline_store.stores_img}--><a href="../{$goodsRu.offline_store.stores_img}" class="nyroModal ftx-05">{$lang.view}</a><!--{/if}--></div>
+                                    <div class="value"><!--{if $goodsRu.offline_store.stores_img}--><a href="../{$goodsRu.offline_store.stores_img}" class="nyroModal ftx-05">查看</a><!--{/if}--></div>
                                 </div>
                                 <!--{/if}-->
                                 <div class="item">
@@ -74,7 +74,7 @@
                             <!-- {foreach from=$goodsRu.shipping item=shipping} -->
                             {if $shipping.shipping_code neq 'cac' && $goodsRu.tmp_shipping_id eq $shipping.shipping_id}
                             <li class="mode-tab-item mode-tab-log shopping-list-checked {if $goodsRu.shipping_type eq 0 && $shipping.default eq 1}item-selected{/if}" ectype="tabLog" data-ruid="{$goodsRu.ru_id}" data-type="0" data-shipping="{$shipping.shipping_id}" data-shippingcode="{$shipping.shipping_code}">
-                            <span>{if $shipping.shipping_name}{$shipping.shipping_name}{else}{$lang.not_set_shipping}{/if}</span>
+                            <span>{if $shipping.shipping_name}{$shipping.shipping_name}{else}未设置配送方式{/if}</span>
                             </li>
                             {/if}
                             <!-- {/foreach} -->
@@ -82,7 +82,7 @@
                             
                             {if $goodsRu.ru_id eq 0 && $goodsRu.self_point neq ""}
                             <li class="mode-tab-item shopping-list-checked {if $goodsRu.shipping_type eq 1}item-selected{/if}" ectype="tabCac" data-ruid="{$goodsRu.ru_id}" data-type="1" data-shipping="{$goodsRu.self_point.shipping_id}" data-shippingcode="{$goodsRu.self_point.shipping_code}">
-                                <span>{$goodsRu.self_point.shipping_name}</span>
+                                <span>{$lang.Door_self}</span>
                             </li>
                             {/if}
                         </ul>
@@ -95,7 +95,7 @@
                                     {foreach from=$goodsRu.shipping item=shipping} 
                                     {if $shipping.shipping_code != 'cac'}
                                     <li class="logistics_li {if $goodsRu.tmp_shipping_id == $shipping.shipping_id}item-selected{/if}" data-ruid="{$goodsRu.ru_id}" data-type="0" data-shipping="{$shipping.shipping_id}" data-shippingcode="{$shipping.shipping_code}" data-text="{$shipping.shipping_name}">
-                                        <span>{if $shipping.shipping_name}{$shipping.shipping_name}{else}{$lang.not_set_shipping}{/if}</span>
+                                        <span>{if $shipping.shipping_name}{$shipping.shipping_name}{else}未设置配送方式{/if}</span>
                                         {if $shipping.shipping_name && $shipping.shipping_code neq 'fpd'}<em>（{if $shipping.shipping_fee}{$shipping.format_shipping_fee}{else}{$lang.Free_shipping}{/if}）</em>{/if}
                                     </li>
                                     {/if}
@@ -129,9 +129,9 @@
                     </div>
                     <!--{else}-->
                     	<!-- {if !$user_address} -->
-                        <span class="ftx-01">{$lang.address_prompt_two}</span>	
+                        <span class="ftx-01">请填写收货地址</span>	
                         <!-- {else} -->
-                        <span class="ftx-01">{$lang.shiping_prompt}</span>
+                        <span class="ftx-01">暂不支持配送</span>
                         <!-- {/if} -->
                     <!--{/if}-->
                     
@@ -163,33 +163,37 @@
                         <!-- {if $activity.act_type eq 0} 如果是满赠 -->
                             <!-- {if $activity.act_type_ext eq 0} -->
                                 <!-- {if $activity.available} 满足最低消费-->
-                                    <span class="ftx-01">{$lang.activity_notes_one}{$activity.min_amount}{$lang.yuan} ，{$lang.receive_gifts}{if $activity.cart_favourable_gift_num gt 0}，{$lang.Already_receive}{$activity.cart_favourable_gift_num}{$lang.jian}{/if}</span>
+                                    <a href="javascript:;">
+                                        <span>{$lang.activity_notes_one}{$activity.min_amount}{$lang.yuan} ，{$lang.receive_gifts}{if $activity.cart_favourable_gift_num gt 0}，{$lang.Already_receive}{$activity.cart_favourable_gift_num}{$lang.jian}{/if}</span>
+                                    </a>
                                 <!-- {else} -->
-                                    <span class="ftx-01">{$lang.activity_notes_three}{$activity.min_amount}{$lang.cart_goods_one} </span>
+                                    <a href="javascript:;"><span>{$lang.activity_notes_three}{$activity.min_amount}{$lang.cart_goods_one} </span></a>
                                 <!-- {/if} -->
                             <!-- {else} -->
                                 <!-- {if $activity.available} 满足最低消费-->
-                                        <span class="ftx-01">
+                                    <a href="javascript:;">
+                                        <span>
                                             {$lang.activity_notes_one}{$activity.min_amount}{$lang.yuan}，{if $activity.cart_favourable_gift_num gt 0}{$lang.cart_goods_two}{else}{$lang.cart_goods_three}{/if}
                                         </span>
+                                    </a>
                                 <!-- {else} -->
-                                    <span class="ftx-01">{$lang.activity_notes_three}{$activity.min_amount}{$lang.cart_goods_one}</span>
+                                    <a href="javascript:;"><span>{$lang.activity_notes_three}{$activity.min_amount}{$lang.cart_goods_one}</span></a>
                                 <!-- {/if} -->
                             <!-- {/if} -->
 
                         <!-- {elseif $activity.act_type eq 1} 满减 -->
 
                             <!-- {if $activity.available} 满足最低消费-->
-                                <span class="ftx-01">{$lang.activity_notes_one}{$activity.min_amount}{$lang.yuan} ,{$lang.been_reduced}{$activity.act_type_ext_format}{$lang.cart_goods_four}</span>
+                                <a href="javascript:;"><span>{$lang.activity_notes_one}{$activity.min_amount}{$lang.yuan} ,{$lang.been_reduced}{$activity.act_type_ext_format}{$lang.cart_goods_four}</span></a>
                             <!-- {else} -->
-                                <span class="ftx-01">{$lang.activity_notes_three}{$activity.min_amount}{$lang.cart_goods_five}</span>
+                                <a href="javascript:;"><span>{$lang.activity_notes_three}{$activity.min_amount}{$lang.cart_goods_five}</span></a>
                             <!-- {/if} -->
 
                         <!-- {elseif $activity.act_type eq 2} 折扣 -->
                             <!-- {if $activity.available} 满足最低消费-->
-                                <span class="ftx-01">{$lang.activity_notes_one}{$activity.min_amount}{$lang.yuan} ，{$lang.Already_enjoy}{$activity.act_type_ext_format}{$lang.percent_off_Discount}</span>
+                                <a href="javascript:;"><span>{$lang.activity_notes_one}{$activity.min_amount}{$lang.yuan} ，{$lang.Already_enjoy}{$activity.act_type_ext_format}{$lang.percent_off_Discount}</span></a>
                             <!-- {else} -->
-                                <span class="ftx-01">{$lang.activity_notes_three}{$activity.min_amount}{$lang.zhekouxianzhi}</span>
+                                <a href="javascript:;"><span>{$lang.activity_notes_three}{$activity.min_amount}{$lang.zhekouxianzhi}</span></a>
                             <!-- {/if} -->
                         <!-- {/if} -->
                     </div>
@@ -222,14 +226,16 @@
                         <span class="">
                             <!-- {if $goods.attr_number} -->
                                 {$lang.Have_goods}
-                                <input name="rec_number" type="hidden" data-id="{$goods.rec_id}" value="0">
+                                <input name="rec_number" type="hidden" id="{$goods.rec_id}" value="0">
                             <!-- {else} -->
                                 <font style="color:#e4393c">{$lang.No_goods}</font>
-                                <input name="rec_number" type="hidden" data-id="{$goods.rec_id}" value="1">
+                                <input name="rec_number" type="hidden" id="{$goods.rec_id}" value="1">
                             <!-- {/if} -->
-                            
-                            <!-- 该地区支持配送 -->
-                            <input name="shipping_prompt" type="hidden" data-id="{$goods.rec_id}" value="{if $goodsRu.shipping || !$goods.is_real}{if $goods.rec_shipping eq 1}0{else}1{/if}{else}1{/if}">
+							<!-- {if $goodsRu.shipping || !goods.is_real} 该地区支持配送-->
+								<input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="0">
+							<!-- {else} -->
+								<input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="1">
+							<!-- {/if} -->
                         </span>
                     </div>
                     <div class="c-col cg-sum">{$goods.formated_subtotal}</div>
@@ -260,14 +266,16 @@
                         <span>
                             <!-- {if $goods.attr_number} -->
                                 {$lang.Have_goods}
-                                <input name="rec_number" type="hidden" data-id="{$goods.rec_id}" value="0">
+                                <input name="rec_number" type="hidden" id="{$goods.rec_id}" value="0">
                             <!-- {else} -->
                                 <font style="color:#e4393c">{$lang.No_goods}</font>
-                                <input name="rec_number" type="hidden" data-id="{$goods.rec_id}" value="1">
+                                <input name="rec_number" type="hidden" id="{$goods.rec_id}" value="1">
                             <!-- {/if} -->
-                            
-							<!-- 该地区支持配送 -->
-                            <input name="shipping_prompt" type="hidden" data-id="{$goods.rec_id}" value="{if $goodsRu.shipping || !$goods.is_real}{if $goods.rec_shipping eq 1}0{else}1{/if}{else}1{/if}">
+							<!-- {if $goodsRu.shipping || !$goods.is_real} 该地区支持配送-->
+								<input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="0">
+							<!-- {else} -->
+								<input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="1">
+							<!-- {/if} -->
                         </span>
                     </div>
                     <div class="c-col cg-sum">{$goods.formated_subtotal}</div>
@@ -287,7 +295,7 @@
                     <div class="p-info">
                         <div class="p-name package-name">{$goods.goods_name}<span class="red">（{$lang.remark_package}）</span></div>
                         <div class="package_goods" id="suit_{$goods.goods_id}">
-                            <div class="title">{$lang.contain_content}：</div>
+                            <div class="title">包含内容：</div>
                             <ul>
                                 <!-- {foreach from=$goods.package_goods_list item=package_goods_list name=nopackage} -->
                                 <li>
@@ -319,14 +327,16 @@
                     <span>
                         <!-- {if $goods.attr_number} -->
                             {$lang.Have_goods}
-                            <input name="rec_number" type="hidden" data-id="{$goods.rec_id}" value="0">
+                            <input name="rec_number" type="hidden" id="{$goods.rec_id}" value="0">
                         <!-- {else} -->
                             <font style="color:#e4393c">{$lang.No_goods}</font>
-                            <input name="rec_number" type="hidden" data-id="{$goods.rec_id}" value="1">
+                            <input name="rec_number" type="hidden" id="{$goods.rec_id}" value="1">
                         <!-- {/if} -->
-
-                        <!-- 该地区支持配送 -->
-                        <input name="shipping_prompt" type="hidden" data-id="{$goods.rec_id}" value="{if $goodsRu.shipping || !$goods.is_real}{if $goods.rec_shipping eq 1}0{else}1{/if}{else}1{/if}">
+						<!-- {if $goodsRu.shipping || !$goods.is_real} 该地区支持配送-->
+							<input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="0">
+						<!-- {else} -->
+							<input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="1">
+						<!-- {/if} -->
                     </span>
                 </div>
                 <div class="c-col cg-sum">{$goods.formated_subtotal}</div>

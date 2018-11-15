@@ -19,7 +19,7 @@
         <div class="flexilist">
             <div class="common-head">
                 <div class="fl">
-                    <a href="javascript:void(0);" onclick="get_auto_order_detection({$filter.seller_list|default:0})"><div class="fbutton"><div class="add" ><span>{$lang.button_detection}</span></div></div></a>
+                    <a href="javascript:void(0);" onclick="get_auto_order_detection({$filter.seller_list|default:0})"><div class="fbutton"><div class="add" ><span>一键确认收货</span></div></div></a>
                 </div>
                 <div class="notic ml10 red">{$lang.detection_list_notic}</div>
                 <div class="search">

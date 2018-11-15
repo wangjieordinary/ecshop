@@ -3,7 +3,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">   
-    <title>{if $topic_type eq 'topic_type'}{$lang.seller_topic_zx}{else}{$lang.shop_zx}{/if}</title>
+    <title>{if $topic_type eq 'topic_type'}商家专题装修{else}店铺装修{/if}</title>
     <link rel="shortcut icon" href="../favicon.ico" />
     <link rel="stylesheet" type="text/css" href="css/general.css" />
     <link rel="stylesheet" type="text/css" href="css/style.css" />
@@ -31,7 +31,7 @@
                     cl_cBtn:false,
                     width:316,
                     height:376,
-                    ok_title:jl_determine,
+                    ok_title:"确定",
                     onOk:function(){
                         location.href = "../index.php";
                     }
@@ -56,7 +56,7 @@
                     <div class="wrap">
                         <div class="left-line"></div>
                         <i class="iconfont icon-template"></i>
-                        <span>{$lang.12_template}</span>
+                        <span>模板</span>
                         <b class="b-small"></b>
                     </div>
                 </li>
@@ -65,7 +65,7 @@
                     <div class="wrap">
                         <div class="left-line"></div>
                         <i class="iconfont icon-visual-top"></i>
-                        <span>{$lang.head}</span>
+                        <span>头部</span>
                         <b class="b-small"></b>
                     </div>
                 </li>
@@ -74,7 +74,7 @@
                     <div class="wrap">
                         <div class="left-line"></div>
                         <i class="iconfont icon-visual-con"></i>
-                        <span>{$lang.center}</span>
+                        <span>中间</span>
                         <b class="b-small"></b>
                     </div>
                 </li>
@@ -83,24 +83,24 @@
                 <li class="li modules-slide" ectype="toolbar_li">
                     <b class="iconfont icon-cha" ectype="close"></b>
                     <div class="inside">
-                        <p class="red">{$lang.select_mode_drag}</p>                        
+                        <p class="red">选择所需模块，并拖动至相应位置</p>                        
                     </div>
                     <div class="modules-box">
                         <div class="modules-wrap modules-wrap-current">
-                            <div class="head" ectype="head"><span>{$lang.basic_mode}</span><i class="iconfont icon-xia"></i></div>
+                            <div class="head" ectype="head"><span>基础模块</span><i class="iconfont icon-xia"></i></div>
                             <div class="module-list clearfix">
                                 <div class="visual-item lyrow lunbotu" data-mode="lunbo" data-purebox="adv" data-li="1" data-length="5">
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_01.png" /></span>
-                                            <span class="txt">{$lang.img_slide}</span>
+                                            <span class="txt">图片轮播</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -120,14 +120,14 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_02.png" /></span>
-                                            <span class="txt">{$lang.ad_area}{$lang.num_1}</span>
+                                            <span class="txt">广告区一</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -145,14 +145,14 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/2.png" width="1200" /></span>
-                                            <span class="txt">{$lang.ad_area}{$lang.num_2}</span>
+                                            <span class="txt">广告区二</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -168,14 +168,14 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/3.png" /></span>
-                                            <span class="txt">{$lang.ad_area}{$lang.num_3}</span>
+                                            <span class="txt">广告区三</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -191,14 +191,14 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/4.png" /></span>
-                                            <span class="txt">{$lang.ad_area}{$lang.num_4}</span>
+                                            <span class="txt">广告区四</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -218,22 +218,22 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.goods_floor}</span>
+                                            <span class="txt">商品楼层</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
                                         <div class="floor" data-type="range">
                                             <div class="mt">
                                                 <div class="con">
-                                                    <h2>{$lang.goods_floor_name}</h2>
-                                                    <p>{$lang.goods_floor_intro_words}</p>
+                                                    <h2>商品楼层名称</h2>
+                                                    <p>商品楼层简单介绍文字</p>
                                                 </div>
                                             </div>
                                             <div class="mc w1200">
@@ -241,33 +241,33 @@
                                                     <li>
                                                         <div class="img"><a href="" title=""><img src="images/default/gd_pic_02.jpg"></a></div>
                                                         <div class="info">
-                                                            <div class="name"><a href="">{$lang.goods_name}</a></div>
+                                                            <div class="name"><a href="">商品名称</a></div>
                                                             <div class="price">￥65.00</div>
-                                                            <div class="btn_hover"><a href="">{$lang.buy_now}</a></div>
+                                                            <div class="btn_hover"><a href="">立即购买</a></div>
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <div class="img"><a href="" title=""><img src="images/default/gd_pic_02.jpg"></a></div>
                                                         <div class="info">
-                                                            <div class="name"><a href="">{$lang.goods_name}</a></div>
+                                                            <div class="name"><a href="">商品名称</a></div>
                                                             <div class="price">￥65.00</div>
-                                                            <div class="btn_hover"><a href="">{$lang.buy_now}</a></div>
+                                                            <div class="btn_hover"><a href="">立即购买</a></div>
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <div class="img"><a href="" title=""><img src="images/default/gd_pic_02.jpg"></a></div>
                                                         <div class="info">
-                                                            <div class="name"><a href="">{$lang.goods_name}</a></div>
+                                                            <div class="name"><a href="">商品名称</a></div>
                                                             <div class="price">￥65.00</div>
-                                                            <div class="btn_hover"><a href="">{$lang.buy_now}</a></div>
+                                                            <div class="btn_hover"><a href="">立即购买</a></div>
                                                         </div>
                                                     </li>
                                                     <li>
                                                         <div class="img"><a href="" title=""><img src="images/default/gd_pic_02.jpg"></a></div>
                                                         <div class="info">
-                                                            <div class="name"><a href="">{$lang.goods_name}</a></div>
+                                                            <div class="name"><a href="">商品名称</a></div>
                                                             <div class="price">￥65.00</div>
-                                                            <div class="btn_hover"><a href="">{$lang.buy_now}</a></div>
+                                                            <div class="btn_hover"><a href="">立即购买</a></div>
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -280,18 +280,18 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_04.png" /></span>
-                                            <span class="txt">{$lang.custom_area}</span>
+                                            <span class="txt">自定义区</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
-                                        <div class="custom" data-type="range"><div class="default ui-draggable ui-box-display">{$lang.custom_area_tip}</div></div>
+                                        <div class="custom" data-type="range"><div class="default ui-draggable ui-box-display">自定义内容，可以用来展示店铺的特色区域。</div></div>
                                     </div>
                                 </div>
                             </div>
@@ -299,28 +299,28 @@
                         {if $theme_extension eq 1}
                         {if $topic_type neq 'topic_type'}
                         <div class="modules-wrap modules-wrap-current mt20" ectype="stores_modules">
-                            <div class="head" ectype="head"><span>{$lang.shop_mode}</span><i class="iconfont icon-xia"></i></div>
+                            <div class="head" ectype="head"><span>店铺模块</span><i class="iconfont icon-xia"></i></div>
                             <div class="module-list clearfix">
                                 <div class="visual-item lyrow w1200 homeFloor" data-mode="storeOneFloor1" data-purebox="homeFloor" data-li="1" ectype="visualItme">
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.shop_floor}</span>
+                                            <span class="txt">店铺楼层</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
                                     	<div class="storeFloor-content" data-type="range">
                                         	<div class="st-section st-section-two">
                                                 <div class="title">
-                                                    <h1>{$lang.main_title}</h1>
-                                                    <span>{$lang.sub_title}</span>
+                                                    <h1>主标题</h1>
+                                                    <span>次标题</span>
                                                 </div>
                                                 <div class="st_item">
                                                     <ul class="row4">
@@ -355,14 +355,14 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.shop_floor}</span>
+                                            <span class="txt">店铺楼层</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -420,14 +420,14 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.shop_floor}</span>
+                                            <span class="txt">店铺楼层</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -528,14 +528,14 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.shop_floor}</span>
+                                            <span class="txt">店铺楼层</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -608,14 +608,14 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.shop_floor}</span>
+                                            <span class="txt">店铺楼层</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -633,7 +633,7 @@
                                                                 <div class="p-name"><a href="#" target="_blank">0.43克拉蓝宝石吊坠</a></div>
                                                                 <div class="p-lie">
                                                                     <div class="p-price"><em>￥</em>2799.00</div>
-                                                                    <div class="p-btn"><a href="#" target="_blank">{$lang.buy_now}</a></div>
+                                                                    <div class="p-btn"><a href="#" target="_blank">立即购买</a></div>
                                                                 </div>
                                                             </li>
                                                             <li>
@@ -641,7 +641,7 @@
                                                                 <div class="p-name"><a href="#" target="_blank">0.43克拉蓝宝石吊坠</a></div>
                                                                 <div class="p-lie">
                                                                     <div class="p-price"><em>￥</em>2799.00</div>
-                                                                    <div class="p-btn"><a href="#" target="_blank">{$lang.buy_now}</a></div>
+                                                                    <div class="p-btn"><a href="#" target="_blank">立即购买</a></div>
                                                                 </div>
                                                             </li>
                                                             <li>
@@ -649,7 +649,7 @@
                                                                 <div class="p-name"><a href="#" target="_blank">0.43克拉蓝宝石吊坠</a></div>
                                                                 <div class="p-lie">
                                                                     <div class="p-price"><em>￥</em>2799.00</div>
-                                                                    <div class="p-btn"><a href="#" target="_blank">{$lang.buy_now}</a></div>
+                                                                    <div class="p-btn"><a href="#" target="_blank">立即购买</a></div>
                                                                 </div>
                                                             </li>
                                                             <li>
@@ -657,7 +657,7 @@
                                                                 <div class="p-name"><a href="#" target="_blank">0.43克拉蓝宝石吊坠</a></div>
                                                                 <div class="p-lie">
                                                                     <div class="p-price"><em>￥</em>2799.00</div>
-                                                                    <div class="p-btn"><a href="#" target="_blank">{$lang.buy_now}</a></div>
+                                                                    <div class="p-btn"><a href="#" target="_blank">立即购买</a></div>
                                                                 </div>
                                                             </li>
                                                             <li>
@@ -665,7 +665,7 @@
                                                                 <div class="p-name"><a href="#" target="_blank">0.43克拉蓝宝石吊坠</a></div>
                                                                 <div class="p-lie">
                                                                     <div class="p-price"><em>￥</em>2799.00</div>
-                                                                    <div class="p-btn"><a href="#" target="_blank">{$lang.buy_now}</a></div>
+                                                                    <div class="p-btn"><a href="#" target="_blank">立即购买</a></div>
                                                                 </div>
                                                             </li>
                                                             <li>
@@ -673,7 +673,7 @@
                                                                 <div class="p-name"><a href="#" target="_blank">0.43克拉蓝宝石吊坠</a></div>
                                                                 <div class="p-lie">
                                                                     <div class="p-price"><em>￥</em>2799.00</div>
-                                                                    <div class="p-btn"><a href="#" target="_blank">{$lang.buy_now}</a></div>
+                                                                    <div class="p-btn"><a href="#" target="_blank">立即购买</a></div>
                                                                 </div>
                                                             </li>
                                                         </ul>
@@ -687,21 +687,21 @@
                         </div>
                         {else}
                         <div class="modules-wrap modules-wrap-current mt20">
-                            <div class="head" ectype="head"><span>{$lang.topic_mode}</span><i class="iconfont icon-xia"></i></div>
+                            <div class="head" ectype="head"><span>专题模块</span><i class="iconfont icon-xia"></i></div>
                             <div class="module-list clearfix">
                             	<!-- 专题模板一 楼层 -->
                             	<div class="visual-item lyrow w1200 topicFloor" data-mode="topicOneFloor" data-purebox="homeFloor" data-li="1" ectype="visualItme">
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.topic_floor}1</span>
+                                            <span class="txt">专题楼层1</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -730,14 +730,14 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.topic_floor}2</span>
+                                            <span class="txt">专题楼层2</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -764,14 +764,14 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.topic_floor}3</span>
+                                            <span class="txt">专题楼层3</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
                                             <a href="javascript:void(0);" class="move-up iconfont icon-up1"></a>
                                             <a href="javascript:void(0);" class="move-down iconfont icon-down1"></a>
-                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" class="move-edit" ectype='model_edit'><i class="iconfont icon-edit1"></i>编辑</a>
+                                            <a href="javascript:void(0);" class="move-remove"><i class="iconfont icon-remove-alt"></i>删除</a>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -867,45 +867,45 @@
                     <div class="page-head-bg-content">
                         <div class="page-head-bg-content-wrap">
                             <div class="page-head-bg">
-                                <label class="tit">{$lang.label_head_bg_color}</label>
+                                <label class="tit">头部背景色：</label>
                                 <input type="hidden" class="tm-picker-trigger" value="{$head.bg_color}"  />
                                 <input type="checkbox" class="ui-checkbox" name="header_dis" value="0" id="header_dis" {if $head.if_show eq 1}checked{/if} /> 
-                                <label for="header_dis" class="ui-label">{$lang.display}</label>
+                                <label for="header_dis" class="ui-label">显示</label>
                             </div>
                             <div class="page-head-bgimg clearfix">
                                 <form  action="" id="bgfileForm" method="post"  enctype="multipart/form-data"  runat="server" >
-                                    <div><label class="tit">{$lang.label_head_bg_img}</label></div>
+                                    <div><label class="tit">头部背景图：</label></div>
                                     <div class="bgimg" ><input name="fileimg" type="hidden" value="{if $head.img_file}{$head.img_file}{else}images/bgimg.gif{/if}"/><img id="showbgfile" src="{if $head.img_file}{$head.img_file}{else}images/bgimg.gif{/if}" alt=""></div>
                                     <div class="action">
                                         <div class="action-btn">
                                             <a href="javascript:void(0);" class="ks-uploader-button">
-                                                <span class="btn-text">{$lang.change_img}</span>
-                                                <div class="file-input-wrapper"><input type="file" name="hdfile" value="{$lang.change_img}" class="file-input"></div>
+                                                <span class="btn-text">更换图片</span>
+                                                <div class="file-input-wrapper"><input type="file" name="hdfile" value="更换图片" class="file-input"></div>
                                             </a>
                                             <a href="javascript:void(0);" class="delete" ectype="delete_bg"></a>
                                         </div>
                                         <div class="content">
-                                            <div>{$lang.file_format}：GIF,JPG,PNG</div>
-                                            <div>{$lang.file_size}：200k{$lang.yinei}</div>
+                                            <div>文件格式：GIF,JPG,PNG</div>
+                                            <div>文件大小：200k以内</div>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                             <div class="bg-show clearfix" {if $head.img_file == ''}style="display:none;"{/if}>
-                                <div>{$lang.label_bg_display}</div>
+                                <div>背景显示：</div>
                                 <div class="bg-show-nr">
-                                    <a href="javascript:void(0);" {if $head.bgrepeat eq 'repeat'}class="current"{/if} data-bg-show="repeat">{$lang.repeat}</a>
-                                    <a href="javascript:void(0);" {if $head.bgrepeat eq 'repeat-y'}class="current"{/if} data-bg-show="repeat-y">{$lang.vertical_repeat}</a>
-                                    <a href="javascript:void(0);" {if $head.bgrepeat eq 'repeat-x'}class="current"{/if} data-bg-show="repeat-x">{$lang.left_right_repeat}</a>
-                                    <a href="javascript:void(0);" {if $head.bgrepeat eq 'no-repeat'}class="current"{/if} data-bg-show="no-repeat">{$lang.not_repeat}</a>
+                                    <a href="javascript:void(0);" {if $head.bgrepeat eq 'repeat'}class="current"{/if} data-bg-show="repeat">平铺</a>
+                                    <a href="javascript:void(0);" {if $head.bgrepeat eq 'repeat-y'}class="current"{/if} data-bg-show="repeat-y">纵向平铺</a>
+                                    <a href="javascript:void(0);" {if $head.bgrepeat eq 'repeat-x'}class="current"{/if} data-bg-show="repeat-x">横向平铺</a>
+                                    <a href="javascript:void(0);" {if $head.bgrepeat eq 'no-repeat'}class="current"{/if} data-bg-show="no-repeat">不平铺</a>
                                 </div>
                             </div>
                             <div class="bg-align clearfix" {if $head.img_file == ''}style="display:none;"{/if}>
-                                <div>{$lang.label_bg_align}</div>
+                                <div>背景对齐：</div>
                                 <div class="bg-align-nr">
-                                    <a href="javascript:void(0);" {if $head.align eq 'left'}class="current"{/if} data-bg-align="left">{$lang.align_left}</a>
-                                    <a href="javascript:void(0);" {if $head.align eq 'center'}class="current"{/if} data-bg-align="center">{$lang.align_center}</a>
-                                    <a href="javascript:void(0);" {if $head.align eq 'right'}class="current"{/if} data-bg-align="right">{$lang.align_right}</a>
+                                    <a href="javascript:void(0);" {if $head.align eq 'left'}class="current"{/if} data-bg-align="left">左对齐</a>
+                                    <a href="javascript:void(0);" {if $head.align eq 'center'}class="current"{/if} data-bg-align="center">居中</a>
+                                    <a href="javascript:void(0);" {if $head.align eq 'right'}class="current"{/if} data-bg-align="right">右对齐</a>
                                 </div>
                             </div>
                         </div>
@@ -917,45 +917,45 @@
                     <div class="page-head-bg-content">
                         <div class="page-head-bg-content-wrap">
                             <div class="page-head-bg">
-                                <label class="tit">{$lang.label_center_bg_color}</label>
+                                <label class="tit">中间背景色：</label>
                                 <input type="hidden" class="tm-picker-trigger" value="{$content.bg_color}" />
                                 <input type="checkbox" class="ui-checkbox" name="content_dis" value="0" id="content_dis" {if $content.if_show eq 1}checked{/if}/> 
-                                <label for="content_dis" class="ui-label">{$lang.display}</label>
+                                <label for="content_dis" class="ui-label">显示</label>
                             </div>
                             <div class="page-head-bgimg clearfix">
                                 <form  action="" id="bgfileForm" method="post"  enctype="multipart/form-data"  runat="server" >
-                                    <div><label class="tit">{$lang.label_center_bg_img}</label></div>
+                                    <div><label class="tit">中间背景图：</label></div>
                                     <div class="bgimg"><input name="fileimg" type="hidden" value="{if $content.img_file}{$content.img_file}{else}images/bgimg.gif{/if}"/><img id="confilefile" src="{if $content.img_file}{$content.img_file}{else}images/bgimg.gif{/if}" alt=""></div>
                                     <div class="action">
                                         <div class="action-btn">
                                             <a href="javascript:void(0);" class="ks-uploader-button">
-                                                <span class="btn-text">{$lang.change_img}</span>
-                                                <div class="file-input-wrapper"><input type="file" name="confile" value="{$lang.change_img}" class="file-input"></div>
+                                                <span class="btn-text">更换图片</span>
+                                                <div class="file-input-wrapper"><input type="file" name="confile" value="更换图片" class="file-input"></div>
                                             </a>
                                             <a href="javascript:void(0);" class="delete" ectype="delete_bg"></a>
                                         </div>
                                         <div class="content">
-                                            <div>{$lang.file_format}：GIF,JPG,PNG</div>
-                                            <div>{$lang.file_size}：200k{$lang.yinei}</div>
+                                            <div>文件格式：GIF,JPG,PNG</div>
+                                            <div>文件大小：200k以内</div>
                                         </div>
                                     </div>
                                 </form>
                             </div>
                             <div class="bg-show clearfix" {if $content.img_file == ''}style="display:none;"{/if}>
-                                <div>{$lang.label_bg_display}</div>
+                                <div>背景显示：</div>
                                 <div class="bg-show-nr">
-                                    <a href="javascript:void(0);" {if $content.bgrepeat eq 'repeat'}class="current"{/if} data-bg-show="repeat">{$lang.repeat}</a>
-                                    <a href="javascript:void(0);" {if $content.bgrepeat eq 'repeat-y'}class="current"{/if} data-bg-show="repeat-y">{$lang.vertical_repeat}</a>
-                                    <a href="javascript:void(0);" {if $content.bgrepeat eq 'repeat-x'}class="current"{/if} data-bg-show="repeat-x">{$lang.left_right_repeat}</a>
-                                    <a href="javascript:void(0);" {if $content.bgrepeat eq 'no-repeat'}class="current"{/if} data-bg-show="no-repeat">{$lang.not_repeat}</a>
+                                    <a href="javascript:void(0);" {if $content.bgrepeat eq 'repeat'}class="current"{/if} data-bg-show="repeat">平铺</a>
+                                    <a href="javascript:void(0);" {if $content.bgrepeat eq 'repeat-y'}class="current"{/if} data-bg-show="repeat-y">纵向平铺</a>
+                                    <a href="javascript:void(0);" {if $content.bgrepeat eq 'repeat-x'}class="current"{/if} data-bg-show="repeat-x">横向平铺</a>
+                                    <a href="javascript:void(0);" {if $content.bgrepeat eq 'no-repeat'}class="current"{/if} data-bg-show="no-repeat">不平铺</a>
                                 </div>
                             </div>
                             <div class="bg-align clearfix" {if $content.img_file == ''}style="display:none;"{/if}>
-                                <div>{$lang.label_bg_align}</div>
+                                <div>背景对齐：</div>
                                 <div class="bg-align-nr">
-                                    <a href="javascript:void(0);" {if $content.align eq 'left'}class="current"{/if} data-bg-align="left">{$lang.align_left}</a>
-                                    <a href="javascript:void(0);" {if $content.align eq 'center'}class="current"{/if} data-bg-align="center">{$lang.align_center}</a>
-                                    <a href="javascript:void(0);" {if $content.align eq 'right'}class="current"{/if} data-bg-align="right">{$lang.align_right}</a>
+                                    <a href="javascript:void(0);" {if $content.align eq 'left'}class="current"{/if} data-bg-align="left">左对齐</a>
+                                    <a href="javascript:void(0);" {if $content.align eq 'center'}class="current"{/if} data-bg-align="center">居中</a>
+                                    <a href="javascript:void(0);" {if $content.align eq 'right'}class="current"{/if} data-bg-align="right">右对齐</a>
                                 </div>
                             </div>
                         </div>
@@ -966,15 +966,15 @@
         <div class="db_main">
             <div class="design-nav-wrap">
                 <div class="btns">
-                    <a href="javascript:void(0);" class="btn btn_blue" ectype="downloadModal">{$lang.sure_release}</a>
-                    <a href="javascript:void(0);" class="btn" {if $is_temp eq 0}style="display:none"{/if} ectype="back" >{$lang.restore}</a>
+                    <a href="javascript:void(0);" class="btn btn_blue" ectype="downloadModal">确定发布</a>
+                    <a href="javascript:void(0);" class="btn" {if $is_temp eq 0}style="display:none"{/if} ectype="back" >还原</a>
                     {if $topic_type eq 'topic_type'}
-                    <a href="javascript:void(0);" class="btn" ectype="preview" >{$lang.preview}</a>
+                    <a href="javascript:void(0);" class="btn" ectype="preview" >预览</a>
                     {else}
-                    <a href="visual_editing.php?act=templates" class="btn btn2">{$lang.select_tpl}</a>
-                    <a href="javascript:void(0);" class="btn" ectype="preview" data-ruid="{$ru_id}" >{$lang.preview}</a>
-                    <a href="javascript:void(0);" class="btn" ectype="templateColorSet">{$lang.tpl_color_select}</a>
-                    <a href="javascript:void(0);" class="btn btn_blue" data-toggle="modal" ectype="releaseTemp">{$lang.set_default}</a>
+                    <a href="visual_editing.php?act=templates" class="btn btn2">选择模板</a>
+                    <a href="javascript:void(0);" class="btn" ectype="preview" data-ruid="{$ru_id}" >预览</a>
+                    <a href="javascript:void(0);" class="btn" ectype="templateColorSet">模板色调选择</a>
+                    <a href="javascript:void(0);" class="btn btn_blue" data-toggle="modal" ectype="releaseTemp">设为默认</a>
                     {/if}
                 </div>
             </div>

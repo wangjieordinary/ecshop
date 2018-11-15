@@ -1,4 +1,5 @@
 <?php
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $_LANG['sf_express']             = '顺丰速运';
 $_LANG['sf_express_desc']        = '江、浙、沪地区首重15元/KG，续重2元/KG，其余城市首重20元/KG';

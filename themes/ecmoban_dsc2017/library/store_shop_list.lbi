@@ -12,8 +12,8 @@
         {if $shop.self_run}
         <div class="seller-sr">{$lang.platform_self}</div>
         {/if}
-        <p><!--{if $shop.shoprz_brandName}-->{$lang.main_brand}： {$shop.shoprz_brandName}<!--{else}-->&nbsp;<!--{/if}--></p>
-        <p><!--{if $shop.grade_img}-->{$lang.seller_Grade}： <!--<span class="shop-level-icon level-1"></span>--><img src="{$shop.grade_img}" title="{$shop.grade_name}" width="20"/><!--{else}-->&nbsp;<!--{/if}--></p>
+        <p><!--{if $shop.shoprz_brandName}-->主营品牌： {$shop.shoprz_brandName}<!--{else}-->&nbsp;<!--{/if}--></p>
+        <p><!--{if $shop.grade_img}-->商家等级： <!--<span class="shop-level-icon level-1"></span>--><img src="{$shop.grade_img}" title="{$shop.grade_name}" width="20"/><!--{else}-->&nbsp;<!--{/if}--></p>
     </div>
 </div>
 <!--{/foreach}-->

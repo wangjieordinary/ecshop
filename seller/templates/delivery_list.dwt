@@ -15,8 +15,8 @@
                 <div class="search-info">
                     <div class="search-form">
                     <form action="javascript:searchOrder()" name="searchForm">
-                        <input type="text" class="text w150 mr10" name="delivery_sn" value="" placeholder="{$lang.post_form_flow_id}">
-                        <input type="text" class="text w150 mr10" name="order_sn" value="" placeholder="{$lang.order_id}">
+                        <input type="text" class="text w150 mr10" name="delivery_sn" value="" placeholder="发货单流水号">
+                        <input type="text" class="text w150 mr10" name="order_sn" value="" placeholder="订单号">
                         <div class="imitate_select select_w170">
                             <div class="cite">{$lang.please_select}{$lang.label_delivery_status}</div>
                             <ul>
@@ -28,8 +28,8 @@
                             <input name="status" type="hidden" value="-1"/>
                         </div>
                         <div class="search-key">
-                        <input type="text" class="text w150" name="consignee" value="" placeholder="{$lang.consignee}">
-                        <input type="submit" class="submit" value="{$lang.button_search}">
+                        <input type="text" class="text w150" name="consignee" value="" placeholder="收货人">
+                        <input type="submit" class="submit" value="搜索">
                         </div>
                     </form>
                     </div>
@@ -85,17 +85,17 @@
                                 <td colspan="20" class="td_border">
                                 	<div class="shenhe">
                                     	<input name="remove_invoice" type="submit" id="btnSubmit3" value="{$lang.remove}" class="sc-btn btn_disabled" disabled="true" onclick="{if(confirm('{$lang.confirm_delete}')){return true;}return false;}" />
-										<input id="btnSubmit1" type="submit" value="{$lang.batch_delivery}" name="batch_delivery" ectype="btnSubmit" class="sc-btn btn_disabled" disabled="" style="display:none">
-										<input id="btnSubmit2" type="button" value="{$lang.batch_delivery}" name="batch_button" ectype="btnSubmit" class="sc-btn btn_disabled" disabled="">
+										<input id="btnSubmit1" type="submit" value="批量发货" name="batch_delivery" ectype="btnSubmit" class="sc-btn btn_disabled" disabled="" style="display:none">
+										<input id="btnSubmit2" type="button" value="批量发货" name="batch_button" ectype="btnSubmit" class="sc-btn btn_disabled" disabled="">
 										<div class="hide" ectype="daDialog">
 											<div class="deliveryInfo">
 												<div class="items">
 													<div class="item">
-														<div class="label"><em class="org">*</em>{$lang.label_post_form_id}</div>
+														<div class="label"><em class="org">*</em>发货单号：</div>
 														<div class="value"><input type="text" class="text w300" name="invoice_no" value=""></div>
 													</div>
 													<div class="item">
-														<div class="label"><em class="org">*</em>{$lang.label_operat_remark}</div>
+														<div class="label"><em class="org">*</em>操作备注：</div>
 														<div class="value"><textarea class="textarea" name="action_note"></textarea></div>
 													</div>														
 												</div>														
@@ -173,10 +173,10 @@
 		$.jqueryAjax('order.php', 'act=batch_ship&delivery_ids='+delivery_ids, function(data){
 			pb({
 				id:"delivery_dialog",
-				title:jl_batch_delivery,
+				title:'批量发货',
 				width:1000,
-				ok_title:jl_determine, 	//按钮名称
-				cl_title:jl_cancel, 	//按钮名称
+				ok_title:'确定', 	//按钮名称
+				cl_title:'取消', 	//按钮名称
 				content:data.content, 	//调取内容
 				drag:false,
 				foot:true,

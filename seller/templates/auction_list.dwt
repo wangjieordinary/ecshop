@@ -46,17 +46,17 @@
                           	<th width="8%">
                             	<div class="first_all">
                                     <input onclick='listTable.selectAll(this, "checkboxes[]")' id="all" type="checkbox" class="ui-checkbox"/>
-                                    <label for="all" class="ui-label">{$lang.record_id}</label>
+                                    <label for="all" class="ui-label">编号</label>
                                 </div>
                             </th>
-                            <th width="26%">{$lang.act_name}</th>
-                            <th width="10%">{$lang.start_time}</th>
-                            <th width="10%">{$lang.end_time}</th>
-                            <th width="7%">{$lang.start_price}</th>
-                            <th width="7%">{$lang.end_price}</th>
-                            <th width="7%">{$lang.whether_hot}</th>
+                            <th width="26%">拍卖活动名称</th>
+                            <th width="10%">开始时间</th>
+                            <th width="10%">结束时间</th>
+                            <th width="7%">起拍价</th>
+                            <th width="7%">一口价</th>
+                            <th width="7%">是否热销</th>
                             <th width="10%">{$lang.adopt_status}</th>
-                            <th width="15%">{$lang.handler}</th>
+                            <th width="15%">操作</th>
                           </tr>
                       </thead>
                       <tbody>
@@ -69,7 +69,7 @@
                           <td align="center">{$auction.start_price}</td>
                           <td align="center">{if $auction.no_top}{$lang.label_no_top}{else}{$auction.end_price}{/if}</td>
                           <td align="center">
-							<div class="switch {if $auction.is_hot}active{/if}" title="{if $auction.is_hot}{$lang.yes}{else}{$lang.no}{/if}" onclick="listTable.switchBt(this, 'toggle_hot', {$auction.act_id})">
+							<div class="switch {if $auction.is_hot}active{/if}" title="{if $auction.is_hot}是{else}否{/if}" onclick="listTable.switchBt(this, 'toggle_hot', {$auction.act_id})">
 								<div class="circle"></div>
 							</div>
 							<input type="hidden" value="0" name="">

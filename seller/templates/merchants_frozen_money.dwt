@@ -19,21 +19,21 @@
                 <form method="post" action="merchants_account.php" name="listForm" enctype="multipart/form-data" id="submitForm">
                 <div class="wrapper-list">
                 	<dl>
-                    	<dt>{$lang.label_frozen_money}</dt>
+                    	<dt>冻结资金：</dt>
                         <dd id="seller_money" class="txtline red">{$seller_shopinfo.frozen_money}</dd>
                     </dl>
                     <dl>
-                    	<dt>{$lang.require_field}&nbsp;{$lang.label_apply_unfrozen_money}</dt>
+                    	<dt>{$lang.require_field}&nbsp;申请解冻金额：</dt>
                         <dd>
                         	<input name="frozen_money" type="text" id="topup_account" class="text">
                             <div class="form_prompt"></div>
                         </dd>
                     </dl>
                     <dl>
-                    	<dt>{$lang.label_unfrozen_intro}</dt>
+                    	<dt>解冻描述：</dt>
                         <dd>
                         	<textarea name="topup_note" cols="50" rows="10" class="textarea"></textarea>
-                            <div class="notic">{$lang.say_frozen_reason}</div>
+                            <div class="notic">请说明解冻因由，方便平台审核</div>
                         </dd>
                     </dl>
                     <dl class="button_info">

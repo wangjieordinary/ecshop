@@ -81,7 +81,7 @@
 									<td><div class="tDiv"><input name="sort_order" class="text w40" value="{$brand.sort_order}" onkeyup="listTable.editInput(this, 'edit_sort_order',{$brand.brand_id} )" type="text"></div></td>
                                     <td>
                                         <div class="tDiv">
-                                            <div class="switch {if $brand.is_recommend}active{/if}" title="{if $brand.is_recommend}{$lang.yes}{else}{$lang.no}{/if}" onclick="listTable.switchBt(this, 'toggle_recommend', {$brand.brand_id})">
+                                            <div class="switch {if $brand.is_recommend}active{/if}" title="{if $brand.is_recommend}是{else}否{/if}" onclick="listTable.switchBt(this, 'toggle_recommend', {$brand.brand_id})">
                                                 <div class="circle"></div>
                                             </div>
                                             <input type="hidden" value="0" name="">
@@ -89,7 +89,7 @@
                                     </td>
                                     <td>
                                         <div class="tDiv">
-                                            <div class="switch {if $brand.is_show}active{/if}" title="{if $brand.is_show}{$lang.yes}{else}{$lang.no}{/if}" onclick="listTable.switchBt(this, 'toggle_show', {$brand.brand_id})">
+                                            <div class="switch {if $brand.is_show}active{/if}" title="{if $brand.is_show}是{else}否{/if}" onclick="listTable.switchBt(this, 'toggle_show', {$brand.brand_id})">
                                                 <div class="circle"></div>
                                             </div>
                                             <input type="hidden" value="0" name="">

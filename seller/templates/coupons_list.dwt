@@ -100,8 +100,8 @@
 
 /*  @author-bylu 优惠券删除 start  */
 function coupons_del(cou_id){
-    if(confirm(confirm_delete))
-        $.get('coupons.php?act=remove_coupons', { cou_id:cou_id }, function (data) { if(data=='ok')location.href=location.href;else alert(jl_delete_fail) });
+    if(confirm('确定删除吗?'))
+        $.get('coupons.php?act=remove_coupons', { cou_id:cou_id }, function (data) { if(data=='ok')location.href=location.href;else alert('删除失败!') });
 }
 
 //修改秒杀排序;
@@ -109,7 +109,7 @@ $(function(){
     $('.cou_order').change(function(){
         var cou_order=$(this).val();
         var cou_id=$(this).attr('cou_id');
-        $.get('coupons.php?act=change_order', { cou_id:cou_id,cou_order:cou_order }, function (data) { if(data=='ok')alert(jl_edit_success) });
+        $.get('coupons.php?act=change_order', { cou_id:cou_id,cou_order:cou_order }, function (data) { if(data=='ok')alert('修改成功') });
     })
 })
 

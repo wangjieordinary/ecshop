@@ -28,7 +28,7 @@
                 <div class="dt dsc-cm">{$lang.Site_navigation}<i class="iconfont icon-down"></i></div>
                 <div class="dd dorpdown-layer">
                     <dl class="fore1">
-                        <dt>{$lang.characteristic_theme}</dt>
+                        <dt>特色主题</dt>
                         <dd>
                             <!-- {foreach name=nav_top_list from=$top_cat_list item=topc_cats key=key} -->
                                 <!--{if $smarty.foreach.nav_top_list.index < 3}-->
@@ -38,7 +38,7 @@
                         </dd>
                     </dl>
                     <dl class="fore2">
-                        <dt>{$lang.modules_txt_promo}</dt>
+                        <dt>促销活动</dt>
                         <dd>
                             <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav key=key} -->
                                 <!--{if $smarty.foreach.nav_top_list.index >= 4}-->
@@ -71,12 +71,12 @@
                     <!--{if $filename eq 'merchants_store'}-->
                      <input type="hidden" value="{$merchant_id}" id="merchant_id" name="merchant_id">
                     <input type="hidden" value="{$cat_id}" id="cat_id" name="cat_id">
-                    <button type="submit" class="button button-goods" onclick="checkstore_search_cmt(0,this)">{$lang.serch_whole_station}</button>
-                    <button type="button" class="button button-store" onclick="checkstore_search_cmt(2,this)" data-domain="{$site_domain}" >{$lang.serch_our_shop}</button>
+                    <button type="submit" class="button button-goods" onclick="checkstore_search_cmt(0,this)" >搜全站</button>
+                    <button type="button" class="button button-store" onclick="checkstore_search_cmt(2,this)" data-domain="{$site_domain}" >搜本店</button>
                      <!--{else}-->
                     <input type="hidden" name="store_search_cmt" value="{$search_type|default:0}">
-                    <button type="submit" class="button button-goods" onclick="checkstore_search_cmt(0)">{$lang.serch_goods}</button>
-                    <button type="submit" class="button button-store" onclick="checkstore_search_cmt(1)">{$lang.serch_shop}</button>
+                    <button type="submit" class="button button-goods" onclick="checkstore_search_cmt(0)" >搜商品</button>
+                    <button type="submit" class="button button-store" onclick="checkstore_search_cmt(1)" >搜店铺</button>
                     <!--{/if}-->
                 </form>
                 {if $searchkeywords}

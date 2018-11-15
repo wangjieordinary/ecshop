@@ -39,11 +39,11 @@
                             <tr>
                                 <th width="5%"><div class="tDiv">{$lang.record_id}</div></th>
                                 <th width="18%"><div class="tDiv">{$lang.acti_title}</div></th>
-                                <th width="7%"><div class="tDiv">{$lang.act_statu}</div></th>
+                                <th width="7%"><div class="tDiv">活动状态</div></th>
                                 <th width="18%"><div class="tDiv">{$lang.begin_time}</div></th>
                                 <th width="18%"><div class="tDiv">{$lang.end_time}</div></th>
                                 <th width="7%"><div class="tDiv">{$lang.is_putaway}</div></th>
-                                <th width="7%"><div class="tDiv">{$lang.adopt_status}</div></th>
+                                <th width="7%"><div class="tDiv">审核状态</div></th>
                                 <th width="19%" class="handle">{$lang.handler}</th>                                
                             </tr>
                         </thead>
@@ -73,7 +73,7 @@
                             </td>
                             <td class="ecsc-table-handle tr">
                                 <div class="tDiv a1">
-                                    <span><a href="seckill.php?act=set_goods&sec_id={$sec.sec_id}" title="{$lang.edit}" class="btn-blue"><i class="icon icon-cog"></i><p>{$lang.set_goods}</p></a></span>
+                                    <span><a href="seckill.php?act=set_goods&sec_id={$sec.sec_id}" title="{$lang.edit}" class="btn-blue"><i class="icon icon-cog"></i><p>设置商品</p></a></span>
                                     <span><a href="seckill.php?act=edit&sec_id={$sec.sec_id}" title="{$lang.edit}" class="btn-green"><i class="icon icon-edit"></i><p>{$lang.edit}</p></a></span>
                                     <span><a href="javascript:;" onclick="listTable.remove({$sec.sec_id}, '{$lang.drop_confirm}', 'remove')" title="{$lang.remove}" class="btn-red"><i class="icon icon-trash"></i><p>{$lang.drop}</p></a></span>
                                 </div>

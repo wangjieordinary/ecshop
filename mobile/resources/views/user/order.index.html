@@ -48,19 +48,8 @@
                         <a class="product-div-link" href="<%order.order_url%>"></a>
                         <ul class="flow-checkout-smallpic box-flex">
                             <%each order.order_goods as val %>
-                            <li>
-                            <div class="fl">
-                                <div class="p-d-img">
-                                <img class="product-list-img" src="<%val.goods_thumb%>"/>
-                                <%if val.parent_id > 0 %>
-                                <span>配件</span>
-                                <%else if val.is_gift > 0 %>
-                                <span>赠品</span>
-                                <%/if%>
-                                </div>
-                            </div>
-                            </li>
-                            <%if order.order_goods_num == 1 %>
+                            <li><img class="product-list-img" src="<%val.goods_thumb%>" /></li>
+                            <%if order.order_goods_num==1 %>
                             <div class="twolist-hidden f-05 order-name-has"><%val.goods_name%></div>
                             <%/if%>
                             <%/each%>
@@ -87,7 +76,7 @@
                             <%/if%>
 
                             <%if order.order_del%>
-                            <button class="btn-default-new br-5 min-btn del-order" data-item="<%order.order_id%>">删除</button>
+                             <button class="btn-default-new br-5 min-btn del-order" data-item="<%order.order_id%>">删除</button>
                             <%/if%>
                             <%if order.online_pay%>
                             <a class="btn-default-new br-5 min-btn" href="<%#order.online_pay%>">立即支付</a>

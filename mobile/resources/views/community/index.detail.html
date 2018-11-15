@@ -193,7 +193,7 @@
         <li>
             <a href="{url('community/index/index')}">
                 <i class="iconfont icon-medal"></i>
-                <p>社区首页</p>
+                    <p>社区首页</p>
             </a>
         </li>
       {include file="float_nav_footer"}
@@ -202,77 +202,17 @@
     $(function () {
         var url = "{url('commentlist', array('id' => $dis_id,'type' => $dis_type, 'goods_id' => $link_good.goods_id))}";
         $('.comment-list').infinite({url: url, template: 'j-product'});
-
-        $('.mb-7').click(function () {
-            $(".j-input-text").attr('placeholder', '回复帖子:');
-            // $("input[name='parent_id']").val({$detail.dis_id});
-        });
-
-        // 提交
-        $('.btn-submit').click(function () {
-            var content = $("input[name='comment']").val();
-            if (content == '') {
-                d_messages('请填写回复内容');
-                $(".j-input-text").focus();
-                return false;
-            }
-            var user_id = $("input[name='user_id']").val();
-            var reply_type = $("input[name='reply_type']").val();
-            var quote_id = $("input[name='quote_id']").val();
-
-            $.ajax({
-                type: "post",
-                url: "{url('commnet')}",
-                data: {
-                    parent_id: {$detail.dis_id},
-                    goods_id: {$link_good.goods_id},
-                    user_id: user_id,
-                    type: {$dis_type},
-                    quote_id: quote_id,
-                    dis_text: content,
-                    reply_type: reply_type,
-                },
-                dataType: "json",
-                success: function (data) {
-                    d_messages(data.msg);
-                    if (data.url) {
-                        window.location.href = data.url;
-                    }
-                    return false;
-                }
-            });
-        });
-
-        /*店铺信息商品滚动*/
-        var swiper = new Swiper('.j-g-s-p-con', {
-            scrollbarHide: true,
-            slidesPerView: 'auto',
-            centeredSlides: false,
-            grabCursor: true
-        });
-
-        //ios输入框遮挡问题
-        var interval;
-        //消息框获取焦点
-        $('#J_text').focus(function(){
-            interval = setInterval(function() {
-                document.body.scrollTop = document.body.scrollHeight;
-            }, 600)
-        });
-        //消息框失去焦点
-        $('#J_text').blur(function(){
-            clearInterval(interval);
-        });
-
-    });
-
+    })
     window.onload = function(){
-        header_img();
+        header_img()
     }
     window.onresize = function(){
-        header_img();
+        header_img()
     }
-
+    $('.mb-7').click(function () {
+        $(".j-input-text").attr('placeholder', '回复帖子:');
+        // $("input[name='parent_id']").val({$detail.dis_id});
+    });
     // 回复
     function reply_comment(dis_id) {
         var parent_id = dis_id;
@@ -285,6 +225,40 @@
 
         $(".j-input-text").focus();
     }
+    // 提交
+    $('.btn-submit').click(function () {
+        var content = $("input[name='comment']").val();
+        if (content == '') {
+            d_messages('请填写回复内容');
+            $(".j-input-text").focus();
+            return false;
+        }
+        var user_id = $("input[name='user_id']").val();
+        var reply_type = $("input[name='reply_type']").val();
+        var quote_id = $("input[name='quote_id']").val();
+
+        $.ajax({
+            type: "post",
+            url: "{url('commnet')}",
+            data: {
+                parent_id: {$detail.dis_id},
+                goods_id: {$link_good.goods_id},
+                user_id: user_id,
+                type: {$dis_type},
+                quote_id: quote_id,
+                dis_text: content,
+                reply_type: reply_type,
+            },
+            dataType: "json",
+            success: function (data) {
+                d_messages(data.msg);
+                if (data.url) {
+                    window.location.href = data.url;
+                }
+                return false;
+            }
+        });
+    });
 
     function dianzan(dis_type, dis_id) {
         var isclick = document.getElementById('isclick').value;
@@ -308,7 +282,26 @@
         }
     }
 
-
+    /*店铺信息商品滚动*/
+    var swiper = new Swiper('.j-g-s-p-con', {
+        scrollbarHide: true,
+        slidesPerView: 'auto',
+        centeredSlides: false,
+        grabCursor: true
+    });
+    //ios输入框遮挡问题
+    var interval;
+    //消息框获取焦点
+    $('#J_text').focus(function(){
+        console.log(111)
+        interval = setInterval(function() {
+            document.body.scrollTop = document.body.scrollHeight;
+        }, 600)
+    })
+    //消息框失去焦点
+    $('#J_text').blur(function(){
+        clearInterval(interval);
+    })
 </script>
 </body>
 </html>

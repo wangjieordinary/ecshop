@@ -52,17 +52,17 @@
                       </td>
                       <td align="center">
                           {if $log.change_type eq 0}
-                          {$lang.log_type.4}
+                          提现
                           {elseif $log.change_type eq 1}
-                          {$lang.log_type.3}
+                          充值
                           {elseif $log.change_type eq 2}
-                          {$lang.log_type.2}
+                          结算
                           {elseif $log.change_type eq 3}
-                          {$lang.seller_change}
+                          管理员调节
                           {elseif $log.change_type eq 4}
-                          {$lang.log_type.9}
+                          解冻
                           {else}
-                          {$lang.log_type.8}
+                          其他
                           {/if}
                       </td>
                     </tr>

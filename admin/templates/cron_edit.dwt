@@ -25,7 +25,7 @@
                                 <div class="item">
                                     <div class="label">{$lang.cron_desc}：</div>
                                     <div class="label_value"><textarea class="textarea textarea_readonly" name="cron_desc" id="role_describe" readonly>{$cron.cron_desc|escape}</textarea></div>
-                                </div>
+                                </div>  
                                 {foreach from=$cron.cron_config item=config}
                                 <div class="item">
                                 	<div class="label">{$config.label}：</div>
@@ -123,7 +123,6 @@
                                                 <input type="checkbox" value="1" name="cron_run_once" class="ui-checkbox" id="cron_run_once" {$cron.autoclose}>
                                                 <label for="cron_run_once" class="ui-label">{$lang.close}</label>
                                             </div>
-                                            <div class="notic">{$lang.notice_run_once}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -212,7 +211,7 @@
 			$("#advance_2").hide();
 		}
 	}
-
+	
 	{if $cron.cronday > 0}
 	dotype('day');
 	{elseif $cron.cronweek > 0}
@@ -223,6 +222,6 @@
 
 	$("#advance_1").hide();
 	$("#advance_2").hide();
-    </script>
+    </script>     
 </body>
 </html>

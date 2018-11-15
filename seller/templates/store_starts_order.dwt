@@ -15,7 +15,7 @@
                 <div class="search-info">
                 	<form action="javascript:searchGeneral()" name="searchForm">
                         <div class="screeItme">
-                            <strong class="fl lh mr10">{$lang.select_date}：</strong>
+                            <strong class="fl lh mr10">选择日期：</strong>
                             <div class="text_time select_time" id="text_time1">
                                 <input name="date_start_time" type="text" id="start_time" value="{$start_time}" class="text" />
                             </div>
@@ -25,31 +25,31 @@
                             </div>
                         </div>
                         <div class="screeItme mt10">
-                            <strong class="fl lh mr10">{$lang.order_type}：</strong>
+                            <strong class="fl lh mr10">订单类型：</strong>
                             <div  class="imitate_select select_w145">
-                                <div class="cite">{$lang.order_all}</div>
+                                <div class="cite">全部订单</div>
                                 <ul>
-                                    <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.order_all}</a></li>
-                                    <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.robbing_order}</a></li>
+                                    <li><a href="javascript:;" data-value="0" class="ftx-01">全部订单</a></li>
+                                    <li><a href="javascript:;" data-value="1" class="ftx-01">抢单订单</a></li>
                                 </ul>
                                 <input name="order_type" type="hidden" value='0' />
                             </div>
                         </div>
                         <div class="screeItme mt10">
                             <div class="bf100 fl">
-                                <strong class="fl lh mr10">{$lang.all_status}：</strong>
+                                <strong class="fl lh mr10">订单状态：</strong>
                                 {foreach from=$os_list item=os key=key}
                                 <div class="checkbox_item fl lh mr10"><input name="order_status[]" type="checkbox" value="{$key}" id="order_{$key}" class="ui-checkbox" /><label class="ui-label" for="order_{$key}">{$os}</label></div>
                                 {/foreach}
                             </div>
                             <div class="bf100 fl mt5">
-                                <strong class="fl lh mr10">{$lang.deliver_state}：</strong>
+                                <strong class="fl lh mr10">发货状态：</strong>
                                 {foreach from=$ss_list item=ss key=key}
                                 <div class="checkbox_item fl lh mr10"><input name="shipping_status[]" type="checkbox" value="{$key}" id="shipping_{$key}" class="ui-checkbox" /><label class="ui-label" for="shipping_{$key}">{$ss}</label></div>
                                 {/foreach}
                             </div>
                             <div class="bf100 fl mt5">
-                                <strong class="fl lh mr10">{$lang.stores_name}：</strong>
+                                <strong class="fl lh mr10">门店名称：</strong>
                                 <input name="store_name" value="" type="text" class="text text_2 mr10" />
                                 <input type="submit" name="query_by_date" value="{$lang.query}" class="sc-btn sc-blueBg-btn btn30" />
                             </div>
@@ -66,13 +66,13 @@
                 </div>
                 <table width="100%" class="ecsc-default-table ecsc-table-seller mt10">
                     <tr>
-                        <th width="40%">{$lang.goods_name}</th>
-                        <th width="10%">{$lang.pro_code}</th>
-                        <th width="10%">{$lang.stores}</th>
-                        <th width="10%">{$lang.number}</th>
-                        <th width="10%">{$lang.price}</th>
-                        <th width="10%">{$lang.total_amount}</th>
-                        <th width="10%">{$lang.sellout_date}</th>
+                        <th width="40%">商品名称</th>
+                        <th width="10%">货号</th>
+                        <th width="10%">门店</th>
+                        <th width="10%">数量</th>
+                        <th width="10%">单价</th>
+                        <th width="10%">总金额</th>
+                        <th width="10%">售出日期</th>
                     </tr>
                     {foreach from=$data_list item=list}
                     <tr align="center">

@@ -86,7 +86,7 @@ listTable.filter.{$key} = '{$item}';
 {/foreach}
 
 function get_del_desc(id){
-    if (confirm(confirm_delete)){
+    if (confirm('确实删除这条信息吗')){
         location.href = 'goods.php?act=del_link_desc&id=' + id;
     }
 }

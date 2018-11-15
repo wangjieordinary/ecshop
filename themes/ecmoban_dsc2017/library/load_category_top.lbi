@@ -185,7 +185,7 @@
                         {$goods.shop_price}
                         {/if}
                     </div>
-                    <a href="{$goods.url}" class="p-btn" target="_blank"><i class="iconfont icon-cart"></i>{$lang.button_buy}</a>
+                    <a href="{$goods.url}" class="p-btn" target="_blank"><i class="iconfont icon-cart"></i>立即购买</a>
                 </li>
                 <!--{/if}-->
                 <!--{/foreach}-->

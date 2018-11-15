@@ -21,7 +21,7 @@
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                	  <li>{$lang.operation_prompt_content.detail.0}</li>
+                	<li>{$lang.operation_prompt_content.detail.0}</li>
                     <li>{$lang.operation_prompt_content.detail.1}</li>
                 </ul>
             </div>
@@ -44,7 +44,7 @@
                 </div>
                 <div class="common-content">
                 	<div class="list-div" id="listDiv">
-                        {/if}
+                            {/if}
                     	<table cellpadding="0" cellspacing="0" border="0">
                         	<thead>
                             	<tr>
@@ -67,7 +67,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-								                {foreach from=$log_list item=log name=nolog}
+								{foreach from=$log_list item=log name=nolog}
                                 <tr>
                                   <td><div class="tDiv">{$log.log_id}</div></td>
                                   <td><div class="tDiv"><font class="red">{$log.shop_name}</font></div></td>

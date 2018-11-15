@@ -14,7 +14,7 @@
 		var lable = print_order.split(",");
 		if (lable.length <= 0)
 		{
-		$("#body").html(jl_select_print_content);
+		$("#body").html("请选择打印内容");
 		}
 		
 		for (var i = 0; i < lable.length; i++)
@@ -35,7 +35,7 @@
 	}
 	function order_snResponse(data){
 
-		var html = '<div class="item_content"><div class="title">'+jl_order_id+'：'+data.order_sn+'</div>';
+		var html = '<div class="item_content"><div class="title">订单号：'+data.order_sn+'</div>';
 		if(data.error == 1){
 			$("#body").append(html + '<div class="message">'+data.message+'</div>');
 		}else{

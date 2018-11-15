@@ -50,7 +50,7 @@
             </div>
 		</div>
 	</div>
- 	{include file ='library/pagefooter.lbi'}
+ {include file ='library/pagefooter.lbi'}
     <script type="text/javascript">
 		//表单验证
 		$(function(){
@@ -80,14 +80,14 @@
 				},
 				messages : {
 					gift_sn : {
-						required : '<i class="icon icon-exclamation-sign"></i>'+gift_sn_null,
-						digits : '<i class="icon icon-exclamation-sign"></i>'+gift_sn_digits,
-						minlength : '<i class="icon icon-exclamation-sign"></i>'+gift_sn_minlength
+						required : '<i class="icon icon-exclamation-sign"></i>请输入礼品卡序列号',
+						digits : '<i class="icon icon-exclamation-sign"></i>礼品卡序列号必须为整数',
+						minlength : '<i class="icon icon-exclamation-sign"></i>礼品卡序列号必须为大于等于7位数'
 					},
 					gift_pwd : {
-						required : '<i class="icon icon-exclamation-sign"></i>'+gift_pwd_null,
-						digits : '<i class="icon icon-exclamation-sign"></i>'+gift_pwd_digits,
-						minlength : '<i class="icon icon-exclamation-sign"></i>'gift_sn_minlength
+						required : '<i class="icon icon-exclamation-sign"></i>请输入礼品卡密码',
+						digits : '<i class="icon icon-exclamation-sign"></i>礼品卡密码必须为整数',
+						minlength : '<i class="icon icon-exclamation-sign"></i>礼品卡密码必须为大于等于6位数'
 					}
 				}
 			});

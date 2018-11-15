@@ -156,8 +156,7 @@
                                         <input type="hidden" name="old_credit_line" value="{$user.credit_line}"/>
                                     </div>
                                 </div>
-
-                                {if $user.real_id}
+                                {if $user.front_of_id_card || $user.reverse_of_id_card}
                                 <div class="item">
                                     <div class="label">{$lang.idcard_info}：</div>
                                     <div class="label_value">

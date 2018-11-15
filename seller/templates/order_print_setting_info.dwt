@@ -15,10 +15,10 @@
                 	<form action="tp_api.php" method="post" name="theForm" enctype="multipart/form-data">
                 	<div class="wrapper-list border1">
                         <dl>
-                        	<dt>{$lang.label_print_specification}</dt>
+                        	<dt>打印规格：</dt>
                             <dd>
 								<div id="specification" class="imitate_select select_w145">
-									<div class="cite">{$lang.please_select}</div>
+									<div class="cite">请选择</div>
 									<ul>
 										{foreach from=$print_size item=item}
 										<li><a href="javascript:;" data-value="{$item.specification}" data-width="{$item.width}" class="ftx-01">{$item.specification}</a></li>
@@ -30,15 +30,15 @@
 							</dd>
                         </dl>					
                         <dl>
-                        	<dt>{$lang.printer}：</dt>
-                            <dd><input type="text" name="printer" value="{$print_setting.printer}" size="35" class="text" /><div class="notic">{$lang.notice_printer}</div><div class="form_prompt"></div></dd>
+                        	<dt>打印机：</dt>
+                            <dd><input type="text" name="printer" value="{$print_setting.printer}" size="35" class="text" /><div class="notic">打印机名称如：ELP-168ES</div><div class="form_prompt"></div></dd>
                         </dl>	
                         <dl>
-                        	<dt>{$lang.width}(mm)：</dt>
-                            <dd><input type="text" name="width" value="{$print_setting.width}" size="35" class="text" /><div class="notic">{$lang.notice_print_width}</div></dd>
+                        	<dt>宽度(mm)：</dt>
+                            <dd><input type="text" name="width" value="{$print_setting.width}" size="35" class="text" /><div class="notic">此处设置的width是打印预览时宽度超出纸张尺寸的间距调整，默认是纸张尺寸，根据需求自行设置</div></dd>
                         </dl>						
                     	<dl>
-                        	<dt>{$lang.set_default}：</dt>
+                        	<dt>设为默认：</dt>
                             <dd>
                             	<div class="checkbox_items">
                                 	<div class="checkbox_item">
@@ -97,10 +97,10 @@ $(function(){
 		},
 		messages:{
 			specification:{
-				required : '<i class="icon icon-exclamation-sign"></i>'+jl_select_print_specification
+				required : '<i class="icon icon-exclamation-sign"></i>请选择打印规格'
 			},
 			printer : {
-				required : '<i class="icon icon-exclamation-sign"></i>'+jl_fill_printer_name
+				required : '<i class="icon icon-exclamation-sign"></i>请填写打印机名称'
 			}
 		}			
 	});

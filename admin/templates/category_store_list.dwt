@@ -31,7 +31,7 @@
                 {if $cat_belongs neq 1}
                 <div class="common-head">
                     <div class="fl">
-                    	<a href="category_store.php?act=category_separate"><div class="fbutton"><div class="add" title="{$lang.category_separate}"><span><i class="icon icon-plus"></i>{$lang.category_separate}</span></div></div></a>
+                    	<a href="category_store.php?act=category_separate"><div class="fbutton"><div class="add" title="分离平台分类"><span><i class="icon icon-plus"></i>分离平台分类</span></div></div></a>
                     </div>
                 </div>
                 {/if}
@@ -68,7 +68,7 @@
                                             </div>
                                         </div>
                                     </td>
-                                    <td><div class="tDiv"><a href="goods.php?act=list&cat_id={$cat.cat_id}&cat_type=seller&seller_list=1" class="ftx-01">{$cat.cat_name}</a></div></td>
+                                    <td><div class="tDiv"><a href="goods.php?act=list&cat_id={$cat.cat_id}&cat_type=seller" class="ftx-01">{$cat.cat_name}</a></div></td>
 									<td><div class="tDiv"><font class="red">{$cat.user_name}</font></div></td>
                                     <td><div class="tDiv">{$cat.goods_num}</div></td>
                                     <td><div class="tDiv"><input type="text" name="measure_unit" class="text w40" value="{$cat.measure_unit}" onkeyup="listTable.editInput(this, 'edit_measure_unit', {$cat.cat_id})"/></div></td>

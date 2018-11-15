@@ -147,7 +147,7 @@
 .b2b-goods-list ul li .p-price{ font-size:20px;}
 .b2b-goods-list ul li .p-name{ line-height:20px; height:40px; overflow:hidden; font-size:12px;}
 .b2b-goods-list ul li .p-store .store{ color:#8c8c8c;}
-.b2b-goods-list ul li .p-store .store:hover{ color:#1abb8c;}
+.b2b-goods-list ul li .p-store .store:hover{ color:#f42424;}
 .b2b-goods-list ul li .p-tiy{ margin-top:10px;}
 
 .s-tr{ overflow:hidden;}
@@ -218,7 +218,7 @@
 .b2b-goods-container .seller-pop .seller-item p{ height:25px; line-height:25px; width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
 .b2b-goods-container .seller-pop .seller-item .p-c-org{ margin-left:0px;}
 .b2b-goods-container .seller-pop .seller-item .p-c-org .iconfont{ color:#ff5f2e;}
-.b2b-goods-container .seller-pop .seller-item .p-c-org:hover .iconfont{ color:#1abb8c;}
+.b2b-goods-container .seller-pop .seller-item .p-c-org:hover .iconfont{ color:#f42424;}
 .b2b-goods-container .seller-pop .seller-rec{ padding:10px 0 0;}
 .b2b-goods-container .seller-pop .seller-rec .tit{ margin-bottom:10px; overflow:hidden;}
 .b2b-goods-container .seller-pop .seller-rec .tit .iconfont{ color:#ff5f2e; float:left; vertical-align:middle; margin-top:-3px;}
@@ -412,7 +412,7 @@
 .buy-content .bw-section .form_prompt{line-height:40px;}
 
 .buy-content .bw-section .b2b-remove{ color:#ff5f2e; margin-top:6px; display:block;}
-.buy-content .bw-section .b2b-remove:hover{ color:#1abb8c;}
+.buy-content .bw-section .b2b-remove:hover{ color:#f42424;}
 .b2b-table tbody td.handle-add{ padding:8px 0;}
 .b2b-table tbody td.handle-add .iconfont{ font-size:18px; color:#ff5f2e;}
 .b2b-table tbody td.handle-add span{ display:inline-block; vertical-align:middle; margin:-8px 0 0 2px; font-size:14px;}

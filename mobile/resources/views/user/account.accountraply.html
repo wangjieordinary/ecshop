@@ -4,7 +4,7 @@
         <div class="user-recharge ">
             <section class="j-show-div j-show-get-val padding-lr b-color-f m-top10">
                 <div class="dis-box text-all">
-                    <label class="t-remark " style="font-size:1.4rem" >提现账户</label>
+                    <label class="t-remark" style="font-size:1.4rem">提现账户</label>
                     {foreach $bank as $key => $val}
                     {if $key==0}
                     <input type="hidden" name="bank_number" value="{$val.bank_card_org}">
@@ -19,7 +19,7 @@
                     <span class="t-jiantou"><i class="iconfont icon-jiantou tf-180" style="margin-top:.8rem"></i></span>
                 </div>
 
-                <!--选择银行卡弹出层-->
+                <!--充值方式弹出层-->
                 <div class="show-time-con ts-3 b-color-1 j-filter-show-div">
                     <section class="goods-show-title of-hidden padding-all ">
                         <h3 class="fl g-c-title-h3">选择银行卡</h3>
@@ -45,21 +45,17 @@
             </section>
             <section class="m-top10 b-color-f padding-all">
                 <div class="dis-box j-text-all">
-                    <label class="t-remark">提现金额（元）</label>
+                    <label class="t-remark">提现金额</label>
                 </div>
                 <div class="dis-box j-text-all padding-top m-top10">
                     <div class="f-07 col-6">￥</div>
-                    <div class="blx-flex f-08"><input class="j-input-text " type="number" min="0" step="0.01" placeholder="请输入提现金额 " name="amount"></div>
+                    <div class="blx-flex f-08"><input class="j-input-text" type="text" placeholder="输入提现金额 " name="amount"></div>
                 </div>
             </section>
             <section class="margin-lr">
                 <div class="text-all dis-box j-text-all">
-                    <div class="box-flex f-03 col-6">
-                        最低可提现金额：<em class="color-red">{if $buyer_cash > 0}￥{$buyer_cash}{else}不限{/if}</em>
-                    </div>
-                </div>
-                <div class="text-all dis-box j-text-all">
-                    <div class="box-flex f-03 col-6">本次最大提现额度： <em class="color-red">{$surplus_amount}</em><em class="color-red padding-lr">{if $deposit_fee >0}({$deposit_fee}%手续费){/if}</em>
+                    <div class="box-flex f-04 col-6">
+                        本次最大提现额度 {$surplus_amount}<em class="color-red padding-lr">{if $deposit_fee >0}({$deposit_fee}%手续费){/if}</em>
                     </div>
                 </div>
             </section>
@@ -68,20 +64,18 @@
                 <div class="text-all dis-box j-text-all">
                     <label class="t-remark">图片验证码</label>
                     <div class="box-flex input-text">
-                        <input class="j-input-text" style="padding:0 1rem" type="text" name="verify" datatype="*" nullmsg="请输入图片验证码"/>
-                        <!-- <img src="{url('captcha/index/index')}" class="j-verify-img" onclick="this.src='{url('captcha/index/index')}'" height="36" style="position: absolute; right: 0; top: 0; font-size: 1.4rem;"/> -->
+                        <input class="j-input-text" type="text" name="verify" datatype="*" nullmsg="请输入图片验证码"/>
+                        <img src="{url('captcha/index/index')}" class="j-verify-img" onclick="this.src='{url('captcha/index/index')}'" height="36" style="position: absolute; right: 0; top: 0; font-size: 1.4rem;"/>
                     </div>
-                    <img src="{url('captcha/index/index')}" onclick="this.src='{url('captcha/index/index')}'" height="36" class="ipt-check-btn j-verify-img"  />
                 </div>
             </section>
             <section class="margin-lr">
                 <div class="text-all dis-box j-text-all">
                     <label class="t-remark">短信验证码</label>
                     <div class="box-flex input-text">
-                        <input class="j-input-text " style="padding:0 1rem" type="text" name="mobile_code" datatype="*" nullmsg="请输入短信验证码">
-                        <!-- <a style="position: absolute; right: 0; top: 25%; font-size: 1.4rem; z-index: 2; padding:0 1rem" href="javascript:;" id="sendsms">发送验证码</a> -->
+                        <input class="j-input-text" type="text" name="mobile_code" datatype="*" nullmsg="请输入短信验证码">
+                        <a style="position: absolute; right: 0; top: 25%; font-size: 1.4rem; z-index: 2" href="javascript:;" id="sendsms">发送验证码</a>
                     </div>
-                    <a type="button" class="ipt-check-btn ipt-check-btn-new f-03" style="margin:0.3rem" href="#" id="sendsms">获取短信验证码</a>
                 </div>
             </section>
             {/if}
@@ -93,10 +87,9 @@
         </div>
 
     </form>
-    <!--弹窗layer-->
+    <!--提现layer-->
     <div class="mask-filter-div"></div>
 </div>
-
 <script type="text/javascript">
     function check() {
         $(".ts-1").each(function () {

@@ -76,14 +76,14 @@ $(function(){
 		},
 		messages : {
 			gift_sn : {
-				required : '<i class="icon icon-exclamation-sign"></i>'+jl_please_input_gc_id,
-				digits : '<i class="icon icon-exclamation-sign"></i>'+jl_gc_id_must_int,
-				minlength : '<i class="icon icon-exclamation-sign"></i>'+jl_gc_id_must_max_7_bit
+				required : '<i class="icon icon-exclamation-sign"></i>请输入礼品卡序列号',
+				digits : '<i class="icon icon-exclamation-sign"></i>礼品卡序列号必须为整数',
+				minlength : '<i class="icon icon-exclamation-sign"></i>礼品卡序列号必须为大于等于7位数'
 			},
 			gift_pwd : {
-				required : '<i class="icon icon-exclamation-sign"></i>'+jl_please_input_gc_pwd,
-				digits : '<i class="icon icon-exclamation-sign"></i>'+jl_gc_pwd_must_int,
-				minlength : '<i class="icon icon-exclamation-sign"></i>'+jl_gc_pwd_must_max_7_bit
+				required : '<i class="icon icon-exclamation-sign"></i>请输入礼品卡密码',
+				digits : '<i class="icon icon-exclamation-sign"></i>礼品卡密码必须为整数',
+				minlength : '<i class="icon icon-exclamation-sign"></i>礼品卡密码必须为大于等于6位数'
 			}
 		}
 	});

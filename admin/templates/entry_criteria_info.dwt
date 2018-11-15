@@ -61,49 +61,48 @@
                                         </div>
                                     </div>
                                     <div id="data_type" {if $entry_criteria.type neq 'text'}style="display:none;"{/if} >
+                                    <div class="item">
+                                        <div class="label">{$lang.data_type}：</div>
+                                        <div class="imitate_select select_w320">
+                                            <div class="cite">{$lang.select_please}</div>
+                                            <ul>
+                                                <li><a href="javascript:;" data-value="" class="ftx-01">{$lang.select_please}</a></li>
+                                                <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.data_type_mobile}</a></li>
+                                                <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.data_type_email}</a></li>
+                                            </ul>
+                                            <input name="data_type" type="hidden" value="{$entry_criteria.data_type}">
+                                        </div>
+                                    </div>
+                                    <div id='charge' {if $entry_criteria.type neq 'charge'}style="display:none;"{/if}>
                                         <div class="item">
-                                            <div class="label">{$lang.data_type}：</div>
-                                            <div class="imitate_select select_w320">
-                                                <div class="cite">{$lang.select_please}</div>
-                                                <ul>
-                                                    <li><a href="javascript:;" data-value="" class="ftx-01">{$lang.select_please}</a></li>
-                                                    <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.data_type_mobile}</a></li>
-                                                    <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.data_type_email}</a></li>
-                                                </ul>
-                                                <input name="data_type" type="hidden" value="{$entry_criteria.data_type}">
+                                            <div class="label">{$lang.charge}：</div>
+                                            <div class="label_value">
+                                                <input type='text' name='charge' value="{if $entry_criteria.charge}{$entry_criteria.charge|escape}{else}0.00{/if}" class="text" />    
                                             </div>
                                         </div>
-                                        <div id='charge' {if $entry_criteria.type neq 'charge'}style="display:none;"{/if}>
-                                            <div class="item">
-                                                <div class="label">{$lang.charge}：</div>
-                                                <div class="label_value">
-                                                    <input type='text' name='charge' value="{if $entry_criteria.charge}{$entry_criteria.charge|escape}{else}0.00{/if}" class="text" />    
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="label">{$lang.is_cumulative}：</div>
-                                                <div class="label_value">
-                                                    <div class="tDiv">
-                                                        <div class="switch switch_2 {if $entry_criteria.is_cumulative}active{/if}" title="{$lang.yes}">
-                                                            <div class="circle"></div>
-                                                        </div>
-                                                        <input type="hidden" value="{$entry_criteria.is_cumulative}" name="is_cumulative">
+                                        <div class="item">
+                                            <div class="label">{$lang.is_cumulative}：</div>
+                                            <div class="label_value">
+                                                <div class="tDiv">
+                                                    <div class="switch switch_2 {if $entry_criteria.is_cumulative}active{/if}" title="{$lang.yes}">
+                                                        <div class="circle"></div>
                                                     </div>
+                                                    <input type="hidden" value="{$entry_criteria.is_cumulative}" name="is_cumulative">
                                                 </div>
                                             </div>
                                         </div>
-    									<div class="item" {if $entry_criteria.type eq 'charge'}style="display:none;"{/if} id="is_mandatory">
-    										<div class="label">{$lang.is_mandatory}：</div>
-    										<div class="label_value">
-    											<div class="tDiv">
-    												<div class="switch switch_2 {if $entry_criteria.is_mandatory}active{/if}" title="{$lang.yes}">
-    													<div class="circle"></div>
-    												</div>
-    												<input type="hidden" value="{$entry_criteria.is_mandatory}" name="is_mandatory">
-    											</div>
-    										</div>
-    									</div>
-                                    </div>        
+                                    </div>
+									<div class="item" {if $entry_criteria.type eq 'charge'}style="display:none;"{/if} id="is_mandatory">
+										<div class="label">{$lang.is_mandatory}：</div>
+										<div class="label_value">
+											<div class="tDiv">
+												<div class="switch switch_2 {if $entry_criteria.is_mandatory}active{/if}" title="{$lang.yes}">
+													<div class="circle"></div>
+												</div>
+												<input type="hidden" value="{$entry_criteria.is_mandatory}" name="is_mandatory">
+											</div>
+										</div>
+									</div>
 								</div>
                                 <div class="item" {if $entry_criteria.type neq 'select' }style="display:none;"{/if} id="option_value" >
                                     <div class="label">{$lang.option_value }：</div>

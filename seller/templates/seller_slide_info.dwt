@@ -20,7 +20,7 @@
                             <div class="type-file-box">
                             	<div class="input">
                                     <input type="text" name="textfile" class="type-file-text" {if $slide.img_url}value="{$slide.img_url}"{/if} id="textfield" readonly>
-                                    <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}">
+                                    <input type="button" name="button" id="button" class="type-file-button" value="上传...">
                                     <input type="file" class="type-file-file" name="img_url" size="30" hidefocus="true" value="">
                                 </div>
                                 {if $slide.img_url}
@@ -30,7 +30,7 @@
                                 {/if}
                             </div>
                             <div class="form_prompt"></div>
-                            <div class="notic" id="warn_brandlogo">({$lang.advise_pic_size}1900x500)</div>
+                            <div class="notic" id="warn_brandlogo">(建议图片尺寸1900x500)</div>
                         </dd>
                     </dl>
                     <dl>
@@ -124,7 +124,7 @@ $(function(){
 		},
 		messages:{
 			textfile:{
-				 required : '<i class="icon icon-exclamation-sign"></i>'+jl_select_upload_img
+				 required : '<i class="icon icon-exclamation-sign"></i>请选择上传图片'
 			}
 		}			
 	});

@@ -44,7 +44,7 @@ function get_region_attr_price(f, val, attr_price, number){
 	var areaFont = document.getElementById('area_id_' + val);
 	
 	if(f.checked == true){
-		areaFont.innerHTML = "&nbsp;<strong style='color:#666; font-weight:normal'>{$lang.attr_price}</strong><input name='attrPrice_" + val + "' type='text' size=7 value = " +attr_price.toFixed(2)+ " />" + "&nbsp;<strong style='color:#666; font-weight:normal'>"+jl_attr_stock+"</strong><input name='attrNumber_" + val + "' type='text' size=7 value = " + number + " />";
+		areaFont.innerHTML = "&nbsp;<strong style='color:#666; font-weight:normal'>属性价格</strong><input name='attrPrice_" + val + "' type='text' size=7 value = " +attr_price.toFixed(2)+ " />" + "&nbsp;<strong style='color:#666; font-weight:normal'>属性库存</strong><input name='attrNumber_" + val + "' type='text' size=7 value = " + number + " />";
 	}else{
 		areaFont.innerHTML = '';
 	}

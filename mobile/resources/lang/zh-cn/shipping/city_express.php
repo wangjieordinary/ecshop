@@ -1,4 +1,5 @@
 <?php
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $_LANG['city_express']        = '城际快递';
 $_LANG['city_express_desc']   = '配送的运费是固定的';

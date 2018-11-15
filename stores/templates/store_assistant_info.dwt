@@ -6,9 +6,9 @@
     <div class="explanation" id="explanation">
         <i class="sc_icon"></i>
         <ul>
-            <li>{$lang.operation_prompt_content.assistant_info.0}</li>
-            <li>{$lang.operation_prompt_content.assistant_info.1}</li>
-            <li>{$lang.operation_prompt_content.assistant_info.2}</li>
+            <li>标识“*”的选项为必填项，其余为选填项。</li>
+            <li>请按提示文字填写职员信息，以免账号不可使用。</li>
+            <li>请合理分配门店权限，获取相应权限后，该职员只能在权限内操作。</li>
         </ul>
     </div>
     <div class="mian-info">
@@ -18,7 +18,7 @@
                 <div class="value">
                 	<input type="text" name="store_user" maxlength="60" size="30" value='{$store_user.stores_user}' class="text" />
                     <div class="form_prompt"></div>
-                    <p class="notic">{$lang.store_user_notic}</p>
+                    <p class="notic">3-15位字符，可由中文、英文、数字及“_”、“-”组成</p>
                 </div>
             </div>
             {if $act eq 'insert'}
@@ -28,7 +28,7 @@
                     <input type="password" style="display:none"/>
                 	<input type="password" name="password" id="password" maxlength="60" size="30" class="text" />
                     <div class="form_prompt"></div>
-                    <p class="notic">{$lang.password_notic}</p>
+                    <p class="notic">6-20位字符，可由英文、数字及标点符号组成</p>
                 </div>
             </div>
             <div class="item">
@@ -37,7 +37,7 @@
                     <input type="password" style="display:none"/>
                 	<input type="password" name="confirm_pwd" maxlength="60" size="30" class="text" />
                     <div class="form_prompt"></div>
-                    <p class="notic">{$lang.confirm_pwd_notic}</p>
+                    <p class="notic">两次输入的密码必须一致</p>
                 </div>
             </div>
             {else}
@@ -61,7 +61,7 @@
                 <div class="value">
                 	<input type="text" name="email" maxlength="60" size="30" value="{$store_user.email}" class="text" />
                     <div class="form_prompt"></div>
-                    <p class="notic">{$lang.email_notic}</p>
+                    <p class="notic">请输入常用的邮箱，将用来找回密码、接受订单通知等</p>
                 </div>
             </div>
             <div class="item">
@@ -69,7 +69,7 @@
                 <div class="value">
                 	<input type="text" name="tel" maxlength="60" size="30"  value="{$store_user.tel}" class="text" />
                     <div class="form_prompt"></div>
-                    <p class="notic">{$lang.tel_notic}</p>
+                    <p class="notic">请输入常用的11位手机号码</p>
                 </div>
             </div>
             <div class="item">
@@ -82,15 +82,16 @@
                             <label for="checkbox_{$key}" class="ui-label">{$action.action_name}</label>
                         </div>
                     {foreachelse}
-                        <div class="checkbox_item">{$lang.checkbox_item_notic}</div>
+                        <div class="checkbox_item">后台没有设置权限</div>
                     {/foreach}
                     </div>
-                    <p class="notic">{$lang.store_action_notic}</p>
+                    <p class="notic">设置该职员在门店中的权限</p>
                 </div>
             </div>
             <div class="item">
             	<div class="label">&nbsp;</div>
                 <div class="value item_btn">
+                	<!--<input type="submit" class="btn blue_btn btn35 w100" id="submitBtn" value="{$lang.button_submit}" />-->
                 	<input type="button" class="btn blue_btn btn35 w100" id="submitBtn" value="{$lang.button_submit}"/>
                     <input type="hidden" name='act' value="{$act}" />
                     <input type="hidden" name='id' value="{$store_user.id}" />
@@ -104,9 +105,16 @@
 	$(function(){
 		$("#submitBtn").click(function(){
 			if($("#store_assistant").valid()){
+				//$("#store_assistant").submit();
 				send_form_data("form[name=theForm]");
 			}
 		});
+		
+		jQuery.validator.addMethod("isMobile", function(value, element) {
+			var length = value.length;
+			var mobile = /^(13[0-9]{9})|(18[0-9]{9})|(14[0-9]{9})|(17[0-9]{9})|(15[0-9]{9})$/;
+			return this.optional(element) || (length == 11 && mobile.test(value));
+		}, "请正确填写您的手机号码");
 		
 		$('#store_assistant').validate({
 			errorPlacement: function(error, element){
@@ -139,24 +147,24 @@
 			},
 			messages : {
 				store_user : {
-					required : '<i class="icon icon-exclamation-sign"></i>{$lang.store_user_null}'
+					required : '<i class="icon icon-exclamation-sign"></i>登陆名不能为空'
 				},
 				email : {
-					required : '<i class="icon icon-exclamation-sign"></i>{$lang.email_null}',
-					email : '<i class="icon icon-exclamation-sign"></i>{$lang.email_error}'
+					required : '<i class="icon icon-exclamation-sign"></i>email不能为空',
+					email : '<i class="icon icon-exclamation-sign"></i>email格式不正确'
 				},
 				tel : {
-					required : '<i class="icon icon-exclamation-sign"></i>{$lang.tel_null}',
-					minlength : '<i class="icon icon-exclamation-sign"></i>{$lang.tel_shao_11}',
-					isMobile : '<i class="icon icon-exclamation-sign"></i>{$lang.tel_error}'
+					required : '<i class="icon icon-exclamation-sign"></i>请输入手机号',
+					minlength : '<i class="icon icon-exclamation-sign"></i>确认手机不能小于11个字符',
+					isMobile : '<i class="icon icon-exclamation-sign"></i>请正确填写您的手机号码'
 				},
 				password : {
-					required : '<i class="icon icon-exclamation-sign"></i>{$lang.password_null}',
-					minlength : '<i class="icon icon-exclamation-sign"></i>{$lang.password_error}'
+					required : '<i class="icon icon-exclamation-sign"></i>密码不能为空',
+					minlength : '<i class="icon icon-exclamation-sign"></i>密码不能少于6位'
 				},
 				confirm_pwd : {
-					required : '<i class="icon icon-exclamation-sign"></i>{$lang.confirm_pwd_null}',
-					equalTo:'<i class="icon icon-exclamation-sign"></i>{$lang.confirm_pwd_error}'
+					required : '<i class="icon icon-exclamation-sign"></i>确认密码不能为空',
+					equalTo:'<i class="icon icon-exclamation-sign"></i>两次输入密码不匹配'
 				}
 			}
 		});

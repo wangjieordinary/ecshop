@@ -131,7 +131,7 @@
 		<ul class="user-order-list  dis-box text-center">
 			<a href="{url('user/account/index')}" class="box-flex">
 				<li>
-					<h4 class="ellipsis-one">{$info.user_money}</h4>
+					<h4 class="ellipsis-one">{$user_pay.user_money}</h4>
 					<p class="t-remark3">余额</p>
 				</li>
 			</a>
@@ -144,13 +144,15 @@
 			</a>
 			<a href="javascript:;" class="box-flex">
 				<li>
-					<h4 class="ellipsis-one">{$info.pay_points}</h4>
+					<h4 class="ellipsis-one">{$user_pay.pay_points}</h4>
 					<p class="t-remark3">积分</p>
 				</li>
 			</a>
 			<a href="{url('user/account/coupont')}" class="box-flex">
 				<li>
-					<h4 class="ellipsis-one">{$coupons_num}</h4>
+					{if $couponses == '' }
+					<h4 class="ellipsis-one">0</h4> {else}
+					<h4 class="ellipsis-one">{$couponses}</h4> {/if}
 					<p class="t-remark3">优惠券</p>
 				</li>
 			</a>

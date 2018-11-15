@@ -12,10 +12,10 @@
             	{include file ='library/url_here.lbi'}
                 <div class="tabmenu">
                     <ul class="tab">
-                        <li class="active"><a href="javascript:;">{$lang.basic_info}</a></li>
-                        <li><a href="javascript:;">{$lang.snatch_introduce}</a></li>
-                        <li><a href="javascript:;">{$lang.service_guarantee}</a></li>
-                        <li><a href="javascript:;">{$lang.snatch_strategy}</a></li>
+                        <li class="active"><a href="javascript:;">基本信息</a></li>
+                        <li><a href="javascript:;">夺宝介绍</a></li>
+                        <li><a href="javascript:;">服务保障</a></li>
+                        <li><a href="javascript:;">夺宝攻略</a></li>
                     </ul>
                 </div>
    
@@ -34,9 +34,9 @@
 				{/if}
                 
                 <div class="explanation clear" id="explanation">
-                    <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                    <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                     <ul>
-                    	<li>{$lang.warn_submit_will_rechcek}</li>
+                    	<li>温馨提示：提交操作将会重新审核，请慎重提交确定。</li>
                     </ul>
                 </div>
                 
@@ -45,14 +45,14 @@
                     <form name="theForm" id="goods_class_form" action="snatch.php" method="post" enctype="multipart/form-data">
                         <div class="wrapper-list border1">
                             <dl>
-                                <dt>{$lang.require_field}&nbsp;{$lang.label_act_name}</dt>
+                                <dt>{$lang.require_field}&nbsp;活动名称：</dt>
                                 <dd>
                                   <input class="text"id="snatch_name" name="snatch_name" type="text" value="{$snatch.snatch_name}">
 								  <div class="form_prompt"></div>
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>{$lang.label_goods_keywords}</dt>
+                                <dt>商品关键字：</dt>
                                 <dd>
                                   <input type="text" name="keywords" size="30" class="text mr10"/>
                                   <input name="ru_id" value="{$ru_id}" type="hidden" />
@@ -60,7 +60,7 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>{$lang.require_field}&nbsp;{$lang.label_goods_name}</dt>
+                                <dt>{$lang.require_field}&nbsp;商品名称：</dt>
                                 <dd>
                                     <div id="select_goods_id" class="imitate_select select_w260">
                                         <div class="cite">{$lang.make_option}</div>
@@ -83,7 +83,7 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>{$lang.require_field}&nbsp;{$lang.label_act_start_end_time}</dt>
+                                <dt>{$lang.require_field}&nbsp;活动起止时间：</dt>
                                 <dd>
                                 	<div class="text_time">
                                     	<input id="start_time" name="start_time" type="text" class="text" readonly value="{$snatch.start_time}" />
@@ -96,31 +96,31 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>{$lang.require_field}&nbsp;{$lang.label_up_down_limit_price}</dt>
+                                <dt>{$lang.require_field}&nbsp;价格上下线：</dt>
                                 <dd>
                                     <input class="w70 text" id="start_price" name="start_price" type="text" value="{$snatch.start_price}">
                                     <span class="connector">-</span>
                                     <input class="w70 text" id="end_price" name="end_price" type="text" value="{$snatch.end_price}">
-                                    <label class="txtline ml10">{$lang.yuan}</label>
-                                    <div class="notic">{$lang.notice_up_down_limit_price}</div>
+                                    <label class="txtline ml10">元</label>
+                                    <div class="notic">用户出价范围的上下限</div>
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>{$lang.label_max_pay}</dt>
+                                <dt>最多需支付的价格：</dt>
                                 <dd>
                                     <input class="w70 text" id="max_price" name="max_price" type="text" value="{$snatch.max_price}">
-                                    <div class="notic">{$lang.notice_max_pay}</div>
+                                    <div class="notic">获奖者出价高于这个价格，则以这个价格购买该商品。为0时按用户出价购买商品</div>
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>{$lang.label_cost_score}</dt>
+                                <dt>消耗积分：</dt>
                                 <dd>
                                     <input class="w70 text" id="cost_points" name="cost_points" type="text" value="{$snatch.cost_points}">
-                                    <div class="notic">{$lang.notice_cost_score}</div>
+                                    <div class="notic">每次出价所消耗的积分值</div>
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>{$lang.label_whether_hot}</dt>
+                                <dt>是否热销：</dt>
                                 <dd>
                                 	<div class="checkbox_items">
                                         <div class="checkbox_item">
@@ -161,19 +161,19 @@
                         </div>
                         <div class="wrapper-list wrapper-list-bjq" style="display:none">
                             <dl>
-                                <dt>{$lang.snatch_introduce}：</dt>
+                                <dt>夺宝介绍：</dt>
                                 <dd>{$act_desc}</dd>
                             </dl>
                         </div>
                         <div class="wrapper-list wrapper-list-bjq" style="display:none">
                             <dl>
-                                <dt>{$lang.service_guarantee}：</dt>
+                                <dt>服务保障：</dt>
                                 <dd>{$act_promise}</dd>
                             </dl>
                         </div>
                         <div class="wrapper-list wrapper-list-bjq" style="display:none">
                             <dl>
-                                <dt>{$lang.snatch_strategy}：</dt>
+                                <dt>夺宝攻略：</dt>
                                 <dd>{$act_ensure}</dd>
                             </dl>
                         </div>
@@ -229,7 +229,7 @@ $(function(){
 		},
 		messages : {
 			snatch_name : {
-				required : '<i class="icon icon-exclamation-sign"></i>'+jl_user_name_not_null
+				required : '<i class="icon icon-exclamation-sign"></i>用户名不能为空'
 			},
 			start_time :{
 				required : '<i class="icon icon-exclamation-sign"></i>'+start_data_notnull

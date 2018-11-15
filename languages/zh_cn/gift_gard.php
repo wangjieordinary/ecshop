@@ -47,5 +47,7 @@ $_LANG['Contact_number_null'] = "请填写联系方式";
 $_LANG['shipping_time'] = "希望收货时间";
 $_LANG['Confirmation_delivery'] = "确认提货时间";
 
+//20161214 end
+
 $_LANG['js_languages']['gift_gard_number_null'] = '请输入礼品卡卡号';
 $_LANG['js_languages']['gift_gard_password_null'] = '请输入礼品卡密码';

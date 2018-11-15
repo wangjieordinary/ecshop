@@ -7,6 +7,6 @@
 {/foreach}
 {else}
 <div class="notic bf100 mt5 red">
-	{$lang.please_add_area_one_by_one}
+	部分地区已存在快递模板中，无法全部地区添加，请逐个添加地区
 </div>
 {/if}

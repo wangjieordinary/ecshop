@@ -35,7 +35,7 @@
                 </div>
                 
                 <div class="common-content">
-                	<div class="list-div" id="listDiv">
+                	<div class="list-div"  id="listDiv" >
 						{/if}
 						<form method="post" action="" name="listForm" onsubmit="return confirm('{$lang.batch_confirm_settlement}');">
                     	<table cellpadding="1" cellspacing="1">

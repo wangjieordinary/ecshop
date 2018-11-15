@@ -256,18 +256,7 @@
     					number:true
     				},
     				prefix:{
-                        required : true,
-                        remote : {
-                            cache: false,
-                            async:false,
-                            type:'POST',
-                            url:'value_card.php?act=code_notice',
-                            data:{
-                                prefix:function(){
-                                    return $("input[name='prefix']").val();
-                                }
-                            }
-                        }
+                        required : true
     				}
     			},
     			messages:{
@@ -283,8 +272,7 @@
     					number : '<i class="icon icon-exclamation-sign"></i>'+card_vaule_number
     				},
                     prefix:{
-                         required : '<i class="icon icon-exclamation-sign"></i>'+card_prefix_null,
-                         remote : '<i class="icon icon-exclamation-sign"></i>'+card_prefix_duplicate,
+                         required : '<i class="icon icon-exclamation-sign"></i>'+card_prefix_null
                     }
     			}			
     		});
@@ -368,7 +356,7 @@
     	  // 创建checkbox
     	  if (!exists)
     	  {
-    		var html = '<div class="checkbox_item"><input name="vc_goods[]" id="goods_id_' + id + '" type="checkbox" class="ui-checkbox" value="' + id + '" checked="checked" /><label for="goods_id_' + id + '" class="ui-label">' + name+'</label></div>';
+    		var html = '<div class="checkbox_item"><input name="vc_goods[]" id="goods_id" type="checkbox" class="ui-checkbox" value="' + id + '" checked="checked" /><label for="goods_id" class="ui-label">' + name+'</label></div>';
     		document.getElementById('goods_range_div').innerHTML += html;
     		
     		$(".range-content").perfectScrollbar("destroy");

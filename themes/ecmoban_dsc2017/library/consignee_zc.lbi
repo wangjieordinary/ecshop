@@ -18,7 +18,12 @@
             </div>
         </div>
         <div id="area_div" class="list select-address">
-            <span class="label"><em>*</em>{$lang.Local_area}：</span>
+            <span class="label">
+                <em>
+                    *
+                </em>
+                所在地区：
+            </span>
             <div class="field">
                 <span id="span_area" class="fl">
                     <select name="country" id="selCountries_{$sn}" onchange="region.changed(this, 1, 'selProvinces_{$sn}')" style="border:1px solid #abadb3;">
@@ -56,7 +61,12 @@
             </div>
         </div>  
         <div id="address_div" class="list full-address">
-            <span class="label"><em>*</em>{$lang.Local_area}：</span>
+            <span class="label">
+                <em>
+                    *
+                </em>
+                {$lang.Local_area}：
+            </span>
             <div class="field">
                 <span id="areaNameTxt" class="fl selected-address">
                 </span>
@@ -65,7 +75,12 @@
             </div>
         </div>
         <div id="call_div" class="list">
-            <span class="label"><em>*</em>{$lang.phone_con}：</span>
+            <span class="label">
+                <em>
+                    *
+                </em>
+                {$lang.phone_con}：
+            </span>
             <div class="field">
                 <div class="phone">
                     <input type="text" maxlength="11" name="mobile" value="{$consignee.mobile}" id="consignee_mobile" class="textbox">
@@ -82,6 +97,7 @@
 </div>
 <script type="text/javascript">
 function addUpdate_Consignee(frm){
+	
 	var info_return = 0;
 	var csg = new Object;
 	
@@ -177,15 +193,20 @@ function addUpdate_Consignee(frm){
 }
 
 function addUpdate_ConsigneeResponse(result){
+
 	if(result.once){
 		window.location.href='crowdfunding.php?act=checkout&gid=' + result.gid;
-	}else{
-		$('#consignee-addr').html(result.content);
 		
-		$('#zcDig').remove();
-		
-		$('#pb-mask').remove();
+	}else{	
+
+	$('#consignee-addr').html(result.content);
+	
+	$('#zcDig').remove();
+	
+	$('#pb-mask').remove();
+	
 	}
+
 }
 
 function return_address_judge(obj, type){

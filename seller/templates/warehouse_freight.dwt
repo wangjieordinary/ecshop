@@ -19,7 +19,7 @@
                         <dd>
 							<div class="label_value">
 								<div id="warehouse_id" class="imitate_select select_w320">
-									<div class="cite">{$lang.select_warehouse}</div>
+									<div class="cite">请选择仓库</div>
 									<ul>
 										{foreach from=$warehouse_list item=warehouse}
 											<li><a href='javascript:;' data-value='{$warehouse.region_id}' class='ftx-01'>{$warehouse.region_name}</a></li>
@@ -40,7 +40,7 @@
                         <dd>
 							<div class="label_value">
 								<div id="shipping_id" class="imitate_select select_w320">
-									<div class="cite">{$lang.select_deliver}</div>
+									<div class="cite">请选择物流配送</div>
 									<ul>
 										{foreach from=$shipping_list item=shipping}
 											<li><a href='javascript:;' data-value='{$shipping.shipping_id}' class='ftx-01'>{$shipping.shipping_name}</a></li>

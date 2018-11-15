@@ -1,7 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
 <div class="lift-channel clearfix" id="guessYouLike">
-	<div class="ftit"><h3>{$lang.not_see_enough}</h3></div>
+	<div class="ftit"><h3>还没逛够</h3></div>
 	<ul>
 		<!-- {foreach from=$guess_goods item=goods name=foo} -->
 		<li class="opacity_img">

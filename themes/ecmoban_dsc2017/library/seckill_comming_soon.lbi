@@ -13,10 +13,10 @@
 					<div class="p-del"><del>{$goods.market_price_formated}</del></div>
 				</div>
 				<div class="p-number clearfix">
-					<span>{$lang.sold_alt}{$goods.percent}%</span>
+					<span>已售{$goods.percent}%</span>
 					<div class="timebar"><i style="width:{$goods.percent}%;"></i></div>
 				</div>				
-				<a href="{$goods.url}" class="btn sc-redBg-btn">{$lang.begin_minute}</a>
+				<a href="{$goods.url}" class="btn sc-redBg-btn">即将开始</a>
 			</li>
 		<!--{/foreach}-->
 		</ul>

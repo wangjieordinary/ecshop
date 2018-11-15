@@ -56,9 +56,9 @@
                 </div>
                 <div class="combo-action">
                     <div class="combo-action-info">
-                        <div class="combo-price"><span>{$lang.Set_price}：</span><strong id="m_goods_{$key}" name="combo_shopPrice[]"></strong></div>
-                        <div class="combo-o-price"><span>{$lang.combo_markPrice}：</span><span class="original-price" name="combo_markPrice[]" id="m_goods_reference_{$key}"></span></div>
-                        <div class="save-price">{$lang.collocation_shen} <span id="m_goods_save_{$key}" name="combo_savePrice[]"></span></div>
+                        <div class="combo-price"><span>套餐价：</span><strong id="m_goods_{$key}" name="combo_shopPrice[]"></strong></div>
+                        <div class="combo-o-price"><span>参考价：</span><span class="original-price" name="combo_markPrice[]" id="m_goods_reference_{$key}"></span></div>
+                        <div class="save-price">省<span id="m_goods_save_{$key}" name="combo_savePrice[]"></span></div>
                     </div>
                     <div class="input_combo_stock">
                         {if $goods.group_number > 0}<div id="combo_stock_number" class="gns_item">{$lang.limit_shop}：<font id="stock_number">{$goods.group_number}</font> {$lang.tao}</div>{/if}
@@ -69,7 +69,7 @@
                         </div>
                     </div>
                     <div class="combo-btn">
-                        <a href="javascript:void(0);" rev='m_goods_{$key}_{$goods_id}_{$region_id}_{$area_id}' class="combo-btn-buynow ncs_buy" ectype="comboBuy">{$lang.button_buy}</a>
+                        <a href="javascript:void(0);" rev='m_goods_{$key}_{$goods_id}_{$region_id}_{$area_id}' class="combo-btn-buynow ncs_buy" ectype="comboBuy">立即购买</a>
                     </div>
                 </div>
             </div>

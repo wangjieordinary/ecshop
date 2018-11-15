@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'app_init' => [
+        'App\Behavior\UpgradeBehavior',
+    ],
     'app_begin' => [
         'App\Behavior\SaaSServiceBehavior',
     ],

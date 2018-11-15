@@ -14,11 +14,11 @@
 				{include file ='library/seller_menu_tab.lbi'}
                 <div class="clear"></div>
                 <div class="explanation" id="explanation">
-                    <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                    <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                     <ul>
-                        <li>{$lang.operation_prompt_content.goods_desc.0}</li>
-                        <li>{$lang.operation_prompt_content.goods_desc.1}</li>
-                        <li>{$lang.operation_prompt_content.goods_desc.2}</li>
+                        <li>选择需要统一修改的商品详情的商品分类。</li>
+                        <li>请合理编辑商品详情，以便让用户清晰了解该商品。</li>
+                        <li>批量修改商品描述时，此商品必须是没有设置商品描述信息，否则会以本商品描述信息为准</li>
                     </ul>
                 </div>
                 <div class="clear"></div>
@@ -79,7 +79,7 @@ listTable.filter.{$key} = '{$item}';
 {/foreach}
 
 function get_del_desc(id){
-	if (confirm(jl_sure_delete_info)){
+	if (confirm('确实删除这条信息吗')){
 		location.href = 'goods.php?act=del_link_desc&id=' + id;
 	}
 }

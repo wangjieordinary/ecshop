@@ -177,7 +177,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="javascript:void(0);" data-url="user_account.php?act=list&process_type=1" data-param="menuplatform|09_user_account" ectype="iframeHref">
+                                <a href="javascript:void(0);" data-url="user_account.php?act=list&process_type=1&is_paid=1" data-param="menuplatform|09_user_account" ectype="iframeHref">
                                     <i class="ice ice_b"></i>
                                     <div class="t">{$lang.new_reimburse}</div>
                                     <span class="number">{$new_repay|default:0}</span>
@@ -254,7 +254,7 @@
                                 </dl>
                             </div>
                         </div>
-<!--                         <div class="item_section">
+                        <div class="item_section">
                         	<div class="section_header">{$lang.customer_service}</div>
                             <div class="section_body">
                             	<dl>
@@ -278,7 +278,7 @@
                                     <dd>{$lang.dacmall_qq_content}</dd>
                                 </dl>
                             </div>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -332,7 +332,7 @@
                                 </tr>
                                 <tr>
                                     <td class="gray_bg">{$lang.ecs_version}</td>
-                                    <td>{$ecs_version} RELEASE {$ecs_release}</td>
+                                    <td>{$ecs_version} RELEASE {$ecs_release} <a href="upgrade.php?act=index">[在线升级]</a></td>
                                     <td class="gray_bg">{$lang.install_date}</td>
                                     <td>{$install_date}</td>
                                 </tr>

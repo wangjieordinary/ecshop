@@ -28,15 +28,15 @@
 					<thead>
                         <tr>
                             {if $level lt 3}
-                            <th width="8%">{$lang.level}({$lang.cat_level.$level})</th>
+                            <th width="8%">级别({$lang.cat_level.$level})</th>
                             {/if}
-                            <th width="20%">{$lang.cate_name}</th>
+                            <th width="20%">分类名称</th>
                             {if $level gt 1}
-                            <th width="10%">{$lang.parent_cate}</th>
+                            <th width="10%">父级分类</th>
                             {/if}
-                            <th width="10%">{$lang.type_number}</th>
-                            <th width="10%">{$lang.sort_order}</th>
-                            <th width="12%" class="handle">{$lang.handler}</th>
+                            <th width="10%">类型数量</th>
+                            <th width="10%">排序</th>
+                            <th width="12%" class="handle">操作</th>
                         </tr>
 					</thead>
 					<tbody>
@@ -46,10 +46,10 @@
                             <td class="tl pl10">
                                 <div class="tDiv first_setup">
                                     <div class="setup_span">
-                                        <em><i class="icon icon-cog"></i>{$lang.setup}<i class="arrow"></i></em>
+                                        <em><i class="icon icon-cog"></i>设置<i class="arrow"></i></em>
                                         <ul>
-                                            <li><a href="goods_type.php?act=cat_add&parent_id={$cat.cat_id}">{$lang.add_next_level}</a></li>
-                                            <li><a href="goods_type.php?act=cat_list&parent_id={$cat.cat_id}&level={$cat.level}">{$lang.view_next_level}</a></li>
+                                            <li><a href="goods_type.php?act=cat_add&parent_id={$cat.cat_id}">新增下一级</a></li>
+                                            <li><a href="goods_type.php?act=cat_list&parent_id={$cat.cat_id}&level={$cat.level}">查看下一级</a></li>
                                         </ul>
                                     </div>
                                 </div>

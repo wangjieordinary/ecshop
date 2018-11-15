@@ -4,7 +4,7 @@
  
 <body class="iframe_body">
 	<div class="warpper">
-    	<div class="title">{$lang.batch} - {$ur_here}</div>
+    	<div class="title">{$lang.batch}11 - {$ur_here}</div>
         <div class="content">
             {include file ='library/batch_tab.lbi'}
         	<div class="explanation" id="explanation">

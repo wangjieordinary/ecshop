@@ -20,7 +20,7 @@
                             <div class="imitate_select select_w145">
                                 <div class="cite">{$lang.label_out_up}</div>
                                 <ul>
-                                    <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.please_select}</a></li>
+                                    <li><a href="javascript:;" data-value="0" class="ftx-01">请选择</a></li>
                                     <li><a href="javascript:;" data-value="3" class="ftx-01">{$lang.label_account_up}</a></li>
                                     <li><a href="javascript:;" data-value="4" class="ftx-01">{$lang.label_account_out}</a></li>
                                 </ul>
@@ -29,18 +29,18 @@
                             <div class="imitate_select select_w145">
                                 <div class="cite">{$lang.label_log_type}</div>
                                 <ul>
-                                    <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.please_select}</a></li>
-                                    <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.settle}</a></li>
-                                    <li><a href="javascript:;" data-value="3" class="ftx-01">{$lang.recharge}</a></li>
-                                    <li><a href="javascript:;" data-value="4" class="ftx-01">{$lang.get_cash}</a></li>
-                                    <li><a href="javascript:;" data-value="5" class="ftx-01">{$lang.unfrozen}</a></li>
+                                    <li><a href="javascript:;" data-value="0" class="ftx-01">请选择</a></li>
+                                    <li><a href="javascript:;" data-value="2" class="ftx-01">结算</a></li>
+                                    <li><a href="javascript:;" data-value="3" class="ftx-01">充值</a></li>
+                                    <li><a href="javascript:;" data-value="4" class="ftx-01">提现</a></li>
+                                    <li><a href="javascript:;" data-value="5" class="ftx-01">解冻</a></li>
                                 </ul>
                                 <input name="log_type" type="hidden" />
                             </div>
                             <div class="imitate_select select_w145">
                                 <div class="cite">{$lang.handler}</div>
                                 <ul>
-                                    <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.please_select}</a></li>
+                                    <li><a href="javascript:;" data-value="0" class="ftx-01">请选择</a></li>
                                     <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.off_stocks}</a></li>
                                     <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.stay_dispose}</a></li>
                                 </ul>
@@ -48,7 +48,7 @@
                             </div>
                             <div class="search-key">
                                 <input name="order_sn" type="text" value="" class="text" placeholder="{$lang.label_order_sn}" />
-                                <input type="submit" class="submit" value="{$lang.button_search}">
+                                <input type="submit" class="submit" value="搜索">
                             </div>
                         </form>
                     </div>
@@ -100,14 +100,14 @@
                       </td>
                       <td>
                         {if $log.log_type eq 2}
-                        	{$lang.settle}
+                        	结算
                         {elseif $log.log_type eq 3}  
-                        	{$lang.recharge}<br/>
+                        	充值<br/>
                             <em style="color:#ff5256">({$log.payment_info.pay_name})</em>
                         {elseif $log.log_type eq 4}
-                        	{$lang.get_cash}    
+                        	提现    
                         {elseif $log.log_type eq 5}
-                        {$lang.frozen_money_unfrozen}
+                        冻结资金解冻
                         {/if}
                       </td>  
                       <td>{$log.add_time}</td>  
@@ -116,9 +116,9 @@
                       	{$lang.off_stocks}
                       {else}
                       	{if $log.log_type eq 3 && $log.is_paid eq 0 && $log.payment_info.pay_code neq 'bank'}
-                        <a href="merchants_account.php?act=account_manage&act_type=topup_pay&log_id={$log.log_id}">{$lang.pay_money}</a>
+                        <a href="merchants_account.php?act=account_manage&act_type=topup_pay&log_id={$log.log_id}">付款</a>
                         &nbsp;
-                        <a href="merchants_account.php?act=del_pay&submit_act=1&log_id={$log.log_id}">{$lang.cancel}</a>
+                        <a href="merchants_account.php?act=del_pay&submit_act=1&log_id={$log.log_id}">取消</a>
                         {else}
                         {$lang.stay_dispose}
                         {/if}

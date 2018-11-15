@@ -69,7 +69,7 @@ Template Type: type_0
 .special-product .p-name a{ display:block; font-size:14px; color:#2b2b2b; line-height:24px;font-family: "microsoft yahei"; height:48px; overflow:hidden;}
 .special-product .p-info{ width:100%; overflow:hidden; margin-top: 5px;}
 .special-product .p-price{ width:100%; overflow:hidden;}
-.special-product .p-price span{ color:#1abb8c; font-size:24px; display:block; float:left;}
+.special-product .p-price span{ color:#f42424; font-size:24px; display:block; float:left;}
 .special-product .p-price span em{ font-size:14px;}
 .special-product .p-price del{ font-size:12px; color:#999; margin-left:16px; line-height:36px;}
 .special-product .p-right{ float:right; text-align:right;}
@@ -80,10 +80,10 @@ Template Type: type_0
 .special-product .p-left{ width:100%; overflow:hidden;}
 .special-product .p-left .time{ float:left; color:#ffc33a;}
 .special-product .p-left .appointment{ float:right;}
-.special-product .p-left .appointment em{ margin:0 2px; color:#1abb8c;}
+.special-product .p-left .appointment em{ margin:0 2px; color:#f42424;}
 .special-product .p-info p{ color:#999; margin-top:5px;}
 .special-product .p-info p a{ color:#999;}
-.special-product .p-info p a:hover{ color:#1abb8c;}
+.special-product .p-info p a:hover{ color:#f42424;}
 
 .pre-banner,.pre-banner .banner-width{ height:380px; position:relative;}
 /*.banner .bd{ width:100%; position:absolute; top:0; left:0; height:auto; text-align:center; z-index:1;overflow:hidden;}*/
@@ -280,7 +280,7 @@ Template Type: type_0
 .mc-warp .items{ padding:5px 0;}
 .mc-warp .item{ line-height:28px;}
 .mc-warp .item a{ color:#8c8c8c; display:block; padding-left:10px; background:url(../images/spirit.jpg) 0 12px no-repeat;}
-.mc-warp .item a:hover{ color:#1abb8c;}
+.mc-warp .item a:hover{ color:#f42424;}
 
 .pingou-process{ width:100%; margin-bottom: 10px;border: 1px solid #eee;background: #f7f7f7;overflow: hidden; float:left; margin-top:20px;}
 .pingou-process h3{ width: 12.9%;float: left;line-height: 60px;border-right: 1px solid #eee;text-align: center;font-size: 20px;color: #e4393c;font-family: "microsoft yahei";}

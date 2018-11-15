@@ -1193,9 +1193,6 @@ $(function(){
 		var $this = $(this);
 		var parent = $this.parent();
 		var height = parent.find("*[ectype='promTips'] ul").height();
-
-		$(".promotion-info").removeClass("prom-hover");
-		$(".promotion-info").find("*[ectype='promTips']").css("height",0);
 		if(parent.hasClass("prom-hover")){
 			parent.removeClass("prom-hover");
 			parent.find("*[ectype='promTips']").css("height",0);
@@ -1508,7 +1505,6 @@ $(function(){
 					payInput.val(1); //支付密码隐藏域值赋值为1
 				}
 			}else{
-				
 				//非余额支付状态，余额填写区域显示
 				balance.show();
 				
@@ -1517,25 +1513,8 @@ $(function(){
 					changeSurplus(0);
 				}
 				
-				/* 是否存在储值卡和是否选择储值卡 */
-				if(document.getElementById('value_card_psd') && $("#value_card_psd").prop('disabled') == true){
-					
-					//支付密码显示
-					payPw.show();
-					
-					//初始化支付密码
-					payPw.find("input[name='pay_pwd']").val("");
-					
-					payInput.val(1); //支付密码隐藏域值赋值为1
-			
-				}else{
-					payPw.hide();  //支付密码隐藏
-					
-					//初始化支付密码
-					payPw.find("input[name='pay_pwd']").val("");
-					
-					payInput.val(0); //支付密码隐藏域值赋值为0
-				}
+				payPw.hide();  //支付密码隐藏
+				payInput.val(0); //支付密码隐藏域值赋值为0
 			}
 			
 			//改变支付方式
@@ -2338,7 +2317,7 @@ $(function(){
 		
 		if(parent.find(".selected").length>0){
 			$("#alipay_bank").find(".noBtn").hide();
-			$("#alipay_bank").find("input").show().css({"background-color":"#1abb8c"});
+			$("#alipay_bank").find("input").show().css({"background-color":"#f42424"});
 		}
 	});
 	
@@ -2446,7 +2425,6 @@ $(function(){
 			minamount = Number($(this).data('minamount'));
 		
 		if(user_id > 0){
-
 			if(perNumber == 0 || quantity > perNumber){
                             
 				pbDialog(json_languages.Stock_goods_null,"",0,450,80,50);
@@ -2459,14 +2437,7 @@ $(function(){
 				return false;
 			}
 			else{
-				Ajax.call('group_buy.php?act=checked_certification', 'user_id=' + user_id, function(data){
-					if(data.error > 0){
-						pbDialog(json_languages.emailInfo_incompleted,"",0,500,80,50);
-						return false;					
-					}else{
-						$("form[name='ECS_FORMBUY']").submit();
-					}
-				}, 'POST', 'JSON');	
+				$("form[name='ECS_FORMBUY']").submit();
 			}
 		}else{
 			var group_buy_id = $("input[name='group_buy_id']").val();
@@ -3465,6 +3436,10 @@ function addUpdate_Consignee(frm){
 			},
 			address : {
 				required : true
+			},
+			email:{
+				required : true,
+				email:true
 			}
 		},
 		messages : {
@@ -3492,9 +3467,14 @@ function addUpdate_Consignee(frm){
 			},
 			address : {
 				required : json_languages.Detailed_address_null
+			},
+			email:{
+				required : json_languages.null_email_goods,
+				email:json_languages.email_error
 			}
 		}
 	});
+	
 	if(frm.valid()){
 		$("#consignee-addr").html("<div class='load'>"+load_icon+"</div>");
 		Ajax.call('flow.php', 'step=insert_Consignee&csg=' + $.toJSON(csg) + '&shipping_id=' + $.toJSON(shipping_id) + '&uc_id=' + uc_id, addUpdate_ConsigneeResponse, 'POST', 'JSON');

@@ -23,7 +23,7 @@
                         </div>
                     </div>
                     <div class="btn-info">
-                    	<a href="javascript:void(0);" onclick="get_auto_order_detection()" class="sc-btn sc-blue-btn">{$lang.button_detection}</a>
+                    	<a href="javascript:void(0);" onclick="get_auto_order_detection()" class="sc-btn sc-blue-btn">一键确认收货</a>
                     </div>
                      {/if}
                     <form method="post" action="order.php?act=operate" name="listForm" onsubmit="return check()">
@@ -50,7 +50,7 @@
 								<tr>
 								<td class="tl pl10">
 									{$order.order_sn}
-									{if $order.is_stages eq 1}<div class="order_code">{$lang.baitiao_stage}</div>{/if}
+									{if $order.is_stages eq 1}<div class="order_code">白条分期</div>{/if}
 									{if $order.extension_code eq "group_buy"}
 										<div class="order_code">{$lang.group_buy}</div>
 									{elseif $order.extension_code eq "exchange_goods"}
@@ -95,7 +95,7 @@
 								<td>{$order.formated_total_fee}</td>
 								<td>{$lang.ss[$order.shipping_status]}<br />{$lang.not_confirm_order}</td>
 								{if $is_detection eq 1}
-								<td>{$order.auto_delivery_time}{$lang.expired}{if $order.is_auto_confirm}<br/><font class="red">({$lang.expired})</font>{/if}</td>
+								<td>{$order.auto_delivery_time}天{if $order.is_auto_confirm}<br/><font class="red">(已到期)</font>{/if}</td>
 								<td><font{if $order.is_auto_confirm} class="green"{/if}>{$order.auto_confirm_time}</font></td>
 								{/if}
 								</tr>
@@ -228,7 +228,7 @@ function start_response(result)
 		cell = row.insertCell(5);
 		cell.innerHTML = "<div class='tDiv'>" + result.order.new_shipping_status + "</div>";
 	}else{
-		$("#listTable").find("tbody").append("<tr><td colspan='10' class='no-records'>"+jl_no_send_goods_info_yet+"</td></tr>")
+		$("#listTable").find("tbody").append("<tr><td colspan='10' class='no-records'>暂无确认发货信息</td></tr>")
 	}
 	
 	if(result.stop_ajax == 1){

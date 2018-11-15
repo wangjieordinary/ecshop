@@ -22,7 +22,7 @@
                             <th width="10%">{$lang.record_id}</th>
                             <th width="20%">{$lang.title}</th>
                             <th width="15%">{$lang.shipping_title}</th>
-                            <th width="20%">{$lang.transport_type_name}</th>
+                            <th width="20%">{$lang.type.name}</th>
                             <th width="20%">{$lang.update_time}</th>
                             <th width="15%">{$lang.handler}</th>
                         </tr>
@@ -38,7 +38,7 @@
 								{if $list.shipping_title}
                                     {$list.shipping_title|escape:html}
                                 {else}
-                                    ({$lang.kong})
+                                    (空)
                                 {/if}
                             </td>
                             <td>
@@ -48,9 +48,9 @@
                                     {$lang.freight_type.one}
                                     <em class="red">(
                                     {if $list.type eq 1}
-                                        {$lang.on}
+                                        {$lang.type.on}
                                     {else}
-                                        {$lang.transport_type_off}
+                                        {$lang.type.off}
                                     {/if}
                                     )</em>
                                 {/if}    

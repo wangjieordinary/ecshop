@@ -40,21 +40,21 @@
                         	<dt>{$lang.shipping_title}：</dt>
                             <dd>
                             	<input type="text" name="shipping_title" class="text" autocomplete="off" value="{$transport_info.shipping_title|escape:html}" />
-                                <div class="notic">{$lang.notice_show_in_goods_info}</div>
+                                <div class="notic">（可显示在商品详情）</div>
                             </dd>
                         </dl>
                         <div id="Fixed_freight" class="{if $transport_info.freight_type neq 0}hide{/if}">
                             <dl>
-                                <dt>{$lang.transport_type_name}：</dt>
+                                <dt>{$lang.type.name}：</dt>
                                 <dd>
                                     <div class="checkbox_items">
                                         <div class="checkbox_item">
                                             <input name="type" type="radio" class="ui-radio" value="0" id="type_0" {if $transport_info.type eq 0}checked{/if} autocomplete="off" />
-                                            <label for="type_0" class="ui-radio-label">{$lang.transport_type_off}</label>
+                                            <label for="type_0" class="ui-radio-label">{$lang.type.off}</label>
                                         </div>
                                         <div class="checkbox_item">
                                             <input name="type" type="radio" class="ui-radio" value="1" id="type_1" {if $transport_info.type eq 1}checked{/if} autocomplete="off" />
-                                            <label for="type_1" class="ui-radio-label">{$lang.transport_type_on}</label>
+                                            <label for="type_1" class="ui-radio-label">{$lang.type.on}</label>
                                         </div>
                                     </div>
                                 </dd>
@@ -148,7 +148,7 @@
 			},
 			messages:{
 				title:{
-					 required : '<i class="icon icon-exclamation-sign"></i>'+jl_title_not_null
+					 required : '<i class="icon icon-exclamation-sign"></i>标题不为空'
 				}
 			}			
 		});
@@ -181,7 +181,7 @@
 			var t = $(this),
 			 	id = t.data('id');
 				
-			if(confirm(jl_sure_delete_template)){
+			if(confirm("确定删除该运费模板么？")){
 				$.jqueryAjax('goods_transport.php', 'act=drop_shipping&tid='+tid + "&id=" + id, function(data){
 					$("#transport_tpl").html(data.content);
 				});
@@ -209,11 +209,11 @@
 				var content = data.content;
 				pb({
 					id:"area_dialog",
-					title:jl_select_region,
+					title:"选择地区",
 					width:900,
 					content:content,
-					ok_title:jl_determine,
-					cl_title:jl_cancel,
+					ok_title:"确定",
+					cl_title:"取消",
 					drag:false,
 					foot:true,
 					cl_cBtn:true,
@@ -285,11 +285,11 @@
 				var content = data.content;
 				pb({
 					id:"express_dialog",
-					title:jl_select_express,
+					title:"选择快递",
 					width:900,
 					content:content,
-					ok_title:jl_determine,
-					cl_title:jl_cancel,
+					ok_title:"确定",
+					cl_title:"取消",
 					drag:false,
 					foot:true,
 					cl_cBtn:true,
@@ -378,11 +378,11 @@
 				var content = data.content;
 				pb({
 					id:"area_dialog",
-					title:jl_edit_freight_tpl,
+					title:"编辑运费模板",
 					width:900,
 					content:content,
-					ok_title:jl_determine,
-					cl_title:jl_cancel,
+					ok_title:"确定",
+					cl_title:"取消",
 					drag:false,
 					foot:true,
 					cl_cBtn:true,

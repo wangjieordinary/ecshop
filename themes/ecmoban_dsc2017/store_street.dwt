@@ -32,7 +32,7 @@
                                     <ul>
                                         <li class="curr"><a href="javascript:void(0);"  data-val="0" data-type="search_cat" data-region="6" ectype="street_area">{$lang.all_attribute}</a></li>
                                         <!--{foreach from=$categories_pro item=cat}-->
-                                        <li><a href="javascript:void(0);"  data-val="{$cat.id}" data-type="search_cat" data-region="6" ectype="street_area">{if $cat.cat_alias_name}{$cat.cat_alias_name}{else}{$cat.name}{/if}</a></li>
+                                        <li><a href="javascript:void(0);"  data-val="{$cat.id}" data-type="search_cat" data-region="6" ectype="street_area">{if $cat.cat_alias_name}{$cat.cat_alias_name}{else}{$cat.cat_name}{/if}</a></li>
                                         <!--{/foreach}-->
                                     </ul>
                                 </div>

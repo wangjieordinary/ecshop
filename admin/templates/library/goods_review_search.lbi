@@ -128,8 +128,8 @@
                             <div class="cite">{$lang.please_select}</div>
                             <ul>
                                 <li><a href="javascript:get_brand_type(0);" data-value="0" class="ftx-01">{$lang.please_select}</a></li>
-                                <li><a href="javascript:get_brand_type(1);" data-value="1" class="ftx-01">{$lang.sort_keywords}</a></li>
-                                <li><a href="javascript:get_brand_type(2);" data-value="2" class="ftx-01">{$lang.sort_list}</a></li>
+                                <li><a href="javascript:get_brand_type(1);" data-value="1" class="ftx-01">按关键字</a></li>
+                                <li><a href="javascript:get_brand_type(2);" data-value="2" class="ftx-01">按列表</a></li>
                             </ul>
                             <input name="sel_mode" type="hidden" value="0" id="">
                         </div>
@@ -167,8 +167,8 @@
             </div>
         </div>
         <div class="bot_btn">
-            <input type="submit" class="btn red_btn" name="tj_search" value="{$lang.button_inquire}" />
-            <input type="reset" class="btn btn_reset" name="reset" value="{$lang.button_reset}" />
+            <input type="submit" class="btn red_btn" name="tj_search" value="提交查询" />
+            <input type="reset" class="btn btn_reset" name="reset" value="重置" />
         </div>
 	</div>
 </div>

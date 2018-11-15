@@ -4,9 +4,9 @@
 <div class="s-line">
 <div class="s-l-wrap">
 	{if $region_type eq 2}
-    <div class="s-l-tit"><span>{$lang.city_alt}：</span></div>
+    <div class="s-l-tit"><span>城市：</span></div>
     {else}
-    <div class="s-l-tit"><span>{$lang.region}：</span></div>
+    <div class="s-l-tit"><span>区域：</span></div>
     {/if}
     <div class="s-l-value">
     	<div class="s-l-v-list">

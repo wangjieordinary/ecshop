@@ -19,10 +19,10 @@
                 <table class="ecsc-default-table">
                     <thead>
                         <tr>
-                        <th width="3%">{$lang.record_id}</th>
-                        <th width="8%">{$lang.member_name}</th>
-                        <th width="8%">{$lang.help_you_bargain}</th>
-                        <th width="8%">{$lang.join_time}</th>
+                        <th width="3%">编号</th>
+                        <th width="8%">会员名称</th>
+                        <th width="8%">帮您砍价</th>
+                        <th width="8%">参加时间</th>
 
                         </tr>
                     </thead>

@@ -124,7 +124,7 @@
                     <td class="pb10">
                         <div id="selCountries" class="ui-dropdown smartdropdown alien mr15">
                             <input type="hidden" value="1" name="country" id="selcountry">
-                            <div class="txt">{$lang.country}</div>
+                            <div class="txt">国家</div>
                             <i class="down u-dropdown-icon"></i>
                             <div class="options clearfix" style="max-height:300px;">
                                 {foreach from=$countries item=list}
@@ -134,7 +134,7 @@
                         </div>
                         <div id="dlProvinces" class="ui-dropdown smartdropdown alien">
                             <input type="hidden" value="{$province.region_id}" name="province" id="selProvinces">
-                            <div class="txt">{$lang.province_alt}</div>
+                            <div class="txt">省/直辖市</div>
                             <i class="down u-dropdown-icon"></i>
                             <div class="options clearfix" style="max-height:300px;">
                                 {foreach from=$province_all item=list}
@@ -144,7 +144,7 @@
                         </div>
                         <div id="dlCity" class="ui-dropdown smartdropdown alien">
                             <input type="hidden" value="{$city.region_id}" name="city" id="selCities">
-                            <div class="txt">{$lang.city}</div>
+                            <div class="txt">市</div>
                             <i class="down u-dropdown-icon"></i>
                             <div class="options clearfix" style="max-height:300px;">
                                 {foreach from=$city_all item=list}
@@ -154,7 +154,7 @@
                         </div>
                         <div id="dlRegion" class="ui-dropdown smartdropdown alien">
                             <input type="hidden" value="{$district.region_id}" name="district" id="selDistricts">
-                            <div class="txt">{$lang.area_alt}</div>
+                            <div class="txt">区/县</div>
                             <i class="down u-dropdown-icon"></i>
                             <div class="options clearfix" style="max-height:300px;">
                                 {foreach from=$district_all item=list}
@@ -164,7 +164,7 @@
                         </div>
                         <div id="dlStreet" class="ui-dropdown smartdropdown alien">
                             <input type="hidden" value="{$street.region_id}" name="street" id="selStreets">
-                            <div class="txt">{$lang.street}</div>
+                            <div class="txt">街道</div>
                             <i class="down u-dropdown-icon"></i>
                             <div class="options clearfix" style="max-height:300px;">
                                 {foreach from=$street_all item=item}
@@ -172,7 +172,7 @@
                                 {/foreach}
                             </div>
                         </div>
-                        {if $shipping_area.shipping_code != 'cac'}<span><input type="button" value="{$lang.add}" class="sc-btn sc-blueBg-btn btn32" onclick="addRegion()" /></span>{/if}
+                        {if $shipping_area.shipping_code != 'cac'}<span><input type="button" value="添加" class="sc-btn sc-blueBg-btn btn32" onclick="addRegion()" /></span>{/if}
                     </td>
                   </tr>
                   <tr>
@@ -252,7 +252,7 @@ function remove_point_pro(id,msg,act)
 *	继续添加
 */
 function continueAdd(obj){
-	var _div = '<div class="item gallery-table"><a href="javascript:void(0);" class="since_delete" onclick="removePointer(this)">{$lang.drop}</a><p><label>'+jl_label_name+'</label><input type="text" name="point_name[]" size="20" value=""/>{$lang.require_field}</p><p><label>'+jl_label_contact+'</label><input type="text" name="user_name[]" size="10" value=""/>{$lang.require_field}</p><p><label>'+jl_label_phone+'</label><input type="text" name="mobile[]" size="12"/>{$lang.require_field}</p><p><label>'+jl_label_map_pic+'</label><input type="file" name="img_url[]" class="file" /></p><p><label>'+jl_label_anchor_keywords+'</label><input type="text" size="10" name="anchor[]" value=""></p><p><label>'+jl_label_address+'</label><input type="text" size="40" value="" name="address[]"/>{$lang.require_field}</p><p><label>'+jl_label_name+'</label><textarea cols="50" rows="5" name="line[]"></textarea></p><input type="hidden" value="" name="map_img[]"></div>';
+	var _div = '<div class="item gallery-table"><a href="javascript:void(0);" class="since_delete" onclick="removePointer(this)">删除</a><p><label>名　　称：</label><input type="text" name="point_name[]" size="20" value=""/>{$lang.require_field}</p><p><label>联 系 人：</label><input type="text" name="user_name[]" size="10" value=""/>{$lang.require_field}</p><p><label>电　　话：</label><input type="text" name="mobile[]" size="12"/>{$lang.require_field}</p><p><label>地图图片：</label><input type="file" name="img_url[]" class="file" /></p><p><label>锚点关键词：</label><input type="text" size="10" name="anchor[]" value=""></p><p><label>地　　址：</label><input type="text" size="40" value="" name="address[]"/>{$lang.require_field}</p><p><label>到达路线：</label><textarea cols="50" rows="5" name="line[]"></textarea></p><input type="hidden" value="" name="map_img[]"></div>';
 	$(obj).parent().before(_div);
 }
 

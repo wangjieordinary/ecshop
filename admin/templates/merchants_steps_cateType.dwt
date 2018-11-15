@@ -36,7 +36,7 @@
                             <input type="checkbox" name="all_list" class="ui-checkbox" id="allList" />
                             <label for="allList" class="ui-label">{$lang.check_all_back}</label>
                         </div>
-                        <a href="javascript:void(0);" class="btn btn30 btn_blue" onclick="selectChildCate_cheked()">{$lang.add}</a>
+                        <a href="javascript:void(0);" class="btn btn30 btn_blue" onclick="selectChildCate_cheked()" >{$lang.add}</a>
                     </div>
                 </div>
                 <div class="list-div" id="detailCategoryTable">
@@ -58,7 +58,7 @@
                                         <input type="hidden" value="{$category.cat_id}" name="cat_id[]" class="cId">
                                     </p>
                                 </td>
-                                <td align="center">
+                                <td align="center" >
                                     <p>
                                         <input type="hidden" value="{$category.parent_name}" name="parent_name[]" class="cl1Name">
                                         {$category.parent_name}

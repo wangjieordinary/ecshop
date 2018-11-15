@@ -1,4 +1,5 @@
 <?php
+defined('IN_ECTOUCH') or die('Deny Access');
 
 /* 用户登录语言项 */
 $_LANG['empty_username_password'] = '对不起，您必须完整填写用户名和密码。';
@@ -106,7 +107,6 @@ $_LANG['sc_ds'] = '搜索简介';
 $_LANG['button_search'] = '立即搜索';
 $_LANG['no_search_result'] = '无法搜索到您要找的商品！';
 $_LANG['all_category'] = '所有分类';
-
 $_LANG['all_brand'] = '所有品牌';
 $_LANG['all_option'] = '请选择';
 $_LANG['extension'] = '扩展选项';
@@ -316,7 +316,6 @@ $_LANG['with_price'] = '以及价值';
 $_LANG['de'] = '的';
 $_LANG['bonus'] = '红包';
 $_LANG['goods_all_price'] = '商品总价';
-$_LANG['dis_amount'] = '商品优惠';
 $_LANG['discount'] = '折扣';
 $_LANG['tax'] = '发票税额';
 $_LANG['shipping_fee'] = '配送费用';
@@ -555,6 +554,17 @@ $_LANG['email_checked'] = '邮件已经被确认！';
 $_LANG['hash_wrong'] = '验证串错误！请核对验证串或输入email地址重新发送验证串！';
 $_LANG['email_canceled'] = '邮件已经被退定！';
 $_LANG['goods_click_count'] = '商品点击数';
+$_LANG['p_y']['link_start'] = '<a href="http://www.ecshop.com" target="_blank" style=" font-family:Verdana; font-size:11px;">';
+$_LANG['p_y']['link_p'] = 'Powe';
+$_LANG['p_y']['link_r'] = 'red&nbsp;';
+$_LANG['p_y']['link_b'] = 'by&nbsp;';
+$_LANG['p_y']['main_start'] = '<strong><span style="color: #3366FF">';
+$_LANG['p_y']['main_e'] = 'E';
+$_LANG['p_y']['main_c'] = 'CSho';
+$_LANG['p_y']['main_p'] = 'p</span>&nbsp;';
+$_LANG['p_y']['v_s'] = '<span style="color: #FF9966">';
+$_LANG['p_y']['v'] = VERSION;
+$_LANG['p_y']['link_end'] = '</span></strong></a>&nbsp;';
 
 /* 虚拟卡 */
 $_LANG['card_sn'] = '卡片序号';
@@ -584,8 +594,6 @@ $_LANG['stock_up'] = '缺货';
 $_LANG['hot_search'] = '热门搜索';
 
 $_LANG['please_select_attr'] = '你加入购物车的商品有不同型号可选，你是否要立即跳转到商品详情选择型号？';
-
-$_LANG['data_null'] = "暂无数据可提交，请重新选择";
 
 /* 促销信息栏 */
 $_LANG['snatch_promotion'] = '[夺宝]';
@@ -711,7 +719,6 @@ $_LANG['fat_price'] = '享受现金减免';
 $_LANG['fat_discount'] = '享受价格折扣';
 $_LANG['orgtotal'] = '原始价格';
 $_LANG['heart_buy'] = '心动不如行动';
-$_LANG['jian_goods'] = "件商品";
 
 /* 其他模板涉及常用语言项 */
 $_LANG['label_regist'] = '用户注册';
@@ -730,6 +737,7 @@ $_LANG['wap_config'] = 'WAP商城已关闭';
 $_LANG['group_purchase_index'] = '团购首页';
 
 /*  oauth 认证权限  */
+
 $_LANG['msg_ins_success'] = '安装成功';
 $_LANG['plug_install'] = '插件安装';
 $_LANG['edit_success'] = '编辑成功';
@@ -750,15 +758,18 @@ $_LANG['publish_product'] = '预售新品发布';
 
 
 /* region 地区  */
+
 $_LANG['input_dispatch_addr'] = '您尚未拥有此配送地区，请您填写配送地址';
 
 
 /* site 地点 */
+
 $_LANG['data_migrate'] = '数据迁移成功';
 $_LANG['back_home_page'] = '返回首页';
 
 
 /* sms 短信 */
+
 $_LANG['mobile_notnull'] = '手机号码不能为空';
 $_LANG['mobile_format_error'] = '手机号码格式不正确';
 $_LANG['msg_wait_auth_code'] = '获取验证码太过频繁，一分钟之内只能获取一次。';

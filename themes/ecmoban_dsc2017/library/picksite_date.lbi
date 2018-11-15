@@ -3,8 +3,8 @@
 <div class="take_their" id="take_their">
     <div class="their—tab-nav">
         <ul>
-            <li onclick="doSwith311Tab('311')" id="li_311_id" class="tab-nav-item tab-item-selected">{$lang.specified_time}<b></b></li> 
-            <li onclick="doSwith311Tab('411')" id="li_411_id" class="tab-nav-item hide">{$lang.maximum_speed}<b></b></li>
+            <li onclick="doSwith311Tab('311')" id="li_311_id" class="tab-nav-item tab-item-selected">指定时间<b></b></li> 
+            <li onclick="doSwith311Tab('411')" id="li_411_id" class="tab-nav-item hide">极速达<b></b></li>
         </ul>
     </div>
    	<div class="time_list"> 

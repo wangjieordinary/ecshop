@@ -2,7 +2,7 @@
 <div class="sku_goods_info">
 	<div class="warehouse_item">
         <span class="item">
-            <span class="tit">{$lang.product_code}</span>
+            <span class="tit">商品货号</span>
             <div class="imitate_select select_w120 pl10">
                 {$goods.goods_sn}
             </div>						
@@ -12,14 +12,14 @@
             <span class="tit"></span>
             <div class="search mt0">
                 <div class="input">
-                    <input name="region_sn" id="region_sn" class="text nofocus w140" placeholder="{$lang.warehouse_goods_code}" autocomplete="off" type="text">
+                    <input name="region_sn" id="region_sn" class="text nofocus w140" placeholder="仓库商品货号" autocomplete="off" type="text">
                     <button type="button" class="btn price_btn" name="secrch_btn"></button>
                 </div>
             </div>					
         </span>
         {elseif $goods.model_attr eq 2}
         <span class="item">
-            <span class="tit">{$lang.warehouse_name}</span>
+            <span class="tit">仓库名称</span>
             <div class="imitate_select select_w140" id="warehouse_area_name">
                 <div class="cite" id="w_select_please">{$lang.select_please}</div>
                 <ul>
@@ -34,7 +34,7 @@
             <span class="tit"></span>
             <div class="search mt0">
                 <div class="input">
-                    <input name="region_sn" id="region_sn" class="text nofocus w140" placeholder="{$lang.area_goods_code}" autocomplete="off" type="text">
+                    <input name="region_sn" id="region_sn" class="text nofocus w140" placeholder="地区商品货号" autocomplete="off" type="text">
                     <button type="button" class="btn price_btn" name="secrch_btn"></button>
                 </div>
             </div>					
@@ -46,19 +46,19 @@
         <table class="table">
             <thead>
             	{if $goods.model_attr eq 1}
-                <th width="15%">{$lang.warehouse_name}</th>
-                <th width="22%">{$lang.warehouse_goods_code}</th>
-                <th width="21%">{$lang.warehouse_price}</th>
-                <th width="21%">{$lang.warehouse_promotion_price}</th>
-                <th width="21%">{$lang.warehouse_stock}</th>
+                <th width="15%">仓库名称</th>
+                <th width="22%">仓库商品货号</th>
+                <th width="21%">仓库价格</th>
+                <th width="21%">仓库促销价格</th>
+                <th width="21%">仓库库存</th>
                 {elseif $goods.model_attr eq 2}
-                <th width="12%">{$lang.warehouse_name}</th>
-                <th width="12%">{$lang.area_name}</th>
-                <th width="12%">{$lang.city_name}</th>
-                <th width="16%">{$lang.area_goods_code}</th>
-                <th width="16%">{$lang.area_price}</th>
-                <th width="16%">{$lang.area_promotion_price}</th>
-                <th width="16%">{$lang.area_stock}</th>
+                <th width="12%">仓库名称</th>
+                <th width="12%">地区名称</th>
+                <th width="12%">城市名称</th>
+                <th width="16%">地区商品货号</th>
+                <th width="16%">地区价格</th>
+                <th width="16%">地区促销价格</th>
+                <th width="16%">地区库存</th>
                 {/if}
             </thead>
             <tbody>
@@ -93,12 +93,12 @@
         </table>
         <div class="pb_page">
             <div class="pageDiv">
-                <a href="javascript:;" class="item item_first item_gray">{$lang.total_data} {$warehouse_area_page_count} {$lang.page_ye}</a>
-                <a href="javascript:listTable_pb.gotoPageFirst();" class="item item_first">{$lang.00_home}</a>
-                <a href="javascript:listTable_pb.gotoPagePrev();" class="item item_prev">{$lang.page_prev}</a>
+                <a href="javascript:;" class="item item_first item_gray">共 {$warehouse_area_page_count} 页</a>
+                <a href="javascript:listTable_pb.gotoPageFirst();" class="item item_first">首页</a>
+                <a href="javascript:listTable_pb.gotoPagePrev();" class="item item_prev">上一页</a>
                 <span class="item">{$warehouse_area_filter.page}</span>
-                <a href="javascript:listTable_pb.gotoPageNext();" class="item item_next">{$lang.page_next}</a>
-                <a href="javascript:listTable_pb.gotoPageLast();" class="item item_last">{$lang.page_last}</a>
+                <a href="javascript:listTable_pb.gotoPageNext();" class="item item_next">下一页</a>
+                <a href="javascript:listTable_pb.gotoPageLast();" class="item item_last">尾页</a>
             </div>
             <div class="clear"></div>
         </div>

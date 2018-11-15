@@ -5,17 +5,17 @@
     </div>
     <div class="login-info">
         {if $user_id}
-            <span>Hi，{if $info.nick_name}{$info.nick_name}{else}{$lang.Welcome_to}<?php echo $GLOBALS['_CFG']['shop_name']; ?>!{/if}</span>
-            <a href="{$site_domain}user.php" class="login-button login-success">{$lang.user_center}</a>
+            <span>Hi，{if $info.nick_name}{$info.nick_name}{else}欢迎来到<?php echo $GLOBALS['_CFG']['shop_name']; ?>!{/if}</span>
+            <a href="{$site_domain}user.php" class="login-button login-success">进入会员中心</a>
         {else}
-            <span>{$lang.welcome_to}<?php echo $GLOBALS['_CFG']['shop_name']; ?>!</span>
+            <span>Hi，欢迎来到<?php echo $GLOBALS['_CFG']['shop_name']; ?>!</span>
             <a href="{$site_domain}user.php" class="login-button">{$lang.please_login}</a>
-            <a href="merchants.php" target="_blank" class="register_button">{$lang.register_button}</a>
+            <a href="merchants.php" target="_blank" class="register_button">我要开店</a>
         {/if}
     </div>
     <div class="vip-item">
         <div class="tit">
-			<a href="javascript:void(0);" class="tab_head_item">{$lang.purchase_info}</a>
+			<a href="javascript:void(0);" class="tab_head_item">求购信息</a>
             {foreach from=$wholesale_article_cat item=cat key=key name=cat}
             <a href="javascript:void(0);" class="tab_head_item">{$cat.cat.name}</a>
             {/foreach}

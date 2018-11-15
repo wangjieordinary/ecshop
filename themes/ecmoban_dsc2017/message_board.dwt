@@ -18,15 +18,15 @@
     <div class="content">
         <div class="feedback-main">
             <div class="w w1200">
-                <h2 class="feedback-title">{$lang.feedback}</h2>
+                <h2 class="feedback-title">意见反馈</h2>
                 <div class="feedback-tip clearfix">
                     <div class="avatar">
                         <img src="images/admin_avatar.png" alt="">
-                        <p>{$lang.admin}</p>
+                        <p>官方管理员</p>
                     </div>
                     <div class="message">
-                        <p>{$lang.message_user}： </p>
-                        <p>{$lang.message_reply}</p>
+                        <p>尊敬的用户： </p>
+                        <p>您好！为了给您提供更好的服务，我们希望收集您使用商城时的看法或建议。对您的配合和支持表示衷心感谢！</p>
                     </div>
                 </div>
                 <div class="feedback-write feedback-tip-two clearfix">
@@ -44,7 +44,7 @@
                     <div class="message">
                         <form action="message.php" method="post" name="formMsg" class="feedback-form">
                             <div class="form-row">
-                                <div class="ff-hd"><span class="red">*</span>{$lang.message_board_type}</div>
+                                <div class="ff-hd"><span class="red">*</span>留言类型</div>
                                 <div class="ff-bd clearfix">
 									{foreach from=$lang.message_type item=item key=key name=item}
 									{if $key lte 4}
@@ -57,23 +57,23 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="ff-hd"><span class="red">*</span>{$lang.message_title}</div>
+                                <div class="ff-hd"><span class="red">*</span>主题</div>
                                 <div class="ff-bd clearfix">
                                     <input type="text" name="msg_title" class="text" placeholder="">
                                     <div class="form_prompt"></div>
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="ff-hd"><span class="red">*</span>{$lang.message_notic}：</div>
+                                <div class="ff-hd"><span class="red">*</span>您对商城有哪些意见或建议，或者在使用过程中有什么问题，请告诉我们：</div>
                                 <div class="ff-bd clearfix">
                                     <textarea name="msg_content" id="" cols="30" rows="10" class="textarea"></textarea>
                                     <div class="form_prompt"></div>
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="ff-hd"><span class="red">*</span>{$lang.message_tel}：</div>
+                                <div class="ff-hd"><span class="red">*</span>您的联系方式：</div>
                                 <div class="ff-bd clearfix">
-                                    <input type="text" name="user_email" class="text" placeholder="{$lang.con_email}">
+                                    <input type="text" name="user_email" class="text" placeholder="邮箱">
                                     <div class="form_prompt"></div>
                                 </div>
                             </div>
@@ -90,7 +90,7 @@
                             </div>
                             <!--{/if}-->
                             <div class="form-row">
-                            	<input type="submit" name="submit" class="sc-btn sc-redBg-btn" value="{$lang.submit_goods}" id="btnSubmit" />
+                            	<input type="submit" name="submit" class="sc-btn sc-redBg-btn" value="提交" id="btnSubmit" />
                                 <!--<a href="javascript:$('form[name=formMsg]').submit();" class="sc-btn sc-redBg-btn">提交</a>-->
                             	<input type="hidden" name="act" value="act_add_message" />
                             </div>

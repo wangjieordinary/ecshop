@@ -11,8 +11,8 @@
             <div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                	<li>{$lang.operation_prompt_content.list.0}</li>
-                    <li>{$lang.operation_prompt_content.list.1}</li>
+                	<li>仓库下的地区，展示一级仓库下的所有地区。</li>
+                    <li>仓库地区最多可添加到四级地区。</li>
                 </ul>
             </div>
             <div class="flexilist">
@@ -32,7 +32,7 @@
                             </div>
                             <input type="hidden" name="region_type" value="{$region_type}" />
                             <input type="hidden" name="parent_id" value="{$parent_id}" />
-                            <a href="javascript:void(0);" class="btn btn30 red_btn mr0" ectype="addRegion"><i class="icon icon-plus"></i>{$lang.add_region}</a>
+                            <a href="javascript:void(0);" class="btn btn30 red_btn mr0" ectype="addRegion"><i class="icon icon-plus"></i>新增地区</a>
                         </form>
                         </div>
                         {if $action_link.href}
@@ -49,13 +49,13 @@
                         	<thead>
                             	<tr>
                                     <th width="3%"><div class="tDiv">&nbsp;</div></th>
-                                    <th width="20%"><div class="tDiv">{$lang.region_name}</div></th>
-                                    <th width="20%"><div class="tDiv">{$lang.belonged_to_region}</div></th>
+                                    <th width="20%"><div class="tDiv">地区名称</div></th>
+                                    <th width="20%"><div class="tDiv">所属地区</div></th>
                                     {if $region_type eq 1}
-                                    <th width="16%"><div class="tDiv">{$lang.region_code}</div></th>
+                                    <th width="16%"><div class="tDiv">地区编码</div></th>
                                     {/if}
-                                    <th width="20%"><div class="tDiv">{$lang.belonged_to_warehouse}</div></th>
-                                    <th width="20%" class="handle">{$lang.handler}</th>
+                                    <th width="20%"><div class="tDiv">所在仓库</div></th>
+                                    <th width="20%" class="handle">操作</th>
                                 </tr>
                             </thead>
                             <tbody>

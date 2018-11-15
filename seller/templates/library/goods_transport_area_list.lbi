@@ -22,6 +22,6 @@
 	{/foreach}
     <li>
     	<input type="checkbox" name="all" value="" id="all" class="ui-checkbox" />
-        <label class="ui-label" for="all">{$lang.check_all}</label>
+        <label class="ui-label" for="all">全选</label>
     </li>
 </ul>

@@ -32,7 +32,7 @@
                         	<th width="6%"><a href="javascript:listTable.sort('cat_id');">{$lang.record_id}</a>{$sort_cat_id}</th>
                             <th width="15%">{$lang.goods_type_name}</th>
                             <th width="25%">{$lang.attr_groups}</th>
-                            <th width="10%">{$lang.type_cate}</th>
+                            <th width="10%">类型分类</th>
                             <th width="12%">{$lang.attribute_number}</th>
                             <th width="12%">{$lang.goods_type_status}</th>
                             <th width="15%">{$lang.handler}</th>

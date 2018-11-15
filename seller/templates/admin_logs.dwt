@@ -10,7 +10,7 @@
 		<div class="ecsc-layout-right">
             <div class="main-content" id="mainContent">
             	{include file ='library/url_here.lbi'}
-				{include file ='library/seller_menu_tab.lbi'}
+				{include file ='library/seller_menu_tab.lbi.lbi'}
                 <div class="search-info">
                 	<div class="search-form">
                 	<form name="searchForm" action="javascript:searchlog()" class="fl mr20">
@@ -123,7 +123,7 @@ function batch_drop(){
 	var frm = $("form[name='Form2']");
 	var val = frm.find("input[name='log_date']").val();
 	if(val == ""){
-		alert(select_date_value);
+		alert("请选择清除的日期");
 		return false;
 	}
 	return true;

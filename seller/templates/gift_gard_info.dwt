@@ -13,9 +13,9 @@
 				{include file ='library/seller_menu_tab.lbi'}
                 
                 <div class="explanation clear" id="explanation">
-                    <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                    <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                     <ul>
-                    	<li>{$lang.warn_submit_will_rechcek}</li>
+                    	<li>温馨提示：提交操作将会重新审核，请慎重提交确定。</li>
                     </ul>
                 </div>
                 <div class="ecsc-form-goods">
@@ -46,7 +46,7 @@
                         </dl>
                         <!-- {/if} -->
                         <dl>
-                        	<dt>{$lang.require_field}&nbsp;{$lang.use_stop_time}</dt>
+                        	<dt>{$lang.require_field}&nbsp;使用起止时间</dt>
                             <dd>
                             	<div class="text_time" id="text_time1">
                                 	<input name="use_start_date" type="text" class="text" id="use_start_date" size="22" value='{$bonus_arr.use_start_date}' readonly="readonly" />
@@ -132,10 +132,10 @@
 			},
 			messages : {
 				type_name : {
-					required : '<i class="icon icon-exclamation-sign"></i>'+jl_please_input_giftcard
+					required : '<i class="icon icon-exclamation-sign"></i>请输入礼品卡名称'
 				},
 				gift_number : {
-					min : '<i class="icon icon-exclamation-sign"></i>'+jl_please_input_sendnum
+					min : '<i class="icon icon-exclamation-sign"></i>请输入发放数量'
 				},
 				use_start_date :{
 					required : '<i class="icon icon-exclamation-sign"></i>'+start_data_notnull

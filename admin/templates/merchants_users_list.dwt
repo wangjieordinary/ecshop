@@ -57,6 +57,7 @@
                             </thead>
                             <tbody>
 							    {foreach from=$users_list item=users}
+								
 								<tr>
                                     <td><div class="tDiv">{$users.shop_id}</div></td>
                                     <td><div class="tDiv">【{$users.user_id}】{$users.user_name}</div></td>
@@ -116,7 +117,6 @@
                                             	<a href="merchants_users_list.php?act=edit_shop&id={$users.user_id}" title="{$lang.edit}" class="btn_edit"><i class="icon icon-edit"></i>{$lang.settled_info}</a>
                                             </p>
                                             <p>
-                                                <a href="merchants_users_list.php?act=see_shopinfo&id={$users.user_id}"  class="btn_see nyroModal"><i class="sc_icon sc_icon_see"></i>查看</a>
                                             	<a href="merchants_users_list.php?act=copy_shop&id={$users.user_id}" title="{$lang.copy}" class="btn_edit"><i class="icon icon-copy"></i>{$lang.copy}</a>
                                             	<a href="javascript:confirm_redirect('{$lang.remove_confirm_user}', 'merchants_users_list.php?act=remove&id={$users.user_id}')" title="{$lang.remove}" class="btn_trash"><i class="icon icon-trash"></i>{$lang.drop}</a>	
                                             </p>

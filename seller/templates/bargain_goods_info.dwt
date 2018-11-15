@@ -45,8 +45,8 @@
                             </div>
                         </div>
                         <div class="search-key">
-                            <input type="text" name="keyword" size="20" class="text text_2 mr10" placeholder="{$lang.keywords}" />
-                            <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" onclick="searchGoods()">{$lang.button_search}</a>
+                            <input type="text" name="keyword" size="20" class="text text_2 mr10" placeholder="关键字" />
+                            <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" onclick="searchGoods()">搜索</a>
                             <input type="hidden" name="ru_id" value="{$ru_id}" />
                             <input type="hidden" name="cat_id" id="category">
                         </div>
@@ -54,12 +54,12 @@
                     <div class="ecsc-form-goods">
                         <div class="wrapper-list border1">
                             <dl>
-                                <dt>{$lang.require_field}&nbsp;{$lang.label_bargain_goods}</dt>
+                                <dt>{$lang.require_field}&nbsp;砍价商品：</dt>
                                 <dd>
                                     <div id="goods_id" class="imitate_select select_w320 mr0">
-                                        <div class="cite">{if $goods.goods_id}{$goods.goods_name}{else}{$lang.please_select}{/if}</div>
+                                        <div class="cite">{if $goods.goods_id}{$goods.goods_name}{else}请选择{/if}</div>
                                         <ul>
-                                            <li class="li_not">{$lang.please_search_goods}</li>
+                                            <li class="li_not">请先搜索商品</li>
                                         </ul>
                                         <input name="goods_id" type="hidden" value="{if $goods.goods_id}{$goods.goods_id}{/if}" id="goods_id_val">
                                     </div>
@@ -74,7 +74,7 @@
                         </dl> -->
 
                          <dl>
-                              <dt>{$lang.require_field}&nbsp;{$lang.label_start_time}</dt>
+                              <dt>{$lang.require_field}&nbsp;开始时间：</dt>
                               <dd>
                                   <div class="text_time">
                                       <input id="start_time" name="data[start_time]" type="text" class="text" readonly value="{$goods.start_time}" />
@@ -82,7 +82,7 @@
                               </dd>
                           </dl>
                           <dl>
-                              <dt>{$lang.require_field}&nbsp;{$lang.label_end_time}</dt>
+                              <dt>{$lang.require_field}&nbsp;结束时间：</dt>
                               <dd>
                                   <div class="text_time">
                                       <input id="end_time" name="data[end_time]" type="text" class="text" readonly value="{$goods.end_time}" />
@@ -91,45 +91,45 @@
                           </dl>
 
                         <dl class="goods_price">
-                          <dt>{$lang.require_field}&nbsp;{$lang.label_act_price}</dt>
+                          <dt>{$lang.require_field}&nbsp;活动原价：</dt>
                             <dd>
                             <input name="data[goods_price]" type="text" id="goods_price" value="{$goods.goods_price}" class="text">
                             <div class="notic"></div>
                             </dd>
                         </dl>
                         <dl class="target_price">
-                          <dt>{$lang.require_field}&nbsp;{$lang.label_bargain_target_price}</dt>
+                          <dt>{$lang.require_field}&nbsp;砍价目标价格：</dt>
                             <dd>
                             <input name="data[target_price]" type="text" id="deposit" value="{$goods.target_price}" class="text">
-                            <div class="notic">{$lang.bargain_goods_bottom_price}</div>
+                            <div class="notic">砍价活动商品底价</div>
                             </dd>
                         </dl>
 
                         <dl class="notBg">
-                                <dt>{$lang.label_price_area}</dt>
+                                <dt>价格区间：</dt>
                                 <dd>
                                     <div id="tbody-volume">
                                         <table class="table_div table_heng">
                                             <tr class="first_tr">
-                                                <td class="first_td w70">{$lang.min_value}</td>
+                                                <td class="first_td w70">最小值</td>
 
                                                 <td><input type="text" name="data[min_price]" value="{$goods.min_price}" class="text w50" autocomplete="off" /></td>
 
                                             </tr>
                                             <tr>
-                                               <td class="first_td">{$lang.max_value}</td>
+                                               <td class="first_td">最大值</td>
                                                 <td><input type="text" name="data[max_price]" value="{$goods.max_price}" class="text w50" autocomplete="off" /></td>
 
                                             </tr>
                                         </table>
                                     </div>
-                                    <div class="notic">{$lang.set_bargain_area}</div>
+                                    <div class="notic">设置活动每次砍价价格区间，如 1 - 10</div>
                                 </dd>
                             </dl>
                             <div class="step_item pb0" id="tbody-goodsAttr"></div>
                             <div class="step_item_table" id="attribute_table"></div>
                             <dl>
-                                <dt>{$lang.label_hot_sale_act}</dt>
+                                <dt>热销活动:</dt>
                                 <dd>
                                     <div class="switch switch_2 {if $goods.is_hot}active{/if}" title="否">
                                         <div class="circle"></div>
@@ -138,7 +138,7 @@
                                 </dd>
                             </dl>
 							<dl>
-							  <dt>{$lang.label_bargain_intro}</dt>
+							  <dt>砍价介绍：</dt>
 								<dd>
 							   <textarea name="data[bargain_desc]" cols="40" rows="3" class="textarea">{$goods.bargain_desc}</textarea>
 
@@ -213,13 +213,13 @@ $(function(){
     },
     messages:{
       goods_id:{
-        required : '<i class="icon icon-exclamation-sign"></i>'+jl_no_select_bargain_goods
+        required : '<i class="icon icon-exclamation-sign"></i>您没有选砍价商品！'
       },
       restrict_amount:{
-        digits : '<i class="icon icon-exclamation-sign"></i>'+jl_you_no,
+        digits : '<i class="icon icon-exclamation-sign"></i>您没有',
       },
       gift_integral:{
-        digits : '<i class="icon icon-exclamation-sign"></i>'+jl_you_no
+        digits : '<i class="icon icon-exclamation-sign"></i>您没有'
       }
     }
   });
@@ -314,20 +314,8 @@ function bargain_set_attribute_table(goodsId)
     */
 
     var dataVal = $(this).val();
-	dataVal = dataVal.replace(/\+/g, "%2B");
-	dataVal = dataVal.replace(/\&/g, "%26");
-	dataVal = dataVal.replace(/\#/g, "%23");
-	dataVal = dataVal.replace(/\//g, "%2F");
-	dataVal = dataVal.replace(/\@/g, "%40");
-	dataVal = dataVal.replace(/\$/g, "%24");
-	dataVal = dataVal.replace(/\*/g, "%2A");
-	dataVal = dataVal.replace(/\(/g, "%28");
-	dataVal = dataVal.replace(/\)/g, "%29");
-	dataVal = dataVal.replace(/\（/g, "%EF%BC%88");
-	dataVal = dataVal.replace(/\）/g, "%EF%BC%89");
-	dataVal = dataVal.replace(/\：/g, "%EF%BC%9A");
-	dataVal = dataVal.replace(/\:/g, "%3A");
-	  
+    dataVal = dataVal.replace(/\+/g, "%2B");
+      dataVal = dataVal.replace(/\&/g, "%26");
 
     attr_value_arr.push(dataVal);
   });

@@ -56,20 +56,12 @@ $_LANG['fracture'] = "折";
 $_LANG['residue_time'] = "剩余时间：";
 $_LANG['gong'] = "共";
 $_LANG['di_no'] = "第";
-$_LANG['description'] = '商品详情';
-$_LANG['tomorrow'] = "明日";
-$_LANG['distance_start'] = "距开始";
-$_LANG['distance_end'] = "距结束";
-$_LANG['begin_minute'] = "即将开始";
-$_LANG['have_in_hand'] = "进行中";
 
 $_LANG['shipping'] = "快递";
 $_LANG['is_shipping_area'] = "[ 暂不支持配送 ]";
-$_LANG['remind_goods_existed'] = "已设置提醒";
+$_LANG['remind_goods_existed'] = "已设置提醒 ";
 $_LANG['remind_goods_success'] = "设置提醒成功！";
 $_LANG['cancel_remind_success'] = "取消提醒成功！";
-$_LANG['remind_me'] = "提醒我";
-$_LANG['cancel_remind_me'] = "取消提醒";
 
 $_LANG['login_please'] = "请先登录";
 

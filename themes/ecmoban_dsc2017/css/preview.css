@@ -178,7 +178,7 @@
 .store_default_temp1 .st-section .st_goods_row3 li .p-img{ width:354px; height:354px;}
 .store_default_temp1 .st-section .st_goods_row3 li .p-name{ font-size:20px; height:30px; line-height:30px; text-align:center; margin-top:15px;}
 .store_default_temp1 .st-section .st_goods_row3 li .p-name a{ display:block; width:100%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; color:#333;}
-.store_default_temp1 .st-section .st_goods_row3 li .p-name a:hover{ color:#1abb8c;}
+.store_default_temp1 .st-section .st_goods_row3 li .p-name a:hover{ color:#f42424;}
 .store_default_temp1 .st-section .st_goods_row3 li .p-price{ font-size:24px; margin-top:5px;}
 .store_default_temp1 .st-section .st_goods_row3 li .p-price em{ font-size:18px;}
 
@@ -202,7 +202,7 @@
 .store_default_temp1 .floor .mc.w1200 .row3 li .img img{ width: 354px; height: 354px;}
 .store_default_temp1 .floor .mc.w1200 .row3 li .info .name{ font-size: 20px; height: 30px; line-height: 30px; text-align: center; margin-top: 15px;}
 .store_default_temp1 .floor .mc.w1200 .row3 li .info .name a{ display: block;width: 100%;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;color: #333;}
-.store_default_temp1 .floor .mc.w1200 .row3 li .info .name a:hover{ color:#1abb8c;}
+.store_default_temp1 .floor .mc.w1200 .row3 li .info .name a:hover{ color:#f42424;}
 .store_default_temp1 .floor .mc.w1200 .row3 li .info .price{ font-size: 24px; margin:5px 0 0 0; float:none; height:auto; line-height:normal;}
 .store_default_temp1 .floor .mc.w1200 .row3 li .info .btn_hover{ display:none;}
 
@@ -234,7 +234,7 @@
 .store_default_temp2 .st-section .st_goods_row3 li .p-img{ width:220px; height:220px; margin:0 auto;}
 .store_default_temp2 .st-section .st_goods_row3 li .p-name{ font-size:18px; color:#333; margin-top:30px; height:54px; line-height:27px; overflow:hidden;}
 .store_default_temp2 .st-section .st_goods_row3 li .p-name a{ color:#333; display:block;}
-.store_default_temp2 .st-section .st_goods_row3 li .p-name a:hover{ color:#1abb8c;}
+.store_default_temp2 .st-section .st_goods_row3 li .p-name a:hover{ color:#f42424;}
 .store_default_temp2 .st-section .st_goods_row3 li .p-price{ font-size:26px; color:#ea1168; font-weight:bold; position:relative; margin-top:10px;}
 .store_default_temp2 .st-section .st_goods_row3 li .p-price .arrow{ width:0; height:0; border-width: 5px; border-style: solid; border-color:#ea1168 transparent transparent transparent; position:absolute; bottom:-12px; left:50%; margin:0 0 0 -5px;}
 .store_default_temp2 .st-section .st_goods_row3 li .p-btn{ margin-top:30px;}
@@ -269,7 +269,7 @@
 .store_default_temp2 .st-section .st_goods_row4 li .p-img{ width:220px; height:220px; margin:20px auto 0;}
 .store_default_temp2 .st-section .st_goods_row4 li .p-name{ font-size:14px; width:230px; margin:10px auto 0;}
 .store_default_temp2 .st-section .st_goods_row4 li .p-name a{ color:#333; display:block; line-height:25px; height:50px; overflow:hidden;}
-.store_default_temp2 .st-section .st_goods_row4 li .p-name a:hover{ color:#1abb8c;}
+.store_default_temp2 .st-section .st_goods_row4 li .p-name a:hover{ color:#f42424;}
 .store_default_temp2 .st-section .st_goods_row4 li .p-price{ font-size:26px; color:#ea1168; font-weight:bold; margin-top:5px;}
 
 /* 店铺可视化模板三 */
@@ -295,7 +295,7 @@
 .store_default_temp3 .st-section-two .p-list li .p-img{ width:220px; height:220px; margin:20px auto;}
 .store_default_temp3 .st-section-two .p-list li .p-name{ height:45px; line-height:45px; background-color:#f2f2f2;}
 .store_default_temp3 .st-section-two .p-list li .p-name a{ display:block; width:258px; padding:0 10px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
-.store_default_temp3 .st-section-two .p-list li .p-name a:hover{ color:#1abb8c;}
+.store_default_temp3 .st-section-two .p-list li .p-name a:hover{ color:#f42424;}
 .store_default_temp3 .st-section-two .p-list li .p-lie{ overflow:hidden; padding:0 15px; margin:15px 0;}
 .store_default_temp3 .st-section-two .p-list li .p-price{ font-size:24px; color:#ea1a41; float:left; font-weight:bold; line-height:44px; width:135px; margin:0; overflow:hidden;text-overflow:ellipsis; white-space:nowrap;}
 .store_default_temp3 .st-section-two .p-list li .p-btn{ float:right;}
@@ -357,7 +357,7 @@
 .store_default_temp4 .st-section-three .st_item_right .stir_goods_item .p-img{ width:160px; height:160px; margin:0 auto;}
 .store_default_temp4 .st-section-three .st_item_right .stir_goods_item .p-name{ width:168px; height:20px; margin:11px auto 0;}
 .store_default_temp4 .st-section-three .st_item_right .stir_goods_item .p-name a{ font-size:12px; color:#333; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
-.store_default_temp4 .st-section-three .st_item_right .stir_goods_item .p-name a:hover{ color:#1abb8c;}
+.store_default_temp4 .st-section-three .st_item_right .stir_goods_item .p-name a:hover{ color:#F42424;}
 .store_default_temp4 .st-section-three .st_item_right .stir_goods_item .p-price{ color:#ff8745; font-size:16px; height:24px;}
 
 .store_default_temp4 .st-section-four .st_goods_row4{ width:1225px;}
@@ -431,9 +431,9 @@
 .topic_template_1 .tt-section .st_goods_row3 li .p-img{ width:234px; height:234px;}
 .topic_template_1 .tt-section .st_goods_row3 li .p-name{ padding-top:10px;}
 .topic_template_1 .tt-section .st_goods_row3 li .p-name a{ font-size:16px; color:#333; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
-.topic_template_1 .tt-section .st_goods_row3 li .p-name a:hover{ color:#1abb8c;}
+.topic_template_1 .tt-section .st_goods_row3 li .p-name a:hover{ color:#f42424;}
 .topic_template_1 .tt-section .st_goods_row3 li .p-lie{ overflow:hidden; margin-top:5px;}
-.topic_template_1 .tt-section .st_goods_row3 li .p-price{ float:left; font-size:24px; color:#1abb8c;}
+.topic_template_1 .tt-section .st_goods_row3 li .p-price{ float:left; font-size:24px; color:#f42424;}
 .topic_template_1 .tt-section .st_goods_row3 li s{ line-height:36px; color:#b2b2b2; font-size:14px; margin-left:10px;}
 .topic_template_1 .tt-section .st_goods_row3 li .p-btn{ margin:10px 0;}
 .topic_template_1 .tt-section .st_goods_row3 li .p-btn a{ display:block; width:234px; height:58px; color:#fff; font-size:24px; background-color:#ff0066; text-align:center; line-height:58px; border-radius:4px; box-shadow:0px 1px 3px 1px #ccc;}
@@ -502,7 +502,7 @@
 
 .topic_template_2 .tt-section-five .st_goods_row5 li .p-btn a{ border-radius:3px; background-color:#fe483e; color:#fff; font-weight:normal;}
 .topic_template_2 .tt-section-five .st_goods_row5 li .p-btn a em{ width:32px; height:32px; line-height:32px; border-radius:50%; background-color:#fff; display:inline-block; text-align:center; margin-left:10px;}
-.topic_template_2 .tt-section-five .st_goods_row5 li .p-btn a em .iconfont{ color:#1abb8c; margin-right:0;}
+.topic_template_2 .tt-section-five .st_goods_row5 li .p-btn a em .iconfont{ color:#f42424; margin-right:0;}
 
 /* 专题可视化模板三 */
 .topic_template_3 .title{ width:988px; height:99px; background:url(../images/title_bg_topic3.png) no-repeat; margin:30px auto; text-align:center; overflow:hidden;color:#000;}
@@ -541,9 +541,9 @@
 /* 默认店铺模板 设置色调 start*/
 /* two */
 [data-color = defaultTemp-color-type-2] .floor .mt h2,
-[data-color = defaultTemp-color-type-2] .floor .mc li .info .price{ color:#1abb8c;}
-[data-color = defaultTemp-color-type-2] .floor .mc .row3 li:hover{ background-color:#1abb8c; border:1px solid #1abb8c;}
-[data-color = defaultTemp-color-type-2] .floor .mt h2{ color:#1abb8c; border-bottom-color:#1abb8c;}
+[data-color = defaultTemp-color-type-2] .floor .mc li .info .price{ color:#f42424;}
+[data-color = defaultTemp-color-type-2] .floor .mc .row3 li:hover{ background-color:#f42424; border:1px solid #f42424;}
+[data-color = defaultTemp-color-type-2] .floor .mt h2{ color:#f42424; border-bottom-color:#f42424;}
 [data-color = defaultTemp-color-type-2] .floor .mc .row3 li .info .btn_hover,
 [data-color = defaultTemp-color-type-2] .floor .mc .row4 li .info .btn_hover,
 [data-color = defaultTemp-color-type-2] .floor .mc .row5 li .info .name,
@@ -551,8 +551,8 @@
 [data-color = defaultTemp-color-type-2] .floor .mc .row5 li .info .price,
 [data-color = defaultTemp-color-type-2] .adv_module .hd li,
 [data-color = defaultTemp-color-type-2] .floor .mt p,
-[data-color = defaultTemp-color-type-2] .shop_banner .hd ul li.on{ background-color:#1abb8c;}
-[data-color = defaultTemp-color-type-2] .floor .mc .row5 li:hover{ border-color:#1abb8c;}
+[data-color = defaultTemp-color-type-2] .shop_banner .hd ul li.on{ background-color:#f42424;}
+[data-color = defaultTemp-color-type-2] .floor .mc .row5 li:hover{ border-color:#f42424;}
 
 /* three */
 [data-color = defaultTemp-color-type-3] .floor .mt h2,

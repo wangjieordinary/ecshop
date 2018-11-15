@@ -10,7 +10,7 @@
 	</thead>
 	<tbody>
     {if $category_info}
-        {foreach from=$category_info item=category key=k}
+    {foreach from=$category_info item=category key=k}
         <tr>
             <td align="center">
                 <p>
@@ -32,9 +32,9 @@
             </td>
             <td align="center"><a class="btn_trash" href="javascript:void(0);" onClick="deleteChildCate({$category.ct_id})"><i class="icon icon-trash"></i>{$lang.drop}</a></td>
         </tr>
-        {foreachelse}
+	{foreachelse}
 		<tr><td colspan='4'>{$lang.not_categroy_notic}</td></tr>
-	    {/foreach}
+	{/foreach}
 	{/if}
 	</tbody>
 </table>

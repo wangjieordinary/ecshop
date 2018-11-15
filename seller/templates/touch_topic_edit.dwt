@@ -66,7 +66,7 @@
                                 	<dt>{$lang.lable_topic_type}：</dt>
                                     <dd>
                                         <div id="topic_type" name="topic_type" class="imitate_select select_w320">
-                                            <div class="cite">{$lang.please_select}</div>
+                                            <div class="cite">请选择</div>
                                             <ul>
                                                 <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.top_img}</a></li>
                                             </ul>
@@ -77,12 +77,12 @@
                                 <input name="topic_type" type="hidden" value="0" id="topic_type_val">
                                 <div id="content_01">
                                 <dl>
-                                	<dt>{$lang.require_field}&nbsp;{$lang.lable_upload}banner {$lang.imgage}：</dt>
+                                	<dt>{$lang.require_field}&nbsp;{$lang.lable_upload}banner图片：</dt>
                                     <dd>
                                         <div class="type-file-box">
                                             <div class="input">
                                                 <input type="text" name="textfile" class="type-file-text" id="textfield" value="{if $topic.topic_img}{$topic.topic_img|escape}{/if}" autocomplete="off" readonly />
-                                                <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}"/>
+                                                <input type="button" name="button" id="button" class="type-file-button" value="上传..."/>
                                                 <input type="file" class="type-file-file" id="topic_img" name="topic_img" data-state="imgfile" size="30" hidefocus="true" value="" />
                                             </div>
                                             {if $topic.topic_img}
@@ -112,7 +112,7 @@
                                         <div class="type-file-box">
                                             <div class="input">
                                                 <input type="text" name="textfile" class="type-file-text" id="textfield" value="{if $topic.title_pic}{$topic.title_pic|escape}{/if}" autocomplete="off" readonly />
-                                                <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}"/>
+                                                <input type="button" name="button" id="button" class="type-file-button" value="上传..."/>
                                                 <input type="file" class="type-file-file" id="title_pic" name="title_pic" data-state="imgfile" size="30" hidefocus="true" value="" />
                                             </div>
                                             {if $topic.title_pic}
@@ -158,27 +158,27 @@
                               <div class="goods_search_div">
                                   <div class="fl lh">{$lang.topic_class}：</div>
                                   <div id="topic_list" class="imitate_select select_w320">
-                                      <div class="cite">{$lang.please_select}</div>
+                                      <div class="cite">请选择</div>
                                       <ul>
                                           {foreach from=$topic.topic_data item=data name=data key=key}
                                           <li><a href="javascript:;" data-value="{$smarty.foreach.data.index}">{$key}</a></li>
                                           {foreachelse}
-                                          <li class="li_not">{$lang.add_topic_cat}</li>
+                                          <li class="li_not">请先添加专题分类</li>
                                           {/foreach}
                                       </ul>
                                       <input name="topic_list" type="hidden" value="0" id="topic_list_val">
                                   </div>														
                                   <input type="hidden" name="ru_id" value="{$ru_id}" />
                                   <input type="text" name="new_cat_name" id="new_cat_name" class="text w150 mr10" data-filter="new_cat_name" autocomplete="off" />
-                                  <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn mr10" onclick="addClass()">{$lang.add}</a>
-                                  <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" onclick="delectClass()" >{$lang.remove}</a>
+                                  <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn mr10" onclick="addClass()">添加</a>
+                                  <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" onclick="delectClass()" >移除</a>
                               </div>
                               <div class="goods_search_div mt10">
                                   <div class="fl lh">{$lang.screen_goods}：</div>
                                   <div class="search_select">
                                       <div class="categorySelect">
                                           <div class="selection">
-                                              <input type="text" name="category_name" id="category_name" class="text w250 valid" value="{$lang.select_cat}" autocomplete="off" readonly data-filter="cat_name" />
+                                              <input type="text" name="category_name" id="category_name" class="text w250 valid" value="请选择分类" autocomplete="off" readonly data-filter="cat_name" />
                                               <input type="hidden" name="category_id" id="category_id" value="0" data-filter="cat_id" />
                                           </div>
                                           <div class="select-container" style="display:none;">
@@ -189,7 +189,7 @@
                                   <div class="search_select">
                                       <div class="brandSelect">
                                           <div class="selection">
-                                              <input type="text" name="brand_name" id="brand_name" class="text w120 valid" value="{$lang.select_barnd}" autocomplete="off" readonly data-filter="brand_name" />
+                                              <input type="text" name="brand_name" id="brand_name" class="text w120 valid" value="请选择品牌" autocomplete="off" readonly data-filter="brand_name" />
                                               <input type="hidden" name="brand_id" id="brand_id" value="0" data-filter="brand_id" />
                                           </div>
                                           <div class="brand-select-container" style="display:none;">
@@ -198,8 +198,8 @@
                                       </div>                            
                                   </div>
                                   <input type="hidden" name="ru_id" value="{$ru_id}" />
-                                  <input type="text" name="keyword" class="text w150 mr10" placeholder="{$lang.input_keywords}" data-filter="keyword" autocomplete="off" />
-                                  <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" onclick="searchGoods()" >{$lang.search_word}</a>
+                                  <input type="text" name="keyword" class="text w150 mr10" placeholder="请输入关键字" data-filter="keyword" autocomplete="off" />
+                                  <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" onclick="searchGoods()" >搜索</a>
                               </div>
                               <!-- 商品列表 -->
                               <div class="move_div">
@@ -212,8 +212,8 @@
                                           </div>
                                       </div>
                                       <div class="move_handle">
-                                          <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">{$lang.check_all}</a>
-                                          <a href="javascript:void(0);" class="sc-btn btn25 sc-blueBg-btn" onclick="addGoods()">{$lang.button_submit_alt}</a>
+                                          <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">全选</a>
+                                          <a href="javascript:void(0);" class="sc-btn btn25 sc-blueBg-btn" onclick="addGoods()">确定</a>
                                       </div>
                                       <input name="source_select" type="hidden" value="0" id="source_select_val">
                                   </div>
@@ -237,8 +237,8 @@
                                           </div>
                                       </div>
                                       <div class="move_handle">
-                                          <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">{$lang.check_all}</a>
-                                          <a href="javascript:void(0);" class="sc-btn btn25 sc-blueBg-btn" onclick="delGoods()">{$lang.remove}</a>
+                                          <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">全选</a>
+                                          <a href="javascript:void(0);" class="sc-btn btn25 sc-blueBg-btn" onclick="delGoods()">移除</a>
                                       </div>
                                       <input name="target_select" type="hidden" value="0" id="target_select_val">
                                   </div>
@@ -322,7 +322,7 @@ $(function(){
 					required : '<i class="icon icon-exclamation-sign"></i>'+topic_name_empty
 				},
 				textfile_topic_img : {
-					required : '<i class="icon icon-exclamation-sign"></i>'+jl_upload_banner_img
+					required : '<i class="icon icon-exclamation-sign"></i>请上传banner图'
 				},
 				start_time : {
 					required : ''
@@ -350,7 +350,7 @@ $(function(){
 	function searchGoods(){
 		var classList = $("#topic_list");
 		var text = classList.find(".cite").html();
-		if(text != jl_please_select){
+		if(text != "请选择"){
 			var elements  = document.forms['theForm'].elements;
 			var filters   = new Object;
 			filters.cat_id = elements['category_id'].value;
@@ -359,7 +359,7 @@ $(function(){
 			
 			Ajax.call('touch_topic.php?is_ajax=1&act=get_goods_list', filters, searchGoodsResponse, 'GET', 'JSON');
 		}else{
-			alert(select_cat_add);
+			alert("请先选择分类，如果没有分类先添加分类");
 			return;
 		}
 	}
@@ -411,14 +411,14 @@ $(function(){
 	{
 		var classList = $("#topic_list");
 		var text = classList.find(".cite").html();
-		if(text == jl_please_select){
-			alert(select_remove_cat);
+		if(text == "请选择"){
+			alert("请选择删除分类");
 			return;
 		}else{
 			classList.find("li [data-value='"+text+"']").parent("li").remove();
-			classList.find(".cite").html(jl_please_select);
+			classList.find(".cite").html("请选择");
 			if(classList.find("li").length<1){
-				 $("#topic_list").find("ul").append("<li class='li_not'>"+jl_add_topic_cat+"</li>");
+				 $("#topic_list").find("ul").append("<li class='li_not'>请先添加专题分类</li>");
 			}
 		}
 	}

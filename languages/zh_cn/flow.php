@@ -100,16 +100,6 @@ $_LANG['cart_null_goods'] = "购物车内暂时没有商品，登录后将显示
 $_LANG['go_shoping'] = "去购物";
 $_LANG['Recommendation'] = "装柜推荐";
 $_LANG['history'] = "最近浏览";
-$_LANG['view_order'] = "查看订单";
-$_LANG['look_around'] = "再逛逛";
-
-
-$_LANG['flow_package_buy_insufficient'] = "该 %s 礼包库存不足，无法再购买";
-$_LANG['goods_lower_frame_notic'] = "该 %s 商品已下架或商品不存在";
-
-$_LANG['pay_code_notic_one'] = "您选择的是货到付款，请联系客服";
-$_LANG['pay_code_notic_two'] = "您选择的是线下转账请转账后联系客服";
-$_LANG['pay_code_notic_three'] = "您选择在线支付，请查看订单继续完成支付订单";
 
 /*新版前台新增*/
 $_LANG['buy_more'] = '最多领取';  
@@ -134,25 +124,21 @@ $_LANG['Cancel_check'] = "取消勾选";
 $_LANG['full'] = "满";
 $_LANG['overdue_time'] = "有效期至";
 $_LANG['checkout_success'] = "下单成功";
-$_LANG['fillin_order_info'] = '填写订单信息';
 $_LANG['submit_order_success'] = "成功提交订单";
 $_LANG['checkout_success_one'] = "感谢您在本店购物！您的订单已提交成功!";
 $_LANG['order_amount'] = '应付金额';
-$_LANG['amount_paid'] = '已付金额';
 $_LANG['Select_payment'] = '您选定的支付方式为';
 $_LANG['checkout_success_two'] = "由于您的商品由不同的商家发出，此订单将分为";
 $_LANG['checkout_success_three'] = "个不同的子订单配送";
 $_LANG['checkout_success_Four'] = "元 | 下次还款日期";
+$_LANG['Available_Credit'] = "可用额度";
+$_LANG['qi'] = '期';
+$_LANG['bank_cord'] = '银行卡';
+$_LANG['immediately_pay'] = '立即支付';
 $_LANG['checkout_success_Five'] = "恭喜您，订单提交成功";
 $_LANG['checkout_success_six'] = "亲爱的用户由于是不同商家，此订单将分为";
 $_LANG['checkout_success_Seven'] = "感谢您在本店购物！您的订单已提交，请记住您的订单号";
-$_LANG['checkout_success_notic'] = "订单提交成功，去付款咯！";
-$_LANG['checkout_success_end'] = "订单提交成功！";
-$_LANG['Available_Credit'] = "可用额度";
-$_LANG['qi'] = '期';
-$_LANG['next_repayment_day'] = '下次还款日';
-$_LANG['bank_cord'] = '银行卡';
-$_LANG['immediately_pay'] = '立即支付';
+$_LANG['checkout_success_Eight'] = "感谢您在本店购物！您的订单已提交，请记住您的订单号";
 $_LANG['order_number'] = "订单编号";
 $_LANG['Total_amount_payable'] = "应付总金额";
 $_LANG['freight'] = "运费";
@@ -161,20 +147,6 @@ $_LANG['Buy_and_buy'] = "买了又买";
 $_LANG['store_name'] = "门店名称";
 $_LANG['payment_Success'] = "恭喜您，付款成功";
 $_LANG['label_order'] = '我的订单';
-$_LANG['contain_goods'] = '包含商品';
-$_LANG['parts'] = '配件';
-$_LANG['private_store'] = '门店自提';
-$_LANG['flow_store_notic'] = '该商品支持<span class="ftx-02"> 门店自提 </span>服务';
-$_LANG['store_order_notic'] = '该订单中包含支持“门店自提”服务的商品，如需到店自提，请选择提交';
-$_LANG['private_store_order'] = '门店自提订单';
-$_LANG['shopping_cart_notice'] = '购物车快饿瘪了，主人快给我挑点宝贝吧';
-$_LANG['go_around'] = '马上去逛逛';
-$_LANG['login_cart'] = '去登录';
-$_LANG['sold'] = '已售';
-$_LANG['cope_with'] = '应付';
-$_LANG['total'] = '总额';
-$_LANG['flow_consignee'] = '管理收货人地址';
-$_LANG['ftit_delr'] = '继续剁手';
 
 $_LANG['Can_receive_gifts'] = "元，即可领取赠品";
 $_LANG['Can_also_receive'] = "还可领取";
@@ -191,6 +163,7 @@ $_LANG['please_checked_address'] = "您还没有选择收货地址！";
 $_LANG['cart_empty_goods'] = "您的购物车中没有商品！";
 $_LANG['confirm_Move_collection'] = "移动后选中商品将不在购物车中显示！";
 
+//20161214 start
 $_LANG['Delivery_list'] = "送货清单";
 $_LANG['back_cart'] = "返回购物车";
 $_LANG['business'] = "商家";
@@ -210,7 +183,6 @@ $_LANG['store_pic'] = "门店图片";
 $_LANG['stores_opening_hours'] = "营业时间";
 $_LANG['stores_traffic_line'] = "交通路线";
 $_LANG['Please_store'] = "请选择门店..";
-$_LANG['select_store'] = "请选择门店";
 $_LANG['freight_flow'] = "运&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;费";
 $_LANG['Free_shipping'] = "免运费";
 $_LANG['Place_reference'] = "自提地点";
@@ -251,12 +223,11 @@ $_LANG['reminder_three'] = "2、根据您的收货地址显示其范围内的自
 $_LANG['reminder_four'] = "温馨提示：我们会努力按照您指定的时间配送，但因天气、交通等各类因素影响，您的订单有可能会有延误现象！ ";
 $_LANG['Time_slot'] = "时间段";
 $_LANG['Optional'] = "可选";
-$_LANG['wu'] = "无";
-$_LANG['available'] = "有可用";
-$_LANG['add_stored_value_card'] = "去添加储值卡";
-$_LANG['Invoice_information_notice'] = "开企业抬头发票须填写纳税人识别号，以免影响报销";	
+$_LANG['wu'] = "无";	
 
 $_LANG['js_languages']['Parameter_error'] = "参数错误";
+//20161214 end
+
 $_LANG['js_languages']['Purchase_restrictions'] = "购买数量不能少于1件";
 $_LANG['js_languages']['Purchase_restrictions_one'] = "请选择最少一个商品购买";
 $_LANG['js_languages']['remove_checked_goods'] = "删除选中的商品";
@@ -285,4 +256,4 @@ $_LANG['street_null'] = "所在街道不能为空！";
 
 $_LANG['package_null'] = "商品【%s】暂时缺货，请联系客服！";
 
-?>
+

@@ -1,4 +1,5 @@
 <?php
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $_LANG['yeepay']     = 'YeePay易宝';
 $_LANG['yeepay_ccb']     = '易宝建行支付';

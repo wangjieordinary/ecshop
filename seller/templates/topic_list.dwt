@@ -44,14 +44,14 @@
                                 <th width="8%">
                                 	<div class="first_all">
                                         <input onclick='listTable.selectAll(this, "checkboxes[]")' id="all" type="checkbox" class="ui-checkbox"/>
-                                        <label for="all" class="ui-label">{$lang.record_id}</label>
+                                        <label for="all" class="ui-label">编号</label>
                                     </div>
                                 </th>
-                                <th width="22%" class="tl">{$lang.topic_title}</th>
-                                <th width="15%">{$lang.start_time}</th>
-                                <th width="15%">{$lang.end_time}</th>
+                                <th width="22%" class="tl">专题名称</th>
+                                <th width="15%">开始时间</th>
+                                <th width="15%">结束时间</th>
                                 <th width="10%">{$lang.adopt_status}</th>
-                                <th width="20%">{$lang.handler}</th>
+                                <th width="20%">操作</th>
                             </tr>
                         </thead>
                         <tbody>

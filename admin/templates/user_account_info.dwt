@@ -114,7 +114,7 @@
                                                 <input type="radio" name="is_paid" value="2" id="is_paid_2" class="ui-radio" {if $user_surplus.is_paid eq 2} checked="true" {/if} {if $user_surplus.process_type eq 2 || $user_surplus.process_type eq 3 ||$action eq "edit"} disabled="true"{/if}/>
                                                 <label for="is_paid_2" class="ui-radio-label">
                                                 	{if $user_surplus.process_type eq 1}
-                                                    	{$lang.dismiss}
+                                                    	{$lang.cancel}
                                                     {else}
                                                     	{$lang.confirm_nopay}
                                                     {/if}

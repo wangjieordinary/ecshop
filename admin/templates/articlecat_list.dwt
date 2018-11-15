@@ -61,12 +61,12 @@
                                     </td>
 									<td><div class="tDiv">{$cat.cat_id}</div></td>
                                     <td><div class="tDiv"><a href="article.php?act=list&amp;cat_id={$cat.cat_id}" class="ftx-05"><strong>{$cat.cat_name|escape}</strong></a></div></td>
-                                    <td><div class="tDiv">{$cat.type_name|escape}{$cat.cat_type}</div></td>
+                                    <td><div class="tDiv">{$cat.type_name|escape}</div></td>
                                     <td><div class="tDiv">{$cat.cat_desc|escape}</div></td>
                                     <td><div class="tDiv"><input name="sort_order" class="text w40" value="{$cat.sort_order}" onkeyup="listTable.editInput(this, 'edit_sort_order',{$cat.cat_id} )" type="text"></div></td>
                                     <td>
                                     	<div class="tDiv">
-                                            <div class="switch {if $cat.show_in_nav eq 1}active{/if}" title="{if $cat.show_in_nav eq 1}{$yes}{else}{$lang.no}{/if}" onclick="listTable.switchBt(this, 'toggle_show_in_nav', {$cat.cat_id})">
+                                            <div class="switch {if $cat.show_in_nav eq 1}active{/if}" title="{if $cat.show_in_nav eq 1}是{else}否{/if}" onclick="listTable.switchBt(this, 'toggle_show_in_nav', {$cat.cat_id})">
                                             	<div class="circle"></div>
                                             </div>
                                             <input type="hidden" value="0" name="">

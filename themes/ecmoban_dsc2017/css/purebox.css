@@ -131,7 +131,7 @@
 /*自提点、自提日期 end*/
 
 /*ecmoban模板堂 --zhuo start*/
-.pb-ft a.color_df3134{ background-color:#1abb8c;}
+.pb-ft a.color_df3134{ background-color:#f42424;}
 /*ecmoban模板堂 --zhuo end*/
 
 /*用户中心删除弹出框*/
@@ -314,7 +314,7 @@
 .invoice-thickbox .form .item .label{ float:left; color:#333; margin-right:5px;height:30px; line-height:30px; padding:0;}
 .invoice-thickbox .invoice-list{ float:left;}
 .invoice-thickbox .invoice-list .invoice-item{ height: 30px;line-height: 30px;position: relative;margin-bottom: 10px; padding-left:5px; width: 330px;text-align: left;  border: 1px solid #ebebeb; cursor:pointer;}
-.invoice-thickbox .invoice-list .invoice-item.selected{ border:2px solid #1abb8c;}
+.invoice-thickbox .invoice-list .invoice-item.selected{ border:2px solid #f42424;}
 .invoice-thickbox .invoice-list .invoice-item.selected b{ display: block;position: absolute;right: 0;bottom: 0;width: 12px;height: 12px;overflow: hidden;background: url(../images/common/selected-icon.png) no-repeat;}
 .invoice-thickbox .invoice-list .invoice-item input.inv_payee{ height:20px;cursor:pointer; width: 250px; border-color:transparent; margin-top:3px; background-color:#fff;}
 .invoice-thickbox .invoice-list .invoice-item .btns { position: absolute;right: 10px;top: 0px;display: none; float:none; width:auto; padding:0; z-index:9999;}
@@ -325,7 +325,7 @@
 .inv_type{ position:absolute; top:0px; right:0px;}
 
 .radio-list li{ float:left; height:28px; line-height:28px; *line-height:30px; margin-right:20px; border:1px solid #dcdcdc; padding:1px 21px; cursor:pointer;}
-.radio-list li.item-selected {border:2px solid #1abb8c; padding:0px 20px; background:#FFF}
+.radio-list li.item-selected {border:2px solid #f42424; padding:0px 20px; background:#FFF}
 
 .invoice-thickbox .add-invoice{ height:30px; line-height:30px; margin-left:20px; float:left;}
 .invoice-thickbox .item{ float:left; margin-bottom:10px;}
@@ -346,7 +346,7 @@
 .invoice-dialog .invoice-status li.gap{ height: 0;width: 0;border-bottom: none;border-left: none;border-right: none;margin-top: 21px;cursor: default;}
 .invoice-dialog .invoice-status li.gap.curr{ border-top-color: #333;}
 .invoice-dialog .form .step .text{ border:1px solid #d2d2d2; width:280px; padding:0 5px; float:left;}
-.invoice-dialog .form .step .form_prompt{ float:left; color:#1abb8c; margin-left:10px; line-height:30px;}
+.invoice-dialog .form .step .form_prompt{ float:left; color:#f42424; margin-left:10px; line-height:30px;}
 
 .invoice-dialog .iis-state-warp{ margin: 60px 0 0 186px; position: relative;}
 .invoice-dialog .iis-state-warp .icon{ display: inline-block;position: absolute;background: url(../images/user/iis-icon.png) no-repeat;width: 50px;height: 50px;top: 0;left: -72px;}
@@ -454,7 +454,7 @@
 .wd-items .wd-item .wd-info .row4{ width:140px;}
 .wd-items .wd-item .wd-info .row5{ margin-right:0;}
 .wd-items .wd-item .wd-info .row5 a{ color:#2363f3;}
-.wd-items .wd-item .wd-info .row5 a:hover{ color:#1abb8c;}
+.wd-items .wd-item .wd-info .row5 a:hover{ color:#f42424;}
 
 .wd-items .wd-item .wd-info .row .label{ color:#8c8c8c;}
 
@@ -471,7 +471,7 @@
 .wd-desc .lie .item .value .textarea{ width:903px;}
 
 .wd-end{ float:right; overflow:hidden;}
-.wd-end .prompt-text{ float:left; line-height:30px; color:#1abb8c;}
+.wd-end .prompt-text{ float:left; line-height:30px; color:#f42424;}
 .wd-end .btn{ float:left; margin-left:10px; width:70px; height:28px; line-height:28px; text-align:center; margin-right:0;}
 /*批发 加入进货单 end*/
 

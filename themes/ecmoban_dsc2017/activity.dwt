@@ -19,10 +19,10 @@
         <div class="activity-index-main">
             <div class="w w1200">
                 <div class="activity-index-filter" ectype="actFilter">
-                    <a href="javascript:;" data-acttype="-1" class="curr">{$lang.all_activity}</a>
-                    <a href="javascript:;" data-acttype="0">{$lang.activity_gift}</a>
-                    <a href="javascript:;" data-acttype="1">{$lang.activity_reduction}</a>
-                    <a href="javascript:;" data-acttype="2">{$lang.activity_discount}</a>
+                    <a href="javascript:;" data-acttype="-1" class="curr">全部活动</a>
+                    <a href="javascript:;" data-acttype="0">享受赠品</a>
+                    <a href="javascript:;" data-acttype="1">现金减免</a>
+                    <a href="javascript:;" data-acttype="2">享受折扣</a>
                 </div>
                 <ul class="activity-index-list clearfix" ectype="actList">
 					{foreach from=$activity_list item=list key=key}
@@ -36,8 +36,8 @@
                             </div>
 							<div class="title">{$activity.act_name}</div>
 							<div class="time">{$activity.start_time} ~ {$activity.end_time}</div>
-							<div class="discount">{$lang.consume}<span class="red">{$activity.min_amount}</span>{$activity.act_type}{if $activity.actType neq 0}<span class="red">{$activity.act_type_ext}</span>{/if}</div>
-							<a href="activity.php?act=view&act_id={$activity.act_id}" class="acti-btn">{$lang.special_field}<i class="iconfont icon-right"></i></a>
+							<div class="discount">消费满<span class="red">{$activity.min_amount}</span>{$activity.act_type}{if $activity.actType neq 0}<span class="red">{$activity.act_type_ext}</span>{/if}</div>
+							<a href="activity.php?act=view&act_id={$activity.act_id}" class="acti-btn">进入专场<i class="iconfont icon-right"></i></a>
 						</li>
 						{/foreach}
 					{/foreach}
@@ -47,7 +47,7 @@
                     <div class="no_info no_info_line">
                         <h3>{$lang.information_null}</h3>
                         <div class="no_btn">
-                            <a href="index.php" class="btn sc-redBg-btn">{$lang.back_home}</a>
+                            <a href="index.php" class="btn sc-redBg-btn">返回首页</a>
                         </div>
                     </div>
                 </div>

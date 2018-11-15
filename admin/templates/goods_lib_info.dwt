@@ -253,7 +253,7 @@
                                     </div>
                                     <div class="item">
                                         <div class="step_label">{$lang.goods_keywords}：</div>
-                                        <div class="step_value"><input type="text" name="keywords" class="text" autocomplete="off" value="{$goods.keywords|escape}"/><div class="notic">{$lang.goods_keywords_notic}</div></div>
+                                        <div class="step_value"><input type="text" name="keywords" class="text" autocomplete="off" value="{$goods.keywords|escape}"/><div class="notic">商品关键词请用空格分隔；有两个功能，一是可以作为站内关键词查询，在前台搜索框输入关键词后，能够搜索到该商品；二是作为搜索引擎收录使用</div></div>
                                     </div>
                                 </div>
                             </div>
@@ -296,7 +296,7 @@
                             </div>									
                             <div class="goods_footer">
                                 <div class="goods_btn goods_btn_fixed">
-                                    <a href="javascript:void(0);" class="btn btn35 btn_blue" data-step="1" data-type="step" ectype="stepSubmit">{$lang.step_btn_four}</a>
+                                    <a href="javascript:void(0);" class="btn btn35 btn_blue" data-step="1" data-type="step" ectype="stepSubmit">{$lang.step_btn_two}</a>
                                     <a href="javascript:void(0);" class="btn btn35 blue_btn" data-step="3" data-type="step" data-down="true" ectype="stepSubmit">{$lang.step_btn_five_alt}</a>
                                 	{if $goods.goods_id}<a href="javascript:void(0);" class="btn btn35 blue_btn" data-down="true" data-type="submit" ectype="stepSubmit"><i class="sc_icon goods_complete_icon"></i>{$lang.step_btn_last}</a>{/if}
                                 </div>

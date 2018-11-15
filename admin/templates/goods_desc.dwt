@@ -36,7 +36,7 @@
 									<div class="search_select">
 										<div class="brandSelect">
 											<div class="selection">
-												<input type="text" name="brand_name" id="brand_name" class="text w120 valid" value="{$lang.select_barnd}" autocomplete="off" readonly data-filter="brand_name" />
+												<input type="text" name="brand_name" id="brand_name" class="text w120 valid" {$lang.select_barnd} autocomplete="off" readonly data-filter="brand_name" />
 												<input type="hidden" name="brand_id" id="brand_id" value="0" data-filter="brand_id" />
 											</div>
 											<div class="brand-select-container" style="display:none;">

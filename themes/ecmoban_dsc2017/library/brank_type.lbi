@@ -2,7 +2,7 @@
 <!--申请品牌信息-->
 {if $brandView eq '' && $brandView neq 'add_brand' && $brandView neq 'brandView'}
 <div class="panel-body mt40">
-    <div class="panel-tit"><span><em class="red">*</em>{$lang.add_brand_info}</span></div>
+    <div class="panel-tit"><span><em class="red">*</em>添加品牌信息</span></div>
     <div class="cue">{$title.titles_annotation}</div>
     <div class="list">
     	<div class="item">
@@ -336,7 +336,7 @@ function searchBrand_submit(){
 				cBtn = true;
 				
 			if(res.err_no){
-				str = "{$lang.Apply_brand}"+res.brand_name+"(" + res.brand_letter + "){$lang.brand_in}";
+				str = "您申请的品牌"+res.brand_name+"(" + res.brand_letter + ")已存在";
 				state = 1;
 				cBtn = false;
 			}else{
@@ -346,12 +346,12 @@ function searchBrand_submit(){
 				if(enInput != ''){
 					enInput = "(" + enInput + ")";
 				}
-				str = "{$lang.Apply_brand}<em class='red'> "+ zhInput + enInput + "</em> {$lang.Apply_brand_two}";
+				str = "您申请的品牌<em class='red'> "+ zhInput + enInput + "</em> 不存在，请点击“提交品牌资质”";
 			}
 			
 			pbDialog(str,"",state,'','',50,cBtn,function(){
 				$("form[name='stepForm']").submit();
-			},"{$lang.submit_Qual_brand}","{$lang.search_again}");
+			},"提交品牌资质","重新搜索");
 			
 		}, 'POST', 'JSON');
 	}else{

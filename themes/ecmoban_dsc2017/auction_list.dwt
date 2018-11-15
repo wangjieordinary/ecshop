@@ -19,7 +19,7 @@
         <div class="act-banner">{* DSC 提醒您：动态载入activity_top_ad.lbi，显示首页分类小广告 *}{insert name='get_adv_child' ad_arr=$activity_top_banner}</div>
         <div class="auction-cate">
             <div class="w w1200">
-                <a href="auction.php?cat_top_id=0" {if $cat_top_id eq 0}class="curr"{/if}>{$lang.all_auction}</a>
+                <a href="auction.php?cat_top_id=0" {if $cat_top_id eq 0}class="curr"{/if}>全部拍品</a>
                 {foreach from=$cat_top_list item=cat}
                 <a href="auction.php?cat_top_id={$cat.cat_id}" {if $cat_top_id eq $cat.cat_id}class="curr"{/if}>{$cat.cat_name}</a>
                 {/foreach}
@@ -28,11 +28,11 @@
         <div class="auction-main">
             <div class="w w1200">
                 <div class="mod-list-sort">
-                    <div class="sort-t">{$lang.sort}：</div>
+                    <div class="sort-t">排序：</div>
                     <div class="sort-l">
-                        <a href="auction.php?sort=act_id&order=<!-- {if $pager.search.sort == 'act_id' && $pager.search.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->" class="sort-item {if $pager.search.sort == 'act_id'}curr{/if}">{$lang.default}<i class="iconfont <!-- {if $pager.search.sort == 'act_id' && $pager.search.order == 'DESC'} -->icon-down1<!-- {else} -->icon-up1<!-- {/if} -->"></i></a>
-                        <a href="auction.php?sort=start_time&order=<!-- {if $pager.search.sort == 'start_time' && $pager.search.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->" class="sort-item {if $pager.search.sort == 'start_time'}curr{/if}">{$lang.start_time}<i class="iconfont <!-- {if $pager.search.sort == 'start_time' && $pager.search.order == 'DESC'} -->icon-down1<!-- {else} -->icon-up1<!-- {/if} -->"></i></a>
-                        <a href="auction.php?sort=end_time&order=<!-- {if $pager.search.sort == 'end_time' && $pager.search.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->" class="sort-item {if $pager.search.sort == 'end_time'}curr{/if}">{$lang.coming_end}<i class="iconfont <!-- {if $pager.search.sort == 'end_time' && $pager.search.order == 'DESC'} -->icon-down1<!-- {else} -->icon-up1<!-- {/if} -->"></i></a>
+                        <a href="auction.php?sort=act_id&order=<!-- {if $pager.search.sort == 'act_id' && $pager.search.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->" class="sort-item {if $pager.search.sort == 'act_id'}curr{/if}">默认<i class="iconfont <!-- {if $pager.search.sort == 'act_id' && $pager.search.order == 'DESC'} -->icon-down1<!-- {else} -->icon-up1<!-- {/if} -->"></i></a>
+                        <a href="auction.php?sort=start_time&order=<!-- {if $pager.search.sort == 'start_time' && $pager.search.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->" class="sort-item {if $pager.search.sort == 'start_time'}curr{/if}">开始时间<i class="iconfont <!-- {if $pager.search.sort == 'start_time' && $pager.search.order == 'DESC'} -->icon-down1<!-- {else} -->icon-up1<!-- {/if} -->"></i></a>
+                        <a href="auction.php?sort=end_time&order=<!-- {if $pager.search.sort == 'end_time' && $pager.search.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if} -->" class="sort-item {if $pager.search.sort == 'end_time'}curr{/if}">即将结束<i class="iconfont <!-- {if $pager.search.sort == 'end_time' && $pager.search.order == 'DESC'} -->icon-down1<!-- {else} -->icon-up1<!-- {/if} -->"></i></a>
                     </div>
                     <form method="GET" class="sort" name="listform">
                         <div class="f-search">
@@ -54,12 +54,12 @@
                                 <a href="{$auction.url}" class="name" target="_blank" title="{$auction.goods_name|escape:html}">{$auction.act_name|escape:html}</a>
                                 <div class="desc">
                                     <p>
-                                        <span>{$lang.rz_shopName}：</span>
+                                        <span>送拍机构：</span>
                                         {$auction.rz_shopName}
                                     </p>
                                     <p>
                                         <span class="fr red">{$auction.count}{$lang.au_number}</span>
-                                        <span>{$lang.residual_time}：</span>
+                                        <span>剩余时间：</span>
                                         <span class="<!-- {if $auction.status_no eq 1} 进行中 -->lefttime<!-- {/if} -->" data-time="{$auction.end_time}">
                                             <span class="days">00</span>
                                             <em>:</em>

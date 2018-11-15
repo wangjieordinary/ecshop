@@ -6,9 +6,6 @@ $(function ($) {
     window.sessionStorage.setItem('burying_point', window.location.href);
     window.BuryingPoint = window.sessionStorage.getItem('burying_point');
 
-    // 全局 统一手机号段正则,支持166号段
-    window.mobilereg = /^1(3[0-9]|4[0-9]|5[0-35-9]|6[6]|7[01345678]|8[0-9]|9[89])\d{8}$/;
-
     var cityTop;
     $(".con-filter-div .swiper-scroll").css("max-height", $(window).height());
     if ($(".swiper-scroll").hasClass("swiper-scroll")) { //滚动相关js
@@ -159,7 +156,7 @@ $(function ($) {
         var filter_attr_str = "";
         $(this).parents('.con-filter-div').find('ul.filter_attr').each(function(index,item){
            $(this).find('li label.active').parent('li').each(function(index,item){
-                filter_attr_str += $(this).attr('data-attr') + ",";
+                filter_attr_str += $(this).attr('data-attr') + ","; 
            });
             filter_attr_str = filter_attr_str.substring(0,filter_attr_str.length -1) + ".";
         });
@@ -580,19 +577,19 @@ $(function ($) {
             var shipping_id= get_cart_shipping_id();
             document.removeEventListener("touchmove", handler, false);
             $("body").removeClass("show-coupon-div");
-            bonus_list = $(this).parents(".flow-coupon").find(".ect-select label.active");
-            bonus_text = $(this).parents(".j-f-c-s-coupon").find(".t-goods1 .coupon-text");
-            bonus_price = $(this).parents(".j-f-c-s-coupon").find(".t-goods1 .coupon-price");
+            coupon_list = $(this).parents(".flow-coupon").find(".ect-select label.active");
+            coupon_text = $(this).parents(".j-f-c-s-coupon").find(".t-goods1 .coupon-text");
+            coupon_price = $(this).parents(".j-f-c-s-coupon").find(".t-goods1 .coupon-price");
 
             //更改为单选  by wanglu
-            if (bonus_list.length > 1) {
+            if (coupon_list.length > 1) {
                 d_messages("一次只能使用一张红包");
                 return false;
             }
-            if (bonus_list.length <= 0 && $("#ECS_BONUS").val() == 0) {
+            if (coupon_list.length <= 0 && $("#ECS_BONUS").val() == 0) {
                 return false;
             }
-            var bonus = bonus_list.length <= 0 ? 0 : bonus_list.attr("data-bonus");
+            var bonus = coupon_list.length <= 0 ? 0 : coupon_list.attr("data-bonus");
             if(bonus == 0){
                 $("#ECS_BONUS").val(0);
             }
@@ -614,17 +611,17 @@ $(function ($) {
                         $("#ECS_ORDERTOTAL").html(result.content);
                     }
                     //总价
-                    if (result.amount) {
+                    if (result.amount != undefined) {
                         $("#amount").html(result.amount);
                     }
                 }
             }, 'json');
-            if (bonus_list.length <= 0) {
-                bonus_text.text("不使用红包");
-                bonus_price.text("");
+            if (coupon_list.length <= 0) {
+                coupon_text.text("不使用红包");
+                coupon_price.text("");
             } else {
-                bonus_text.text("红包金额");
-                bonus_price.text("¥" + parseFloat(bonus_list.attr("data-money")).toFixed(2));
+                coupon_text.text("优惠金额");
+                coupon_price.text("¥" + parseInt(coupon_list.attr("data-money")) + ".00");
             }
             return false;
         }
@@ -691,7 +688,7 @@ $(function ($) {
                         }
                     } else {
                         coupon_text.text("优惠券金额");
-                        coupon_price.text("¥" + parseFloat(coupon_list.attr("data-money")).toFixed(2));
+                        coupon_price.text("¥" + parseInt(coupon_list.attr("data-money")) + ".00");
                     }
                 }
             }, 'json');
@@ -704,26 +701,24 @@ $(function ($) {
     /*存储卡赋值*/
     $(".flow-coupon .cou-btn-submit-card").click(function () {
         if ($("body").hasClass("show-coupon-div-card")) {
-            var shipping_id = get_cart_shipping_id();
+            var shipping_id= get_cart_shipping_id();
             document.removeEventListener("touchmove", handler, false);
             $("body").removeClass("show-coupon-div-card");
+            coupon_list = $(this).parents(".flow-coupon").find(".ect-select label.active");
+            coupon_text = $(this).parents(".j-f-c-s-coupon-card").find(".t-goods1 .coupon-text");
 
-            card_list = $(this).parents(".flow-coupon").find(".ect-select label.active");
-            card_text = $(this).parents(".j-f-c-s-coupon-card").find(".t-goods1 .coupon-text");
-            card_price = $(this).parents(".j-f-c-s-coupon-card").find(".t-goods1 .coupon-price");
+            coupon_price = $(this).parents(".j-f-c-s-coupon-card").find(".t-goods1 .coupon-price");
 
             //更改为单选  by wanglu
-            if (card_list.length > 1) {
+            if (coupon_list.length > 1) {
                 d_messages("一次只能使用一个储值卡");
                 return false;
             }
-            if (card_list.length <= 0 && $("#ECS_CART").val() == 0) {
+            if (coupon_list.length <= 0 && $("#ECS_CART").val() == 0) {
                 return false;
             }
-            var vcid = card_list.length <= 0 ? 0 : card_list.attr("data-vcard");
-            if (vcid == 0) {
-                $("#ECS_CART").val(0);
-            }
+            var vcid = coupon_list.length <= 0 ? 0 : coupon_list.attr("data-coupont");
+
             $.get(ROOT_URL + "index.php?m=flow&a=change_value_cart", {
                 shipping_id: shipping_id,
                 vcid: vcid
@@ -742,28 +737,18 @@ $(function ($) {
                         $("#ECS_ORDERTOTAL").html(result.content);
                     }
                     //总价
-                    if (result.amount) {
+                    if (result.amount != undefined) {
+
                         $("#amount").html(result.amount);
-                    }
-                    // 验证支付密码
-                    if (document.getElementById('pay_paypwd')) {
-                        if (result.vc_id > 0) {
-                            // 显示支付密码
-                            $(".show-paypwd").removeClass('hide');
-                        } else {
-                            // 隐藏支付密码
-                            $(".show-paypwd").addClass('hide');
-                        }
                     }
                 }
             }, 'json');
-
-            if (card_list.length <= 0) {
-                card_text.text("不使用储值卡");
-                card_price.text("");
+            if (coupon_list.length <= 0) {
+                coupon_text.text("不使用储值卡");
+                coupon_price.text("");
             } else {
-                card_text.text("储值卡余额");
-                card_price.text("¥" + parseFloat(card_list.attr("data-money")).toFixed(2));
+                coupon_text.text("储值卡余额");
+                coupon_price.text("¥" + parseInt(coupon_list.attr("data-money")) + ".00");
             }
             return false;
         }
@@ -846,7 +831,7 @@ $(function ($) {
         document.addEventListener("touchmove", handler, false);
         $(this).find(".filter-site-div").addClass("show");
     });
-    /*点击弹出层 － 订单提交页红包*/
+    /*点击弹出层 － 订单提交页优惠券*/
     $(".j-f-c-s-coupon").click(function () {
         $("body").addClass("show-coupon-div");
     });
@@ -855,7 +840,7 @@ $(function ($) {
         // document.addEventListener("touchmove", handler, false);
         $("body").addClass("show-coupon-div-1");
     });
-    /*点击弹出层 － 订单提交页存储卡*/
+        /*点击弹出层 － 订单提交页存储卡*/
     $(".j-f-c-s-coupon-card").click(function () {
         document.addEventListener("touchmove", handler, false);
         $("body").addClass("show-coupon-div-card");
@@ -1206,7 +1191,6 @@ function receivebonus(id) {
                 });
             } else {
                 d_messages(data.msg);
-                window.location.reload();
             }
         }
     });

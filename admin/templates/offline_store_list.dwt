@@ -84,7 +84,7 @@
                                     <td><div class="tDiv">{$list.stores_opening_hours|escape:html}</div></td>
                                     <td><div class="tDiv">
 										<span class="show">
-											<a href="{$list.stores_img}" class="nyroModal"><i class="icon icon-picture" data-tooltipimg="{$list.stores_img}" ectype="tooltip" title="tooltip"></i></a>
+											<a href="../{$list.stores_img}" class="nyroModal"><i class="icon icon-picture" data-tooltipimg="../{$list.stores_img}" ectype="tooltip" title="tooltip"></i></a>
 										</span>
 									</div></td>
                                     <td><div class="tDiv">
@@ -95,8 +95,8 @@
 									</div></td>                               
                                     <td class="handle">
                                     <div class="tDiv a3_3">
-										<a href="offline_store.php?act=order_stats&store_id={$list.id}{if $filter.type eq 1}&type={$filter.type}{/if}" class="btn_see"><i class="sc_icon sc_icon_see"></i>{$lang.sale_stat}</a>
-										<a href="order.php?act=list&store_id={$list.id}&seller_list=1" class="btn_see"><i class="sc_icon sc_icon_see"></i>{$lang.stores_order}</a>
+										<a href="offline_store.php?act=stat&store_id={$list.id}{if $filter.type eq 1}&type={$filter.type}{/if}" class="btn_see"><i class="sc_icon sc_icon_see"></i>销量统计</a>
+										<a href="order.php?act=list&store_id={$list.id}&seller_list=1" class="btn_see"><i class="sc_icon sc_icon_see"></i>门店订单</a>
 										<a href="offline_store.php?act=edit&id={$list.id}{if $filter.type eq 1}&type={$filter.type}{/if}" class="btn_edit"><i class="icon icon-edit"></i>{$lang.edit}</a>
 										<a href="javascript:;" onclick="listTable.remove({$list.id}, '{$lang.drop_confirm}')" class="btn_trash"><i class="icon icon-trash"></i>{$lang.drop}</a>
 									</div>
@@ -232,7 +232,8 @@
 		</div>
 	</div>	
 	{include file ='library/pagefooter.lbi'}
-	<script type="text/javascript">
+	
+	<script type="text/javascript" language="JavaScript">
 		listTable.recordCount = {$record_count|default:0};
 		listTable.pageCount = {$page_count|default:1};
 

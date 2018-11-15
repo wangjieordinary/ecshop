@@ -39,13 +39,11 @@
 								<td>
 									<div class="tDiv first_setup">
 										<div class="setup_span">
-                                            {if $parent_id eq 0}
 											<em><i class="icon icon-cog"></i>{$lang.setup}<i class="arrow"></i></em>
 											<ul>
 												<li><a href="order.php?act=add_return_cause&parent_id={$cat.cause_id}">{$lang.add_next_level}</a></li>
 												<li><a href="order.php?act=back_cause_list&parent_id={$cat.cause_id}">{$lang.view_next_level}</a></li>
 											</ul>
-                                            {/if}
 										</div>
 									</div>
 								</td>

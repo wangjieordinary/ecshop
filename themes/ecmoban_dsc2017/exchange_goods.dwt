@@ -32,19 +32,19 @@
                     <div class="newp">{$goods.goods_brief}</div>
                     <!--{/if}-->
                     <div class="activity-title">
-                    	<div class="activity-type">{$lang.exchange_name}</div>
+                    	<div class="activity-type">积分兑换</div>
                     </div>
                     <div class="summary">
                     	<div class="summary-price-wrap">
                         	<div class="s-p-w-wrap">
                                 <div class="summary-item si-shop-price">
-                                    <div class="si-tit">{$lang.integral}</div>
+                                    <div class="si-tit">积分</div>
                                     <div class="si-warp">
                                         <strong class="shop-price">{$goods.exchange_integral}</strong>
                                     </div>
                                 </div>
                                 <div class="summary-item si-market-price">
-                                    <div class="si-tit">{$lang.market_price}</div>
+                                    <div class="si-tit">市场价</div>
                                     <div class="si-warp">
                                     	{if $goods.market_integral}
                                     		{$goods.market_integral}&nbsp;{$lang.integral}
@@ -62,7 +62,7 @@
                         </div>
                         <div class="summary-basic-info">
                         	<div class="summary-item is-stock">
-                                <div class="si-tit">{$lang.distribution_tit}</div>
+                                <div class="si-tit">配送</div>
                                 <div class="si-warp">
                                     <span class="initial-area">
                                         {if $adress.city}
@@ -71,23 +71,23 @@
                                             {$basic_info.city}
                                         {/if} 
                                     </span>
-                                    <span>{$lang.zhi}</span>
+                                    <span>至</span>
                                     <div class="store-selector">
                                         <div class="text-select" id="area_address" ectype="areaSelect"></div>
                                     </div>
                                     <div class="store-warehouse">
-                                        <div class="store-prompt" id="isHas_warehouse_num">{$lang.isHas_warehouse_num}</div>
+                                        <div class="store-prompt" id="isHas_warehouse_num"><strong>有货</strong>，下单后立即发货</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="summary-item is-service">
-                                <div class="si-tit">{$lang.service}</div>
+                                <div class="si-tit">服务</div>
                                 <div class="si-warp">
                                     <div class="fl"> 
                                     {if $goods.user_id > 0}
-                                        {$lang.you} <a href="{$goods.store_url}" class="link-red" target="_blank">{$goods.rz_shopName}</a> {$lang.After_sale_service}
+                                        由 <a href="{$goods.store_url}" class="link-red" target="_blank">{$goods.rz_shopName}</a> 发货并提供售后服务
                                     {else}
-                                        {$lang.you} <a href="javascript:void(0)" class="link-red">{$goods.rz_shopName}</a> {$lang.After_sale_service}
+                                        由 <a href="javascript:void(0)" class="link-red">{$goods.rz_shopName}</a> 发货并提供售后服务
                                     {/if}
                                     </div>
                                     <div class="fl pl10" id="user_area_shipping"></div>
@@ -145,7 +145,7 @@
                             <!-- {/if} -->
                             <!-- {/foreach} -->
                             <div class="summary-item is-number">
-                                <div class="si-tit">{$lang.number_to}</div>
+                                <div class="si-tit">数量</div>
                                 <div class="si-warp">
                                     <div class="amount-warp">
                                         <input class="text buy-num" id="quantity" ectype="quantity" value="1" name="number" defaultnumber="1">
@@ -168,7 +168,7 @@
                              <input type="hidden" value="{$goods.exchange_integral}" name="integral" ectype="exchange_integral" />
                              <input type="hidden" value="" name="goods_spec"/>
                              <input type="hidden" value="{$cfg.add_shop_price}" name="add_shop_price" ectype="add_shop_price" />
-                             <input type="submit" value="{$lang.like_exchange}" class="button btn-append"/>
+                             <input type="submit" value="立刻兑换" class="button btn-append"/>
                         </div>
                     </div>
                 </form>
@@ -176,7 +176,7 @@
                 <!--{if $look_top}-->
                 <div class="track">
                 	<div class="track_warp">
-                    	<div class="track-tit"><h3>{$lang.look_and_see}</h3><span></span></div>
+                    	<div class="track-tit"><h3>看了又看</h3><span></span></div>
                         <div class="track-con">
                             <ul>
                                 <!-- {foreach from=$look_top item=look_top name=looktop} -->
@@ -201,9 +201,9 @@
                     <div class="g-main g-rank">
                         <div class="mc">
                         	<ul class="mc-tab">
-                            	<li class="curr">{$lang.is_new}</li>
-                                <li>{$lang.Recommend}</li>
-                                <li>{$lang.Selling}</li>
+                            	<li class="curr">新品</li>
+                                <li>推荐</li>
+                                <li>热销</li>
                             </ul>
                         	<div class="mc-content">
                                 <!-- TemplateBeginEditable name="新品排行" -->
@@ -307,7 +307,7 @@
                     <!-- {if $related_goods} -->
                     <div class="g-main g-history">
                     	<div class="mt">
-                        	<h3>{$lang.user_love}</h3>
+                        	<h3>用户还喜欢</h3>
                         </div>
                         <div class="mc">
                         	<div class="mc-warp">
@@ -336,10 +336,10 @@
                 <div class="g-m-detail">
                 	<div class="gm-tabbox" ectype="gm-tabs">
                     	<ul class="gm-tab">
-                        	<li class="curr" ectype="gm-tab-item">{$lang.Product_details}</li>
-                            <!-- {if $properties} --><li ectype="gm-tab-item-spec">{$lang.specification}</li><!--{/if}-->
-                            <li ectype="gm-tab-item">{$lang.user_comment}（<em class="ReviewsCount">{$comment_all.allmen}</em>）</li>
-                            <li ectype="gm-tab-item">{$lang.discuss_user}</li>
+                        	<li class="curr" ectype="gm-tab-item">商品详情</li>
+                            <!-- {if $properties} --><li ectype="gm-tab-item-spec">规格参数</li><!--{/if}-->
+                            <li ectype="gm-tab-item">用户评论（<em class="ReviewsCount">{$comment_all.allmen}</em>）</li>
+                            <li ectype="gm-tab-item">网友讨论圈</li>
                         </ul>
                         <div class="extra"></div>
                         <div class="gm-tab-qp-bort" ectype="qp-bort"></div>
@@ -347,14 +347,14 @@
                     <div class="gm-floors" ectype="gm-floors">
                         <div class="gm-f-item gm-f-details" ectype="gm-item">
                             <div class="gm-title">
-                                <h3>{$lang.Product_details}</h3>
+                                <h3>商品详情</h3>
                             </div>
                             {$goods.goods_desc}
                         </div>
                         <!-- {if $properties} -->
                         <div class="gm-f-item gm-f-parameter" ectype="gm-item" id="product-detail" style="display:none;">
                             <div class="gm-title">
-                                <h3>{$lang.specification}</h3>
+                                <h3>规格参数</h3>
                             </div>
                             <div class="Ptable">
                                 <!-- {foreach from=$properties item=property_group key=key} -->
@@ -373,7 +373,7 @@
                         <!-- {/if} -->
                         <div class="gm-f-item gm-f-comment" ectype="gm-item">
                             <div class="gm-title">
-                                <h3>{$lang.comment_sunburn}</h3>
+                                <h3>评论晒单</h3>
                                 {* DSC 提醒您：动态载入goods_comment_title.lbi，显示首页分类小广告 *}{insert name='goods_comment_title' goods_id=$goods.goods_id}
                             </div>
                             <div class="gm-warp">
@@ -381,7 +381,7 @@
                                     <div class="rate">
                                         <strong>{$comment_all.goodReview}</strong>
                                         <span class="rate-span">
-                                            <span class="tit">{$lang.Rate_praise}</span>
+                                            <span class="tit">好评率</span>
                                             <span class="bf">%</span>
                                         </span>
                                     </div>
@@ -409,7 +409,7 @@
                 </div>
                 <div class="clear"></div>
                 <div class="rection">
-                	<div class="ftit"><h3>{$lang.Recent_browse}</h3></div>
+                	<div class="ftit"><h3>最近浏览</h3></div>
                     <ul>
                     <!--{foreach from=$history_goods item=goods name=his_goods}-->
                     <!-- {if $smarty.foreach.his_goods.iteration <= 5} -->

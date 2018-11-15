@@ -5,7 +5,7 @@
 	<section class="user-center j-f-tel margin-lr">
         <div class="b-color-f  user-login-ul">
 
-            {if $type == 'email' && $email_is_validated == '1'}
+            {if $type == 'email' || $sms_signin == 0}
             <div class="text-all dis-box j-text-all " >
                 <label>已认证邮箱：<span id="email">{$user_info.email}</span></label>
             </div>
@@ -18,7 +18,7 @@
             </div>
             {/if}
 
-            {if $type == 'phone' && $mobile_is_validated == '1'}
+            {if $type == 'phone' && $sms_signin == 1}
             <div class="text-all dis-box j-text-all login-li" name="verifydiv">
                 <div class="box-flex input-text">
                     <input class="j-input-text" name="verify" datatype="*" nullmsg="请输入图片验证码" type="text" placeholder="请输入图片验证码"/>
@@ -55,23 +55,24 @@
                 </div>
             </div>
 
-            <div class="dis-box select-three m-top10">
-                <div class="ect-select  ">
+            <div class="box-flex select-three m-top10">
+                <div class="ect-select">
                     <input id="user_surplus" type="hidden" name="user_surplus" value="{$users_paypwd.user_surplus}"  />
-                    <label for="user_surplus" class="dis-box label-all {if $users_paypwd.user_surplus} active {/if} " >
+                    <label class="dis-box label-all {if $users_paypwd.user_surplus} active {/if} " for="user_surplus">
                         <i class="select-btn active-i"></i>
-                        <span class="box-flex">使用余额</span>
+                        <span class="box-flex">使用积分</span>
                     </label>
                 </div>
             </div>
 
 		</div>
 
-        {if $type == 'email' && $mobile_is_validated == '1'}
+        {if $type == 'email' && $sms_signin == 1}
         <div class="text-right m-top10 f-04"><a href="{url('user/profile/user_edit_paypwd', array('type' => 'phone'))}" class="f-04" >已认证手机，使用手机发送验证码</a></div>
         {/if}
-        {if $type == 'phone' && $email_is_validated == '1'}
-        <div class="text-right m-top10 f-04"><a href="{url('user/profile/user_edit_paypwd', array('type' => 'email'))}" class="f-04" >已认证邮箱，使用邮箱发送验证码</a></div>
+
+        {if $change_email == 1}
+        <div class="text-right m-top10 f-04"><a href="{url('user/profile/user_edit_paypwd', array('type' => 'email'))}" class="f-04" >使用邮箱发送验证码</a></div>
         {/if}
         <input type="hidden" name="sms_signin" value="{$sms_signin}" />
         <input type="hidden" name="paypwd_id" value="{$users_paypwd.paypwd_id}" />
@@ -131,7 +132,7 @@
                 $(".ipt-check-btn").addClass('disabled');
             }
             c = 0;
-            $("#sendsms").html("<span>重新获取(" + time + ")</span>");
+            $("#sendsms").html("重新获取("+time+")");
             time--;
         }
         setTimeout(data,1000);
@@ -139,7 +140,7 @@
 
     // 发送验证码
 	$("#sendsms").click(function(){
-        var myreg = window.mobilereg;// /^1(3[0-9]|4[0-9]|5[0-35-9]|6[6]|7[01345678]|8[0-9]|9[89])\d{8}$/;
+        var myreg = /^1(3[0-9]|4[57]|5[0-35-9]|7[0135678]|8[0-9])\d{8}$/;
         var mobile = $("#mobie_phone").html();
         var verify_code = $("input[name=verify]").val();
 
@@ -180,7 +181,7 @@
     function check(){
         var sms_code = $("input[name=sms_code]").val();
         var mobile = $("#mobie_phone").html();
-        var myreg = window.mobilereg; // /^1(3[0-9]|4[0-9]|5[0-35-9]|6[6]|7[01345678]|8[0-9]|9[89])\d{8}$/;
+        var myreg = /^1(3[0-9]|4[57]|5[0-35-9]|7[0135678]|8[0-9])\d{8}$/;
         if( mobile == ''){
             d_messages('请输入手机号');
             return false;

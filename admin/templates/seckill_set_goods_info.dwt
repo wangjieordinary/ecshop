@@ -16,7 +16,7 @@
             <div class="flexilist"  ectype="item">
             	<div class="common-head">
                 	<div class="fl">
-						{if $ru_id eq 0}<a href="javascript:void(0);" ectype="setupGoods"><div class="fbutton"><div class="add" title="{$action_link.text}"><span><i class="icon icon-plus"></i>{$lang.set_goods}</span></div></div></a>{/if}                 
+						{if $ru_id eq 0}<a href="javascript:void(0);" ectype="setupGoods"><div class="fbutton"><div class="add" title="{$action_link.text}"><span><i class="icon icon-plus"></i>设置商品</span></div></div></a>{/if}                 
 						<input type="hidden" name="tb_id" value="{$tb_id}">
 						<input type="hidden" name="sec_id" value="{$sec_id}">
                         <input type="hidden" name="cat_goods" value="{$cat_goods}">

@@ -13,7 +13,7 @@ if (isset($_SERVER['SERVER_PORT'])) {
         $port = '';
     }
 }
-$mobile_url = $protocol . $_SERVER['HTTP_HOST'] . $port . rtrim(dirname($_SERVER["SCRIPT_NAME"]), '/public/notify');
+$mobile_url = $protocol . $_SERVER['HTTP_HOST'] . $port . dirname($_SERVER["SCRIPT_NAME"]);
 $pc_url = empty($deploy['pc_url']) ? dirname($mobile_url) : $deploy['pc_url'];
 $static = empty($deploy['static_url']) ? $pc_url : $deploy['static_url'];
 $upload_path = empty($deploy['upload_path']) ? dirname(dirname(__DIR__)) . '/' : $deploy['upload_path'];

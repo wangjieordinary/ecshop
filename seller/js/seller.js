@@ -940,19 +940,19 @@ $(function(){
 		if(state == 'txtfile'){
 			if(ext!=".TXT"){
 				alert("上传文件限于txt格式");
-				$(this).attr('value','');
+					$(this).attr('value','');
 				return false;
 			}
 		}else if(state == 'imgfile'){
 			if(ext!=".PNG"&&ext!=".GIF"&&ext!=".JPG"&&ext!=".JPEG"){
 				alert("上传图片限于png,gif,jpeg,jpg格式");
-				$(this).attr('value','');
+					$(this).attr('value','');
 				return false;
 			}
 		}else if(state == 'csvfile'){
 			if(ext!=".CSV"){
 				alert("上传文件限于csv格式");
-				$(this).attr('value','');
+					$(this).attr('value','');
 				return false;
 			}
 		}

@@ -42,7 +42,7 @@
                     </form>
                     <div class="shop-qrcode">
                         <img src="{$site_domain}{$seller_qrcode_img}" alt="" class="img" width="84">
-                        <p>{$lang.shop_qrcode}</p>
+                        <p>扫一扫，进入手机商城</p>
                     </div>
                 </div>
             </div>
@@ -273,7 +273,7 @@
                                                 {$goods.shop_price}
                                                 {/if}
                                             </div>
-                                            <div class="p-num">{$lang.sold}<em>{$goods.sales_volume}</em>{$lang.jian}</div>
+                                            <div class="p-num">已售<em>{$goods.sales_volume}</em>{$lang.jian}</div>
                                         </div>
                                         <div class="p-name"><a target="_blank" title="{$goods.goods_name|escape:html}" href="{$goods.url}">{$goods.goods_name}</a></div>
                                     </div>
@@ -329,7 +329,8 @@
                 })
             }
             slideToggle();
-            
+			
+			
 			$(document).on("mouseover", ".all_box", function () {
 				var all_cats_tcc = $(".all_cats_tcc").html();
 				all_cats_tcc = $.trim(all_cats_tcc);

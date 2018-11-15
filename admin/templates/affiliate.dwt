@@ -5,13 +5,13 @@
 
 <body class="iframe_body">
 	<div class="warpper">
-    	<div class="title">{$lang.separate_name} - {$ur_here}</div>
+    	<div class="title">推荐分成 - {$ur_here}</div>
         <div class="content">
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                	<li>{$lang.operation_prompt_content.0}</li>
-                    <li>{$lang.operation_prompt_content.1}</li>
+                	<li>请按照提示填写推荐设置信息。</li>
+                    <li>请谨慎添加推荐分成百分比，关乎您的销售利润。</li>
                 </ul>
             </div>
             <div class="flexilist">

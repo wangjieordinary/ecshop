@@ -4,10 +4,10 @@
 	{/if}    
         <table class="table">
             <thead>
-                <th width="40%">{$lang.goods_name}</th>
-                <th width="20%">{$lang.price}</th>
-                <th width="20%">{$lang.amount}</th>
-                <th width="20%">{$lang.limit_buy}</th>
+                <th width="40%">商品名称</th>
+                <th width="20%">价格</th>
+                <th width="20%">数量</th>
+                <th width="20%">限购</th>
             </thead>
             <tbody>
                 {foreach from=$product_list item=list name=product}

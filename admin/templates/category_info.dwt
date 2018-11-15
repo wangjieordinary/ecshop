@@ -63,7 +63,7 @@
 										<div class="search_select">
 											<div class="categorySelect">
 												<div class="selection">
-													<input type="text" name="category_name" id="category_name" class="text w290 valid" value="{if $parent_category}{$parent_category}{else}{$lang.cat_top}{/if}" autocomplete="off" readonly data-filter="cat_name" />
+													<input type="text" name="category_name" id="category_name" class="text w290 valid" value="{if $parent_category}{$parent_category}{else}顶级分类{/if}" autocomplete="off" readonly data-filter="cat_name" />
 													<input type="hidden" name="parent_id" id="category_id" value="{$parent_id|default:0}" data-filter="cat_id" />
 												</div>
 												<div class="select-container w319" style="display:none;">
@@ -185,7 +185,7 @@
                                             <div class="checkbox-other">
                                                 <div class="checkbox-item">
                                                     <input type="radio" name="style_icon" class="ui-radio" id="radio_other" data-name="other" value="other" {if $cat_info.style_icon eq 'other'}checked{/if} />
-                                                    <label class="ui-radio-label" for="radio_other"><span>{$lang.custom}</span></label>
+                                                    <label class="ui-radio-label" for="radio_other"><span>自定义</span></label>
                                                 </div>
                                                 <div class="type-file-box ml10 {if $cat_info.style_icon neq 'other'}hide{/if}" ectype="cat_icon">
                                                     <input type="button" name="button" id="button" class="type-file-button" value="" />

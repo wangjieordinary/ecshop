@@ -35,7 +35,7 @@
                     <div class="newp">{$goods.goods_brief}</div>
 					<!--{/if}-->
                     <div class="activity-title">
-                    	<div class="activity-type"><i class="iconfont icon-time"></i>{$lang.Group_purchase}</div>
+                    	<div class="activity-type"><i class="iconfont icon-time"></i>团购</div>
                         <div class="sk-time-cd">
                             <div class="sk-cd-tit"><!-- {if $goods.is_end eq 1 || $orderG_number gt $group_buy.restrict_amount || $orderG_number eq $group_buy.restrict_amount} -->{$lang.end_time}<!-- {else} -->{$lang.residual_time}<!-- {/if} --></div>
                             <div class="cd-time <!-- {if !($goods.is_end eq 1 || $orderG_number gt $group_buy.restrict_amount || $orderG_number eq $group_buy.restrict_amount)} -->time<!--{/if}-->" ectype="time" data-time="{$group_buy.end_time}">
@@ -57,13 +57,13 @@
                     	<div class="summary-price-wrap">
                         	<div class="s-p-w-wrap">
                                 <div class="summary-item si-shop-price">
-                                    <div class="si-tit">{$lang.group_buy_price}</div>
+                                    <div class="si-tit">团购价</div>
                                     <div class="si-warp">
                                         <strong class="shop-price"><em>￥</em>{$group_buy.price_ladder.0.price}</strong>
                                     </div>
                                 </div>
                                 <div class="summary-item si-market-price">
-                                    <div class="si-tit">{$lang.market_price}</div>
+                                    <div class="si-tit">市场价</div>
                                     <div class="si-warp"><div class="m-price"><em>￥</em>{$group_buy.market_price}</div></div>
                                 </div>
                                 <div class="si-info">
@@ -82,7 +82,7 @@
                                 <!--{/if}-->
                                 <!-- {if $group_buy.deposit > 0} 保证金额-->
                                 <div class="summary-item si-shop-price">
-                                    <div class="si-tit">{$lang.gb_deposit}</div>
+                                    <div class="si-tit">保证金</div>
                                     <div class="si-warp">{$group_buy.formated_deposit}</div>
                                 </div>
                                 <!--{/if}-->
@@ -93,13 +93,13 @@
                         <div class="summary-basic-info">
 							<!-- {if $price_ladder} -->
                         	<div class="summary-item is-ladder">
-                                <div class="si-tit">{$lang.staircase_price}</div>
+                                <div class="si-tit">阶梯价</div>
                                 <div class="si-warp">
-                                	<a href="javascript:void(0);" class="link-red" ectype="view_priceLadder">{$lang.view_staircase_price}</a>
+                                	<a href="javascript:void(0);" class="link-red" ectype="view_priceLadder">查看阶梯价格</a>
                                     <dl class="priceLadder" ectype="priceLadder">
                                     	<dt>
-                                        	<span>{$lang.number_to}</span>
-                                            <span>{$lang.price}</span>
+                                        	<span>数量</span>
+                                            <span>价格</span>
                                         </dt>
                                         <!-- {foreach from=$price_ladder item=rank key=price_key} -->
                                         <dd>
@@ -112,7 +112,7 @@
                             </div>
 							<!-- {/if} -->
                         	<div class="summary-item is-stock">
-                            	<div class="si-tit">{$lang.distribution}</div>
+                            	<div class="si-tit">配送</div>
                                 <div class="si-warp">
                                     <span class="initial-area">
                                         {if $adress.city}
@@ -120,24 +120,24 @@
                                         {else}
                                             {$basic_info.city}
                                         {/if} 
-                                    </span><span>{$lang.zhi}</span>
+                                    </span><span>至</span>
                                     <div class="store-selector">
                                     	<div class="text-select" id="area_address" ectype="areaSelect"></div>
                                     </div>
 									
                                     <div class="store-warehouse">
-                                    	<div class="store-prompt" id="isHas_warehouse_num">{$lang.isHas_warehouse_num}</div>
+                                    	<div class="store-prompt" id="isHas_warehouse_num"><strong>有货</strong>，下单后立即发货</div>
                                     </div>
                                 </div>
                             </div>
                             <div class="summary-item is-service">
-                                <div class="si-tit">{$lang.service}</div>
+                                <div class="si-tit">服务</div>
                                 <div class="si-warp">
                                     <div class="fl"> 
                                     {if $goods.user_id > 0}
-                                        {$lang.you} <a href="{$goods.store_url}" class="link-red" target="_blank">{$goods.rz_shopName}</a> {$lang.After_sale_service}
+                                        由 <a href="{$goods.store_url}" class="link-red" target="_blank">{$goods.rz_shopName}</a> 发货并提供售后服务
                                     {else}
-                                        {$lang.you} <a href="javascript:void(0)" class="link-red">{$goods.rz_shopName}</a> {$lang.After_sale_service}
+                                        由 <a href="javascript:void(0)" class="link-red">{$goods.rz_shopName}</a> 发货并提供售后服务
                                     {/if}
                                     </div>
                                     <div class="fl pl10" id="user_area_shipping"></div>
@@ -145,7 +145,7 @@
                             </div>
                             <!--{if $group_buy.restrict_amount}-->
                             <div class="summary-item is-xiangou">
-                            	<div class="si-tit">{$lang.gb_restrict_amount}</div>
+                            	<div class="si-tit">限购数量</div>
                                 <div class="si-warp">
                                 	<em id="restrict_amount" ectype="restrictNumber" data-value="{$group_buy.restrict_amount}">{$group_buy.restrict_amount}</em>
                                     <span>{if $goods.goods_unit}{$goods.goods_unit}{elseif $goods.measure_unit}{$goods.measure_unit}{/if}</span>
@@ -155,7 +155,7 @@
                             <!-- {/if} -->
                             <!--{if $group_buy.gift_integral}-->
                             <div class="summary-item is-integral">
-                            	<div class="si-tit">{$lang.gb_gift_integral}</div>
+                            	<div class="si-tit">赠送积分</div>
                                 <div class="si-warp">
                                 	{$group_buy.gift_integral}
                                 </div>
@@ -214,7 +214,7 @@
 							<!-- {/foreach} -->
                             
                             <div class="summary-item is-number">
-                            	<div class="si-tit">{$lang.number_to}</div>
+                            	<div class="si-tit">数量</div>
                                 <div class="si-warp">
                                 	<div class="amount-warp">
                                         <input class="text buy-num" id="quantity" ectype="quantity" value="1" name="number" defaultnumber="1">
@@ -234,7 +234,7 @@
                             <!-- {if $goods.is_end eq 1 || ($orderG_number gt $group_buy.restrict_amount && $group_buy.restrict_amount gt 0) || ($orderG_number eq $group_buy.restrict_amount &&  $group_buy.restrict_amount gt 0)} -->
                             <a href="javascript:void(0);" class="btn-invalid">{$lang.Group_purchase_end}</a>
                             <!-- {else} -->
-                            <a href="javascript:void(0);" class="btn-append" ectype="btn-group-buy" data-minamount="{$min_amount}">{$lang.Group_purchase_now}{$lang.shopping}</a>
+                            <a href="javascript:void(0);" class="btn-append" ectype="btn-group-buy" data-minamount="{$min_amount}">{$lang.Group_purchase_now}购</a>
                             <!-- {/if} -->
                         </div>
                     </div>
@@ -271,7 +271,7 @@
                 	<!-- #BeginLibraryItem "/library/goods_merchants.lbi" --><!-- #EndLibraryItem -->
                     <div class="g-main g-recommend">
                     	<div class="mt">
-                        	<h3>{$lang.other_group_buy}</h3>
+                        	<h3>其他团购</h3>
                         </div>
                         <div class="mc">
                         	<div class="mc-warp">
@@ -366,7 +366,7 @@
                         </div>
                         <div class="gm-f-item gm-f-comment" ectype="gm-item">
                         	<div class="gm-title">
-                            	<h3>{$lang.comment_sunburn}</h3>
+                            	<h3>评论晒单</h3>
 								{* DSC 提醒您：动态载入goods_comment_title.lbi，显示首页分类小广告 *}{insert name='goods_comment_title' goods_id=$goods.goods_id}
                             </div>
                             <div class="gm-warp">
@@ -374,7 +374,7 @@
                                 	<div class="rate">
                                     	<strong>{$comment_all.goodReview}</strong>
                                         <span class="rate-span">
-                                        	<span class="tit">{$lang.Rate_praise}</span>
+                                        	<span class="tit">好评率</span>
                                             <span class="bf">%</span>
                                         </span>
                                     </div>

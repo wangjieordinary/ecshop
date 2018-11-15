@@ -56,24 +56,5 @@ $_LANG['vouchers_login'] = "注册券";
 $_LANG['unknown'] = "未知";
 $_LANG['vouchers_shipping'] = "免邮券";
 $_LANG['unlimited'] = '不限';
-$_LANG['no_mail'] = "不包邮";
-$_LANG['free_shen_pay'] = "免邮神券";
-
-$_LANG['face_value'] = "面值";
-$_LANG['min_order_money'] = "最小订单金额";
-$_LANG['use_start_time'] = "使用开始时间";
-$_LANG['use_end_time'] = "使用结束时间";
-$_LANG['only_limit'] = "仅限";
-$_LANG['use'] = "使用";
-$_LANG['already_received'] = "已领取";
-$_LANG['have_finished'] = "已领完";
-$_LANG['has_ended'] = "已结束";
-$_LANG['receive'] = "领取";
-
-$_LANG['bonus_notic'] = "页面出错了！";
-
-
 $_LANG['js_languages']['receive_coupons'] = '领取优惠券';
 $_LANG['js_languages']['Immediate_use'] = "立即使用";
-
-?>

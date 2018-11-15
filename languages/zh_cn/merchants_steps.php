@@ -16,7 +16,6 @@ $_LANG['login_again'] = "您需要重新登录！";
 $_LANG['brand_not'] = "不存在";
 $_LANG['brand_in'] = "已存在";
 $_LANG['07_brand_add'] = '添加品牌';
-$_LANG['new_brand'] = '新增品牌';
 $_LANG['merchants_step_one'] = "入驻须知";
 $_LANG['merchants_step_two'] = "公司信息认证";
 $_LANG['merchants_step_three'] = "店铺信息认证";
@@ -139,9 +138,3 @@ $_LANG['parentType_shoprz_type_one'] = "专营店可经营同一招商一级类�
 
 //卖场-入驻地区
 $_LANG['belong_region'] = "入驻地区";
-
-$_LANG['review_progress'] = "审核进度";
-$_LANG['reapply'] = "重新申请";
-$_LANG['merchant_login'] = "商家登录";
-
-?>

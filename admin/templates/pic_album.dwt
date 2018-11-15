@@ -49,7 +49,7 @@
                                                             </div>
                                                             <div class="img-width">{$agency.pic_spec}({$agency.pic_size})</div>
                                                             <div class="img-handle">
-                                                                <a href="javaScript:void(0);" class="btn_see" onclick="album_move('{$agency.pic_id}')"><i class="sc_icon icon-move"></i>{$lang.transfer_album}</a>
+                                                                <a href="javaScript:void(0);" class="btn_see" onclick="album_move('{$agency.pic_id}')"><i class="sc_icon icon-move"></i>转移相册</a>
                                                                 <a href="javaScript:void(0);" class="btn_see" onclick="remove_pic('{$agency.pic_id}')"><i class="sc_icon icon-trash"></i>{$lang.remove}</a>
                                                             </div>
                                                         </div>
@@ -114,7 +114,7 @@
 		</div>
 	</div>
 	{include file ='library/pagefooter.lbi'}
-	{insert_scripts files="../js/plupload.full.min.js,../js/spectrum-master/spectrum.js"}
+	{insert_scripts files="../js/plupload.full.min.js,../js/spectrum-master/spectrum.js,jquery.purebox.js"}
 	<script type="text/javascript">
     listTable.recordCount = {$record_count|default:0};
     listTable.pageCount = {$page_count|default:1};

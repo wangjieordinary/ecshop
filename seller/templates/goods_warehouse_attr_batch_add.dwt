@@ -27,22 +27,22 @@
 					{include file ='library/seller_menu_tab.lbi'}
                     <div class="ecsc-form-goods">
                         <div class="explanation" id="explanation">
-                            <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                            <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                            	<ul>
-                            	<li>{$lang.batch_ing_wait}</li>
+                            	<li>整在批量处理数量，请耐心等待.</li>
                             </ul>
                         </div>
                         <div id="listDiv">
                         <table class="ecsc-default-table goods-default-table mt20" id="listTable">
                             <thead>
                                 <tr ectype="table_header">
-                                    <th>{$lang.goods_id}</th>
-                                    <th>{$lang.goods_name}</th>
-                                    <th>{$lang.goods_steps_name}</th>
-                                    <th>{$lang.warehouse_name}</th>
-                                    <th>{$lang.attr_name}</th>
-                                    <th>{$lang.attr_price}</th>
-                                    <th>{$lang.statu}</th>
+                                    <th>商品编号</th>
+                                    <th>商品名称</th>
+                                    <th>商家名称</th>
+                                    <th>仓库名称</th>
+                                    <th>属性名称</th>
+                                    <th>属性价格</th>
+                                    <th>状态</th>
                                 </tr>
                             </thead>
                         </table>   
@@ -107,9 +107,9 @@
         
         if(result.is_stop == 0){
             $("#title_name").addClass("red");
-            $("#title_name").html(title_name_one);
+            $("#title_name").html("已完成更新，请关闭该窗口！");
         }else{
-            $("#title_name").html(title_name_two);
+            $("#title_name").html("正在更新数据中，请勿关闭该窗口！");
         }
     }
 </script>

@@ -19,9 +19,9 @@
 		{* DSC 提醒您：动态载入brand_index_ad.lbi，显示首页分类小广告 *}{insert name='get_adv_child' ad_arr=$brand_index_ad}
         <div class="brand-main" ectype='brandMain'>
             <div class="w w1200">
-                <div class="brand-title"><span>{$lang.brand_special_area}</span></div>
+                <div class="brand-title"><span>品牌专区</span></div>
                 <div class="brand-cate" ectype="brandCate">
-                    <a href="javascript:;" class="curr" data-catid="0" ectype="cateItem">{$lang.brand_all}</a><i class="point">·</i>
+                    <a href="javascript:;" class="curr" data-catid="0" ectype="cateItem">全部品牌</a><i class="point">·</i>
 					{foreach from=$top_cat_list item=cat key=key name=cat}
 					<a href="javascript:;" data-catid="{$cat.cat_id}" ectype="cateItem">{$cat.cat_name}</a>{if !$smarty.foreach.cat.last}<i class="point">·</i>{/if}
 					{/foreach}

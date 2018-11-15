@@ -5,13 +5,13 @@
 
 <body class="iframe_body">
 	<div class="warpper">
-    	<div class="title">{$lang.09_crowdfunding} - {$ur_here}</div>
+    	<div class="title">众筹 - {$ur_here}</div>
         <div class="content">		
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                	<li>{$lang.operation_prompt_content.info.0}</li>
-                    <li>{$lang.operation_prompt_content.info.1}</li>
+                	<li>众筹项目相关话题管理。</li>
+                    <li>可设置是否显示话题。</li>
                 </ul>
             </div>
             <div class="flexilist">
@@ -25,14 +25,14 @@
                     <div class="search">
                     	<form action="javascript:;" name="searchForm" onSubmit="searchGoodsname(this);">
                         <div class="input">
-                            <input type="text" name="keyword" class="text nofocus" placeholder="{$lang.zc_topic_keyword}" autocomplete="off" />
+                            <input type="text" name="keyword" class="text nofocus" placeholder="话题内容关键字" autocomplete="off" />
                             <input type="submit" class="btn" name="secrch_btn" ectype="secrch_btn" value="" />
                         </div>
                         </form>
                     </div>
                 </div>
                 <div class="common-content">
-                    <form method="POST" action="zc_topic.php" name="listForm" onsubmit="return confirm('{$lang.zc_topic_confirm}')">
+                    <form method="POST" action="zc_topic.php" name="listForm" onsubmit="return confirm('确定执行此操作？')">
                 	<div class="list-div" id="listDiv">
 						{/if}
                     	<table cellpadding="0" cellspacing="0" border="0">
@@ -41,7 +41,7 @@
                                 	<th width="3%" class="sign"><div class="tDiv"><input type="checkbox" name="all_list" class="checkbox" id="all_list" /><label for="all_list" class="checkbox_stars"></label></div></th>
                                 	<th width="5%"><div class="tDiv">{$lang.record_id}</div></th>
                                     <th width="10%"><div class="tDiv">{$lang.user_name}</div></th>
-									<th width="10%"><div class="tDiv">{$lang.nickname}</div></th>
+									<th width="10%"><div class="tDiv">昵称</div></th>
                                     <th width="20%"><div class="tDiv">{$lang.zc_project_name}</div></th>
                                     <th width="28%"><div class="tDiv">{$lang.zc_topic_content}</div></th>
                                     <th width="10%"><div class="tDiv">{$lang.whether_display}</div></th>
@@ -60,7 +60,7 @@
 									<td><div class="tDiv">{$item.topic_content}</div></td>
 									<td>
                                         <div class="tDiv">
-                                            <div class="switch {if $item.topic_status}active{/if}" title="{if $item.topic_status}{$lang.yew}{else}{$lang.no}{/if}" onclick="listTable.switchBt(this, 'toggle_display', {$item.topic_id})">
+                                            <div class="switch {if $item.topic_status}active{/if}" title="{if $item.topic_status}是{else}否{/if}" onclick="listTable.switchBt(this, 'toggle_display', {$item.topic_id})">
                                                 <div class="circle"></div>
                                             </div>
                                             <input type="hidden" value="0" name="">
@@ -129,6 +129,7 @@
 			$('.nyroModal').nyroModal();
 		})
 	</script>
+	{/literal}
 </body>
 </html>
 {/if}

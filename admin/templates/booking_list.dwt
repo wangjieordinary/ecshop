@@ -47,7 +47,7 @@
 							{foreach from=$booking_list item=booking}
                             	<tr>
                                     <td><div class="tDiv">{$booking.rec_id}</div></td>
-                                	<td><div class="tDiv">{if $booking.user_name}<font class="red">{$booking.user_name}</font>{else}<font class="blue">{$lang.self_run}</font>{/if}</div></td>
+                                	<td><div class="tDiv">{if $booking.user_name}<font class="red">{$booking.user_name}</font>{else}<font class="blue">自营</font>{/if}</div></td>
                                     <td><div class="tDiv">{$booking.link_man|escape}</div></td>
                                     <td><div class="tDiv">{$booking.goods_name}</div></td>
                                     <td><div class="tDiv">{$booking.goods_number}</div></td>

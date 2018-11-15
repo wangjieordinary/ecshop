@@ -49,16 +49,16 @@
                                 </div>
                                 <div class="{if $transport_info.freight_type neq 0} hide{/if}" id="Fixed_freight">
                                     <div class="item">
-                                        <div class="label">{$lang.transport_type_name}：</div>
+                                        <div class="label">{$lang.type.name}：</div>
                                         <div class="label_value">
                                             <div class="checkbox_items">
                                                 <div class="checkbox_item">
                                                     <input type="radio" name="type" class="ui-radio" id="type_off" value="0" autocomplete="off" {if $transport_info.type eq 0}checked{/if} />
-                                                    <label for="type_off" class="ui-radio-label">{$lang.transport_type_off}</label>
+                                                    <label for="type_off" class="ui-radio-label">{$lang.type.off}</label>
                                                 </div>
                                                 <div class="checkbox_item">
                                                     <input type="radio" name="type" class="ui-radio" id="type_on" value="1" autocomplete="off" {if $transport_info.type eq 1}checked{/if} />
-                                                    <label for="type_on" class="ui-radio-label">{$lang.transport_type_on}</label>
+                                                    <label for="type_on" class="ui-radio-label">{$lang.type.on}</label>
                                                 </div>
                                             </div>
                                         </div>

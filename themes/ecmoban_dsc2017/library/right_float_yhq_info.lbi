@@ -8,17 +8,13 @@
                     <div class="coupon-price">
                         <span class="token">￥</span>{$vo.cou_money}
                     </div>
-                    <div class="coupon-info">
-                    	<!-- <span class="tit" title="{$vo.cou_title}">{$vo.cou_title}</span> -->
-                    	<span class="tit">{$vo.shop_name}</span>
-                    	<span class="condition" title="{$vo.cou_title}">{$lang.man}{$vo.cou_man}{$lang.available_full}</span>
-                    </div>
+                    <div class="coupon-info"><span class="tit" title="{$vo.cou_title}">{$vo.cou_title}</span><span class="condition">{$lang.man}{$vo.cou_man}{$lang.available_full}</span></div>
                     <a class="btn-get q-btn get-coupon" href="javascript:;" cou_id="{$vo.cou_id}">{$lang.receive_now}</a>
                     <p class="coupon-time">{$lang.valid_time}{$vo.cou_start_time}{$lang.zhi}{$vo.cou_end_time}</p>
                 </div>
             </div>
             {foreachelse}
-            <div class="coupon-item-notic">{$lang.not_voucher}</div>
+            <div class="coupon-item-notic">暂无可领取券</div>
             {/foreach}
 
             {if $kelingqu_coupons}

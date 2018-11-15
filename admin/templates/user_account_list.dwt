@@ -158,8 +158,6 @@
                                         	{if $item.process_type eq 1}
                                             	{if $item.is_paid eq 1}
                                                     {$lang.is_confirm}
-                                                {elseif $item.is_paid eq 2}
-                                                    {$lang.dismiss}
                                                 {else}
                                                     {$lang.unconfirm}
                                                 {/if}
@@ -181,9 +179,7 @@
                                                 <a href="user_account.php?act=edit&id={$item.id}" title="{$lang.surplus}" class="btn_edit"><i class="icon icon-edit"></i>{$lang.edit}</a>
                                                 {else}
                                                 <a href="user_account.php?act=check&id={$item.id}" title="{$lang.check}" class="btn_see"><i class="sc_icon sc_icon_see"></i>{$lang.check}</a>
-                                                {if $item.process_type eq 0}
                                                 <a href="javascript:;" onclick="listTable.remove({$item.id}, '{$lang.drop_confirm}')" title="{$lang.drop}" class="btn_trash"><i class="icon icon-trash"></i>{$lang.drop}</a>
-                                                {/if}
                                                 {/if}
                                             </div>
                                         </td>

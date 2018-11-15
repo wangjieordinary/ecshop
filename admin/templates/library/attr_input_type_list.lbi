@@ -9,5 +9,5 @@
 {/if}
 
 <div class="checkbox_item">
-<a href="javascript:void(0);" class="btn btn25 blue_btn" data-attrid="{$attr_id}" ectype="attr_input">{$lang.custom}</a>
+<a href="javascript:void(0);" class="btn btn25 blue_btn" data-attrid="{$attr_id}" ectype="attr_input">自定义</a>
 </div>

@@ -28,7 +28,7 @@
                 <div class="dt dsc-cm">{$lang.Site_navigation}<i class="iconfont icon-down"></i></div>
                 <div class="dd dorpdown-layer">
                     <dl class="fore1">
-                        <dt>{$lang.characteristic_theme}</dt>
+                        <dt>特色主题</dt>
                         <dd>
                             <!-- {foreach name=nav_top_list from=$top_cat_list item=topc_cats key=key} -->
                                 <!--{if $smarty.foreach.nav_top_list.index < 3}-->
@@ -38,7 +38,7 @@
                         </dd>
                     </dl>
                     <dl class="fore2">
-                        <dt>{$lang.modules_txt_promo}</dt>
+                        <dt>促销活动</dt>
                         <dd>
                             <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav key=key} -->
                                 <!--{if $smarty.foreach.nav_top_list.index >= 4}-->
@@ -62,8 +62,8 @@
             <div class="form">
                 <form id="searchForm" name="searchForm" method="get" action="wholesale_search.php" onSubmit="return checkSearchForm(this)" class="search-form">
                     <input autocomplete="off"  name="keywords" type="text" id="keyword" value="{if $wholesale_search_keywords}{$wholesale_search_keywords}{else}{insert name='wholesale_rand_keyword'}{/if}" class="search-text"/>
-                    <button type="submit" class="button button-goods" onclick="checkstore_search_cmt(0)">{$lang.serch_goods}</button>
-					<a href="javascript:;" ectype="wantToBuy" class="wantToBuy"><i class="iconfont icon-book"></i>{$lang.serch_want_buy}</a>
+                    <button type="submit" class="button button-goods" onclick="checkstore_search_cmt(0)" >搜商品</button>
+					<a href="javascript:;" ectype="wantToBuy" class="wantToBuy"><i class="iconfont icon-book"></i>发布求购单</a>
 					<input type="hidden" name="user_id" value="{$user_id|default:0}">
                 </form>
                 {if $wholesale_keywords}
@@ -90,7 +90,7 @@
 <div class="nav nav-b2b{if $filename neq 'wholesale'} dsc-zoom{/if}">
     <div class="w w1200">
         <div class="b2b-categorys">
-        	<div class="b2b-categorys-all"><a href="wholesale_cat.php" target="_blank">{$lang.all_b2b_goods}</a></div>
+        	<div class="b2b-categorys-all"><a href="wholesale_cat.php" target="_blank">全部批发商品</a></div>
             <div class="b2b-categorys-content{if $filename neq 'wholesale'} hide{/if}">
             	<ul>
                 	<!--{foreach from=$wholesale_cat item=cat name=wholesale_cat}-->
@@ -98,7 +98,7 @@
                 	<li>
                     	<div class="b2b-cate-item">
                         	<!--{if $cat.style_icon eq 'other'}-->
-                            {if $cat.cat_icon}<div class="icon-other"><img src="{$cat.cat_icon}" alt="{$lang.category_icon}"></div>{/if}
+                            {if $cat.cat_icon}<div class="icon-other"><img src="{$cat.cat_icon}" alt="分类图标"></div>{/if}
                             <!--{else}-->
                             <i class="iconfont icon-{$cat.style_icon}"></i>
                             <!--{/if}-->
@@ -130,8 +130,8 @@
         </div>
         <div class="nav-main">
         	<ul class="navitems">
-            	<li><a href="../wholesale.php" {if $index eq 'index'}class="curr"{/if}>{$lang.b2b_home}</a></li>
-                <li><a href="wholesale_purchase.php?act=list" {if $buy eq 'list'}class="curr"{/if}>{$lang.want_buy_info}</a></li>
+            	<li><a href="../wholesale.php" {if $index eq 'index'}class="curr"{/if}>批发首页</a></li>
+                <li><a href="wholesale_purchase.php?act=list" {if $buy eq 'list'}class="curr"{/if}>求购信息</a></li>
 				{foreach from=$get_wholsale_navigator item=get_wholsale_navigator}
 				<li><a href="{$get_wholsale_navigator.url}" {if $get_wholsale_navigator.cat_id eq $get_wholsale_navigator.active}class="curr"{/if}>{$get_wholsale_navigator.cat_name}</a></li>
 				{/foreach}

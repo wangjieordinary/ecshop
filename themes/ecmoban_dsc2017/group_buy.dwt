@@ -20,7 +20,7 @@
         <div class="gb-crazy">
             <div class="w w1200">
                 <div class="crazy-hd">
-                    <h2>{$lang.insane_group_buy}</h2>
+                    <h2>疯狂团购</h2>
                 </div>
                 <div class="crazy-bd">
                     <ul class="crazy-list clearfix">
@@ -52,7 +52,7 @@
             </div>
         </div>
         <div class="gb-index-main w w1200">
-            <h2>{$lang.hot_group_buy}</h2>
+            <h2>热门团购</h2>
             <div class="gb-index-list">
                 <ul class="clearfix" ectype="items">
                     <!-- {foreach from=$hot_list item=group_buy name=foo} 循环团购活动开始 --> 
@@ -83,7 +83,7 @@
                     <!-- {/foreach}-->
                 </ul>
             </div>
-            <a href="group_buy.php?act=list" class="gb-btn-all">{$lang.all_group_buy}</a>
+            <a href="group_buy.php?act=list" class="gb-btn-all">全部团购</a>
         </div>
     </div>
     {* DSC 提醒您：动态载入user_menu_position.lbi，显示首页分类小广告 *}{insert name='user_menu_position'}

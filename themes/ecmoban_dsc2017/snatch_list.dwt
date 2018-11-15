@@ -28,7 +28,7 @@
                                     <div class="sort-l">
                                         <a href="snatch.php?act=list&sort=snatch_id&order=<!-- {if $pager.search.sort == 'snatch_id' && $pager.search.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if}" class="sort-item <!-- {if $pager.search.sort == 'snatch_id'}-->curr<!-- {/if} -->">{$lang.default}<i class="iconfont <!-- {if $pager.search.sort == 'snatch_id' && $pager.search.order == 'DESC'} -->icon-down1<!-- {else} -->icon-up1<!-- {/if} -->"></i></a>
                                         <a href="snatch.php?act=list&sort=start_time&order=<!-- {if $pager.search.sort == 'start_time' && $pager.search.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if}" class="sort-item <!-- {if $pager.search.sort == 'start_time'}-->curr<!-- {/if} -->">{$lang.start_time}<i class="iconfont <!-- {if $pager.search.sort == 'start_time' && $pager.search.order == 'DESC'} -->icon-down1<!-- {else} -->icon-up1<!-- {/if} -->"></i></a>
-                                        <a href="snatch.php?act=list&sort=end_time&order=<!-- {if $pager.search.sort == 'end_time' && $pager.search.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if}" class="sort-item <!-- {if $pager.search.sort == 'end_time'}-->curr<!-- {/if} -->">{$lang.coming_end}<i class="iconfont <!-- {if $pager.search.sort == 'end_time' && $pager.search.order == 'DESC'} -->icon-down1<!-- {else} -->icon-up1<!-- {/if} -->"></i></a>
+                                        <a href="snatch.php?act=list&sort=end_time&order=<!-- {if $pager.search.sort == 'end_time' && $pager.search.order == 'DESC'} -->ASC<!-- {else} -->DESC<!-- {/if}" class="sort-item <!-- {if $pager.search.sort == 'end_time'}-->curr<!-- {/if} -->">即将结束<i class="iconfont <!-- {if $pager.search.sort == 'end_time' && $pager.search.order == 'DESC'} -->icon-down1<!-- {else} -->icon-up1<!-- {/if} -->"></i></a>
                                     </div>
                                     <div class="f-search mr10">
                                         <input name="keywords" type="text" class="text" value="{$pager.search.keywords}" placeholder="{$lang.goods_name}" />
@@ -64,7 +64,7 @@
                                     <em>:</em>
                                     <span class="seconds">10</span>
                                 </p>
-                                <p><em>{$lang.bid_number}：</em><span>{$list.price_list_count}</span></p>
+                                <p><em>出价次数：</em><span>{$list.price_list_count}</span></p>
                             </div>
                             <!-- {if $list.current_time lt $list.end_time and $list.current_time gt $list.start_time } -->
                             <a href="{$list.url}" target="_blank" class="sn-btn"><em></em>{$lang.me_bid}<s></s></a>

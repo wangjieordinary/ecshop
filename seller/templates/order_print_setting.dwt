@@ -29,11 +29,11 @@
                         	<thead>
                                 <tr>
                                     <th width="5%" class="tl pl10">{$lang.record_id}</th>
-                                    <th width="15%" class="tl">{$lang.specifications}</th>
-                                    <th width="20%" class="tl">{$lang.printer}</th>
-                                    <th width="20%" class="tl">{$lang.width}(mm)</th>
-									<th width="15%" class="tl">{$lang.sort_order}</th>
-                                    <th width="15%" class="tl">{$lang.set_default}</th>
+                                    <th width="15%" class="tl">规格</th>
+                                    <th width="20%" class="tl">打印机</th>
+                                    <th width="20%" class="tl">宽度(mm)</th>
+									<th width="15%" class="tl">排序</th>
+                                    <th width="15%" class="tl">设为默认</th>
                                     <th width="10%">{$lang.handler}</th>
                                 </tr>
                             </thead>

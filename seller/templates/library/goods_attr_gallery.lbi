@@ -1,12 +1,12 @@
 {if $attr_spec}
 <div class="ecsc-form-title mb20">
     <i class="dian"></i>
-    <h3>{$lang.attr_pic}</h3>
+    <h3>属性图片</h3>
     {if $goods_attr_price eq 0}
         {if $goods_model eq 1}
-        	<a href="goods_warehouse_attr_batch.php?act=add&goods_id={$goods_id}" class="sc-btn btn35 sc-redBg-btn ml30" target="_blank">{$lang.batch_upload_csv}</a>
+        	<a href="goods_warehouse_attr_batch.php?act=add&goods_id={$goods_id}" class="sc-btn btn35 sc-redBg-btn ml30" target="_blank">CSV批量上传</a>
         {elseif $goods_model eq 2}
-        	<a href="goods_area_attr_batch.php?act=add&goods_id={$goods_id}" class="sc-btn btn35 sc-redBg-btn ml30" target="_blank">{$lang.batch_upload_csv}</a>
+        	<a href="goods_area_attr_batch.php?act=add&goods_id={$goods_id}" class="sc-btn btn35 sc-redBg-btn ml30" target="_blank">CSV批量上传</a>
         {/if}
     {/if}
 </div>
@@ -20,21 +20,21 @@
         <div class="txt text_readonly" title="{$val.attr_value}" data-toggle="tooltip">{$val.attr_value}</div>
         <div class="info {if $goods_attr_price neq 0}{if $val.attr_type eq 1}hide{/if}{/if}">
             {if $goods_model eq 1}
-            <input name="warehouse_butt" class="sc-btn btn30 sc-blueBg-btn mr10 {if $goods_attr_price neq 0}{if $val.attr_type eq 1}hide{/if}{/if}" value="{$lang.warehouse_price}" type="button" data-goodsattrid="{$val.goods_attr_id}">  
+            <input name="warehouse_butt" class="sc-btn btn30 sc-blueBg-btn mr10 {if $goods_attr_price neq 0}{if $val.attr_type eq 1}hide{/if}{/if}" value="仓库价格" type="button" data-goodsattrid="{$val.goods_attr_id}">  
             {elseif $goods_model eq 2}
-            <input name="area_butt" class="sc-btn btn30 sc-blueBg-btn mr10 {if $goods_attr_price neq 0}{if $val.attr_type eq 1}hide{/if}{/if}" value="{$lang.area_price}" type="button" data-goodsattrid="{$val.goods_attr_id}">
+            <input name="area_butt" class="sc-btn btn30 sc-blueBg-btn mr10 {if $goods_attr_price neq 0}{if $val.attr_type eq 1}hide{/if}{/if}" value="地区价格" type="button" data-goodsattrid="{$val.goods_attr_id}">
             {else}
-            <label class="fl mr10 {if $goods_attr_price neq 0}{if $val.attr_type eq 1}hide{/if}{/if}">{$lang.price}</label>
+            <label class="fl mr10 {if $goods_attr_price neq 0}{if $val.attr_type eq 1}hide{/if}{/if}">价格</label>
             <input type="text" class="text w80 {if $goods_attr_price neq 0}{if $val.attr_type eq 1}hide{/if}{/if}" name="gallery_attr_price[]" onBlur="listTable.editInput(this, 'edit_attr_price', {$val.goods_attr_id|default:0});" size="10" value="{$val.attr_price|default:0.00}" />
             {/if}
         </div>
         <div class="info">
-            <label>{$lang.sort_order}</label>
+            <label>排序</label>
             <input type="text" class="text w40 tc" name="gallery_attr_sort[]" onBlur="listTable.editInput(this, 'edit_attr_sort', {$val.goods_attr_id|default:0});" size="10" value="{$val.attr_sort}" />
         </div>
         
         {if $smarty.foreach.onspec.first && $val.goods_attr_id}
-        <a href="javascript:;" ectype="add_attr_img" class="up_img" data-goodsattrid="{$val.goods_attr_id|default:0}" data-attrid="{$val.attr_id|default:0}">{$lang.upload_image}</a>
+        <a href="javascript:;" ectype="add_attr_img" class="up_img" data-goodsattrid="{$val.goods_attr_id|default:0}" data-attrid="{$val.attr_id|default:0}">上传图片</a>
 		{/if}
         
         {if $val.attr_checked}

@@ -62,7 +62,7 @@
                                     <td><div class="tDiv">{$address.tel|escape}</div></td>
                                     <td><div class="tDiv">{$address.mobile|escape}</div></td>
                                     <td><div class="tDiv">{$address.email|escape}</div></td>
-                                    <td><div class="tDiv">{$address.update_time|escape}</div></td>
+                                    <td><div class="tDiv">{$address.userUp_time|escape}</div></td>
                                     <td class="handle">
                                         <div class="tDiv a2">
                                             <a href="user_address_log.php?act=edit&address_id={$address.address_id}&user_id={$address.user_id}" title="{$lang.edit}" class="btn_edit"><i class="icon icon-edit"></i>{$lang.edit}</a>

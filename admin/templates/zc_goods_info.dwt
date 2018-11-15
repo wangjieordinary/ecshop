@@ -4,14 +4,14 @@
 
 <body class="iframe_body">
 	<div class="warpper">
-    	<div class="title"><a href="{$action_link.href}" class="s-back">{$lang.back}</a>{$lang.09_crowdfunding} - {$ur_here}</div>
+    	<div class="title"><a href="{$action_link.href}" class="s-back">{$lang.back}</a>众筹 - {$ur_here}</div>
         <div class="content">
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                    <li>{$lang.operation_prompt_content.info.0}</li>
-                    <li>{$lang.operation_prompt_content.info.1}</li>
-                    <li>{$lang.operation_prompt_content_common}</li>
+                	<li>{$lang.operation_prompt_content_common}</li>
+                    <li>注意上传方案图片的尺寸，以免出错。</li>
+                    <li>请合理填写方案信息。</li>
                 </ul>
             </div>
             <div class="flexilist">
@@ -23,7 +23,8 @@
                                     <div class="label">{$lang.require_field}{$lang.zc_goods_num}：</div>
                                     <div class="label_value">
 									    <input type='text' name='limit' value='{if $product.limit eq -1}0{else}{$product.limit}{/if}' class="text" id='limit' {if $product.limit eq -1}disabled{/if}/>
-										<input type='checkbox' name='infinite' class="checkbox" value='1' onclick='assignment()' {if $product.limit eq -1}checked='checked'{/if}>{$lang.buxian}
+										<input type='checkbox' name='infinite' class="checkbox" value='1' onclick='assignment()' {if $product.limit eq -1}checked='checked'{/if}>不限
+									    <!--<div class="notic">{$lang.zc_num_note}</div>-->
                                         <div class="form_prompt"></div>
                                     </div>
                                 </div>
@@ -86,22 +87,10 @@
             </div>
 		</div>
     </div>
- 	{include file ='library/pagefooter.lbi'}
+ {include file ='library/pagefooter.lbi'}
 	
 	<script type="text/javascript">
 	$(function(){
-		$('.nyroModal').nyroModal();
-
-		$(document).on('click', 'input[name=infinite]', function(){
-			var status = $(this).is(':checked');
-			if(status){
-				$("input[name='limit']").prop('disabled', true);
-				$("input[name='limit']").val(0);
-			}else{
-				$("input[name='limit']").prop('disabled', false);
-			}
-		})
-
 		//表单验证
 		$("#submitBtn").click(function(){
 			if($("#zc_project_form").valid()){
@@ -135,18 +124,18 @@
 			messages:{
 				limit:{
 					 required : '<i class="icon icon-exclamation-sign"></i>{$lang.zc_goods_num}{$lang.empty}',
-					 digits : '<i class="icon icon-exclamation-sign"></i>'+zc_limit_digits
+					 digits : '<i class="icon icon-exclamation-sign"></i>数量必须为整数'
 				},
 				price :{
 					required : '<i class="icon icon-exclamation-sign"></i>{$lang.zc_goods_price}{$lang.empty}',
-					digits : '<i class="icon icon-exclamation-sign"></i>'+zc_price_digits
+					digits : '<i class="icon icon-exclamation-sign"></i>众筹价格必须为数字'
 				},
 				shipping_fee :{
 					required : '<i class="icon icon-exclamation-sign"></i>{$lang.zc_shipping_fee}{$lang.empty}',
-					digits : '<i class="icon icon-exclamation-sign"></i>'+zc_shipping_fee_digits
+					digits : '<i class="icon icon-exclamation-sign"></i>配送费用必须为数字'
 				},
 				textfile:{
-					required : '<i class="icon icon-exclamation-sign"></i>'+textfile_null
+					required : '<i class="icon icon-exclamation-sign"></i>方案图片不能为空'
 				}
 			}			
 		});
@@ -157,6 +146,22 @@
 			$('#limit').val(0);			
 		}
 	}
+
+		$(function(){
+			$('.nyroModal').nyroModal();
+		})	
+
+	$(function(){
+		$(document).on('click', 'input[name=infinite]', function(){
+			var status = $(this).is(':checked');
+			if(status){
+				$("input[name='limit']").prop('disabled', true);
+				$("input[name='limit']").val(0);
+			}else{
+				$("input[name='limit']").prop('disabled', false);
+			}
+		})
+	})
 	</script>
 </body>
 </html>

@@ -13,14 +13,14 @@
     <!-- 热门推荐 -->
     <div class="hotrecommend" id="hotrecommend">
         <div class="hd">
-            <h2>{$lang.Popular_recommendation}</h2>
+            <h2>热门推荐</h2>
             <div class="extra">
                 <div class="hr-slide-hd">
                     <ul>
-                        <li>{$lang.new_first_start}</li>
-                        <li>{$lang.hot_rankings}</li>
-                        <li>{$lang.best_goods}</li>
-                        <li>{$lang.today_deal}</li>
+                        <li>新品首发</li>
+                        <li>热销排行</li>
+                        <li>精品推荐</li>
+                        <li>今日特价</li>
                     </ul>
                 </div>
             </div>
@@ -102,7 +102,7 @@
     </div>
     <!-- 品牌旗舰 -->
     <div class="catetop-brand clearfix" id="catBrand">
-        <div class="hd"><h2>{$lang.brand_flagship}</h2></div>
+        <div class="hd"><h2>品牌旗舰</h2></div>
         <div class="bd">
             <div class="cb-l">{* DSC 提醒您：动态载入cate_layer_right.lbi，显示品牌左侧小广告 *}{insert name='get_adv_child' ad_arr=$top_style_elec_brand_left id=$cate_info.cat_id}</div>
             <div class="cb-m">
@@ -111,9 +111,7 @@
             <div class="cb-r">
                 <ul>
                 <!--{foreach from=$cat_brand.brands item=brand name=cat_brand}-->
-                {if $smarty.foreach.cat_brand.iteration < 13}
                 <li><a href="{$brand.url}" target="_blank" title="{$brand.brand_name}"><img src="{$brand.brand_logo}" alt=""></a></li>
-                {/if}
                 <!-- {/foreach} -->
                 </ul>
             </div>
@@ -127,7 +125,7 @@
     <!-- 随手购 -->
     <div class="atwillgo" id="atwillgo">
         <div class="awg-hd">
-            <h2>{$lang.purchase_hand}</h2>
+            <h2>随手购</h2>
         </div>
         <div class="awg-bd">
             <div class="atwillgo-slide">
@@ -161,8 +159,8 @@
     <!-- 楼层电梯 -->
     <div class="catetop-lift lift-hide" ectype="lift">
     	<div class="lift-list" ectype="liftList">
-        	<div class="catetop-lift-item lift-item-current" ectype="liftItem" data-target="#hotrecommend"><span>{$lang.Popular_recommendation}</span></div>
-            <div class="catetop-lift-item" ectype="liftItem" data-target="#catBrand"><span>{$lang.brand_flagship}</span></div>
+        	<div class="catetop-lift-item lift-item-current" ectype="liftItem" data-target="#hotrecommend"><span>热门推荐</span></div>
+            <div class="catetop-lift-item" ectype="liftItem" data-target="#catBrand"><span>品牌旗舰</span></div>
         	<!--{foreach from=$categories_child item=cat name=child}-->
             <div class="catetop-lift-item lift-floor-item" ectype="liftItem"><span>{$cat.name}</span></div>
             <!--{/foreach}-->

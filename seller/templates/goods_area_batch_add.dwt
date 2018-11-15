@@ -13,7 +13,7 @@
 				{include file ='library/seller_menu_tab.lbi'}
 				<div class="ecsc-form-goods">
                 <div class="explanation" id="explanation">
-                    <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                    <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                     {$lang.use_help}
                 </div>
 				<form action="goods_area_batch.php?act=upload" method="post" enctype="multipart/form-data" name="theForm" id="goods_area_batch_form">
@@ -28,7 +28,7 @@
                         <dt>{$lang.require_field}&nbsp;{$lang.file_charset}</dt>
                         <dd>
                             <div id="charset" class="imitate_select select_w145 mr0">
-                                <div class="cite">{$lang.please_select}</div>
+                                <div class="cite">请选择</div>
                                 <ul>
                                     {foreach from=$lang_list item=list key=key}
                                     <li><a href="javascript:;" data-value="{$key}" class="ftx-01">{$list}</a></li>
@@ -45,7 +45,7 @@
                         	<div class="type-file-box">
                             	<div class="input">
                                     <input type="text" name="textfile" class="type-file-text" id="textfield" value="" readonly>
-                                    <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}">
+                                    <input type="button" name="button" id="button" class="type-file-button" value="上传...">
                                     <input type="file" class="type-file-file" name="file" size="30" hidefocus="true" data-state="csvfile">
                                 </div>
                             </div>
@@ -124,10 +124,10 @@
 				},
 				messages:{
 					charset:{
-						required : '<i class="icon icon-exclamation-sign"></i>'+jl_pls_select_file_encode
+						required : '<i class="icon icon-exclamation-sign"></i>请选择文件编码'
 					},
 					textfile:{
-						required : '<i class="icon icon-exclamation-sign"></i>'+jl_pls_select_upload_file
+						required : '<i class="icon icon-exclamation-sign"></i>请选择上传文件'
 					}
 				}			
 			});

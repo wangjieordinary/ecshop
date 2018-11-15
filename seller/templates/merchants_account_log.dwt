@@ -20,13 +20,13 @@
                             <div class="imitate_select select_w145">
                                 <div class="cite">{$lang.handler}</div>
                                 <ul>
-                                    <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.please_select}</a></li>
+                                    <li><a href="javascript:;" data-value="0" class="ftx-01">请选择</a></li>
                                     <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.off_stocks}</a></li>
                                     <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.stay_dispose}</a></li>
                                 </ul>
                                 <input name="handler" type="hidden" />
                             </div>
-                            <input type="submit" class="sc-btn sc-blueBg-btn btn30" value="{$lang.button_search}">
+                            <input type="submit" class="sc-btn sc-blueBg-btn btn30" value="搜索">
                         </form>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                     <tr>
                       <th width="10%">{$lang.record_id}</th>
                       <th width="15%">{$lang.label_total_fee}</th>
-                      <th width="15%">{$lang.frozen_money}</th>
+                      <th width="15%">冻结资金</th>
                       <th width="15%">{$lang.label_log_type}</th>
                       <th width="15%">{$lang.label_add_time}</th>
                       <th width="15%">商家回复</th>
@@ -62,7 +62,7 @@
                         {/if}
                         )</em>
                         {else}
-                        {$lang.log_type.5}
+                        解冻冻结资金
                         {/if}
                       </td>  
                       <td align="center">{$log.add_time}</td>  

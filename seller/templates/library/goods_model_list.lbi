@@ -1,22 +1,22 @@
 {if $model eq 1}
 <div class="step_top_btn">	
-	<a href="javascript:void(0);" class="sc-btn btn35 sc-blueBg-btn" ectype="addWarehouse" data-userid="{$user_id}"><i class="sc_icon sc_icon_warehouse"></i>{$lang.add_warehouse}</a>
-	<a href="goods_warehouse_batch.php?act=add&goods_id={$goods_id}" class="sc-btn btn35 sc-blue-btn" target="_blank">{$lang.batch_upload_csv}</a>	
+	<a href="javascript:void(0);" class="sc-btn btn35 sc-blueBg-btn" ectype="addWarehouse" data-userid="{$user_id}"><i class="sc_icon sc_icon_warehouse"></i>添加仓库</a>
+	<a href="goods_warehouse_batch.php?act=add&goods_id={$goods_id}" class="sc-btn btn35 sc-blue-btn" target="_blank">CSV批量上传</a>	
 </div>
 <div class="list-div">
 	<table class="ecsc-default-table ecsc-table-seller order mt25">
 		<thead>
 			<tr>
-				<th width="5%">{$lang.record_id}</th>
-				<th width="9%">{$lang.warehouse_name}</th>
-                <th width="10%">{$lang.warehouse_goods_code}</th>
-				<th width="11%">{$lang.warehouse_stock}</th>
-				<th width="11%">{$lang.warehouse_price}</th>
-				<th width="11%">{$lang.warehouse_promotion_price}</th>
-				<th width="11%">{$lang.give_spand_integral}</th>
-				<th width="11%">{$lang.give_level_integral}</th>
-				<th width="11%">{$lang.integral_purchase_amount}</th>
-				<th width="10%">{$lang.handler}</th>
+				<th width="5%">编号</th>
+				<th width="9%">仓库名称</th>
+                <th width="10%">仓库商品货号</th>
+				<th width="11%">仓库库存</th>
+				<th width="11%">仓库价格</th>
+				<th width="11%">仓库促销价格</th>
+				<th width="11%">赠送消费积分数</th>
+				<th width="11%">赠送等级积分数</th>
+				<th width="11%">积分购买金额</th>
+				<th width="10%">操作</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -32,13 +32,13 @@
 				<td><span onclick="listTable.edit(this, 'edit_warehouse_rank_integral', {$warehouse.w_id})">{$warehouse.rank_integral}</span></td>
 				<td><span onclick="listTable.edit(this, 'edit_warehouse_pay_integral', {$warehouse.w_id})">{$warehouse.pay_integral}</span></td>
 				<td class="ecsc-table-handle">
-                    <span><a href="javascript:void(0);" class="btn-red" ectype="dropWarehouse" data-wid="{$warehouse.w_id}"><i class="icon icon-trash"></i><p>{$lang.drop}</p></a></span>
+                    <span><a href="javascript:void(0);" class="btn-red" ectype="dropWarehouse" data-wid="{$warehouse.w_id}"><i class="icon icon-trash"></i><p>删除</p></a></span>
                     <input name="warehouse_id[]" value="{$warehouse.w_id}" type="hidden">
                	</td>
 			</tr>
 			{foreachelse}
 			<tr>
-				<td colspan="10" class="no-records"><div class="tDiv">{$lang.no_record}</div></td>
+				<td colspan="10" class="no-records"><div class="tDiv">无记录</div></td>
 			</tr>
 			{/foreach}
 		</tbody>
@@ -59,21 +59,21 @@
 	<table class="ecsc-default-table ecsc-table-seller order mt25">
 		<thead>
 			<tr>
-				<th width="5%">{$lang.record_id}</th>
-				<th width="5%">{$lang.warehouse}</th>
-				<th width="5%">{$lang.name}</th>
+				<th width="5%">编号</th>
+				<th width="5%">仓库</th>
+				<th width="5%">名称</th>
                 {if $area_pricetype eq 1}
-                <th width="6%">{$lang.the_city}</th>
+                <th width="6%">城市</th>
                 {/if}
-                <th width="9%">{$lang.product_code}</th>
-				<th width="9%">{$lang.storage}</th>
-				<th width="9%">{$lang.price}</th>
-				<th width="8%">{$lang.promotion_price}</th>
-				<th width="8%">{$lang.give_spand_integral}</th>
-				<th width="9%">{$lang.give_level_integral}</th>
-				<th width="9%">{$lang.integral_purchase_amount}</th>
-				<th width="6%">{$lang.sort_order}</th>
-				<th width="6%">{$lang.handler}</th>
+                <th width="9%">商品货号</th>
+				<th width="9%">库存</th>
+				<th width="9%">价格</th>
+				<th width="8%">促销价格</th>
+				<th width="8%">赠送消费积分</th>
+				<th width="9%">赠送等级积分</th>
+				<th width="9%">积分购买金额</th>
+				<th width="6%">排序</th>
+				<th width="6%">操作</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -94,13 +94,13 @@
 				<td><span onclick="listTable.edit(this, 'edit_region_pay_integral', {$area.a_id})">{$area.pay_integral}</span></td>
 				<td><span onclick="listTable.edit(this, 'edit_region_sort', {$area.a_id})">{$area.region_sort}</span></td>
 				<td class="ecsc-table-handle">
-                    <span><a href="javascript:void(0);" class="btn-red" ectype="dropWarehouseArea" data-aid="{$area.a_id}"><i class="icon icon-trash"></i><p>{$lang.drop}</p></a></span>
+                    <span><a href="javascript:void(0);" class="btn-red" ectype="dropWarehouseArea" data-aid="{$area.a_id}"><i class="icon icon-trash"></i><p>删除</p></a></span>
                     <input name="warehouse_area_id[]" value="{$area.a_id}" type="hidden">
                 </td>
 			</tr>
 			{foreachelse}
 			<tr>
-				<td colspan="13" class="no-records"><div class="tDiv">{$lang.no_record}</div></td>
+				<td colspan="13" class="no-records"><div class="tDiv">无记录</div></td>
 			</tr>			
 			{/foreach}
 		</tbody>

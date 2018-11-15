@@ -3,10 +3,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>{if $page_title}{$page_title}{else}{$lang.store_page}{/if}</title>
     
-    <link rel="shortcut icon" href="../favicon.ico" />
-    <link rel="icon" href="../animated_favicon.gif" type="image/gif" />
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="css/purebox.css" rel="stylesheet" type="text/css">
+    <link href="css/feijiao.css" rel="stylesheet" type="text/css">
     <link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="../js/perfect-scrollbar/perfect-scrollbar.min.css" />
     {insert_scripts files="../js/jquery-1.9.1.min.js,../js/jquery.json.js,../js/transport_jquery.js,../js/utils.js,listtable.js,common.js,jquery.validation.min.js,../js/jquery.form.js,../js/perfect-scrollbar/perfect-scrollbar.min.js,../js/lib_ecmobanFunc.js"}
@@ -27,7 +26,7 @@
                     <img src="images/store_logo.png" />
                     {/if}
                     </div>
-                    <div class="wz">{$lang.offline_store}</div>
+                    <div class="wz">门店管理</div>
                 </a>
             </div>
             <div class="english">BUSINESS MANAGMENT CENTER</div>
@@ -52,7 +51,7 @@
                 <dd>
                     <span><i class="sc_icon sc_icon_store"></i><a class="navbar-brand" href="index.php">{$lang.store_page}</a></span>
                     <span><i class="sc_icon sc_icon_tc"></i><a class="navbar-brand navbar-right" href="privilege.php?act=logout">{$lang.logout}</a></span>
-                    <span><i class="sc_icon sc_icon_store"></i><a class="navbar-brand navbar-right" href="index.php?act=clear_cache">{$lang.clear_cache}</a></span>
+                    <span><i class="sc_icon sc_icon_store"></i><a class="navbar-brand navbar-right" href="index.php?act=clear_cache">清除缓存</a></span>
                 </dd>
             </dl>
         </div>

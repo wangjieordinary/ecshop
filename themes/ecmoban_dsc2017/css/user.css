@@ -1,6 +1,6 @@
 body{ background: #f8f8f8; }
 .sc-btn{ text-align:center; font-size:12px; min-width:50px; padding:0 10px;}
-.sc-btn:hover{ border-color:#1abb8c;}
+.sc-btn:hover{ border-color:#f42424;}
 .sc-blue-btn:hover{ background-color: #dff3ff; color: #139ff0;border-color:#139ff0;}
 .sc-blueBg-btn:hover{ border-color:#139ff0;}
 .sc-btn-disabled:hover{ border-color:#ccc;}
@@ -31,27 +31,27 @@ body{ background: #f8f8f8; }
 .user-title h2{ float: left; font-size: 16px; font-weight: 700; color: #555; height: 27px; line-height: 27px; margin-right: 20px;}
 .user-title h2:before{ content: ""; float: left; height: 16px; width: 3px; background: #F32525; margin: 6px 10px 0 0;}
 .more{ float: right; line-height: 27px; color:#438cde;}
-.more:hover{ color:#1abb8c;}
-.more em{ color:#1abb8c;}
+.more:hover{ color:#f42424;}
+.more em{ color:#f42424;}
 /*标题模块-切换*/
 .user-title .tabs{ height: 27px; float: left;}
 .user-title .tabs li{ float: left; margin-right: 20px; line-height: 27px; border-bottom: 1px solid transparent;}
-.user-title .tabs li.active{ border-bottom-color: #1abb8c; padding-bottom: 4px;}
+.user-title .tabs li.active{ border-bottom-color: #f42424; padding-bottom: 4px;}
 .user-title .tabs li a{ font-size: 14px; color: #555; }
 .user-title .tabs li:hover a,
-.user-title .tabs li.active a{ color: #1abb8c; }
+.user-title .tabs li.active a{ color: #f42424; }
 /*标题模块-提示语*/
 .user-title h3{ line-height: 27px; font-size: 14px;  float: left; }
 /*面包屑*/
 .user-crumbs{ padding: 10px 0; }
 .user-crumbs a{ color: #8c8c8c; }
-.user-crumbs a:hover{ color: #1abb8c; }
+.user-crumbs a:hover{ color: #f42424; }
 
 /*用户信息列表*/
 .user-info-list{ font-size: 14px; padding: 25px 0;}
 .user-info-list .info-title{ overflow: hidden; margin-bottom: 15px; line-height:24px;}
 .user-info-list .info-title h2{ float: left; font-size: 16px; color: #555;}
-.user-info-list .edit{ font-size: 12px; color: #1abb8c; display: inline-block; vertical-align: top; margin-left: 15px; line-height:20px;}
+.user-info-list .edit{ font-size: 12px; color: #f42424; display: inline-block; vertical-align: top; margin-left: 15px; line-height:20px;}
 .user-info-list .edit:hover{ text-decoration: underline; }
 .user-info-list .info-content{  }
 .user-info-list .info-content .info-item{ overflow: hidden; margin-bottom: 10px;}
@@ -118,7 +118,7 @@ body{ background: #f8f8f8; }
 .user-frame-items .item{ float:left; width:198px; height:46px; padding:16px 0; border:1px solid #d2d2d2; margin-right:20px; text-align:center;}
 .user-frame-items .item:last-child{ margin-right:0;}
 .user-frame-items .item span{ display:block; font-size:14px; color:#8c8c8c;}
-.user-frame-items .item .b-price{ color:#1abb8c; font-weight:700; margin-top:3px;}
+.user-frame-items .item .b-price{ color:#f42424; font-weight:700; margin-top:3px;}
 
 /*用户中心提示*/
 .user-prompt{ color:#8c8c8c;}
@@ -134,10 +134,10 @@ body{ background: #f8f8f8; }
 .user-items:after{ content: ' '; display: block; clear: both; height: 0; visibility: hidden;}
 .user-items .item{ display:block; margin-bottom:15px; position:relative; float:left; width:100%;}
 .user-items .item .label{ float:left; width:100px; text-align:right; margin-right:15px; height:40px; line-height:40px; font-size:14px;}
-.user-items .item .label em{ color:#1abb8c; margin-right:2px;}
+.user-items .item .label em{ color:#f42424; margin-right:2px;}
 .user-items .item .value{ float:left; width:calc(100% - 116px);}
 .user-items .item .value .text{ height:38px; line-height:38px; border-color:#d2d2d2; float:left; font-size:14px;}
-.user-items .item .value .text.error{ border-color:#1abb8c; color:#555; margin-left:0;}
+.user-items .item .value .text.error{ border-color:#f42424; color:#555; margin-left:0;}
 .user-items .item .value .notic{ float:left;color:#d2d2d2; font-size:14px; line-height:40px; margin-left:18px;}
 .user-items .item-button{ margin-top:15px;}
 .user-items .item-button .sc-btn{ height: 38px;line-height: 38px;padding: 0 32px; font-size:14px;}
@@ -146,9 +146,9 @@ body{ background: #f8f8f8; }
 .user-items .item .radio-item{ margin-top:10px;}
 .user-items .item .item-item{ min-width:88px; height:38px; line-height:38px; padding:0 10px; font-size:14px; text-align:center; border:1px solid #d2d2d2; float:left; margin:0 10px 10px 0; position:relative; cursor:pointer;}
 .user-items .item .item-item b{ background:url(../images/dsc-icon.png) 0 0 no-repeat; width:15px; height:15px; position:absolute; right:0; bottom:0; display:none;}
-.user-items .item .item-item.selected{ border-color:#1abb8c;}
+.user-items .item .item-item.selected{ border-color:#f42424;}
 .user-items .item .item-item.selected b{ display:block;}
-.user-items .item .item-item.curr{ border-color:#fdd3d3; color:#1abb8c; cursor:default;}
+.user-items .item .item-item.curr{ border-color:#fdd3d3; color:#b31919; cursor:default;}
 .user-items .item .textarea{ width:570px; height:120px;}
 .user-items .item .value-file{ position:relative; overflow:hidden;}
 .user-items .item .value-file .txt{ height:28px; line-height:28px; width:500px; margin:0; border:0; outline:0;}
@@ -204,10 +204,10 @@ body{ background: #f8f8f8; }
 .user-side .side-menu dt .square.square-plus:before{ height: 8px; top: 3px;}
 .user-side .side-menu dd{ padding: 0 0 0 26px; }
 .user-side .side-menu dd p{ margin-bottom: 8px;}
-.user-side .side-menu dd .current a{ color:#1abb8c;}
+.user-side .side-menu dd .current a{ color:#f42424;}
 .user-side .side-menu dd a{ font-size: 14px; color: #8c8c8c;}
 .user-side .side-menu dd a:hover,
-.user-side .side-menu dd a.current{ color: #1abb8c; text-decoration: none;}
+.user-side .side-menu dd a.current{ color: #f42424; text-decoration: none;}
 
 .user-main{ width: 920px; float: left; }
 .user-main .user-mod{ min-height:807px;}
@@ -246,7 +246,7 @@ body{ background: #f8f8f8; }
 .user-index-wallet li .info{ float: left; font-size: 14px;  }
 .user-index-wallet li .info-line a{ line-height:30px; display:block; float:left;}
 .user-index-wallet li .info-line .line{ font-size:12px; color:#438cde; margin-left:5px;}
-.user-index-wallet li .info-line .line:hover{ color:#1abb8c;}
+.user-index-wallet li .info-line .line:hover{ color:#f42424;}
 .user-index-wallet li .info p a{ color: #8c8c8c; }
 .user-index-wallet li .info p a:hover{ color: #F32523; text-decoration: underline;}
 .user-index-wallet li .info .num{ font-weight: bolder; }
@@ -326,12 +326,12 @@ body{ background: #f8f8f8; }
 .user-order-list .item-c .c-img img{ width: 70px; height: 70px; }
 .user-order-list .item-c .c-info{ padding-top: 5px; float: left; width: 570px;}
 .user-order-list .item-c .c-info .info-name{ margin-bottom: 5px; white-space: nowrap; text-overflow: ellipsis; overflow: hidden; display:block; width:500px; float:left; color: #8c8c8c;}
-.user-order-list .item-c .c-info .info-name:hover{ color: #1abb8c; }
+.user-order-list .item-c .c-info .info-name:hover{ color: #f42424; }
 .user-order-list .item-c .c-info .info-price{ float:left; width:50%;}
 .user-order-list .item-c .c-info .info-attr{ float:left; width:100%; margin-top:5px;}
 .user-order-list .item-c .c-info .trade_snapshot{ float:left; color:#438cde;}
-.user-order-list .item-c .c-info .trade_snapshot:hover{color:#1abb8c;}
-.user-order-list .item-c .c-info .info-price b{ color: #1abb8c; margin-right: 5px; font-weight: 100;}
+.user-order-list .item-c .c-info .trade_snapshot:hover{color:#f42424;}
+.user-order-list .item-c .c-info .info-price b{ color: #f42424; margin-right: 5px; font-weight: 100;}
 .user-order-list .item-c .c-info .info-price i{ margin-right: 5px;}
 .user-order-list .item-c .c-handle{ width: 75px; float: right; text-align: right; }
 .user-order-list .item-c .c-handle a{ margin-right: 0; margin-bottom: 5px; }
@@ -340,7 +340,7 @@ body{ background: #f8f8f8; }
 
 .user-order-list .item-c .c-left .ellipsis{ color: #333; letter-spacing: 1px; margin:0 0 10px 10px; display:block;}
 .user-order-list .item-c .c-left .order-prolist-more{ display: block; color: #3a63c2; font:12px/150% Arial,Verdana,"\5b8b\4f53"; margin-left:10px;}
-.user-order-list .item-c .c-left .order-prolist-more:hover{ color:#1abb8c;}
+.user-order-list .item-c .c-left .order-prolist-more:hover{ color:#f42424;}
 
 .user-order-list .item-t-qb{ padding:10px 20px; height:auto;}
 .user-order-list .item-t-qb:after{ content: ".";display: block;height: 0;clear: both;visibility: hidden;}
@@ -395,9 +395,9 @@ body{ background: #f8f8f8; }
 .user-order-detail .user-info-list{ border-top: 1px solid #d2d2d2; }
 /*店铺链接*/
 .user-shop-link{ font-size: 14px; color: #438cde;}
-.user-shop-link:hover{ color: #1abb8c; }
+.user-shop-link:hover{ color: #f42424; }
 .user-shop-kefu{ color: #FFC418; margin-left: 5px;}
-.user-shop-kefu:hover{ color: #1abb8c; }
+.user-shop-kefu:hover{ color: #f42424; }
 /*商品列表*/
 .user-table-detail-goods{ }
 .user-table-detail-goods td:nth-child(1) .img{ width: 70px; height: 70px; float: left; margin-right: 20px; }
@@ -413,7 +413,7 @@ body{ background: #f8f8f8; }
 
 /*虚拟商品*/
 .virtual_div{ float:left; position:relative; width:200px; margin:5px 0 0 90px;}
-.virtual_title{ color:#1abb8c; cursor:pointer;}
+.virtual_title{ color:#f42424; cursor:pointer;}
 .virtual_info{ display:none; position:absolute; top:25px; padding:10px 0; border:1px solid #dcdcdc; background:#fff; z-index:9;}
 .virtual_info .virtual_info_item{ width:150px; padding:0 10px 10px; border-bottom:1px dashed #dcdcdc;}
 .virtual_info .virtual_info_item:last-child{ padding-bottom:0; border-bottom:0;}
@@ -487,14 +487,14 @@ body{ background: #f8f8f8; }
 .user-safe-list .item-icon{ float: left; width: 46px; height: 46px; color: #9ed440; padding-top: 5px;}
 .user-safe-list .item-icon-green{ color: #9ed440;}
 .user-safe-list .item-icon-org{ color: #fc0;}
-.user-safe-list .item-icon-red{ color: #1abb8c;}
+.user-safe-list .item-icon-red{ color: #f42424;}
 .user-safe-list .item-icon i{ font-size: 24px; }
 .user-safe-list .item-info{ float: left; }
 .user-safe-list .item-info .info-name{ font-size: 16px; color: #555; font-weight: bold; margin-bottom: 2px;}
 .user-safe-list .item-info p{ font-size: 14px; color: #8c8c8c; }
 .user-safe-list .item-handle{ float: right; }
 .user-safe-list .item-handle .handle-btn{ width: 118px; height: 38px; line-height: 38px; border: 1px solid #d2d2d2; border-radius: 3px; display: inline-block; color: #8c8c8c; text-align: center; font-size: 14px;}
-.user-safe-list .item-handle .handle-btn:hover,.user-safe-list .item-handle .handle-btn-red{ border-color: #1abb8c; color: #1abb8c; }
+.user-safe-list .item-handle .handle-btn:hover,.user-safe-list .item-handle .handle-btn-red{ border-color: #f42424; color: #f42424; }
 
 
 .security-warp{}
@@ -527,7 +527,7 @@ body{ background: #f8f8f8; }
 .stepflex dl.first s { background-position: 0 -24px;background-color: #fff;}
 .stepflex dl.doing { border-top-color: #ec5051;}
 .stepflex dl.done{ border-top-color: #ffa3a4;}
-.stepflex dl.doing .s-num{ background-color:#1abb8c;}
+.stepflex dl.doing .s-num{ background-color:#f42424;}
 .stepflex dl.doing .s-text{ color: #ec5051;}
 .stepflex dl.doing b,.stepflex .doing s,.stepflex .first s,.last b{ width: 5px;height: 5px;position: absolute;line-height: 0;font-size: 0;top: -5px;overflow: hidden; background:url(../images/user/step.png) no-repeat;}
 .stepflex dl.doing s { background-position: -23px -24px;}
@@ -569,7 +569,7 @@ body{ background: #f8f8f8; }
 .user-baitiao-info .u-b-bot{ overflow:hidden; margin-bottom:40px;}
 .u-b-top .u-b-t-tit{font-weight:bold; margin-left:50px;}
 .u-b-top span{ margin-right:5px;}
-.u-b-top span em{ color:#1abb8c; font-size:30px; font-weight:bold; margin-right:2px;}
+.u-b-top span em{ color:#f42424; font-size:30px; font-weight:bold; margin-right:2px;}
 
 .user-baitiao-list{ margin-top:20px;}
 .user-table-baitiao .sc-btn{ min-width:60px;}
@@ -580,7 +580,7 @@ body{ background: #f8f8f8; }
 .account-main:after{ content: ' '; display: block; clear: both; height: 0; visibility: hidden;}
 .account-price{ text-align:center; margin-top:30px;}
 .account-price strong{ font-size:14px; font-weight:bold; color:#8c8c8c; margin-right:10px;}
-.account-price .a-price{ font-size:48px; font-weight:bold; color:#1abb8c; vertical-align:middle; height:48px; line-height:48px;}
+.account-price .a-price{ font-size:48px; font-weight:bold; color:#f42424; vertical-align:middle; height:48px; line-height:48px;}
 /*.account-price .a-price em{ font-size:16px; vertical-align:text-top; font-weight:normal;}*/
 
 .a-m-bot{ margin-top:50px;}
@@ -646,7 +646,7 @@ body{ background: #f8f8f8; }
 .vcard_info{ float:left;}
 .value_warp .value_shop{ position:absolute; min-width:280px;padding: 6px 8px;background: #fff;color: #648f4a;border: 1px solid #c9d5bf;-moz-box-shadow: 0 0 2px 2px #eee;-webkit-box-shadow: 0 0 2px 2px #eee;box-shadow: 0 0 2px 2px #eee; display:none;z-index: 50;}
 .value_warp .value_shop a{ color:#438cde;}
-.value_warp .value_shop a:hover{ color:#1abb8c;}
+.value_warp .value_shop a:hover{ color:#f42424;}
 
 /* ------------------ 我的储值卡 end ------------------ */
 
@@ -657,7 +657,7 @@ body{ background: #f8f8f8; }
 .user-bonus-info .items{ width:100%; overflow:hidden;}
 .user-bonus-info .items .item{ float:left; margin:0 25px 55px 0; width:270px; height:145px; background:url(../images/user/user-bonus-icon.png) no-repeat; position:relative;}
 .user-bonus-info .items .item-last{ margin-right:0;}
-.user-bonus-info .items .item .b-price{ font-size:36px; color:#1abb8c; line-height:36px; text-align:center; margin-top:5px;}
+.user-bonus-info .items .item .b-price{ font-size:36px; color:#f42424; line-height:36px; text-align:center; margin-top:5px;}
 .user-bonus-info .items .item .b-price em{ font-size:16px; vertical-align:text-top;}
 .user-bonus-info .items .item .b-i-bot{ color:#fff; font-size:14px; text-align:center; margin-top:20px;}
 .user-bonus-info .items .item .b-i-bot p{ line-height:25px; font-size:12px;}
@@ -712,13 +712,13 @@ body{ background: #f8f8f8; }
 .upload-img-box .upload-btn .uploadify .uploadbutton{ width:78px; height:78px; display:block;}
 .upload-img-box .upload-btn .uploadify .iconfont{ font-size:48px; color:#d2d2d2;}
 .upload-img-box .img-utips{ float:left; font-size:12px; color:#8c8c8c; line-height:78px;}
-.upload-img-box .img-utips em,.upload-img-box .img-utips span{ color:#1abb8c; margin:0 3px;}
+.upload-img-box .img-utips em,.upload-img-box .img-utips span{ color:#f42424; margin:0 3px;}
 
 .upload-img-box .img-lists {float: left;max-width: 720px;overflow: hidden;}
 .upload-img-box .img-lists ul{ float:left; margin-bottom:10px;}
 .upload-img-box .img-lists li {position: relative;float: left;width: 78px;height: 78px;border: 1px solid #f0f0f0;margin-right: 10px;overflow: hidden;background: #f0f0f0; cursor:pointer;}
 .upload-img-box .img-lists li .icon-cha{ position:absolute; top:0; right:5px; font-size:14px; display:none;}
-.upload-img-box .img-lists li .icon-cha:hover{ color:#1abb8c;}
+.upload-img-box .img-lists li .icon-cha:hover{ color:#f42424;}
 .upload-img-box .img-lists li:hover .icon-cha{ display:block;}
 
 .votelist{ overflow:hidden;}
@@ -735,19 +735,19 @@ body{ background: #f8f8f8; }
 .votelist-content .shopper-name{ overflow:hidden; margin-top:10px;}
 .votelist-content .shopper-name .item{ width:50px; float:left;}
 .votelist-content .shopper-name .item span{ display:block;}
-.votelist-content .shopper-name .item:first-child span{ color:#1abb8c;}
+.votelist-content .shopper-name .item:first-child span{ color:#f42424;}
 .votelist-content .shopper-name .item span:last-child{ margin-left:3px;}
 
 .votelist-content .service-rcol{ float:left; margin-left:50px; width:380px;}
 .votelist-content .score{ overflow:hidden; margin-top:5px;}
 .votelist-content .ev-list{ display:block; float:left; width:100%;}
 .votelist-content .ev-list dt{ float:left; line-height:38px;}
-.votelist-content .ev-list dt em{ color:#1abb8c;}
+.votelist-content .ev-list dt em{ color:#f42424;}
 .votelist-content .ev-list dd{ float:left; margin-left:20px;}
 .votelist-content .op-btn{ float:left; margin-top:10px; margin-left:100px;}
 .votelist-content .commstar{ float:left;}
 .votelist-content .degree-text{ margin-left:20px; line-height:30px; float:left; margin-top:5px; font-size:14px; color:#71b247;}
-.votelist-content .comt-error{ float:left;margin-left:20px; line-height:30px;margin-top:4px; font-size:14px; color:#1abb8c;}
+.votelist-content .comt-error{ float:left;margin-left:20px; line-height:30px;margin-top:4px; font-size:14px; color:#f42424;}
 .votelist-content .service-rcol h3{ padding:80px; overflow:hidden;}
 .votelist-content .service-rcol h3 .icon-02{ width:50px; height:50px; display:inline-block; background:url(../images/purebox/icon48.png) 4px 3px no-repeat; float:left;}
 .votelist-content .service-rcol h3 span{ margin-left:20px; display:block; float:left; line-height:48px; font-size:16px; color:#71b247;}
@@ -815,7 +815,7 @@ body{ background: #f8f8f8; }
 .collection-list-warp .p-oper{ width:100%; position:absolute; top:0; left:0; display:block;}
 .collection-list-warp .p-oper a{ display:block; float:left; width:99px; height:25px; line-height:25px; background-color:#7f7f7f; color:#fff; text-align:center;}
 .collection-list-warp .p-oper a:first-child{ width:98px; margin-right:1px;}
-/*.collection-list-warp .p-oper a:hover{ color:#1abb8c;}*/
+/*.collection-list-warp .p-oper a:hover{ color:#f42424;}*/
 .collection-list-warp li:hover .p-oper{ display:block;}
 .collection-list-warp .p-oper .has_gz{ background-color:#f68a00;}
 
@@ -829,7 +829,7 @@ body{ background: #f8f8f8; }
 .collection-list-warp .dsc-store-item{ margin-left:58px;}
 .collection-list-warp .shop-btn{ display:block; overflow:hidden; float:left; font-size:0; margin-top:15px;}
 .collection-list-warp .shop-btn a{ background-color:transparent; width:108px; margin-right:0; color:#8c8c8c; padding:0;}
-.collection-list-warp .shop-btn a:hover{ color:#1abb8c;}
+.collection-list-warp .shop-btn a:hover{ color:#f42424;}
 .collection-list-warp .shop-btn a:first-child{ margin-right:10px;}
 .collection-list-warp .shop-right{ float:left; width:568px; padding:20px 0 20px 20px;}
 .collection-list-warp .shop-right .shop-bd{ width:544px; height:200px; overflow:hidden;}
@@ -850,7 +850,7 @@ body{ background: #f8f8f8; }
 .collection-list-warp .b-name{ margin-bottom:20px;}
 .collection-list-warp .b-name a{ font-size:14px; font-weight:bold;}
 .collection-list-warp .b-btn a{ width:118px; color:#8c8c8c;}
-.collection-list-warp .b-btn a:hover{ color:#1abb8c;}
+.collection-list-warp .b-btn a:hover{ color:#f42424;}
 .collection-list-warp .c-brand-right{ float:left; width:635px;}
 .collection-list-warp .c-brand-right li{ float:left; padding:0; border:0; width:140px; margin:0 0 0 18px;}
 .collection-list-warp .c-brand-right .p-img,.collection-list-warp .c-brand-right .p-img img{ width:140px; height:140px;}
@@ -860,7 +860,7 @@ body{ background: #f8f8f8; }
 /* ------------------ 我的众筹 start ------------------ */
 .cdf-tab{ margin:15px 0; overflow:hidden;}
 .cdf-tab a{ display:block; float:left; margin-right:30px; padding-bottom:5px; border-bottom:1px solid #fff; font-size:14px;}
-.cdf-tab a.curr{ border-bottom:1px solid #1abb8c; color:#1abb8c;}
+.cdf-tab a.curr{ border-bottom:1px solid #f42424; color:#f42424;}
 
 .user-table-cdf{ border:0;}
 .user-table-cdf thead{ background-color:#ff8f23;}
@@ -902,24 +902,24 @@ body{ background: #f8f8f8; }
 /*新增*/
 select.select{ height:30px; border:1px solid #d2d2d2;}
 .or-btn{ display:inline-block;}
-.or-btn input,.or-btn .weizf{ height: 30px;line-height: 28px;font-size: 14px;background: #1abb8c;border:1px solid #1abb8c;color: #fff; padding:0 10px; border-radius:3px; margin-left:10px;}
+.or-btn input,.or-btn .weizf{ height: 30px;line-height: 28px;font-size: 14px;background: #f42424;border:1px solid #f42424;color: #fff; padding:0 10px; border-radius:3px; margin-left:10px;}
 .or-btn input:hover{ cursor:pointer; background-color:#ec5051;}
 .or-btn .weizf{ height: 28px; display: inline-block; }
 
 .express_list{ overflow:hidden;}
-.express_list .ex_tit{ color:#1abb8c;}
+.express_list .ex_tit{ color:#f42424;}
 .express_list .ex_con{ margin-top:5px;}
 .express_list .ex_item{ margin-bottom:10px;}
 
 .user-baitiao-hk .pay_btn{ float:left;}
-.user-baitiao-hk .pay_btn input{ float:left; margin-right:10px; background: #1abb8c; border-color: #1abb8c;color: #fff; height:30px; border:0; padding:0 10px; border-radius:3px; cursor:pointer;}
+.user-baitiao-hk .pay_btn input{ float:left; margin-right:10px; background: #f42424; border-color: #f42424;color: #fff; height:30px; border:0; padding:0 10px; border-radius:3px; cursor:pointer;}
 .user-baitiao-hk .pay_btn input:hover{ background-color:#ec5051; color:#fff;}
 
 /*退换货申请列表*/
 .uaer-return-app .tl-item .t-info{ padding-top:0;}
 .uaer-return-app .tl-item .t-info .info-name{ height:20px; width:570px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
 .uaer-return-app .tl-item .info-price{ margin-top:5px;}
-.uaer-return-app .tl-item .info-price b{ color:#1abb8c;}
+.uaer-return-app .tl-item .info-price b{ color:#f42424;}
 .uaer-return-app .tl-item .info-attr{ margin-top:5px;}
 .uaer-return-app .tl-item:after{ content: ' '; display: block; clear: both; height: 0; visibility: hidden;}
 .uaer-return-app .tl-item .item-f{ width:818px; float:left;}
@@ -989,7 +989,7 @@ select.select{ height:30px; border:1px solid #d2d2d2;}
 
 /*商家等级*/
 .user-grade-warp{ margin-top:27px;}
-.user-grade-warp .user-items .item .value .notic{ color:#1abb8c;}
+.user-grade-warp .user-items .item .value .notic{ color:#f42424;}
 .user-grade-warp .btn{ height:30px; margin-top:0px;}
 .user-grade-warp .user-items .item .value-file{ margin-top:5px;}
 .user-grade-warp .user-items .item .value-file .file{ height:30px; width:70px; cursor:pointer;}
@@ -1109,7 +1109,7 @@ select.select{ height:30px; border:1px solid #d2d2d2;}
 .user-purchase .item-c .itemc-right{ float:left; width:307px; padding:15px 20px;}
 .user-purchase .item-c .pur-remove{ width:24px; height:24px; line-height:24px; position:absolute; background-color:#f8f8f8; text-align:center; right:0; bottom:0; color:#8c8c8c;}
 .user-purchase .item-c .pur-remove .iconfont{ font-size:14px;}
-.user-purchase .item-c .pur-remove:hover{ color:#1abb8c;}
+.user-purchase .item-c .pur-remove:hover{ color:#f42424;}
 .user-purchase .item-c .itemc-left .itemc-goods{ width:450px; margin-bottom:20px; overflow:hidden; padding-right:20px;}
 .user-purchase .item-c .itemc-left .itemc-goods:last-child,.user-purchase .item-c .itemc-left .itemc-goods.last-child{ margin-bottom:0;}
 .user-purchase .item-c .itemc-left .c-info{ width:calc(100% - 90px); padding:0;}
@@ -1136,7 +1136,7 @@ select.select{ height:30px; border:1px solid #d2d2d2;}
 .user-wantbut-list .p-info{ width:calc(100% - 90px); float:left;}
 .user-wantbut-list .p-name{ width:169px; margin-top:5px;}
 .user-wantbut-list .p-name a{ color:#555; display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; width:100%;}
-.user-wantbut-list .p-name a:hover{ color:#1abb8c;}
+.user-wantbut-list .p-name a:hover{ color:#f42424;}
 .user-wantbut-list .p-num{ font-size:12px; margin-top:18px;}
 .user-wantbut-list .p-time{ font-size:12px; text-align:center;}
 .user-wantbut-list .p-time p:first-child{ margin-bottom:10px;}
@@ -1203,7 +1203,7 @@ select.select{ height:30px; border:1px solid #d2d2d2;}
 .increment_invoice_info .user-items{ margin-top:30px;}
 .increment_invoice_info .user-items .item .label{ width:120px;}
 .increment_invoice_info .user-items .item .value{ width:calc(100% - 135px);}
-.increment_invoice_info .user-items .item .ui-checkbox:checked + label a{ color:#1abb8c}
+.increment_invoice_info .user-items .item .ui-checkbox:checked + label a{ color:#f42424}
 .increment_invoice_info .user-items .item .checkbox-item a:hover{ text-decoration:underline;}
 .increment_invoice_info .user-items .item-button .sc-btn{ width:120px; height:40px; line-height:40px;}
 .increment_invoice_info .user-items .item-button input[type='reset'].sc-btn:hover{ border-color:#ccc;}
@@ -1281,7 +1281,7 @@ select.select{ height:30px; border:1px solid #d2d2d2;}
 .user-items .item .value .p-product .img img{ width:100%; height:100%;}
 .user-items .item .value .p-product .name{ font-size:14px; float:left; width:400px;}
 .user-items .item .value .p-product .name a{ color:#55aff4; line-height:25px; display:block; height:50px; overflow:hidden;}
-.user-items .item .value .p-product .name a:hover{ color:#1abb8c;}
+.user-items .item .value .p-product .name a:hover{ color:#f42424;}
 
 .user-items .item .value .img{ float:left; margin-right:10px;}
 .user-items .item .value .img img{ width:70px; height:70px;}
@@ -1297,9 +1297,9 @@ select.select{ height:30px; border:1px solid #d2d2d2;}
 .item .weizf{
 	float: left;
 	margin-right: 10px;
-	background: #1abb8c;
+	background: #f42424;
 	background-color: rgb(244, 36, 36);
-	border-color: #1abb8c;
+	border-color: #f42424;
 	color: #fff;
 	height: 30px;
 	line-height:30px;

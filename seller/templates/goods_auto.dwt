@@ -124,7 +124,7 @@ function validate(name)
 	{
 		if(crons_enable != 0){
 			$("input[name=act]").val(name);
-			$("form[name='listForm']").submit();
+			$("#listForm").submit();
 		}else{
 			alert('{$lang.enable_seller_notice}');
 		}

@@ -4,7 +4,7 @@
     <td><input type='text' name='cou_name' maxlength="30" value="{$cou.cou_name}" size='20' class="text" /></td>
 </tr>
 <tr>
-    <td class="label">{$lang.require_field}&nbsp;{$lang.label_coupons_title}</td>
+    <td class="label">{$lang.require_field}&nbsp;优惠券标题：</td>
     <td><input type='text' name='cou_title' value="{$cou.cou_title}" maxlength="50" value="" size='20' class="text" /></td>
 </tr>
 <tr>
@@ -36,7 +36,7 @@
 </tr>
 <tr>
     <td class="label">{$lang.require_field}&nbsp;{$lang.each_purchase}：</td>
-    <td class="lh"><input type="text" name="cou_user_num" value="{$cou.cou_user_num}" value="1" > {$lang.unit_paper}</td>
+    <td class="lh"><input type="text" name="cou_user_num" value="{$cou.cou_user_num}" value="1" > 张</td>
 </tr>
 <tr>
     <td class="label">{$lang.require_field}&nbsp;{$lang.use_goods}：</td>
@@ -78,7 +78,7 @@
 </tr>
 
 <tr id="range_search" style="display:none;">
-    <td class="label">{$lang.label_add_goods}</td>
+    <td class="label">添加商品：</td>
     <td>
         <input name="keyword1" type="text" id="keyword1" class="text text_2 mr10 mb10" />
         <input name="search1" type="button" id="search1" value="{$lang.button_search}" class="button fl mr10" onclick="searchItem1()" />
@@ -120,21 +120,21 @@
 
 <tr>
     <td class="label">{$lang.require_field}&nbsp;{$lang.coupons_name}：</td>
-    <td><input type='text' name='cou_name' maxlength="30" placeholder="{$lang.please_input_coupons_name}" value="" size='20' class="text" />
-        <label class="blue_label">{$lang.name_notice}</label>
+    <td><input type='text' name='cou_name' maxlength="30" placeholder="请输入优惠券名称" value="" size='20' class="text" />
+        <label class="blue_label">优惠券的名称</label>
     </td>
 </tr>
 <tr>
-    <td class="label">{$lang.require_field}&nbsp;{$lang.label_coupons_title}</td>
-    <td><input type='text' name='cou_title' maxlength="50" placeholder="{$lang.coupons_title_example}" size='20' class="text" />
-        <label class="blue_label">{$lang.coupons_title_tip}</label>
+    <td class="label">{$lang.require_field}&nbsp;优惠券标题：</td>
+    <td><input type='text' name='cou_title' maxlength="50" placeholder="如:仅可购买手机类指定商品或全品类通用" size='20' class="text" />
+        <label class="blue_label">需与"可使用商品"设置的商品相对应,做到名副其实</label>
     </td>
 </tr>
 <tr>
     <td class="label">{$lang.require_field}&nbsp;{$lang.coupons_number}：</td>
     <td><input type='text' name='cou_total' maxlength="30" value="" size='20' class="text text_5" />
-        <span>　{$lang.unit_paper}</span>
-        <label class="blue_label">{$lang.coupons_total_send_num}</label>
+        <span>　张</span>
+        <label class="blue_label">优惠券总发行数量</label>
     </td>
 </tr>
 <tr>
@@ -162,7 +162,7 @@
 </tr>
 <tr>
     <td class="label">{$lang.require_field}&nbsp;{$lang.each_purchase}：</td>
-    <td class="lh"><input type="text" class="text_3" name="cou_user_num" value="1" >　{$lang.unit_paper}</td>
+    <td class="lh"><input type="text" class="text_3" name="cou_user_num" value="1" >　张</td>
 </tr>
 <tr>
     <td class="label">{$lang.require_field}&nbsp;{$lang.use_goods}：</td>
@@ -212,7 +212,7 @@
 </tr>
 
 <tr id="range_search" style="display:none;">
-    <td class="label">{$lang.label_add_goods}</td>
+    <td class="label">添加商品：</td>
     <td>
         <input name="keyword1" type="text" id="keyword1" class="text text_2 mr10 mb10" />
         <input name="search1" type="button" id="search1" value="{$lang.button_search}" class="button fl mr10" onclick="searchItem1()" />

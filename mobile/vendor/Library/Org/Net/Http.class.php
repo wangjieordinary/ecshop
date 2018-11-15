@@ -28,6 +28,7 @@ class Http {
         $fp = fopen($local,"w");
         curl_setopt($cp, CURLOPT_FILE, $fp);
         curl_setopt($cp, CURLOPT_HEADER, 0);
+        curl_setopt($cp, CURLOPT_SSL_VERIFYPEER, false);
         curl_exec($cp);
         curl_close($cp);
         fclose($fp);

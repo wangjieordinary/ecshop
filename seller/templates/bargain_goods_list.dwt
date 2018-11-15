@@ -16,12 +16,12 @@
                     <div class="search-form">
             <form action="javascript:searchPresale()" name="searchForm">
 						<div id="status" class="imitate_select select_w145">
-							<div class="cite">{$lang.adopt_status}</div>
+							<div class="cite">审核状态</div>
 							<ul class="ps-container" style="display: none;">
-								<li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.adopt_status}</a></li>
-								<li><a href="javascript:;" data-value="3" class="ftx-01">{$lang.not_audited}</a></li>
-								<li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.audited_not_adopt}</a></li>
-								<li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.audited_yes_adopt}</a></li>
+								<li><a href="javascript:;" data-value="0" class="ftx-01">审核状态</a></li>
+								<li><a href="javascript:;" data-value="3" class="ftx-01">未审核</a></li>
+								<li><a href="javascript:;" data-value="1" class="ftx-01">审核未通过</a></li>
+								<li><a href="javascript:;" data-value="2" class="ftx-01">审核已通过</a></li>
 							<div class="ps-scrollbar-x-rail" style="width: 145px; display: none; left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 112px; display: none; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></ul>
 							<input name="is_audit" type="hidden" value="0">
 						</div>
@@ -39,15 +39,15 @@
                 <table class="ecsc-default-table">
                     <thead>
                         <tr>
-                        <th width="3%">{$lang.record_id}</th>
-                        <th width="14%">{$lang.goods_name}</th>
-                        <th width="16%">{$lang.act_time}</th>
-                        <th width="8%">{$lang.original_price_bottom_price}</th>
+                        <th width="3%">编号</th>
+                        <th width="14%">商品名称</th>
+                        <th width="16%">活动时间</th>
+                        <th width="8%">原价/底价</th>
                         <!-- <th width="10%">热销活动</th> -->
-                        <th width="6%">{$lang.sku_stock}</th>
-                        <th width="8%">{$lang.act_statu}</th>
-                        <th width="8%">{$lang.adopt_status}</th>
-                        <th width="14%">{$lang.handler}</th>
+                        <th width="6%">SKU/库存</th>
+                        <th width="8%">活动状态</th>
+                        <th width="8%">审核状态</th>
+                        <th width="14%">操作</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -56,12 +56,12 @@
                       <td class="tl">{$goods.id}</td>
                       <td class="tl">{$goods.goods_name|escape:html}</td>
                       <td align="center">
-                          <p>{$lang.label_start}{$goods.start_time}</p>
-                          <p>{$lang.label_end}{$goods.end_time}</p>
+                          <p>开始：{$goods.start_time}</p>
+                          <p>结束：{$goods.end_time}</p>
                       </td>
                       <td align="center">
-                          <p>{$lang.label_original_price}{$goods.shop_price}</p>
-                          <p>{$lang.label_bottom_price}{$goods.target_price}</p>
+                          <p>原价：{$goods.shop_price}</p>
+                          <p>底价：{$goods.target_price}</p>
                       </td>
                       <td align="center">{$goods.goods_number}</td>
                       <td align="center">{$goods.is_status}</td>
@@ -70,16 +70,16 @@
                       </td>
                       <td align="center" class="ecsc-table-handle tr">sc_icon_see
                         <span>
-                            <a href="bargain.php?act=bargain_log&amp;id={$goods.id}" title="{$lang.view}" class="btn-green"><i class="icon sc_icon_see"></i><p>{$lang.view}</p></a>
+                            <a href="bargain.php?act=bargain_log&amp;id={$goods.id}" title="查看" class="btn-green"><i class="icon sc_icon_see"></i><p>查看</p></a>
                         </span>
                         <span>
-                            <a href="bargain.php?act=edit&amp;id={$goods.id}" title="{$lang.edit}" class="btn-green"><i class="icon icon-edit"></i><p>{$lang.edit}</p></a>
+                            <a href="bargain.php?act=edit&amp;id={$goods.id}" title="{$lang.edit}" class="btn-green"><i class="icon icon-edit"></i><p>修改</p></a>
                         </span>
                         <span>
                             {if $goods.status eq 1}
-                            <a href="javascript:;" onclick="listTable.remove({$goods.id},'{$lang.sure_delete_bargain_act}')" title="{$lang.drop}" class="btn-red"><i class="icon icon-trash"></i><p>{$lang.drop}</p></a>
+                            <a href="javascript:;" onclick="listTable.remove({$goods.id},'您确定要移除该砍价活动吗？')" title="删除" class="btn-red"><i class="icon icon-trash"></i><p>删除</p></a>
                             {else}
-                             <a href="javascript:;" onclick="listTable.remove({$goods.id},'{$lang.sure_close_bargain_act}','remove_down')" title="{$lang.close}" class="btn-red"><i class="icon icon-trash"></i><p>{$lang.close}</p></a>
+                             <a href="javascript:;" onclick="listTable.remove({$goods.id},'您确定要关闭该砍价活动吗？','remove_down')" title="关闭" class="btn-red"><i class="icon icon-trash"></i><p>关闭</p></a>
                             {/if}
                         </span>
                       </td>

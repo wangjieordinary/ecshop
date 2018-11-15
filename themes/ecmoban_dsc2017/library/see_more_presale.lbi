@@ -2,7 +2,7 @@
 
 {if $look_top}
 <div class="track_warp">
-    <div class="track-tit"><h3>{$lang.look_and_see}</h3><span></span></div>
+    <div class="track-tit"><h3>看了又看</h3><span></span></div>
     <div class="track-con">
         <ul>
             <!-- {foreach from=$look_top item=look_top name=looktop} -->

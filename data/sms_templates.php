@@ -11,8 +11,7 @@ $send_time = array(
     '验证码通知' => 'sms_code',
     '商品降价时' => 'sms_price_notic',
     '修改商家密码时' => 'sms_seller_signin',
-    '会员充值/提现时' => 'user_account_code',
-    '商家店铺等级到期时间提醒' => 'sms_seller_grade_time'
+    '会员充值/提现时' => 'user_account_code'
 );
 
 $act_name = isset($_REQUEST['act_name']) ? $_REQUEST['act_name'] : '';
@@ -27,10 +26,9 @@ if($act_name == 'alitongxin'){
 		'sms_signin' => '验证码${code}，您正在注册成为${product}用户，感谢您的支持！',
 		'sms_find_signin' => '验证码${code}，用于密码找回，如非本人操作，请及时检查账户安全',
 		'sms_code' => '您的验证码是：${code}，请不要把验证码泄露给其他人，如非本人操作，可不用理会',
-		'sms_price_notic' => '尊敬的${username}用户，您关注的商品(${goodsname})已经降价了，当前价格是：${goodsprice}，赶快下单吧！',
+		'sms_price_notic' => '尊敬的${username}用户，您关注的商品${goodssn}，赶快下单吧！',
 		'sms_seller_signin' => '亲爱的${sellername}，您的新账号：${loginname}，新密码 ：${password}，如非本人操作，请及时核对。',
 		'user_account_code' => '尊敬的${username}，您于${addtime}发出的${fmtamount}元${processtype}申请于${optime}为${examine}审核，账户余额为：${usermoney}，祝您购物愉快。',
-		'sms_seller_grade_time' => '亲爱的${username}，你好！您的店铺等级到期时间快过期了，到期时间：${gradeendtime}。如需继续使用，请您及时续费，以免造成不必要的损失。',
 	);
 	
 	$sms_shop_mobile = isset($GLOBALS['_CFG']['sms_shop_mobile']) ? $GLOBALS['_CFG']['sms_shop_mobile'] : 11111111111;
@@ -45,8 +43,7 @@ if($act_name == 'alitongxin'){
 		'address' => "中山北路3993弄301室",
 		'ordermobile' => $sms_shop_mobile,
 		'product' => "测试账号",
-		'goodsname' => "商品名称",
-		'goodsprice' => "商品价格",
+		'goodssn' => "ECS000001",
 		'sellername' => "B2B2C系统",
 		'loginname' => "ecmoban_dsc",
 		'password' => 'admin123'
@@ -61,10 +58,9 @@ if($act_name == 'alitongxin'){
 		'sms_signin' => '验证码${code}，您正在注册成为${product}用户，感谢您的支持！',
 		'sms_find_signin' => '验证码${code}，用于密码找回，如非本人操作，请及时检查账户安全',
 		'sms_code' => '您的验证码是：${code}，请不要把验证码泄露给其他人，如非本人操作，可不用理会',
-		'sms_price_notic' => '尊敬的${user_name}用户，您关注的商品(${goodsname})已经降价了，当前价格是：${goodsprice}，赶快下单吧！',
+		'sms_price_notic' => '尊敬的${user_name}用户，您关注的商品${goods_sn}，赶快下单吧！',
 		'sms_seller_signin' => '亲爱的${seller_name}，您的新账号：${login_name}，新密码 ：${password}，如非本人操作，请及时核对。',
 		'user_account_code' => '尊敬的${user_name}，您于${add_time}发出的${fmt_amount}元${process_type}申请于${op_time}为${examine}审核，账户余额为：${user_money}，祝您购物愉快。',
-		'sms_seller_grade_time' => '亲爱的${username}，你好！您的店铺等级到期时间快过期了，到期时间：${gradeendtime}。 如需继续使用，请您及时续费，以免造成不必要的损失。',
 	);
 	
 	$sms_shop_mobile = isset($GLOBALS['_CFG']['sms_shop_mobile']) ? $GLOBALS['_CFG']['sms_shop_mobile'] : 11111111111;
@@ -79,8 +75,7 @@ if($act_name == 'alitongxin'){
 		'address' => "中山北路3993弄301室",
 		'order_mobile' => $sms_shop_mobile,
 		'product' => "测试账号",
-		'goodsname' => "商品名称",
-		'goodsprice' => "商品价格",
+		'goods_sn' => "ECS000001",
 		'seller_name' => "B2B2C系统",
 		'login_name' => "ecmoban_dsc",
 		'password' => 'admin123'

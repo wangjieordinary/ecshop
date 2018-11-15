@@ -7,8 +7,8 @@
     <div class="explanation" id="explanation">
         <i class="sc_icon"></i>
         <ul>
-            <li>{$lang.operation_prompt_content.store_assistant.0}</li>
-            <li>{$lang.operation_prompt_content.store_assistant.1}</li>
+            <li>门店职员为管理员方便分配权限设定，目前权限暂定为：商品管理、订单管理、职员管理、设置管理。</li>
+            <li>添加新职员时请填写正确的邮箱地址，方便找回密码时使用。</li>
         </ul>
     </div>
     <div class="common-head">
@@ -20,7 +20,7 @@
         <table class="table table-striped">
             <thead>
                 <tr>
-                	<th width="5%" class="first">{$lang.record_id}</th>
+                	<th width="5%" class="first">编号</th>
                     <th width="20%">{$lang.login_name}</th>
                     <th width="20%">{$lang.tel}</th>
                     <th width="20%">{$lang.email}</th>

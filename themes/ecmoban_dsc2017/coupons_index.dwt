@@ -67,7 +67,7 @@
                                                         </div>
 														{/if}
                                                     </div>
-                                                    <a href="{if $vo.cou_is_receive eq 1}search.php?cou_id={$vo.cou_id}{else}javascript:void(0);{/if}" class="q-btn {if !empty($smarty.session.user_id) && $vo.cou_is_receive eq 1}{else}get-coupon{/if}" cou_id="{$vo.cou_id}"><span class="txt">{if $vo.cou_is_receive eq 1}{$lang.Immediate_use}{else}{$lang.receive_now}{/if}</span><b></b></a>
+                                                    <a href="{if $vo.cou_is_receive eq 1}search.php?cou_id={$vo.cou_id}{else}javascript:void(0);{/if}" class="q-btn {if !empty($smarty.session.user_id) && $vo.cou_is_receive eq 1}{else}get-coupon{/if}" cou_id="{$vo.cou_id}"><span class="txt">{if $vo.cou_is_receive eq 1}立即使用{else}{$lang.receive_now}{/if}</span><b></b></a>
                                                     <a href="#none" class="qcode-btn"><b></b></a>
                                                 </div>
                                             </div>
@@ -87,7 +87,7 @@
                 <div class="mt">
                     <h3><b class="task-icon"></b>{$lang.redemption_task}</h3>
                     <div class="slogan s1">{$lang.coupons_prompt}</div>
-                    <div class="extra-r"><a target="_blank" href="coupons.php?act=coupons_goods" class="more">{$lang.more} &gt;</a></div>
+                    <div class="extra-r"><a target="_blank" href="coupons.php?act=coupons_goods" class="more">更多 &gt;</a></div>
                     <div class="line"></div>
                 </div>
                 <div class="mc">
@@ -177,7 +177,7 @@
             </div>
             <div class="quan-mod">
                 <div class="mt">
-                    <h3><b class="find-icon"></b>{$lang.free_shen_pay}</h3>
+                    <h3><b class="find-icon"></b>免邮神券</h3>
                     <div class="slogan s2">{$lang.always_you}</div>
                     <div class="extra-r"><a target="_blank" href="coupons.php?act=coupons_list&type=shipping" class="more">{$lang.more} &gt;</a></div>
                     <div class="line"></div>

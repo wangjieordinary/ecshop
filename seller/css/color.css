@@ -4,9 +4,9 @@
 
 /* two */
 .store_tpl_1 [data-color = defaultTemp-color-type-2] .floor .mt h2,
-.store_tpl_1 [data-color = defaultTemp-color-type-2] .floor .mc li .info .price{ color:#1abb8c;}
-.store_tpl_1 [data-color = defaultTemp-color-type-2] .floor .mc .row3 li:hover{ background-color:#1abb8c; border:1px solid #1abb8c;}
-.store_tpl_1 [data-color = defaultTemp-color-type-2] .floor .mt h2{ color:#1abb8c; border-bottom-color:#1abb8c;}
+.store_tpl_1 [data-color = defaultTemp-color-type-2] .floor .mc li .info .price{ color:#f42424;}
+.store_tpl_1 [data-color = defaultTemp-color-type-2] .floor .mc .row3 li:hover{ background-color:#f42424; border:1px solid #f42424;}
+.store_tpl_1 [data-color = defaultTemp-color-type-2] .floor .mt h2{ color:#f42424; border-bottom-color:#f42424;}
 .store_tpl_1 [data-color = defaultTemp-color-type-2] .floor .mc .row3 li .info .btn_hover,
 .store_tpl_1 [data-color = defaultTemp-color-type-2] .floor .mc .row4 li .info .btn_hover,
 .store_tpl_1 [data-color = defaultTemp-color-type-2] .floor .mc .row5 li .info .name,
@@ -14,8 +14,8 @@
 .store_tpl_1 [data-color = defaultTemp-color-type-2] .floor .mc .row5 li .info .price,
 .store_tpl_1 [data-color = defaultTemp-color-type-2] .adv_module .hd li,
 .store_tpl_1 [data-color = defaultTemp-color-type-2] .floor .mt p,
-.store_tpl_1 [data-color = defaultTemp-color-type-2] .shop_banner .hd ul li.on{ background-color:#1abb8c;}
-.store_tpl_1 [data-color = defaultTemp-color-type-2] .floor .mc .row5 li:hover{ border-color:#1abb8c;}
+.store_tpl_1 [data-color = defaultTemp-color-type-2] .shop_banner .hd ul li.on{ background-color:#f42424;}
+.store_tpl_1 [data-color = defaultTemp-color-type-2] .floor .mc .row5 li:hover{ border-color:#f42424;}
 
 /* three */
 .store_tpl_1 [data-color = defaultTemp-color-type-3] .floor .mt h2,

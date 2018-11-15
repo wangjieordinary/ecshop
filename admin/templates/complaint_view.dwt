@@ -75,7 +75,7 @@
                                                 <td>
                                                 	<div class="order_goods_div">
                                                 		<div class="img"><a href="../{$goods.url}" target="_blank"><img width="72" src="{$goods.goods_thumb}"></a></div>
-                                                        <div class="name ml10"><a href="../{$goods.url}" target="_blank">{$goods.goods_name}</a>{if $goods.trade_id > 0}--<a target="_blank" href="../user.php?act=trade&tradeId={$goods.trade_id}&snapshot=true">{$lang.trade_snapshot}</a>{/if}</div>
+                                                        <div class="name ml10"><a href="../{$goods.url}" target="_blank">{$goods.goods_name}</a>{if $goods.trade_id > 0}--<a target="_blank" href="../user.php?act=trade&tradeId={$goods.trade_id}&snapshot=true">交易快照</a>{/if}</div>
                                                     </div>
                                                 </td>
                                                 <td>{$goods.goods_number}</td>
@@ -250,6 +250,7 @@
         </div>
     </div>
     {include file ='library/pagefooter.lbi'}
+    <script type="text/javascript" src="js/jquery.purebox.js"></script>
     <script type="text/javascript">
 		//表单验证
 		$(function(){

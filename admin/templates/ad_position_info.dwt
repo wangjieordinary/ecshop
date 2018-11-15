@@ -4,14 +4,14 @@
 
 <body class="iframe_body">
 	<div class="warpper">
-    	<div class="title"><a href="{$action_link.href}" class="s-back">{$lang.back}</a>{if $type eq 1}{$lang.ectouch}{else}{$lang.ad_type1}{/if} - {$ur_here}</div>
+    	<div class="title"><a href="{$action_link.href}" class="s-back">{$lang.back}</a>{if $type eq 1}手机{else}广告{/if} - {$ur_here}</div>
         <div class="content">
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                    <li>{$lang.operation_prompt_content.info.0}</li>
-                    <li>{$lang.operation_prompt_content.info.1}</li>
-                    <li>{$lang.operation_prompt_content_common}</li>
+                	<li>{$lang.operation_prompt_content_common}</li>
+                    <li>请设置合适的广告位名称和图片尺寸。</li>
+                    <li>步骤：添加广告位-添加广告信息-设置模板，每一步都不用返回，直接按提示一步步进行。</li>
                 </ul>
             </div>
             <div class="flexilist">

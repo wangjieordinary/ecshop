@@ -21,9 +21,4 @@ $_LANG['No_goods'] = "无货";
 $_LANG['service'] = "客服";
 $_LANG['Recommendation'] = "掌柜推荐";
 
-$_LANG['Store_score'] = "店铺评分";
-$_LANG['shelf_time'] = "上架时间";
-
-?>
-
 

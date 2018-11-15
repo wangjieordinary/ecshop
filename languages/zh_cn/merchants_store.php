@@ -34,6 +34,7 @@ $_LANG['go_pay'] = "去付款";
 $_LANG['go_shopping'] = "继续购物";
 $_LANG['Prompt'] = '提示';
 
+/*20161214*/
 $_LANG['goods_keyword_store'] = "商品名称关键字";
 $_LANG['zhaodao'] = '找到';
 $_LANG['Relevant_goods_store'] = "件相关商品";
@@ -56,32 +57,4 @@ $_LANG['store_tpl9_one'] = "最近已售";
 $_LANG['store_tpl9_two'] = "数量有限 赶紧下单！";
 $_LANG['tpl9_info'] = "详情";
 $_LANG['tpl9_hot'] = "热卖";
-$_LANG['sold'] = '已售';
-
-$_LANG['licence_seller'] = "卖　　家";
-$_LANG['seller_aptitude'] = "卖家资质";
-$_LANG['no_rank'] = "暂无等级";
-$_LANG['composite_score'] = "综合评分";
-$_LANG['evaluation_single'] = '商品评价';
-$_LANG['service_attitude'] = '服务态度';
-$_LANG['delivery_speed'] = '发货速度';
-
-$_LANG['rm_title'] = '网店经营者资质信息公示';
-$_LANG['rm_tit'] = '大商创网店经营者营业执照信息';
-$_LANG['rm_wd_info_zz'] = '根据国家工商总局《网络交易管理办法》要求对网店营业执照信息公示如下';
-$_LANG['companyName'] = '企业名称';
-$_LANG['business_license_id'] = '营业执照注册号';
-$_LANG['legal_person'] = '法定代表人姓名';
-$_LANG['license_comp_adress'] = '营业执照所在地';
-$_LANG['registered_capital'] = '企业注册资金';
-$_LANG['business_term'] = '营业执照有效期';
-$_LANG['busines_scope'] = '营业执照经营范围';
-$_LANG['company_located'] = '公司地址';
-$_LANG['shop_name'] = '店铺名称';
-$_LANG['merchants_url'] = '店铺网址';
-$_LANG['rm_prompt_info'] = '大商创商城网店经营者食品资质信息';
-$_LANG['rm_prompt_help'] = '根据国家相关政策要求对网店经营者资质信息公示如下';
-
-$_LANG['shop_qrcode'] = '扫一扫，进入手机商城';
-
-?>
+/*20161214*/

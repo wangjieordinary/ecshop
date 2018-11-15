@@ -27,9 +27,9 @@
 					{include file ='library/seller_menu_tab.lbi'}
                     <div class="ecsc-form-goods">
                         <div class="explanation" id="explanation">
-                            <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                            <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                            	<ul>
-                            	<li>{$lang.batch_ing_wait}</li>
+                            	<li>整在批量处理数量，请耐心等待.</li>
                             </ul>
                         </div>
                         <div id="listDiv">
@@ -101,11 +101,11 @@
 			}
 			
 			if(!result.list.product_sn){
-				result.list.product_sn = jl_empty_kh;
+				result.list.product_sn = "（空）";
 			}
 			
 			if(!result.list.bar_code){
-				result.list.bar_code = jl_empty_kh;
+				result.list.bar_code = "（空）";
 			}
 			
 			cell = row.insertCell(attr_num);
@@ -171,9 +171,9 @@
         
         if(result.is_stop == 0){
             $("#title_name").addClass("red");
-            $("#title_name").html(title_name_one);
+            $("#title_name").html("已完成更新，请关闭该窗口！");
         }else{
-            $("#title_name").html(title_name_two);
+            $("#title_name").html("正在更新数据中，请勿关闭该窗口！");
         }
     }
 </script>

@@ -1,7 +1,5 @@
 <?php
-
-$_LANG['flow_salve_error'] = "海量用户正在同一时刻下单，请返回重新下单";
-$_LANG['back_cart'] = "返回购物车";
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $_LANG['flow_login_register']['username_not_null'] = '请您输入用户名。';
 $_LANG['flow_login_register']['username_invalid'] = '您输入了一个无效的用户名。';
@@ -24,7 +22,6 @@ $_LANG['drop_goods_confirm'] = '您确实要把该商品移出购物车吗？';
 $_LANG['goods_number_not_int'] = '请您输入正确的商品数量。';
 $_LANG['stock_insufficiency'] = '非常抱歉，您选择的商品 %s 的库存数量只有 %d，您最多只能购买 %d 件。';
 $_LANG['package_stock_insufficiency'] = '非常抱歉，您选择的超值礼包数量已经超出库存。请您减少购买量或联系商家。';
-$_LANG['group_stock_insufficiency'] = "非常抱歉，您选择的商品 %s 的套餐数量只有 %d 件，您最多只能购买 %d 件。";
 $_LANG['shopping_flow'] = '购物流程';
 $_LANG['username_exists'] = '您输入的用户名已存在，请换一个试试。';
 $_LANG['email_exists'] = '您输入的电子邮件已存在，请换一个试试。';
@@ -59,7 +56,6 @@ $_LANG['password_js']['show_div_exit'] = '关闭';
 $_LANG['goods_fittings'] = '商品相关配件';
 $_LANG['parent_name'] = '相关商品：';
 $_LANG['remark_package'] = '礼包';
-$_LANG['flow_no_shipping_prompt'] = '对不起，以下商品暂时无法进行配送';
 
 /* 优惠活动 */
 $_LANG['favourable_name'] = '活动名称：';
@@ -184,56 +180,4 @@ $_LANG['success_address'] = '添加收货地址成功';
 $_LANG['error_address'] = '添加收货地址失败';
 $_LANG['no_address']= '没有此收货地址';
 $_LANG['stock_store_shortage'] = "非常抱歉，您选择的商品 %s 的门店库存数量只有 %d，您最多只能购买 %d 件。";
-
-// 购物车优惠活动显示
-$_LANG['with_a_gift'] = "满赠";
-$_LANG['full_reduction'] = "满减";
-$_LANG['discount'] = "折扣";
-$_LANG['activity_notes_one'] = "已购满";
-$_LANG['activity_notes_three'] = "购满";
-$_LANG['yuan'] = "元";
-$_LANG['jian'] = "件";
-$_LANG['already_receive'] = "已领取";
-$_LANG['receive_gifts'] = "可领取赠品";
-$_LANG['receive_gifts_again'] = "还可领取赠品";
-$_LANG['receive_gift'] = "领取赠品";
-$_LANG['see_gift'] = "查看赠品";
-$_LANG['gather_together'] = "去凑单";
-$_LANG['look_around'] = "再逛逛";
-$_LANG['been_reduced'] = "已减";
-$_LANG['activity_notes_two'] = "元， 即可享受满减";
-$_LANG['reduce'] = "减";
-$_LANG['already_enjoy'] = "已享受";
-$_LANG['percent_off_discount'] = "折优惠";
-$_LANG['percent_off'] = "折";
-$_LANG['by_stages'] = "分期";
-$_LANG['seller_store'] = "门店取货";
-$_LANG['have_goods'] = "有货";
-$_LANG['no_goods'] = "无货";
-$_LANG['move_my_collection'] = "移到我的收藏";
-$_LANG['remove_checked_goods'] = "删除选中的商品";
-$_LANG['go_pay'] = "去结算";
-$_LANG['title_count'] = '总价(不含运费)';
-$_LANG['already_save'] = "已节省";
-$_LANG['choose'] = "已选择";
-$_LANG['cart_null_goods'] = "购物车内暂时没有商品，登录后将显示您之前加入的商品";
-$_LANG['go_shoping'] = "去购物";
-$_LANG['recommendation'] = "为你推荐";
-$_LANG['history'] = "最近浏览";
-
-$_LANG['can_receive_gifts'] = "元，即可领取赠品";
-$_LANG['can_also_receive'] = "还可领取";
-$_LANG['zhekouxianzhi'] = "元， 即可享受折扣";
-$_LANG['can_receive_up_to'] = "可领取最多";
-$_LANG['checked_in'] = "已选";
-
-
-// 凑单语言包
-$_LANG['coudan_title'] = "购物凑单";
-$_LANG['activity_error'] = "优惠活动不存在";
-
-// 余额支付备注
-$_LANG['flow_surplus_pay'] = "使用余额支付订单";
-
-
 return $_LANG;

@@ -25,9 +25,9 @@
 				</div>
 				{/if}
                 <div class="explanation clear" id="explanation">
-                    <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                    <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                     <ul>
-                    	<li>{$lang.warn_submit_will_rechcek}</li>
+                    	<li>温馨提示：提交操作将会重新审核，请慎重提交确定。</li>
                     </ul>
                 </div>
                 

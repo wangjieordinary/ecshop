@@ -14,7 +14,7 @@
 				{include file ='library/seller_menu_tab.lbi'}
             	<div class="ecsc-order-show">
                 	<div class="order-step-info order-step-handle">
-                    	<div class="step-title"><i class="dian"></i><h3>{$lang.handler_information}</h3></div>
+                    	<div class="step-title"><i class="dian"></i><h3>操作信息</h3></div>
                         <div class="handle-info">
                         	<div class="handle-note">
                             	<div class="item">
@@ -74,7 +74,7 @@
                         </div>
                     </div>   
                     <div class="order-step-info">
-                    	<div class="step-title"><i class="dian"></i><h3>{$lang.delivery_form}</h3></div>
+                    	<div class="step-title"><i class="dian"></i><h3>发货单</h3></div>
                         <ul class="order-info-list">
                         	<li>
                             	<dl>

@@ -16,9 +16,9 @@
                             <img id="screenshot" src="{$curr_template.screenshot}"/>
                         </div>
                         <div class="templet-info">
-                            <p>{$lang.label_shop_tpl_name}<strong><span id="templateName">{$curr_template.name}</span>&nbsp;<span id="templateVersion">{$curr_template.version}</strong></p>
-                            <p>{$lang.label_shop_intro}<strong><span id="templateDesc">{$curr_template.desc}</span></strong></p>
-                            <p>{$lang.label_developer}<strong><a href="{$curr_template.uri}" class="nyroModalWzs">{$curr_template.author}</a></span></strong></p>
+                            <p>店铺模版名称：<strong><span id="templateName">{$curr_template.name}</span>&nbsp;<span id="templateVersion">{$curr_template.version}</strong></p>
+                            <p>店铺描述：<strong><span id="templateDesc">{$curr_template.desc}</span></strong></p>
+                            <p>开发人员：<strong><a href="{$curr_template.uri}" class="nyroModalWzs">{$curr_template.author}</a></span></strong></p>
                             <p><input class="sc-btn sc-blueBg-btn btn35" onclick="defaultTemplate()" value="{$lang.default_templates}" type="button" id="default" /></p>
                         	<div id="CurrTplStyleList">
                                 {foreach name=foo from=$template_style.$curr_template.code item=curr_style}
@@ -45,11 +45,11 @@
                                             {/if}
                                         {/foreach}
                                     </div>
-                                    <p>{$lang.label_tpl_name}{$template.name}</p>
-                                    <p>{$lang.label_shop_intro}{$template.desc}</p>
+                                    <p>模版名称：{$template.name}</p>
+                                    <p>店铺描述：{$template.desc}</p>
                                     <p class="btn">
-                                        <a href="#" onclick="javascript:setupTemplate('{$template.code}')" class="ecsc-btn"><i class="icon-cogs"></i>{$lang.use_tpl}</a>
-                                        <a href="javascript:void(0);" class="ecsc-btn portrait"><i class="icon-cogs"></i>{$lang.see_big_img}</a>
+                                        <a href="#" onclick="javascript:setupTemplate('{$template.code}')" class="ecsc-btn"><i class="icon-cogs"></i>使用模板</a>
+                                        <a href="javascript:void(0);" class="ecsc-btn portrait"><i class="icon-cogs"></i>查看大图</a>
                                     </p>
                                 </div>
                             </li>
@@ -67,11 +67,11 @@
                                             {/if}
                                         {/foreach}
                                     </div>
-                                    <p>{$lang.label_tpl_name}{$template.name}</p>
-                                    <p>{$lang.label_shop_intro}{$template.desc}</p>
+                                    <p>模版名称：{$template.name}</p>
+                                    <p>店铺描述：{$template.desc}</p>
                                     <p class="btn">
-                                        <a href="#" onclick="javascript:setupTemplate('{$template.code}')" class="ecsc-btn"><i class="icon-cogs"></i>{$lang.use_tpl}</a>
-                                        <a href="javascript:void(0);" class="ecsc-btn portrait"><i class="icon-cogs"></i>{$lang.see_big_img}</a>
+                                        <a href="#" onclick="javascript:setupTemplate('{$template.code}')" class="ecsc-btn"><i class="icon-cogs"></i>使用模板</a>
+                                        <a href="javascript:void(0);" class="ecsc-btn portrait"><i class="icon-cogs"></i>查看大图</a>
                                     </p>
                                 </div>
                             </li>
@@ -139,7 +139,7 @@ function setupTemplateResponse(result)
  */
 function defaultTemplate(tpl)
 {
-	if(confirm(sure_use_default_shop_tpl)){
+	if(confirm("您确认要使用默认店铺模板吗？")){
 		Ajax.call('merchants_template.php?is_ajax=1&act=user_default', '', defaultTemplateResponse, "GET", "JSON");
 	}
 }

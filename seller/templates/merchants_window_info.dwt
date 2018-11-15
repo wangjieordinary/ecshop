@@ -135,7 +135,7 @@ $(function(){
 		},
 		messages:{
 			winname:{
-				required : '<i class="icon icon-exclamation-sign"></i>'+jl_window_name_not_null
+				required : '<i class="icon icon-exclamation-sign"></i>橱窗名称不能为空'
 			}
 		}			
 	});

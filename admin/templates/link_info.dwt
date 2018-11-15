@@ -42,7 +42,7 @@
                             <div class="item shop_logo" >
                                 <div class="label">{$lang.link_logo}：</div>
                                 <div class="label_value">
-                                    <div class="type-file-box">
+                                    <div class="type-file-box" style="width:600px;">
                                         <input type="button" name="button" id="button" class="type-file-button" value="">
                                         <input type="file" class="type-file-file" id="legal_person_fileImg" name="link_img" data-state="imgfile" size="30" hidefocus="true" value="">
                                         {if $link_logo}
@@ -53,7 +53,6 @@
                                         {/if}
                                         <input type="text" name="textfile" class="type-file-text" {if $link_logo}value="../{$link_logo}"{/if} id="textfield" readonly>
                                     </div>
-                                    <div class="notic m20">{$lang.link_logo_size}</div>
                                 </div>
                             </div>
                             

@@ -15,7 +15,7 @@
                 <div class="search-info">
                     <div class="search-form">
 					{if $parent_id > 0}
-                    	<a href="category_store.php?act=list&parent_id={$parent_id}&back_level={$level}" class="sc-btn sc-blue-btn"><i class="icon icon-reply"></i>&nbsp;{$lang.go_back_level}</a>
+                    	<a href="category_store.php?act=list&parent_id={$parent_id}&back_level={$level}" class="sc-btn sc-blue-btn"><i class="icon icon-reply"></i>&nbsp;返回上一级</a>
 					{/if}
                     </div>
                 </div>
@@ -24,14 +24,14 @@
                 <table id="list-table" class="ecsc-default-table">
 					<thead>
 						<tr>
-							<th width="10%" class="tl pl10">{$lang.level}({$cat_level}{$lang.level_alt})</th>
-							<th width="30%" class="tl">{$lang.cate_name}</th>
-							<th width="10%">{$lang.goods_number}</th>
-							<th width="10%">{$lang.number_unit}</th>
-							<th width="10%">{$lang.price_level}</th>
-							<th width="11%">{$lang.sort_order}</th>
-							<th width="7%">{$lang.whether_display}</th>
-							<th width="12%" class="handle">{$lang.handler}</th>
+							<th width="10%" class="tl pl10">级别({$cat_level}级)</th>
+							<th width="30%" class="tl">分类名称</th>
+							<th width="10%">商品数量</th>
+							<th width="10%">数量单位</th>
+							<th width="10%">价格分级</th>
+							<th width="11%">排序</th>
+							<th width="7%">是否显示</th>
+							<th width="12%" class="handle">操作</th>
 						</tr>
 					</thead>
 					<tbody>
@@ -40,13 +40,13 @@
 						  <td class="tl pl10">
 							<div class="tDiv first_setup">
 								<div class="setup_span">
-									<em><i class="icon icon-cog"></i>{$lang.setup}<i class="arrow"></i></em>
+									<em><i class="icon icon-cog"></i>设置<i class="arrow"></i></em>
 									<ul>
 										{if $level lt 2}
-										<li><a href="category_store.php?act=add&parent_id={$cat.cat_id}">{$lang.add_next_level}</a></li>
-										<li><a href="category_store.php?act=list&parent_id={$cat.cat_id}&level={$level}">{$lang.view_next_level}</a></li>
+										<li><a href="category_store.php?act=add&parent_id={$cat.cat_id}">新增下一级</a></li>
+										<li><a href="category_store.php?act=list&parent_id={$cat.cat_id}&level={$level}">查看下一级</a></li>
 										{/if}
-										<li><a href="javascript:void(0);" ectype="transfer_goods" data-cid="{$cat.cat_id}">{$lang.transfer_goods}</a></li>                                      
+										<li><a href="javascript:void(0);" ectype="transfer_goods" data-cid="{$cat.cat_id}">转移商品</a></li>                                      
 									</ul>
 								</div>
 							</div>
@@ -102,17 +102,17 @@ listTable.filter.{$key} = '{$item}';
   
 //转移分类
 $(document).on('click',"*[ectype='transfer_goods']",function(){
-	if(confirm(jl_do_current_cate_do_sure)){
+	if(confirm('执行此操作时，当前分类所有下级分类也同时转移，确定执行吗？')){
 		var cat_id = $(this).data("cid");
 		$.jqueryAjax("category_store.php", "act=move&cat_id="+cat_id, function(data){
 			var content = data.content;
 			pb({
 				id:"transfer_dialog",
-				title:jl_transfer_goods,
+				title:"转移商品",
 				width:732,
 				content:content,
-				ok_title:jl_start_transfer,
-				cl_title:jl_reset,
+				ok_title:"开始转移",
+				cl_title:"重置",
 				drag:false,
 				foot:true,
 				onOk:function(){

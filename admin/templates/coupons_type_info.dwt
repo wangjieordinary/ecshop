@@ -83,7 +83,7 @@
                                         <div class="label">{$lang.each_purchase}：</div>
                                         <div class="label_value">
                                         	<div class="span" {if $cou_type gt 2}style="display:none;"{/if} id="not_comm">{$lang.one}</div>
-                                            <div id="comm" {if $cou_type lt 3}style="display:none;"{/if}><input type="text" class="text w50" name="cou_user_num" value="{$cou.cou_user_num}">{$lang.zhang}</div>
+                                            <div id="comm" {if $cou_type lt 3}style="display:none;"{/if}><input type="text" class="text w50" name="cou_user_num" value="{$cou.cou_user_num}">张</div>
                                         </div>
                                     </div>
                                     <div class="item mb20" ectype="item_main_content">
@@ -267,8 +267,8 @@
                                             <div class="label_value">
                                                 <div class="checkbox_items relative">
                                                     <div class="checkbox_item">
-                                                        <input type="checkbox" class="ui-checkbox" id="select_all0" value="0" ectype="select_all" />
-                                                        <label for="select_all0" class="ui-label">{$lang.all_checkbox}</label>
+                                                        <input type="checkbox" class="ui-checkbox" id="select_all" value="0" />
+                                                        <label for="select_all" class="ui-label">{$lang.all_checkbox}</label>
                                                     </div>
                                                     {foreach from =$rank_list item=rank key=k}
                                                     <div class="checkbox_item">
@@ -288,7 +288,7 @@
                                             <div class="label_value">
                                                 <div class="checkbox_items relative">
                                                     <div class="checkbox_item">
-                                                        <input type="checkbox" class="ui-checkbox" id="select_all" value="0" ectype="select_all" />
+                                                        <input type="checkbox" class="ui-checkbox" id="select_all" value="0" />
                                                         <label for="select_all" class="ui-label">{$lang.all_checkbox}</label>
                                                     </div>
 													{foreach from =$rank_list item=rank key=k}
@@ -505,12 +505,11 @@
 			});
 		
 			//参加会员全选
-			$("*[ectype='select_all']").click(function(){
-                var checkbox_items = $(this).parents('.checkbox_items');
+			$('#select_all').click(function(){
 				if($('#select_all').is(':checked')) {
-					checkbox_items.find('input[type=checkbox]').prop('checked',true);
+					$('.checkbox_items input[type=checkbox]').prop('checked',true);
 				}else{
-					checkbox_items.find('input[type=checkbox]').prop('checked',false);
+					$('.checkbox_items input[type=checkbox]').prop('checked',false);
 				}
 			});
 			

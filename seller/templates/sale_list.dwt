@@ -27,32 +27,32 @@
                                 </div>
 							</div>
                             <div class="screeItme mt10">
-                                <strong class="fl lh mr10">{$lang.label_time_type}</strong>
+                                <strong class="fl lh mr10">时间类型：</strong>
                                 <div  class="imitate_select select_w145">
-                                    <div class="cite">{$lang.please_select}</div>
+                                    <div class="cite">请选择</div>
                                     <ul>
-                                        <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.accord_deliver_time}</a></li>
-                                        <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.accord_order_time}</a></li>
+                                        <li><a href="javascript:;" data-value="0" class="ftx-01">按发货时间</a></li>
+                                        <li><a href="javascript:;" data-value="1" class="ftx-01">按下单时间</a></li>
                                     </ul>
                                     <input name="time_type" type="hidden" />
                                 </div>
                             </div>
                             <div class="screeItme mt10">
-                                <strong class="fl lh mr10">{$lang.label_order_source}</strong>
+                                <strong class="fl lh mr10">订单来源：</strong>
                                 <div  class="imitate_select select_w145">
-                                    <div class="cite">{$lang.please_select}</div>
+                                    <div class="cite">请选择</div>
                                     <ul>
                                         <li><a href="javascript:;" data-value="pc" class="ftx-01">PC</a></li>
                                         <li><a href="javascript:;" data-value="touch" class="ftx-01">WAP</a></li>
                                         <li><a href="javascript:;" data-value="mobile" class="ftx-01">APP</a></li>
-                                        <li><a href="javascript:;" data-value="ecjia-cashdesk" class="ftx-01">{$lang.cashdesk}</a></li>
+                                        <li><a href="javascript:;" data-value="ecjia-cashdesk" class="ftx-01">收银台</a></li>
                                     </ul>
                                     <input name="order_referer" type="hidden" value="" id="order_referer_val">
                                 </div>
                             </div>                            
                             <div class="screeItme mt10">
                                 <div class="bf100 fl">
-                                    <strong class="fl lh mr10">{$lang.label_order_status}</strong>
+                                    <strong class="fl lh mr10">订单状态：</strong>
                                     {foreach from=$os_list item=os key=key}
                                     <div class="checkbox_item fl lh mr10">
                                     <input name="order_status[]" type="checkbox" value="{$key}" id="status_{$key}" class="ui-checkbox" />
@@ -61,7 +61,7 @@
                                     {/foreach}
                                 </div>
                                 <div class="bf100 fl">
-                                    <strong class="fl lh mr10">{$lang.label_deliver_status}</strong>
+                                    <strong class="fl lh mr10">发货状态：</strong>
                                     {foreach from=$ss_list item=ss key=key}
                                     <div class="checkbox_item fl lh mr10">
                                     <input name="shipping_status[]" type="checkbox" class="ui-checkbox" id="shipping_{$key}" value="{$key}" />
@@ -70,7 +70,7 @@
                                     {/foreach}
                                 </div>
                                 <div class="bf100 fl mt5">
-                                    <strong class="fl lh mr10">{$lang.label_goods_sn}</strong>
+                                    <strong class="fl lh mr10">商品货号：</strong>
                                     <input name="goods_sn" value="" type="text" class="text text_2 mr10"/>
                                     <input type="submit" name="submit" value="{$lang.query}" class="sc-btn sc-blueBg-btn btn30" />
                                 </div>
@@ -82,13 +82,13 @@
                             {/if}
                             <table width="100%" class="ecsc-default-table ecsc-table-seller mt20">
                                 <tr>
-                                    <th width="10%">{$lang.goods_steps_name}</th>
-                                    <th width="10%">{$lang.pro_code}</th>
+                                    <th width="10%">商家名称</th>
+                                    <th width="10%">货号</th>
                                     <th width="30%">{$lang.goods_name}</th>
                                     <th width="10%">{$lang.order_sn}</th>
                                     <th width="10%"><a href="javascript:listTable.sort('goods_number'); ">{$lang.amount}</a></th>
                                     <th width="10%">{$lang.sell_price}</th>
-                                    <th width="10%">{$lang.total_amount}</th>
+                                    <th width="10%">总金额</th>
                                     <th width="10%">{$lang.sell_date}</th>
                                 </tr>
                                 {foreach from=$goods_sales_list item=list}

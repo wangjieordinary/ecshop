@@ -20,15 +20,15 @@
             </div>
         </div>
         <div class="c-handle">
-            <a href="user.php?act=return_detail&ret_id={$item.ret_id}&order_id={$item.order_id}" class="sc-btn">{$lang.view}</a>
+            <a href="user.php?act=return_detail&ret_id={$item.ret_id}&order_id={$item.order_id}" class="sc-btn">查看</a>
 			{if $item.activation_type eq 1}
 			<a href="#" ectype="activation_return_order" class="sc-btn" data-id="{$item.ret_id}" >{$lang.activation_return}</a>
 			{/if}
-            {if $item.return_status eq 3}<a href="user.php?act=return_delivery&order_id={$item.order_id}" class="sc-btn" onclick="if (!confirm('."'你确认已经收到货物了吗？否则财物两空哦！'".')) return false;">{$lang.confirm_shipping}</a>{/if}
+            {if $item.return_status eq 3}<a href="user.php?act=return_delivery&order_id={$item.order_id}" class="sc-btn" onclick="if (!confirm('."'你确认已经收到货物了吗？否则财物两空哦！'".')) return false;">确认收货</a>{/if}
             {if $item.return_status eq 0 && $item.refound_status eq 0}
-            <a href="user.php?act=cancel_return&ret_id={$item.ret_id}" onclick="if (!confirm('."'你确认取消该退换货申请吗？'".')) return false;" class="sc-btn">{$lang.is_cancel}</a>
+            <a href="user.php?act=cancel_return&ret_id={$item.ret_id}" onclick="if (!confirm('."'你确认取消该退换货申请吗？'".')) return false;" class="sc-btn">取消</a>
             {/if}
-            {if $item.return_status eq 4}<a href="javascript:get_order_delete_return({$item.ret_id});" class="sc-btn">{$lang.drop}</a>{/if}
+            {if $item.return_status eq 4}<a href="javascript:get_order_delete_return({$item.ret_id});" class="sc-btn">删除</a>{/if}
         </div>
     </dd>
 </dl>

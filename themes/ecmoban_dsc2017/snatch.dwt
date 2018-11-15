@@ -17,6 +17,7 @@
 </head>
 <body class="bg-ligtGary">
 	<!-- #BeginLibraryItem "/library/page_header_common.lbi" --><!-- #EndLibraryItem -->
+    
     <div class="content activity-desc-content">
         <div class="w w1200">
             <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
@@ -27,7 +28,7 @@
                         <div class="product-wrap">
                             <div class="name">{$snatch_goods.goods_name|escape:html}</div>
                             <div class="activity-title">
-                                <div class="activity-type"><i class="iconfont icon-time"></i><!-- {if $myprice.is_end eq false} -->{$lang.underway}<!--{else}-->{$lang.end_time}<!--{/if}--></div>
+                                <div class="activity-type"><i class="iconfont icon-time"></i><!-- {if $myprice.is_end eq false} -->正在进行<!--{else}-->结束时间<!--{/if}--></div>
                                 <div class="sk-time-cd">
                                     <div class="sk-cd-tit">{$lang.End_pitch}</div>
                                     <div class="cd-time" ectype="time" data-time="{$snatch_goods.gmt_end_time}">
@@ -60,15 +61,17 @@
                                             <div class="si-warp">{$price_list_count}{$lang.ci}</div>
                                         </div>
                                         <div class="summary-item">
-                                            <div class="si-tit">{$lang.snatch_mechanism}：</div>
+                                            <div class="si-tit">夺宝机构：</div>
                                             <div class="si-warp">{$goods.rz_shopName}</div>
                                         </div>
                                         <div class="summary-item">
                                             <div class="si-tit">{$lang.price_extent_snatch}：</div>
-                                            <div class="si-warp ftx-09">{$snatch_goods.formated_start_price}&nbsp;~&nbsp;{$snatch_goods.formated_end_price}{if $snatch_goods.cost_points gt 0}&nbsp;&nbsp;({$lang.cost_points_notic}{$snatch_goods.cost_points}{$lang.integral}){/if}</div>
+                                            <div class="si-warp ftx-09">{$snatch_goods.formated_start_price}&nbsp;~&nbsp;{$snatch_goods.formated_end_price}{if $snatch_goods.cost_points gt 0}&nbsp;&nbsp;(每次出价消耗{$snatch_goods.cost_points}积分){/if}</div>
                                         </div>
                                     </div>
                                 </div>
+                                
+                                
                             </div>
                             
                             <!-- {if $specification} -->
@@ -187,24 +190,24 @@
                         </div>
                     </div>
                     <div class="auction-progress clearfxi">
-                        <div class="apt">{$lang.bidding_process}</div>
+                        <div class="apt">竞拍流程</div>
                         <div class="apb">
                             <ul>
-                                <li>01.{$lang.apb_01}<i class="iconfont icon-arrow-right-alt"></i></li>
-                                <li>02.{$lang.apb_02}<i class="iconfont icon-arrow-right-alt"></i></li>
-                                <li>03.{$lang.apb_03}<i class="iconfont icon-arrow-right-alt"></i></li>
-                                <li>04.{$lang.apb_04}<i class="iconfont icon-arrow-right-alt"></i></li>
-                                <li>05.{$lang.apb_05}</li>
+                                <li>01.获取资格<i class="iconfont icon-arrow-right-alt"></i></li>
+                                <li>02.夺得商品<i class="iconfont icon-arrow-right-alt"></i></li>
+                                <li>03.确认订单<i class="iconfont icon-arrow-right-alt"></i></li>
+                                <li>04.支付订单<i class="iconfont icon-arrow-right-alt"></i></li>
+                                <li>05.交易完成</li>
                             </ul>
                         </div>
                     </div>
                     <div class="activity-desc-detail" id="detail-slide">
                         <div class="hd">
                             <ul>
-                                <li>{$lang.The_Indiana}</li>
-                                <li>{$lang.snatch_Record}</li>
-                                <li>{$lang.service_guarantee}</li>
-                                <li>{$lang.Indiana_snatch}</li>
+                                <li>夺宝介绍</li>
+                                <li>出价记录</li>
+                                <li>服务保障</li>
+                                <li>夺宝攻略</li>
                             </ul>
                         </div>
                         <div class="bd">
@@ -217,7 +220,7 @@
                                     	<div class="no_records">
                                         	<i class="no_icon_two"></i>
                                             <div class="no_info">
-                                            	<h3>{$lang.snatch_detail_notic}</h3>
+                                            	<h3>此活动当前未设置夺宝详情信息哟~</h3>
                                             </div>
                                         </div>
                                     {/if}    
@@ -233,7 +236,7 @@
                                 	<div class="no_records">
                                         <i class="no_icon_two"></i>
                                         <div class="no_info">
-                                            <h3>{$lang.service_guarantee_notic}</h3>
+                                            <h3>此活动当前未设置服务保障哟~</h3>
                                         </div>
                                     </div>
                                 {/if}
@@ -245,7 +248,7 @@
                                 	<div class="no_records">
                                         <i class="no_icon_two"></i>
                                         <div class="no_info">
-                                            <h3>{$lang.Indiana_snatch_notic}</h3>
+                                            <h3>此活动当前未设置竞拍攻略哟~</h3>
                                         </div>
                                     </div>
                                 {/if}
@@ -256,7 +259,7 @@
                 <div class="acde-right">
                     <div class="org-box">
                         <!--{if $goods.shopinfo.brand_thumb}--><div class="org-logo"><img src="{$goods.shopinfo.brand_thumb}"></div><!--{/if}-->
-                        <p><span>{$lang.snatch_mechanism}：</span>{$goods.rz_shopName}</p>
+                        <p><span>夺宝机构：</span>{$goods.rz_shopName}</p>
                         <div class="clearfix">
                             {if $shop_information.is_IM eq 1 || $shop_information.is_dsc}
                             <a id="IM" onclick="openWin(this)" href="javascript:;" goods_id="{$goods.goods_id}" class="a-kefu"><i class="icon i-kefu"></i><span>{$lang.con_cus_service}</span></a>
@@ -368,7 +371,7 @@
 				
 				$(".btn-append").hide();
 				
-				pbDialog(json_languages.buy_error," ",0,450,80,50);
+				pbDialog("很抱歉，您夺宝的商品暂时缺货，请及时联系客服！"," ",0,450,80,50);
 			}else{
 				$(".btn-append").show();
 			}

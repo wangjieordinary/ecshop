@@ -29,13 +29,13 @@
                 <table class="ecsc-default-table">
                     <thead>
                         <tr>
-                        	<th width="10%"><a href="javascript:;">{$lang.record_id}</a><div class="img">{$sort_add_time}</div></th>
-                            <th width="30%"><a href="javascript:;">{$lang.goods_name}</a><div class="img">{$sort_user_name}</div></th>                           
-                            <th width="10%"><a href="javascript:;">{$lang.goods_img}</a><div class="img">{$sort_id_value}</div></th>
-                            <th width="10%"><a href="javascript:;">{$lang.buyer}</a><div class="img">{$sort_id_value}</div></th>
-                            <th width="10%"><a href="javascript:;">{$lang.order_id}</a><div class="img">{$sort_comment_type}</div></th>
-                            <th width="10%"><a href="javascript:;">{$lang.goods_price}</a><div class="img">{$sort_ip_address}</div></th>
-                            <th width="10%"><a href="javascript:;">{$lang.buy_number}</a><div class="img">{$sort_add_time}</div></th>
+                        	<th width="10%"><a href="javascript:;">编号</a><div class="img">{$sort_add_time}</div></th>
+                            <th width="30%"><a href="javascript:;">商品名</a><div class="img">{$sort_user_name}</div></th>                           
+                            <th width="10%"><a href="javascript:;">商品图片</a><div class="img">{$sort_id_value}</div></th>
+                            <th width="10%"><a href="javascript:;">购买者</a><div class="img">{$sort_id_value}</div></th>
+                            <th width="10%"><a href="javascript:;">订单号</a><div class="img">{$sort_comment_type}</div></th>
+                            <th width="10%"><a href="javascript:;">商品价格</a><div class="img">{$sort_ip_address}</div></th>
+                            <th width="10%"><a href="javascript:;">购买数量</a><div class="img">{$sort_add_time}</div></th>
                         </tr>
                   </thead>
                   <tbody>

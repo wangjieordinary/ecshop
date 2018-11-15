@@ -3,7 +3,7 @@
 <div class="order-summary">
     <div class="statistic">
         <div class="list">
-            <span><em>{$cart_goods_number}</em> {$lang.cart_goods_number}：</span>
+            <span><em>{$cart_goods_number}</em> 件商品，总商品金额：</span>
             <em class="price" id="warePriceId">{$total.goods_price_formated}</em>
         </div>
         <!-- {if $total.dis_amount gt 0} 商品优惠 -->
@@ -70,18 +70,18 @@
             <!-- {if $total.value_card > 0} 使用储值卡 -->
 			<!--{if $total.card_dis neq ''} -->
             <div class="list">
-                <span>{$lang.value_card_dis}：</span>
+                <span>储值卡折扣：</span>
                 <em class="price" id="cachBackId"> {$total.card_dis}折</em>
             </div>
 			<!-- {/if} -->
             <div class="list">
-                <span>{$lang.use_value_card}：</span>
+                <span>使用储值卡：</span>
                 <em class="price" id="cachBackId"> -{$total.value_card_formated}</em>
             </div>
             <!-- {/if} -->
         <!-- {/if} 使用余额或积分或红包或优惠券 -->
         <div class="list">
-            <span>{$lang.total_amount_payable}：</span>
+            <span>应付总额：</span>
             <em class="price-total">{$total.amount_formated}</em>
         </div>
         <!--{if $total.exchange_integral }消耗积分-->
@@ -113,7 +113,6 @@
     <input type="hidden" value="{$area_id|default:0}" name="area_id">
     <input name="sc_guid" value="{$sc_guid|default:0}" type="hidden" autocomplete="off">
 	<input name="sc_rand" value="{$sc_rand|default:0}" type="hidden" autocomplete="off">
-    <input name="submit_erorr" value="1" type="hidden" autocomplete="off">
 </div>
 <script type="text/javascript">
 $(function(){
@@ -124,12 +123,11 @@ $(function(){
 			var store_id = document.getElementById('store_id').value;
 			var warehouse_id = $(":input[name='warehouse_id']").val();
 			var area_id = $(":input[name='area_id']").val();
-			var seller_store = {$seller_store|default:0};
 			
 			(store_id > 0) ? store_id : 0;
 			$(".checkout-foot .btn-area").removeClass('no_shipping');
 			$(".checkout-foot .btn-area").addClass('no_goods');
-			$(".checkout-foot .btn-area").attr('data-url', 'ajax_dialog.php?act=goods_stock_exhausted&warehouse_id=' + warehouse_id + '&area_id=' + area_id + '&store_id=' + store_id + '&store_seller=' + seller_store);
+			$(".checkout-foot .btn-area").attr('data-url', 'ajax_dialog.php?act=goods_stock_exhausted&warehouse_id=' + warehouse_id + '&area_id=' + area_id + '&store_id=' + store_id + '&store_seller={$seller_store}');
 			$(".checkout-foot .btn-area").html('<input type="button" class="submit-btn" id="submit-done" value="'+json_languages.submit_order+'"/>');
 			return false;
 		}
@@ -138,10 +136,7 @@ $(function(){
 	var rec_number = new Array();
 	$("input[name='rec_number']").each(function(index, element) {	
 		if($(element).val() == 1){
-			
-			var num_recid = $(element).data("id");
-			
-			rec_number.push(num_recid);
+			rec_number.push($(element).attr('id'));
 		}
     });
 	
@@ -150,7 +145,6 @@ $(function(){
 	$("input[name='shipping_prompt']").each(function(index, element) {
 		
 		var store_id = Number($(".checkout-foot :input[name='store_id']").val());
-		var seller_store = {$seller_store|default:0};
 		
         if($(element).val() == 1 && store_id == 0){
 			var store_id = document.getElementById('store_id').value;
@@ -161,7 +155,11 @@ $(function(){
 			$(".checkout-foot .btn-area").removeClass('no_goods');
 			$(".checkout-foot .btn-area").addClass('no_shipping');
 			
-			$(".checkout-foot .btn-area").attr('data-url', 'ajax_dialog.php?act=shipping_prompt&warehouse_id=' + warehouse_id + '&area_id=' + area_id + '&store_id=' + store_id + '&store_seller=' + seller_store);
+			{if $seller_store neq ''}
+				$(".checkout-foot .btn-area").attr('data-url', 'ajax_dialog.php?act=goods_stock_exhausted&warehouse_id=' + warehouse_id + '&area_id=' + area_id + '&store_id=' + store_id + '&store_seller={$seller_store}');
+			{else}
+				$(".checkout-foot .btn-area").attr('data-url', 'ajax_dialog.php?act=goods_stock_exhausted&warehouse_id=' + warehouse_id + '&area_id=' + area_id + '&store_id=' + store_id);
+			{/if}
 			
 			$(".checkout-foot .btn-area").html('<input type="button" class="submit-btn" id="submit-done" value="'+json_languages.submit_order+'"/>');
 			return false;			
@@ -170,13 +168,11 @@ $(function(){
 	
 	var shipping_prompt = new Array();
 	$("input[name='shipping_prompt']").each(function(index, element) {	
-
 		if($(element).val() == 1){
-			var shipping_recid = $(element).data("id");
-			shipping_prompt.push(shipping_recid);
+			shipping_prompt.push($(element).attr('id'));
 		}
     });
-
+	
 	$("input[name='shipping_prompt_str']").val(shipping_prompt);
 	
 	<!--{if $is_exchange_goods eq 1 || $total.real_goods_count eq 0}-->
@@ -194,114 +190,100 @@ $(function(){
 		var area_id = $(":input[name='area_id']").val();
 		var number_erorr = 0;
 		
-		var parents = $(this).parents(".btn-area");
-		if(parents.hasClass("no_goods")){
-		  var rec_number = $("input[name='rec_number_str']").val();
-		  var url = parents.data('url');
-		  if(rec_number != ''){
-			url = url + "&rec_number=" + rec_number;
-		  }
-		  
-		  Ajax.call(url,'',noGoods, 'POST', 'JSON');
-		  function noGoods(result){
-			if(result.error == 1){
-			  pb({
-				id:'noGoods',
-				title:json_languages.No_goods,
-				width:670,
-				ok_title:json_languages.go_up,  //按钮名称
-				cl_title:json_languages.back_cart,  //按钮名称
-				content:result.content,   //调取内容
-				drag:false,
-				foot:true,
-				onOk:function(){
-				  $("form[name='stockFormCart']").submit();
-				},
-				onCancel:function(){
-				  location.href = "flow.php";
-				}
-			  });
-			  $('.pb-ok').addClass('color_df3134');
-			  
-			  $(".checkout-foot :input[name='submit_erorr']").val(0);
-			}else{
-			  $("form[name='doneTheForm']").submit();
-			}
-		  }
-		  
-		  return false;
-		}
-		
-		if(parents.hasClass("no_shipping")){
-		  var shipping_prompt = $("input[name='shipping_prompt_str']").val();
-		  var url = parents.data('url');
-		  
-		  if(shipping_prompt != ''){
-			url = url + "&shipping_prompt=" + shipping_prompt;
-		  }
-		  
-		  Ajax.call(url,'',noShipping, 'POST', 'JSON');
-		  function noShipping(result){
-			if(result.error == 1){
-			  pb({
-				id:'noGoods',
-				title:json_languages.No_shipping,
-				width:670,
-				ok_title:json_languages.go_up,  //按钮名称
-				cl_title:json_languages.back_cart,  //按钮名称
-				content:result.content,   //调取内容
-				drag:false,
-				foot:true,
-				onOk:function(){
-				  $("form[name='stockFormCart']").submit();
-				},
-				onCancel:function(){
-				  location.href = "flow.php";
-				}
-			  });
-			  $('.pb-ok').addClass('color_df3134');
-			  
-			  $(".checkout-foot :input[name='submit_erorr']").val(0);
-			}else{
-			  $("form[name='doneTheForm']").submit();
-			}
-		  }
-		  
-		  return false;
-		}
-		
-		var submit_erorr = Number($(".checkout-foot :input[name='submit_erorr']").val());
-		
-		if(submit_erorr == 1){
-			if(checkOrderForm("form[name='doneTheForm']") == false){
-				return false;
-			}else{
-				if(store_id > 0){
-					//防止表单重复提交
-					if(checkSubmit() == true){
-						$("form[name='doneTheForm']").submit();
-					}else{
-						return false;
-					}
-				}else{
-					shipping_list.each(function(index, element) {
-						
-						var val = $(this).data("sellerid") + "-" + $(this).val();
-						
-						value.push(val);
-					});
-					
-					cart_list.each(function(index, element) {
-						rec_id.push($(this).val());
-					});
-					
-					var where = '&warehouse_id=' + warehouse_id + '&area_id=' + area_id + '&store_id=' + store_id + '&store_seller={$seller_store}';
-					Ajax.call('ajax_dialog.php', 'act=flow_shipping&shipping_list=' + value + '&rec_id=' + rec_id + where, notShippingResponse, 'POST', 'JSON');
-				}
-				return true;
-			}
-		}else{
+    var parents = $(this).parents(".btn-area");
+    if(parents.hasClass("no_goods")){
+      var rec_number = $("input[name='rec_number_str']").val();
+      var url = parents.data('url');
+      if(rec_number != ''){
+        url = url + "&rec_number=" + rec_number;
+      }
+      
+      Ajax.call(url,'',noGoods, 'POST', 'JSON');
+      function noGoods(result){
+        if(result.error == 1){
+          pb({
+            id:'noGoods',
+            title:json_languages.No_goods,
+            width:670,
+            ok_title:json_languages.go_up,  //按钮名称
+            cl_title:json_languages.back_cart,  //按钮名称
+            content:result.content,   //调取内容
+            drag:false,
+            foot:true,
+            onOk:function(){
+              $("form[name='stockFormCart']").submit();
+            },
+            onCancel:function(){
+              location.href = "flow.php";
+            }
+          });
+          $('.pb-ok').addClass('color_df3134');
+        }else{
+          $("form[name='doneTheForm']").submit();
+        }
+      }
+      return false;
+    }
+
+    if(parents.hasClass("no_shipping")){
+      var shipping_prompt = $("input[name='shipping_prompt_str']").val();
+      var url = parents.data('url');
+      if(shipping_prompt != ''){
+        url = url + "&shipping_prompt=" + shipping_prompt;
+      }
+      
+      Ajax.call(url,'',noShipping, 'POST', 'JSON');
+      function noShipping(result){
+        if(result.error == 1){
+          pb({
+            id:'noGoods',
+            title:json_languages.No_shipping,
+            width:670,
+            ok_title:json_languages.go_up,  //按钮名称
+            cl_title:json_languages.back_cart,  //按钮名称
+            content:result.content,   //调取内容
+            drag:false,
+            foot:true,
+            onOk:function(){
+              $("form[name='stockFormCart']").submit();
+            },
+            onCancel:function(){
+              location.href = "flow.php";
+            }
+          });
+          $('.pb-ok').addClass('color_df3134');
+        }else{
+          $("form[name='doneTheForm']").submit();
+        }
+      }
+    }
+
+		if(checkOrderForm("form[name='doneTheForm']") == false){
 			return false;
+		}else{
+			if(store_id > 0){
+				//防止表单重复提交
+				if(checkSubmit() == true){
+					$("form[name='doneTheForm']").submit();
+				}else{
+					return false;
+				}
+			}else{
+				shipping_list.each(function(index, element) {
+					
+					var val = $(this).data("sellerid") + "-" + $(this).val();
+					
+					value.push(val);
+				});
+				
+				cart_list.each(function(index, element) {
+					rec_id.push($(this).val());
+				});
+				
+				var where = '&warehouse_id=' + warehouse_id + '&area_id=' + area_id + '&store_id=' + store_id + '&store_seller={$seller_store}';
+				Ajax.call('ajax_dialog.php', 'act=flow_shipping&shipping_list=' + value + '&rec_id=' + rec_id + where, notShippingResponse, 'POST', 'JSON');
+			}
+			return true;
 		}
 	});
 	

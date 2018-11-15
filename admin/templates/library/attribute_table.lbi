@@ -1,6 +1,6 @@
 {if $attr_group}
 <!--{if $full_page}-->
-<a href="goods_attr_price.php?act=add&goods_id={$goods_id}&goods_type={$goods_type}" class="btn btn25 blue_btn ga_price" target="_blank" style="display:none">{$lang.select_batch_file}</a>
+<a href="goods_attr_price.php?act=add&goods_id={$goods_id}&goods_type={$goods_type}" class="btn btn25 blue_btn ga_price" target="_blank" style="display:none">选择批量上传</a>
 <table class="table_head" width="100%">
     <thead>
         <tr>
@@ -10,14 +10,14 @@
                 {/foreach}
             </th>
             <th width="5%" {if $model_name eq ''}class="hide"{/if}>{$model_name}</th>
-            <th width="8%" {if $goods_attr_price eq 0 || $add_shop_price eq 1}class="hide"{/if}><em class="require-field">*</em>{$lang.price_market}<i class="sc_icon sc_icon_edit pointer pro_market"></i></th>
-            <th width="8%" {if $goods_attr_price eq 0}class="hide"{/if}><em class="require-field">*</em>{$lang.price_shop}<i class="sc_icon sc_icon_edit pointer pro_shop"></i></th>
-            <th width="8%" {if $goods_attr_price eq 0 || $add_shop_price eq 1}class="hide"{/if}><em class="require-field">*</em>{$lang.price_promotion}<i class="sc_icon sc_icon_edit pointer pro_promote"></i></th>
-            <th width="10%"><em class="require-field">*</em>{$lang.storage}<i class="sc_icon sc_icon_edit pointer pro_number"></i></th>
-            <th width="10%"><em class="require-field">*</em>{$lang.warning_value}<i class="sc_icon sc_icon_edit pointer pro_warning"></i></th>
-            <th width="12%">{$lang.product_code}</th>
-            <th width="12%">{$lang.product_bar_code}</th>
-            <th width="5%">{$lang.handler}</th>
+            <th width="8%" {if $goods_attr_price eq 0 || $add_shop_price eq 1}class="hide"{/if}><em class="require-field">*</em>市场价<i class="sc_icon sc_icon_edit pointer pro_market"></i></th>
+            <th width="8%" {if $goods_attr_price eq 0}class="hide"{/if}><em class="require-field">*</em>本店价<i class="sc_icon sc_icon_edit pointer pro_shop"></i></th>
+            <th width="8%" {if $goods_attr_price eq 0 || $add_shop_price eq 1}class="hide"{/if}><em class="require-field">*</em>促销价<i class="sc_icon sc_icon_edit pointer pro_promote"></i></th>
+            <th width="10%"><em class="require-field">*</em>库存<i class="sc_icon sc_icon_edit pointer pro_number"></i></th>
+            <th width="10%"><em class="require-field">*</em>预警值<i class="sc_icon sc_icon_edit pointer pro_warning"></i></th>
+            <th width="12%">商品货号</th>
+            <th width="12%">商品条形码</th>
+            <th width="5%">操作</th>
         </tr>
     </thead>
 </table>
@@ -68,8 +68,8 @@
     <div id="turn-page" class="attr-turn-page">
         <div class="pagination">
             <ul>
-                <li>{literal}{if $filter.page neq 1}<a href="javascript:listTable.gotoPageFirst()">{/if}{/literal}<span>{$lang.page_first}</span>{if $filter.page neq 1}</a>{/if}</li>
-                <li{if $filter.page eq 1} class="curr"{/if}>{literal}{if $filter.page neq 1}<a href="javascript:listTable.gotoPagePrev()">{/if}{/literal}<span class="prev">{$lang.page_prev}</span>{if $filter.page neq 1}</a>{/if}</li>
+                <li>{literal}{if $filter.page neq 1}<a href="javascript:listTable.gotoPageFirst()">{/if}{/literal}<span>首页</span>{if $filter.page neq 1}</a>{/if}</li>
+                <li{if $filter.page eq 1} class="curr"{/if}>{literal}{if $filter.page neq 1}<a href="javascript:listTable.gotoPagePrev()">{/if}{/literal}<span class="prev">上一页</span>{if $filter.page neq 1}</a>{/if}</li>
                 {foreach from=$page_count_arr item=page_count name=pageCount}
                 {if $page_count eq $filter.page}
                     <li><span class="currentpage">{$page_count}</span></li>
@@ -77,23 +77,23 @@
                     <li><a href="javascript:listTable.gotoPage({$page_count})"><span>{$page_count}</span></a></li>
                 {/if}
                 {/foreach}
-                <li{if $filter.page eq $filter.page_count} class="curr"{/if}>{literal}{if $filter.page neq $filter.page_count}<a href="javascript:listTable.gotoPageNext()">{/if}{/literal}<span class="next">{$lang.page_next}</span>{if $filter.page neq $filter.page_count}</a>{/if}</li>
-                <li>{literal}{if $filter.page neq $filter.page_count}<a href="javascript:listTable.gotoPageLast()" class="last">{/if}{/literal}<span>{$lang.page_last}</span>{if $filter.page neq $filter.page_count}</a>{/if}</li>
+                <li{if $filter.page eq $filter.page_count} class="curr"{/if}>{literal}{if $filter.page neq $filter.page_count}<a href="javascript:listTable.gotoPageNext()">{/if}{/literal}<span class="next">下一页</span>{if $filter.page neq $filter.page_count}</a>{/if}</li>
+                <li>{literal}{if $filter.page neq $filter.page_count}<a href="javascript:listTable.gotoPageLast()" class="last">{/if}{/literal}<span>末页</span>{if $filter.page neq $filter.page_count}</a>{/if}</li>
             </ul>
         </div>    
     </div>
     <!--{/if}-->
 	{if $cloud_count eq 0}
-    <span class="goods_attr_04_explain">{$lang.over2page_batch_upload}</span>
+    <span class="goods_attr_04_explain">（说明：含有两页以上请用批量上传功能）</span>
     <div class="goods_attr_04_batch">
         {if $goods_model eq 1}
-            <a href="javascript:;" class="btn btn35 red_btn" id="produts_warehouse_batch">{$lang.batch_upload_csv}</a>
+            <a href="javascript:;" class="btn btn35 red_btn" id="produts_warehouse_batch">CSV批量上传</a>
         {elseif $goods_model eq 2}
-            <a href="javascript:;" class="btn btn35 red_btn" id="produts_area_batch">{$lang.batch_upload_csv}</a>
+            <a href="javascript:;" class="btn btn35 red_btn" id="produts_area_batch">CSV批量上传</a>
         {else}
-            <a href="javascript:;" class="btn btn35 red_btn" id="produts_batch">{$lang.batch_upload_csv}</a>
+            <a href="javascript:;" class="btn btn35 red_btn" id="produts_batch">CSV批量上传</a>
         {/if}
-        <a href="javascript:;" class="btn btn35 red_btn ml20" id="attr_refresh">{$lang.refresh}</a>
+        <a href="javascript:;" class="btn btn35 red_btn ml20" id="attr_refresh">刷新</a>
     </div> 
 	{/if}
     <input name="arrt_page_count" type="hidden" value='{$filter.page_count}'>

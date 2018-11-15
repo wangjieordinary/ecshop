@@ -15,7 +15,7 @@
                     <div class="search-form">
                         <form method="get" action="javascript:searchGoodsList()" name="searchFormList">		
                             <div class="search-key">
-                                    <input type="text" class="text" name="keyword" value="" placeholder="{$lang.goods_id_goods_keywords}">
+                                    <input type="text" class="text" name="keyword" value="" placeholder="商品ID/商品关键字">
                                 <input type="submit" class="submit" value="{$lang.button_search}">
                                 <input type="hidden" name="act" value="store_goods_online">
                                 <input type="hidden" name="op" value="index">
@@ -64,29 +64,29 @@
                                     {if $goods.brand_name}<font class="fl blue mr5">[ {$goods.brand_name} ]</font>{/if}
     
                                     {if $goods.is_shipping}
-                                    <em class="free">{$lang.free_shipping_alt}</em>
+                                    <em class="free">免邮</em>
                                     {/if}
 
                                     {if $goods.stages}
-                                    <em class="byStage">{$lang.by_stages}</em>
+                                    <em class="byStage">分期</em>
                                     {/if}
                                     {if !$goods.is_alone_sale}
-                                    <em class="parts">{$lang.tab_groupgoods}</em>
+                                    <em class="parts">配件</em>
                                     {/if}
                                     
                                     {if $goods.is_promote}
                                         {if $nowTime gte $goods.promote_end_date}
-                                    <em class="saleEnd">{$lang.promote_end_date}</em>
+                                    <em class="saleEnd">特卖结束</em>
                                         {else}
-                                    <em class="sale">{$lang.promote_date}</em>    
+                                    <em class="sale">特卖</em>    
                                         {/if}
                                     {/if}
                                     
                                     {if $goods.is_xiangou}
                                         {if $nowTime gte $goods.xiangou_end_date}
-                                    <em class="purchaseEnd">{$lang.xiangou_end}</em>
+                                    <em class="purchaseEnd">限购结束</em>
                                         {else}
-                                    <em class="purchase">{$lang.xiangou}</em>    
+                                    <em class="purchase">限购</em>    
                                         {/if}
                                     {/if}
                                 </div>
@@ -124,7 +124,7 @@
                                 </select>
                                 <input type="submit" value="{$lang.button_submit}" id="btnSubmit" name="btnSubmit" class="sc-btn btn_disabled" disabled="true" onclick="changeAction();" />
                                 <input type="hidden" name="act" value="batch" />
-                            	<span class="lh">{if $record_count}{$lang.total_data}{$record_count}{$lang.record}{/if}</span>
+                            	<span class="lh">{if $record_count}共{$record_count}条记录{/if}</span>
                             </div>  
                         </td>
                     </tr>

@@ -43,9 +43,9 @@
         <div class="tDiv">
             {if $package_goods.products}
             <div class="imitate_select select_w120">
-                <div class="cite">{$lang.select_please}</div>
+                <div class="cite">请选择...</div>
                 <ul style="display: none;" class="ps-container">
-                    <li><a href="javascript:;" data-value="" class="ftx-01">{$lang.select_please}</a></li>
+                    <li><a href="javascript:;" data-value="" class="ftx-01">请选择...</a></li>
                     {foreach from=$package_goods.products item=products}
 
                     <li><a href="javascript:;" data-value="{$products.product_id}" class="ftx-01" ectype="package_checked">{$products.goods_attr_str}</a></li>
@@ -60,9 +60,9 @@
     <td class="handle">
         <div class="tDiv a1">
             {if $package_goods.products}
-            <a href="javascript:;" ectype="add_package_goods" title="{$lang.add}" class="btn_trash"><i class="icon icon-plus"></i>{$lang.add}</a>						
+            <a href="javascript:;" ectype="add_package_goods" title="增加" class="btn_trash"><i class="icon icon-plus"></i>增加</a>						
             {/if}
-            <a href="javascript:;" ectype="remove_group" title="{$lang.remove}" data-operation="package" data-msg="{$lang.sure_delete_pack_goods}" class="btn_trash"><i class="icon icon-trash"></i>{$lang.drop}</a>									
+            <a href="javascript:;" ectype="remove_group" title="{$lang.remove}" data-operation="package" data-msg="确定删除该礼包商品吗？" class="btn_trash"><i class="icon icon-trash"></i>{$lang.drop}</a>									
         </div>
     </td>
 </tr>

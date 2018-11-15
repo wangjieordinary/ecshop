@@ -10,7 +10,7 @@
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
                 	<li>{$lang.operation_prompt_content_common}</li>
-					<li>{$lang.operation_prompt_content.info.0}</li>
+					 <li>{$lang.operation_prompt_content.info.0}</li>
                 </ul>
             </div>
             <div class="flexilist">
@@ -129,10 +129,10 @@
 			},
 			messages : {
 				type_name : {
-					required : '<i class="icon icon-exclamation-sign"></i>'+type_name_null
+					required : '<i class="icon icon-exclamation-sign"></i>请输入礼品卡名称'
 				},
 				gift_number : {
-					min : '<i class="icon icon-exclamation-sign"></i>'+gift_number_null
+					min : '<i class="icon icon-exclamation-sign"></i>请输入发放数量'
 				},
 				use_start_date :{
 					required : '<i class="icon icon-exclamation-sign"></i>'+start_data_notnull

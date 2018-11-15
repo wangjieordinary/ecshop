@@ -12,17 +12,15 @@ jQuery(function($){
 		region_id = $("input[name='region_id']").val(),
 		area_id = $("input[name='area_id']").val();
 		
-		var area_city = $("input[name='area_city']").val();
-		
 		var itemName = $(this).attr('item'),
 			val = $(this).val();
 			
 		if($(this).prop('checked')){
 			//新增配件(组,配件,主件);
-			ec_group_addToCart(itemName, val, goods_id, region_id, area_id, area_city, '');
+			ec_group_addToCart(itemName, val, goods_id, region_id, area_id, '');
 		}else{
 			//删除基本件(组,配件,主件)
-			ec_group_delInCart(itemName, val, goods_id, region_id, area_id, area_city, '');
+			ec_group_delInCart(itemName, val, goods_id, region_id, area_id, '');
 		}
 	});
 	
@@ -86,8 +84,6 @@ jQuery(function($){
 		var region_id = str1[1];
 		var area_id = str1[2];
 		
-		var area_city = $("input[name='area_city']").val();
-		
 		str2 = str1[3];
 		str2 = str2.split('=');
 		var group_item = str2[0];
@@ -119,7 +115,7 @@ jQuery(function($){
 			}
 			
 			//新增配件(组,配件,主件)
-			ec_group_addToCart(group_item, goods_id, parent_id, region_id, area_id, area_city, add_group, fitt_goods);
+			ec_group_addToCart(group_item, goods_id, parent_id, region_id, area_id, add_group, fitt_goods);
 		}
 	});
 	
@@ -187,7 +183,7 @@ function display_Price(_item,indexTab){
 }
 
 //处理添加商品到购物车
-function ec_group_addToCart(group,goodsId,parentId, warehouse_id, area_id, area_city, add_group, fitt_goods){
+function ec_group_addToCart(group,goodsId,parentId, warehouse_id, area_id, add_group, fitt_goods){
   var goods        = new Object();
   var spec_arr     = new Array();
   var fittings_arr = new Array();
@@ -196,13 +192,12 @@ function ec_group_addToCart(group,goodsId,parentId, warehouse_id, area_id, area_
   var group_item   = goodsId;
   var goods_attr = getSelectedAttributes(document.forms['ECS_FORMBUY']);  //获取主件商品属性
   
-  goods.goods_attr  = goods_attr;
+  goods.goods_attr   	= goods_attr;
   goods.quick    		= quick;
   goods.spec     		= spec_arr;
   goods.goods_id 		= goodsId;
   goods.warehouse_id 	= warehouse_id;
   goods.area_id 		= area_id;
-  goods.area_city   = area_city;
   goods.number   		= number;
   goods.parent   		= parentId;
   goods.group 			= group + '_' + parentId;//组名
@@ -256,7 +251,7 @@ function ec_group_addToCartResponse(result)
 }
 
 //处理取消勾选搭配商品
-function ec_group_delInCart(group,goodsId,parentId, warehouse_id, area_id,area_city){
+function ec_group_delInCart(group,goodsId,parentId, warehouse_id, area_id){
   var goods        = new Object();
   var group_item   = (typeof(parentId) == "undefined") ? goodsId : parseInt(parentId);
 
@@ -266,7 +261,7 @@ function ec_group_delInCart(group,goodsId,parentId, warehouse_id, area_id,area_c
   goods.goods_attr = getSelectedAttributes(document.forms['ECS_FORMBUY']);  //获取主件商品属性
   goods.warehouse_id = warehouse_id;
   goods.area_id = area_id;
-  goods.area_city = area_city;
+
 
   Ajax.call('flow.php?step=del_in_cart_combo', 'goods=' + $.toJSON(goods), ec_group_delInCartResponse, 'POST', 'JSON'); //兼容jQuery by mike
 }

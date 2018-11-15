@@ -15,31 +15,31 @@
                 <div class="stepflex order-stepflex">
                 	<dl {if $step eq 'user' || $step eq 'goods' || $step eq 'consignee' || $step eq 'shipping' || $step eq 'payment' || $step eq 'other' || $step eq 'money'}class="current"{/if}>
                     	<dt><i class="sc-new"></i></dt>
-                        <dd>1､{$lang.add_order_step.0}<i class="jt"></i></dd>
+                        <dd>1､选择下单用户<i class="jt"></i></dd>
                     </dl>
                     <dl {if $step eq 'goods' || $step eq 'consignee' || $step eq 'shipping' || $step eq 'payment' || $step eq 'other' || $step eq 'money'}class="current"{/if}>
                     	<dt><i class="sc-select"></i></dt>
-                        <dd>2､{$lang.add_order_step.1}<i class="jt"></i></dd>
+                        <dd>2､选择订单商品<i class="jt"></i></dd>
                     </dl>
                     <dl {if $step eq 'consignee' || $step eq 'shipping' || $step eq 'payment' || $step eq 'other' || $step eq 'money'}class="current"{/if}>
                     	<dt><i class="sc-address"></i></dt>
-                        <dd>3､{$lang.add_order_step.2}<i class="jt"></i></dd>
+                        <dd>3､填写收货地址<i class="jt"></i></dd>
                     </dl>
                     <dl {if $step eq 'shipping' || $step eq 'payment' || $step eq 'other' || $step eq 'money'}class="current"{/if}>
                     	<dt><i class="sc-mode"></i></dt>
-                        <dd>4､{$lang.add_order_step.3}<i class="jt"></i></dd>
+                        <dd>4､选择配送方式<i class="jt"></i></dd>
                     </dl>
                     <dl {if $step eq 'payment' || $step eq 'other' || $step eq 'money'}class="current"{/if}>
                     	<dt><i class="sc-payment"></i></dt>
-                        <dd>5､{$lang.add_order_step.4}<i class="jt"></i></dd>
+                        <dd>5､选择支付方式<i class="jt"></i></dd>
                     </dl>
                     <dl {if $step eq 'other' || $step eq 'money'}class="current"{/if}>
                     	<dt><i class="sc-invoice"></i></dt>
-                        <dd>6､{$lang.add_order_step.5}<i class="jt"></i></dd>
+                        <dd>6､填写发票信息<i class="jt"></i></dd>
                     </dl>
                     <dl {if $step eq 'money'}class="current"{/if}>
                     	<dt><i class="sc-cost"></i></dt>
-                        <dd>7､{$lang.add_order_step.6}<i class="jt"></i></dd>
+                        <dd>7､填写费用信息<i class="jt"></i></dd>
                     </dl>
                 </div>
                 {/if}
@@ -62,16 +62,17 @@
                                 <input type="text" name="keyword" class="text text_2 mr0" placeholder="会员名称/编号" autocomplete="off" readonly />
                                 <input type="button" class="select_btn" name="search" onclick="searchUser();" />
                                 <div id="user" class="imitate_select select_w190">
-                                    <div class="cite">{$lang.member_name}</div>
+                                    <div class="cite">会员名称</div>
                                     <ul style="display: none;">
-                                        <li class="li_not">{$lang.search_user_name_not}</li>
+                                        <li class="li_not">请先搜索会员名称</li>
                                     </ul>
                                     <input name="user" type="hidden" value="" id="user_val">
                                 </div>
                                 <div class="div_readonly"></div>
                             </div>
                             <div class="notic fl">
-                                {$lang.search_user_name_notic}
+                                <strong>注意：</strong>搜索结果只显示前20条记录，如果没有找到相应会员，请更精确地查找。<br>
+                                另外，如果该会员是从论坛注册的且没有在商城登录过，也无法找到，需要先在商城登录。
                             </div>
                         </div>
                     </div>
@@ -112,7 +113,7 @@
                                 <div  class="imitate_select select_w170">
                                     <div class="cite">{$lang.please_select}</div>
                                     <ul style="display: none;" id="area_id">
-                                        <li class="li_not">{$lang.select_warehouse}</li>
+                                        <li class="li_not">请先选择仓库</li>
                                     </ul>
                                     <input name="area_id" type="hidden" value="" id="area_id_val">
                                 </div>
@@ -128,7 +129,7 @@
                                 <div id="goodslist" class="imitate_select select_w500">
                                     <div class="cite">{$lang.please_select}</div>
                                     <ul style="display:none;">
-                                        <li class="li_not">{$lang.search_goods_first}</li>
+                                        <li class="li_not">请先搜索商品</li>
                                     </ul>
                                     <input name="goodslist" type="hidden" value="" id="goodslist_val">
                                 </div>
@@ -276,7 +277,7 @@
                         <dd>
                         	<div id="dlcountry" class="ui-dropdown smartdropdown alien mr15">
                                 <input type="hidden" value="{$order.country}" name="country" id="selcountry">
-                                <div class="txt">{$lang.country}</div>
+                                <div class="txt">国家</div>
                                 <i class="down u-dropdown-icon"></i>
                                 <div class="options clearfix" style="max-height:300px;">
                                     <span class="liv" data-text="{$lang.select_please}" data-type="1"  data-value="0">{$lang.select_please}</span>
@@ -288,7 +289,7 @@
     
                             <div id="dlProvinces" class="ui-dropdown smartdropdown alien">
                                 <input type="hidden" value="{$order.province}" name="province" id="selProvinces">
-                                <div class="txt">{$lang.province_alt}</div>
+                                <div class="txt">省/直辖市</div>
                                 <i class="down u-dropdown-icon"></i>
                                 <div class="options clearfix" style="max-height:300px;">
                                     <span class="liv" data-text="{$lang.select_please}" data-type="2"  data-value="0">{$lang.select_please}</span>
@@ -300,7 +301,7 @@
     
                             <div id="dlCity" class="ui-dropdown smartdropdown alien">
                                 <input type="hidden" value="{$order.city}" name="city" id="selCities">
-                                <div class="txt">{$lang.city}</div>
+                                <div class="txt">市</div>
                                 <i class="down u-dropdown-icon"></i>
                                 <div class="options clearfix" style="max-height:300px;">
                                     <span class="liv" data-text="{$lang.select_please}" data-type="3"  data-value="0">{$lang.select_please}</span>
@@ -311,7 +312,7 @@
                             </div>
                             <div id="dlRegion" class="ui-dropdown smartdropdown alien">
                                 <input type="hidden" value="{$order.district}" name="district" id="selDistricts">
-                                <div class="txt">{$lang.area_alt}</div>
+                                <div class="txt">区/县</div>
                                 <i class="down u-dropdown-icon"></i>
                                 <div class="options clearfix" style="max-height:300px;">
                                     <span class="liv" data-text="{$lang.select_please}" data-type="4"  data-value="0">{$lang.select_please}</span>
@@ -501,7 +502,7 @@
 						{if $order.invoice_type eq 0}
 						<dl>
 							<dt>{$lang.label_inv_type}</dt>
-							<dd><input name="inv_type" type="text" class="text" id="inv_type" value="{if $order.invoice_type eq 0}{$lang.general_invoice}{else}{$lang.VAT_invoice}{/if}" size="40" /></dd>
+							<dd><input name="inv_type" type="text" class="text" id="inv_type" value="{if $order.invoice_type eq 0}普通发票{else}增值税发票{/if}" size="40" /></dd>
 						</dl>
 						<dl>
 							<dt>{$lang.label_inv_payee}</dt>
@@ -514,34 +515,34 @@
 						{else}
 						<dl>
 							<dt>{$lang.label_inv_type}</dt>
-							<dd><input name="inv_type" type="text" class="text" id="inv_type" value="{if $order.invoice_type eq 0}{$lang.general_invoice}{else}{$lang.VAT_invoice}{/if}" size="40" disabled="true" /></dd>
+							<dd><input name="inv_type" type="text" class="text" id="inv_type" value="{if $order.invoice_type eq 0}普通发票{else}增值税发票{/if}" size="40" disabled="true" /></dd>
 						</dl>
 						<dl>
-							<dt>{$lang.adopt_status}：</dt>
-							<dd><input name="inv_type" type="text" class="text" id="inv_type" value="{if $vat_info.audit_status eq 0}{$lang.not_audited}{elseif $vat_info.audit_status eq 1}{$lang.audited_adopt}{elseif $vat_info.audit_status eq 2}{$lang.audited_not_adopt}{/if}" size="40" disabled="true" /></dd>
+							<dt>审核状态：</dt>
+							<dd><input name="inv_type" type="text" class="text" id="inv_type" value="{if $vat_info.audit_status eq 0}未审核{elseif $vat_info.audit_status eq 1}审核通过{elseif $vat_info.audit_status eq 2}审核未通过{/if}" size="40" disabled="true" /></dd>
 						</dl>
 						<dl>
 							<dt>{$lang.label_inv_payee}</dt>
 							<dd><input name="inv_type" type="text" class="text" id="inv_type" value="{$vat_info.company_name}" size="40" disabled="true" /></dd>
 						</dl>
 						<dl>
-							<dt>{$lang.id_code}：</dt>
+							<dt>识别码：</dt>
 							<dd><input name="inv_type" type="text" class="text" id="inv_type" value="{$vat_info.tax_id}" size="40" disabled="true" /></dd>
 						</dl>
 						<dl>
-							<dt>{$lang.vat_company_address}：</dt>
+							<dt>注册地址：</dt>
 							<dd><input name="company_address" type="text" class="text" id="company_address" value="{$vat_info.company_address}" size="40" disabled="true" /></dd>
 						</dl>
 						<dl>
-							<dt>{$lang.vat_company_telephone}：</dt>
+							<dt>注册电话：</dt>
 							<dd><input name="company_telephone" type="text" class="text" id="company_telephone" value="{$vat_info.company_telephone}" size="40" disabled="true" /></dd>
 						</dl>
 						<dl>
-							<dt>{$lang.vat_bank_of_deposit}：</dt>
+							<dt>开户银行：</dt>
 							<dd><input name="bank_of_deposit" type="text" class="text" id="bank_of_deposit" value="{$vat_info.bank_of_deposit}" size="40" disabled="true" /></dd>
 						</dl>
 						<dl>
-							<dt>{$lang.vat_bank_account}：</dt>
+							<dt>银行账号：</dt>
 							<dd><input name="bank_account" type="text" class="text" id="bank_account" value="{$vat_info.bank_account}" size="40" disabled="true" /></dd>
 						</dl>                       
 						{/if}	
@@ -887,8 +888,8 @@ function checkUser()
 	eles['attr_price'].value = result.attr_price;
 	
     //显示价格：包括市场价、本店价（促销价）、会员价
-    var priceHtml = '<div class="checkbox_items"><div class="checkbox_item"><input type="radio" name="add_price" class="ui-radio" id="market_price" value="' + result.market_price + '" /><label for="market_price" class="ui-radio-label">'+jl_market_price+' [' + result.market_price + ']</label></div>' +
-      '<div class="checkbox_item"><input type="radio" name="add_price" class="ui-radio" id="shop_price" value="' + result.goods_price + '" checked /><label for="shop_price" class="ui-radio-label">'+jl_shop_price+' [' + result.goods_price + ']</label></div>';
+    var priceHtml = '<div class="checkbox_items"><div class="checkbox_item"><input type="radio" name="add_price" class="ui-radio" id="market_price" value="' + result.market_price + '" /><label for="market_price" class="ui-radio-label">市场价 [' + result.market_price + ']</label></div>' +
+      '<div class="checkbox_item"><input type="radio" name="add_price" class="ui-radio" id="shop_price" value="' + result.goods_price + '" checked /><label for="shop_price" class="ui-radio-label">本店价 [' + result.goods_price + ']</label></div>';
     for (var i = 0; i < result.user_price.length; i++)
     {
       priceHtml += '<div class="checkbox_item"><input type="radio" name="add_price" class="ui-radio" id="shop_price_'+i+'" value="' + result.user_price[i].user_price + '" /><label for="shop_price_'+i+'" class="ui-radio-label">' + result.user_price[i].rank_name + ' [' + result.user_price[i].user_price + ']</label></div>';
@@ -1037,10 +1038,10 @@ function checkUser()
 	var warehouse_id = eles['warehouse_id'].value;
 	var area_id = eles['area_id'].value;
     if(warehouse_id == 0){
-		alert(jl_select_warehouse);
+		alert('请选择仓库');
       	return false;
 	}else if(area_id == 0){
-		alert(jl_select_region);
+		alert('请选择地区');
       	return false;
 	}else{
 		/* 填充列表 */
@@ -1095,10 +1096,10 @@ function checkUser()
       alert(pls_search_goods);
       return false; 
     }else if(warehouse_id == 0){
-		alert(jl_select_warehouse);
+		alert('请选择仓库');
       	return false;
 	}else if(area_id == 0){
-		alert(jl_select_region);
+		alert('请选择地区');
       	return false;
 	}
 	
@@ -1108,7 +1109,7 @@ function checkUser()
     }
     
 	if(add_number > goods_storage){
-		alert(jl_goods_stock_no_enough);
+		alert('商品库存不足');
 		return false;
 	}
 	
@@ -1155,17 +1156,17 @@ function checkUser()
 		var order_amount = Number(total_fee) - Number(concessionary);
 		
 		if(total_fee < 0){
-			alert(jl_order_step_js_notic_11);
+			alert("您修改的费用信息折扣不能大于实际订单总金额");
 			return false;
 		}
 		
 		var str = '';
 		{if $order.ru_id neq 0}
-		str = jl_order_step_js_notic_12;
+		str = "，会产生退款，一旦退款则将扣除您账户里面的资金";
 		{/if}
 	
 		if(order_amount < 0){
-			if(confirm(jl_order_step_js_notic_13 + order_amount.toFixed(2) + "）" + str + jl_order_step_js_notic_14)){
+			if(confirm("您修改的费用信息产生了负数（" + order_amount.toFixed(2) + "）" + str + "，是否继续？")){
 				$("form[name='theForm']").submit();
 			}
 		}else{

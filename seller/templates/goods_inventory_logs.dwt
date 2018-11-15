@@ -257,9 +257,9 @@
 		listTable.filter['page'] = 1;
 		
 		if(listTable.filter['start_time'] != '' && listTable.filter['end_time'] == ''){
-			alert(jl_end_time_not_null);
+			alert('结束时间不能为空');
 		}else if(listTable.filter['start_time'] == '' && listTable.filter['end_time'] != ''){
-			alert(jl_start_time_not_null);
+			alert('开始时间不能为空');
 		}else{
 			listTable.loadList();
 		}

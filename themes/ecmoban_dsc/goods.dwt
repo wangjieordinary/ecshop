@@ -1151,8 +1151,8 @@ function changePriceResponse(res)
 		  var i=0;
 		  $.each(res.stages,function(k,v){
 			  if(k!=1) {
-				  $('#chooseStages .item strong').eq(i).html('￥' + v + '×' + k + json_languages.qi);
-				  $('#chooseStages .item strong').eq(i).next('span').html(json_languages.free_desc+'{$goods.stages_rate}%，￥' + v + '×' + k + json_languages.qi);
+				  $('#chooseStages dd strong').eq(i).html('￥' + v + '×' + k + qi);
+				  $('#chooseStages dd strong').eq(i).next('span').html(free_desc+'{$goods.stages_rate}%，￥' + v + '×' + k + qi);
 			  }
 			  i++;
 		  });

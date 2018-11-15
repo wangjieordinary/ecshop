@@ -1,22 +1,22 @@
 {if $model eq 1}
 <div class="step_top_btn">	
-	<a href="javascript:void(0);" class="btn red_btn" ectype="addWarehouse" data-userid="{$user_id}"><i class="sc_icon sc_icon_warehouse"></i>{$lang.add_warehouse}</a>
-	<a href="goods_warehouse_batch.php?act=add&goods_id={$goods_id}" class="btn red_btn" target="_blank">{$lang.batch_upload_csv}</a>	
+	<a href="javascript:void(0);" class="btn red_btn" ectype="addWarehouse" data-userid="{$user_id}"><i class="sc_icon sc_icon_warehouse"></i>添加仓库</a>
+	<a href="goods_warehouse_batch.php?act=add&goods_id={$goods_id}" class="btn red_btn" target="_blank">CSV批量上传</a>	
 </div>
 <div class="list-div">
 	<table cellpadding="0" cellspacing="0" border="0">
 		<thead>
 			<tr>
 				<th width="5%"><div class="tDiv">{$lang.record_id}<div></th>
-				<th width="9%"><div class="tDiv">{$lang.warehouse_name}</div></th>
-                <th width="10%"><div class="tDiv">{$lang.warehouse_goods_code}</div></th>
-				<th width="11%"><div class="tDiv">{$lang.warehouse_stock}</div></th>
-				<th width="11%"><div class="tDiv">{$lang.warehouse_price}</div></th>
-				<th width="11%"><div class="tDiv">{$lang.warehouse_promotion_price}</div></th>
-				<th width="11%"><div class="tDiv">{$lang.give_spand_integral}</div></th>
-				<th width="11%"><div class="tDiv">{$lang.give_level_integral}</div></th>
-				<th width="11%"><div class="tDiv">{$lang.integral_purchase_amount}</div></th>
-				<th width="10%" class="handle">{$lang.handler}</th>
+				<th width="9%"><div class="tDiv">仓库名称</div></th>
+                <th width="10%"><div class="tDiv">仓库商品货号</div></th>
+				<th width="11%"><div class="tDiv">仓库库存</div></th>
+				<th width="11%"><div class="tDiv">仓库价格</div></th>
+				<th width="11%"><div class="tDiv">仓库促销价格</div></th>
+				<th width="11%"><div class="tDiv">赠送消费积分数</div></th>
+				<th width="11%"><div class="tDiv">赠送等级积分数</div></th>
+				<th width="11%"><div class="tDiv">积分购买金额</div></th>
+				<th width="10%" class="handle">操作</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -40,7 +40,7 @@
 			</tr>
 			{foreachelse}
 			<tr>
-				<td colspan="10" align="center" class="no_record"><div class="tDiv">{$lang.no_record}</div></td>
+				<td colspan="10" align="center" class="no_record"><div class="tDiv">无记录</div></td>
 			</tr>
 			{/foreach}
 		</tbody>
@@ -62,20 +62,20 @@
 		<thead>
 			<tr>
 				<th width="5%"><div class="tDiv">{$lang.record_id}<div></th>
-				<th width="5%"><div class="tDiv">{$lang.warehouse}</div></th>
-				<th width="5%"><div class="tDiv">{$lang.area}</div></th>
+				<th width="5%"><div class="tDiv">仓库</div></th>
+				<th width="5%"><div class="tDiv">地区</div></th>
                 {if $area_pricetype eq 1}
-                <th width="4%"><div class="tDiv">{$lang.the_city}</div></th>
+                <th width="4%"><div class="tDiv">城市</div></th>
                 {/if}
-                <th width="9%"><div class="tDiv">{$lang.product_code}</div></th>
-				<th width="9%"><div class="tDiv">{$lang.storage}</div></th>
-				<th width="9%"><div class="tDiv">{$lang.price}</div></th>
-				<th width="9%"><div class="tDiv">{$lang.promotion_price}</div></th>
-				<th width="9%"><div class="tDiv">{$lang.give_spand_integral}</div></th>
-				<th width="9%"><div class="tDiv">{$lang.give_level_integral}</div></th>
-				<th width="9%"><div class="tDiv">{$lang.integral_purchase_amount}</div></th>
-				<th width="6%"><div class="tDiv">{$lang.sort_order}</div></th>
-				<th width="6%" class="handle">{$lang.handler}</th>
+                <th width="9%"><div class="tDiv">商品货号</div></th>
+				<th width="9%"><div class="tDiv">库存</div></th>
+				<th width="9%"><div class="tDiv">价格</div></th>
+				<th width="9%"><div class="tDiv">促销价格</div></th>
+				<th width="9%"><div class="tDiv">赠送消费积分</div></th>
+				<th width="9%"><div class="tDiv">赠送等级积分</div></th>
+				<th width="9%"><div class="tDiv">积分购买金额</div></th>
+				<th width="6%"><div class="tDiv">排序</div></th>
+				<th width="6%" class="handle">操作</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -104,7 +104,7 @@
 			</tr>
 			{foreachelse}
 			<tr>
-				<td colspan="13" align="center" class="no_record"><div class="tDiv">{$lang.no_record}</div></td>
+				<td colspan="13" align="center" class="no_record"><div class="tDiv">无记录</div></td>
 			</tr>			
 			{/foreach}
 		</tbody>

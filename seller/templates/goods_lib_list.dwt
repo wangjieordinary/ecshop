@@ -15,7 +15,7 @@
                 	<div class="search-form">
                     <form method="get" action="javascript:searchGoodsList()" name="searchFormList">		
                         <div class="search-key">
-                        	<input type="text" class="text" name="keyword" value="" placeholder="{$lang.goods_id_goods_keywords}">
+                        	<input type="text" class="text" name="keyword" value="" placeholder="商品ID/商品关键字">
                             <input type="submit" class="submit" value="{$lang.button_search}">
                             <input type="hidden" name="cat_id" id="cat_id" value="0"/>
                         </div>
@@ -37,9 +37,9 @@
 											<label for="all" class="ui-label">{$lang.record_id}</label>
 										</div>
 									</th>
-                                    <th width="40%" class="tl">{$lang.goods_infor}</th>
-									<th width="20%" class="tl">{$lang.21_goods_lib_cat}</th>
-                                    <th width="15%">{$lang.price}</th>
+                                    <th width="40%" class="tl">商品信息</th>
+									<th width="20%" class="tl">商品库商品分类</th>
+                                    <th width="15%">价格</th>
                                     <th width="7%"><a href="javascript:listTable.sort('sort_order'); ">{$lang.sort_order}</a><div class="img">{$sort_sort_order}</div></th>
                                     <th width="8%">{$lang.handler}</th>
                                 </tr>
@@ -83,14 +83,14 @@
                                 <tr>
                                     <th class="frist tc"></th>
                                     <th class="batch-operation" colspan="20">
-										<a href="javascript:void(0);" class="sc-btn sc-red-btn"><i class="icon-upload-alt"></i>{$lang.batch_import}</a>
-                                    	<span>{if $record_count}{$lang.total_data}{$record_count}{$lang.data}，{/if}</span>
+										<a href="javascript:void(0);" class="sc-btn sc-red-btn"><i class="icon-upload-alt"></i>批量导入</a>
+                                    	<span>{if $record_count}共{$record_count}条记录，{/if}</span>
                                         <span class="page page_3">
-                                    	<i>{$lang.go_no}</i> 
+                                    	<i>去第</i> 
 											<select id="gotoPage" onchange="listTable.gotoPage(this.value)">
 												{create_pages count=$page_count page=$filter.page}
 											</select>
-        								<i>{$lang.page_ye}</i>
+        								<i>页</i>
                                     </span>
                                     </th>
                                 </tr>
@@ -165,7 +165,7 @@ $(function(){
 		if(checked){
 			changeAction(type);
 		}else{
-			alert(jl_please_select_goods);
+			alert("请勾选商品");
 		}
 	});
 });
@@ -177,11 +177,11 @@ $(document).on("click","a[ectype='seller_import']",function(){
 		var content = data.content;
 		pb({
 			id:"seller_export",
-			title:jl_goods_import,
+			title:"商品库商品导入",
 			width:450,
 			content:content,
-			ok_title:jl_determine,
-			cl_title:jl_cancel,
+			ok_title:"确定",
+			cl_title:"取消",
 			drag:true,
 			foot:false
 		});
@@ -200,11 +200,11 @@ $(document).on("click","a[ectype='add_sku']",function(){
 		var content = data.content;
 		pb({
 			id:"categroy_dialog",
-			title:jl_edit_goods_info,
+			title:"编辑商品货品信息",
 			width:863,
 			content:content,
-			ok_title:jl_determine,
-			cl_title:jl_cancel,
+			ok_title:"确定",
+			cl_title:"取消",
 			drag:true,
 			foot:false
 		});
@@ -221,11 +221,11 @@ $(document).on("click","a[ectype='add_attr_sku']",function(){
 		var content = data.content;
 		pb({
 			id:"attr_sku_dialog",
-			title:jl_edit_goods_price,
+			title:"编辑商品货品价格",
 			width:563,
 			content:content,
-			ok_title:jl_determine,
-			cl_title:jl_cancel,
+			ok_title:"确定",
+			cl_title:"取消",
 			drag:true,
 			foot:true,
 			onOk:function(){

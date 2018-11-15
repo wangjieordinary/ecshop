@@ -260,7 +260,6 @@ class TcpConnection extends ConnectionInterface
      *
      * @param string $name
      * @param array  $arguments
-     * @return void
      */
     public function __call($name, $arguments) {
         // Try to emit custom function within protocol
@@ -274,7 +273,10 @@ class TcpConnection extends ConnectionInterface
                 Worker::log($e);
                 exit(250);
             }
-        }
+	} else {
+	    trigger_error('Call to undefined method '.__CLASS__.'::'.$name.'()', E_USER_ERROR);
+	}
+
     }
 
     /**
@@ -297,8 +299,8 @@ class TcpConnection extends ConnectionInterface
             stream_set_read_buffer($this->_socket, 0);
         }
         Worker::$globalEvent->add($this->_socket, EventInterface::EV_READ, array($this, 'baseRead'));
-        $this->maxSendBufferSize        = self::$defaultMaxSendBufferSize;
-        $this->_remoteAddress           = $remote_address;
+        $this->maxSendBufferSize = self::$defaultMaxSendBufferSize;
+        $this->_remoteAddress    = $remote_address;
         static::$connections[$this->id] = $this;
     }
 
@@ -356,9 +358,7 @@ class TcpConnection extends ConnectionInterface
 
         // Attempt to send data directly.
         if ($this->_sendBuffer === '') {
-            set_error_handler(function(){});
-            $len = fwrite($this->_socket, $send_buffer, 8192);
-            restore_error_handler();
+            $len = @fwrite($this->_socket, $send_buffer, 8192);
             // send successful.
             if ($len === strlen($send_buffer)) {
                 $this->bytesWritten += $len;
@@ -575,9 +575,7 @@ class TcpConnection extends ConnectionInterface
             }
         }
 
-        set_error_handler(function(){});
-        $buffer = fread($socket, self::READ_BUFFER_SIZE);
-        restore_error_handler();
+        $buffer = @fread($socket, self::READ_BUFFER_SIZE);
 
         // Check connection closed.
         if ($buffer === '' || $buffer === false) {
@@ -602,11 +600,7 @@ class TcpConnection extends ConnectionInterface
                     }
                 } else {
                     // Get current package length.
-                    set_error_handler(function($code, $msg, $file, $line){
-                        Worker::safeEcho("$msg in file $file on line $line\n");
-                    });
                     $this->_currentPackageLength = $parser::input($this->_recvBuffer, $this);
-                    restore_error_handler();
                     // The packet length is unknown.
                     if ($this->_currentPackageLength === 0) {
                         break;
@@ -617,7 +611,7 @@ class TcpConnection extends ConnectionInterface
                         }
                     } // Wrong package.
                     else {
-                        Worker::safeEcho('error package. package_length=' . var_export($this->_currentPackageLength, true));
+                        echo 'error package. package_length=' . var_export($this->_currentPackageLength, true);
                         $this->destroy();
                         return;
                     }
@@ -684,9 +678,7 @@ class TcpConnection extends ConnectionInterface
      */
     public function baseWrite()
     {
-        set_error_handler(function(){});
-        $len = fwrite($this->_socket, $this->_sendBuffer, 8192);
-        restore_error_handler();
+        $len = @fwrite($this->_socket, $this->_sendBuffer, 8192);
         if ($len === strlen($this->_sendBuffer)) {
             $this->bytesWritten += $len;
             Worker::$globalEvent->del($this->_socket, EventInterface::EV_WRITE);
@@ -728,23 +720,18 @@ class TcpConnection extends ConnectionInterface
             $this->destroy();
             return false;
         }
-        $async = $this instanceof AsyncTcpConnection;
+        $async=$this instanceof AsyncTcpConnection;
         if($async){
-            $type = STREAM_CRYPTO_METHOD_SSLv2_CLIENT | STREAM_CRYPTO_METHOD_SSLv23_CLIENT;
+            $type=STREAM_CRYPTO_METHOD_SSLv2_CLIENT | STREAM_CRYPTO_METHOD_SSLv23_CLIENT;
         }else{
-            $type = STREAM_CRYPTO_METHOD_SSLv2_SERVER | STREAM_CRYPTO_METHOD_SSLv23_SERVER;
+            $type=STREAM_CRYPTO_METHOD_SSLv2_SERVER | STREAM_CRYPTO_METHOD_SSLv23_SERVER;
         }
-
-        // Hidden error.
-        set_error_handler(function($errno, $errstr, $file){
-            if (!Worker::$daemonize) {
-                Worker::safeEcho("SSL handshake error: $errstr \n");
-            }
-        });
-        $ret     = stream_socket_enable_crypto($socket, true, $type);
-        restore_error_handler();
+        $ret = stream_socket_enable_crypto($socket, true, $type);
         // Negotiation has failed.
         if (false === $ret) {
+            if (!feof($socket)) {
+                echo "\nSSL Handshake fail as ".($async?'client':'server').". \nBuffer:".bin2hex(fread($socket, 8182))."\n";
+            }
             $this->destroy();
             return false;
         } elseif (0 === $ret) {
@@ -902,12 +889,8 @@ class TcpConnection extends ConnectionInterface
         // Remove event listener.
         Worker::$globalEvent->del($this->_socket, EventInterface::EV_READ);
         Worker::$globalEvent->del($this->_socket, EventInterface::EV_WRITE);
-
         // Close socket.
-        set_error_handler(function(){});
-        fclose($this->_socket);
-        restore_error_handler();
-
+        @fclose($this->_socket);
         $this->_status = self::STATUS_CLOSED;
         // Try to emit onClose callback.
         if ($this->onClose) {

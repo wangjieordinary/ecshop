@@ -38,12 +38,12 @@
 										</div>
 									</div>                            
 								</div>
-								<input type="text" name="keyword" class="text w150" value="" placeholder="{$lang.input_keywords}"data-filter="keyword" autocomplete="off" />
+								<input type="text" name="keyword" class="text w150" value="" placeholder={$lang.input_keywords} data-filter="keyword" autocomplete="off" />
                                 <div style="border:1px dotted #f00; padding:0px 0px 0px 10px;" class="fl mr10 hide" ectype="limit_content">
                                     <input type="text" name="limit_start" class="text w50" value="0" placeholder="{$lang.limit_start}" data-filter="limit_start" autocomplete="off" />
                                     <input type="text" name="limit_number" class="text w50" value="50" placeholder="{$lang.limit_number}" data-filter="limit_number" autocomplete="off" />
                                 </div>
-                                <a href="javascript:void(0);" class="btn btn30" ectype="limit_button"><i class="icon icon-edit"></i>{$lang.range}</a>
+                                <a href="javascript:void(0);" class="btn btn30" ectype="limit_button"><i class="icon icon-edit"></i> 范围</a>
 								<a href="javascript:void(0);" class="btn btn30" ectype="search"><i class="icon icon-search"></i>{$lang.search_word}</a>
 							</div>                          
                             <div class="move_div">
@@ -125,7 +125,7 @@
 									<form action="goods_export.php" method="post" name="theForm1" onsubmit="return formValidate1()">
                                 	<div class="item">
                                         <div class="label">{$lang.goods_class}：</div>
-                                        <div class="value"><input type="text" name="goods_class" class="text" value="0" autocomplete="off" /><div class="notic">{$lang.notice_goods_class}</div></div>
+                                        <div class="value"><input type="text" name="goods_class" class="text" value="0" autocomplete="off" /><div class="notic">宝贝栏目ID为淘宝分类的ID，如若不确定，请填写0</div></div>
                                     </div>
                                 	<div class="item">
                                         <div class="label">{$lang.post_express}：</div>
@@ -156,7 +156,7 @@
 									<form action="goods_export.php" method="post" name="theForm3" onsubmit="return formValidate3()">
                                 	<div class="item">
                                         <div class="label">{$lang.goods_class}：</div>
-                                        <div class="value"><input type="text" name="goods_class" class="text" value="0" autocomplete="off" /><div class="notic">{$lang.notice_goods_class}</div></div>
+                                        <div class="value"><input type="text" name="goods_class" class="text" value="0" autocomplete="off" /><div class="notic">宝贝栏目ID为淘宝分类的ID，如若不确定，请填写0</div></div>
                                     </div>
                                 	<div class="item">
                                         <div class="label">{$lang.post_express}：</div>
@@ -187,7 +187,7 @@
 									<form action="goods_export.php" method="post" name="theForm6" onsubmit="return formValidate6()">
                                 	<div class="item">
                                         <div class="label">{$lang.goods_class}：</div>
-                                        <div class="value"><input type="text" name="goods_class" class="text" value="0" autocomplete="off" /><div class="notic">{$lang.notice_goods_class}</div></div>
+                                        <div class="value"><input type="text" name="goods_class" class="text" value="0" autocomplete="off" /><div class="notic">宝贝栏目ID为淘宝分类的ID，如若不确定，请填写0</div></div>
                                     </div>
                                 	<div class="item">
                                         <div class="label">{$lang.post_express}：</div>

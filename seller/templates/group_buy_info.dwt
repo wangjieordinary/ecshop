@@ -12,9 +12,9 @@
                 {include file ='library/url_here.lbi'}
                 {include file ='library/seller_menu_tab.lbi'}
                 <div class="explanation clear mb20" id="explanation">
-                    <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                    <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                     <ul>
-                    	<li>{$lang.warn_submit_will_rechcek}</li>
+                    	<li>温馨提示：提交操作将会重新审核，请慎重提交确定。</li>
                     </ul>
                 </div>
                 <form method="post" action="group_buy.php?act=insert_update" name="theForm" id="group_buy_form">
@@ -43,8 +43,8 @@
                             </div>                            
                         </div>
                         <div class="search-key">
-                            <input type="text" name="keyword" size="20" class="text text_2 mr10" placeholder="{$lang.keyword}" />
-                            <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" onclick="searchGoods()">{$lang.search_word}</a>
+                            <input type="text" name="keyword" size="20" class="text text_2 mr10" placeholder="关键字" />
+                            <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" onclick="searchGoods()">搜索</a>
                             <input type="hidden" name="ru_id" value="{$ru_id}" />
                             <input type="hidden" name="cat_id" id="category">
                         </div>
@@ -56,10 +56,10 @@
                                 <dt>{$lang.require_field}&nbsp;{$lang.label_goods_name}</dt>
                                 <dd>
                                     <div id="goods_id" class="imitate_select select_w320 mr0">
-                                        <div class="cite">{if $group_buy.act_id}{$group_buy.goods_name}{else}{$lang.please_select}{/if}</div>
+                                        <div class="cite">{if $group_buy.act_id}{$group_buy.goods_name}{else}请选择{/if}</div>
                                         {if !$group_buy.status}
                                         <ul>
-                                            <li class="li_not">{$lang.please_search_goods}</li>
+                                            <li class="li_not">请先搜索商品</li>
                                         </ul>
                                         {/if}
                                         <input name="goods_id" type="hidden" value="{if $group_buy.act_id}{$group_buy.goods_id}{/if}" id="goods_id_val">
@@ -68,7 +68,7 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>{$lang.require_field}&nbsp;{$lang.act_start_end_time}</dt>
+                                <dt>{$lang.require_field}&nbsp;活动起止时间</dt>
                                 <dd>
                                     <div class="text_time">
                                         <input id="start_time" name="start_time" type="text" class="text" readonly value="{$group_buy.start_time}" />
@@ -129,7 +129,7 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>{$lang.new}</dt>
+                                <dt>新品</dt>
                                 <dd>
                                     <div class="switch switch_2 {if $group_buy.act_new}active{/if}" title="否">
                                         <div class="circle"></div>
@@ -138,7 +138,7 @@
                                 </dd>
                             </dl>
                             <dl>
-                                <dt>{$lang.hot}</dt>
+                                <dt>热销</dt>
                                 <dd>
                                     <div class="switch switch_2 {if $group_buy.act_hot}active{/if}" title="否">
                                         <div class="circle"></div>
@@ -351,7 +351,7 @@ function addLadder(obj, amount, price)
     var input = tbl.find('p:first').clone();
     input.addClass("mt10");
     input.find('.button').remove();
-    input.append("<a href='javascript:;' class='removeV' onclick='removeLadder(this)'><img src='images/no.gif' title='"+jl_delete+"'></a>")
+    input.append("<a href='javascript:;' class='removeV' onclick='removeLadder(this)'><img src='images/no.gif' title='删除'></a>")
     input.find(":input").each(function(i){
         $(this).val('');
     });
@@ -398,7 +398,7 @@ $(document).on("blur","[ectype='checkedPrice']",function(){
     var this_val =  parseInt($(this).val());
     if(deposit > 0){
         if(deposit > this_val){
-            alert(stage_no_small_baozheng);
+            alert('阶梯价格不能小于保证金');
             $(this).val(deposit);
         }
     }    

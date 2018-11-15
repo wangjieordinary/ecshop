@@ -14,11 +14,11 @@
 				{include file ='library/seller_menu_tab.lbi'}
                 
                 <div class="explanation clear mb20" id="explanation">
-                    <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.reminder}</h4></div>
+                    <div class="ex_tit"><i class="sc_icon"></i><h4>温馨提示</h4></div>
                     <ul>
-                    	<li>{$lang.operation_prompt_content.list.0}</li>
-                    	<li>{$lang.operation_prompt_content.detail.4}</li>
-                    	<li>{$lang.operation_prompt_content.detail.5}</li>
+                    	<li>商城所有店铺结算订单相关信息管理。</li>
+                    	<li>【订单】：表示是按店铺比例或者分类比例</li>
+                    	<li>【商品】：表示是商品单独设置比例结算</li>
                     </ul>
                 </div>
                 
@@ -63,13 +63,13 @@
                       <td style="color:#179f27" >
                       	<p>{$commission.is_settlement}</p>
                         {if $commission.is_goods_rate && $commission.is_settlement_price neq 0}
-                            <p><em class="red">{$lang.include_goods_k}</em></p>
+                            <p><em class="red">（含【商品】）</em></p>
                        	{/if}
                       </td>
                       <td style="color:#F00" >
                       	<p>{$commission.no_settlement}</p>
                         {if $commission.is_goods_rate && $commission.no_settlement_price neq 0}
-                            <p><em class="red">{$lang.include_goods_k}</em></p>
+                            <p><em class="red">（含【商品】）</em></p>
                         {/if}
                       </td>
                       <td>

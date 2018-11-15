@@ -39,7 +39,7 @@
                         </div>
                         <!-- 分类 -->
                         <input type="text" name="keyword" size="30" class="text text_2 mr10" data-filter="keyword" autocomplete="off" />
-                        <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" ectype="search"  onclick="searchGoods()" >{$lang.button_search}</a>
+                        <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" ectype="search"  onclick="searchGoods()" >搜索</a>
                         </div>
                     </div>
                   	</form>
@@ -54,8 +54,8 @@
                                 </div>
                             </div>
                             <div class="move_handle">
-                                <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">{$lang.check_all}</a>
-                                <a href="javascript:void(0);" onclick="addGoods()" class="sc-btn btn25 sc-blueBg-btn">{$lang.button_submit_alt}</a>
+                                <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">全选</a>
+                                <a href="javascript:void(0);" onclick="addGoods()" class="sc-btn btn25 sc-blueBg-btn">确定</a>
                             </div>
                         </div>
                         <div class="move_middle">
@@ -73,8 +73,8 @@
                                 </div>
                             </div>
                             <div class="move_handle">
-                                <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">{$lang.check_all}</a>
-                                <a href="javascript:void(0);" onclick="delGoods()" class="sc-btn btn25 sc-blueBg-btn">{$lang.remove}</a>
+                                <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">全选</a>
+                                <a href="javascript:void(0);" onclick="delGoods()" class="sc-btn btn25 sc-blueBg-btn">移除</a>
                             </div>
                         </div>
                     </div>

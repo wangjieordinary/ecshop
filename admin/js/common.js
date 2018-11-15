@@ -84,11 +84,10 @@ function checkOrderResponse(data)
 		var coupons = data.coupons ? data.coupons :0;//未审优惠券
 		var gift_gard = data.gift_gard ? data.gift_gard :0;//未审礼品卡
 		var wholesale = data.wholesale ? data.wholesale :0;//未审批发
-		var seckill = data.seckill ? data.seckill :0;//未审秒杀
 		//促销活动提醒 end
         
 		var total = parseInt(new_orders)+parseInt(await_ship)+parseInt(no_change)+parseInt(complaint)+parseInt(booking_goods)+parseInt(goods_report)+parseInt(sale_notice)+parseInt(no_check_goods)+parseInt(no_check_brand)+parseInt(self_warn_number)+parseInt(merchants_warn_number)
-+parseInt(shop_account)+parseInt(shopinfo_account)+parseInt(seller_account)+parseInt(wait_cash)+parseInt(wait_balance)+parseInt(wait_recharge)+parseInt(seller_apply)+parseInt(advance_date)+parseInt(user_account)+parseInt(user_recharge)+parseInt(user_withdraw)+parseInt(user_vat)+parseInt(user_discuss)+parseInt(snatch)+parseInt(bonus_type)+parseInt(group_by)+parseInt(topic)+parseInt(auction)+parseInt(favourable)+parseInt(presale)+parseInt(package_goods)+parseInt(exchange_goods)+parseInt(coupons)+parseInt(gift_gard)+parseInt(wholesale)+parseInt(seckill);
++parseInt(shop_account)+parseInt(shopinfo_account)+parseInt(seller_account)+parseInt(wait_cash)+parseInt(wait_balance)+parseInt(wait_recharge)+parseInt(seller_apply)+parseInt(advance_date)+parseInt(user_account)+parseInt(user_recharge)+parseInt(user_withdraw)+parseInt(user_vat)+parseInt(user_discuss)+parseInt(snatch)+parseInt(bonus_type)+parseInt(group_by)+parseInt(topic)+parseInt(auction)+parseInt(favourable)+parseInt(presale)+parseInt(package_goods)+parseInt(exchange_goods)+parseInt(coupons)+parseInt(gift_gard)+parseInt(wholesale);
 		//提示总数目格式
 		if(total >0 && total<100){
 			$('.msg #total').html(total);
@@ -133,7 +132,7 @@ function checkOrderResponse(data)
 			$('.user_msg #total').html(0);
 		}
 		//活动提示
-		var campaign_total = parseInt(snatch)+parseInt(bonus_type)+parseInt(group_by)+parseInt(topic)+parseInt(auction)+parseInt(favourable)+parseInt(presale)+parseInt(package_goods)+parseInt(exchange_goods)+parseInt(coupons)+parseInt(gift_gard)+parseInt(wholesale)+parseInt(seckill);
+		var campaign_total = parseInt(snatch)+parseInt(bonus_type)+parseInt(group_by)+parseInt(topic)+parseInt(auction)+parseInt(favourable)+parseInt(presale)+parseInt(package_goods)+parseInt(exchange_goods)+parseInt(coupons)+parseInt(gift_gard)+parseInt(wholesale);
 		if(campaign_total >0){
 			$('.campaign_msg #total').html(campaign_total);
 		}else{
@@ -269,9 +268,9 @@ function checkOrderResponse(data)
 				
 				//待审核商家结算 start
 				if(wait_balance >= 0  && wait_balance<100){
-					$("*[ectype='sellerMsg']").append('<p><a href="javascript:void(0);" data-url="merchants_account.php?act=list&act_type=account_log&log_type=2" data-param="menushopping|05_seller_account_log" target="workspace" class="message">待审核商家结算</a> <span class="tiptool">（<em id="seller_account">'+wait_balance+'</em>）</span></p>')
+					$("*[ectype='sellerMsg']").append('<p><a href="javascript:void(0);" data-url="merchants_account.php?act=list&act_type=detail&log_type=2" data-param="menushopping|12_seller_account" target="workspace" class="message">待审核商家结算</a> <span class="tiptool">（<em id="seller_account">'+wait_balance+'</em>）</span></p>')
 				}else if(wait_balance > 99){
-					$("*[ectype='sellerMsg']").append('<p><a href="javascript:void(0);" data-url="merchants_account.php?act=list&act_type=account_log&log_type=2" data-param="menushopping|05_seller_account_log" target="workspace" class="message">待审核商家结算</a><span class="tiptool">（<em id="seller_account">99+</em>）</span></p>')
+					$("*[ectype='sellerMsg']").append('<p><a href="javascript:void(0);" data-url="merchants_account.php?act=list&act_type=detail&log_type=2" data-param="menushopping|12_seller_account" target="workspace" class="message">待审核商家结算</a><span class="tiptool">（<em id="seller_account">99+</em>）</span></p>')
 				}
 				//待审核商家结算 end
 				
@@ -294,9 +293,9 @@ function checkOrderResponse(data)
 			
 			//广告位提醒 start
 			if(advance_date >= 0  && advance_date<100){
-                $("*[ectype='advMsg']").html("").append('<p><a href="javascript:void(0);" data-url="ads.php?act=list&advance_date=1" data-param="menuplatform|ad_list" target="workspace" class="message">广告即将到期</a> <span class="tiptool">（<em id="advance_date">'+advance_date+'</em>）</span></p>')
+                $("*[ectype='advMsg']").html("").append('<p><a href="javascript:void(0);" data-url="ads.php?act=list&advance_date=1" data-param="menuplatform|ad_list" target="workspace" class="message">广告位即将到期</a> <span class="tiptool">（<em id="advance_date">'+advance_date+'</em>）</span></p>')
             }else if(advance_date > 99){
-                $("*[ectype='advMsg']").html("").append('<p><a href="javascript:void(0);" data-url="ads.php?act=list&advance_date=1" data-param="menushopping|ad_list" target="workspace" class="message">广告即将到期</a><span class="tiptool">（<em id="advance_date">99+</em>）</span></p>')
+                $("*[ectype='advMsg']").html("").append('<p><a href="javascript:void(0);" data-url="ads.php?act=list&advance_date=1" data-param="menushopping|ad_list" target="workspace" class="message">广告即将位到期</a><span class="tiptool">（<em id="advance_date">99+</em>）</span></p>')
             }
 			//广告位提醒 end
 			
@@ -438,17 +437,9 @@ function checkOrderResponse(data)
 					$("*[ectype='promotionMsg']").append('<p><a href="javascript:void(0);" data-url="wholesale.php?act=list&seller_list=1&review_status=1" data-param="menushopping|13_wholesale" target="workspace" class="message">批发</a><span class="tiptool">（<em id="user_account">99+</em>）</span></p>')
 				}
 				//未审核批发 end
-
-				//未审核秒杀 start
-				if(seckill >= 0  && seckill<100){
-					$("*[ectype='promotionMsg']").append('<p><a href="javascript:void(0);" data-url="seckill.php?act=list&seller_list=1&review_status=1" data-param="menushopping|03_seckill_list" target="workspace" class="message">秒杀</a> <span class="tiptool">（<em id="user_account">'+seckill+'</em>）</span></p>')
-				}else if(seckill > 99){
-					$("*[ectype='promotionMsg']").append('<p><a href="javascript:void(0);" data-url="seckill.php?act=list&seller_list=1&review_status=1" data-param="menushopping|03_seckill_list" target="workspace" class="message">秒杀</a><span class="tiptool">（<em id="user_account">99+</em>）</span></p>')
-				}
-				//未审核秒杀 end
 			//促销活动提醒 end
         }else{
-			//$('#msg_Container').append('<div class="no_msg">暂无消息！</div>')
+			$('#msg_Container').append('<div class="no_msg">暂无消息！</div>')
         }
   }
   catch (e) { }
@@ -969,12 +960,6 @@ function set_attribute_table(goodsId , type, city_id)
 		dataVal = dataVal.replace(/\@/g, "%40");
 		dataVal = dataVal.replace(/\$/g, "%24");
 		dataVal = dataVal.replace(/\*/g, "%2A");
-		dataVal = dataVal.replace(/\(/g, "%28");
-		dataVal = dataVal.replace(/\)/g, "%29");
-		dataVal = dataVal.replace(/\（/g, "%EF%BC%88");
-		dataVal = dataVal.replace(/\）/g, "%EF%BC%89");
-		dataVal = dataVal.replace(/\：/g, "%EF%BC%9A");
-		dataVal = dataVal.replace(/\:/g, "%3A");
 	
 		attr_value_arr.push(dataVal);
 	});
@@ -1100,12 +1085,6 @@ function wholesale_set_attribute_table(goodsId , type)
 		dataVal = dataVal.replace(/\@/g, "%40");
 		dataVal = dataVal.replace(/\$/g, "%24");
 		dataVal = dataVal.replace(/\*/g, "%2A");
-		dataVal = dataVal.replace(/\(/g, "%28");
-		dataVal = dataVal.replace(/\)/g, "%29");
-		dataVal = dataVal.replace(/\（/g, "%EF%BC%88");
-		dataVal = dataVal.replace(/\）/g, "%EF%BC%89");
-		dataVal = dataVal.replace(/\：/g, "%EF%BC%9A");
-		dataVal = dataVal.replace(/\:/g, "%3A");
 	
 		attr_value_arr.push(dataVal);
 	});

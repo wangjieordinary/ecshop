@@ -1,16 +1,16 @@
 {if $attr_group}
 
-<a href="goods_attr_price.php?act=add&goods_id={$goods_id}&goods_type={$goods_type}" class="btn btn25 blue_btn ga_price" target="_blank" style="display:none">{$lang.select_batch_file}</a>
+<a href="goods_attr_price.php?act=add&goods_id={$goods_id}&goods_type={$goods_type}" class="btn btn25 blue_btn ga_price" target="_blank" style="display:none">选择批量上传</a>
 <table class="table_head" width="100%">
     <thead>
         <tr>
             <th width="10%">{foreach from=$attribute_array item=attribute name=attribute}{$attribute.attr_name}{if !$smarty.foreach.attribute.last}，{/if}{/foreach}</th>
             <th width="5%" {if $model_name eq ''}class="hide"{/if}>{$model_name}</th>
-            <th width="8%" {if $goods_attr_price eq 0}class="hide"{/if}><em class="require-field pointer">*</em>{$lang.price_shop}<i class="sc_icon sc_icon_edit pointer pro_shop"></i></th>
-            <th width="8%"><em class="require-field">*</em>{$lang.storage}<i class="sc_icon sc_icon_edit pointer pro_number pointer"></i></th>
-            <th width="8%"><em class="require-field">*</em>{$lang.warning_value}<i class="sc_icon sc_icon_edit pointer pro_warning pointer"></i></th>
-            <th width="10%">{$lang.product_code}</th>
-            <th width="10%">{$lang.bargain_target_price}</th>            
+            <th width="8%" {if $goods_attr_price eq 0}class="hide"{/if}><em class="require-field pointer">*</em>本店价<i class="sc_icon sc_icon_edit pointer pro_shop"></i></th>
+            <th width="8%"><em class="require-field">*</em>库存<i class="sc_icon sc_icon_edit pointer pro_number pointer"></i></th>
+            <th width="8%"><em class="require-field">*</em>预警值<i class="sc_icon sc_icon_edit pointer pro_warning pointer"></i></th>
+            <th width="10%">商品货号</th>
+            <th width="10%">砍价目标价格</th>            
         </tr>
     </thead>
 </table>

@@ -4,7 +4,7 @@
 <head>{include file ='library/admin_html_head.lbi'}</head>
 <body class="iframe_body">
 	<div class="warpper">
-    	<div class="title"><a href="javascript:;" ectype='goback' class="s-back">{$lang.back}</a>{if $ads_type eq 1}{$lang.ectouch}{else}{$lang.ad_type1}{/if} - {$ur_here}</div>
+    	<div class="title"><a href="javascript:;" ectype='goback' class="s-back">返回</a>{if $ads_type eq 1}手机{else}广告{/if} - {$ur_here}</div>
         <div class="content">
         	<div class="explanation" id="explanation">
             	<div class="ex_tit">
@@ -14,15 +14,15 @@
                         <div class="view-case">
                             <div class="view-case-tit"><i></i>{$lang.view_tutorials}</div>
                             <div class="view-case-info">
-                                <a href="http://help.ecmoban.com/article-6893.html" target="_blank">{$lang.tutorials_bonus_list_one}</a>
+                                <a href="http://help.ecmoban.com/article-6893.html" target="_blank">商城广告设置操作说明</a>
                             </div>
                         </div>
                         {/if}	
                     {/if}				
 				</div>
                 <ul>
-                	<li>{$lang.operation_prompt_content.adv_list.0}</li>
-                    <li>{$lang.operation_prompt_content.adv_list.1}</li>
+                	<li>该页面展示了商城所有的广告。</li>
+                    <li>可搜索广告名称关键词进行查询，侧边栏可进行高级搜索。</li>
                 </ul>
             </div>
             <div class="flexilist">
@@ -39,11 +39,11 @@
                     <div class="search">
                         <form action="javascript:;" name="searchForm" onSubmit="searchGoodsname(this);">
                         <div class="select" id="keyword">
-                            <div class="label">{$lang.position_id}：</div>
+                            <div class="label">广告位置：</div>
                             <div id="keywordselect" class="imitate_select select_w320 mr0">
-                                <div class="cite">{$lang.select_position_id}</div>
+                                <div class="cite">选择广告位置</div>
                                 <ul>
-                                   <li><a href="javascript:;" data-value="0">{$lang.select_position_id}</a></li>
+                                   <li><a href="javascript:;" data-value="0">选择广告位置</a></li>
                                    {foreach from=$position_list item=pos}
                                    <li><a href="javascript:;" data-value="{$pos.position_id}">{$pos.position_name} [{$pos.ad_width}×{$pos.ad_height}]</a></li>
                                    {/foreach}
@@ -52,19 +52,19 @@
                             </div>
                         </div>
                         <div class="select">
-                            <div class="label">{$lang.advance_date_position}：</div>					
+                            <div class="label">即将到期广告：</div>					
                             <div id="advance_date" class="imitate_select select_w145">
                                 <div class="cite">{$lang.select_please}</div>
                                 <ul>
                                    <li><a href="javascript:;" data-value="0">{$lang.select_please}</a></li>
-                                   <li><a href="javascript:;" data-value="1">{$lang.advance_date_position}</a></li>
-                                   <li><a href="javascript:;" data-value="2">{$lang.end_position}</a></li>
+                                   <li><a href="javascript:;" data-value="1">即将到期广告</a></li>
+                                   <li><a href="javascript:;" data-value="2">已结束广告</a></li>
                                 </ul>
                                 <input name="advance_date" type="hidden" value="0">
                             </div>
                         </div>
                         <div class="input">
-                            <input type="text" name="keyword" class="text nofocus" placeholder="{$lang.ad_name}" autocomplete="off" /><input type="submit" value="" class="not_btn" />
+                            <input type="text" name="keyword" class="text nofocus" placeholder="广告名称" autocomplete="off" /><input type="submit" value="" class="not_btn" />
                         </div>
                         </form>
                     </div>

@@ -401,8 +401,10 @@ function changeIntegral(val)
  */
 function changeIntegralResponse(obj)
 {
-  if (obj.error) {
-    try {
+  if (obj.error)
+  {
+    try
+    {
       //document.getElementById('ECS_INTEGRAL_NOTICE').innerHTML = obj.error;
       d_messages(obj.error);
       document.getElementById('ECS_INTEGRAL').value = '0';
@@ -410,13 +412,20 @@ function changeIntegralResponse(obj)
       //document.getElementById('ECS_INTEGRAL').focus();
     }
     catch (ex) { }
-  } else {
-    try {
-      if (obj.integral > 0) {
+  }
+  else
+  {
+    try
+    {
+      if(obj.integral > 0){
           $("#ECS_INTEGRAL").val(obj.integral);
-      } else {
+          // 显示支付密码
+          $(".show-paypwd").css('display','block');
+      }else{
           $("#ECS_INTEGRAL").val(0);
           $(".j-radio-switching-integral").removeClass('active');
+          // 隐藏支付密码
+          $(".show-paypwd").css('display','none');
       }
       //document.getElementById('ECS_INTEGRAL_NOTICE').innerHTML = '';
     }
@@ -578,89 +587,38 @@ function checkOrderForm(frm)
     var shipping = $("form#theForm input[name='shipping[]']");
     var ru_name = $("form#theForm input[name='ru_name[]']");
 
-    for(var i = 0; i < shipping.length; i++) {
-        if (shipping[i].value == 0) {
+    for(var i=0; i<shipping.length; i++){
+        if(shipping[i].value == 0){
             var content = ru_name[i].value + '暂不支持该地区配送';
             d_messages(content);
             return false;
         }
     }
 
-    // 检查单件商品地区是否支持配送
-    var shipping_prompt_str = $("form#theForm input[name='shipping_prompt_str']").val();
-    if (shipping_prompt_str) {
-
-        $.ajax({
-            type : "POST",
-            url : ROOT_URL + 'index.php?m=flow&c=ajax&a=shipping_prompt',
-            data : "shipping_prompt=" + shipping_prompt_str,
-            dataType : 'json',
-            async : false,
-            success : function(res){
-
-                var cart_content = res.cart_content;
-
-                layer.open({
-                    type: 1,
-                    content: cart_content,
-                    anim: 'up',
-                    style: 'position:fixed;  bottom:0; left:0; width:100%; height:auto; border: none; -webkit-animation-duration: .5s; animation-duration: .5s; overflow:auto;',
-                    btn: ['返回购物车', '继续下单'],
-                    yes: function(index){
-                      // 返回购物车
-                      location.href = ROOT_URL + 'index.php?m=cart';
-                      layer.close(index);
-                      return false;
-                    },
-                    no: function(index){
-                      // 继续下单
-                      location.reload();
-                      layer.close(index);
-                      return false;
-                    }
-                });
-            }
-        });
-
-        return false;
-    }
-
     // 检查是否选择了支付配送方式
-    for (i = 0; i < frm.elements.length; i ++ ) {
-        /*if (frm.elements[i].name == 'shipping' && frm.elements[i].checked) {
+    for (i = 0; i < frm.elements.length; i ++ )
+    {
+        /*if (frm.elements[i].name == 'shipping' && frm.elements[i].checked)
+        {
             shippingSelected = true;
         }*/
-        if (frm.elements[i].name == 'payment' && frm.elements[i].value > 0) {
+        if (frm.elements[i].name == 'payment' && frm.elements[i].value > 0)
+        {
             paymentSelected = true;
         }
     }
 
-    if (!paymentSelected) {
+    /*if (!shippingSelected)
+    {
+        alert(flow_no_shipping);
+        return false;
+    }*/
+
+    if (!paymentSelected)
+    {
+        //d_messages(flow_no_payment);
         d_messages("请选择支付方式");
         return false;
-    }
-
-    // 使用余额 检查支付密码
-    var is_surplus = $("form#theForm input[name='is_surplus']").val();
-    if (is_surplus && is_surplus == 1) {
-        if (document.getElementById('pay_paypwd')) {
-            var pay_paypwd = $("form#theForm input[name='pay_paypwd']").val();
-            if (!pay_paypwd) {
-                d_messages("请输入支付密码！");
-                return false;
-            }
-        }
-    }
-    // 使用储值卡 须开启并验证支付密码
-    var vc_id = $("form#theForm input[name='vc_id']").val();
-    if (vc_id > 0) {
-        if (document.getElementById('pay_paypwd')) {
-            var pay_paypwd = $("form#theForm input[name='pay_paypwd']").val();
-            if (!pay_paypwd) {
-                d_messages("请输入支付密码！");
-                return false;
-            }
-        }
     }
 
     //frm.action = frm.action + '&step=done';

@@ -6,7 +6,7 @@
 <div class="print-warp a4">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -22,7 +22,7 @@
 <div class="print-warp mm100">
 	<div id="printContent">
 	<div class="print-content">
-		<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+		<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -38,7 +38,7 @@
 <div class="print-warp mm80">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -54,7 +54,7 @@
 <div class="print-warp mm70">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -70,7 +70,7 @@
 <div class="print-warp mm60">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -86,7 +86,7 @@
 <div class="print-warp mm50">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -102,7 +102,7 @@
 <div class="print-warp mm120mm93">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -118,7 +118,7 @@
 <div class="print-warp mm120mm140">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -134,7 +134,7 @@
 <div class="print-warp mm120mm280">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -150,7 +150,7 @@
 <div class="print-warp mm190mm93">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -166,7 +166,7 @@
 <div class="print-warp mm190mm140">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -182,7 +182,7 @@
 <div class="print-warp mm190mm280">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -198,7 +198,7 @@
 <div class="print-warp mm241mm93">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -214,7 +214,7 @@
 <div class="print-warp mm241mm140">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -230,7 +230,7 @@
 <div class="print-warp mm241mm280">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}
@@ -246,7 +246,7 @@
 <div class="print-warp mm210mm145">
 	<div id="printContent">
 	<div class="print-content">
-    	<link rel="stylesheet" type="text/css" href="{$web_url}css/print.css">
+    	<link rel="stylesheet" type="text/css" href="{$web_url}css/main.css">
 		{foreach from=$part_html item=html name=html}
 		{$html}
         {if !$smarty.foreach.html.last}

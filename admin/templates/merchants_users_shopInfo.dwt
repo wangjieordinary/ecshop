@@ -297,7 +297,7 @@
 					element.parents('div.label_value').find(".notic").hide();
 					error_div.append(error);
 				},
-                ignore:"",
+                                ignore:"",
 				rules:{
 					user_name :{
 						required : true

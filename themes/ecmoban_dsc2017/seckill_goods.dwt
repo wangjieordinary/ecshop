@@ -94,7 +94,7 @@
                             <div class="summary-item is-service">
                             	<div class="si-tit">{$lang.gs_service}</div>
                                 <div class="si-warp">
-									{$lang.you} <a href="{$goods.store_url}" class="link-red" target="_blank">{$goods.rz_shopName}</a> {$lang.After_sale_service}
+									由 <a href="{$goods.store_url}" class="link-red" target="_blank">{$goods.rz_shopName}</a> 发货并提供售后服务
 									<!--{if $shippingFee.is_shipping neq 1}-->
 									<span class="gary">{$lang.is_shipping_area}</span>
 									<!--{else}-->
@@ -292,13 +292,13 @@
                         </div>
                         <div class="gm-f-item gm-f-details" ectype="gm-item">
                         	<div class="gm-title">
-                            	<h3>{$lang.description}</h3>
+                            	<h3>商品详情</h3>
                             </div>
                             {$goods.goods_desc}
                         </div>
                         <div class="gm-f-item gm-f-comment" ectype="gm-item">
                         	<div class="gm-title">
-                            	<h3>{$lang.comment_sunburn}</h3>
+                            	<h3>评论晒单</h3>
 								{* DSC 提醒您：动态载入goods_comment_title.lbi，显示首页分类小广告 *}{insert name='goods_comment_title' goods_id=$goods.goods_id}
                             </div>
                             <div class="gm-warp">
@@ -306,7 +306,7 @@
                                 	<div class="rate">
                                     	<strong>{$comment_all.goodReview}</strong>
                                         <span class="rate-span">
-                                        	<span class="tit">{$lang.Rate_praise}</span>
+                                        	<span class="tit">好评率</span>
                                             <span class="bf">%</span>
                                         </span>
                                     </div>
@@ -330,23 +330,23 @@
                 <!-- {if $history_goods} -->
                 <div class="rection">
                 	<div class="ftit"><h3>{$lang.guess_love}</h3></div>
-                    <ul>
-                        <!--{foreach from=$history_goods item=goods name=his_goods}-->
-                        <!-- {if $smarty.foreach.his_goods.iteration <= 5} -->
-                        <li>
-                            <div class="p-img"><a href="{$goods.url}" target="_blank"><img src="{$goods.goods_thumb}" width="232" height="232"></a></div>
-                            <div class="p-name"><a href="{$goods.url}" title="{$goods.short_name|escape:html}" target="_blank">{$goods.short_name}</a></div>
-                            <div class="p-price">
-                                <!-- {if $releated_goods_data.promote_price neq ''} -->
-                                {$goods.formated_promote_price}
-                                <!-- {else} -->
-                                {$goods.shop_price}
-                                <!-- {/if} -->
-                            </div>
-                        </li>
-                        <!-- {/if} -->
-                        <!-- {/foreach} -->
-                    </ul>
+                        <ul>
+                            <!--{foreach from=$history_goods item=goods name=his_goods}-->
+                            <!-- {if $smarty.foreach.his_goods.iteration <= 5} -->
+                            <li>
+                                <div class="p-img"><a href="{$goods.url}" target="_blank"><img src="{$goods.goods_thumb}" width="232" height="232"></a></div>
+                                <div class="p-name"><a href="{$goods.url}" title="{$goods.short_name|escape:html}" target="_blank">{$goods.short_name}</a></div>
+                                <div class="p-price">
+                                    <!-- {if $releated_goods_data.promote_price neq ''} -->
+                                    {$goods.formated_promote_price}
+                                    <!-- {else} -->
+                                    {$goods.shop_price}
+                                    <!-- {/if} -->
+                                </div>
+                            </li>
+                            <!-- {/if} -->
+                            <!-- {/foreach} -->
+                        </ul>
                 </div>
                 {/if}
             </div>

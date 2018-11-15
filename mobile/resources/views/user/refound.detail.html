@@ -77,8 +77,8 @@
             {/if}
             {if $return_detail.return_type == '1' || $return_detail.return_type == '3'}
         	<li class="dis-box">
-        		<div>商品退款:</div>
-        		<div class="box-flex"><p class="text-right t-first"> {$return_detail.formated_should_return}</p></div>
+        		<div>退款金额:</div>
+        		<div class="box-flex"><p class="text-right t-first"> {$return_detail.formated_return_amount}</p></div>
         	</li>
             {/if}
         </ul>
@@ -167,7 +167,7 @@
             {/if}
 
     		{if $return_detail.out_shipp_shipping}
-            <header class="b-color-f padding-all m-top10 express-head" >{$lang.express_info} <span>({$lang.seller_shipping}) </header>
+            <header class="b-color-f padding-all m-top10" >{$lang.seller_shipping}</header>
     		<ul class="user-refound-box b-color-f m-top04">
     			<li class="dis-box">
     				<div>{$lang.express_company}:</div>

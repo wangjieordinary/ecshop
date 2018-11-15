@@ -25,14 +25,14 @@
     	<div class="w w1200">
         	<div class="discuss-warp">
                 <div class="discuss-left">
-                    <div class="d-title"><h1>{$lang.discuss_user}</h1></div>
+                    <div class="d-title"><h1>网友讨论圈</h1></div>
                     <div class="review-info" >
                         <div class="review-tabs">
-                            <a href="javascript:void(0);" class="dis_type curr" rev="0">{$lang.all_post}(<em>{$all_count}</em>)<i></i></a>
-                            <a href="javascript:void(0);" class="dis_type" rev="4">{$lang.sunburn_port}(<em>{$s_count}</em>)<i></i></a>
-                            <a href="javascript:void(0);" class="dis_type" rev="1">{$lang.discuss_post}(<em>{$t_count}</em>)<i></i></a>
-                            <a href="javascript:void(0);" class="dis_type" rev="2">{$lang.interlocution_post}(<em>{$w_count}</em>)<i></i></a>
-                            <a href="javascript:void(0);" class="dis_type" rev="3">{$lang.circle_post}(<em>{$q_count}</em>)<i></i></a>
+                            <a href="javascript:void(0);" class="dis_type curr" rev="0">全部帖子(<em>{$all_count}</em>)<i></i></a>
+                            <a href="javascript:void(0);" class="dis_type" rev="4">晒单贴(<em>{$s_count}</em>)<i></i></a>
+                            <a href="javascript:void(0);" class="dis_type" rev="1">讨论帖(<em>{$t_count}</em>)<i></i></a>
+                            <a href="javascript:void(0);" class="dis_type" rev="2">问答帖(<em>{$w_count}</em>)<i></i></a>
+                            <a href="javascript:void(0);" class="dis_type" rev="3">圈子贴(<em>{$q_count}</em>)<i></i></a>
                         </div>
                         <div class="discuss-list" id="discuss_list_ECS_COMMENT">
 							<!-- #BeginLibraryItem "/library/comments_discuss_list2.lbi" --> <!-- #EndLibraryItem -->
@@ -49,19 +49,19 @@
                             <div class="item-value">
                                 <div class="radio-item">
                                     <input type="radio" checked name="referenceType" class="ui-radio" id="referenceType1" value="1" autocomplete="off">
-                                    <label for="referenceType1" class="ui-radio-label">{$lang.discuss_post}</label>
+                                    <label for="referenceType1" class="ui-radio-label">讨论贴</label>
                                 </div>
                                 <div class="radio-item">
                                     <input type="radio" name="referenceType" class="ui-radio" id="referenceType2" value="2" autocomplete="off">
-                                    <label for="referenceType2" class="ui-radio-label">{$lang.interlocution_post}</label>
+                                    <label for="referenceType2" class="ui-radio-label">问答帖</label>
                                 </div>
                                 <div class="radio-item">
                                     <input type="radio" name="referenceType" class="ui-radio" id="referenceType3" value="3" autocomplete="off">
-                                    <label for="referenceType3" class="ui-radio-label">{$lang.circle_post}</label>
+                                    <label for="referenceType3" class="ui-radio-label">圈子贴</label>
                                 </div>
                                 <div class="radio-item">
                                     <input type="radio" name="referenceType" class="ui-radio" id="referenceType4" value="4" autocomplete="off">
-                                    <label for="referenceType4" class="ui-radio-label">{$lang.sunburn_port}</label>
+                                    <label for="referenceType4" class="ui-radio-label">晒单贴</label>
                                 </div>
                             </div>
                         </div>

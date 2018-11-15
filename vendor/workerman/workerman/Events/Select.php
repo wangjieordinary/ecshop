@@ -268,10 +268,7 @@ class Select implements EventInterface
             $except = $this->_exceptFds;
 
             // Waiting read/write/signal/timeout events.
-            set_error_handler(function(){});
-            $ret = stream_select($read, $write, $except, 0, $this->_selectTimeout);
-            restore_error_handler();
-
+            $ret = @stream_select($read, $write, $except, 0, $this->_selectTimeout);
 
             if (!$this->_scheduler->isEmpty()) {
                 $this->tick();

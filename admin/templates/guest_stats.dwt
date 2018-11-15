@@ -120,7 +120,7 @@
                                                     <span>{$user_all_turnover}</span>
                                                 </div>
                                                 <div class="ral ral03">
-                                                    <span> × {$lang.user_order_number}</span>
+                                                    <span> ÷ {$lang.user_order_number}</span>
                                                     <span>{$ave_user_ordernum}</span>
                                                 </div>
                                             </div>

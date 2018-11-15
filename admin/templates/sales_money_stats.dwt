@@ -25,7 +25,7 @@
                             <div class="stat_order_search stat_order_search2">
                                 <form action="" method="post" id="" name="selectForm">
                                     <div class="search_item">
-                                        <strong>{$lang.time}：</strong>
+                                        <strong>时间：</strong>
                                         <div class="text_time" id="text_time_start">
                                             <input type="text" class="text" name="start_date" value="" id="start_date" value="" autocomplete="off" readonly>
                                         </div>
@@ -33,16 +33,16 @@
                                         <div class="text_time" id="text_time_end">
                                             <input type="text" class="text" name="end_date" value="" id="end_date" value="" autocomplete="off" readonly>
                                         </div>
-                                        <a href="javascript:void(0);" class="btn btn30 blue_btn" ectype="searchButton"><i class="icon icon-search"></i>{$lang.btn_search}</a>
+                                        <a href="javascript:void(0);" class="btn btn30 blue_btn" ectype="searchButton"><i class="icon icon-search"></i>查询</a>
                                     </div>
                                     <input type="hidden" name="act" value="get_chart_data">
                                     <input type="hidden" name="type" value="money">
                                 </form>
                             </div>
                             <div class="query_result mt30">
-                                <div class="section-module"><div class="tit"><h1>{$lang.total}：</h1><em class="red" ectype="total_money"><!--{$total_fee|default:0}-->0</em> {$lang.yuan}</div></div>
+                                <div class="section-module"><div class="tit"><h1>总销售额：</h1><em class="red" ectype="total_money"><!--{$total_fee|default:0}-->0</em> 元</div></div>
                                 <div class="section-module">
-                                    <div class="title_head"><h3>{$lang.sales_money}</h3></div>
+                                    <div class="title_head"><h3>销售额统计</h3></div>
                                     <div class="module-content" id="chart_view" style="height:378px;"></div>
                                 </div>
                             </div>

@@ -13,13 +13,14 @@
 				<section class="swiper-slide swiper-no-swiping ">
 				    <ul class="padding-all  bonus-list">
 					<script id="j-bonus" type="text/html">
-                    <%if totalPage > 0 && bonus_list !='' %>
+                    <%if bonus_list !='' %>
 					   <%each bonus_list as bonus%>
 					   <section class="new-coupons-box bonus-select-box <%if bonus.bonus_status == 1 %> bonus_status_end <%/if%> <%if bonus.bonus_status == 3 %> bonus_status_data_end <%/if%> ">
                             <div class="cont dis-box">
                                 <div class="bonus-left">
                                     <div class="img-box">
                                     <h4 class="f-2 color-red"><em>¥</em><strong class="coupons-money"><%bonus.type_money%></strong></h4>
+
                                     </div>
                                 </div>
                                 <div class="box-flex">
@@ -29,7 +30,7 @@
                                 </div>
                                 <%if bonus.bonus_status == 0 %>
                                 <div class="coupont-right padding-all">
-                                    <a href="javascript:;" class="to_use" data-ruid="<%bonus.ru_id%>">
+                                    <a href="javascript:;" class="to_use">
                                         <span class="">去使用</span>
                                     </a>
                                 </div>
@@ -73,8 +74,7 @@
                 </li>
     {include file="float_nav_footer"}
 	<script>
-		$(".bonus-list").css("margin-top",$(".nav-header").outerHeight());
-
+		$(".bonus-list").css("margin-top",$(".nav-header").outerHeight())
 		var url = ROOT_URL + 'index.php?m=user&c=account&a=bonus';
 		var infinite = $('.bonus-list').infinite({url: url, template:'j-bonus'});
 
@@ -86,19 +86,13 @@
 			//切换选项卡
 			infinite.onload(url + '&type=' + $(this).index());
 		});
-
 		$(".j-tab-title li").click(function(e) {
 			e.preventDefault()
 		});
 
         // 去使用
         $(".bonus-list").on("click", ".to_use", function () {
-            var ru_id = parseInt($(this).attr('data-ruid'));
-            if (ru_id > 0) {
-                window.location.href = ROOT_URL + 'index.php?m=store&a=shop_info&id='+ ru_id;
-            } else {
-                window.location.href = ROOT_URL + 'index.php';
-            }
+            window.location.href = ROOT_URL + 'index.php';
         });
 
 	</script>

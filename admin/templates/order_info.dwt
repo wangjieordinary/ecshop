@@ -137,7 +137,7 @@
                         <!-- 门店信息 -->
                         {if $offline_store}
                         <div class="step">
-                            <div class="step_title"><i class="ui-step"></i><h3>{$lang.stores_info}</h3></div>
+                            <div class="step_title"><i class="ui-step"></i><h3>门店信息</h3></div>
                             <div class="section">
                                 <dl>
                                     <dt>{$lang.stores_name}</dt>
@@ -173,12 +173,12 @@
                                 <dl>
 									{if $order.invoice_type eq 0}
                                     <dt>{$lang.label_inv_payee}({if $order.invoice_id eq 0}{$lang.personal_general_invoice}{else}{$lang.enterprise_general_invoice}{/if})</dt>
-                                    <dd>{if $order.extension_code neq 'exchange_goods'}{$order.inv_payee}{else}{$lang.wu}{/if}</dd>
+                                    <dd>{if $order.extension_code neq exchange_goods}{$order.inv_payee}{else}{$lang.wu}{/if}</dd>
                                     <dt>{$lang.label_inv_content}</dt>
-                                    <dd>{if $order.extension_code neq 'exchange_goods'}{$order.inv_content}{else}{$lang.wu}{/if}</dd>
+                                    <dd>{if $order.extension_code neq exchange_goods}{$order.inv_content}{else}{$lang.wu}{/if}</dd>
 									{else}
 									<dt>{$lang.label_inv_payee}({$lang.VAT_invoice})</dt>
-                                    <dd>{$vat_info.company_name}<a href="javascript:;" ectype="orderDialog" data-dialog="vat">{$lang.view}</a></dd>
+                                    <dd>{$vat_info.company_name}<a href="javascript:;" ectype="orderDialog" data-dialog="vat">查看</a></dd>
 									<dt>{$lang.adopt_status}</dt>
                                     <dd>{if $vat_info.audit_status eq 0}{$lang.not_audited}{elseif $vat_info.audit_status eq 1}{$lang.audited_adopt}{elseif $vat_info.audit_status eq 2}{$lang.audited_not_adopt}{/if}</dd>
 									{/if}
@@ -350,21 +350,14 @@
 												{if $goods.extension_code neq 'package_buy'}	
                                                     {if !$goods.ret_id || ($goods.return_status && $goods.return_status == 6)}
                                                         <!--生成发货单-->
-                                                        {if $order.shipping_status neq 1 && $order.order_child eq 0}
-                                                            {if $goods.goods_number gt $goods.send_number && $goods.is_cloud_order eq 0}
-                                                            <input name="part_ship" type="button" value="{$lang.op_split}" class="btn btn25 blue_btn" data-rec_id="{$goods.rec_id}" />
-                                                            {/if}
+                                                        {if $operable_list.split && $order.order_child eq 0}
+                                                        {if $goods.goods_number gt $goods.send_number && $goods.is_cloud_order eq 0}
+                                                        <input name="part_ship" type="button" value="{$lang.op_split}" class="btn btn25 blue_btn" data-rec_id="{$goods.rec_id}" />
                                                         {/if}
-                                                        
-                                                        {if $goods.delivery}
-                                                        	{if $goods.delivery.status eq 2}
-                                                                <!--发货-->
-                                                                {if $operable_list.to_delivery}
-                                                                <input name="part_to_delivery" type="button" value="{$lang.op_to_delivery}" class="btn btn25 blue_btn" data-order_sn="{$order.order_sn}" data-goods_id="{$goods.goods_id}" /><br/>
-                                                                {/if}
-                                                            {elseif $goods.delivery.status eq 0} 
-                                                            	<a href="order.php?act=delivery_info&delivery_id={$goods.delivery.delivery_id}" target="_blank" class="btn btn25 blue_btn">{$lang.view}</a>
-                                                            {/if}
+                                                        {/if}
+                                                        <!--发货-->
+                                                        {if $operable_list.to_delivery}
+                                                        <input name="part_to_delivery" type="button" value="{$lang.op_to_delivery}" class="btn btn25 blue_btn" data-order_sn="{$order.order_sn}" data-goods_id="{$goods.goods_id}" /><br/>
                                                         {/if}
                                                         <!--发货状态-->
                                                         {if $goods.goods_number gt $goods.send_number}
@@ -407,7 +400,7 @@
                         
                         <!--费用信息-->
                         <div class="step order_total">
-                            <div class="step_title"><i class="ui-step"></i><h3>{$lang.fee_info}{if !$order.child_order && $order.pay_status eq '0'}<a href="order.php?act=edit&order_id={$order.order_id}&step=money"><i class="icon icon-edit"></i></a>{/if}</h3></div>
+                            <div class="step_title"><i class="ui-step"></i><h3>{$lang.fee_info}{if !$order.child_order}<a href="order.php?act=edit&order_id={$order.order_id}&step=money"><i class="icon icon-edit"></i></a>{/if}</h3></div>
                             <div class="section">
                                 <dl>
                                     <dt>{$lang.label_goods_amount}</dt>
@@ -512,15 +505,11 @@
 												{if $operable_list.invalid}
                                                 <input name="invalid" type="submit" value="{$lang.op_invalid}" class="btn btn25 red_btn" />
                                                 {/if} 
-                                                
                                         		{if $is_cloud_order neq 1}
-                                                	{if $order.shipping_status neq 3 && $order.shipping_status neq 5}
-                                                        {if $operable_list.return && $order_back_apply || $order.pay_status eq 2}
-                                                        <input name="return" type="submit" value="{$lang.op_return}" class="btn btn25 red_btn" />
-                                                        {/if} 
-                                                    {/if}
+                                                {if $operable_list.return && $order_back_apply || $order.pay_status eq 2}
+                                                <input name="return" type="submit" value="{$lang.op_return}" class="btn btn25 red_btn" />
+                                                {/if} 
                                                 {/if}
-                                                
                                                 {if $operable_list.to_delivery && $is_cloud_order neq 1}
                                                 <input name="to_delivery" type="submit" value="{$lang.op_to_delivery}" class="btn btn25 red_btn"/>
                                                 <input name="order_sn" type="hidden" value="{$order.order_sn}" />
@@ -764,7 +753,7 @@
 				title = "{$lang.consignee_info}";
 			}else{
 				content = $("#vat").html();
-				title = "{$lang.vat_info}";
+				title = "增值税发票信息";
 			}
 			
 			pb({

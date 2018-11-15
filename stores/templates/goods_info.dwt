@@ -7,9 +7,9 @@
     <div class="explanation" id="explanation">
         <i class="sc_icon"></i>
         <ul>
-            <li>{$lang.operation_prompt_content.goods_info.0}</li>
-            <li>{$lang.operation_prompt_content.goods_info.1}</li>
-            <li>{$lang.operation_prompt_content.goods_info.2}</li>
+            <li>无属性库存时，请填写默认库存。</li>
+            <li>设置属性库存时，则调取属性库存信息，请忽略默认库存。</li>
+            <li>库存数量根据门店内实际库存填写，库存数量较少时请及时补货。</li>
         </ul>
     </div>
     <form method="post" action="{$product_php}" name="addForm" id="addForm" onsubmit="return false;" >
@@ -21,7 +21,7 @@
         	<div class="img"><img src="{$goods.goods_thumb}" width="60" height="60"></div>
             <div class="info">
             	<div class="name"><a href="#" target="_blank">{$goods.goods_name}</a></div>
-                <div class="lie"><span>{$lang.freight_number}：{$goods.goods_sn}</span><span>{$lang.price}：{$goods.shop_price}</span></div>
+                <div class="lie"><span>货号：{$goods.goods_sn}</span><span>价格：{$goods.shop_price}</span></div>
                 {if $region_name}
                 <div class="lie"><div class="red">({$region_name})</div></div>
                 {/if}
@@ -37,7 +37,7 @@
         <table class="table">
         	<thead>
             	<tr>
-                	<th class="first" width="8%">{$lang.record_id}</th>
+                	<th class="first" width="8%">编号</th>
                     {foreach from=$attribute item=attribute_value}
                     <th>{$attribute_value.attr_name}</th>
                     {foreachelse}
@@ -45,7 +45,7 @@
                     {/foreach}
                     <th>{$lang.goods_sn}</th>
                     <th>{$lang.goods_number}</th>
-                    <th class="last" width="10%">{$lang.handler}</th>
+                    <th class="last" width="10%">操作</th>
                 </tr>
             </thead>
             <tbody>
@@ -57,7 +57,7 @@
                     {/foreach}
                     <td><input type="text" name="have_product_sn[]" class="text text_input w100" value="{$product.product_sn|default:$lang.n_a}" autocomplete="off" onkeyup="listTable.editInput(this, 'edit_product_sn', {$product.product_id})"/></td>
                     <td><input type="text" name="have_product_number[]" class="text text_input w50" value="{$product.product_number}" autocomplete="off" onkeyup="listTable.editInput(this, 'edit_product_number', {$product.product_id})"/></td>
-                    <td class="handle last"><a href="javascript:void(0);" class="btn_trash" onclick="dialog('delete', {id:{$product.product_id}, opt:'product_remove'})"><i class="icon icon-trash"></i>{$lang.drop}</a></td>
+                    <td class="handle last"><a href="javascript:void(0);" class="btn_trash" onclick="dialog('delete', {id:{$product.product_id}, opt:'product_remove'})"><i class="icon icon-trash"></i>删除</a></td>
                 </tr>
                 {/foreach}
                 
@@ -66,7 +66,7 @@
                     {foreach from=$attribute item=attribute_value key=attribute_key}
                     <td>
                         <div class="imitate_select w150" data-tab="formType">
-                            <div class="cite">{$lang.please_select}</div>
+                            <div class="cite">请选择</div>
                             <ul>
                             	{foreach from=$attribute_value.attr_values item=value}
                                 <li><a href="javascript:;" data-value="{$value}" title="{$value}" class="ftx-01">{$value}</a></li>
@@ -78,7 +78,7 @@
                     {/foreach}
                     <td><input type="text" name="product_sn[]" class="text w100" value="" size="20" autocomplete="off" /></td>
                     <td><input type="text" name="product_number[]" class="text w50" value="" size="10" autocomplete="off" /></td>
-                    <td class="handle last"><a href="javascript:void(0);" class="btn_trash hide"><i class="icon icon-trash"></i>{$lang.drop}</a></td>
+                    <td class="handle last"><a href="javascript:void(0);" class="btn_trash hide"><i class="icon icon-trash"></i>删除</a></td>
                 </tr>
                 <tr class="tfoot">
                 	<td colspan="10"><a href="javascript:void(0);" class="addtr" onclick="add_attr_product(this);"><i class="icon icon-plus"></i></a></td>

@@ -20,8 +20,8 @@
                                 <div class="cite">{$lang.please_select}{$lang.is_confirm|escape}</div>
                                 <ul>
                                     <li><a href="javascript:;" data-value="-1" class="ftx-01">{$lang.please_select}</a></li>
-                                    <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.close}</a></li>
-                                    <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.open}</a></li>
+                                    <li><a href="javascript:;" data-value="0" class="ftx-01">关闭</a></li>
+                                    <li><a href="javascript:;" data-value="1" class="ftx-01">开启</a></li>
                                 </ul>
                                 <input name="is_confirm" type="hidden" value='-1'/>
                             </div>
@@ -95,7 +95,7 @@
                             <td colspan="10" class="td_border">
                                 <div class="shenhe">
                                     <div class="imitate_select select_w120">
-                                        <div class="cite">{$lang.please_select}</div>
+                                        <div class="cite">请选择</div>
                                         <ul>
                                             <li><a href="javascript:;" data-value="" class="ftx-01">{$lang.select_please}</a></li>
                                             <li><a href="javascript:;" data-value="drop_batch" class="ftx-01">{$lang.drop_batch}</a></li>

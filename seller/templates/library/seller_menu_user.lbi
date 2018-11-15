@@ -1,9 +1,9 @@
 <div class="ecsc-layout-left">
 	<div class="sidebar" id="sidebar">
 		<div class="column-menu">
-        	<div class="welcome">{$lang.welcome_page}<div class="arrow"></div></div>
+        	<div class="welcome">欢迎页<div class="arrow"></div></div>
 			<div class="add-quickmenu">
-				<a href="javascript:void(0);">{$lang.add_fast_door}</a>
+				<a href="javascript:void(0);">添加快捷功能</a>
 			</div>
 			<ul id="seller_center_left_menu" style="padding-top:10px;">
 				{foreach from=$user_menu_pro item=menu}
@@ -16,7 +16,7 @@
                     <div class="arrow2"></div>
                 </div>
 				<div class="title-bar">
-					<h2>{$lang.manage_nav}</h2>
+					<h2>管理导航</h2>
 					<span id="closeSitemap" class="close"></span>
 				</div>
 				<div class="content" id="quicklink_list">
@@ -25,7 +25,7 @@
 						<dt>{$menu.label}</dt>
 						{foreach from=$menu.children item=child}
 						<dd {if $child.status}class="selected"{/if}>
-							<i nctype="btn_add_quicklink" data-quicklink-act="{$child.action}" class="icon-check" title="{$lang.add_common_function_menu}" data-action="{$child.action}" data-status="{$child.status}"></i>
+							<i nctype="btn_add_quicklink" data-quicklink-act="{$child.action}" class="icon-check" title="添加为常用功能菜单" data-action="{$child.action}" data-status="{$child.status}"></i>
 							<a href="{$child.url}">{$child.label}</a>
 						</dd>
 						{/foreach}
@@ -52,7 +52,7 @@ $(document).ready(function(){
 		var menu_count = $('#seller_center_left_menu').find('li').length;
 		if(menu_status ==0 && menu_count>7)
 		{
-			prototype("<i class='alert_error'></i>"+jl_fast_door_max_8,jl_wrong_tip);
+			prototype("<i class='alert_error'></i>快捷操作最多添加8个","错误提示");
 			return;
 		}
 		

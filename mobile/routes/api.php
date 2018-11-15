@@ -140,36 +140,8 @@ $api->version('v2', ['namespace' => 'App\Api\Controllers'], function ($api) {
         $api->post('team/teamUserOrder', 'TeamController@teamUserOrder');  //拼团订单
         $api->post('team/virtualOrder', 'TeamController@virtualOrder');  //拼团成员
 
-        /** 优惠活动 */
-        $api->post('activity', 'ActivityController@index');  //活动列表
-        $api->post('activity/detail', 'ActivityController@detail');  //活动详情
-        $api->post('activity/activityGoods', 'ActivityController@activityGoods');  //活动商品
-        $api->post('activity/coudan', 'ActivityController@coudan');  //优惠活动 - 活动商品凑单
-        $api->post('activity/coudanList', 'ActivityController@coudanList');  //优惠活动 - 活动商品凑单
-        $api->post('cart/addGiftCart', 'CartController@addGiftCart'); //优惠活动 - 添加赠品
 
-	    /** 分销 */
-        $api->post('drp', 'DrpController@index');//分销首页
-        $api->post('drp/con', 'DrpController@con');//购买分销模式
-        $api->post('drp/settings', 'DrpController@settings');//分销设置
-        $api->post('drp/purchase', 'DrpController@purchase');//分销购买
-        $api->post('drp/purchasePay', 'DrpController@PurchasePay');//购买结算
-        $api->post('drp/register', 'DrpController@register');//开店填写信息
-        $api->post('drp/regend', 'DrpController@regend');//开店填写信息完成
-        $api->post('drp/usercard', 'DrpController@usercard');//分享二维码
-        $api->post('drp/team', 'DrpController@team');//我的团队
-        $api->post('drp/teamdetail', 'DrpController@teamdetail');//团队详情
-        $api->post('drp/offlineuser', 'DrpController@OfflineUser');//下线会员
-        $api->post('drp/ranklist', 'DrpController@ranklist');//会员排行
-        $api->post('drp/shop', 'DrpController@shop');//查看微店
-        $api->post('drp/shopgoods', 'DrpController@shopgoods');//微店商品
-        $api->post('drp/order', 'DrpController@order');//查看订单
-        $api->post('drp/orderdetail', 'DrpController@orderdetail');//订单详情
-        $api->post('drp/category', 'DrpController@category');//代言分类
-        $api->post('drp/add', 'DrpController@add');//添加代言
-        $api->post('drp/showgoods', 'DrpController@showgoods');//我的代言
-        $api->post('drp/drplog', 'DrpController@drplog');//佣金明细
-        $api->post('drp/new', 'DrpController@news');//文章
+
     });
 
     /**

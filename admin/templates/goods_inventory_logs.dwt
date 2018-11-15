@@ -125,8 +125,6 @@
                                                     {$lang.order_not_shipped}
                                                 {elseif  $list.use_storage eq 6}
                                                     {$lang.order_return}
-                                                {elseif  $list.use_storage eq 15}
-                                                    {$lang.paid_time}                                                    
                                                 {/if}
                                             	</span>
                                             </p>

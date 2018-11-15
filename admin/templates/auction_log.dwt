@@ -42,16 +42,15 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                {foreach from=$auction_log item=log name="fe_log"}
+							{foreach from=$auction_log item=log name="fe_log"}
 								<tr>
-    								<td></td>
-    								<td class="tDiv">{$log.user_name}</td>
-    								<td class="tDiv">{$log.formated_bid_price}</td>
-    								<td class="tDiv">{$log.bid_time}</td>
-    								<td class="tDiv">{if $smarty.foreach.fe_log.first}OK{else}&nbsp;{/if}</td>
-                                </tr>
+								<td></td>
+								<td class="tDiv">{$log.user_name}</td>
+								<td class="tDiv">{$log.formated_bid_price}</td>
+								<td class="tDiv">{$log.bid_time}</td>
+								<td class="tDiv">{if $smarty.foreach.fe_log.first}OK{else}&nbsp;{/if}</td>
 								{foreachelse}
-								<tr><td class="no-records tDiv" colspan="5">{$lang.no_records}</td></tr>
+								<tr><td class="no-records tDiv"  colspan="5">{$lang.no_records}</td></tr>
 								{/foreach}
                             </tbody>
                         </table>
@@ -62,8 +61,8 @@
     </div>
 	{include file ='library/pagefooter.lbi'}
     <script type="text/javascript">
-	//列表导航栏设置下路选项
-	$(".ps-container").perfectScrollbar();
+		//列表导航栏设置下路选项
+    	$(".ps-container").perfectScrollbar();
     </script>
 </body>
 </html>

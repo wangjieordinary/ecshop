@@ -47,32 +47,6 @@ $api_data = array(
             )
         )
     ),
-	array(
-        'name' => '收货地址',
-        'cat' => 'address',
-        'list' => array(
-            array(
-                'name' => '获取收货地址列表',
-                'val' => 'dsc.user.address.list.get'
-            ),
-            array(
-                'name' => '获取单条收货地址信息',
-                'val' => 'dsc.user.address.info.get'
-            ),
-            array(
-                'name' => '插入收货地址信息',
-                'val' => 'dsc.user.address.insert.post'
-            ),
-            array(
-                'name' => '更新收货地址信息',
-                'val' => 'dsc.user.address.update.post'
-            ),
-            array(
-                'name' => '删除收货地址信息',
-                'val' => 'dsc.user.address.del.get'
-            )
-        )
-    ),
     array(
         'name' => '类目',
         'cat' => 'category',
@@ -492,31 +466,5 @@ $api_data = array(
             )
         )
     ),
-    array(
-        'name' => '快递方式',
-        'cat' => 'shipping',
-        'list' => array(
-            array(
-                'name' => '获取快递方式列表',
-                'val' => 'dsc.shipping.list.get'
-            ),
-            array(
-                'name' => '获取单条快递方式信息',
-                'val' => 'dsc.shipping.info.get'
-            ),
-            array(
-                'name' => '插入快递方式信息',
-                'val' => 'dsc.shipping.insert.post'
-            ),
-            array(
-                'name' => '更新快递方式信息',
-                'val' => 'dsc.shipping.update.post'
-            ),
-            array(
-                'name' => '删除快递方式信息',
-                'val' => 'dsc.shipping.del.get'
-            )
-        )
-    )
 );
 ?>

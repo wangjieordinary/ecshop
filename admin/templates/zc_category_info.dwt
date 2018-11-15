@@ -9,8 +9,8 @@
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                    <li>{$lang.operation_prompt_content.info.0}</li>
-                    <li>{$lang.operation_prompt_content_common}</li>
+                	<li>{$lang.operation_prompt_content_common}</li>
+                    <li>请合理填写众筹分类名称并选择合适的上级分类。</li>
                 </ul>
             </div>
             <div class="flexilist">
@@ -39,7 +39,7 @@
 												</div>
 											</div>
 										</div>
-                                        <div class="notic">{$lang.category_select_notic}</div>
+                                        <div class="notic">不选择分类默认为顶级分类</div>
                                     </div>
                                 </div>								
                                 <div class="item">

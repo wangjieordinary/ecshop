@@ -37,14 +37,14 @@
                     <table class="ecsc-default-table">
                         <thead>
                             <tr>
-                                <th width="8%">{$lang.record_id}</th>
-                                <th width="20%" class="tl">{$lang.act_name}</th>
-                                <th width="15%">{$lang.act_start_end_time}</th>
-                                <th width="10%">{$lang.min_price}</th>
-                                <th width="10%">{$lang.integral}</th>
-                                <th width="10%">{$lang.is_hot}</th>
+                                <th width="8%">编号</th>
+                                <th width="20%" class="tl">活动名称</th>
+                                <th width="15%">活动起始时间</th>
+                                <th width="10%">价格下限</th>
+                                <th width="10%">消耗积分</th>
+                                <th width="10%">是否热销</th>
                                 <th width="10%">{$lang.adopt_status}</th>
-                                <th width="17%">{$lang.handler}</th>
+                                <th width="17%">操作</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -74,8 +74,8 @@
                                 {/if}
                             </td>
 							<td class="ecsc-table-handle tr">
-                                <span><a href="snatch.php?act=view&amp;snatch_id={$snatch.act_id}" class="btn-orange"><i class="icon sc_icon_see"></i><p>{$lang.view}</p></a></span>
-                                <span><a href="snatch.php?act=edit&amp;id={$snatch.act_id}" class="btn-green"><i class="icon icon-edit"></i><p>{$lang.edit}</p></a></span>
+                                <span><a href="snatch.php?act=view&amp;snatch_id={$snatch.act_id}" class="btn-orange"><i class="icon sc_icon_see"></i><p>查看</p></a></span>
+                                <span><a href="snatch.php?act=edit&amp;id={$snatch.act_id}" class="btn-green"><i class="icon icon-edit"></i><p>编辑</p></a></span>
                                 <span><a href="javascript:;" onclick="listTable.remove({$snatch.act_id},'{$lang.drop_confirm}')" title="{$lang.remove}" ectype="btn_del_xianshi" data-xianshi-id="8" class="btn-red"><i class="icon icon-trash"></i><p>{$lang.drop}</p></a></span>
                             </td>
                         </tr>

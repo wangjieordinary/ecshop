@@ -11,7 +11,7 @@
             </div>
             <div class="reply-meta">
                 <span class="reply-left fl">{$list.add_time}</span>
-                <a class="fr ftx-05" href="#reply">{$lang.reply_comment}</a>
+                <a class="fr ftx-05" href="#reply">回复</a>
             </div>
         </div>
     </div>

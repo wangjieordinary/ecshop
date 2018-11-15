@@ -86,7 +86,7 @@
                             <td class="ecsc-table-handle tr">
                                 {if $type.usebonus_type eq 0 || $priv_ru}
                                   {if $type.send_type eq 3}
-                                  <span><a href="bonus.php?act=gen_excel&tid={$type.type_id}" class="btn-green"><i class="icon icon-download-alt"></i><p>{$lang.report_form}</p></a></span>
+                                  <span><a href="bonus.php?act=gen_excel&tid={$type.type_id}" class="btn-green"><i class="icon icon-download-alt"></i><p>报表</p></a></span>
                                   {/if}
                                   {if $type.send_type eq 4}
                                   <span id="clip_container"><a href="javascript:void(0);" data-url="{$url}bonus.php?act=bonus_info&id={$type.type_id}" class="btn-green" id="clip_button" ectype="clip_button"><i class="icon icon-copy"></i><p>{$lang.copy_url}</p></a></span>

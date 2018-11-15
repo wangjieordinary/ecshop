@@ -2,20 +2,20 @@
 <div id="merge_dialog" class="areaForm_list">
 	<div class="items">
 		<div class="item">
-			<div class="label">{$lang.label_goods_name}</div>
+			<div class="label">商品名称：</div>
 			<div class="value lh30">{$goods_info.goods_name}</div>
 		</div>
         <div class="item">
-			<div class="label">{$lang.label_goods_type_name}</div>
+			<div class="label">商品类型名称：</div>
 			<div class="value lh30">{$attr_info.attr_name}</div>
 		</div>
         <div class="item">
-			<div class="label">{$lang.label_attr_name}</div>
+			<div class="label">属性名称：</div>
 			<div class="value lh30">{$goods_attr_name}</div>
         </div>
         {foreach from=$warehouse_area_list item=warehouse}
         <div class="item">
-			<div class="label">{$lang.label_warehouse_area}</div>
+			<div class="label">仓库地区：</div>
 			<div class="value lh30 red">{$warehouse.region_name}</div>
         </div>
         <div class="item">

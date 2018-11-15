@@ -63,9 +63,9 @@
                                 
                                 {if $back_order.refound_status1 neq 1 && $back_order.agree_apply neq 1}
                                 	{if $back_order.return_status1 neq 6}
-									<input class="sc-btn sc-redBg-btn" type="submit" value="{$lang.refuse}" name="refuse_apply">	
+									<input class="sc-btn sc-redBg-btn" type="submit" value="拒绝" name="refuse_apply">	
                                     {else}
-                                    <input class="sc-btn sc-redBg-btn" type="button" title="{$lang.cant_click}" value="{$lang.refused_apply}" name="no_refuse_apply">	    
+                                    <input class="sc-btn sc-redBg-btn" type="button" title="无法点击" value="已拒绝申请" name="no_refuse_apply">	    
                                     {/if}   	
                                 {/if}							
                                 <input class="sc-btn sc-redBg-btn" type="submit" value="{$lang.after_service}" name="after_service">
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                 	<div class="order-step-info">
-                    	<div class="step-title"><i class="dian"></i><h3>{$lang.return_info}</h3></div>
+                    	<div class="step-title"><i class="dian"></i><h3>退货信息</h3></div>
                         <ul class="order-info-list">
                         	<li>
                             	<dl>
@@ -278,12 +278,12 @@ function check_shipping(){
 	var frm =  document.forms['theForm'] ;
 	var shipping_name = frm['shipping_name'].value;
 	if( shipping_name <= 0 ){
-		alert(jl_please_select_express_company);
+		alert('请选择快递公司');
 		return false;
 	}
 	var invoice_no = frm['invoice_no'].value ;
 	if(invoice_no == ''|| invoice_no ==NULL ){
-		alert(jl_please_input_express_number);
+		alert('请填写快递单号');
 		return false;
 	}
 }

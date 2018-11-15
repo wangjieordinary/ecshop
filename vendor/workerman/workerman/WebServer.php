@@ -92,7 +92,7 @@ class WebServer extends Worker
     public function onWorkerStart()
     {
         if (empty($this->serverRoot)) {
-            Worker::safeEcho(new \Exception('server root not set, please use WebServer::addRoot($domain, $root_path) to set server root path'));
+            echo new \Exception('server root not set, please use WebServer::addRoot($domain, $root_path) to set server root path');
             exit(250);
         }
 
@@ -209,7 +209,7 @@ class WebServer extends Worker
                 } catch (\Exception $e) {
                     // Jump_exit?
                     if ($e->getMessage() != 'jump_exit') {
-                        Worker::safeEcho($e);
+                        echo $e;
                     }
                 }
                 $content = ob_get_clean();

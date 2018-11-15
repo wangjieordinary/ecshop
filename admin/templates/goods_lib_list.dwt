@@ -10,9 +10,9 @@
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
                     {if $standard_goods}
-                    <li>{$lang.operation_prompt_content.list.0}</li>
-                    <li class="red">{$lang.operation_prompt_content.list.2}</li>
-                    <li class="red">{$lang.operation_prompt_content.list.3}</li>
+                    <li>该页面展示了标准商品库的商品信息，可对商品进行编辑、删除操作。</li>
+                    <li class="red">此页数据与供应商商品同步，请谨慎操作</li>
+                    <li class="red">供应商商品库商品是提供给商家导入此商品为普通商品销售的商品列表</li>
                     {else}
                 	<li>{$lang.operation_prompt_content.list.0}</li>
                     <li>{$lang.operation_prompt_content.list.1}</li>
@@ -108,7 +108,7 @@
                                     <td><div class="tDiv"><span onclick="listTable.edit(this, 'edit_sort_order', {$goods.goods_id})">{$goods.sort_order}</span></div></td>
                                     <td>
                                     	<div class="tDiv">
-                                        	<div class="switch {if $goods.is_on_sale}active{/if}" title="{if $goods.is_on_sale}{$lang.yes}{else}{$lang.no}{/if}" onclick="listTable.switchBt(this, 'toggle_on_sale', {$goods.goods_id})">
+                                        	<div class="switch {if $goods.is_on_sale}active{/if}" title="{if $goods.is_on_sale}是{else}否{/if}" onclick="listTable.switchBt(this, 'toggle_on_sale', {$goods.goods_id})">
                                             	<div class="circle"></div>
                                             </div>
                                             <input type="hidden" value="0" name="">

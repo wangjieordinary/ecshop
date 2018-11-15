@@ -20,8 +20,8 @@
                     	<ul>
                         	<li>{$lang.total_amount}：<b>{$bt_info.format_amount}</b></li>
                             <li>{$lang.residual_amount}：<b>{$format_remain_amount}</b></li>
-                            <li>{$lang.Credit_payment_days}：<b>{$bt_info.repay_term|default:0}{$lang.tian}</b></li>
-                            <li>{$lang.Suspended_term}：<b>{$bt_info.over_repay_trem|default:0}{$lang.tian}</b></li>
+                            <li>{$lang.Credit_payment_days}：<b>{$bt_info.repay_term|default:0}天</b></li>
+                            <li>{$lang.Suspended_term}：<b>{$bt_info.over_repay_trem|default:0}天</b></li>
                             <li>{$lang.repayments_amount}：<b>{$repay_bt.format_already_amount}</b></li>
                             <li>{$lang.pending_repayment_amount}：<b>{$repay_bt.format_total_amount}</b></li>
                             <li>{$lang.baitiao_number}：<b>{$repay_bt.numbers|default:0}</b></li>

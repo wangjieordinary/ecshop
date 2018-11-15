@@ -15,9 +15,9 @@
 
                     <table border="0" cellpadding='1' cellspacing='1'  class="ecsc-default-table order">
                         <tr>
-                            <td>{$lang.label_order_number}{$order.order_sn}</td>
+                            <td>订单号：{$order.order_sn}</td>
                             <td>
-                                {$lang.you_select_payment_is}: <strong>{$payment.pay_name}{if $pay_fee > 0}，{$lang.service_fee_is}：{$pay_fee}{/if}</strong>，{$lang.you_should_pay_is}:<strong>{$amount}</strong>
+                                您选定的支付方式为: <strong>{$payment.pay_name}{if $pay_fee > 0}，手续费为：{$pay_fee}{/if}</strong>，您的应付款金额为:<strong>{$amount}</strong>
                             </td>
                             <td></td>
                         </tr>
@@ -71,7 +71,7 @@
                         $.get(url, {}, function(data){
                                 //已付款
                                 if(data.code > 0){
-                                        alert(jl_pay_success);
+                                        alert('支付成功');
                                         if(grade_type == 1){
                                             location.href = "seller_apply.php?act=list";
                                         }else if(grade_type == 2){

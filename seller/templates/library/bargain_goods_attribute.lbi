@@ -1,7 +1,7 @@
 
 {if $attribute_list.spec}
 <div class="step_item_left">
-	<h5>{$lang.label_goods_specifications}</h5>
+	<h5>商品规格：</h5>
 </div>
 <div class="step_item_right">
     {foreach from=$attribute_list.spec item=val key=key}

@@ -165,7 +165,7 @@ function minus_attr_product(tr_number)
 {
   if (tr_number.length > 0)
   {
-    if (confirm(jl_sure_delete) == false)
+    if (confirm("确定删除吗？") == false)
     {
       return false;
     }

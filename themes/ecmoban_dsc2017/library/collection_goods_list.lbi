@@ -13,15 +13,15 @@
 					{$goods.shop_price}
                     <!--{/if}-->
 				</div>
-				<div class="p-btn"><a href="{$goods.url}" class="sc-btn">{$lang.View_details}</a></div>
+				<div class="p-btn"><a href="{$goods.url}" class="sc-btn">查看详情</a></div>
 				<div class="p-oper">
                     <!-- {if $goods.is_attention} -->
-                    <a class="goods_gz has_gz" href="javascript:void(0);" data-dialog="goods_collect_dialog" data-divid="user_attention" data-url="user.php?act=del_attention&rec_id={$goods.rec_id}&goods_id={$goods.goods_id}" data-confirmtitle="{$lang.del_attention}">{$lang.follow_yes}</a>
+                    <a class="goods_gz has_gz" href="javascript:void(0);" data-dialog="goods_collect_dialog" data-divid="user_attention" data-url="user.php?act=del_attention&rec_id={$goods.rec_id}&goods_id={$goods.goods_id}" data-confirmtitle="{$lang.del_attention}">已关注</a>
                     <!-- {else} -->
-                    <a class="goods_gz" href="javascript:void(0);" data-dialog="goods_collect_dialog" data-divid="user_attention" data-url="user.php?act=add_to_attention&rec_id={$goods.rec_id}&goods_id={$goods.goods_id}" data-confirmtitle="{$lang.add_to_attention}">{$lang.follow_goods}</a>
+                    <a class="goods_gz" href="javascript:void(0);" data-dialog="goods_collect_dialog" data-divid="user_attention" data-url="user.php?act=add_to_attention&rec_id={$goods.rec_id}&goods_id={$goods.goods_id}" data-confirmtitle="{$lang.add_to_attention}">关注商品</a>
                     <!-- {/if} -->
                     
-					<a href="javascript:void(0);" id="delete_goods_collect" data-dialog="goods_collect_dialog" data-divid="delete_goods_collect" data-url="user.php?act=delete_collection&collection_id={$goods.rec_id}&type=1" data-goodsid="0">{$lang.cancel_collect}</a>
+					<a href="javascript:void(0);" id="delete_goods_collect" data-dialog="goods_collect_dialog" data-divid="delete_goods_collect" data-url="user.php?act=delete_collection&collection_id={$goods.rec_id}&type=1" data-goodsid="0">取消收藏</a>
 				</div>
 			</div>
 		</li>

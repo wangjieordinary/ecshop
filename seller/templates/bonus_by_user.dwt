@@ -41,8 +41,8 @@
                         </div>
                         
                         <div class="goods_search_div mt20 mb10">
-                            <input type="text" name="keyword" class="text w120 mr10" value="" placeholder="{$lang.keywords}" autocomplete="off" />
-                            <input type="button" class="sc-btn sc-blueBg-btn btn30" name="search" value="{$lang.button_search}" ectype="search" onclick="searchUser();" class="button" />
+                            <input type="text" name="keyword" class="text w120 mr10" value="" placeholder="关键字" autocomplete="off" />
+                            <input type="button" class="sc-btn sc-blueBg-btn btn30" name="search" value="搜索" ectype="search" onclick="searchUser();" class="button" />
                         </div>
                         
                         <div class="move_div">
@@ -55,8 +55,8 @@
                                     </div>
                                 </div>
                                 <div class="move_handle">
-                                    <a href="javascript:void(0);" id="sellectAll" class="sc-btn btn25 moveAll" ectype="moveAll"><span>{$lang.check_all}</span></a>
-                                    <a href="javascript:void(0);" onclick="addUser()" class="sc-btn btn25 sc-blueBg-btn">{$lang.button_submit_alt}</a>
+                                    <a href="javascript:void(0);" id="sellectAll" class="sc-btn btn25 moveAll" ectype="moveAll"><span>全选</span></a>
+                                    <a href="javascript:void(0);" onclick="addUser()" class="sc-btn btn25 sc-blueBg-btn">确定</a>
                                 </div>
                             </div>
                             <div class="move_middle">
@@ -71,8 +71,8 @@
                                     </div>
                                 </div>
                                 <div class="move_handle">
-                                    <a href="javascript:void(0);" id="selectAllUser" class="sc-btn btn25 moveAll" ectype="moveAll">{$lang.check_all}</a>
-                                    <a href="javascript:void(0);" onclick="delUser()" class="sc-btn btn25 sc-blueBg-btn" >{$lang.remove}</a>
+                                    <a href="javascript:void(0);" id="selectAllUser" class="sc-btn btn25 moveAll" ectype="moveAll">全选</a>
+                                    <a href="javascript:void(0);" onclick="delUser()" class="sc-btn btn25 sc-blueBg-btn" >移除</a>
                                 </div>
                             </div>
                         </div>

@@ -9,7 +9,7 @@
         <div class="content">
             <div class="tabs_info">
                 <ul>
-                    <li {if $filter.cycle eq -1}class="curr"{/if}><a href="merchants_commission.php?act=list&cycle=-1">{$lang.all_shops}</a></li>
+                    <li {if $filter.cycle eq -1}class="curr"{/if}><a href="merchants_commission.php?act=list&cycle=-1">所有店铺</a></li>
                     <li {if $filter.cycle eq 3}class="curr"{/if}><a href="merchants_commission.php?act=list&cycle=3">{$lang.01_monthly_checkout_bill}</a></li>
                     <li {if $filter.cycle eq 1}class="curr"{/if}><a href="merchants_commission.php?act=list&cycle=1">{$lang.02_weekly_bill}</a></li>
                     <li {if $filter.cycle eq 0}class="curr"{/if}><a href="merchants_commission.php?act=list&cycle=0">{$lang.03_daily_checkout_bill}</a></li>
@@ -29,20 +29,20 @@
                 <div class="section_filter">
                     <ul>
                         <li>
-                            <span>{$lang.total_amount}</span>
-                            <div class="price"><em ectype="total_amount">0.00</em>{$lang.yuan}</div>
+                            <span>累积销售总额</span>
+                            <div class="price"><em ectype="total_amount">0.00</em>元</div>
                         </li>
                         <li>
-                            <span>{$lang.no_settlement}</span>
-                            <div class="price"><em ectype="no_settlement">0.00</em>{$lang.yuan}</div>
+                            <span>待结算金额</span>
+                            <div class="price"><em ectype="no_settlement">0.00</em>元</div>
                         </li>
                         <li>
-                            <span>{$lang.is_settlement}</span>
-                            <div class="price"><em ectype="is_settlement">0.00</em>{$lang.yuan}</div>
+                            <span>已结算金额</span>
+                            <div class="price"><em ectype="is_settlement">0.00</em>元</div>
                         </li>
                         <li>
-                            <span>{$lang.store_num}</span>
-                            <div class="price"><em ectype="store_num">0</em>{$lang.jia}</div>
+                            <span>店铺商家</span>
+                            <div class="price"><em ectype="store_num">0</em>家</div>
                         </li>
                     </ul>
                 </div>

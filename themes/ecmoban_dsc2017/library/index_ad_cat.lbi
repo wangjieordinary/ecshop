@@ -9,7 +9,7 @@
 		<p>{$ad.s_title}</p>
 	</div>
 	<div class="column-img"><img src="{$ad.ad_code}"></div>
-	<a href="{$ad.ad_link}" target="_blank" class="column-btn">{$lang.go_see}</a>
+	<a href="{$ad.ad_link}" target="_blank" class="column-btn">去看看</a>
 </div>
 {/if}
 <!--{/foreach}-->

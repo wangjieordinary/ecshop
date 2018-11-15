@@ -22,7 +22,9 @@
                     </div>
                 </div>
             </div>
+
         </div>
+
     </div>
     <section class="com-nav">
         <div class="user-nav-box  com-list dis-box text-center distypeclass">
@@ -40,12 +42,12 @@
             </div>
         </div>
     </section>
-    {include file="index/tzlist"}
+{include file="index/tzlist"}
 </div>
 <script>
-    header_img();
+    header_img()
     window.onresize = function(){
-        header_img();
+        header_img()
     }
     /*店铺信息商品滚动*/
     var swiper = new Swiper('.j-g-s-p-con', {
@@ -61,12 +63,12 @@
         var distype = $(this).attr('distype');
         $(this).siblings().removeClass("active");
         infinite.onload('dis_type=' + distype);
-
-        header_img();
+        header_img()
         window.onresize = function(){
-            header_img();
+            header_img()
         }
-    });
+    })
 </script>
 </body>
+
 </html>

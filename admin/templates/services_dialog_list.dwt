@@ -24,20 +24,20 @@
 <link rel="stylesheet" id=cal_style type="text/css" href="../mobile/public/assets/chat/css/flatpickr.min.css">
 <body class="iframe_body">
 	<div class="warpper">
-    	<div class="title">{$lang.10_priv_admin} - {$lang.services_list}</div>
+    	<div class="title">权限 - 客服管理</div>
         <div class="content">
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                	<li>{$lang.operation_prompt_content.dialog_list.0}</li>
+                	<li>该页面展示了统计聊天的信息。</li>
                 </ul>
             </div>
             <div class="tabs_info mt30">
 	            <ul id="dialog_list_ul">
-	                <li class="curr"><a href="javascript:void(0);">{$lang.today}</a></li>
-	                <li class=""><a href="javascript:void(0);">{$lang.aweek}</a></li>
-	                <li class=""><a href="javascript:void(0);">{$lang.thismonth}</a></li>
-	                <li class=""><a href="javascript:void(0);">{$lang.all}</a></li>
+	                <li class="curr"><a href="javascript:void(0);">今天</a></li>
+	                <li class=""><a href="javascript:void(0);">最近一周</a></li>
+	                <li class=""><a href="javascript:void(0);">最近一月</a></li>
+	                <li class=""><a href="javascript:void(0);">全部</a></li>
 	            </ul>
 	        </div>
             <div class="flexilist mt30">
@@ -61,8 +61,8 @@
                                                         	<span title="{$list.goods_name}" data-toggle="tooltip" class="span">{$list.goods_name}</span>
                                                         </div>
                                                     	<p class="activity">
-                                                            <span class="mr10">{$lang.start_time}：{$list.start_time}</span>
-                                                            <span class="mr10">{$lang.end_time}：{$list.end_time}</span>
+                                                            <span class="mr10">开始时间：{$list.start_time}</span>
+                                                            <span class="mr10">结束时间：{$list.end_time}</span>
                                                         </p>
                                                     </div>
                                                 </div>
@@ -95,7 +95,7 @@
                                 {if $full_page}
                             </div>
                         	<div class="search-box pl15 pr15">
-                                <span class="fl j-generate-word"><i class="icon icon-download"></i>{$lang.export_list}</span>
+                                <span class="fl j-generate-word"><i class="icon icon-download"></i>导出</span>
                                     <div class="fl ml20 footer-tool-date j-footer-tool-date flatpickr" data-wrap="true" data-click-opens="false" id="enableNextSeven">
                                         <a class="input-btn" data-toggle><i class="icon icon-calendar"></i></a>
                                         <input id="flatpickr-tryme" style="border:none;width:68px" data-input>
@@ -108,10 +108,10 @@
                                 </div>
                                 <div class="list-page fr">
                                     <span id="page-link">
-                                        <a class="first" title="{$lang.page_first}"></a>
-                                        <a class="prev" title="{$lang.page_prev}"></a>
-                                        <a class="next" title="{$lang.page_next}"></a>
-                                        <a class="last" title="{$lang.page_last}"></a>
+                                        <a class="first" title="第一页"></a>
+                                        <a class="prev" title="上一页"></a>
+                                        <a class="next" title="下一页"></a>
+                                        <a class="last" title="最末页"></a>
                                     </span>
                                 </div>
                             </div>
@@ -162,7 +162,7 @@ $('.j-keywords').click(function(e){
 
 //导出word
 $('.j-generate-word').click(function(){
-    if(dialog_id == undefined || dialog_id == '' || !confirm('{$lang.export_confirm}'))return;
+    if(dialog_id == undefined || dialog_id == '' || !confirm('确认导出聊天记录？'))return;
     window.location.href='services.php?is_ajax=1&act=generage_word' + '&id=' + dialog_id + '&customer_id=' + customer_id + '&service_id=' + service_id;
 });
 

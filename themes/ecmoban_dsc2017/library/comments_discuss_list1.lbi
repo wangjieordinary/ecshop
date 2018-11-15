@@ -1,10 +1,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <div class="thead">
-        <div class="th td1">{$lang.message_title}</div>
-        <div class="th td2">{$lang.reply_comment}</div>
-        <div class="th td3">{$lang.browse}</div>
-        <div class="th td4">{$lang.article_author}</div> 
-        <div class="th td5">{$lang.time}</div>
+        <div class="th td1">主题</div>
+        <div class="th td2">回复</div>
+        <div class="th td3">浏览</div>
+        <div class="th td4">作者</div> 
+        <div class="th td5">时间</div>
     </div>
     <div class="tbody">
     	{if $discuss_list.list}
@@ -36,11 +36,11 @@
         {else}
         <div class="no_records no_comments_qt">
             <i class="no_icon no_icon_three"></i>
-            <span class="block">{$lang.not_discussion}</span>
+            <span class="block">暂无讨论帖</span>
         </div>
         {/if}
     </div>
     <div class="clear"></div>
     <div class="s-more">
-        <a href="category_discuss.php?id={$goods_id}" target="_blank"><span class="sm-wrap">{$lang.click_browse_all}<i class="iconfont icon-right"></i></span></a>
+        <a href="category_discuss.php?id={$goods_id}" target="_blank"><span class="sm-wrap">点击浏览全部<i class="iconfont icon-right"></i></span></a>
     </div>

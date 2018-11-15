@@ -1,5 +1,5 @@
 <div class="footer">
-    <p>{$lang.copyright} Powered by <span class="vol">{$site_url}</span></p>
+    <p>©&nbsp;2005-2017 上海商创网络科技有限公司，并保留所有权利。Powered by <span class="vol">{$site_url}</span></p>
 </div>
 <script type="text/javascript">
 document.onmousemove=function(e)
@@ -104,7 +104,7 @@ $(function(){
     huadong();
 	
 	/* 检查账单 */
-  	//startCheckBill();
+  	startCheckBill();
 	
 	/* 检查出账单 */
   	outCheckBill();

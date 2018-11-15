@@ -147,11 +147,11 @@
                                     {/if}
                                     <!-- <section class="m-top04 padding-all b-color-f goods-promotion goods-suit j-goods-attr j-show-div j-suit">
                                         <div class="dis-box cont">
-                                            <label class="t-remark g-t-temark">套装：</label>                      
+                                            <label class="t-remark g-t-temark">套装：</label>
                                             <div class="p-r left" ><em class="em-sales p-a">优惠套装</em></div>
                                             <div class="box-flex f-04">
                                                 <span class="" >最高优惠<em class="color-red">55.20</em>元</span>
-                                            </div>                                 
+                                            </div>
                                             <div class="f-04">
                                                 <span class="t-jiantou"><i class="iconfont icon-jiantou tf-180" style="top:.1rem"></i></span>
                                              </div>
@@ -218,7 +218,7 @@
                                             {if $shippingFee.is_shipping == 1}
                                             <span class="box-flex t-goods1 text-all-span">
                                                 {if $shippingFee.shipping_fee > 0}
-                                                    {$shippingFee.shipping_fee_formated} 
+                                                    {$shippingFee.shipping_fee_formated}
                                                     {if $shippingFee.shipping_title}
                                                     <em style="color:#ff0000; font-style: normal">{$shippingFee.shipping_title}</em>
                                                     {/if}
@@ -226,9 +226,15 @@
                                                     {if $is_shipping == 1}
                                                     <em>[ 包邮 ]</em>
                                                     {else}
-                                                    <em>[ 免运费 ]</em>
+                                                        {if $shippingFee.shipping_code eq 'fpd'}
+                                                            {if $shippingFee.shipping_title}
+                                                            <em style="color:#ff0000; font-style: normal">{$shippingFee.shipping_title}</em>
+                                                            {/if}
+                                                        {else}
+                                                        <em>[ 免运费 ]</em>
+                                                        {/if}
                                                     {/if}
-                                                {/if}                                            
+                                                {/if}
                                             </span>
                                             {else}
                                             <span class="box-flex t-goods1 text-all-span">该地区不支持配送</span>
@@ -920,6 +926,7 @@
                     <%if totalPage > 0%>
                     <ul class="j-store-select new-store-radio">
                         <%each store_list as store%>
+                        <%if store.goods_number > 0%>
                         <li class="m-top08 <%if store.checked == 1%> active <%/if%>" id="<%store.id%>">
                             <div class="flow-have-adr padding-all">
                                 <div class="f-h-adr-title">
@@ -934,6 +941,7 @@
                                 <i class="iconfont icon-gou"></i>
                             </div>
                         </li>
+                        <%/if%>
                         <%/each%>
                     </ul>
                     <%else%>
@@ -994,7 +1002,7 @@
 {if $goods.goods_video}
 <!--视频-->
 <div class="goods-video-box">
-    <video  class="goods-video" controls autoplay preload="none" poster="">
+    <video  class="goods-video" controls preload="metadata" poster="">
         <source src="{$goods.goods_video}" type="video/mp4">
     </video>
     <div class="goods_img m-top10 j-goods_img">图片</div>
@@ -1033,7 +1041,7 @@
                             {/foreach}
                         {/if}
                     </div>
-                </div>            
+                </div>
             </div>
         </div>
     </section>
@@ -1588,7 +1596,7 @@ $(function($) {
             changePrice();
             $(".suit-box").addClass('show')
         });
-        
+
         // 点击分享弹窗
         $(".j-sharing").click(function() {
             // 验证登录

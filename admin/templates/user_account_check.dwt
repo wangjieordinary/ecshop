@@ -144,10 +144,6 @@
                                                 <input type="radio" name="is_paid" value="1" class="ui-radio" id="is_paid_1" autocomplete="off" />
                                                 <label for="is_paid_1" class="ui-radio-label">{$lang.is_confirm}</label>
                                             </div>
-                                            <div class="checkbox_item">
-                                                <input type="radio" name="is_paid" value="2" class="ui-radio" id="is_paid_2" autocomplete="off" />
-                                                <label for="is_paid_2" class="ui-radio-label">{$lang.dismiss_application}</label>
-                                            </div>                                            
                                         </div>
                                         {else}
                                         <div class="checkbox_items">

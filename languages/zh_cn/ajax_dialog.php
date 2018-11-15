@@ -69,9 +69,6 @@ $_LANG['Sub_order'] = "子订单";
 $_LANG['reduction'] = "还原";
 $_LANG['order_user_desc'] = "尊敬的客户，由于您的商品有可能在不同商家，所以您的订单被拆分为多个子订单分开配送，给您带来的不便还请谅解。";
 
-$_LANG['cart_and_info_null'] = "购物车商品为空或者收货人信息未填写！";
-$_LANG['invoice_top_exists'] = "发票抬头已存在！";
-
 $_LANG['js_languages']['invoice_desc_number'] = '您最多可以添加3个公司发票！';
 $_LANG['js_languages']['invoice_desc_null'] = '输入内容不能为空！';
 $_LANG['js_languages']['receive_coupons'] = '领取优惠券';

@@ -57,18 +57,18 @@
             </div>
             <div class="account">
                 <div class="item clearfix">
-                    <div class="item-name">{$lang.account_information}：</div>
+                    <div class="item-name">账户资料：</div>
                     <div class="item-main">
                         <b class="integrity"><em style="width: {$security_rating.Percentage}%;"></em></b><span>{$security_rating.Percentage}%</span>
                     </div>
                 </div>
                 <div class="item clearfix">
-                    <div class="item-name">{$lang.account_safe}：</div>
+                    <div class="item-name">账户安全：</div>
                     <div class="item-main safe">
-                        <a href="user.php?act=account_safe" class="iconfont icon-email {if $validate.email_validate}active{/if}"><span class="tip">{if $validate.email_validate}{$lang.email_has_validate}{else}{$lang.email_no_validate}{/if}</span></a>
-                        <a href="user.php?act=account_safe" class="iconfont icon-see {if $validate.real_id}active{/if}"><span class="tip">{if $validate.real_id}{$lang.users_real_complete}{else}{$lang.users_real_no_complete}{/if}</span></a>
-                        <a href="user.php?act=account_safe" class="iconfont icon-password active"><span class="tip">{$lang.pwd_set}</span></a>
-                        <a href="user.php?act=account_safe" class="iconfont icon-mobile-phone {if $validate.mobile_phone}active{/if}"><span class="tip">{if $validate.mobile_phone}{$lang.mobile_validate}{else}{$lang.mobile_no_validate}{/if}</span></a>
+                        <a href="user.php?act=account_safe" class="iconfont icon-email {if $validate.email_validate}active{/if}"><span class="tip">{if $validate.email_validate}邮箱已验证{else}邮箱未验证{/if}</span></a>
+                        <a href="user.php?act=account_safe" class="iconfont icon-see {if $validate.real_id}active{/if}"><span class="tip">{if $validate.real_id}实名认证已完成{else}实名认证未完成{/if}</span></a>
+                        <a href="user.php?act=account_safe" class="iconfont icon-password active"><span class="tip">密码已设置</span></a>
+                        <a href="user.php?act=account_safe" class="iconfont icon-mobile-phone {if $validate.mobile_phone}active{/if}"><span class="tip">{if $validate.mobile_phone}手机已验证{else}手机未验证{/if}</span></a>
                     </div>
                 </div>
             </div>
@@ -142,14 +142,14 @@
             <li>
                 <div class="words"></div>
                 <div class="info">
-                    <a href="user.php?act=coupons">{$lang.preferential}（<span class="red">{$coupons.num}</span>）</a><br>
-                    <div class="num"><a href="coupons.php?act=coupons_index" target="_blank" class="line">{$lang.voucher}</a></div>
+                    <a href="user.php?act=coupons">优惠券（<span class="red">{$coupons.num}</span>）</a><br>
+                    <div class="num"><a href="coupons.php?act=coupons_index" target="_blank" class="line">领券</a></div>
                 </div>
             </li>
             <li>
                 <div class="words"></div>
                 <div class="info info-line">
-                    <a href="user.php?act=value_card">{$lang.value_card}（<span class="red">{$value_card.num}</span>）</a>
+                    <a href="user.php?act=value_card">储值卡（<span class="red">{$value_card.num}</span>）</a>
                 </div>
             </li>
             <li>
@@ -160,7 +160,7 @@
         <div class="user-mod">
             <div class="user-section">
                 <div class="user-title">
-                    <h2>{$lang.label_order}</h2>
+                    <h2>我的订单</h2>
                     <a href="user.php?act=order_list" class="more">{$lang.see_all_order}</a>
                 </div>
                 <div class="user-index-order-list">
@@ -204,7 +204,7 @@
                         <div class="no_info no_info_line">
                             <h3>{insert name='get_page_no_records' filename=$filename act=$action}</h3>
                             <div class="no_btn">
-                                <a href="index.php" class="sc-btn sc-red-btn">{$lang.goto_mall}</a>
+                                <a href="index.php" class="sc-btn sc-red-btn">去逛商城</a>
                             </div>
                         </div>
                     </div>
@@ -243,13 +243,13 @@
                                 {/if}
                             {/if}
                         </div>
-                        <div class="td td-handle"><a href="{$goods.url}" class="sc-btn">{$lang.button_buy}</a></div>
+                        <div class="td td-handle"><a href="{$goods.url}" class="sc-btn">立即购买</a></div>
                     </div>
                     {foreachelse}
                     <div class="no_records">
                         <i class="no_icon"></i>
                         <div class="no_info">
-                            <h3>{$lang.new_Collection_store_null}</h3>
+                            <h3>主人，您近期还没有收藏商品呦~</h3>
                         </div>
                     </div>
                     {/foreach}
@@ -299,16 +299,16 @@
                 <dl class="item">
                     <dt class="item-t">
                         <div class="t-handle">
-                            <a href="javascript:void(0);" ectype="goods_del_booking" data-url="user.php?act=act_del_booking&id={$item.rec_id}" class="sc-btn">{$lang.booking_cancel}</a>
+                            <a href="javascript:void(0);" ectype="goods_del_booking" data-url="user.php?act=act_del_booking&id={$item.rec_id}" class="sc-btn">取消订购</a>
                         </div>
                         <a href="{$item.url}" class="t-img"><img src="{$item.goods_thumb}" alt=""></a>
                         <div class="t-info">
                             <div class="info-name"><a href="{$item.url}">{$item.goods_name}</a></div>
-                            <p class="info-num">{$lang.booking_amount}：<span class="red">{$item.goods_number}</span></p>
+                            <p class="info-num">订购数量：<span class="red">{$item.goods_number}</span></p>
                         </div>
                     </dt>
                     <dd class="item-c">
-                        <div class="fl">{$lang.process_desc}：<span class="ftx-05">{$item.dispose_note}</span></div>
+                        <div class="fl">处理备注：<span class="ftx-05">{$item.dispose_note}</span></div>
                         <div class="fr">{$item.booking_time}</div>
                     </dd>
                 </dl>
@@ -376,11 +376,11 @@
         <!--{if $action eq 'collection_list' ||  $action eq 'store_list'||  $action eq 'focus_brand'}-->
         <div class="user-mod">
             <div class="user-title">
-                <h2>{$lang.label_collection}</h2>
+                <h2>我的收藏</h2>
                 <ul class="tabs">
                     <li {if $action eq 'collection_list'}class="active"{/if}><a href="user.php?act=collection_list">{$lang.Collection_goods}</a></li>
                     <li {if $action eq 'store_list'}class="active"{/if}><a href="user.php?act=store_list">{$lang.store_list}</a></li>
-                    <li {if $action eq 'focus_brand'}class="active"{/if}><a href="user.php?act=focus_brand">{$lang.focus_brand}</a></li>
+                    <li {if $action eq 'focus_brand'}class="active"{/if}><a href="user.php?act=focus_brand">关注品牌</a></li>
                 </ul>
             </div>
             <div class="collection-list-warp clearfix c-tab-box-ajax">
@@ -413,7 +413,7 @@
         <!--{if $action eq 'message_list'}-->
         <div class="user-mod">
             <div class="user-title">
-                <h2>{$lang.label_opinion_suggestion}</h2>
+                <h2>意见建议</h2>
             </div>
             <div class="user-message-warp clearfix">
                 <form action="user.php" method="post" enctype="multipart/form-data" name="formMsg">
@@ -476,7 +476,7 @@
                                     <input type="text" name="textfield" id="textfield" class="txt">
                                     <input type="file" name="message_img" class="file" id="fileField" size="28" onchange="document.getElementById('textfield').value=this.value">
                                 </div>
-                                <span class="remind">{$lang.message_type_list}{$lang.message_remind}{$upload_size_limit}。</span>
+                                <span class="remind">{$lang.message_type_list}，附件大小不得超过{$upload_size_limit}。</span>
                             </div>
                         </div>
                         <!--{if $enabled_captcha}-->
@@ -508,8 +508,8 @@
             <div class="user-title">
                 <h2>{$lang.label_message}</h2>
 				<ul class="tabs">
-                    <li {if $is_order eq 0}class="active"{/if}><a href="user.php?act=message_list">{$lang.general_message}</a></li>
-                    {if $is_have_order}<li {if $is_order eq 1}class="active"{/if}><a href="user.php?act=message_list&is_order=1">{$lang.order_message}</a></li>{/if}
+                    <li {if $is_order eq 0}class="active"{/if}><a href="user.php?act=message_list">普通留言</a></li>
+                    {if $is_have_order}<li {if $is_order eq 1}class="active"{/if}><a href="user.php?act=message_list&is_order=1">订单留言</a></li>{/if}
                 </ul>
             </div>
             <div class="user-message-list"> 
@@ -520,13 +520,13 @@
                         <div class="m-tit">
                             <h3>{$message.msg_title}</h3>
                             <span>
-                                {if $message.msg_type eq $lang.label_message || $message.msg_type eq $lang.label_complaint || $message.msg_type eq $lang.label_enquiry || $message.msg_type eq $lang.label_custome || $message.msg_type eq $lang.label_buy}
+                                {if $message.msg_type eq '留言' || $message.msg_type eq '投诉' || $message.msg_type eq '询问' || $message.msg_type eq '售后' || $message.msg_type eq '求购'}
                                 {$message.msg_type}
                                 {else}
-                                {$lang.your_message}
+                                留言
                                 {/if}
                             </span>
-							{if $is_order eq 1}<div class="fl ml5">{$lang.order_number}:{$message.order_sn}</div>{/if}
+							{if $is_order eq 1}<div class="fl ml5">订单号:{$message.order_sn}</div>{/if}
                             <div class="fr">
 								{if $is_order eq 1}
 									<a href="user.php?act=del_msg&amp;id={$key}&amp;is_order=1&amp;order_id={$message.order_id}" onclick="if (!confirm('{$lang.confirm_remove_msg}')) return false;" class="ftx-05 fr ml0">{$lang.drop}</a>
@@ -562,43 +562,43 @@
         <!--{if $action eq 'affiliate'}-->
         <div class="user-mod">
             <div class="user-title">
-                <h2>{$lang.affiliate_codetype_step}</h2>
+                <h2>推荐流程及方式</h2>
             </div>
             <div class="affiliate-step-warp clearfix">
                     <div class="a-items">
                     <div class="a-item">
                             <div class="a-item-info">
                             <i class="item-icon item-icon-1"></i>
-                            <span>1 {$lang.affiliate_step.0}</span>
+                            <span>1 会员发送推荐码</span>
                         </div>
                         <i class="iconfont icon-right"></i>
                     </div>
                     <div class="a-item">
                             <div class="a-item-info">
                             <i class="item-icon item-icon-2"></i>
-                            <span>2 {$lang.affiliate_step.1}</span>
+                            <span>2 访问者访问平台</span>
                         </div>
                         <i class="iconfont icon-right"></i>
                     </div>
                     <div class="a-item">
                             <div class="a-item-info">
                             <i class="item-icon item-icon-3"></i>
-                            <span>3 {$lang.affiliate_step.2}</span>
+                            <span>3 访问者注册/购买</span>
                         </div>
                         <i class="iconfont icon-right"></i>
                     </div>
                     <div class="a-item">
                             <div class="a-item-info">
                             <i class="item-icon item-icon-4"></i>
-                            <span>4 {$lang.affiliate_step.3}</span>
+                            <span>4 会员获得佣金提成</span>
                         </div>
                     </div>
                 </div>
                 <div class="affiliate-mode">
                     <div class="mode-item">
                             <div class="tit mt10">
-                            <span class="type">{$lang.way_one}</span>
-                            <strong>{$lang.invitation_link}</strong>
+                            <span class="type">方式一</span>
+                            <strong>邀请链接</strong>
                         </div>
                         <div class="cont">
                             <div class="aff-form">
@@ -607,9 +607,37 @@
                                     <a href="javascript:void(0);" class="sc-btn sc-redBg-btn" id="clip_button">{$lang.code_copy}</a>
                                 </div>
                             </div>
-                            <p>{$lang.invitation_link_notic}</p>
+                            <p>把专属你的邀请链接发给你的好友，好友打开此接接后系统会默认输入你的邀请码</p>
                         </div>
                     </div>
+                    <!--<div class="mode-item">
+                            <div class="tit mt20">
+                            <span class="type">方式二</span>
+                            <strong>分享到</strong>
+                        </div>
+                        <div class="cont">
+                            <div class="c-item">
+                                    <i class="c-item-i c-item-i-1"></i>
+                                <span>朋友圈</span>
+                            </div>
+                            <div class="c-item">
+                                    <i class="c-item-i c-item-i-2"></i>
+                                <span>QQ好友</span>
+                            </div>
+                            <div class="c-item">
+                                    <i class="c-item-i c-item-i-3"></i>
+                                <span>新浪微博</span>
+                            </div>
+                            <div class="c-item">
+                                    <i class="c-item-i c-item-i-4"></i>
+                                <span>QQ空间</span>
+                            </div>
+                            <div class="c-item">
+                                    <i class="c-item-i c-item-i-5"></i>
+                                <span>微信好友</span>
+                            </div>
+                        </div>
+                    </div>-->
                 </div>
             </div>
             <div class="user-title">
@@ -741,13 +769,13 @@
                         <div class="no_info no_info_line">
                             {if $smarty.get.sign eq 0}
                                 <h3>{insert name='get_page_no_records' filename=$filename act='comment_list_0'}</h3>
-                                <div class="no_btn"><a href="index.php" class="sc-btn">{$lang.goto_mall}</a></div>
+                                <div class="no_btn"><a href="index.php" class="sc-btn">去逛商城</a></div>
                             {elseif $smarty.get.sign eq 1}
                                 <h3>{insert name='get_page_no_records' filename=$filename act='comment_list_1'}</h3>
-                                <div class="no_btn"><a href="user.php?act=comment_list" class="sc-btn">{$lang.all_comment_list}</a></div>
+                                <div class="no_btn"><a href="user.php?act=comment_list" class="sc-btn">全部评价/晒单</a></div>
                             {elseif $smarty.get.sign eq 2}
                                 <h3>{insert name='get_page_no_records' filename=$filename act='comment_list_2'}</h3>
-                                <div class="no_btn"><a href="user.php?act=comment_list" class="sc-btn">{$lang.all_comment_list}</a></div>
+                                <div class="no_btn"><a href="user.php?act=comment_list" class="sc-btn">全部评价/晒单</a></div>
                             {/if}
                         </div>
                     </div>
@@ -848,19 +876,19 @@
                                     </div>
                                     <div class="shopper-name">
                                         <div class="item">
-                                            <strong>{$lang.synthesize}</strong>
+                                            <strong>综合</strong>
                                             <span>{$merch_cmt.cmt.all_zconments.score}</span>
                                         </div>
                                         <div class="item">
-                                            <span>{$lang.goods}</span>
+                                            <span>商品</span>
                                             <span>{$merch_cmt.cmt.commentRank.zconments.score}</span>
                                         </div>
                                         <div class="item">
-                                            <span>{$lang.service}</span>
+                                            <span>服务</span>
                                             <span>{$merch_cmt.cmt.commentServer.zconments.score}</span>
                                         </div>
                                         <div class="item">
-                                            <span>{$lang.deliver_goods}</span>
+                                            <span>发货</span>
                                             <span>{$merch_cmt.cmt.commentDelivery.zconments.score}</span>
                                         </div>
                                     </div>
@@ -962,7 +990,7 @@
                                 <div class="info-sku">{$lang.card_number_label}：{$take.gift_sn}</div>
                             </div>
                         </div>
-                        <div class="t-statu">{if $take.status eq 1}{$lang.cs.101}{elseif $take.status eq 2}<a onclick="if (confirm('{$lang.confirm_received}'))location.href='user.php?act=confim_goods&take_id={$take.gift_gard_id}'" class="sc-btn">{$lang.received}</a>{else}{$lang.complete}{/if}</div>
+                        <div class="t-statu">{if $take.status eq 1}{$lang.cs.101}{elseif $take.status eq 2}<a onclick="if (confirm('{$lang.confirm_received}'))location.href='user.php?act=confim_goods&take_id={$take.gift_gard_id}'" class="sc-btn">确认收货</a>{else}完成{/if}</div>
                     </div>
                     <div class="item-f">
                         <div class="f-left">{$lang.gift_address}：{$take.address}</div>
@@ -998,7 +1026,7 @@
 				{foreach from=$orders item=order}
                     <dl class="item">
                         <dt class="item-t">
-						{if $is_complaint eq 1}<div class="t-statu">{$lang.complaint_state.$order.complaint_state}{if $order.has_talk eq 1}<span class="red">--{$lang.unread_information}</span>{/if}</div>{/if}
+						{if $is_complaint eq 1}<div class="t-statu">{$lang.complaint_state.$order.complaint_state}{if $order.has_talk eq 1}<span class="red">--未读信息</span>{/if}</div>{/if}
                             <div class="t-info">
                                 <span class="info-item">{$lang.order_number}：{$order.order_sn}</span>
                                 <span class="info-item">{$order.order_time}</span>
@@ -1041,11 +1069,11 @@
                             </div>
                             <div class="c-handle">
 								{if $is_complaint eq 0}
-                                <a href="user.php?act=complaint_apply&order_id={$order.order_id}" class="sc-btn">{$lang.apply_transaction_disputes}</a>
+                                <a href="user.php?act=complaint_apply&order_id={$order.order_id}" class="sc-btn">申请交易纠纷</a>
 								{else}
-								<a href="user.php?act=complaint_apply&complaint_id={$order.is_complaint}" class="sc-btn">{$lang.View_details}</a>
+								<a href="user.php?act=complaint_apply&complaint_id={$order.is_complaint}" class="sc-btn">查看详情</a>
 								{if $order.complaint_state eq 4}
-								<a href="javascript:void();" ectype="del_compalint" data-id="{$order.is_complaint}" class="sc-btn">{$lang.drop}</a>
+								<a href="javascript:void();" ectype="del_compalint" data-id="{$order.is_complaint}" class="sc-btn">删除</a>
 								{/if}
 								{/if}
 							</div>
@@ -1069,7 +1097,7 @@
 		 $("*[ectype='del_compalint']").on("click", function () {
 			 var _this = $(this);
 			 var id = _this.data("id");
-			 if(confirm("{$lang.confirm_delect}")){
+			 if(confirm("确定删除吗？")){
 				 Ajax.call('ajax_user.php?act=del_compalint', 'compalint_id=' + id, function(data){
 					 if(data.error == 1){
 						pbDialog(data.message,"",0);
@@ -1103,10 +1131,10 @@
                     <div class="iis-state-warp">
                         <i class="icon icon-iis-1"></i>
                         <div class="iis-state-info">
-                            <div class="tit">{$lang.complaint_state_notic}</div>
+                            <div class="tit">您的纠纷单已提交，等待管理员处理。</div>
                             <div class="iis-btn">
-                                <a href="user.php?act=arbitration&complaint_id={$complaint_id}&complaint_state=4" class="sc-btn">{$lang.arbitration}</a>
-                                <a href="user.php?act=complaint_apply&complaint_id={$complaint_id}" class="sc-btn">{$lang.complaint_apply}</a>
+                                <a href="user.php?act=arbitration&complaint_id={$complaint_id}&complaint_state=4" class="sc-btn">问题已解决</a>
+                                <a href="user.php?act=complaint_apply&complaint_id={$complaint_id}" class="sc-btn">更新纠纷详情</a>
                             </div>
                         </div>
                     </div>
@@ -1196,7 +1224,7 @@
                                 {if $complaint_id eq 0}
                                 <textarea name="complaint_content" class="textarea"></textarea>
                                 <div class="form_prompt"></div>
-                                <div class="fl red lh20 mt10">{$lang.complaint_content_notic}</div>
+                                <div class="fl red lh20 mt10">尊敬的用户，为了更好的解决您的问题，请您在问题描述中反馈具体纠纷问题，并上传相关证据图片，避免上传外部链接等内容，以免耽误您的纠纷处理。</div>
                                 {else}
                                 <span class="txt-lh ftx-07">{$complaint_info.complaint_content}</span>
                                 {/if}
@@ -1221,7 +1249,7 @@
                                 </div>
                                 {if $complaint_id eq 0}
                                 <div class="clear"></div>
-                                <div class="fl lh20 mt10">{$lang.evidence_upload_notic}</div>
+                                <div class="fl lh20 mt10">为了能够更快更好地解决问题，请您上传与卖家沟通的记录图片或者其他证明图片</div>
                                 {/if}
                             </div>
                         </div>
@@ -1266,7 +1294,7 @@
                                             {foreach from=$complaint_info.appeal_img item=list}
                                             <li><a href="{$list.img_file}" target="_blank"><img width="78" height="78" alt="" src="{$list.img_file}"></a></li>
                                             {foreachelse}
-                                            {$lang.not_img}
+                                            暂无图片
                                             {/foreach}
                                         </ul>
                                     </div>
@@ -1320,13 +1348,13 @@
                                 <input name="order_id" type="hidden" value="{$order_id}">
                                 {if $complaint_id eq 0}
                                 <input name='act' type='hidden' value='complaint_submit'>
-                                <input type="submit" name="submit" id="submitBtn" class="sc-btn sc-redBg-btn" value="{$lang.submit_confirm}">
+                                <input type="submit" name="submit" id="submitBtn" class="sc-btn sc-redBg-btn" value="确认提交">
                                 {else}
-                                <a href="user.php?act=complaint_list&is_complaint=1" class="sc-btn sc-redBg-btn"> {$lang.back} </a>
+                                <a href="user.php?act=complaint_list&is_complaint=1" class="sc-btn sc-redBg-btn"> 返回 </a>
                                 {/if}
                                 {if $complaint_info.complaint_state eq 2}
                                 <input name='act' type='hidden' value='arbitration'>
-                                <input type="submit" name="submit" class="sc-btn sc-redBg-btn" value="{$lang.submit_arbitration}">
+                                <input type="submit" name="submit" class="sc-btn sc-redBg-btn" value="提交仲裁">
                                 {/if}
                             </div>
                         </div>
@@ -1340,10 +1368,10 @@
         startCheckStalk();
         {/if}
 		//检查谈话
-        function startCheckStalk(){
+        function startCheckStalk()
+        {
           window.setInterval("Checktalk()", 3000);
         }
-
         function Checktalk(){
             var complaint_id = $("input[name='complaint_id']").val();
             Ajax.call('ajax_user.php', "act=talk_release&complaint_id=" +  complaint_id + "&type=1", function(data){
@@ -1352,44 +1380,42 @@
 				$("[ectype='talk_list']").scrollTop(height);
             }, 'POST', 'JSON');
         }
-
-        $("*[ectype='check_title']").on("click", function () {
-            var _this = $(this);
-            var val = _this.data("value");
-			if(val == 0){
-			    _this.parents(".value").find('.form_prompt').html("{$lang.complaint_title_null}");
-			}else{
-			    Ajax.call('ajax_user.php?act=complaint_title_desc', 'title_id=' + val, function(data){
-			        if(data.error == 1){
-					  pbDialog(data.message,"",0);
-					}else{
-					  _this.parents(".value").find('.form_prompt').html(data.content);
-					}
-				}, 'POST', 'JSON');
-			}
-        })
-
-        $(document).on('click','*[ectype="talk_release"]',function(){
-            var _this = $(this);
-            var type = _this.data('type');
-            var talk_content = $("textarea[name='talk_content']").val();
-            var complaint_id = $("input[name='complaint_id']").val();
-            var talk_id = _this.data('id');
-            var back = true;
-            if(type == 0 && talk_content == ''){
-                back = false;
-            }
-            if(back){
-                Ajax.call('ajax_user.php', "act=talk_release&talk_content=" +  talk_content + "&complaint_id=" + complaint_id + "&type=" + type + "&talk_id=" + talk_id, function(data){
-            		$("[ectype='talk_list'] .talk_list_info").html(data.content);
-            		var height = $("*[ectype='talk_list'] .talk_list_info").height();
-            		$("[ectype='talk_list']").scrollTop(height);
-            		$("textarea[name='talk_content']").val('');
-            	}, 'POST', 'JSON');
-            }else{
-                pbDialog(json_languages.talk_content_null,"",0);
-            }
-        })
+             $("*[ectype='check_title']").on("click", function () {
+                 var _this = $(this);
+                 var val = _this.data("value");
+				 if(val == 0){
+					_this.parents(".value").find('.form_prompt').html("{$lang.complaint_title_null}");
+				 }else{
+					 Ajax.call('ajax_user.php?act=complaint_title_desc', 'title_id=' + val, function(data){
+						 if(data.error == 1){
+							pbDialog(data.message,"",0);
+						 }else{
+							_this.parents(".value").find('.form_prompt').html(data.content);
+						 }
+					 }, 'POST', 'JSON');
+				 }
+             })     
+             $(document).on('click','*[ectype="talk_release"]',function(){
+				   var _this = $(this);
+				   var type = _this.data('type');
+				   var talk_content = $("textarea[name='talk_content']").val();
+				   var complaint_id = $("input[name='complaint_id']").val();
+				   var talk_id = _this.data('id');
+				   var back = true;
+				   if(type == 0 && talk_content == ''){
+						back = false;
+				   }
+				   if(back){
+						Ajax.call('ajax_user.php', "act=talk_release&talk_content=" +  talk_content + "&complaint_id=" + complaint_id + "&type=" + type + "&talk_id=" + talk_id, function(data){
+							$("[ectype='talk_list'] .talk_list_info").html(data.content);
+							var height = $("*[ectype='talk_list'] .talk_list_info").height();
+							$("[ectype='talk_list']").scrollTop(height);
+							$("textarea[name='talk_content']").val('');
+						}, 'POST', 'JSON');
+				   }else{
+						pbDialog("发布内容不能为空","",0);
+				   }
+			})
         </script>
 		<!--{/if}-->
         <!-- 交易纠纷详情 end-->
@@ -1405,10 +1431,10 @@
                    {foreach from=$goods_report item=report}
                     <dl class="item">
                         <dt class="item-t">
-                            <div class="t-statu">{if $report.report_state eq 0}{$lang.not_dispose}{elseif $report.report_state eq 2}{$lang.buyer_cancel}{else}{if $report.handle_type eq 1}{$lang.ineffective_report}{elseif $report.handle_type eq 2}{$lang.malicious_report}{else}{$lang.effective_report}{/if}{/if}</div>
+                            <div class="t-statu">{if $report.report_state eq 0}未处理{elseif $report.report_state eq 2}用户取消{else}{if $report.handle_type eq 1}无效举报{elseif $report.handle_type eq 2}恶意举报{else}有效举报{/if}{/if}</div>
                             <div class="t-info">
-                                <span class="info-item">{$lang.report_type}：<em class="red">{$report.type_name}</em></span>
-                                <span class="info-item">{$lang.report_zhuti}：<em class="red">{$report.title_name}</em></span>
+                                <span class="info-item">举报类型：<em class="red">{$report.type_name}</em></span>
+                                <span class="info-item">举报主题：<em class="red">{$report.title_name}</em></span>
                             </div>
                             <div class="fr">{$report.add_time}</div>
                         </dt>
@@ -1418,14 +1444,14 @@
                                     <div class="c-img"><a href="{$report.url}" target="_blank"><img src="{$report.goods_image}" alt="{$report.goods_name}"></a></div>
                                     <div class="c-info">
                                         <div class="info-name"><a href="{$report.url}" target="_blank">{$report.goods_name}</a></div>
-                                        <div class="info-store">{$lang.business}：<span class="ftx-06">{$report.shop_name}</span></div>
+                                        <div class="info-store">商家：<span class="ftx-06">{$report.shop_name}</span></div>
                                     </div>
                                 </div>
                             </div>
                             <div class="c-handle">
-								<a href="user.php?act=goods_report&report_id={$report.report_id}" class="sc-btn">{$lang.view}</a>
-								{if $report.report_state eq 0}<a href="#" class="sc-btn" ectype="cancel_report" data-type="1" data-state="2" data-id="{$report.report_id}">{$lang.is_cancel}</a>{/if}
-								{if $report.handle_type gt 0 || $report.report_state eq 2}<a href="#" class="sc-btn" ectype="cancel_report" data-type="1" data-state="3" data-id="{$report.report_id}">{$lang.drop}</a>{/if}
+								<a href="user.php?act=goods_report&report_id={$report.report_id}" class="sc-btn">查看</a>
+								{if $report.report_state eq 0}<a href="#" class="sc-btn" ectype="cancel_report" data-type="1" data-state="2" data-id="{$report.report_id}">取消</a>{/if}
+								{if $report.handle_type gt 0 || $report.report_state eq 2}<a href="#" class="sc-btn" ectype="cancel_report" data-type="1" data-state="3" data-id="{$report.report_id}">删除</a>{/if}
 							</div>
                         </dd>
                     </dl>
@@ -1453,15 +1479,15 @@
                 <div class="ii-section iis-state">
                 	{if $goods_report_info.report_state neq 2}
                     <div class="stepflex">
-                        <dl class="first active"><dt></dt><dd>{$lang.report_step_one}</dd></dl>
-                        <dl {if $report_id gt 0}class="active"{/if}><dt></dt><dd>{$lang.report_step_two}</dd></dl>
-                        <dl class="last{if $goods_report_info.handle_type gt 0} active{/if}"><dt></dt><dd>{$lang.report_step_three}</dd></dl>
+                        <dl class="first active"><dt></dt><dd>填写举报内容</dd></dl>
+                        <dl {if $report_id gt 0}class="active"{/if}><dt></dt><dd>平台审核处理</dd></dl>
+                        <dl class="last{if $goods_report_info.handle_type gt 0} active{/if}"><dt></dt><dd>举报完成</dd></dl>
 					</div>
                     {else}
                     <div class="iis-state-warp">
                     	<i class="icon icon-iis-4"></i>
                         <div class="iis-state-info">
-                        	<div class="tit tit60 ftx-01">{$lang.user_report_notic}</div>
+                        	<div class="tit tit60 ftx-01">用户已取消此商品举报</div>
                         </div>
                     </div>
                     {/if}
@@ -1470,11 +1496,11 @@
                     <div class="ii-section">
                         <div class="user-items">
                             <div class="item">
-                                <div class="label">{$lang.report_seller}：</div>
+                                <div class="label">被举报商家：</div>
                                 <div class="value"><span class="txt-lh ftx-06">{$goods_info.shop_name}</span></div>
                             </div>
                             <div class="item">
-                                <div class="label">{$lang.related_goods}：</div>
+                                <div class="label">相关商品：</div>
                                 <div class="value">
                                     <div class="p-product">
                                         <div class="img"><a href="{$goods_info.url}" target="_blank"><img src="{$goods_info.goods_thumb}" alt="{$goods_info.goods_name}"></a></div>
@@ -1483,7 +1509,7 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="label">{if $report_id eq 0}<em class="red">*</em>{/if}{$lang.report_type}：</div>
+                                <div class="label">{if $report_id eq 0}<em class="red">*</em>{/if}举报类型：</div>
                                 <div class="value">
 									{if $report_id eq 0}
 										{foreach from=$report_type item=type name=name}
@@ -1499,7 +1525,7 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="label">{if $report_id eq 0}<em class="red">*</em>{/if}{$lang.report_zhuti}：</div>
+                                <div class="label">{if $report_id eq 0}<em class="red">*</em>{/if}举报主题：</div>
                                 <div class="value">
 									{if $report_id eq 0}
 										<div class="imitate_select w200">
@@ -1521,7 +1547,7 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="label">{if $report_id eq 0}<em class="red">*</em>{/if}{$lang.report_content}：</div>
+                                <div class="label">{if $report_id eq 0}<em class="red">*</em>{/if}举报内容：</div>
                                 <div class="value">
 									{if $report_id eq 0}
 										<textarea name="inform_content" class="textarea"></textarea>
@@ -1532,9 +1558,9 @@
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="label">{$lang.evidence_upload}：</div>
+                                <div class="label">证据上传：</div>
                                 <div class="value">
-                                    {if $report_id eq 0}<div class="sc-btn fl mt5" id='uploadbutton'>{$lang.upload_img}</div>{/if}
+                                    {if $report_id eq 0}<div class="sc-btn fl mt5" id='uploadbutton'>上传文件</div>{/if}
                                     <div class="upload-img-box">
                                         <div class="img-lists">
                                             <ul class="img-list-ul" ectype="imglist">
@@ -1570,13 +1596,13 @@
                                     <input name='goods_name' type='hidden' value='{$goods_info.goods_name}'>
                                     <input name='goods_image' type='hidden' value='{$goods_info.goods_thumb}'>
                                     <input name='act' type='hidden' value='goods_report_submit'>
-									<input type="submit" name="submit" id="submitBtn" class="sc-btn sc-redBg-btn" value="{$lang.submit_confirm}">
+									<input type="submit" name="submit" id="submitBtn" class="sc-btn sc-redBg-btn" value="确认提交">
 									{else}
 										{if $goods_report_info.report_state eq 0}
-											<input type="button" name="button"  class="sc-btn sc-redBg-btn" value="{$lang.cancel_report}" ectype="cancel_report" data-type="0" data-state="2" data-id="{$goods_report_info.report_id}">
+											<input type="button" name="button"  class="sc-btn sc-redBg-btn" value="取消举报" ectype="cancel_report" data-type="0" data-state="2" data-id="{$goods_report_info.report_id}">
 										{/if}
 										{if $goods_report_info.handle_type gt 0 || $goods_report_info.report_state eq 2}
-											<input type="button" class="sc-btn sc-redBg-btn" value="{$lang.drop}" ectype="cancel_report" data-type="0" data-state="3" data-id="{$goods_report_info.report_id}">
+											<input type="button" class="sc-btn sc-redBg-btn" value="删除" ectype="cancel_report" data-type="0" data-state="3" data-id="{$goods_report_info.report_id}">
 										{/if}
 									{/if}
 								</div>
@@ -1584,9 +1610,14 @@
                         </div>
                     </div>
 					<div class="user-prompt mt20">
-						<div class="tit"><span>{$lang.user_report_title}</span><i class="iconfont icon-down"></i></div>
+						<div class="tit"><span>违规举报须知</span><i class="iconfont icon-down"></i></div>
 						<div class="info">
-                            {$lang.user_report_prompt}
+							<h3>违规举报须知</h3>
+							<p>1、请提供充分的证据以确保举报成功，请珍惜您的会员权利，帮助商城更好地管理网站；</p>
+							<p>2、被举报待处理的商品不能反复进行违规提交，处理下架后的商品不能再次举报，商家如重新上架后仍存在违规现象，可再次对该商品进行违规举报；</p>
+							<p>3、举报仅针对商品，如情节严重，再做处理</p>
+							<p>4、举报时依次选择举报类型及举报主题（必填），填写违规描述（必填），上传5张以内的举证图片（选填），详细的举报内容有助于平台对该条举报的准确处理。</p>
+							<p>5、请客观地向商城反映您所遇到的真实情况，以共同维护一个诚信和公平的购物环境。</p>
 						</div>
 					</div>
                 </form>
@@ -1640,81 +1671,84 @@
                         <div class="iis-state-warp">
                             <i class="icon icon-iis-{if $audit_status eq 0}1{elseif $audit_status eq 1}3{elseif $audit_status eq 2}2{/if}"></i>
                             <div class="iis-state-info">
-                                <div class="tit">{if $audit_status eq 0}{$lang.audit_status_0}{elseif $audit_status eq 1}{$lang.audit_status_1}{elseif $audit_status eq 2}{$lang.audit_status_2}{/if}</div>
+                                <div class="tit">{if $audit_status eq 0}您的增票资质已提交，等待审核。{elseif $audit_status eq 1}恭喜！您的增票资质信息审核通过。{elseif $audit_status eq 2}抱歉！您的增票资质信息错误，审核不通过。{/if}</div>
                                 <div class="iis-btn">
-                                    <a href="user.php?act=vat_update&vat_id={$vat_id}" class="sc-btn">{$lang.modify}</a>
-                                    <a href="user.php?act=vat_remove&vat_id={$vat_id}" class="sc-btn">{$lang.drop}</a>
+                                    <a href="user.php?act=vat_update&vat_id={$vat_id}" class="sc-btn">修改</a>
+                                    <a href="user.php?act=vat_remove&vat_id={$vat_id}" class="sc-btn">删除</a>
                                 </div>
                             </div>						
                         </div>
                     </div>
                     <div class="ii-section iis-aptitude">
-                        <div class="title">{$lang.aptitude_info}</div>
+                        <div class="title">增票资质信息</div>
                         <div class="info">
-                            <p>{$lang.label_company_name}：{$vat_info.company_name}</p>
-                            <p>{$lang.label_tax_id}：{$vat_info.tax_id}</p>
-                            <p>{$lang.label_company_address}：{$vat_info.company_address}</p>
-                            <p>{$lang.label_company_telephone}：{$vat_info.company_telephone}</p>
-                            <p>{$lang.label_bank_of_deposit}：{$vat_info.bank_of_deposit}</p>
-                            <p>{$lang.label_bank_account}：{$vat_info.bank_account}</p>
+                            <p>单位名称：{$vat_info.company_name}</p>
+                            <p>纳税人识别码：{$vat_info.tax_id}</p>
+                            <p>注册地址：{$vat_info.company_address}</p>
+                            <p>注册电话：{$vat_info.company_telephone}</p>
+                            <p>开户银行：{$vat_info.bank_of_deposit}</p>
+                            <p>银行账户：{$vat_info.bank_account}</p>
                         </div>
                     </div>
                     <div class="ii-section iis-ticket last-child">
-                        <div class="title">{$lang.receipt_info}
+                        <div class="title">票据收件信息
 						{if $vat_info.consignee_name || $vat_info.consignee_address || $vat_info.consignee_mobile_phone || $vat_info.consignee_province}
-						<a href="user.php?act=vat_consignee&vat_id={$vat_id}" class="ftx-01">{$lang.modify}</a>
+						<a href="user.php?act=vat_consignee&vat_id={$vat_id}" class="ftx-01">修改</a>
 						{/if}
 						</div>
                         <div class="info">
 							{if !$vat_info.consignee_name && !$vat_info.consignee_address && !$vat_info.consignee_mobile_phone && !$vat_info.consignee_province}
-                            <p>{$lang.label_receipt_set}：<a href="user.php?act=vat_consignee" class="sc-btn">{$lang.set}</a></p>
+                            <p>您还未设置收票地址：<a href="user.php?act=vat_consignee" class="sc-btn">设置</a></p>
 							{else}
-                            <p>{$lang.label_vat_name}：{$vat_info.consignee_name}</p>
-                            <p>{$lang.label_vat_phone}：{$vat_info.consignee_mobile_phone}</p>
-                            <p>{$lang.label_vat_region}：{$new_vat_consignee_list.region}</p>
-                            <p>{$lang.label_vat_address}：{$vat_info.consignee_address}</p>							
+                            <p>收票人姓名：{$vat_info.consignee_name}</p>
+                            <p>收票人手机号：{$vat_info.consignee_mobile_phone}</p>
+                            <p>收票人省份：{$new_vat_consignee_list.region}</p>
+                            <p>收票人地址：{$vat_info.consignee_address}</p>							
 							{/if}
                         </div>
                     </div>
                     <div class="user-prompt mt50">
-                        <div class="tit"><span>{$lang.matters_need_attention}</span><i class="iconfont icon-down"></i></div>
+                        <div class="tit"><span>注意事项</span><i class="iconfont icon-down"></i></div>
                         <div class="info">
-                            {$lang.vat_prompt}
+                            <p>1、我们会在一个工作日内完成审核工作。</p>
+                            <p>2、注意有效增值税发票开票资质仅为一个。</p>
+                            <p>3、发票常见问题查看<a href="#" class="ftx-05">增票资质帮助</a>。</p>
+                            <p>4、本页面信息仅供增值税专用发票-资质审核使用，切勿进行支付相关业务，谨防上当受骗。</p>
                         </div>
                     </div>
 					{else}
 					<form action="user.php" method="post" name="inv_form" ectype="inv_form">
                     <div class="user-items">
                         <div class="item">
-                            <div class="label"><em class="red">*</em>{$lang.label_company_name}：</div>
-                            <div class="value"><input type="text" value="{$vat_info.company_name}" name="company_name" class="text"><div class="notic">{$lang.label_company_name_notic}</div><div class="form_prompt"></div></div>
+                            <div class="label"><em class="red">*</em>单位名称：</div>
+                            <div class="value"><input type="text" value="{$vat_info.company_name}" name="company_name" class="text"><div class="notic">请正确填写公司名称</div><div class="form_prompt"></div></div>
                         </div>
 						<div class="item">
-                            <div class="label"><em class="red">*</em>{$lang.label_company_address}：</div>
-                            <div class="value"><input type="text" value="{$vat_info.company_address}" name="company_address" class="text"><div class="notic">{$lang.label_company_address_notic}</div><div class="form_prompt"></div></div>
+                            <div class="label"><em class="red">*</em>注册地址：</div>
+                            <div class="value"><input type="text" value="{$vat_info.company_address}" name="company_address" class="text"><div class="notic">请正确填写公司注册地址</div><div class="form_prompt"></div></div>
                         </div>
                         <div class="item">
-                            <div class="label"><em class="red">*</em>{$lang.label_tax_id}：</div>
-                            <div class="value"><input type="text" value="{$vat_info.tax_id}" name="tax_id" class="text"><div class="notic">{$lang.label_tax_id_notic}</div><div class="form_prompt"></div></div>
+                            <div class="label"><em class="red">*</em>纳税人识别码：</div>
+                            <div class="value"><input type="text" value="{$vat_info.tax_id}" name="tax_id" class="text"><div class="notic">纳税人识别码一般是15到18位数字</div><div class="form_prompt"></div></div>
                         </div>
                         <div class="item">
-                            <div class="label"><em class="red">*</em>{$lang.label_company_telephone}：</div>
-                            <div class="value"><input type="text" value="{$vat_info.company_telephone}" name="company_telephone" class="text"><div class="notic">{$lang.label_company_telephone_notic}</div><div class="form_prompt"></div></div>
+                            <div class="label"><em class="red">*</em>注册电话：</div>
+                            <div class="value"><input type="text" value="{$vat_info.company_telephone}" name="company_telephone" class="text"><div class="notic">请正确填写联系方式</div><div class="form_prompt"></div></div>
                         </div>
                         <div class="item">
-                            <div class="label"><em class="red">*</em>{$lang.label_bank_of_deposit}：</div>
-                            <div class="value"><input type="text" value="{$vat_info.bank_of_deposit}" name="bank_of_deposit" class="text"><div class="notic">{$lang.label_bank_of_deposit_notic}</div><div class="form_prompt"></div></div>
+                            <div class="label"><em class="red">*</em>开户银行：</div>
+                            <div class="value"><input type="text" value="{$vat_info.bank_of_deposit}" name="bank_of_deposit" class="text"><div class="notic">开户行精确到某某支行</div><div class="form_prompt"></div></div>
                         </div>
                         <div class="item">
-                            <div class="label"><em class="red">*</em>{$lang.label_bank_account}：</div>
-                            <div class="value"><input type="text" value="{$vat_info.bank_account}" name="bank_account" ectype="bank_card" class="text"><div class="notic">{$lang.label_bank_account_notic}</div><div class="form_prompt"><label class="error" ectype="bname"></label></div></div>
+                            <div class="label"><em class="red">*</em>银行账户：</div>
+                            <div class="value"><input type="text" value="{$vat_info.bank_account}" name="bank_account" ectype="bank_card" class="text"><div class="notic">请正确银行账号</div><div class="form_prompt"><label class="error" ectype="bname"></label></div></div>
                         </div>
                         <div class="item mb0">
                             <div class="label">&nbsp;</div>
                             <div class="value">
                                 <div class="checkbox-item lh30">
                                     <input type="checkbox" name="have_read" checked="checked" value='1' class="ui-checkbox" id="invoice_checkbox">
-                                    <label for="invoice_checkbox" class="ui-label">{$lang.invoice_checkbox}<a href="article.php?id=56" target="_blank">{$lang.invoice_checkbox_notic}</a></label>
+                                    <label for="invoice_checkbox" class="ui-label">我已阅读并同意<a href="article.php?id=56" target="_blank">《增票资质确认书》</a></label>
                                 </div>
 								<div class="form_prompt" id="have_read"></div>
                             </div>
@@ -1722,8 +1756,8 @@
                         <div class="item item-button">
                             <div class="label">&nbsp;</div>
                             <div class="value">
-                                <input type="submit" class="sc-btn sc-redBg-btn" name="submit" value="{$lang.submit_goods}" ectype="submitBtn">
-                                <input type="reset" class="sc-btn" name="reset" value="{$lang.reset_alt}">
+                                <input type="submit" class="sc-btn sc-redBg-btn" name="submit" value="提交" ectype="submitBtn">
+                                <input type="reset" class="sc-btn" name="reset" value="重置">
 								<input type="hidden" name="act" value="{$edit|default:vat_insert}">
 								<input type="hidden" name="status" value="{$status|default:insert}">
 								<input type="hidden" name="vat_id" value="{$vat_id}">
@@ -1754,48 +1788,49 @@
 							{if $audit_status eq 0}
                             <i class="icon icon-iis-1"></i>
                             <div class="iis-state-info">
-                                <div class="tit">{$lang.audit_status_0}</div>
+                                <div class="tit">您的增票资质已提交，等待审核。</div>
 							{elseif $audit_status eq 1}
                             <i class="icon icon-iis-3"></i>
                             <div class="iis-state-info">
-                                <div class="tit">{$lang.audit_status_1}</div>
+                                <div class="tit">恭喜！您的增票资质信息审核通过。</div>
+
 							{elseif $audit_status eq 2}
                             <i class="icon icon-iis-2"></i>
                             <div class="iis-state-info">
-                                <div class="tit">{$lang.audit_status_2</div>						
+                                <div class="tit">抱歉！您的增票资质信息错误，审核不通过。</div>						
 							{/if}
                                 <div class="iis-btn">
-                                    <a href="user.php?act=vat_update&vat_id={$vat_id}" class="sc-btn">{$lang.modify}</a>
-                                    <a href="user.php?act=vat_remove&vat_id={$vat_id}" class="sc-btn">{$lang.drop}</a>
+                                    <a href="user.php?act=vat_update&vat_id={$vat_id}" class="sc-btn">修改</a>
+                                    <a href="user.php?act=vat_remove&vat_id={$vat_id}" class="sc-btn">删除</a>
                                 </div>
                             </div>								
                         </div>
                     </div>
                     <div class="ii-section iis-aptitude">
-                        <div class="title">{$lang.aptitude_info}</div>
+                        <div class="title">增票资质信息</div>
                         <div class="info">
-                            <p>{$lang.label_company_name}：{$vat_info.company_name}</p>
-                            <p>{$lang.label_tax_id}：{$vat_info.tax_id}</p>
-                            <p>{$lang.label_company_telephone}：{$vat_info.company_telephone}</p>
-                            <p>{$lang.label_bank_of_deposit}：{$vat_info.bank_of_deposit}</p>
-                            <p>{$lang.label_bank_account}：{$vat_info.bank_account}</p>
+                            <p>单位名称：{$vat_info.company_name}</p>
+                            <p>纳税人识别码：{$vat_info.tax_id}</p>
+                            <p>注册电话：{$vat_info.company_telephone}</p>
+                            <p>开户银行：{$vat_info.bank_of_deposit}</p>
+                            <p>银行账户：{$vat_info.bank_account}</p>
                         </div>
                     </div>
                     <div class="ii-section iis-ticket last-child">
-                        <div class="title">{$lang.receipt_info}</div>
+                        <div class="title">票据收件信息</div>
                         <div class="info">
 							<form action="user.php" method="post" name="vat_form" id="vat_form">
 							<div class="user-items">
 								<div class="item">
-									<div class="label">{$lang.label_vat_name}：</div>
+									<div class="label">收票人姓名：</div>
 									<div class="value"><input type="text" value="{$vat_info.consignee_name}" name="consignee_name" class="text"></div>
 								</div>
 								<div class="item">
-									<div class="label">{$lang.label_vat_phone}：</div>
+									<div class="label">收票人手机号：</div>
 									<div class="value"><input type="text" value="{$vat_info.consignee_mobile_phone}" name="consignee_mobile_phone" class="text"></div>
 								</div>
 								<div class="item">
-									<div class="label">{$lang.label_vat_region}：</div>
+									<div class="label">收票人省份：</div>
 									<div class="form-value" ectype="regionLinkage">
 										<dl class="mod-select mod-select-small" ectype="smartdropdown">
 											<dt>
@@ -1850,7 +1885,7 @@
 									</div>
 								</div>
 								<div class="item">
-									<div class="label">{$lang.label_vat_address}：</div>
+									<div class="label">收票人地址：</div>
 									<div class="value"><input type="text" value="{$vat_info.consignee_address}" name="consignee_address" class="text"></div>
 								</div>
 								<div class="item item-button">
@@ -1867,9 +1902,12 @@
                         </div>
                     </div>
                     <div class="user-prompt mt50">
-                        <div class="tit"><span>{$lang.matters_need_attention}</span><i class="iconfont icon-down"></i></div>
+                        <div class="tit"><span>注意事项</span><i class="iconfont icon-down"></i></div>
                         <div class="info">
-                            {$lang.vat_prompt}
+                            <p>1、我们会在一个工作日内完成审核工作。</p>
+                            <p>2、注意有效增值税发票开票资质仅为一个。</p>
+                            <p>3、发票常见问题查看<a href="#" class="ftx-05">增票资质帮助</a>。</p>
+                            <p>4、本页面信息仅供增值税专用发票-资质审核使用，切勿进行支付相关业务，谨防上当受骗。</p>
                         </div>
                     </div>
                 </div>
@@ -1940,20 +1978,20 @@ $(function(){
             },
             messages : {
                 number : {
-                    required : json_languages.number_null
+                    required : '数量不能为空'
                 },
                 desc : {
-                    required : json_languages.booking_number_null
+                    required : '描述不能为空'
                 },
                 linkman : {
-                    required : json_languages.booking_contacts_null
+                    required : '联系人不能为空'
                 },
                 email : {
-                    required : json_languages.null_email_goods,
-                    email : json_languages.email_error
+                    required : '邮箱不能为空',
+                    email : '邮箱格式不正确'
                 },
                 tel : {
-                    required : json_languages.login_phone_packup_one
+                    required : '联系电话不可为空'
                 }
             }
     });
@@ -1970,46 +2008,46 @@ $(function(){
 		url = "ajax_user.php?act=complaint_img&order_id={$order_id}&sessid={$sessid}";
 		<!--{/if}-->
 		var uploader_gallery = new plupload.Uploader({//创建实例的构造方法
-            runtimes: 'html5,flash,silverlight,html4', //上传插件初始化选用那种方式的优先级顺序
-            browse_button: 'uploadbutton', // 上传按钮
-            url: url, //远程上传地址
-            filters: {
-                max_file_size: '2mb', //最大上传文件大小（格式100b, 10kb, 10mb, 1gb）
-                mime_types: [//允许文件上传类型
-                    {title: "files", extensions: "bmp,gif,jpg,png,jpeg"}
-                ]
-            },
-            multi_selection: true, //true:ctrl多文件上传, false 单文件上传
-            init: {
-               FilesAdded: function(up, files) { //文件上传前
-                   var len = $("*[ectype='imglist'] li").length;
-                    plupload.each(files, function(file){
-                        //遍历文件
-                        len ++;
-                    });
-                    if(len > 5){
-                        pbDialog(json_languages.max_file_five_img,"",0);
-                    }else{
-                        submitBtn();
-                    }
+                runtimes: 'html5,flash,silverlight,html4', //上传插件初始化选用那种方式的优先级顺序
+                browse_button: 'uploadbutton', // 上传按钮
+                url: url, //远程上传地址
+                filters: {
+                        max_file_size: '2mb', //最大上传文件大小（格式100b, 10kb, 10mb, 1gb）
+                        mime_types: [//允许文件上传类型
+                                {title: "files", extensions: "bmp,gif,jpg,png,jpeg"}
+                        ]
                 },
-                FileUploaded: function(up, file, info) { //文件上传成功的时候触发
-                    var data = eval("(" + info.response + ")");
-                    if(data.error > 0){
-                        pbDialog(data.message,"",0);
-                        return;
-                    }else{
-                        $("*[ectype='imglist']").html(data.content);
-                    }
-                },
-                UploadComplete:function(up,file){
-                    //所有文件上传成功时触发	
-                },
-                Error: function(up, err){
-                    //上传出错的时候触发
-                    pbDialog(err.message,"",0);
+                multi_selection: true, //true:ctrl多文件上传, false 单文件上传
+                init: {
+                   FilesAdded: function(up, files) { //文件上传前
+                           var len = $("*[ectype='imglist'] li").length;
+                                plupload.each(files, function(file){
+                                        //遍历文件
+                                        len ++;
+                                });
+                                if(len > 5){
+                                        pbDialog("最多只能上传5张图片","",0);
+                                }else{
+                                        submitBtn();
+                                }
+                        },
+                        FileUploaded: function(up, file, info) { //文件上传成功的时候触发
+                                var data = eval("(" + info.response + ")");
+                                if(data.error > 0){
+                                        pbDialog(data.message,"",0);
+                                        return;
+                                }else{
+                                        $("*[ectype='imglist']").html(data.content);
+                                }
+                        },
+                        UploadComplete:function(up,file){
+                                //所有文件上传成功时触发	
+                        },
+                        Error: function(up, err){
+                                //上传出错的时候触发
+                                pbDialog(err.message,"",0);
+                        }
                 }
-            }
         });
 	
         uploader_gallery.init();
@@ -2141,7 +2179,7 @@ $.levelLink(1);//地区三级联动
 $("*[ectype='submitBtn']").click(function(){
 	frm  = document.forms['inv_form'];
 	if(!frm.elements['have_read'].checked){
-		$("#have_read").html("<i>{$lang.invoice_checkbox_first}</i>");
+		$("#have_read").html("<i>请阅读并同意《增票资质确认书》</i>");
 		return false;
 	};
 	
@@ -2180,24 +2218,24 @@ $("*[ectype='inv_form']").validate({
 	},
 	messages : {
 		company_name : {
-			required : json_languages.company_name_null
+			required : "请填写增值发票单位名称"
 		},
 		tax_id : {
-			required : json_languages.tax_id_null,
-			minlength: json_languages.tax_id_error
+			required : "请填写纳税人识别码",
+			minlength: "纳税人识别码位数不正确"
 		},
 		company_address : {
-			required : json_languages.company_address_null
+			required : "请填写注册地址"
 		},
 		company_telephone : {
-			required : json_languages.company_telephone_null
+			required : "请填写联系电话"
 		},
 		bank_of_deposit : {
-			required : json_languages.bank_of_deposit_null
+			required : "请填写开户行名称"
 		},
 		bank_account : {
-			required : json_languages.bank_account_null,
-			bankCardNum : json_languages.bank_account_error
+			required : "请填写银行卡",
+			bankCardNum :"银行卡号不正确"
 		}
 	}
 });

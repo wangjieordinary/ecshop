@@ -4,24 +4,24 @@
 
 <body class="iframe_body">
 	<div class="warpper">
-		<div class="title">{$lang.26_login} - {$ur_here}</div>
+    	<div class="title">登录管理 - {$ur_here}</div>
         <div class="content">	
-            {include file ='library/login_tab.lbi'}
-            <div class="explanation" id="explanation">
-                <div class="ex_tit">
-                    <i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span>
+        	{include file ='library/login_tab.lbi'}
+        	<div class="explanation" id="explanation">
+            	<div class="ex_tit">
+					<i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span>
                     {if $open eq 1}
                     <div class="view-case">
-                        <div class="view-case-tit"><i></i>{$lang.view_tutorials}</div>
+                    	<div class="view-case-tit"><i></i>{$lang.view_tutorials}</div>
                         <div class="view-case-info">
-                            <a href="http://help.ecmoban.com/article-3540.html" target="_blank">{$lang.tutorials_bonus_list_one}</a>
+                        	<a href="http://help.ecmoban.com/article-3540.html" target="_blank">第三方登录插件（QQ互联）申请流程</a>
                         </div>
                     </div>			
                     {/if}				
-                </div>
+				</div>
                 <ul>
-                    <li>{$lang.operation_prompt_content.list.0}</li>
-                    <li>{$lang.operation_prompt_content.list.1}</li>
+                	<li>列表页展示了所有的登录插件名称。</li>
+                    <li>安装插件时需到各第三方应用中申请ID和KEY方可使用。</li>
                 </ul>
             </div>
             <div class="flexilist">
@@ -65,12 +65,12 @@
                                 </tr>
                                 {/if}
                                 {foreachelse}
-                                <tr><td class="no-records" colspan="20">{$lang.no_records}</td></tr>								
+                                    <tr><td class="no-records" colspan="20">{$lang.no_records}</td></tr>								
 								{/foreach}
                             </tbody>
                             <tfoot>
-                                <tr>
-                                	<td colspan="15">
+                            	<tr>
+                                    <td colspan="15">
                                         <div class="tDiv">
                                             <div class="tfoot_btninfo">
                                             	<div id="typeselect" class="imitate_select select_w120">
@@ -118,34 +118,43 @@
 	</div>
  	{include file ='library/pagefooter.lbi'}
 	<script type="text/javascript" language="JavaScript">
-		$.divselect("#typeselect","#typeval",function(obj){
-			changeAction();
-		});
-		
-		/**
-		* @param: bool ext 其他条件：用于转移分类
-		*/
-		function confirmSubmit(frm){
-			if (frm.find("input[name='type']").val() == 'uninstall'){
-				return confirm(confrim_uninstall);
-			}else if (frm.find("input[name='type']").val() == ''){
-				return false;
-			}else{
-				return true;
-			}
-		}
-		
-		function changeAction(){
-			var frm = $("form[name='listForm']");
-			// 切换分类列表的显示
-			$("#show_check").css('display',frm.find("input[name='type']").val() == 'create' ? '' : 'none');
-			if(frm.find("input[name='type']").val() == 'create'){
-				return;
-			}
-			if ($('#btnSubmit').attr("disabled") != 'disabled' && confirmSubmit(frm, false)){
-				frm.submit();
-			}
-		}
+        $.divselect("#typeselect","#typeval",function(obj){
+            changeAction();
+        });
+        /**
+        * @param: bool ext 其他条件：用于转移分类
+        */
+       function confirmSubmit(frm)
+       {
+           if (frm.find("input[name='type']").val() == 'uninstall')
+           {
+               return confirm(confrim_uninstall);
+           }
+           else if (frm.find("input[name='type']").val() == '')
+           {
+               return false;
+           }
+           else
+           {
+               return true;
+           }
+       }
+
+        function changeAction()
+         {
+              var frm = $("form[name='listForm']");
+             // 切换分类列表的显示
+            $("#show_check").css('display',frm.find("input[name='type']").val() == 'create' ? '' : 'none');
+            if(frm.find("input[name='type']").val() == 'create')
+            {
+                    return;
+            }
+             if ($('#btnSubmit').attr("disabled") != 'disabled' &&
+                 confirmSubmit(frm, false))
+             {
+                 frm.submit();
+             }
+         }
 	</script>
 </body>
 </html>

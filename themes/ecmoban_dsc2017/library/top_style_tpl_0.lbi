@@ -7,8 +7,8 @@
 	<div class="toprank" id="toprank">
 		<div class="hd">
 			<ul>
-				<li>{$lang.hot_sale_list}</li>
-				<li>{$lang.promotion_list}</li>
+				<li>热销榜</li>
+				<li>促销榜</li>
 			</ul>
 		</div>
 		<div class="bd">
@@ -50,7 +50,7 @@
 	</div>
 	<!-- 品牌旗舰 -->
 	<div class="catetop-brand" id="catetop-brand">
-		<div class="hd"><h2>{$lang.brand_flagship}</h2></div>
+		<div class="hd"><h2>品牌旗舰</h2></div>
 		<div class="bd">
 			<ul class="clearfix brand-recommend">
 				<!--{foreach from=$cat_store item=store name=store}-->
@@ -87,7 +87,7 @@
 				{* DSC 提醒您：动态载入category_top_default_head.lbi，显示顶级分类页（默认）今日推荐头部广告 *}{insert name='get_adv_child' ad_arr=$category_top_default_best_head}
 			</div>
 			<div class="f-hd">
-				<h2>{$lang.today_recommends}</h2>
+				<h2>今日推荐</h2>
 			</div>
 			<div class="f-bd">
 				<ul class="clearfix">
@@ -117,7 +117,7 @@
 				{* DSC 提醒您：动态载入category_top_default_head.lbi，显示顶级分类页（默认）新品到货头部广告 *}{insert name='get_adv_child' ad_arr=$category_top_default_new_head}
 			</div>
 			<div class="f-hd">
-				<h2>{$lang.new_product}</h2>
+				<h2>新品到货</h2>
 			</div>
 			<div class="f-bd">
 				<ul class="clearfix">
@@ -149,11 +149,11 @@
 	<!-- 楼层电梯 -->
 	<div class="catetop-lift lift-hide" ectype="lift">
     	<div class="lift-list" ectype="liftList">
-            <div class="catetop-lift-item lift-item-current" ectype="liftItem" data-target="#toprank"><span>{$lang.toprank}</span></div>
-            {if $cat_store}<div class="catetop-lift-item" ectype="liftItem" data-target="#catetop-brand"><span>{$lang.brand_flagship}</span></div>{/if}
-            <div class="catetop-lift-item" ectype="liftItem" data-target="#recToday"><span>{$lang.today_recommends}</span></div>
-            <div class="catetop-lift-item" ectype="liftItem" data-target="#newPic"><span>{$lang.new_product}</span></div>
-            <div class="catetop-lift-item lift-history" ectype="liftItem" data-target="#atwillgo"><span>{$lang.Browsing_record}</span></div>
+            <div class="catetop-lift-item lift-item-current" ectype="liftItem" data-target="#toprank"><span>排行榜</span></div>
+            {if $cat_store}<div class="catetop-lift-item" ectype="liftItem" data-target="#catetop-brand"><span>品牌旗舰</span></div>{/if}
+            <div class="catetop-lift-item" ectype="liftItem" data-target="#recToday"><span>今日推荐</span></div>
+            <div class="catetop-lift-item" ectype="liftItem" data-target="#newPic"><span>新品到货</span></div>
+            <div class="catetop-lift-item lift-history" ectype="liftItem" data-target="#atwillgo"><span>浏览记录</span></div>
             <div class="catetop-lift-item lift-item-top" ectype="liftItem"><span>TOP</span></div>
         </div>
 	</div>

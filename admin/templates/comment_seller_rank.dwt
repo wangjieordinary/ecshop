@@ -113,6 +113,8 @@
 	listTable.filter.{$key} = '{$item}';
 	{/foreach}
 	
+	{literal}
+	
 	function confirm_bath()
 	{
 		var action = document.forms['listForm'].elements['sel_action'].value;

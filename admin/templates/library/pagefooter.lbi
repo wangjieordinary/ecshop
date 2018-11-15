@@ -9,7 +9,7 @@ $(function(){
 		var content = data.content;
 		pb({
 			id:"categroy_dialog",
-			title:jl_reminder,
+			title:"温馨提示",
 			width:788,
 			content:content,
 			ok_title:"{$lang.button_submit_alt}",

@@ -10,16 +10,16 @@
         </div>
         {/foreach}
         </div>
-        <p><a href="javascript:selectAll('yes')">{$lang.check_all}</a> / <a href="javascript:selectAll('no')">{$lang.cancel_select_all}</a></p>
+        <p><a href="javascript:selectAll('yes')">{$lang.check_all}</a> / <a href="javascript:selectAll('no')">取消全选</a></p>
         <div class="pb-ct tc">
             <input type="hidden" name="order_id" value="{$order_id}">
             <input type="hidden" name="act" value="set_grab">
-            <input type="submit" name="submit" value="{$lang.submit}" class="btn btn30 red_btn">
+            <input type="submit" name="submit" value="提交" class="btn btn30 red_btn">
         </div>
     </div>
 </form>
 {else}
-<p class="w200 h100" style="text-align:center; line-height:100px;">{$lang.this_seller_no_set_store}</p>
+<p class="w200 h100" style="text-align:center; line-height:100px;">该商家尚未设置门店</p>
 {/if}
 
 <script type="text/javascript">

@@ -37,8 +37,8 @@
                             <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm(this)" class="search-form">
                                 <input autocomplete="off" name="keywords" type="text" id="keyword2" value="{if $search_keywords}{$search_keywords}{else}{insert name='rand_keyword'}{/if}" class="search-text"/>
                                 <input type="hidden" name="store_search_cmt" value="{$search_type|default:0}">
-                                <button type="submit" class="button button-goods" onclick="checkstore_search_cmt(0)">{$lang.serch_goods}</button>
-                                <button type="submit" class="button button-store" onclick="checkstore_search_cmt(1)">{$lang.serch_shop}</button>
+                                <button type="submit" class="button button-goods" onclick="checkstore_search_cmt(0)" >搜商品</button>
+                                <button type="submit" class="button button-store" onclick="checkstore_search_cmt(1)" >搜店铺</button>
                             </form>
                         </div>
                     </div>

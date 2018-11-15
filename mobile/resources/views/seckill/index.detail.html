@@ -29,7 +29,8 @@
                     <a class="product-div-link j-goods-detail" href="javascript:;"></a>详情
                 </li>
                 <li class="div4 box-flex swiper-slide position-rel" category="4">
-                    <a class="product-div-link" href="{url('seckill/index/comment', array('id'=>$goods.goods_id ,'seckill_id'=>$seckill_id ,'tmr'=>$tmr))}"></a>评论
+                    <a class="product-div-link"
+                       href="{url('seckill/index/comment', array('id'=>$goods.goods_id ,'seckill_id'=>$seckill_id ,'tmr'=>$tmr))}"></a>评论
                 </li>
             </ul>
         </nav>
@@ -45,7 +46,8 @@
                             <div class="con goods">
                                 <div class="nav-pb">
                                     <div class="goods-photo goods-photo-images j-show-goods-img goods-banner">
-                                        <span class="goods-num" id="goods-num"><span id="g-active-num"></span>/<span id="g-all-num"></span></span>
+                                        <span class="goods-num" id="goods-num"><span id="g-active-num"></span>/<span
+                                                id="g-all-num"></span></span>
 
                                         <div class="swiper-wrapper my-gallery-box" data-pswp-uid="10">
                                             {if $pictures} {foreach $pictures as $li}
@@ -68,7 +70,8 @@
                                         </div>
                                     </div>
                                     <section class="seckill-header-title dis-box ">
-                                        <div class="box-flex left"><em class="tag">￥</em><label>{$goods.sec_price}</label>
+                                        <div class="box-flex left"><em
+                                                class="tag">￥</em><label>{$goods.sec_price}</label>
                                             <del>￥{$goods.market_price}</del>
                                         </div>
                                         <div class="right">
@@ -109,13 +112,15 @@
                                             {if $goods.goods_id > 0 && $goods.is_gift == 0 && $goods.parent_id == 0}
                                             <div class="div-num dis-box m-top08 fr">
                                                 <a class="num-less" onClick="changePrice('1')"></a>
-                                                <input class="box-flex" type="text" value="1" onblur="changePrice('2')" name="number" id="goods_number"/>
+                                                <input class="box-flex" type="text" value="1" onblur="changePrice('2')"
+                                                       name="number" id="goods_number"/>
                                                 <a class="num-plus" onClick="changePrice('3')"></a>
                                             </div>
                                             {else}
                                             <div class="div-num dis-box m-top08 div-num-disabled fr">
                                                 <a class="num-less"></a>
-                                                <input class="box-flex" type="text" value="{$goods.goods_number}" name="number"/>
+                                                <input class="box-flex" type="text" value="{$goods.goods_number}"
+                                                       name="number"/>
                                                 <a class="num-plus"></a>
                                             </div>
                                             {/if}
@@ -131,7 +136,10 @@
 
                                                 <div class="box-flex t-goods1">好评率 <em class="t-first">{$comment_all.goodReview}%</em>
                                                 </div>
-                                                <div class="t-goods1"><em class="t-first">{$comment_all.allmen}</em><span class="t-jiantou">人评论<i class="iconfont icon-jiantou tf-180"></i></span></div>
+                                                <div class="t-goods1"><em
+                                                        class="t-first">{$comment_all.allmen}</em><span
+                                                        class="t-jiantou">人评论<i
+                                                        class="iconfont icon-jiantou tf-180"></i></span></div>
                                             </div>
                                         </a>
 
@@ -140,9 +148,11 @@
                                                 <div class="dis-box comment-list-box">
                                                     <div class="box-flex p-r">
                                                         {if !empty($good_comment[0]['user_picture'])}
-                                                        <span class="comment-header"><img src="{$good_comment[0]['user_picture']}"></span>
+                                                        <span class="comment-header"><img
+                                                                src="{$good_comment[0]['user_picture']}"></span>
                                                         {else}
-                                                        <span class="comment-header"><img src="{elixir('img/no_image.jpg')}"></span>
+                                                        <span class="comment-header"><img
+                                                                src="{elixir('img/no_image.jpg')}"></span>
                                                         {/if}
                                                         <span class="f-04 col-7 comment-admin">{$good_comment[0]['username']}</span>
                                                     </div>
@@ -158,8 +168,10 @@
                                                     {$good_comment[0]['goods'][0]['goods_attr']}</p>
                                                 {/if}
                                                 <div class="ect-button-more n-ect-button-more m-top10 dis-box">
-                                                    <a href="{url('seckill/index/infoimg', array('id'=>$goods.goods_id,'seckill_id'=>$seckill_id ,'tmr'=>$tmr))}" class="box-flex btn-default-new br-5 min-btn">有图评价</a>
-                                                    <a href="{url('seckill/index/comment', array('id'=>$goods.goods_id ,'seckill_id'=>$seckill_id ,'tmr'=>$tmr))}" class="box-flex btn-default-new br-5 min-btn">全部评价</a>
+                                                    <a href="{url('seckill/index/infoimg', array('id'=>$goods.goods_id,'seckill_id'=>$seckill_id ,'tmr'=>$tmr))}"
+                                                       class="box-flex btn-default-new br-5 min-btn">有图评价</a>
+                                                    <a href="{url('seckill/index/comment', array('id'=>$goods.goods_id ,'seckill_id'=>$seckill_id ,'tmr'=>$tmr))}"
+                                                       class="box-flex btn-default-new br-5 min-btn">全部评价</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -248,9 +260,9 @@
                 <a class="filter-btn-kefu heart" href="javascript:void(0);" onclick="meiqia_chat();" ><i class="kefu"></i><em>客服</em></a>
                 {else}
                     {if $basic_info.kf_type}
-                    <a class="filter-btn-kefu heart" href="https://www.taobao.com/webww/ww.php?ver=3&touid={$basic_info.kf_ww}&siteid=cntaobao&status=1&charset=utf-8"><i class="kefu"></i><em>客服</em></a>
+                    <a class="filter-btn-kefu heart" href="http://www.taobao.com/webww/ww.php?ver=3&touid={$basic_info.kf_ww}&siteid=cntaobao&status=1&charset=utf-8"><i class="kefu"></i><em>客服</em></a>
                     {else}
-                    <a class="filter-btn-kefu heart" href="https://wpa.qq.com/msgrd?v=3&uin={$basic_info.kf_qq}&site=qq&menu=yes"><i class="kefu"></i><em>客服</em></a>
+                    <a class="filter-btn-kefu heart" href="http://wpa.qq.com/msgrd?v=3&uin={$basic_info.kf_qq}&site=qq&menu=yes"><i class="kefu"></i><em>客服</em></a>
                     {/if}
                 {/if}
             {/if}
@@ -266,11 +278,11 @@
             {else}
             {if $basic_info.kf_type}
             <a class="filter-btn-kefu heart"
-               href="https://www.taobao.com/webww/ww.php?ver=3&touid={$basic_info.kf_ww}&siteid=cntaobao&status=1&charset=utf-8"><i
+               href="http://www.taobao.com/webww/ww.php?ver=3&touid={$basic_info.kf_ww}&siteid=cntaobao&status=1&charset=utf-8"><i
                     class="kefu"></i><em>客服</em></a>
             {else}
             <a class="filter-btn-kefu heart"
-               href="https://wpa.qq.com/msgrd?v=3&uin={$basic_info.kf_qq}&site=qq&menu=yes"><i
+               href="http://wpa.qq.com/msgrd?v=3&uin={$basic_info.kf_qq}&site=qq&menu=yes"><i
                     class="kefu"></i><em>客服</em></a>
             {/if}{/if}{/if}{/if}
             <a class="filter-btn-flow  heart j-heart {if $goods_collect}active{/if}"
@@ -298,13 +310,13 @@
             <input name="goods_spec" type="hidden"/>
             <input type="hidden" value="{$region_id}" id="region_id" name="region_id">
             <input type="hidden" value="{$area_id}" id="area_id" name="area_id">
-            <input type="hidden" value="{$area_city}" id="area_city" name="area_city">
             <input type="hidden" name="sec_goods_id" value="{$goods.id}"/>
         </section>
     </div>
 
 
     <!--商品属性弹出层star-->
+    <div class="mask-filter-div"></div>
     <div class="show-goods-attr j-filter-show-div ts-3 b-color-1 property-box">
         <section class="s-g-attr-title b-color-1  product-list-small">
             <div class="product-div" style="overflow: inherit;">
@@ -315,7 +327,7 @@
                         <i class="iconfont icon-guanbi2 show-div-guanbi"></i>
                     </div>
                     <div>
-						<span class="f-06 t-first" id="ECS_GOODS_AMOUNT">
+								<span class="f-06 t-first" id="ECS_GOODS_AMOUNT">
 			            {if $goods.is_promote && $goods.gmt_end_time}
 			              {$goods.promote_price}
 			            {else}
@@ -403,7 +415,6 @@
         </section>
     </div>
 </form>
-<div class="mask-filter-div"></div>
 <!--商品属性弹出层end-->
 {include file="image"}
 <!--快捷导航-->
@@ -441,7 +452,9 @@
         if (qty <= 0) {
             qty = 1;
         }
-        var xiangou_num = {$goods.sec_limit};
+        var xiangou_num = {$goods.sec_limit
+    }
+        ;
         if (qty > xiangou_num && xiangou_num > 0) {
             d_messages('不能超过限购数量');
             return false;
@@ -449,7 +462,7 @@
         if (!/^[0-9]*$/.test(qty) || qty <= 0 || qty > xiangou_num) {
             qty = 1;
         }
-        $("#goods_number").val(qty);
+        $("#goods_number").val(qty)
         var attr = getSelectedAttributes(document.forms['ECS_FORMBUY']);
 
 //                        var warehouse = {if $region_id}{$region_id}{else}0{/if};
@@ -496,41 +509,44 @@
 
         }
     }
-
     $(function () {
         /*倒计时*/
         $("#fnTimeCountDown").fnTimeCountDown();
         initPhotoSwipeFromDOM('.my-gallery-box');
         $(".j-property").click(function (event) {
-            $(".property-box").addClass('show');
+            $(".property-box").addClass('show')
         });
-        getGoodsSpec();
+        getGoodsSpec()
+    })
 
-        $('.ect-select').click(function (e) {
-            if ($(e.target).is('input')) {
-                return;
-            }
-            setTimeout(getGoodsSpec, 100)
-        });
+    $('.ect-select').click(function (e) {
+        if ($(e.target).is('input')) {
+            return;
+        }
+        setTimeout(getGoodsSpec, 100)
     })
 
     // 获取 goodsSpec
     function getGoodsSpec() {
-        var str = '';
+        var str = ''
         $('.swiper-wrapper').find('input').map(function () {
-            if ($(this).attr('id') && $(this).attr('id').substr(0, 5) === 'spec_'  && ($(this).attr('type') === 'radio' || $(this).attr('type') === 'checkbox' )) {
+            if ($(this).attr('id')
+                    && $(this).attr('id').substr(0, 5) === 'spec_'
+                    && ($(this).attr('type') === 'radio' || $(this).attr('type') === 'checkbox' )
+            ) {
                 if ($(this).is(':checked')) {
-                    str = str + $(this).val() + ',';
+                    str = str + $(this).val() + ','
                 }
             }
-        });
-        str = str.substr(0, str.length - 1);
-        $('input[name=goods_spec]').val(str);
+        })
+        str = str.substr(0, str.length - 1)
+        $('input[name=goods_spec]').val(str)
     }
     window.onload = function(){
-        //详情上拉等
-        setTimeout(goodsDetail(),100)
-    }
+            //详情上拉等
+            setTimeout(goodsDetail(),100)
+        }
 </script>
+
 </body>
 </html>

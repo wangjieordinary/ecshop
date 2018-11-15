@@ -14,7 +14,7 @@
                 <!--start-->
 				<div class="ecsc-form-goods">
                 	<div class="explanation" id="explanation">
-                        <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                        <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                     	{$lang.user_guide}
                     </div>
 				  <form name="theForm">

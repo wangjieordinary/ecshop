@@ -257,14 +257,6 @@ $(function(){
 	var btn = document.getElementById("submitBtn");
 
 	btn.onclick = function(){     
-        var should_amount = {$bill.should_amount};
-        var frozen_money = $("input[name='frozen_money']").val();
-        
-        if(frozen_money > should_amount){
-            alert(frozen_gt_should);
-            return false;
-        }
-
 		//防止表单重复提交
 		if(checkSubmit() == true){
 			$(this).parents("form").submit();

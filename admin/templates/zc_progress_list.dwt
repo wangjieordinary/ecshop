@@ -5,20 +5,20 @@
 
 <body class="iframe_body">
 	<div class="warpper">
-    	<div class="title"><a href="zc_project.php?act=list" class="s-back"></a>{$lang.09_crowdfunding} - {$ur_here}</div>
+    	<div class="title"><a href="zc_project.php?act=list" class="s-back"></a>众筹 - {$ur_here}</div>
         <div class="content">	
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                	<li>{$lang.operation_prompt_content.progress_list.0}</li>
-                    <li>{$lang.operation_prompt_content.progress_list.1}</li>
+                	<li>众筹项目进展信息管理。</li>
+                    <li>及时更新项目进展可促进用户参与活动。</li>
                 </ul>
             </div>
             <div class="flexilist">
             	<!--商品列表-->
                 <div class="common-head">
                     <div class="fl">
-                    	<a href="zc_project.php?act=add_evolve&id={$item_id}"><div class="fbutton"><div class="add" title="{$lang.add_zc_progress}"><span><i class="icon icon-plus"></i>{$lang.add_zc_progress}</span></div></div></a>
+                    	<a href="zc_project.php?act=add_evolve&id={$item_id}"><div class="fbutton"><div class="add" title="添加项目进展"><span><i class="icon icon-plus"></i>添加项目进展</span></div></div></a>
                     </div>	
                 </div>
                 <div class="common-content">
@@ -66,7 +66,8 @@
             </div>
 		</div>
 	</div>
-    {include file ='library/pagefooter.lbi'}
+ {include file ='library/pagefooter.lbi'}
+    
 	<script>
 		$(function(){
 			$('.nyroModal').nyroModal();

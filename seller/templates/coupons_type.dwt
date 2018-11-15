@@ -37,7 +37,7 @@
 								<input name="cou_type" type="hidden" value="1,2,3,4" id="">
 							</div>
                             <div class="search-key">
-                                <input type="text" name="cou_name" size="30" class="text text_2" placeholder="{$lang.coupons_name}"/>
+                                <input type="text" name="cou_name" size="30" class="text text_2" placeholder="优惠券名称"/>
                                 <input type="submit" value="{$lang.button_search}" class="submit" />
                             </div>
                         </form>
@@ -48,14 +48,14 @@
                     <table class="ecsc-default-table">
                     	<thead>
                         <tr>
-                            <th width="6%">{$lang.record_id}</th>
-                            <th width="15%" class="tl">{$lang.coupons_name}</th>
-                            <th width="8%">{$lang.type}</th>
-                            <th width="8%">{$lang.use_threshold_money}</th>
-                            <th width="8%">{$lang.face_value_money}</th>
-                            <th width="8%">{$lang.total_send_num}</th>
-                            <th width="8%">{$lang.expiry_date}</th>
-                            <th width="8%">{$lang.expired}</th>
+                            <th width="6%">编号</th>
+                            <th width="15%" class="tl">优惠劵名称</th>
+                            <th width="8%">类型</th>
+                            <th width="8%">使用门槛(元)</th>
+                            <th width="8%">面值(元)</th>
+                            <th width="8%">总发行数(张)</th>
+                            <th width="8%">有效期</th>
+                            <th width="8%">已过期</th>
                             <th width="10%">{$lang.adopt_status}</th>
                             <th width="21%">{$lang.handle}</th>
 						</tr>
@@ -69,7 +69,7 @@
                             <td>{$vo.cou_man}</td>
                             <td>{$vo.cou_money}</td>
                             <td>{$vo.cou_total}</td>
-                            <td>{$vo.cou_start_time}{$lang.to}<br />{$vo.cou_end_time}</td>
+                            <td>{$vo.cou_start_time}至<br />{$vo.cou_end_time}</td>
                             <td>{$vo.cou_is_time}</td>
                             <td class="audit_status">
                                 {if $vo.review_status eq 1}
@@ -152,7 +152,7 @@
             var content = $("#content").html();
             pb({
                 id:"dialog",
-                title:continus_add,
+                title:"添加优惠券",
                 content:content,
                 width:600,
                 height:360,
@@ -197,8 +197,8 @@
 //-->
 
 function coupons_del(cou_id){
-    if(confirm(confirm_delete))
-        $.get('coupons.php?act=remove_coupons', { cou_id:cou_id }, function (data) { if(data=='ok')location.href=location.href;else alert(jl_delete_fail) });
+    if(confirm('确定删除吗?'))
+        $.get('coupons.php?act=remove_coupons', { cou_id:cou_id }, function (data) { if(data=='ok')location.href=location.href;else alert('删除失败!') });
 }
 
 //修改秒杀排序;
@@ -206,7 +206,7 @@ $(function(){
     $('.cou_order').change(function(){
         var cou_order=$(this).val();
         var cou_id=$(this).attr('cou_id');
-        $.get('coupons.php?act=change_order', { cou_id:cou_id,cou_order:cou_order }, function (data) { if(data=='ok')alert(jl_edit_success) });
+        $.get('coupons.php?act=change_order', { cou_id:cou_id,cou_order:cou_order }, function (data) { if(data=='ok')alert('修改成功') });
     })
 })
 </script>

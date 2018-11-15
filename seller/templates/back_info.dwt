@@ -14,7 +14,7 @@
                 	{include file ='library/url_here.lbi'}
 					{include file ='library/seller_menu_tab.lbi'}	
                 	<div class="order-step-info">
-                    	<div class="step-title"><i class="dian"></i><h3>{$lang.back_order_info}</h3></div>
+                    	<div class="step-title"><i class="dian"></i><h3>退货单信息</h3></div>
                     	<ul class="order-info-list">
                         	<li>
                             	<dl>
@@ -129,7 +129,7 @@
                         </ul>
                     </div>
                     <div class="order-step-info">
-                    	<div class="step-title"><i class="dian"></i><h3>{$lang.goods_info}</h3></div>
+                    	<div class="step-title"><i class="dian"></i><h3>商品信息</h3></div>
                         <div class="ecsc-order-content">
                             <table class="ecsc-default-table order">
                                 <thead>

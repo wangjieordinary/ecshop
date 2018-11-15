@@ -91,7 +91,7 @@
             </div>
         </div>
         <div class="form-row">
-            <div class="form-label">{$lang.con_email}：</div>
+            <div class="form-label"><span class="red">*</span>{$lang.con_email}：</div>
             <div class="form-value">
                 <input type="text" class="form-input" name="email" value="{$consignee.email}" id="consignee_email">
                 <div class="form_prompt"></div>

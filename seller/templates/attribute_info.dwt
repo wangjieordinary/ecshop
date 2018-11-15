@@ -52,16 +52,16 @@
                             </dd>
                         </dl>
                         <dl>
-                        	<dt>{$lang.label_attr_filter_style}</dt>
+                        	<dt>分类筛选样式：</dt>
                             <dd>
                             	<div class="checkbox_items">
                                 	<div class="checkbox_item">
                                         <input name="attr_cat_type" type="radio" value="0" class="ui-radio" id="attr_cat_type_0" {if $attr.attr_cat_type eq 0}checked="checked" {/if} />
-                                        <label class="ui-radio-label" for="attr_cat_type_0">{$lang.category_style_one}</label>
+                                        <label class="ui-radio-label" for="attr_cat_type_0">普通</label>
                                     </div>
                                     <div class="checkbox_item">
                                         <input name="attr_cat_type" type="radio" value="1" class="ui-radio" id="attr_cat_type_1" {if $attr.attr_cat_type eq 1}checked="checked" {/if} />
-                                        <label class="ui-radio-label" for="attr_cat_type_1">{$lang.category_style_color}</label>
+                                        <label class="ui-radio-label" for="attr_cat_type_1">颜色</label>
                                     </div>
                            		</div>
                             </dd>
@@ -194,7 +194,7 @@ $(function(){
 		},
 		messages:{
 			attr_name:{
-				required : '<i class="icon icon-exclamation-sign"></i>'+js_name_not_null
+				required : '<i class="icon icon-exclamation-sign"></i>属性名称不能为空'
 			}
 		}			
 	});

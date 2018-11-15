@@ -114,7 +114,7 @@
 									<td class="handle">
                                         <div class="tDiv ht_tdiv">
                                             <a href="goods_transport.php?act=edit&tid={$list.tid}" class="btn_edit"><i class="icon icon-edit"></i>{$lang.edit}</a>
-                                            <a href="javascript:;" onclick="listTable.remove({$list.tid}, '{$lang.drop_confirm}')" class="btn_trash"><i class="icon icon-trash"></i>{$lang.drop}</a>
+                                            <a href="javascript:;" onclick="listTable.remove({$list.tid}, '{$lang.drop_confirm}')" class="btn_trash"><i class="icon icon-trash"></i>{$lang.drop}</a>										
                                         </div>	
 									</td>
                                 </tr>

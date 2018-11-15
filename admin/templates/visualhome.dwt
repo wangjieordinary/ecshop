@@ -174,7 +174,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/8.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_home}</span>
+                                            <span class="txt">首页广告</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -234,7 +234,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/5.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_promo}</span>
+                                            <span class="txt">促销活动</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -346,7 +346,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/5.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_seckill}</span>
+                                            <span class="txt">秒杀活动</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -466,7 +466,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/6.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_sepmodule}</span>
+                                            <span class="txt">活动栏</span>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -568,7 +568,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/7.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_brand}</span>
+                                            <span class="txt">首页品牌</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -648,7 +648,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/8.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_streamer}</span>
+                                            <span class="txt">横幅广告</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -674,7 +674,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/9.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_master}</span>
+                                            <span class="txt">达人专区</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -747,7 +747,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/10.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_storeRec}</span>
+                                            <span class="txt">推荐店铺</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -818,7 +818,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_guessYouLike}</span>
+                                            <span class="txt">还没逛够</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -943,7 +943,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_04.png" /></span>
-                                            <span class="txt">{$lang.custom}</span>
+                                            <span class="txt">自定义区</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -954,7 +954,7 @@
                                         </div>
                                     </div>
                                     <div class="view">
-                                        <div class="custom" data-type="range" data-lift=""><div class="default ui-draggable ui-box-display">{$lang.custom_default_content}</div></div>
+                                        <div class="custom" data-type="range" data-lift=""><div class="default ui-draggable ui-box-display">自定义内容，可以用来展示店铺的特色区域。</div></div>
                                     </div>
                                 </div>
                                 {else}
@@ -962,7 +962,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_01.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_1}</span>
+                                            <span class="txt">图片轮播</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -1072,7 +1072,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/8.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_hot}</span>
+                                            <span class="txt">热门广告</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -1102,7 +1102,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/5.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_seckill}</span>
+                                            <span class="txt">秒杀活动</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -1173,7 +1173,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/7.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_discount}</span>
+                                            <span class="txt">折扣广告</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -1213,7 +1213,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/7.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_brand}</span>
+                                            <span class="txt">首页品牌</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -1468,7 +1468,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/7.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_haohuo}</span>
+                                            <span class="txt">好货推荐</span>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -1592,7 +1592,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/7.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_phb}</span>
+                                            <span class="txt">新品排行</span>
                                         </div>
                                     </div>
                                     <div class="view">
@@ -1791,7 +1791,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/8.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_home}</span>
+                                            <span class="txt">首页广告</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -1867,7 +1867,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.floor}</span>
+                                            <span class="txt">楼层</span>
                                         </div>
                                     </div>
                                     <div class="floormodule festival-floormodule mr10" ectype="module">
@@ -2084,7 +2084,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/8.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_streamer}</span>
+                                            <span class="txt">横幅广告</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -2110,7 +2110,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.modules_txt_guessYouLike}</span>
+                                            <span class="txt">还没逛够</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -2235,7 +2235,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_04.png" /></span>
-                                            <span class="txt">{$lang.custom}</span>
+                                            <span class="txt">自定义区</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -2261,7 +2261,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.floor_1}</span>
+                                            <span class="txt">楼层一</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -2442,7 +2442,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.floor_2}</span>
+                                            <span class="txt">楼层二</span>
                                         </div>
                                     </div>
                                     <div class="module floormodule mr8" ectype="module">
@@ -2761,7 +2761,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.floor_3}</span>
+                                            <span class="txt">楼层三</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -2875,7 +2875,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.floor_4}</span>
+                                            <span class="txt">楼层四</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -2984,7 +2984,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.floor_5}</span>
+                                            <span class="txt">楼层五</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -3083,7 +3083,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.floor_6}</span>
+                                            <span class="txt">楼层六</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -3154,7 +3154,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.floor_7}</span>
+                                            <span class="txt">楼层七</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -3254,7 +3254,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.floor_8}</span>
+                                            <span class="txt">楼层八</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -3377,7 +3377,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.floor_9}</span>
+                                            <span class="txt">楼层九</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>
@@ -3476,7 +3476,7 @@
                                     <div class="drag" data-html="not">
                                         <div class="navLeft">
                                             <span class="pic"><img src="images/visual/navLeft_03.png" /></span>
-                                            <span class="txt">{$lang.floor_10}</span>
+                                            <span class="txt">楼层十</span>
                                         </div>
                                         <div class="setup_box">
                                             <div class="barbg"></div>

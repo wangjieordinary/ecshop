@@ -1,4 +1,5 @@
 <?php
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $_LANG['alipay'] = '<font color="#FF0000">支付宝</font>';
 $_LANG['alipay_desc'] = '支付宝网站(www.alipay.com) 是国内先进的网上支付平台。';

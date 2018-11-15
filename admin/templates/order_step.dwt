@@ -51,7 +51,10 @@
                                                 </div>
                                                 <div class="div_readonly"></div>
                                             </div>
-                                            <div class="notic">{$lang.search_user_name_notic}</div>
+                                            <div class="notic">
+                                                <strong>注意：</strong>搜索结果只显示前20{$lang.record}，如果没有找到相应会员，请更精确地查找。<br>
+                                                另外，如果该会员是从论坛注册的且没有在商城登录过，也无法找到，需要先在商城登录。
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -196,7 +199,7 @@
                     <form action="order.php?act=step_post&step=goods&order_id={$order_id}&step_act={$step_act}" method="post" name="theFormNext" onSubmit="return subOrderAdd()">
                         <div class="goods_btn" id="button-info">
                             <input type="button" value="{$lang.button_cancel}" class="btn btn35 btn_blue" onclick="location.href='order.php?act=process&func=cancel_order&order_id={$order_id}&step_act={$step_act}'" />
-                            <input type="button" class="btn btn35 btn_blue" onclick="history.back()" value="{$lang.button_prev}">
+                            <input type="button" class="btn btn35 btn_blue" onclick="history.back()" value="上一步">
                             <input name="{if $step_act eq 'add'}next{else}finish{/if}" type="submit" class="btn btn35 blue_btn" value="{if $step_act eq 'add'}{$lang.button_next}{else}{$lang.button_submit}{/if}" />
                         </div>
                     </form>

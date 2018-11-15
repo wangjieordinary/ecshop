@@ -17,15 +17,15 @@
                         <form action="javascript:searchUser()" name="searchForm">
                             <div class="search-key">
                                 <div class="imitate_select select_w145">
-                                    <div class="cite">{$lang.select_please}</div>
+                                    <div class="cite">请选择...</div>
                                     <ul class="ps-container" style="display: none;">
-                                        <li><a href="javascript:;" data-value="-1" class="ftx-01">{$lang.all}</a></li>
-                                        <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.not_audited}</a></li>
-                                        <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.audited_adopt}</a></li>
-                                        <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.audited_not_adopt}</a></li>
+                                        <li><a href="javascript:;" data-value="-1" class="ftx-01">全部</a></li>
+                                        <li><a href="javascript:;" data-value="0" class="ftx-01">未审核</a></li>
+                                        <li><a href="javascript:;" data-value="1" class="ftx-01">审核通过</a></li>
+                                        <li><a href="javascript:;" data-value="2" class="ftx-01">审核未通过</a></li>
                                     <input name="review_status" type="hidden" value="-1">
                                 </div>
-                                <input type="text" name="keyword" class="text text_2" placeholder="{$lang.member_name}" />
+                                <input type="text" name="keyword" class="text text_2" placeholder="会员名称" />
                                 <input type="submit" class="submit" value="{$lang.button_search}" />
                             </div>
                         </form>
@@ -39,11 +39,11 @@
                     <thead>
                         <tr>
                             <th width="3%" class="sign"><input type="checkbox" id="tfoot-all" name="checkboxes[]" class="ui-checkbox" onclick='listTable.selectAll(this, "checkboxes")' autocomplete="off" /><label for="tfoot-all" class="ui-label"></label></th>
-                            <th width="30%">{$lang.member_name}</th>
-                            <th width="15%">{$lang.order_id}</th>
-                            <th width="25%">{$lang.delay_time}</th>
-                            <th width="10%">{$lang.adopt_personnel}</th>
-                            <th width="15%">{$lang.adopt_status}</th>
+                            <th width="30%">会员名称</th>
+                            <th width="15%">订单号</th>
+                            <th width="25%">延期时间</th>
+                            <th width="10%">审核人</th>
+                            <th width="15%">审核状态</th>
                         </tr>
                   </thead>
                   <tbody>
@@ -76,26 +76,26 @@
                         	<td colspan="20" class="td_border">
                                 <div class="tfoot_btninfo">
                                     <div id="type" class="imitate_select select_w170">
-                                        <div class="cite">{$lang.select_please}</div>
+                                        <div class="cite">请选择...</div>
                                         <ul>
-                                            <li><a href="javascript:;" data-value="" class="ftx-01">{$lang.select_please}</a></li>
-                                            <li><a href="javascript:;" data-value="batch_remove" class="ftx-01">{$lang.drop}</a></li>
-                                            <li><a href="javascript:;" data-value="review_to" class="ftx-01">{$lang.check}</a></li>
+                                            <li><a href="javascript:;" data-value="" class="ftx-01">请选择...</a></li>
+                                            <li><a href="javascript:;" data-value="batch_remove" class="ftx-01">删除</a></li>
+                                            <li><a href="javascript:;" data-value="review_to" class="ftx-01">审核</a></li>
                                         </ul>
                                         <input name="type" type="hidden" value="" id="type_val" autocomplete="off" />
                                     </div>
                                     <div id="review_status" class="imitate_select select_w170" style="display:none">
-                                        <div class="cite">{$lang.select_please}</div>
+                                        <div class="cite">请选择...</div>
                                         <ul>
-                                            <li><a href="javascript:;" data-value="" class="ftx-01">{$lang.select_please}</a></li>
-                                            <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.audited_adopt}</a></li>
-                                            <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.audited_not_adopt}</a></li>
+                                            <li><a href="javascript:;" data-value="" class="ftx-01">请选择...</a></li>
+                                            <li><a href="javascript:;" data-value="1" class="ftx-01">审核通过</a></li>
+                                            <li><a href="javascript:;" data-value="2" class="ftx-01">审核未通过</a></li>
                                         </ul>
                                         <input name="review_status" type="hidden" value="" id="review_status_val" autocomplete="off" />
                                     </div>
                                     <input type="hidden" value="batch" name="act">
                                     <input name="act" type="hidden" value="batch" />
-                                    <input name="remove" type="submit" id="btnSubmit" ectype="btnSubmit" value="{$lang.button_submit_alt}" class="sc-btn btn_disabled" disabled />
+                                    <input name="remove" type="submit" id="btnSubmit" ectype="btnSubmit" value="确定" class="sc-btn btn_disabled" disabled />
                                 </div>
                             </td>
                         </tr>
@@ -144,7 +144,7 @@ function searchUser()
 {
     if (frm.elements['type'].value == 'trash')
     {
-        return confirm(remove_confirm);
+        return confirm('你确定要删除所选的会员实名信息吗？');
     }
     else if (frm.elements['type'].value == '')
     {
@@ -153,7 +153,7 @@ function searchUser()
     else
     {
         if(frm.elements['review_status'].value == ''){
-            alert(select_operation_cat);
+            alert("请选择操作状态");
             return false;
         }else{
             return true;

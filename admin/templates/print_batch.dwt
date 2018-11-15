@@ -15,7 +15,7 @@
 		var lable = print_order.split(",");
 		if (lable.length <= 0)
 		{
-		$("#body").html(print_batch_content);
+		$("#body").html("请选择打印内容");
 		}
 		
 		for (var i = 0; i < lable.length; i++)

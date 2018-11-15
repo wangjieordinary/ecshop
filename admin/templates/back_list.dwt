@@ -109,7 +109,7 @@
                                     <dd><input type="text" value="" name="consignee" class="s-input-txt" autocomplete="off" /></dd>
                                 </dl>
                                 <dl>
-                                    <dt>{$lang.from_order}</dt>
+                                    <dt>订单来源</dt>
                                     <dd>
                                         <div id="order_referer" class="imitate_select select_w145">
                                           <div class="cite">{$lang.select_please}</div>
@@ -118,7 +118,7 @@
                                              <li><a href="javascript:;" data-value="pc">PC</a></li>
                                              <li><a href="javascript:;" data-value="touch">WAP</a></li>
                                              <li><a href="javascript:;" data-value="mobile">APP</a></li>
-                                             <li><a href="javascript:;" data-value="ecjia-cashdesk">{$lang.cashdesk}</a></li>
+                                             <li><a href="javascript:;" data-value="ecjia-cashdesk">收银台</a></li>
                                           </ul>
                                         <input name="order_referer" type="hidden" value="" id="order_referer_val">
                                         </div>

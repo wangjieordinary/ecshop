@@ -88,7 +88,6 @@ input[type='text']:focus::-webkit-input-placeholder{ color:#fff;}
 .submitDiv .text_span input{ border-radius:50px 0 0 50px; padding-left:22px; width:100px; float:left;}
 
 .submitDiv .sub{ width:113px; height:41px; border:0; background:#ff7c3a; color:#FFF; border-radius:0 50px 50px 0; padding:0; font-size:14px; font-weight:bold; cursor:pointer;font-family: "Microsoft YaHei";}
-.submitDiv .sub_curr{ width:100%; border-radius: 50px;margin:0 auto;display: block;}
 
 .code { background-color: #FFFFFF; width: 100px; height: 34px; border-radius: 4px; position: absolute; z-index: 9; top: -24px; left: 10px; display: none; box-shadow: 0 2px 2px 2px rgba(0,0,0,0.25); }
 .code .arrow { width: 0px;height: 0px;border: 7px solid transparent;border-top-color: #fff; position:absolute;bottom:-14px; left:18px;}

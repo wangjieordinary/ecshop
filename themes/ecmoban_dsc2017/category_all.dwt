@@ -33,7 +33,7 @@
                             <!--{/foreach}-->
                         </ul>
                         <div class="back-top-wp">
-                            <a href="javascript:;" class="back-top" ectype="returnTop">{$lang.returnTop}</a>
+                            <a href="javascript:;" class="back-top" ectype="returnTop">返回顶部</a>
                         </div>
                     </div>
                 </div>

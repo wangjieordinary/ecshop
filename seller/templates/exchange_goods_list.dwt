@@ -61,19 +61,19 @@
                         <td class="tl"><span class="activity_name w410">{$list.goods_name|escape:html}</span></td>
                         <td><span onclick="listTable.edit(this, 'edit_exchange_integral', {$list.goods_id})">{$list.exchange_integral}</span></td>
 						<td>
-							<div class="switch{if $list.is_exchange} active{/if} ml20" title="{if $list.is_exchange}{$lang.yes}{else}{$lang.no}{/if}" onclick="listTable.switchBt(this, 'toggle_exchange', {$list.goods_id})">
+							<div class="switch{if $list.is_exchange} active{/if} ml20" title="{if $list.is_exchange}是{else}否{/if}" onclick="listTable.switchBt(this, 'toggle_exchange', {$list.goods_id})">
 								<div class="circle"></div>
 							</div>
 							<input type="hidden" value="0" name="">
 						</td>
 						<td>
-							<div class="switch{if $list.is_hot} active{/if} ml20" title="{if $list.is_hot}{$lang.yes}{else}{$lang.no}{/if}" onclick="listTable.switchBt(this, 'toggle_hot', {$list.goods_id})">
+							<div class="switch{if $list.is_hot} active{/if} ml20" title="{if $list.is_hot}是{else}否{/if}" onclick="listTable.switchBt(this, 'toggle_hot', {$list.goods_id})">
 								<div class="circle"></div>
 							</div>
 							<input type="hidden" value="0" name="">
 						</td>
 						<td>
-							<div class="switch{if $list.is_best} active{/if} ml20" title="{if $list.is_best}{$lang.yes}{else}{$lang.no}{/if}" onclick="listTable.switchBt(this, 'toggle_best', {$list.goods_id})">
+							<div class="switch{if $list.is_best} active{/if} ml20" title="{if $list.is_best}是{else}否{/if}" onclick="listTable.switchBt(this, 'toggle_best', {$list.goods_id})">
 								<div class="circle"></div>
 							</div>
 							<input type="hidden" value="0" name="">

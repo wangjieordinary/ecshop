@@ -32,38 +32,42 @@
                                         <ul class="module_ss_ul">
                                             <li>
                                                 <div class="desc desc-tc">
-                                                    <h2>{$lang.stats_order_money}</h2>
-                                                    <div class="price">{$total_stats.valid_fee}<span>{$lang.yuan}</span></div>
+                                                    <h2>有效订单总额</h2>
+                                                    <div class="price">{$total_stats.valid_fee}<span>元</span></div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="desc desc-tc">
-                                                    <h2>{$lang.stats_return_money}</h2>
-                                                    <div class="price">{$total_stats.refund_fee}<span>{$lang.yuan}</span></div>
+                                                    <h2>退款总金额</h2>
+                                                    <div class="price">{$total_stats.refund_fee}<span>元</span></div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="desc desc-tc">
-                                                    <h2>{$lang.stats_income_money}</h2>
-                                                    <div class="price">{$total_stats.actual_fee}<span>{$lang.yuan}</span></div>
+                                                    <h2>实收总金额</h2>
+                                                    <div class="price">{$total_stats.actual_fee}<span>元</span></div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="desc desc-tc">
-                                                    <h2>{$lang.total_site_commission}</h2>
-                                                    <div class="price">{$total_stats.platform_commission}<span>{$lang.yuan}</span></div>
+                                                    <h2>站点总佣金</h2>
+                                                    <div class="price">{$total_stats.platform_commission}<span>元</span></div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="desc desc-tc">
-                                                    <h2>{$lang.total_store_cost}</h2>
-                                                    <div class="price">{$total_stats.is_settlement}<span>{$lang.yuan}</span></div>
+                                                    <h2>店铺总费用</h2>
+                                                    <div class="price">{$total_stats.is_settlement}<span>元</span></div>
                                                 </div>
                                             </li>
                                             <li>
+                                                <!--<div class="desc desc-tc">
+                                                    <h2>平台总收入</h2>
+                                                    <div class="price">{$total_stats.total_amount}<span>元</span></div>
+                                                </div>-->
                                                 <div class="desc desc-tc">
-                                                    <h2>{$lang.unsettled_commission}</h2>
-                                                    <div class="price">{$total_stats.no_settlement}<span>{$lang.yuan}</span></div>
+                                                    <h2>未结总佣金</h2>
+                                                    <div class="price">{$total_stats.no_settlement}<span>元</span></div>
                                                 </div>
                                             </li>
                                         </ul>

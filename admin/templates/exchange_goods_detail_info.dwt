@@ -44,7 +44,7 @@
                                         <td><div class="tDiv">{$goods.rank_integral}</div></td>
                                     </tr>
                                     {foreachelse}
-                                    <tr><td class="no-records" colspan="20">{$lang.no_records}</td></tr>								
+                                    <tr><td class="no-records"  colspan="20">{$lang.no_records}</td></tr>								
                                     {/foreach}
                                 </tbody>
                                 <tfoot>

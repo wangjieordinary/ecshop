@@ -1,4 +1,5 @@
 <?php
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $_LANG['post_mail']          = '邮局平邮';
 $_LANG['post_mail_desc']     = '邮局平邮的描述内容。';

@@ -16,7 +16,7 @@
                 <form method="post" action="javascript:searchGoodsname()" target="_self" name="searchForm">
                     <div class="search-key">
                         <input type="text" name="keyword" class="text text_2" placeholder="{$lang.goods_name}" />
-                        <input type="submit" class="submit" value="{$lang.button_search}">
+                        <input type="submit" class="submit" value="搜索">
                     </div>
                 </form>
                 </div>

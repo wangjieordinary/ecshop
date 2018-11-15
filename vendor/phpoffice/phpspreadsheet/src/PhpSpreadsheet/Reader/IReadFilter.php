@@ -7,9 +7,9 @@ interface IReadFilter
     /**
      * Should this cell be read?
      *
-     * @param string $column Column address (as a string value like "A", or "IV")
-     * @param int $row Row number
-     * @param string $worksheetName Optional worksheet name
+     * @param $column string Column address (as a string value like "A", or "IV")
+     * @param $row int Row number
+     * @param $worksheetName string Optional worksheet name
      *
      * @return bool
      */

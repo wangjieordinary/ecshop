@@ -71,9 +71,6 @@
                                                 </ul>
                                                 <input name="goods_id" type="hidden" value="{if $snatch.goods_id}{$snatch.goods_id}{else}0{/if}" id="activity_goods_val">
                                             </div>
-                                            <select name="product_id" class="input_select" {if $snatch.product_id <= 0}style="display:none"{/if}>
-									        {html_options options=$good_products_select selected=$snatch.product_id}
-									        </select>
                                         </div>
                                     </div>
                                     <div class="item">
@@ -175,49 +172,9 @@
             </div>
 		</div>
 	</div>
-	{include file ='library/pagefooter.lbi'}
+ {include file ='library/pagefooter.lbi'}
 <script type="text/javascript">
-	$.divselect("#activity_goods","#activity_goods_val",function(obj){
-		var filter = new Object;
-		filter.goods_id = document.forms['theForm'].elements['goods_id'].value;
-
-		Ajax.call('snatch.php?is_ajax=1&act=search_products', filter, searchProductsResponse, 'GET', 'JSON');
-	});
-
-	function searchProductsResponse(result){
-		var frm = document.forms['theForm'];
-		var sp = frm.elements['product_id'];
-
-		if(result.error == 0){
-		    /* 清除 options */
-		    sp.length = 0;
-
-		    /* 创建 product options */
-		    var products = result.content.products;
-		    if(products.length){
-				sp.style.display = 'block';
-
-				for(i = 0; i < products.length; i++){
-					var p_opt = document.createElement("OPTION");
-					p_opt.value = products[i].product_id;
-					p_opt.text  = products[i].goods_attr_str;
-					sp.options.add(p_opt);
-				}
-		    }else{
-				sp.style.display = 'none';
-
-				var p_opt = document.createElement("OPTION");
-				p_opt.value = 0;
-				p_opt.text  = search_is_null;
-				sp.options.add(p_opt);
-		    }
-		}
-
-		if(result.message.length > 0){
-			alert(result.message);
-		}
-	}
-
+	
 	//时间选择
 	var opts1 = {
 		'targetId':'start_time',//时间写入对象的id

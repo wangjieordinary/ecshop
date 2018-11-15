@@ -94,7 +94,7 @@
                                         </div>
                                         <div class="move_handle">
                                             <a href="javascript:void(0);" class="btn btn25 moveAll" ectype="moveAll">{$lang.check_all}</a>
-                                            <a href="javascript:void(0);" class="btn btn25 btn_red" ectype="sub" data-operation="drop_floor_content">{$lang.remove_relation}</a>
+                                            <a href="javascript:void(0);" class="btn btn25 btn_red" ectype="sub" data-operation="drop_floor_content">移除关联</a>
                                         </div>
                                     </div>
                                 </div>

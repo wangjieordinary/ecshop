@@ -167,9 +167,9 @@
 													<div id="review_status_select" class="imitate_select select_w120">
 													  <div class="cite">{$lang.select_please}</div>
 													  <ul>
-														 <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.all}</a></li>
-														 <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.audited_not_adopt}</a></li>
-														 <li><a href="javascript:;" data-value="3" class="ftx-01">{$lang.audited_adopt}</a></li>
+														 <li><a href="javascript:;" data-value="0" class="ftx-01">全部</a></li>
+														 <li><a href="javascript:;" data-value="2" class="ftx-01">审核未通过</a></li>
+														 <li><a href="javascript:;" data-value="3" class="ftx-01">审核通过</a></li>
 													  </ul>
 													  <input name="review_status" type="hidden" value="0" id="review_status_val">
 													</div>

@@ -3,11 +3,11 @@
 		<thead>
 		<tr>
 			<th width="10%"><div class="tDiv">TOP 10</div></th>
-			<th width="15%"><div class="tDiv">{$lang.store_name}</div></th>
-			<th width="30%"><div class="tDiv">{$lang.goods_name}</div></th>
-			<th width="10%"><div class="tDiv">{$lang.goods_single_price}</div></th>
-			<th width="10%"><div class="tDiv">{$lang.total_sales_of_goods}</div></th>
-			<th width="15%"><div class="tDiv">{$lang.latest_sale_date}</div></th>
+			<th width="15%"><div class="tDiv">门店名称</div></th>
+			<th width="30%"><div class="tDiv">商品名称</div></th>
+			<th width="10%"><div class="tDiv">商品单价</div></th>
+			<th width="10%"><div class="tDiv">商品总销量</div></th>
+			<th width="15%"><div class="tDiv">最新售出日期</div></th>
 		</tr>
 		</thead>
 		<tbody>

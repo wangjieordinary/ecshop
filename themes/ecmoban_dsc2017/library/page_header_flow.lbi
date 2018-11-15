@@ -23,7 +23,7 @@
                 <div class="dt dsc-cm">{$lang.Site_navigation}<i class="iconfont icon-down"></i></div>
                 <div class="dd dorpdown-layer">
                     <dl class="fore1">
-                        <dt>{$lang.characteristic_theme}</dt>
+                        <dt>特色主题</dt>
                         <dd>
                             <!-- {foreach name=nav_top_list from=$top_cat_list item=topc_cats key=key} -->
                                 <!--{if $smarty.foreach.nav_top_list.index < 3}-->
@@ -33,7 +33,7 @@
                         </dd>
                     </dl>
                     <dl class="fore2">
-                        <dt>{$lang.modules_txt_promo}</dt>
+                        <dt>促销活动</dt>
                         <dd>
                             <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav key=key} -->
                                 <!--{if $smarty.foreach.nav_top_list.index >= 4}-->
@@ -52,7 +52,7 @@
     <div class="w w1200">
         <div class="logo">
             <div class="logoImg"><a href="{$url_index}"><img src="images/logo.gif" /></a></div>
-            <div class="tit"><!--{if $step eq "cart"}-->{$lang.cat_list}（<em ectype="cartNum">0</em>）<!--{else}-->{$lang.settlement_page}<!--{/if}--></div>
+            <div class="tit"><!--{if $step eq "cart"}-->{$lang.cat_list}（<em ectype="cartNum"></em>）<!--{else}-->结算页<!--{/if}--></div>
         </div>
         <!--{if $step eq "cart"}-->
         <div class="dsc-search">
@@ -74,15 +74,15 @@
         <!--{else}-->
         <div class="cart-stepflex">
             <div class="cart-step-item cur">
-                <span>1.{$lang.my_cart}</span>
+                <span>1.我的购物车</span>
                 <i class="iconfont icon-arrow-right-alt"></i>
             </div>
             <div class="cart-step-item {if $step eq 'checkout'}curr{elseif $step eq 'done' || $step eq 'order_reload' || $step eq 'pay_success'}cur{/if}">
-                <span>2.{$lang.fillin_order_info}</span>
+                <span>2.填写订单信息</span>
                 <i class="iconfont icon-arrow-right-alt"></i>
             </div>
             <div class="cart-step-item {if $step eq 'done' || $step eq 'order_reload' || $step eq 'pay_success'}curr{/if}">
-                <span>3.{$lang.submit_order_success}</span>
+                <span>3.成功提交订{$store_seller}单</span>
             </div>
         </div>
         <!--{/if}-->

@@ -18,30 +18,30 @@
                                 <img id="screenshot" src="{$curr_template.screenshot}" width="168" height="216">
                             </div>
                             <div class="templet-info">
-                                <h3 class="template_tit">{$lang.current_use_tpl}</h3>
+                                <h3 class="template_tit">当前使用模板</h3>
                                 <strong class="template_name">{$curr_template.name}&nbsp;{$curr_template.version}</strong>
                                 <span>{$curr_template.desc}</span>
                                 <div class="template_desc"><a href="{if $curr_template.author_uri}{$curr_template.author_uri}{else}#{/if}" target="_blank"/>{$curr_template.author}</a></div>
-                                <input class="button mr10" onclick="backupTemplates('{$curr_template.code}')" value="{$lang.backup_tpl}" type="button">
+                                <input class="button mr10" onclick="backupTemplates('{$curr_template.code}')" value="备份该模板模板" type="button">
                             </div>
                             <div class="plat"></div>
                         </div>
                         <div class="tabs">
                             <ul class="qh">
-                                <li class="current" data-export='1' ectype="li_type">{$lang.this_shop_tpl}</li>
-                                <li data-export='0' ectype="li_type">{$lang.can_use_tpl}</li>
+                                <li class="current" data-export='1' ectype="li_type">本店模板</li>
+                                <li data-export='0' ectype="li_type">可用的模板</li>
                             </ul>
                             <div class="export">   
                                 <div class="btns">
-                                    <a href="javascript:void(0);" class="btn btn2 export_tem" ectype='export'>{$lang.export}</a>
-                                    <a href="javascript:void(0);" class="btn btn2 determine" ectype='confirm'>{$lang.button_submit_alt}</a>
-                                    <a href="javascript:void(0);" class="btn btn2 determine" ectype='cancel'>{$lang.cancel}</a>
+                                    <a href="javascript:void(0);" class="btn btn2 export_tem" ectype='export'>导出</a>
+                                    <a href="javascript:void(0);" class="btn btn2 determine" ectype='confirm'>确定</a>
+                                    <a href="javascript:void(0);" class="btn btn2 determine" ectype='cancel'>取消</a>
                                     <div id="temp_mode" class="imitate_select select_w145 hide">
-                                        <div class="cite">{$lang.all_tpl}</div>
+                                        <div class="cite">全部模板</div>
                                         <ul>
-                                            <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.all_tpl}</a></li>
-                                            <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.free_tpl}</a></li>
-                                            <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.cost_tpl}</a></li>
+                                            <li><a href="javascript:;" data-value="0" class="ftx-01">全部模板</a></li>
+                                            <li><a href="javascript:;" data-value="2" class="ftx-01">免费模板</a></li>
+                                            <li><a href="javascript:;" data-value="1" class="ftx-01">付费模板</a></li>
                                         </ul>
                                         <input name="temp_mode" type="hidden" value="0" id="temp_mode_val"/>
                                     </div>
@@ -61,16 +61,16 @@
                                                 {if $template.screenshot}<img width="263" height="338" src="{$template.screenshot}" data-src-wide="{$template.template}" border="0" id="{$template.code}" class="pic" ectype="pic"> {/if}                                       <div class="bg"></div>
                                             </div>
                                             <div class="info">
-                                            	<div class="row"><a href="{$template.template}" target="_blank" class="mr10" ectype="see">{$lang.see_big_img}</a></div>
+                                            	<div class="row"><a href="{$template.template}" target="_blank" class="mr10" ectype="see">查看大图</a></div>
                                                 <div class="row">
-                                                    <a href="visual_editing.php?act=first&code={$template.code}" target="_blank" class="mr10">{$lang.decorate}</a>
-                                                    <a href="javascript:template_information('{$template.code}','{$ru_id}');" class="mr10">{$lang.edit_template_infor}</a>
-                                                    <a href="javascript:removeTemplate('{$template.code}')">{$lang.remove_template}</a>
+                                                    <a href="visual_editing.php?act=first&code={$template.code}" target="_blank" class="mr10">装修</a>
+                                                    <a href="javascript:template_information('{$template.code}','{$ru_id}');" class="mr10">编辑模板信息</a>
+                                                    <a href="javascript:removeTemplate('{$template.code}')">删除模板</a>
                                                 </div>
                                             </div>
                                             <div class="box" onclick="javascript:setupTemplate('{$template.code}','0')">
                                                 <i class="icon icon-gou"></i>
-                                                <span>{$lang.now_use}</span>
+                                                <span>立即使用</span>
                                             </div>
                                             <i class="ing"></i>
                                         </li>
@@ -91,17 +91,17 @@
                                         </div>
                                         <div class="info">
                                             <div class="row">
-                                            	<div class="price">{$lang.price}：<em class="org">{if $template.temp_mode eq 0}{$lang.free}{else}{$template.temp_cost}{/if}</em></div>
-                                                <div class="sales_volume">{$lang.sales_num}：{$template.sales_volume}</div>
+                                            	<div class="price">价格：<em class="org">{if $template.temp_mode eq 0}免费{else}{$template.temp_cost}{/if}</em></div>
+                                                <div class="sales_volume">销量：{$template.sales_volume}</div>
                                             </div>    
                                             <div class="row">
-                                            	<a href="{$template.template}" target="_blank" class="mr10" ectype="see">{$lang.see_big_img}</a>{if $template.template}{/if}
-                                                <a href="../merchants_store.php?preview=1&temp_code={$template.code}" target="_blank" class="mr10">{$lang.preview}</a>
+                                            	<a href="{$template.template}" target="_blank" class="mr10" ectype="see">查看大图</a>{if $template.template}{/if}
+                                                <a href="../merchants_store.php?preview=1&temp_code={$template.code}" target="_blank" class="mr10">预览</a>
                                             </div>
                                         </div>
                                         <div class="box" onclick="javascript:setupTemplate('{$template.code}','1','{$template.temp_id}','{$template.temp_mode}')">
                                             <i class="icon icon-gou"></i>
-                                            <span>{if $template.temp_mode eq 0}{$lang.use_this_tpl}{else}{$lang.buy_this_tpl}{/if}</span>
+                                            <span>{if $template.temp_mode eq 0}使用此模板{else}购买此模板{/if}</span>
                                         </div>
                                     </li>
                                     {/foreach}
@@ -168,7 +168,7 @@
 		});
 		
 		function setupTemplate(tem,type,temp_id,temp_mode){
-			var msg = jl_use_new_cover_old;
+			var msg = '启用新的Flash样式将覆盖原来的样式。您确定要启用选定的样式吗？';
 			if(temp_mode == 1){
 				msg = "确认购买该模板吗？";
 			}
@@ -180,7 +180,7 @@
 		function setupTemplateResponse(data){
 			if(data.error == 1 || data.error == 4){
 				if(data.error == 4){
-					alert(jl_buied_no_rebuy);
+					alert("由于您存在购买记录，无需再次购买，模板已直接导入您的模板库！");
 				}
 				location.href = "visual_editing.php?act=templates";
 			}
@@ -188,7 +188,7 @@
 			   template_mall_pb(data.content);
 			}
 			else if(data.error == 3){
-				if(confirm(jl_sure_rebuy)){
+				if(confirm("改模板您存在购买记录，确定再次购买？")){
 					template_mall_pb(data.content);
 				}
 			}
@@ -200,10 +200,10 @@
 		function template_mall_pb(content){
 			pb({
 				id: "template_mall_dialog",
-				title: jl_tpl_info,
+				title: "模板信息",
 				width: 945,
 				content: content,
-				ok_title: jl_determine,
+				ok_title: "确定",
 				drag: true,
 				foot: true,
 				cl_cBtn: false,
@@ -221,10 +221,10 @@
 			 var content = result.content;
 			pb({
 				id: "template_information",
-				title: jl_tpl_info,
+				title: "模板信息",
 				width: 945,
 				content: content,
-				ok_title: jl_determine,
+				ok_title: "确定",
 				drag: true,
 				foot: true,
 				cl_cBtn: false,
@@ -236,11 +236,11 @@
 		
 		function removeTemplate(code){
 			if(code){
-				if(confirm(jl_sure_delete_tpl)){
+				if(confirm("确定删除该模板吗？删除后将无法找回！！请谨慎操作！！")){
 					Ajax.call('visual_editing.php', "act=removeTemplate&code=" + code, removeTemplateResponse, 'POST', 'JSON');
 				}
 			}else{
-				alert(jl_select_delete_tpl);
+				alert('请选择删除的模板');
 			}
 		}
 		
@@ -254,7 +254,7 @@
 		}
 		
 		function defaultTemplate(code){
-			if(confirm(jl_sure_recovery_tpl)){
+			if(confirm("确定恢复默认模板吗？恢复后将无法找回现在的模板！！请谨慎操作！！")){
 				Ajax.call('visual_editing.php', "act=defaultTemplate&code=" + code, '', 'POST', 'JSON');
 			}
 		}
@@ -267,10 +267,10 @@
 			var content = data.content;
 			pb({
 				id: "template_information",
-				title: jl_tpl_info,
+				title: "模板信息",
 				width: 945,
 				content: content,
-				ok_title: jl_determine,
+				ok_title: "确定",
 				drag: true,
 				foot: true,
 				cl_cBtn: false,

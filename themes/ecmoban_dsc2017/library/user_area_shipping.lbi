@@ -1,14 +1,14 @@
 <!--{if $shippingFee.is_shipping eq 1}-->
 {if $shippingFee.shipping_fee > 0}
-<span class="gary" ectype="freight_info_span">[ {$lang.express}：{$shippingFee.shipping_fee_formated} ]&nbsp;&nbsp;{if $shippingFee.shipping_title}{$shippingFee.shipping_title}{/if}</span>
+<span class="gary" ectype="freight_info_span">[ 快递：{$shippingFee.shipping_fee_formated} ]&nbsp;&nbsp;{if $shippingFee.shipping_title}{$shippingFee.shipping_title}{/if}</span>
 {else}
 	{if $is_shipping eq 1}
-    <span class="gary" ectype="freight_info_span">[ {$lang.Free_shipping} ]</span>
+    <span class="gary" ectype="freight_info_span">[ 包邮 ]</span>
     {else}
     	{if $shippingFee.shipping_code eq 'fpd'}
             {if $shippingFee.shipping_title}{$shippingFee.shipping_title}{/if}
         {else}
-            <span class="gary" ectype="freight_info_span">[ {$lang.free_freight} ]</span>
+            <span class="gary" ectype="freight_info_span">[ 免运费 ]</span>
         {/if}
 	{/if}
 {/if}

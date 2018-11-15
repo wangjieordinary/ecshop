@@ -19,7 +19,7 @@
             <div class="flexilist">
             	<div class="common-head">
                 	<div class="fl">
-                        <a href="merchants_steps.php?act=add"><div class="fbutton"><div class="add" title="{$lang.02_merchants_add}"><span><i class="icon icon-plus"></i>{$lang.02_merchants_add}</span></div></div></a>
+                        <a href="merchants_steps.php?act=add"><div class="fbutton"><div class="add" title="{$lang.02_merchants_add}"><span><i class="icon icon-plus"></i>{$lang.steps_process_title}</span></div></div></a>
                     </div>
                    	<div class="refresh">
                     	<div class="refresh_tit" title="{$lang.refresh_data}"><i class="icon icon-refresh"></i></div>
@@ -117,6 +117,7 @@
         </div>
     </div>
     {include file ='library/pagefooter.lbi'}
+    
     <script type="text/javascript">
 	//列表导航栏设置下路选项
 	$(".ps-container").perfectScrollbar();

@@ -38,7 +38,7 @@
                                 <div class="p-price">
                                     <span>{$goods.shop_price}</span>
                                 </div>
-                                <div class="p-num">{$lang.existing}<em>{$goods.sales_volume}</em>{$lang.make_appointment}</div>
+                                <div class="p-num">{$lang.existing}<em>{$goods.sales_volume}</em>预约</div>
                             </div>
                             <div class="p-name"><a href="{$goods.purl}" title="{$goods.goods_name|escape:html}" target="_blank">{if $script_name eq 'search'}{$goods.goods_name_keyword}{else}{$goods.goods_name}{/if}</a></div>
                             <div class="p-store">
@@ -108,19 +108,19 @@
                             <div class="p-activity">&nbsp;</div>
                             {/if}
                             <div class="p-operate">
-                                <a href="javascript:void(0);" id="compareLink"{if $script_name eq 'search' && $goods.type eq 0} title="{$lang.not_set_attrtype_contrast}" class="not_compareLink"{/if}>
+                                <a href="javascript:void(0);" id="compareLink"{if $script_name eq 'search' && $goods.type eq 0} title="没有设置属性类型无法对比" class="not_compareLink"{/if}>
                                     <input id="{$goods.goods_id}" type="checkbox" name="duibi" class="ui-checkbox"{if $script_name neq 'search' || $goods.type neq 0} onClick="Compare.add(this, {$goods.goods_id},'{$goods.goods_name|escape:html}','{$goods.type}', '{$goods.goods_thumb}', '{$goods.shop_price}', '{$goods.market_price}')"{/if}>
                                     <label class="ui-label"{if $script_name neq 'search' || $goods.type neq 0} for="{$goods.goods_id}"{/if}>{$lang.compare}</label>
                                 </a>
                                 <a href="javascript:collect({$goods.goods_id});" class="choose-btn-coll{if $goods.is_collect} selected{/if}"><i class="iconfont{if $goods.is_collect} icon-zan-alts{else} icon-zan-alt{/if}"></i>{$lang.btn_collect}</a>
                                 {if $goods.prod eq 1}
                                     {if $goods.goods_number > 0}
-                                    <a href="{$goods.purl}" rev="{$goods.goods_thumb}" class="addcart"><i class="iconfont icon-carts"></i>{$lang.rob_make_appointment}</a>
+                                    <a href="{$goods.purl}" rev="{$goods.goods_thumb}" class="addcart"><i class="iconfont icon-carts"></i>抢先预购</a>
                                     {else}
                                     <a href="javascript:void(0);" class="addcart btn_disabled"><i class="iconfont icon-carts"></i>{$lang.have_no_goods}</a>
                                     {/if}
                                 {else}
-                                <a href="{$goods.purl}" rev="{$goods.goods_thumb}" class="addcart"><i class="iconfont icon-carts"></i>{$lang.rob_make_appointment}</a>
+                                <a href="{$goods.purl}" rev="{$goods.goods_thumb}" class="addcart"><i class="iconfont icon-carts"></i>抢先预购</a>
                                 {/if}                               
                             </div>
                             
@@ -156,7 +156,7 @@
                                         {$goods.shop_price}
                                     {/if}
                                 </div>
-                                <div class="p-num">{$lang.Sold}<em>{$goods.sales_volume}</em>{$lang.jian}</div>
+                                <div class="p-num">{$lang.Sold}<em>{$goods.sales_volume}</em>件</div>
                             </div>
                             <div class="p-name"><a href="{$goods.url}" title="{$goods.goods_name|escape:html}" target="_blank">{if $script_name eq 'search'}{$goods.goods_name_keyword}{else}{$goods.goods_name}{/if}</a></div>
                             <div class="p-store">
@@ -219,7 +219,7 @@
                             <div class="p-activity">&nbsp;</div>
                             {/if}
                             <div class="p-operate">
-                                <a href="javascript:void(0);" id="compareLink"{if $script_name eq 'search' && $goods.type eq 0} title="{$lang.not_set_attrtype_contrast}" class="not_compareLink"{/if}>
+                                <a href="javascript:void(0);" id="compareLink"{if $script_name eq 'search' && $goods.type eq 0} title="没有设置属性类型无法对比" class="not_compareLink"{/if}>
                                     <input id="{$goods.goods_id}" type="checkbox" name="duibi" class="ui-checkbox"{if $script_name neq 'search' || $goods.type neq 0} onClick="Compare.add(this, {$goods.goods_id},'{$goods.goods_name|escape:html}','{$goods.type}', '{$goods.goods_thumb}', '{$goods.shop_price}', '{$goods.market_price}')"{/if}>
                                     <label class="ui-label"{if $script_name neq 'search' || $goods.type neq 0} for="{$goods.goods_id}"{/if}>{$lang.compare}</label>
                                 </a>
@@ -312,7 +312,7 @@
                         </div>
                         <div class="col col-4">
                             <div class="p-operate">
-                                <a href="javascript:void(0);" id="compareLink"{if $script_name eq 'search' && $goods.type eq 0} title="{$lang.not_set_attrtype_contrast}" class="not_compareLink"{/if}>
+                                <a href="javascript:void(0);" id="compareLink"{if $script_name eq 'search' && $goods.type eq 0} title="没有设置属性类型无法对比" class="not_compareLink"{/if}>
                                 <input id="duibi_{$goods.goods_id}" type="checkbox" name="duibi" class="ui-checkbox"{if $script_name neq 'search' || $goods.type neq 0} onClick="Compare.add(this, {$goods.goods_id},'{$goods.goods_name|escape:"html"}','{$goods.type}', '{$goods.goods_thumb}', '{$goods.shop_price}', '{$goods.market_price}')"{/if}>
                                 <label class="ui-label" {if $script_name neq 'search' || $goods.type neq 0}for="duibi_{$goods.goods_id}"{/if}>{$lang.compare}</label>
                             </a>
@@ -349,7 +349,7 @@
             <div class="no_info no_info_line">
                 <h3>{$lang.information_null}</h3>
                 <div class="no_btn">
-                    <a href="index.php" class="btn sc-redBg-btn">{$lang.back_home}</a>
+                    <a href="index.php" class="btn sc-redBg-btn">返回首页</a>
                 </div>
             </div>
         </div>

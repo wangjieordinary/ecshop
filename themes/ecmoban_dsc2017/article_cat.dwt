@@ -18,14 +18,14 @@
 <div class="content article-content">
 	<div class="article-search-hd mb20">
     	<div class="w w1200">
-            <div class="hd-tit">{$lang.article_help_center}</div>
+            <div class="hd-tit">文档帮助中心</div>
             <div class="hd-search">
                 <form action="{$search_url}" name="search_form" method="post" class="article_search">
                     <div class="f-search">
-                        <input name="keywords" type="text" id="requirement" value="{$search_value}" class="text" placeholder="{$lang.search_placeholder}" />
+                        <input name="keywords" type="text" id="requirement" value="{$search_value}" class="text" placeholder="请填写搜索内容" />
                         <input name="id" type="hidden" value="{$cat_id}" />
                         <input name="cur_url" id="cur_url" type="hidden" value="" />
-                        <a href="javascript:void(0);" class="ui-btn-submit" ectype="searchSubmit"><i class="iconfont icon-search"></i>{$lang.search}</a>
+                        <a href="javascript:void(0);" class="ui-btn-submit" ectype="searchSubmit"><i class="iconfont icon-search"></i>搜索</a>
                     </div>
                 </form>
             </div>
@@ -34,7 +34,7 @@
     <div class="w w1200 clearfix">
         <div class="article-side">
             <dl class="article-menu">
-                <dt class="am-t"><a href="javascript:void(0);">{$lang.article_cat_list}</a></dt>
+                <dt class="am-t"><a href="javascript:void(0);">文章分类列表</a></dt>
                 <dd class="am-c">
                     {foreach from=$sys_categories item=sys_cat}
                     <div class="menu-item active">
@@ -67,7 +67,7 @@
                     {/foreach}
                 </dd>
             </dl>
-            {if $related_goods}
+            {if $goods_list}
             <div class="side-goods">
                 <a href="javascript:;" class="prev"><span class="iconfont icon-left"></span></a>
                 <a href="javascript:;" class="next"><span class="iconfont icon-right"></span></a>

@@ -1,33 +1,21 @@
 {include file="page_header"}
 <script src="https://3gimg.qq.com/lightmap/components/geolocation/geolocation.min.js"></script>
 
-<style>
-.all-category {padding: 0.8rem 0rem 0rem 1rem;}
-.all-category i{
-    font-size: 2rem;    
-}
-</style>
 <div class="con">
 
     <section class="store-nav-list padding-all b-color-f">
-        <div class="product-one-list product-one-list-nav of-hidden scrollbar-none j-g-s-p-con swiper-container-horizontal">
-            <div class="swiper-wrapper store-nav-box  j-catid">
-                <li data-catid="0" class="swiper-slide swiper-slide-active active">
-                    <div class="store-box all-category">
-                        <i class="iconfont icon-caidan"></i>
+                <div class="product-one-list product-one-list-nav of-hidden scrollbar-none j-g-s-p-con swiper-container-horizontal">
+                    <div class="swiper-wrapper store-nav-box  j-catid">
+                        {foreach $category as $list}
+                            <li data-catid="{$list.cat_id}" class="swiper-slide swiper-slide-active">
+                                <div class="store-box">
+                                    <img class="img" src="{$list.touch_icon}">
+                                </div>
+                                <h5 class="text-c col-6 m-top04 f-5">{$list.cat_alias_name}</h5>
+                            </li>
+                        {/foreach}
                     </div>
-                    <h5 class="text-c col-6 m-top04 f-5">{$lang.all_category}</h5>
-                </li>
-                {foreach $category as $list}
-                    <li data-catid="{$list.cat_id}" class="swiper-slide swiper-slide-active">
-                        <div class="store-box">
-                            <img class="img" src="{$list.touch_icon}">
-                        </div>
-                        <h5 class="text-c col-6 m-top04 f-5">{$list.cat_alias_name}</h5>
-                    </li>
-                {/foreach}
             </div>
-        </div>
     </section>
     <div class="shopping-list j-shopping-list">
         <div class="shopping-menu">
@@ -82,7 +70,7 @@
         <div class="store_info">
 
             <script id="j-product" type="text/html">
-                <%if totalPage > 0 && list != ''%>
+                <%if totalPage>0%>
                 <%each list as key%>
                 <section class="m-top08 goods-shop">
                     <header class="goods-shop-info n-goods-shop-info padding-all" style="background:#">
@@ -170,36 +158,8 @@ $(function(){
         lng = 0,
         order = 'sort',
         sort = 'asc';
-
     // 首次加载
-    var infinite = $('.store_info').infinite({url: url,params:'sort='+sort+'&order='+order+'&cat_id='+cat_id+'&city_id='+city_id+'&keywords='+keywords+'&type='+type,template: 'j-product'});
-
-    var geolocation = new qq.maps.Geolocation("{C('shop.tengxun_key')}", "myapp");
-    var options = {timeout: 8000};
-    geolocation.getLocation(showPosition, showErr, options);
-    function showPosition(position) {
-        //处理
-        lat = position.lat;
-        lng = position.lng;
-
-        infinite.onload('lat='+ lat +'&lng='+lng+'&sort='+sort+'&order='+order+'&cat_id='+cat_id+'&city_id='+city_id+'&keywords='+keywords+'&type='+type);
-    };
-    function showErr() {
-        d_messages('定位失败！');
-    };
-
-    // 点击分类
-    $('.j-catid').on('click', 'li', function(){
-
-        $(".shopping-menu").removeClass("nav-active");
-        $(this).addClass("active").siblings().removeClass("active");
-        $(".mask-filter-div").removeClass("show");
-        cat_id = $(this).attr('data-catid');
-
-        infinite.onload('lat='+ lat +'&lng='+lng+'&sort='+sort+'&order='+order+'&cat_id='+cat_id+'&city_id='+city_id+'&keywords='+keywords+'&type='+type);
-        document.removeEventListener("touchmove", handler, false);
-    });
-
+    var infinite = $('.store_info').infinite({url: url,params:'sort='+sort+'&order='+order+'&keywords='+keywords+'&type='+type,template: 'j-product'});
     var loadingHeight = $(".store_info").outerHeight(true);
     function loadimgCont(){
         if ($(document).scrollTop() >= $(window).height() <$(document).height() - $(window).height()) {
@@ -217,6 +177,32 @@ $(function(){
     loadimgCont();
     $(window).scroll(function() {
         loadimgCont()
+    });
+    var geolocation = new qq.maps.Geolocation("{C('shop.tengxun_key')}", "myapp");
+    var options = {timeout: 8000};
+
+    geolocation.getLocation(showPosition, showErr, options);
+    function showPosition(position) {
+        //处理
+        lat = position.lat;
+        lng = position.lng;
+
+        infinite.onload('lat='+ lat +'&lng='+lng+'&sort='+sort+'&order='+order+'&keywords='+keywords+'&type='+type);
+    };
+    function showErr() {
+        d_messages('定位失败！');
+    };
+
+    // 点击分类
+    $('.j-catid').on('click', 'li', function(){
+
+        $(".shopping-menu").removeClass("nav-active");
+        $(this).addClass("active").siblings().removeClass("active");
+        $(".mask-filter-div").removeClass("show");
+        cat_id = $(this).attr('data-catid');
+
+        infinite.onload('lat='+ lat +'&lng='+lng+'&sort='+sort+'&order='+order+'&cat_id='+cat_id+'&city_id='+city_id+'&keywords='+keywords+'&type='+type);
+        document.removeEventListener("touchmove", handler, false);
     });
 
     var scorll_swiper1 = new Swiper('.shopping-city-two', {
@@ -359,4 +345,5 @@ $(function(){
 </script>
 
 </body>
+
 </html>

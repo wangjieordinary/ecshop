@@ -16,12 +16,12 @@
                     <div class="search-form">
                         <form action="javascript:searchPresale()" name="searchForm">
 						<div id="status" class="imitate_select select_w145">
-							<div class="cite">{$lang.adopt_status}</div>
+							<div class="cite">审核状态</div>
 							<ul class="ps-container" style="display: none;">
-								<li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.adopt_status}</a></li>
-								<li><a href="javascript:;" data-value="3" class="ftx-01">{$lang.not_audited}</a></li>
-								<li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.audited_not_adopt}</a></li>
-								<li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.audited_yes_adopt}</a></li>
+								<li><a href="javascript:;" data-value="0" class="ftx-01">审核状态</a></li>
+								<li><a href="javascript:;" data-value="3" class="ftx-01">未审核</a></li>
+								<li><a href="javascript:;" data-value="1" class="ftx-01">审核未通过</a></li>
+								<li><a href="javascript:;" data-value="2" class="ftx-01">审核已通过</a></li>
 							<div class="ps-scrollbar-x-rail" style="width: 145px; display: none; left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 112px; display: none; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 0px;"></div></div></ul>
 							<input name="is_audit" type="hidden" value="0">
 						</div>
@@ -46,13 +46,13 @@
                                 {$sort_act_id}
                             </div>
                         </th>
-                        <th width="22%">{$lang.goods_name}</th>
-                        <th width="10%">{$lang.origin_price_team_price}</th>
-                        <th width="10%">{$lang.become_team_number}</th>
-                        <th width="6%">{$lang.sku_stock}</th>
-                        <th width="6%">{$lang.buy_people}</th>
-						<th width="6%">{$lang.adopt_status}</th>
-                        <th width="9%">{$lang.handler}</th>
+                        <th width="22%">商品名称</th>
+                        <th width="10%">原价/拼团价</th>
+                        <th width="10%">成团人数</th>
+                        <th width="6%">SKU/库存</th>
+                        <th width="6%">购买人次</th>
+						<th width="6%">审核状态</th>
+                        <th width="9%">操作</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -72,7 +72,7 @@
                             <a href="team.php?act=edit&amp;id={$goods.id}" title="{$lang.edit}" class="btn-green"><i class="icon icon-edit"></i><p>{$lang.edit}</p></a>
                         </span>
                         <span>
-                            <a href="javascript:;" onclick="listTable.remove({$goods.id},'{$lang.drop_confirm}')" title="{$lang.drop}" class="btn-red"><i class="icon icon-trash"></i><p>{$lang.end}</p></a>
+                            <a href="javascript:;" onclick="listTable.remove({$goods.id},'{$lang.drop_confirm}')" title="{$lang.drop}" class="btn-red"><i class="icon icon-trash"></i><p>结束</p></a>
                         </span>
                       </td>
                     </tr>

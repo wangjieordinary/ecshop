@@ -108,7 +108,11 @@
             </div>
         </div>
     </div>
+
     {include file ='library/pagefooter.lbi'}
+    
+    {insert_scripts files="jquery.purebox.js"}
+    
     {literal}
     <script type="text/javascript">
     listTable.recordCount = {$record_count|default:0};

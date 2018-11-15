@@ -15,8 +15,8 @@
                 <div class="list-div" id="listDiv">
                 <table class="ecsc-default-table ecsc-table-seller mt20"  cellspacing='1' cellpadding='1'>
                   <tr>
-                    <th width="10%">{$lang.03_shipping_list}</th>
-                    <th width="70%">{$lang.03_shipping_list}{$lang.description}</th>
+                    <th width="10%">配送方式</th>
+                    <th width="70%">配送方式描述</th>
                     <th width="20%">{$lang.handler}</th>
                   </tr>
                   {foreach from=$shipping_list item=shipping}
@@ -24,7 +24,7 @@
                   <tr>
                     <td class="first-cell" align="center">{$shipping.shipping_name}</td>
                     <td>{$shipping.shipping_desc}</td>
-                    <td align="center"><a href="warehouse.php?act=tpl_list&shipping_id={$shipping.shipping_id}">{$lang.set_distribution_mode}</a></td>
+                    <td align="center"><a href="warehouse.php?act=tpl_list&shipping_id={$shipping.shipping_id}">设置仓库运费模板</a></td>
                   </tr>
                   {*/if*}
                   {/foreach}

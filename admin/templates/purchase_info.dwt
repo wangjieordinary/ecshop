@@ -63,7 +63,7 @@
 																<div class="t-images-info">
 																	<ul>
 																		{foreach from=$goods.goods_img item=img}
-																		<li><a href="javascript:void(0);" class="img"><img src="{$img}"></a><a href="{$img}" class="nyroModal"><i class="icon icon-search"></i></a></li>
+																		<li><a href="javascript:void(0);" class="img"><img src="../{$img}"></a><a href="../{$img}" class="nyroModal"><i class="icon icon-search"></i></a></li>
 																		{/foreach}
 																	</ul>
 																</div>

@@ -21,7 +21,7 @@
             <div class="w w1200">
                 <div class="activity-main-title">
                     <h2>{$activity.act_name}</h2>
-                    <p>{$lang.consume}{$activity.min_amount}{$activity.act_type}{if $activity.actType neq 0}{$activity.act_type_ext}{/if}</p>
+                    <p>消费满{$activity.min_amount}{$activity.act_type}{if $activity.actType neq 0}{$activity.act_type_ext}{/if}</p>
                 </div>
                 <ul class="activity-list clearfix">
                     <li class="mod-shadow-card li-col2">
@@ -31,23 +31,23 @@
                                 <a href="" class="kefu"><i class="icon i-kefu"></i></a>
                             </div>
                             <dl>
-                                <dt>{$lang.activity_time}：</dt>
+                                <dt>活动时间：</dt>
                                 <dd>{$activity.start_time} ~ {$activity.end_time}</dd>
                             </dl>
                             <dl>
-                                <dt>{$lang.activity_type}：</dt>
+                                <dt>优惠方式：</dt>
                                 <dd>{$activity.act_type}{if $activity.actType neq 0}&nbsp;{$activity.act_type_ext}{/if}</dd>
                             </dl>
                             <dl>
-                                <dt>{$lang.max_amount}：</dt>
+                                <dt>金额限制：</dt>
                                 <dd>{$activity.min_amount}元{if $activity.max_amount gt 0} ~ {$activity.max_amount}{/if}</dd>
                             </dl>
                             <dl>
-                                <dt>{$lang.user_rank}：</dt>
+                                <dt>会员等级：</dt>
                                 <dd>{foreach from=$activity.user_rank item=rank}{$rank}&nbsp;{/foreach}</dd>
                             </dl>
                             <dl>
-                                <dt>{$lang.act_range_type}：</dt>
+                                <dt>优惠范围：</dt>
                                 <dd>{$activity.act_range}
 									{if $activity.act_range_ext && $activity.act_range_type neq 3} 								
 									<div class="shop-brand">
@@ -75,7 +75,7 @@
                 <div id="flyItem" class="fly_item"><img src="" width="40" height="40"></div>
 				{if $activity.gift}
                 <div class="activity-main-title">
-                    <h2>{$lang.activity_gift}</h2>
+                    <h2>享受赠品</h2>
                 </div>				
 				<ul class="activity-list clearfix">
 					{foreach from=$activity.gift item=goods name=goods}

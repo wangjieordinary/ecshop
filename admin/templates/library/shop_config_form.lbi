@@ -88,7 +88,7 @@
         {if $var.code eq "shop_country"}
             <div class="ui-dropdown smartdropdown alien">
                 <input type="hidden" value="{$cfg.shop_country}" name="value[{$var.id}]" id="selProvinces">
-                <div class="txt">{$lang.country}</div>
+                <div class="txt">国家</div>
                 <i class="down u-dropdown-icon"></i>
                 <div class="options clearfix" style="max-height:300px;">
                     {foreach from=$countries item=list}
@@ -99,7 +99,7 @@
         {elseif $var.code eq "shop_province"}
         <div class="ui-dropdown smartdropdown alien">
             <input type="hidden" value="{$cfg.shop_province}" name="value[{$var.id}]" id="selProvinces">
-            <div class="txt">{$lang.province_alt}</div>
+            <div class="txt">省/直辖市</div>
             <i class="down u-dropdown-icon"></i>
             <div class="options clearfix" style="max-height:300px;">
                 {foreach from=$provinces item=list}
@@ -110,10 +110,10 @@
         {elseif $var.code eq "shop_city"}
         <div id="dlCity" class="ui-dropdown smartdropdown alien">
             <input type="hidden" value="{$cfg.shop_city}" name="value[{$var.id}]" id="selCities">
-            <div class="txt">{$lang.city}</div>
+            <div class="txt">市</div>
             <i class="down u-dropdown-icon"></i>
             <div class="options clearfix" style="max-height:300px;">
-                <span class="liv hide" data-text="{$lang.city}" data-value="0">{$lang.city}</span>
+                <span class="liv hide" data-text="市" data-value="0">市</span>
                 {foreach from=$cities item=list}
                  <span class="liv" data-text="{$list.region_name}" data-type="3" data-value="{$list.region_id}">{$list.region_name}</span>
                 {/foreach}
@@ -155,7 +155,7 @@
                                     <input type="text" name="invoice_type[]" value="{$invoice.type}" class="text w120" size="10" autocomplete="off"/>
                                     <label class="fl mr10">{$lang.invoice_rate}</label>
                                     <input type="text" name="invoice_rate[]" value="{$invoice.rate}" size="10" class="text w120" autocomplete="off"/>
-                                	<a href='javascript:;' class='removeV' onclick='removeCon_amount(this)'><img src='images/no.gif' title='{$lang.drop}'></a>
+                                	<a href='javascript:;' class='removeV' onclick='removeCon_amount(this)'><img src='images/no.gif' title='删除'></a>
                                 </p>  
                                 {/if}
                             {/foreach}

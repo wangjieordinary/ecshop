@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <div class="brand-section">
-	<div class="bl-title"><h2>{$lang.goods_list}<i></i></h2>{if $cat_id}<a href="category.php?id={$cat_id}&brand={$brand_id}" class="more ftx-05">{$lang.see_more}></a>{/if}</div>
+	<div class="bl-title"><h2>商品列表<i></i></h2>{if $cat_id}<a href="category.php?id={$cat_id}&brand={$brand_id}" class="more ftx-05">查看更多></a>{/if}</div>
 	<div class="bl-content">
 		<div class="bd">
 			<ul>

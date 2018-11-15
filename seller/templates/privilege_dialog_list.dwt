@@ -39,13 +39,13 @@
          <!--客服管理-s-->
            <div class="ecsc-layout-right">
             <div class="main-content" id="mainContent">
-				<div class="ecsc-path"><span>{$lang.10_priv_admin} - - {$lang.services_list}</span></div>
+				<div class="ecsc-path"><span>权限 - - 客服管理</span></div>
 				<div class="tabmenu">
 					<ul class="tab" id="dialog_list_ul">
-							<li class="active"><a href="javascript:;">{$lang.today}</a></li>
-							<li><a href="javascript:;">{$lang.recent_week}</a></li>
-							<li><a href="javascript:;">{$lang.recent_month}</a></li>
-							<li><a href="javascript:;">{$lang.all}</a></li>
+							<li class="active"><a href="javascript:;">今天</a></li>
+							<li><a href="javascript:;">最近一周</a></li>
+							<li><a href="javascript:;">最近一月</a></li>
+							<li><a href="javascript:;">全部</a></li>
 					</ul>
 				</div>
 				<ul class="history-record-box">
@@ -61,12 +61,12 @@
 								<h4>{$list.goods_name}</h4>
 							</div>
 							<p class="activity">
-                                <span class="mr10">{$lang.label_start_time}{$list.start_time}</span>
-                                <span class="mr10">{$lang.label_end_time}{$list.end_time}</span>
+                                <span class="mr10">开始时间：{$list.start_time}</span>
+                                <span class="mr10">结束时间：{$list.end_time}</span>
                             </p>
 						</div>
 						{foreachelse}
-						<p>{$lang.now_no_record}</p>
+						<p>没有任何记录</p>
 						{/foreach}
 						{/if}
 						{if $full_page}
@@ -98,24 +98,24 @@
                                     <th class="batch-operation" colspan="20">
                                         <div class="screeItme">
 				                            <form action="" method="post" id="selectForm" name="selectForm">
-				                                <strong class="fl lh mr10"> <a href="javascript:void(0);" class="sc-btn sc-org-btn j-generate-word" data-type="not_on_sale"><i class="icon-arrow-down"></i>{$lang.export}</a>
+				                                <strong class="fl lh mr10"> <a href="javascript:void(0);" class="sc-btn sc-org-btn j-generate-word" data-type="not_on_sale"><i class="icon-arrow-down"></i>导出</a>
 				                                </strong>
 				                                <div class="text_time mr10" id="text_time1">
 				                                    <input name="start_date" id="start_date" value="2017-04-07" class="text" readonly="readonly">
 				                                </div>
 				                                <div class="search-info" style="padding: 0">
 								                    <div class="search-form">
-								                        <input type="text" name="keyword" class="text w70" name="keywords" value="" placeholder="{$lang.button_search}">
-								                        <input type="button" class="submit j-keywords" value="{$lang.button_search}">
+								                        <input type="text" name="keyword" class="text w70" name="keywords" value="" placeholder="搜索">
+								                        <input type="button" class="submit j-keywords" value="搜索">
 								                        </div>
 								                    </div>
 								                    <div class="pagination">
                                                         <ul>
                                                             <li>
-                                                                <a class="prev" title='{$lang.page_prev}'>01</a>
+                                                                <a class="prev" title='上一页'>01</a>
                                                             </li>
                                                             <li>
-                                                                <a class="next" title='{$lang.page_next}'>0</a>
+                                                                <a class="next" title='下一页'>0</a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -186,7 +186,7 @@
     //end
     //导出word
     $('.j-generate-word').click(function(){
-        if(dialog_id == undefined || dialog_id == '' || !confirm(jl_sure_export_dialog_log))return;
+        if(dialog_id == undefined || dialog_id == '' || !confirm('确认导出聊天记录？'))return;
         window.location.href='privilege_kefu.php?is_ajax=1&act=generage_word' + '&id=' + dialog_id + '&customer_id=' + customer_id + '&service_id=' + service_id;
     });
 

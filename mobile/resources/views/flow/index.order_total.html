@@ -3,13 +3,6 @@
         {$lang.goods_all_price}<span class="t-first fr">{$total.goods_price_formated}</span>
     </header>
     <ul class="m-top1px b-color-f">
-        <!-- 商品优惠 -->
-        {if $total.dis_amount > 0}
-        <li class="padding-all of-hidden">
-            <label class="t-remark g-t-temark fl">{$lang.dis_amount}</label>
-            <span class="t-first fr">- {$total.dis_amount_formated}</span>
-        </li>
-        {/if}
         <!-- 折扣 -->
         {if $total.discount > 0}
         <li class="padding-all of-hidden">

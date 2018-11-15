@@ -13,9 +13,9 @@
 				{include file ='library/seller_menu_tab.lbi'}
                 
                 <div class="explanation clear" id="explanation">
-                    <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                    <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                     <ul>
-                    	<li>{$lang.warn_submit_will_rechcek}</li>
+                    	<li>温馨提示：提交操作将会重新审核，请慎重提交确定。</li>
                     </ul>
                 </div>
                 <div class="ecsc-form-goods">
@@ -60,7 +60,7 @@
                             	<div class="type-file-box">
                                 	<div class="input">
                                         <input type="text" name="textfile" class="type-file-text" id="textfield" {if $favourable.activity_thumb neq ""}value="../{$favourable.activity_thumb}"{/if} autocomplete="off" readonly />
-                                        <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}" />
+                                        <input type="button" name="button" id="button" class="type-file-button" value="上传..." />
                                         <input type="file" class="type-file-file" id="activity_thumb" name="activity_thumb" data-state="imgfile" size="30" hidefocus="true" value="" />
                                     </div>
                                     {if $favourable.activity_thumb neq ""}
@@ -70,7 +70,7 @@
                                     {/if}
                                 </div>
                                 <div class="form_prompt"></div>
-                                <div class="notic">{$lang.img_size_is}610*233</div>
+                                <div class="notic">图片尺寸为610*233</div>
                             </dd>
                         </dl>
                         {/if}
@@ -139,15 +139,15 @@
                         	<dt>{$lang.label_search_and_add}：</dt>
                             <dd>
                                 <div ectype="search_goodsDiv"{if $favourable.act_range neq 3} style="display:none"{/if}>
-                                     <input type="button" class="sc-btn sc-blueBg-btn btn30" value="{$lang.set_goods}" ectype="setupGroupGoods" data-diffeseller="1" data-pbtype="favourable" data-pbmode="setgoods_content"/>
+                                     <input type="button" class="sc-btn sc-blueBg-btn btn30" value="设置商品" ectype="setupGroupGoods" data-diffeseller="1" data-pbtype="favourable" data-pbmode="setgoods_content"/>
                                 </div>
                                 <div ectype="search_by_other" {if $favourable.act_range eq 3} style="display:none"{/if}>
                                      <input name="keyword" type="text" class="text text_2 mr10 mb10" id="keyword">
                                     <input name="search" type="button" id="search" value="{$lang.button_search}" class="sc-btn sc-blueBg-btn btn30 mr10" onclick="searchItem()" />
                                     <div class="imitate_select select_w320" id="result">
-                                        <div class="cite">{$lang.please_select}</div>
+                                        <div class="cite">请选择</div>
                                         <ul>
-                                            <li class="li_not">{$lang.please_search_goods}</li>
+                                            <li class="li_not">请先搜索商品</li>
                                         </ul>
                                         <input name="result_val" type="hidden" value="" id="result_val">
                                     </div>
@@ -185,7 +185,7 @@
                              {if $favourable.userFav_type eq 0 || $priv_ru}
                                   
                                 <div id="act_type" class="imitate_select select_w320">
-                                    <div class="cite">{$lang.please_select}</div>
+                                    <div class="cite">请选择</div>
                                     <ul>
                                         <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.fat_goods}</a></li>
                                         <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.fat_price}</a></li>
@@ -212,9 +212,9 @@
                             	<input name="keyword1" type="text" id="keyword1" class="text text_2 mr10 mb10" />
                             	<input name="search1" type="button" id="search1" value="{$lang.button_search}" class="sc-btn btn30 sc-blueBg-btn" onclick="searchItem1()" />
                                 <div id="result1" class="imitate_select select_w320">
-                                    <div class="cite">{$lang.please_select}</div>
+                                    <div class="cite">请选择</div>
                                     <ul class="upward">
-                                        <li class="li_not">{$lang.please_search_goods}</li>
+                                        <li class="li_not">请先搜索商品</li>
                                     </ul>
                                     <input name="result1" type="hidden" value="">
                                 </div>	
@@ -300,7 +300,7 @@
 $.divselect("#act_range_select","#act_range_val",function(obj){
     var val = obj.attr("data-value");
     $("#range-div").html('');
-    $("#result").find(".cite").html(jl_please_select);
+    $("#result").find(".cite").html("请选择");
     if(val != 0){
 		$("#range_search").show();
 		if(val == 3){

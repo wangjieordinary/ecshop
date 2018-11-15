@@ -26,7 +26,7 @@
                                     <div class="label">{$lang.text_enco}：</div>
                                     <div class="label_value">
                                         <div id="file_code" class="imitate_select select_w320">
-                                            <div class="cite">{$lang.charset.utf8}</div>
+                                            <div class="cite"></div>
                                             <ul>
                                                 {foreach from=$lang_list item=item key=k}
                                                 <li><a href="javascript:;" data-value="{$k}" class="ftx-01">{$item}</a></li>

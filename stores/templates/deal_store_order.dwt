@@ -4,42 +4,42 @@
 <form method="post" action="order.php" name="theForm" enctype="multipart/form-data">
 	<div class="store_order_page">
 		<div class="store_order_section">
-			<span class="store_order_title">{$lang.consignee_info}</span>
-			<p class="mt5">{$lang.seller_name}：{$order_info.consignee}</p>
-			<p>{$lang.link_phone}：{$order_info.mobile}</p>
-			<p>{$lang.complete_store_address}：{$store_info.complete_store_address}</p>
+			<span class="store_order_title">收货人信息</span>
+			<p class="mt5">买家姓名：{$order_info.consignee}</p>
+			<p>联系电话：{$order_info.mobile}</p>
+			<p>自提店地址：{$store_info.complete_store_address}</p>
 			{if $order_info.postscript}
-			<p>{$lang.order_message}：{$order_info.postscript}</p>
+			<p>订单留言：{$order_info.postscript}</p>
 			{/if}
 		</div>
 		<div class="store_order_section">
-			<span class="store_order_title">{$lang.order_goods}</span>
+			<span class="store_order_title">订单商品</span>
             {foreach from=$order_goods_list item=goods}
             <div class="store_order_product">
             	<div class="img"><img src="{$goods.goods_thumb}" width="50" height="50"></div>
                 <div class="info">
                 	<div class="name">{$goods.goods_name}</div>
                     <div class="lie">
-                    	<span>{$lang.goods_number}：{$goods.goods_number}</span>
-                        <span>{$lang.f_price}：{$goods.formated_goods_price}</span>
+                    	<span>数量：{$goods.goods_number}</span>
+                        <span>单价：{$goods.formated_goods_price}</span>
                     </div>
                 </div>
             </div>
             {/foreach}
 		</div>
         <div class="store_order_section">
-			<span class="store_order_title">{$lang.self_lift_validate}</span>
-			{if $order_info.pay_status neq 2}<span class="store_order_note">{$lang.store_order_note}<span class="price">{$order_info.formated_total_fee}</span>{$lang.store_order_note_two}</span>{/if}
+			<span class="store_order_title">提货验证</span>
+			{if $order_info.pay_status neq 2}<span class="store_order_note">该笔尚未付款，需支付<span class="price">{$order_info.formated_total_fee}</span>，门店收款后再进行提货验证。</span>{/if}
             <div class="store_order_input">
             	<span class="input">
-                    <input type="text" name="pick_code" value="" class="pick_code text" placeholder="{$lang.code_placeholder}" autocomplete="off">
+                    <input type="text" name="pick_code" value="" class="pick_code text" placeholder="请输入提货验证码" autocomplete="off">
                     <span id="notic"></span>
                 </span>
             </div>
-            <p class="notic">{$lang.code_notic}</p>
+            <p class="notic">该验证码为商城订单生成时，自动发送给发货人手机及买家订单详情中的提供的“6位验证码”</p>
 		</div>
         <div class="store_button_info">
-        	<input type="button" name="button" class="submit" value="{$lang.submit}">
+        	<input type="button" name="button" class="submit" value="提交">
         </div>
 		<input type="hidden" name="act" value="{$form_action}" />
 		<input type="hidden" name="id" value="{$id}" />
@@ -69,16 +69,17 @@
 <form method="post" action="order.php" name="theForm" enctype="multipart/form-data">
 	<div class="store_order_page">
 		<div class="store_order_section">
-			<span class="store_order_title">{$lang.consignee_info}</span>
-			<p>{$lang.seller_name}：{$order_info.consignee}</p>
-			<p>{$lang.link_phone}：{$order_info.mobile}</p>
-			<p>{$lang.receiving_address}：{$complete_user_address}</p>
+			<span class="store_order_title">收货人信息</span>
+			<p>买家姓名：{$order_info.consignee}</p>
+			<p>联系电话：{$order_info.mobile}</p>
+			<p>收货地址：{$complete_user_address}</p>
 			{if $order_info.postscript}
-			<p>{$lang.order_message}：{$order_info.postscript}</p>
+			<p>订单留言：{$order_info.postscript}</p>
 			{/if}
 		</div>
         <div class="store_button_info">
-        	<input type="button" name="submit" class="submit" value="{$lang.confirm_robbing}" onclick="send_form_data('form[name=theForm]')">
+        	<!--<input type="submit" name="submit" class="submit" value="确认抢单">-->
+        	<input type="button" name="submit" class="submit" value="确认抢单" onclick="send_form_data('form[name=theForm]')">
         </div>
 		<input type="hidden" name="act" value="{$form_action}" />
 		<input type="hidden" name="id" value="{$id}" />		
@@ -93,24 +94,24 @@
 <form method="post" action="order.php" name="theForm" enctype="multipart/form-data">
 	<div class="store_order_page">
 		<div class="store_order_section">
-			<span class="store_order_title">{$lang.consignee_info}</span>
-			<p>{$lang.seller_name}：{$order_info.consignee}</p>
-			<p>{$lang.link_phone}：{$order_info.mobile}</p>
-			<p>{$lang.receiving_address}：{$complete_user_address}</p>
+			<span class="store_order_title">收货人信息</span>
+			<p>买家姓名：{$order_info.consignee}</p>
+			<p>联系电话：{$order_info.mobile}</p>
+			<p>收货地址：{$complete_user_address}</p>
 			{if $order_info.postscript}
-			<p>{$lang.order_message}：{$order_info.postscript}</p>
+			<p>订单留言：{$order_info.postscript}</p>
 			{/if}
 		</div>
         <div class="store_order_section">
-			<span class="store_order_title">{$lang.order_goods}</span>
+			<span class="store_order_title">订单商品</span>
             {foreach from=$order_goods_list item=goods}
             <div class="store_order_product">
             	<div class="img"><img src="{$goods.goods_thumb}" width="50" height="50"></div>
                 <div class="info">
                 	<div class="name">{$goods.goods_name}</div>
                     <div class="lie">
-                    	<span>{$lang.goods_number}：{$goods.goods_number}</span>
-                        <span>{$lang.f_price}：{$goods.formated_goods_price}</span>
+                    	<span>数量：{$goods.goods_number}</span>
+                        <span>单价：{$goods.formated_goods_price}</span>
                     </div>
                 </div>
             </div>
@@ -118,17 +119,18 @@
         </div>
         <!--{if $form_action neq 'achieve'}-->
         <div class="store_order_section">
-            <span class="store_order_title">{$lang.express_no}</span>
+            <span class="store_order_title">快递单号</span>
             <div class="store_order_input">
                 <span class="input">
-                    <input type="text" name="invoice_no" class="text" placeholder="{$lang.express_no_placeholder}" autocomplete="off">
+                    <input type="text" name="invoice_no" class="text" placeholder="请输入快递单号" autocomplete="off">
                 </span>
             </div>
         </div>
         <!--{/if}-->
 		<!--{if $form_action neq 'achieve'}-->
-        <div class="store_button_info">
-			<input type="button" name="submit" class="submit" value="{$lang.confirmation_delivery}" onclick="send_form_data('form[name=theForm]')">
+        <div class="store_button_info">			
+			<!--<input type="submit" name="submit" class="submit" value="确认发货">-->
+			<input type="button" name="submit" class="submit" value="确认发货" onclick="send_form_data('form[name=theForm]')">
         </div>
 		<input type="hidden" name="act" value="{$form_action}" />
 		<input type="hidden" name="id" value="{$id}" />		

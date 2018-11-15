@@ -24,7 +24,7 @@
 {elseif $step eq 'volume'}
 <table class="table_div table_heng">
     <tr class="first_tr">
-        <td class="first_td">{$lang.amount}</td>
+        <td class="first_td">数量</td>
         {foreach from=$res item=list}
         <td>
             <input type="text" value="{$list.volume_num}" class="text w50" autocomplete="off" />
@@ -36,7 +36,7 @@
         {/foreach}
     </tr>
     <tr  class="first_tr">
-        <td class="first_td">{$lang.price}</td>
+        <td class="first_td">价格</td>
 		{foreach from=$res item=list}
         <td><input type="text" value="{$list.volume_price}" class="text w50" autocomplete="off" /></td>
 		{foreachelse}

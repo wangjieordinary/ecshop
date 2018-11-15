@@ -36,7 +36,7 @@
                         <div class="list-div mt20" id="listDiv">
                             <table width="100%" class="ecsc-default-table ecsc-table-seller mt20">
                                 <tr>
-                                    <th align="center">{$lang.current_ad_completed_order}</th>
+                                    <th align="center">当前广告所产生的已完成的有效订单</th>
                                 </tr>
                                 {foreach from=$goods_stats item=info}
                                 <tr>

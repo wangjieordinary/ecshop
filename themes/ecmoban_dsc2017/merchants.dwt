@@ -21,7 +21,7 @@
         <div class="w w1200">
             <div class="sett-title">
                 <div class="zw-tit">
-                    <h3>{$lang.merchants_step}</h3>
+                    <h3>入驻流程</h3>
                     <span class="line"></span>
                 </div>
                 <span class="yw-tit">ADVANCE REGISTRATION PROCESS</span>
@@ -29,30 +29,30 @@
             <div class="sett-warp">
                 <div class="item item-one">
                     <div class="item-i"><i></i></div>
-                    <div class="tit">1 {$lang.sett_step_one}</div>
-                    <span>{$lang.sett_step_one_tit}</span>
-                    <span>{$lang.sett_step_one_desc}</span>
+                    <div class="tit">1 提交入驻资料</div>
+                    <span>选择店铺类型/品牌</span>
+                    <span>填写入驻信息</span>
                 </div>
                 <em class="item-jt"></em>
                 <div class="item item-two">
                     <div class="item-i"><i></i></div>
-                    <div class="tit">2 {$lang.sett_step_two}</div>
-                    <span>{$lang.sett_step_two_tit}</span>
-                    <span>{$lang.sett_step_two_desc}</span>
+                    <div class="tit">2 商家等待审核</div>
+                    <span>平台审核入驻信息</span>
+                    <span>通知商家</span>
                 </div>
                 <em class="item-jt"></em>
                 <div class="item item-three">
                     <div class="item-i"><i></i></div>
-                    <div class="tit">3 {$lang.sett_step_three}</div>
-                    <span>{$lang.sett_step_three_tit}</span>
-                    <span>{$lang.sett_step_three_desc}</span>
+                    <div class="tit">3 完善店铺信息</div>
+                    <span>登录商家后台</span>
+                    <span>完善店铺信息</span>
                 </div>
                 <em class="item-jt"></em>
                 <div class="item item-four">
                     <div class="item-i"><i></i></div>
-                    <div class="tit">4 {$lang.sett_step_four}</div>
-                    <span>{$lang.sett_step_four_tit}</span>
-                    <span>{$lang.sett_step_four_desc}</span>
+                    <div class="tit">4 店铺上线</div>
+                    <span>上传商品</span>
+                    <span>发布销售</span>
                 </div>
             </div>
         </div>
@@ -61,7 +61,7 @@
         <div class="w w1200">
             <div class="sett-title">
                 <div class="zw-tit">
-                    <h3>{$lang.hot_recruit}</h3>
+                    <h3>热招类目</h3>
                     <span class="line"></span>
                 </div>
                 <span class="yw-tit">BUSINESS CATEGORY</span>
@@ -77,7 +77,7 @@
         <div class="w w1200">
             <div class="sett-title">
                 <div class="zw-tit">
-                    <h3>{$lang.success_case}</h3>
+                    <h3>成功案例</h3>
                     <span class="line"></span>
                 </div>
                 <span class="yw-tit">SUCCESSFUL CASE</span>
@@ -91,7 +91,7 @@
         <div class="w w1200">
             <div class="sett-title">
                 <div class="zw-tit">
-                    <h3>{$lang.common_problem}</h3>
+                    <h3>常见问题</h3>
                     <span class="line"></span>
                 </div>
                 <span class="yw-tit">COMMON PROBLEM</span>

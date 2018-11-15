@@ -35,7 +35,7 @@
                 <div class="value">
                     <textarea name="content" class="textarea" id="textarea" cols="30" rows="10" size="10" placeholder="{$lang.Experience_one}" onKeyUp="figure()" maxlength="500"></textarea> 
                     <div class="clear"></div>
-                    <div class="error">{$lang.common_form_textarea}<span id="sp">500</span>{$lang.zi_zc}</div>
+                    <div class="error">您还可以输入<span id="sp">500</span>字</div>
                 </div>
             </div>
         <!--{else}-->
@@ -73,7 +73,7 @@
                         <!--{/if}-->
                         
                         <!--{if !$item.comment.img_list}-->
-                        <div class="img-utips">{$lang.total}<em ectype="num">0</em>{$lang.img_number_notic}<span id="img_number" ectype="ima_number">10</span>{$lang.zhang}</div>
+                        <div class="img-utips">共<em ectype="num">0</em>张,还能上传<span id="img_number" ectype="ima_number">10</span>张</div>
                         <!--{/if}-->
                     </div>
                 </div>
@@ -129,7 +129,7 @@
 					len ++;
 				});
 				if(len > 10){
-					pbDialog(json_languages.comment_img_number,"",0);
+					pbDialog("最多只能上传10张图片","",0);
 				}else{
 					//开始上传 单张循环上传
 					var img_number = 10 - Number(len);

@@ -1,4 +1,5 @@
 <?php
+defined('IN_ECTOUCH') or die('Deny Access');
 
 $_LANG['ems']                   = 'EMS 国内邮政特快专递';
 $_LANG['ems_express_desc']      = 'EMS 国内邮政特快专递描述内容';

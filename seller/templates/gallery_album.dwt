@@ -20,7 +20,7 @@
                     <thead>
                     <tr>
                     	<th width="5%"><div class="tDiv">{$lang.record_id}</div></th>
-                        <th width="8%"><div class="tDiv">{$lang.category}</div></th>
+                        <th width="8%"><div class="tDiv">类目</div></th>
                         <th width="20%"><div class="tDiv">{$lang.album_mame}</div></th>
                         <th width="10%"><div class="tDiv">{$lang.gallery_count}</div></th>
                         <th width="10%"><div class="tDiv">{$lang.album_cover}</div></th>
@@ -35,11 +35,11 @@
                         <td class="tl pl10">
                             <div class="tDiv first_setup">
                                 <div class="setup_span">
-                                    <em><i class="icon icon-cog"></i>{$lang.setup}<i class="arrow"></i></em>
+                                    <em><i class="icon icon-cog"></i>设置<i class="arrow"></i></em>
                                     <ul>
-                                        <li><a href="gallery_album.php?act=add&parent_id={$agency.album_id}">{$lang.add_next_level}</a></li>
-                                        <li><a href="gallery_album.php?act=list&parent_id={$agency.album_id}">{$lang.view_next_level}</a></li>
-                                        <li><a href="javascript:void(0);" ectype="transfer_pic" data-cid="{$agency.album_id}">{$lang.transfer_img}</a></li>
+                                        <li><a href="gallery_album.php?act=add&parent_id={$agency.album_id}">新增下一级</a></li>
+                                        <li><a href="gallery_album.php?act=list&parent_id={$agency.album_id}">查看下一级</a></li>
+                                        <li><a href="javascript:void(0);" ectype="transfer_pic" data-cid="{$agency.album_id}">转移图片</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -63,7 +63,7 @@
                         <td class="ecsc-table-handle tr">
                           <span><a href="gallery_album.php?act=view&id={$agency.album_id}" class="btn-orange"><i class="icon sc_icon_see"></i><p>{$lang.view}</p></a></span>
                           <span><a href="gallery_album.php?act=edit&id={$agency.album_id}" title="{$lang.edit}" class="btn-green"><i class="icon icon-edit"></i><p>{$lang.edit}</p></a></span>
-                          <span><a href="javascript:void(0);" onclick="listTable.remove({$agency.album_id}, '{$lang.ckdelete_album}')" title="{$lang.drop}" class="btn-red"><i class="icon icon-trash"></i><p>{$lang.drop}</p></a></span>
+                          <span><a href="javascript:void(0);" onclick="listTable.remove({$agency.album_id}, '确定删除该相册吗？删除后图片无法找回！')" title="{$lang.drop}" class="btn-red"><i class="icon icon-trash"></i><p>{$lang.drop}</p></a></span>
                         </td>
                     </tr>
                     {foreachelse}
@@ -112,7 +112,7 @@
     $(document).on('click',"*[ectype='transfer_pic']",function(){
         var inherit = 0;
         
-        if(confirm(zi_album_handle)){
+        if(confirm('子相册是否继承此操作？')){
             inherit = 1
         }
         var album_id = $(this).data("cid");
@@ -120,11 +120,11 @@
                 var content = data.content;
                 pb({
                         id:"transfer_dialog",
-                        title:transfer_img,
+                        title:"转移图片",
                         width:732,
                         content:content,
-                        ok_title:jl_start_transfer,
-                        cl_title:jl_close,
+                        ok_title:"开始转移",
+                        cl_title:"关闭",
                         drag:false,
                         foot:true,
                         onOk:function(){

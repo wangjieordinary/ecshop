@@ -66,7 +66,7 @@ $data = array (
   ),
   8 => 
   array (
-    'seller_id' => '18',
+    'seller_id' => '11',
     'cycle' => '0',
     'percent_value' => NULL,
     'day_number' => NULL,
@@ -74,7 +74,7 @@ $data = array (
   ),
   9 => 
   array (
-    'seller_id' => '16',
+    'seller_id' => '12',
     'cycle' => '0',
     'percent_value' => NULL,
     'day_number' => NULL,
@@ -82,7 +82,7 @@ $data = array (
   ),
   10 => 
   array (
-    'seller_id' => '15',
+    'seller_id' => '13',
     'cycle' => '0',
     'percent_value' => NULL,
     'day_number' => NULL,
@@ -98,7 +98,7 @@ $data = array (
   ),
   12 => 
   array (
-    'seller_id' => '13',
+    'seller_id' => '15',
     'cycle' => '0',
     'percent_value' => NULL,
     'day_number' => NULL,
@@ -106,7 +106,7 @@ $data = array (
   ),
   13 => 
   array (
-    'seller_id' => '12',
+    'seller_id' => '16',
     'cycle' => '0',
     'percent_value' => NULL,
     'day_number' => NULL,
@@ -114,15 +114,7 @@ $data = array (
   ),
   14 => 
   array (
-    'seller_id' => '11',
-    'cycle' => '0',
-    'percent_value' => NULL,
-    'day_number' => NULL,
-    'bill_time' => NULL,
-  ),
-  15 => 
-  array (
-    'seller_id' => '67',
+    'seller_id' => '18',
     'cycle' => '0',
     'percent_value' => NULL,
     'day_number' => NULL,

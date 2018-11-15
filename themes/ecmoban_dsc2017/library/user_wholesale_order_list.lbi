@@ -20,11 +20,10 @@
                     {/if}
                 </span>
             </div>
-            {if $order.order_over eq 0 && $order.pay_status eq 1}
+            {if $order.order_over eq 0}
             <div class="t-btn ml20"><a href="javascript:void(0);" data-orderid="{$order.order_id}" ectype="userWhoConfirm" class="sc-btn sc-blue-btn">设为完成</a></div>
             {/if}
-            
-            <div class="t-price mr0">{$order.total_fee}{if $order.pay_fee gt 0}(手续费：{$order.pay_fee}){/if}</div>
+            <div class="t-price mr0">{$order.total_fee}</div>
         </dt>
         <dd class="item-c">                        
             <div class="itemc-left">
@@ -47,11 +46,6 @@
 
             <div class="itemc-right">
                 <div class="p-i-items">
-                    
-                    <div class="lie">
-                        <div class="label">支付状态：</div>
-                        <div class="value">{if $order.pay_status eq 0}未支付<a href="wholesale_flow.php?step=order_pay&order_id={$order.order_id}"  class="sc-btn sc-blue-btn ml10" target="_blank">去付款</a>{else}已支付{/if}</div>
-                    </div>
                     <div class="lie">
                         <div class="label">联系人：</div>
                         <div class="value">{$order.consignee}</div>
@@ -80,7 +74,7 @@
 					{/if}
                     <div class="lie">
                         <div class="label">支付方式：</div>
-                        <div class="value">{$order.pay_name}</div>
+                        <div class="value">线下支付</div>
                     </div>
                     <div class="lie last">
                         <div class="label">其他备注：</div>

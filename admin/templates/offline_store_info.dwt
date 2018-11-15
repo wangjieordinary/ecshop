@@ -156,10 +156,10 @@
                                             <input type="file" class="type-file-file" id="stores_img" name="stores_img" data-state="imgfile" size="30" hidefocus="true" value="" />
                                             {if $offline_store.stores_img}
                                             <span class="show">
-                                                <a href="{$offline_store.stores_img|escape}" target="_blank" class="nyroModal"><i class="icon icon-picture" data-tooltipimg="{$offline_store.stores_img|escape}" ectype="tooltip" title="tooltip"></i></a>
+                                                <a href="../{$offline_store.stores_img|escape}" target="_blank" class="nyroModal"><i class="icon icon-picture" data-tooltipimg="../{$offline_store.stores_img|escape}" ectype="tooltip" title="tooltip"></i></a>
                                             </span>
                                             {/if}
-                                            <input type="text" name="textfile" class="type-file-text" id="textfield" value="{if $offline_store.stores_img}{$offline_store.stores_img|escape}{/if}" autocomplete="off" readonly />
+                                            <input type="text" name="textfile" class="type-file-text" id="textfield" value="{if $offline_store.stores_img}../{$offline_store.stores_img|escape}{/if}" autocomplete="off" readonly />
                                         </div>
                                         <div class="notic">{$lang.stores_img_dsc}</div>
                                         <div class="form_prompt"></div>

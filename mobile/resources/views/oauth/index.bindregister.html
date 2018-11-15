@@ -84,7 +84,7 @@
         });
 
         $("#sendsms").click(function () {
-            var myreg = window.mobilereg;
+            var myreg = /^1(3[0-9]|4[0-9]|5[0-35-9]|6[6]|7[01345678]|8[0-9]|9[89])\d{8}$/; // 支持166号段
             var mobile = $("input[name=mobile]").val();
             var verify_code = $("input[name=verify]").val();
 

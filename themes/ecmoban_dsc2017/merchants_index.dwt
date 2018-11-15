@@ -134,7 +134,7 @@
                 
                 <!--{if $promotion_goods}-->
                 <div class="shop-floor">
-                    <div class="f-hd"><h2>{$lang.promotion_goods}</h2></div>
+                    <div class="f-hd"><h2>促销商品</h2></div>
                     <div class="f-bd">
                         <ul class="list clearfix">
                             <li class="first"><a href=""><img src="images/shop/f.jpg" alt=""></a></li>

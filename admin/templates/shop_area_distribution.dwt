@@ -27,7 +27,7 @@
                             <div class="stat_order_search stat_order_search2">
                                 <form action="" method="post" id="" name="selectForm">
                                     <div class="search_item">
-                                        <strong>{$lang.time}：</strong>
+                                        <strong>时间：</strong>
                                         <div class="text_time" id="text_time_start">
                                             <input type="text" class="text" name="start_date" value="" id="start_date" value="" autocomplete="off" readonly>
                                         </div>
@@ -37,7 +37,7 @@
                                         </div>
                                     </div>
                                     <div class="search_item search_item">
-                                        <strong>{$lang.region}：</strong>
+                                        <strong>区域：</strong>
                                         <div class="imitate_select select_w145">
                                             <div class="cite">{$lang.please_select}</div>
                                             <ul>
@@ -48,7 +48,7 @@
                                             </ul>
                                             <input name="area" type="hidden" value="0" id="order_referer_val">
                                         </div>
-                                        <strong class="label_txt">{$lang.main_self}：</strong>
+                                        <strong class="label_txt">主营类目：</strong>
                                         <div class="imitate_select select_w145">
                                             <div class="cite">{$lang.please_select}</div>
                                             <ul>
@@ -59,7 +59,7 @@
                                             </ul>
                                             <input name="shop_categoryMain" type="hidden" value="0" id="shop_categoryMain">
                                         </div>
-                                        <strong class="label_txt">{$lang.steps_shop_type}：</strong>
+                                        <strong class="label_txt">店铺类型：</strong>
                                         <div class="imitate_select select_w145">
                                             <div class="cite">{$lang.please_select}</div>
                                             <ul>
@@ -72,7 +72,7 @@
                                         </div>
                                     </div>
                                     <div class="search_item">
-                                        <a href="javascript:void(0);" class="btn btn30 blue_btn" style="margin-left: 42px;" ectype="searchButton"><i class="icon icon-search"></i>{$lang.btn_search}</a>
+                                        <a href="javascript:void(0);" class="btn btn30 blue_btn" style="margin-left: 42px;" ectype="searchButton"><i class="icon icon-search"></i>查询</a>
                                     </div>
                                     <input type="hidden" name="act" value="get_area_chart_data">
                                 </form>
@@ -103,10 +103,10 @@
                                         <tbody>
                                         {foreach from=$order_list item=vo}
                                         <tr>
-                                            <td><div class="tDiv">{if $vo.province_name}{$vo.province_name}{else}<span class="blue">尚未设置</span>{/if}</div></td>
-                                            <td><div class="tDiv">{if $vo.city_name}{$vo.city_name}{else}<span class="blue">尚未设置</span>{/if}</div></td>
-                                            <td><div class="tDiv">{if $vo.district_name}{$vo.district_name}{else}<span class="blue">尚未设置</span>{/if}</div></td>
-                                            <td><div class="tDiv">{if $vo.store_num}{$vo.store_num}{else}<span class="blue">尚未设置</span>{/if}</div></td>
+                                            <td><div class="tDiv">{$vo.province_name|default:<span class="blue">尚未设置</span>}</div></td>
+                                            <td><div class="tDiv">{$vo.city_name|default:<span class="blue">尚未设置</span>}</div></td>
+                                            <td><div class="tDiv">{$vo.district_name|default:<span class="blue">尚未设置</span>}</div></td>
+                                            <td><div class="tDiv">{$vo.store_num|default:0}</div></td>
                                         </tr>
                                         {foreachelse}
                                         <tr>

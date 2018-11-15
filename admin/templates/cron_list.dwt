@@ -15,13 +15,12 @@
                         <div class="view-case-info">
                         	<a href="http://help.ecmoban.com/article-6878.html" target="_blank">{$lang.tutorials_bonus_list_one}</a>
                         </div>
-                    </div>
-                    {/if}
+                    </div>			
+                    {/if}	
 				</div>
                 <ul>
                 	<li>{$lang.operation_prompt_content.list.0}</li>
                     <li>{$lang.operation_prompt_content.list.1}</li>
-                    <li>{$lang.operation_prompt_content.list.2}</li>
                 </ul>
             </div>
             <div class="flexilist">

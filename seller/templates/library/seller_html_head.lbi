@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>{$lang.seller_center}{if $ur_here} - {$ur_here}{/if}</title>
+<title>商家中心{if $ur_here} - {$ur_here}{/if}</title>
 
 <meta name="robots" content="noindex, nofollow">
 <link rel="shortcut icon" href="../favicon.ico" />
@@ -11,6 +11,7 @@
 <link rel="stylesheet" type="text/css" href="css/general.css" />
 <link rel="stylesheet" type="text/css" href="css/style.css" />
 <link rel="stylesheet" type="text/css" href="css/purebox.css">
+<link rel="stylesheet" type="text/css" href="css/feijiao.css">
 <link rel="stylesheet" type="text/css" href="../js/perfect-scrollbar/perfect-scrollbar.min.css">
 <link rel="stylesheet" type="text/css" href="../js/calendar/calendar.min.css" />
 <link rel="stylesheet" type="text/css" href="../js/spectrum-master/spectrum.css" />

@@ -46,11 +46,12 @@
 									<td><div class="tDiv">{if $list.old_record}{$lang.primary}：{else}{$lang.present}：{/if}{$list.shop_price}</div></td>
                                     <td><div class="tDiv">{if $list.old_record}{$lang.primary}：{else}{$lang.present}：{/if}{$list.shipping_fee}</font></div></td>
                                     <td><div class="tDiv">{if $list.old_record}{$lang.primary}：{else}{$lang.present}：{/if}{$list.promote_price}</div></td>
-                                    <td><div class="tDiv">{if $list.old_record}{$lang.primary}：{else}{$lang.present}：{/if}<a href="javascript:;" ectype="view_detail" data-logid="{$list.log_id}" data-step="member">{$lang.view_info}</a></div></td>
-									<td><div class="tDiv">{if $list.old_record}{$lang.primary}：{else}{$lang.present}：{/if}<a href="javascript:;" ectype="view_detail" data-logid="{$list.log_id}" data-step="volume">{$lang.view_info}</a></div></td>
+                                    <td><div class="tDiv">{if $list.old_record}{$lang.primary}：{else}{$lang.present}：{/if}<a href="javascript:;" ectype="view_detail" data-logid="{$list.log_id}" data-step="member">查看详情</a></div></td>
+									<td><div class="tDiv">{if $list.old_record}{$lang.primary}：{else}{$lang.present}：{/if}<a href="javascript:;" ectype="view_detail" data-logid="{$list.log_id}" data-step="volume">查看详情</a></div></td>
                                     <td><div class="tDiv">{if $list.old_record}{$lang.primary}：{else}{$lang.present}：{/if}{$list.give_integral}</font></div></td>
                                     <td><div class="tDiv">{if $list.old_record}{$lang.primary}：{else}{$lang.present}：{/if}{$list.rank_integral}</div></td>
                                     <td><div class="tDiv">{if $list.old_record}{$lang.primary}：{else}{$lang.present}：{/if}{$list.goods_weight}</div></td>
+									
 									<td><div class="tDiv">{if $list.old_record}{$lang.primary}：{else}{$lang.present}：{/if}{if $list.is_on_sale}{$lang.on_sale_in}{else}{$lang.not_on_sale_in}{/if}</div></td>
                                     <td>
                                     	<div class="tDiv">

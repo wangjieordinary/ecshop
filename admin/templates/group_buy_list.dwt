@@ -75,7 +75,7 @@
                                     <th width="30%"><div class="tDiv">{$lang.goods_name}</div></th>
                                     <th width="10%"><div class="tDiv">{$lang.goods_steps_name}</div></th>
                                     <th width="8%"><div class="tDiv">{$lang.end_date}</div></th>
-                                    <th width="6%"><div class="tDiv">{$lang.deposit} </div></th>
+                                    <th width="6%"><div class="tDiv">{$lang.deposit}</div></th>
                                     <th width="6%"><div class="tDiv">{$lang.restrict_amount}</div></th>
                                     <th width="6%"><div class="tDiv">{$lang.valid_goods}</div></th>
                                     <th width="6%"><div class="tDiv">{$lang.valid_order}</div></th>

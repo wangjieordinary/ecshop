@@ -2,11 +2,11 @@
 <form method="get" action="javascript:searchGoods()" name="searchForm">
 <div class="gj_search">
 	<div class="search-gao-list" id="searchBarOpen">
-		<i class="icon icon-zoom-in"></i>{$lang.advanced_search}
+		<i class="icon icon-zoom-in"></i>高级搜索
 	</div>
 	<div class="search-gao-bar" style="right:-350px;">
-		<div class="handle-btn" id="searchBarClose"><i class="icon icon-zoom-out"></i>{$lang.pack_up}</div>
-		<div class="title"><h3>{$lang.advanced_search}</h3></div>
+		<div class="handle-btn" id="searchBarClose"><i class="icon icon-zoom-out"></i>收起边栏</div>
+		<div class="title"><h3>高级搜索</h3></div>
 			<div class="searchContent w300">
 				<div class="layout-box">
                 	<!-- 分类 -->
@@ -16,7 +16,7 @@
 						<dd>
                             <div class="categorySelect">
                                 <div class="selection">
-                                    <input type="text" name="category_name" id="category_name" class="text w260 mr0 valid" value="{$lang.select_cat}" autocomplete="off" readonly data-filter="cat_name" />
+                                    <input type="text" name="category_name" id="category_name" class="text w260 mr0 valid" value="请选择分类" autocomplete="off" readonly data-filter="cat_name" />
                                     <input type="hidden" name="cat_id" id="cat_id" value="0" data-filter="cat_id" />
                                 </div>
                                 <div class="select-container" style="width:290px; display:none;">
@@ -32,7 +32,7 @@
 						<dt>{$lang.act_rec}</dt>
 						<dd>
 							<div id="" class="imitate_select select_w140">
-								<div class="cite">{$lang.please_select}</div>
+								<div class="cite">请选择</div>
 								<ul>
 									<li><a href="javascript:;" data-value="" class="ftx-01">{$lang.intro_type}</a></li>
 									{foreach from=$intro_list item=data key=key}
@@ -51,7 +51,7 @@
 						<dt>{$lang.supplier}</dt>
 						<dd>
 							<div id="" class="imitate_select select_w140">
-								<div class="cite">{$lang.please_select}</div>
+								<div class="cite">请选择</div>
 								<ul>
 									<li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.intro_type}</a></li>
 									{foreach from=$suppliers_list_name item=data key=key}
@@ -70,7 +70,7 @@
 						<dt>{$lang.is_on_sale}</dt>
 						<dd>	
 							<div id="" class="imitate_select select_w140">
-								<div class="cite">{$lang.please_select}</div>
+								<div class="cite">请选择</div>
 								<ul>
 									<li><a href="javascript:;" data-value="" class="ftx-01">{$lang.intro_type}</a></li>
 									<li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.on_sale}</a></li>
@@ -89,7 +89,7 @@
 						<dd>
 							<div class="brandSelect">
                                 <div class="selection">
-                                    <input type="text" name="brand_name" id="brand_name" class="text w120 valid" value="{$lang.select_barnd}" autocomplete="off" readonly data-filter="brand_name" />
+                                    <input type="text" name="brand_name" id="brand_name" class="text w120 valid" value="请选择品牌" autocomplete="off" readonly data-filter="brand_name" />
                                     <input type="hidden" name="brand_id" id="brand_id" value="0" data-filter="brand_id" />
                                 </div>
                                 <div class="brand-select-container" style="display:none;">
@@ -112,8 +112,8 @@
 				</div>
 			</div>
 			<div class="bot_btn">
-				<input type="submit" class="btn red_btn" name="tj_search" value="{$lang.button_inquire}" />
-				<input type="reset" class="btn btn_reset" name="reset" value="{$lang.button_reset_alt}" />
+				<input type="submit" class="btn red_btn" name="tj_search" value="提交查询" />
+				<input type="reset" class="btn btn_reset" name="reset" value="重置" />
 			</div>
 	</div>
 </div>

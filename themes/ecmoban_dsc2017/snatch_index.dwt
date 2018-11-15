@@ -20,10 +20,10 @@
             <div class="w w1200 relative">
                 {* DSC 提醒您：动态载入activity_top_ad.lbi，显示首页分类小广告 *}{insert name='get_adv_child' ad_arr=$activity_top_banner}
                 <div class="snatch-firt">
-                    <div class="snatch-f-name">{$lang.snatch}</div>
+                    <div class="snatch-f-name">夺宝奇兵</div>
                     <div class="snatch-f-info">
                         <div class="namber">{$snatch_goods_num|default:0}</div>
-                        <span>{$lang.snatch_goods_notic}</span>
+                        <span>件商品已被拍出</span>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                                             <span class="price">{$goods.formated_shop_price}</span>
                                         </div>
                                         <div class="info-item">
-                                            <span>{$lang.bid_number}：</span>
+                                            <span>出价次数：</span>
                                             <span>{$goods.price_list_count}</span>
                                         </div>
                                         <div class="info-item lefttime" data-time="{$goods.end_time_date}">
@@ -89,7 +89,7 @@
                                             <em>:</em>
                                             <span class="seconds">10</span>
                                         </p>
-                                        <p><em>{$lang.bid_number}：</em><span>{$list.price_list_count}</span></p>
+                                        <p><em>出价次数：</em><span>{$list.price_list_count}</span></p>
                                     </div>
                                     <!-- {if $list.current_time lt $list.end_time and $list.current_time gt $list.start_time } -->
                                     <a href="{$list.url}" target="_blank" class="sn-btn"><em></em>{$lang.me_bid}<s></s></a>
@@ -102,7 +102,7 @@
                                 <!--{/foreach}-->
                             </ul>
                         </div>
-                        <a href="snatch.php?act=list" class="gb-btn-all">{$lang.all_snatch}</a>
+                        <a href="snatch.php?act=list" class="gb-btn-all">全部夺宝</a>
                     </div>
                 </div>
             </div>

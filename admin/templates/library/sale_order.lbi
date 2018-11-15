@@ -4,13 +4,13 @@
 <table cellpadding="0" cellspacing="0" border="0">
     <thead>
     <tr>
-        <th width="10%"><div class="tDiv">{$lang.rank}</div></th>
-        <th width="30%"><div class="tDiv">{$lang.goods_name}</div></th>
-        <th width="10%"><div class="tDiv">{$lang.goods_steps_name}</div></th>
-        <th width="10%"><div class="tDiv">{$lang.pro_code}</div></th>
-        <th width="10%"><div class="tDiv">{$lang.sale_count}</div></th>
-        <th width="10%"><div class="tDiv">{$lang.sale_money}</div></th>
-        <th width="10%"><div class="tDiv">{$lang.average_price}</div></th>
+        <th width="10%"><div class="tDiv">排行</div></th>
+        <th width="30%"><div class="tDiv">商品名称</div></th>
+        <th width="10%"><div class="tDiv">商家名称</div></th>
+        <th width="10%"><div class="tDiv">货号</div></th>
+        <th width="10%"><div class="tDiv">销售量</div></th>
+        <th width="10%"><div class="tDiv">销售额</div></th>
+        <th width="10%"><div class="tDiv">均价</div></th>
     </tr>
     </thead>
     <tbody>
@@ -26,7 +26,7 @@
     </tr>
     {foreachelse}
     <tr>
-        <td colspan="12" class="no_record"><div class="tDiv">{$lang.now_no_record}</div></td>
+        <td colspan="12" class="no_record"><div class="tDiv">当前没有任何记录</div></td>
     </tr>
     {/foreach}
     </tbody>

@@ -21,9 +21,9 @@
             <!--{if $smarty.foreach.foo.iteration lt 12}-->
             <tr>
                 {if $smarty.foreach.foo.index == 0}
-                <td><span class="offer-statu active">{$lang.latest_price}</span></td>
+                <td><span class="offer-statu active">最新价</span></td>
                 {else}
-                <td><span class="offer-statu">{$lang.bid}</span></td>
+                <td><span class="offer-statu">出价</span></td>
                 {/if}
                 <td class="red">{$item.user_name}</td>
                 <td>{$item.bid_price}</td>
@@ -37,7 +37,7 @@
     <div class="no_records">
         <i class="no_icon_two"></i>
         <div class="no_info">
-            <h3>{$lang.snatch_price_null}</h3>
+            <h3>此活动还没有出价记录哟~</h3>
         </div>
     </div>
     <!--{/if}-->
@@ -63,9 +63,9 @@
             <!--{if $smarty.foreach.foo.iteration lt 12}-->
             <tr>
                 {if $smarty.foreach.foo.index == 0}
-                <td><span class="offer-statu active">{$lang.au_bid_ok}</span></td>
+                <td><span class="offer-statu active">领先</span></td>
                 {else}
-                <td><span class="offer-statu">{$lang.out}</span></td>
+                <td><span class="offer-statu">出局</span></td>
                 {/if}
                 <td class="red">{$item.user_name}</td>
                 <td>{$item.bid_price}</td>
@@ -79,7 +79,7 @@
     <div class="no_records">
         <i class="no_icon_two"></i>
         <div class="no_info">
-            <h3>{$lang.snatch_price_null}</h3>
+            <h3>此活动还没有出价记录哟~</h3>
         </div>
     </div>
     <!--{/if}-->

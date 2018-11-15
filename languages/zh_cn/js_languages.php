@@ -236,8 +236,8 @@ $_LANG['js_languages']['common']['City'] = '请选择所在市';
 $_LANG['js_languages']['common']['District'] = '请选择所在区域';
 $_LANG['js_languages']['common']['Street'] = '请选择所在街道';
 $_LANG['js_languages']['common']['Detailed_address_null'] = '详细地址不能为空';
-$_LANG['js_languages']['common']['consignee'] = '请填写收货人信息';
 /* shopping_flow.js */
+
 
 $_LANG['js_languages']['common']['Select_attr'] = '请选择属性';
 $_LANG['js_languages']['common']['Focus_prompt_one'] = '您已关注该店铺！';
@@ -304,23 +304,16 @@ $_LANG['js_languages']['common']['bid_prompt_error'] = '价格输入格式不正
 $_LANG['js_languages']['common']['mobile_error_goods'] = '手机格式不正确！';
 $_LANG['js_languages']['common']['null_email_goods'] = '邮箱不能为空';
 $_LANG['js_languages']['common']['select_store'] = '请选择门店！';
+
 $_LANG['js_languages']['common']['Product_spec_prompt'] = '请选择商品规格类型';
+
 $_LANG['js_languages']['common']['reply_desc_one'] = '回复帖子内容不能为空';
+
 $_LANG['js_languages']['common']['go_shoping'] = "去购物";
+
 $_LANG['js_languages']['common']['loading'] = "正在拼命加载中...";
+
 $_LANG['js_languages']['common']['purchasing_minamount'] = "对不起，购买数量不能小于最小阶梯价";
-$_LANG['js_languages']['common']['no_history'] = '您已清空最近浏览过的商品';
-$_LANG['js_languages']['common']['emailInfo_incompleted'] = "您的邮箱信息未认证，进入用户中心<a href='user.php?act=profile' class='red' target='_blank'>完善邮箱信息</a>";
-
-//优惠券
-$_LANG['js_languages']['common']['receive_coupons'] = '领取优惠券';
-$_LANG['js_languages']['common']['Immediate_use'] = "立即使用";
-$_LANG['js_languages']['common']['no_enabled'] = '关闭';
-//优惠券
-
-$_LANG['js_languages']['common']['highest_price'] = '已是最高价！';
-$_LANG['js_languages']['common']['lowest_price'] = '已是最低价！';
-
 /* common end*/
 
 
@@ -347,6 +340,8 @@ $_LANG['js_languages']['flow']['confirm_drop_address'] = "您确定要删除该�
 $_LANG['js_languages']['flow']['please_checked_address'] = "您还没有选择收货地址！";
 $_LANG['js_languages']['flow']['cart_empty_goods'] = "您的购物车中没有商品！";
 $_LANG['js_languages']['flow']['confirm_Move_collection'] = "移动后选中商品将不在购物车中显示！";
+
+
 $_LANG['js_languages']['flow']['Shipping_address'] = '收货地址';  
 $_LANG['js_languages']['flow']['add_shipping_address'] = '添加收货地址';  
 $_LANG['js_languages']['flow']['no_delivery'] = '暂不支持该地区配送。';  
@@ -359,19 +354,20 @@ $_LANG['js_languages']['flow']['flow_no_shipping'] = '您必须选定一个配�
 $_LANG['js_languages']['flow']['email_error'] = '邮箱格式不正确！'; 
 $_LANG['js_languages']['flow']['Mobile_error'] = '手机号格式不正确！'; 
 $_LANG['js_languages']['flow']['phone_error'] = '电话号码格式不正确！';
+
+
 $_LANG['js_languages']['flow']['order_detail'] = '订单详情'; 
 $_LANG['js_languages']['flow']['down_detail'] = '收起详情';
 $_LANG['js_languages']['flow']['payTitle'] = '正在支付';
+
 $_LANG['js_languages']['flow']['select_consigne'] = "请选择所在国家";
 $_LANG['js_languages']['flow']['consignee_legitimate_email'] = "您输入的邮件地址不是一个合法的邮件地址";
 $_LANG['js_languages']['flow']['consignee_legitimate_phone'] = "手机号码不合法";
 $_LANG['js_languages']['flow']['input_Consignee_name'] = "请您填写收货人姓名";
 $_LANG['js_languages']['flow']['con_Preservation'] = '保存收货人信息';
+
 $_LANG['js_languages']['flow']['Preservation'] = '保存';
 $_LANG['js_languages']['flow']['add_invoice'] = '新增单位发票';
-$_LANG['js_languages']['flow']['checked_goods_number'] = '请勾选中商品在修改商品数量';
-$_LANG['js_languages']['flow']['not_seller_batch_goods_num'] = '不同店铺的不可以批量提交门店订单';
-$_LANG['js_languages']['flow']['payment_is_online'] = '在线支付';
 /*flow end*/
 
 /*user start*/
@@ -415,7 +411,7 @@ $_LANG['js_languages']['user']['fuzhizgantie'] = "该地址已经复制，你可
 $_LANG['js_languages']['user']['verify_email_null'] = "邮件地址不能为空";
 $_LANG['js_languages']['user']['verify_email_Wrongful'] = "邮件地址不合法";
 $_LANG['js_languages']['user']['verify_email_code_number'] = "请填写4位数验证码";
-$_LANG['js_languages']['user']['Mailbox_sent'] = "邮件已发送";
+$_LANG['js_languages']['user']['Mailbox_sent'] = "邮箱已发送";
 $_LANG['js_languages']['user']['operation_order_one'] = "您确实要删除该订单？";
 $_LANG['js_languages']['user']['operation_order_two'] = "您确实要还原该订单？";
 $_LANG['js_languages']['user']['operation_order_three'] = "您确实要彻底删除该订单？";
@@ -469,25 +465,7 @@ $_LANG['js_languages']['user']['number_ID_error'] = "身份证号格式错误，
 $_LANG['js_languages']['user']['front_pic_null'] = "身份证正面图片不能为空";
 $_LANG['js_languages']['user']['reverse_pic_null'] = "身份证反面图片不能为空";
 $_LANG['js_languages']['user']['number_null'] = "订购数量不能为空";
-$_LANG['js_languages']['user']['booking_number_null'] = "订购描述不能为空";
-$_LANG['js_languages']['user']['booking_contacts_null'] = "联系人不能为空";
 $_LANG['js_languages']['user']['Real_name_null'] = "真实姓名不能为空";
-$_LANG['js_languages']['user']['talk_content_null'] = "发布内容不能为空";
-$_LANG['js_languages']['user']['max_file_five_img'] = "最多只能上传5张图片";
-
-$_LANG['js_languages']['user']['company_name_null'] = "请填写增值发票单位名称";
-$_LANG['js_languages']['user']['tax_id_null'] = "请填写纳税人识别码";
-$_LANG['js_languages']['user']['tax_id_error'] = "纳税人识别码位数不正确";
-$_LANG['js_languages']['user']['company_address_null'] = "请填写注册地址";
-$_LANG['js_languages']['user']['company_telephone_null'] = "请填写联系电话";
-$_LANG['js_languages']['user']['bank_of_deposit_null'] = "请填写开户行名称";
-$_LANG['js_languages']['user']['bank_account_null'] = "请填写银行卡";
-$_LANG['js_languages']['user']['bank_account_error'] = "银行卡号不正确";
-$_LANG['js_languages']['user']['login_error'] = "登陆失效，请重新登陆";
-
-$_LANG['js_languages']['user']['company_name_notic'] = "请填写公司名称";
-$_LANG['js_languages']['user']['company_address_notic'] = "请填写公司地址";
-$_LANG['js_languages']['user']['enter_region'] = "请选择入驻区域";
 
 //第三方登录绑定
 $_LANG['js_languages']['user']['input_username'] = '请输入用户名';
@@ -501,31 +479,11 @@ $_LANG['js_languages']['user']['login_password_packup_two'] = '安全强度适�
 $_LANG['js_languages']['user']['login_password_packup_three'] = '您的密码很安全';
 $_LANG['js_languages']['user']['login_phone_packup_one'] = '请输入手机号码';
 $_LANG['js_languages']['user']['null_captcha_login'] = '验证码不能为空';
-$_LANG['js_languages']['user']['null_captcha_error'] = '验证码不正确';
 $_LANG['js_languages']['user']['confirm_password'] = '请输入您的确认密码！';
 $_LANG['js_languages']['user']['Dont_agree_password'] = '您两次输入的密码不一致！';
 $_LANG['js_languages']['user']['exist_phone'] = '手机号已经存在,请重新输入';
 $_LANG['js_languages']['user']['mobile_phone_username_equalTo'] = '用户不能和手机号码相同';
 $_LANG['js_languages']['user']['Mobile_error'] = '手机号格式不正确！';
-
-$_LANG['js_languages']['user']['recharge_amount_null'] = '充值金额不能为空';
-$_LANG['js_languages']['user']['recharge_amount_wrongful'] = '必须输入合法的数字';
-$_LANG['js_languages']['user']['recharge_amount_lower'] = '充值金额不能低于';
-
-$_LANG['js_languages']['user']['amount_of_cash_null'] = '提现金额不能为空';
-$_LANG['js_languages']['user']['amount_of_cash_wrongful'] = '必须输入合法的数字';
-$_LANG['js_languages']['user']['amount_of_cash_min'] = '提现金额不能小于';
-$_LANG['js_languages']['user']['amount_of_cash_max'] = '提现金额不能大于';
-
-$_LANG['js_languages']['user']['mobile_code_null'] = '手机验证码不能为空';
-$_LANG['js_languages']['user']['mobile_code_incorrect'] = '短信验证码不正确';
-
-$_LANG['js_languages']['user']['new_login_pwd_null'] = '新登录密码不能为空';
-$_LANG['js_languages']['user']['new_login_pwd_error'] = '请填写确认登录密码';
-$_LANG['js_languages']['user']['secondary_login_pwd_error'] = '两次输入密码不一致';
-$_LANG['js_languages']['user']['new_pay_pwd_null'] = '新支付密码不能为空';
-$_LANG['js_languages']['user']['new_pay_pwd_error'] = '请填写确认支付密码';
-$_LANG['js_languages']['user']['secondary_pay_pwd_error'] = '两次输入支付密码不一致';
 
 /*user end*/
 
@@ -572,7 +530,11 @@ $_LANG['js_languages']['merchants_steps']['add_limit'] = "最多添加";
 $_LANG['js_languages']['merchants_steps']['add_ci'] = "次";
 $_LANG['js_languages']['merchants_steps']['merchants_step_remove'] = "确定删除这条品牌资质信息吗";
 $_LANG['js_languages']['merchants_steps']['brand_zh_null'] = "中文品牌名称必填";
+
 /*merchants end*/
+
+$_LANG['js_languages']['common']['highest_price'] = '已是最高价！';
+$_LANG['js_languages']['common']['lowest_price'] = '已是最低价！';
 
 /* exchange start*/
 $_LANG['js_languages']['exchange']['most_exchange'] = "您最多可积分兑换";
@@ -581,6 +543,7 @@ $_LANG['js_languages']['exchange']['exchange_error_one'] = "对不起，您现�
 /* exchange end*/
 
 /* user_passport start*/
+//default
 $_LANG['js_languages']['passport_js']['default_username'] = "<i class='iconfont icon-info-sign'></i>支持中文、字母、数字、”-”的组合，3-20个字符";
 
 //error
@@ -656,8 +619,14 @@ $_LANG['js_languages']['passport_js']['both_password_error'] = "<i class='iconfo
 $_LANG['js_languages']['seckill']['Purchase_quantity'] = '超过限购数量';
 
 //历史记录
+$_LANG['js_languages']['common']['no_history'] = '您已清空最近浏览过的商品';
 $_LANG['js_languages']['history_list']['delete_history_goods'] = "删除历史商品";
 $_LANG['js_languages']['history_list']['delete_history'] = "您要删除该浏览历史商品吗！";
+
+//优惠券
+$_LANG['js_languages']['common']['receive_coupons'] = '领取优惠券';
+$_LANG['js_languages']['common']['Immediate_use'] = "立即使用";
+$_LANG['js_languages']['common']['no_enabled'] = '关闭';
 
 //众筹
 $_LANG['js_languages']['crowdfunding']['drop_address_zc'] = "删除收货地址";
@@ -704,8 +673,7 @@ $_LANG['js_languages']['wholesale_flow']['confirm_drop_address'] = "您确定要
 $_LANG['js_languages']['wholesale_flow']['please_checked_address'] = "您还没有选择收货地址！";
 $_LANG['js_languages']['wholesale_flow']['cart_empty_goods'] = "您的购物车中没有商品！";
 $_LANG['js_languages']['wholesale_flow']['confirm_Move_collection'] = "移动后选中商品将不在购物车中显示！";
-$_LANG['js_languages']['wholesale_flow']['select_purchase_goods'] = "请选择采购商品";
-$_LANG['js_languages']['wholesale_flow']['purchase_min_number'] = "采购商品数量不得小于最小起订量";
+
 
 $_LANG['js_languages']['wholesale_flow']['Shipping_address'] = '收货地址';  
 $_LANG['js_languages']['wholesale_flow']['add_shipping_address'] = '添加收货地址';  
@@ -720,6 +688,7 @@ $_LANG['js_languages']['wholesale_flow']['email_error'] = '邮箱格式不正确
 $_LANG['js_languages']['wholesale_flow']['Mobile_error'] = '手机号格式不正确！'; 
 $_LANG['js_languages']['wholesale_flow']['phone_error'] = '电话号码格式不正确！';
 
+
 $_LANG['js_languages']['wholesale_flow']['order_detail'] = '订单详情'; 
 $_LANG['js_languages']['wholesale_flow']['down_detail'] = '收起详情';
 $_LANG['js_languages']['wholesale_flow']['payTitle'] = '正在支付';
@@ -732,30 +701,4 @@ $_LANG['js_languages']['wholesale_flow']['con_Preservation'] = '保存收货人�
 
 $_LANG['js_languages']['wholesale_flow']['Preservation'] = '保存';
 $_LANG['js_languages']['wholesale_flow']['add_invoice'] = '新增单位发票';
-$_LANG['js_languages']['wholesale_flow']['Contact_name_empty'] = '联系人姓名不能为空';
-$_LANG['js_languages']['wholesale_flow']['company_telephone_null'] = "请填写联系电话";
-$_LANG['js_languages']['wholesale_flow']['address_empty'] = '收货地址不能为空';
-$_LANG['js_languages']['wholesale_flow']['select_payment_pls'] = '请选择支付方式';
-$_LANG['js_languages']['wholesale_flow']['number_not_min_1'] = '数量不能小于1';
-
-$_LANG['js_languages']['wholesale_goods']['wholesale_stock_lack'] = '采购商品库存不足';
-$_LANG['js_languages']['wholesale_goods']['wholesale_cart_num'] = '您选择您需要购买的商品';
-$_LANG['js_languages']['wholesale_goods']['wholesale_cart_min'] = '您订购的商品少于最小起订量';
-
-$_LANG['js_languages']['wholesale_purchase']['wholesale_purchase_one'] = '您一次最多只能添加5条求购商品信息';
-$_LANG['js_languages']['wholesale_purchase']['wholesale_purchase_two'] = '您至少需要填写一条求购商品信息';
-$_LANG['js_languages']['wholesale_purchase']['wholesale_purchase_three'] = '每个图片最多上传5张';
-$_LANG['js_languages']['wholesale_purchase']['wholesale_purchase_four'] = '文件格式不正确或图片像素大于2M';
-
-$_LANG['js_languages']['wholesale_purchase']['wholesale_purchase_title'] = '请填写求购标题';
-$_LANG['js_languages']['wholesale_purchase']['wholesale_purchase_tel'] = '请填写联系人';
-$_LANG['js_languages']['wholesale_purchase']['company_telephone_null'] = "请填写联系电话";
-$_LANG['js_languages']['wholesale_purchase']['company_telephone_error'] = '请正确填写联系电话';
-$_LANG['js_languages']['wholesale_purchase']['wholesale_purchase_endtime'] = '请选择求购结束时间';
-$_LANG['js_languages']['wholesale_purchase']['wholesale_purchase_region'] = '请选择地区';
-$_LANG['js_languages']['wholesale_purchase']['wholesale_purchase_goods_null'] = '采购商品名称不能为空';
-$_LANG['js_languages']['wholesale_purchase']['wholesale_purchase_number_null'] = '采购数量不能为空';
-$_LANG['js_languages']['wholesale_purchase']['wholesale_purchase_goods_cat'] = '请选择采购商品分类';
-$_LANG['js_languages']['wholesale_purchase']['wholesale_purchase_rule'] = '请确认是否同意采购单发布规则';
-
 /*wholesale_flow end*/

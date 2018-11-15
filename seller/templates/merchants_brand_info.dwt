@@ -38,7 +38,7 @@
                                 <div class="type-file-box">
                                 	<div class="input">
                                         <input type="text" name="textfile" class="type-file-text" {if $brand.brand_logo}value="../{$brand.brand_logo}"{/if} id="textfield" autocomplete="off" readonly />
-                                        <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}" />
+                                        <input type="button" name="button" id="button" class="type-file-button" value="上传..." />
                                         <input type="file" class="type-file-file" id="ad_img" name="brand_logo" data-state="imgfile" size="30" hidefocus="true" value="" />
                                     </div>
                                     {if $brand.brand_logo}
@@ -88,7 +88,7 @@
 							<dt>{$lang.require_field}&nbsp;{$lang.associated_platform_brands}：</dt>
 							<dd class="relative">
 								<div class="selection">
-									<input type="text" name="" id="brand_name" class="text w120 valid" value="{if $link_brand.brand_name}{$link_brand.brand_name}{else}{$lang.select_barnd}{/if}" autocomplete="off" readonly data-filter="brand_name" />
+									<input type="text" name="" id="brand_name" class="text w120 valid" value="{if $link_brand.brand_name}{$link_brand.brand_name}{else}请选择品牌{/if}" autocomplete="off" readonly data-filter="brand_name" />
 									<input type="hidden" name="link_brand" id="brand_id" value="{$link_brand.brand_id}" data-filter="brand_id" />
 									<input type="hidden" name="ru_id" value="0">
 								</div>
@@ -171,16 +171,16 @@ $(function(){
 		},
 		messages:{
 			brand_name:{
-				required : '<i class="icon icon-exclamation-sign"></i>'+brand_zh_name_null
+				required : '<i class="icon icon-exclamation-sign"></i>请输入中文品牌名称'
 			},
 			brank_letter:{
-				required : '<i class="icon icon-exclamation-sign"></i>'+brand_en_name_null
+				required : '<i class="icon icon-exclamation-sign"></i>请输入英文品牌名称'
 			},
 			textfile:{
-				required : '<i class="icon icon-exclamation-sign"></i>'+brand_logo_null
+				required : '<i class="icon icon-exclamation-sign"></i>请上传品牌logo'
 			},
 			link_brand:{
-				required : '<i class="icon icon-exclamation-sign"></i>'+guanlian_brand_null
+				required : '<i class="icon icon-exclamation-sign"></i>请选择关联品牌'
 			}
 		}			
 	});

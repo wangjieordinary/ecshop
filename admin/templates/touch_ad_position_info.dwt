@@ -27,7 +27,6 @@
                                         <div class="form_prompt"></div>
                                     </div>
                                 </div>
-                                {if $is_team}
 								<div class="item">
                                     <div class="label">{$lang.ads_channel}：</div>
                                     <div class="label_value">
@@ -45,26 +44,24 @@
                                     <div class="label_value">
                                         <select name="tc_type" class="text">
                                             <option value="0">{$lang.select_ads_type}</option>
-                                            <option value="banner" {if $posit_arr.tc_type == 'banner'}selected{/if}>{$lang.top}</option>
-                                            <option value="right" {if $posit_arr.tc_type == 'right'}selected{/if}>{$lang.right}</option>
+                                            <option value="banner"{if $posit_arr.tc_type == 'banner'}selected{/if}>{$lang.top}</option>
+                                            <option value="right"{if $posit_arr.tc_type == 'right'}selected{/if}>{$lang.right}</option>
                                             <option value="left" {if $posit_arr.tc_type == 'left'}selected{/if}>{$lang.left}</option>
-                                            <option value="bottom" {if $posit_arr.tc_type == 'bottom'}selected{/if}>{$lang.bottom}</option>
+                                            <option value="bottom"{if $posit_arr.tc_type == 'bottom'}selected{/if}>{$lang.bottom}</option>
                                         </select>
                                         <div class="form_prompt"></div>
                                     </div>
-                                </div>                                
+                                </div>
                                 <div class="item">
                                     <div class="label">{$lang.ads_belong}：</div>
                                     <div class="label_value">
                                         <select name="ad_type" class="text">
                                             <option value="0">{$lang.select_belong_type}</option>
-                                            <option value="seckill" {if $posit_arr.ad_type == 'seckill'}selected{/if}>{$lang.seckill}</option>
-                                            <option value="wxapp" {if $posit_arr.ad_type == 'wxapp'}selected{/if}>{$lang.wxapp}</option>
+                                            <option value="wxapp"{if $posit_arr.ad_type == 'wxapp'}selected{/if}>{$lang.wxapp}</option>
                                         </select>
                                         <div class="form_prompt"></div>
                                     </div>
                                 </div>
-                                {/if}
                                 <div class="item">
                                     <div class="label">{$lang.require_field}{$lang.ad_width}：</div>
                                     <div class="label_value">

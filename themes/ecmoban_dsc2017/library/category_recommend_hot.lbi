@@ -19,7 +19,7 @@
                                 {$goods.shop_price}
                             {/if}
                         </div>
-                        <div class="p-btn"><a class="btn sc-redBg-btn" href="{$goods.url}">{$lang.button_buy}</a></div>
+                        <div class="p-btn"><a class="btn sc-redBg-btn" href="{$goods.url}">立即购买</a></div>
                     </div>
                 </li>
                 {/if}

@@ -18,20 +18,20 @@
                     <form method="post" action="services.php" name="theForm" enctype="multipart/form-data">
                         <div class="switch_info user_basic" style="display:block;">
                             <div class="item">
-                                <div class="label">{$lang.require_field}{$lang.services_name}：</div>
+                                <div class="label">{$lang.require_field}客服昵称：</div>
                                 <div class="label_value">
                                     <input type="text" name='services_name' class="text" autocomplete="off" value="{$customer.nick_name}" />
                                     <div class="form_prompt"></div>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="label">{$lang.services_desc}：</div>
+                                <div class="label">业务描述：</div>
                                 <div class="label_value">
                                     <textarea class="textarea" name="services_desc">{$customer.post_desc}</textarea>
                                 </div>
                             </div>
                             <div class="item">
-                                <div class="label">{$lang.require_field}{$lang.services_user}：</div>
+                                <div class="label">{$lang.require_field}负责人员：</div>
                                 <div class="label_value">
                                     <div class="checkbox_items">
                                         {foreach from=$admin_list item=admin}

@@ -16,7 +16,7 @@
                         <div class="search_select">
                             <div class="categorySelect">
                                 <div class="selection">
-                                    <input type="text" name="category_name" id="category_name" class="text w250 valid" value="{$lang.select_cat}" autocomplete="off" readonly data-filter="cat_name" />
+                                    <input type="text" name="category_name" id="category_name" class="text w250 valid" value="请选择分类" autocomplete="off" readonly data-filter="cat_name" />
                                     <input type="hidden" name="category_id" id="category_id" value="0" data-filter="cat_id" />
                                 </div>
                                 <div class="select-container" style="display:none;">
@@ -27,7 +27,7 @@
                         <div class="search_select">
                             <div class="brandSelect">
                                 <div class="selection">
-                                    <input type="text" name="brand_name" id="brand_name" class="text w120 valid" value="{$lang.select_barnd}" autocomplete="off" readonly data-filter="brand_name" />
+                                    <input type="text" name="brand_name" id="brand_name" class="text w120 valid" value="请选择品牌" autocomplete="off" readonly data-filter="brand_name" />
                                     <input type="hidden" name="brand_id" id="brand_id" value="0" data-filter="brand_id" />
                                 </div>
                                 <div class="brand-select-container" style="display:none;">
@@ -36,8 +36,8 @@
                             </div>                            
                         </div>
                         <div class="search-key">
-                            <input type="text" name="keyword" size="30" class="text text_2 mr10" placeholder="{$lang.input_keywords}" autocomplete="off" data-filter="keyword" autocomplete="off"  />
-                            <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" onclick="searchGoods()">{$lang.button_search}</a>
+                            <input type="text" name="keyword" size="30" class="text text_2 mr10" placeholder="请输入关键字" autocomplete="off" data-filter="keyword" autocomplete="off"  />
+                            <a href="javascript:void(0);" class="sc-btn sc-blueBg-btn" onclick="searchGoods()">搜索</a>
                         </div>
                     </div>
                 </form>
@@ -54,8 +54,8 @@
                                 </div>
                                 <div class="move_handle">
                                     <input type="hidden" value="{$gift_ids}" id="gift_ids">
-                                    <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">{$lang.check_all}</a>
-                                    <a href="javascript:void(0);" onclick="addGoods()" class="sc-btn btn25 sc-blueBg-btn" ectype="sub">{$lang.button_submit_alt}</a>
+                                    <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">全选</a>
+                                    <a href="javascript:void(0);" onclick="addGoods()" class="sc-btn btn25 sc-blueBg-btn" ectype="sub">确定</a>
                                 </div>
                             </div>
                             <div class="move_middle" onclick="addGoods()">
@@ -73,8 +73,8 @@
                                     </div>
                                 </div>
                                 <div class="move_handle">
-                                    <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">{$lang.check_all}</a>
-                                    <a href="javascript:void(0);" onclick="delGoods()" class="sc-btn btn25 sc-blueBg-btn">{$lang.remove}</a>
+                                    <a href="javascript:void(0);" class="sc-btn btn25 moveAll" ectype="moveAll">全选</a>
+                                    <a href="javascript:void(0);" onclick="delGoods()" class="sc-btn btn25 sc-blueBg-btn">移除</a>
                                 </div>
                             </div>
                         </div>

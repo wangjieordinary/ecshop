@@ -154,7 +154,7 @@
                                     <div class="label_value">
 										<input type="text" name="longitude" value="{$shop_info.longitude}" class="text" autocomplete="off" />
 										<div class="notic">{$lang.longitude_desc}</div>
-										<br/><a href="javascript:;" onclick="get_coordinate();" class="txtline">{$lang.get_coordinate}</a>
+										<br/><a href="javascript:;" onclick="get_coordinate();" class="txtline">点击获取坐标</a>
                                     </div>
                                 </div>
                                 <div class="item">
@@ -218,11 +218,11 @@
                                     	<div class="checkbox_items">
                                             <div class="checkbox_item">
                                                 <input type="radio" name="kf_im_switch" value="1" class="ui-radio" id="kf_im_switch1" {if $shop_info.kf_im_switch eq 1} checked="checked" {/if}>
-                                                <label class="ui-radio-label" for="kf_im_switch1">{$lang.open}</label>
+                                                <label class="ui-radio-label" for="kf_im_switch1">开启</label>
                                             </div>
                                             <div class="checkbox_item">
                                                 <input type="radio" name="kf_im_switch" value="0" class="ui-radio" id="kf_im_switch0" {if $shop_info.kf_im_switch eq 0} checked="checked" {/if}>
-                                                <label class="ui-radio-label" for="kf_im_switch0">{$lang.close}</label>
+                                                <label class="ui-radio-label" for="kf_im_switch0">关闭</label>
                                             </div>
                                             <div class="fn_notic">{$lang.is_kf_im_switch_prompt}</div>
                                         </div>

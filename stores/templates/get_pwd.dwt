@@ -15,7 +15,7 @@
 	{if $form_act eq "forget_pwd"}
     	<form action="get_password.php" method="post" name="submitAdmin">
         	<div class="login-form">
-            	<div class="title">{$lang.forget_password}</div>
+            	<div class="title">忘记密码</div>
             	<div class="formInfo">
                     <div class="formText">
                         <i class="icon icon-user"></i>
@@ -32,7 +32,7 @@
                         <input type="reset" value="{$lang.reset_button}" class="sub sub_reset" />
                     </div>
                     <div class="formText">
-                        <a href="privilege.php?act=logout" class="not_pwd" target="_blank">{$lang.return_login}</a>
+                        <a href="privilege.php?act=logout" class="not_pwd" target="_blank">返回登录</a>
                     </div>
                 </div>
             </div>
@@ -41,7 +41,7 @@
     {if $form_act eq "reset_pwd"}
     	<form action="get_password.php" method="post" name="submitPwd">
         	<div class="login-form">
-            	<div class="title">{$lang.forget_password}</div>
+            	<div class="title">忘记密码</div>
             	<div class="formInfo">
                     <div class="formText">
                         <i class="icon icon-pwd"></i>
@@ -62,7 +62,7 @@
                         <input type="reset" value="{$lang.reset_button}" class="sub sub_reset" />
                     </div>
                     <div class="formText">
-                        <a href="get_password.php?act=forget_pwd" class="not_pwd" target="_blank">{$lang.return_login}</a>
+                        <a href="get_password.php?act=forget_pwd" class="not_pwd" target="_blank">返回登录</a>
                     </div>
                 </div>
             </div>

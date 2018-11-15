@@ -242,7 +242,7 @@ class Model {
             return;
         }
     }
-    // 回调方法 初始化模型 
+    // 回调方法 初始化模型
     protected function _initialize() {}
 
     /**

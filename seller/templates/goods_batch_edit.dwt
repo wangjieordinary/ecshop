@@ -13,7 +13,7 @@
 				{include file ='library/seller_menu_tab.lbi'}
                 <!--start-->
                 <div class="explanation" id="explanation">
-                    <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
+                    <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4><span id="explanationZoom" title="收起提示"></span></div>
                     <ul>
                         <li>{$lang.notice_edit}</li>
                     </ul>
@@ -28,7 +28,7 @@
 					<th width="28%" class="tl">{$lang.goods_name}</th>
 					<th width="9%">{$lang.market_price}</th>
 					<th width="9%">{$lang.shop_price}</th>
-					<th width="12%">{$lang.member_price}</th>
+					<th width="12%">会员价格</th>
                     <th width="7%">{$lang.integral}</th>
 					<th width="7%">{$lang.give_integral}</th>
 					<th width="7%">{$lang.goods_number}</th>
@@ -101,7 +101,7 @@
 				  <tr>
 					<th width="10%">{$lang.market_price}</th>
 					<th width="10%">{$lang.shop_price}</th>
-                    <th width="10%">{$lang.member_price}</th>
+                    <th width="10%">会员价格</th>
 					<th width="10%">{$lang.integral}</th>
 					<th width="10%">{$lang.give_integral}</th>
 					<th width="10%">{$lang.goods_number}</th>

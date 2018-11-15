@@ -16,7 +16,7 @@
             <div class="flexilist">
             	<div class="common-head">
                 	<div class="fl">
-                        <div class="fbutton m0" id="fbutton_1"><a href="javascript:void(0);"><div class="csv" title="{$lang.export_data}"><span><i class="icon icon-download-alt"></i>{$lang.export_list}</span></div></a></div>
+                        <div class="fbutton m0" id="fbutton_1"><a href="javascript:void(0);"><div class="csv" title="导出数据"><span><i class="icon icon-download-alt"></i>导出列表</span></div></a></div>
                     </div>
                 </div>
                 <div class="common-content">

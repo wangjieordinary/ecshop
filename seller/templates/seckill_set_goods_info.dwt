@@ -12,7 +12,7 @@
                 {include file ='library/url_here.lbi'}
 				{include file ='library/seller_menu_tab.lbi'}
                 <div class="btn-info"  ectype="item">
-                    <a href="javascript:void(0);" class="sc-btn sc-blue-btn" ectype="setupGoods"><i class="icon icon-plus"></i>{$lang.set_goods}</a>                 
+                    <a href="javascript:void(0);" class="sc-btn sc-blue-btn" ectype="setupGoods"><i class="icon icon-plus"></i>设置商品</a>                 
                     <input type="hidden" name="tb_id" value="{$tb_id}">
                     <input type="hidden" name="sec_id" value="{$sec_id}">   
                     <input type="hidden" name="cat_goods" value="{$cat_goods}">
@@ -23,12 +23,12 @@
                         	<thead>
                             	<tr>
                                 	<th width="5%"><div class="tDiv">{$lang.record_id}</div></th>
-                                    <th width="30%"><div class="tDiv">{$lang.goods_name}</div></th>
-                                    <th width="15%"><div class="tDiv">{$lang.goods_price}</div></th>
-                                    <th width="15%"><div class="tDiv">{$lang.seckill_price}</div></th>
-                                    <th width="15%"><div class="tDiv">{$lang.seckill_number}</div></th>
-									<th width="15%"><div class="tDiv">{$lang.xiangou_number}</div></th>
-									<th width="5%"><div class="handle">{$lang.handler}</div></th>
+                                    <th width="30%"><div class="tDiv">商品名称</div></th>
+                                    <th width="15%"><div class="tDiv">商品价格</div></th>
+                                    <th width="15%"><div class="tDiv">秒杀价</div></th>
+                                    <th width="15%"><div class="tDiv">秒杀数量</div></th>
+									<th width="15%"><div class="tDiv">限购数量</div></th>
+									<th width="5%"><div class="handle">操作</div></th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -90,11 +90,11 @@
 				var content = data.content;
 				pb({
 					id:"set_up_goods",
-					title: jl_set_goods,
+					title: "设置商品",
 					width: 1000,
 					content: content,
-					ok_title: jl_determine,
-					cl_title: jl_cancel,
+					ok_title: "确定",
+					cl_title: "取消",
 					drag: true,
 					foot: true,
 					cl_cBtn: true,

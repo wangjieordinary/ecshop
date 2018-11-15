@@ -7,7 +7,7 @@
         <div class="hd-tit">{$goods_cat.name}</div>
         <div class="hd-tags">
             <ul>
-                <li class="first current"><span>{$lang.new_arrivals}</span><i class="arrowImg"></i></li>
+                <li class="first current"><span>新品推荐</span><i class="arrowImg"></i></li>
                 <!--{foreach name=foo from=$goods_cat.goods_level2 item=cat name=foo key=key}-->
                 <!-- {if $key < 7}-->
                 <li data-value='{"id":{$cat.id|default:0},"floornum":{$goods_cat.floor_num|default:0},"warehouse":{$goods_cat.warehouse_id|default:0},"area":{$goods_cat.area_id|default:0},"city":{$goods_cat.area_city|default:0}}' data-flooreveval="0" ectype="floor_cat_content"><span>{$cat.name}</span><i class="arrowImg"></i></li>

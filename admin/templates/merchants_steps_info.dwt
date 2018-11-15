@@ -143,7 +143,7 @@
                                                     <input name="merchants_form[]" type="hidden" value="input" />
                                                 </div>
                                             </span>
-                                            <span class="ipt_text merchantsForm" ectype="merchantsForm_text" style="display: block;">
+                                            <span class="ipt_text merchantsForm" ectype="merchantsForm_text">
                                             	<strong class="fl">{$lang.form_length}：</strong>
                                                 <input type="text" name="merchants_formSize[]" class="text w50" autocomplete="off" />
                                             </span>
@@ -180,7 +180,7 @@
                                                     <a href="javascript:;" class="btn_trash"><i class="icon icon-trash"></i>{$lang.drop}</a>
                                                 </div>
                                             </span>
-                                            <span class="ipt_text merchantsForm relative" ectype="merchantsForm_select_opt" style="width:580px;">
+                                            <span class="ipt_text merchantsForm relative" ectype="merchantsForm_select_opt">
                                             	<div class="ipt-icon"><i class="sc_icon sc_icon_jia2"></i></div>
                                                 <div class="item-item">
                                                     <strong class="fl">{$lang.select_value}：</strong>
@@ -326,13 +326,8 @@
 												{/if}
 												</span>
 												
-												<span class="ipt_text merchantsForm relative" ectype="merchantsForm_select_opt" style="width:580px;display:{if $fields.chooseForm eq 'select'}block{else}none{/if};">
+												<span class="ipt_text merchantsForm relative" ectype="merchantsForm_select_opt" style="display:{if $fields.chooseForm eq 'select'}block{else}none{/if};">
 													<div class="ipt-icon"><i class="sc_icon sc_icon_jia2"></i></div>
-                                                    <div class="item-item">
-                                                        <strong class="fl">{$lang.select_value}：</strong>
-                                                        <input type="text" name="select_0[]" class="text w150" autocomplete="off" />
-                                                        <a href="javascript:;" class="btn_trash"><i class="icon icon-trash"></i>{$lang.drop}</a>
-                                                    </div>
 													{if $fields.selectList}
 													{foreach from=$fields.selectList item=select k=key}
 														<div class="item-item">
@@ -500,13 +495,7 @@
 			
 			$(document).on("click",".item-item .btn_trash",function(){
 				var mitem = $(this).parents(".item-item");
-                var merchantsForm = $(this).parents(".merchantsForm");
-                
-                if(merchantsForm.find(".item-item").length > 1){
-				    mitem.remove();
-                }else{
-                    alert(trash_prompt);
-                }
+				mitem.remove();
 			});
 		});
     </script>

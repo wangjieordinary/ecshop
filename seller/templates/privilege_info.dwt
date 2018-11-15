@@ -113,7 +113,7 @@ $(function(){
 	
 	jQuery.validator.addMethod("pwd_confirm", function(value, element) {      
 		return this.optional(element) || /^[\u0391-\uFFE5\w]+$/.test(value);       
-	}, pwd_bit_format);  
+	}, "只能包括中文字、英文字母、数字和下划线");  
 	
 	//添加表单验证js
 	if(action == 'add'){
@@ -150,11 +150,11 @@ $(function(){
 					email : '<i class="icon icon-exclamation-sign"></i>'+email_error
 				},
 				password : {
-					required : '<i class="icon icon-exclamation-sign"></i>'+password_empty,
-					minlength : '<i class="icon icon-exclamation-sign"></i>'+new_password_error
+					required : '<i class="icon icon-exclamation-sign"></i>密码不能为空',
+					minlength : '<i class="icon icon-exclamation-sign"></i>密码长度不能小于六位'
 				},
 				pwd_confirm : {
-					required : '<i class="icon icon-exclamation-sign"></i>'+pwd_confirm_empty,
+					required : '<i class="icon icon-exclamation-sign"></i>确认密码不能为空',
 					equalTo:'<i class="icon icon-exclamation-sign"></i>'+password_error
 				}
 			}
@@ -197,11 +197,11 @@ $(function(){
 					email : '<i class="icon icon-exclamation-sign"></i>'+email_error
 				},
 				new_password : {
-					required : '<i class="icon icon-exclamation-sign"></i>'+new_password_empty,
-					minlength : '<i class="icon icon-exclamation-sign"></i>'+new_password_error
+					required : '<i class="icon icon-exclamation-sign"></i>新密码不能为空',
+					minlength : '<i class="icon icon-exclamation-sign"></i>密码长度不能小于六位'
 				},
 				pwd_confirm : {
-					required : '<i class="icon icon-exclamation-sign"></i>'+pwd_confirm_empty,
+					required : '<i class="icon icon-exclamation-sign"></i>确认密码不能为空',
 					equalTo:'<i class="icon icon-exclamation-sign"></i>'+password_error
 				}
 				

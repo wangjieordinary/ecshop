@@ -135,7 +135,7 @@
                                         <div id="img_url_id" class="type-file-box">
                                         	<div class="input">
                                             <input type="text" name="textfile" class="type-file-text"  id="textfield" autocomplete="off" readonly>
-                                            <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}" />
+                                            <input type="button" name="button" id="button" class="type-file-button" value="上传..." />
                                             <input type="file" class="type-file-file"  name="img_url[]" data-state="imgfile" size="30" hidefocus="true" value="" />
                                             </div>
                                         </div>

@@ -56,7 +56,7 @@
 		var consignee  = $("input[name=consignee]").val();
 		var mobile = $("input[name=mobile]").val();
 		var address = $("input[name=address]").val();
-        var myreg = window.mobilereg;
+        var myreg = /^1(3[0-9]|4[57]|5[0-35-9]|7[0135678]|8[0-9])\d{8}$/;
         if( consignee==''){
 	        d_messages('收货人姓名不能为空',2);
 			return false;

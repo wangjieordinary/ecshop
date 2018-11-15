@@ -5,20 +5,20 @@
 
 <body class="iframe_body">
 	<div class="warpper">
-    	<div class="title"><a href="zc_project.php?act=list" class="s-back"></a>{$lang.09_crowdfunding} - {$ur_here}</div>
+    	<div class="title"><a href="zc_project.php?act=list" class="s-back"></a>众筹 - {$ur_here}</div>
         <div class="content">	
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                	<li>{$lang.operation_prompt_content.list.0}</li>
-                    <li>{$lang.operation_prompt_content.list.1}</li>
+                	<li>一个众筹项目可有多个众筹方案。</li>
+                	<li>可在众筹方案管理进行修改编辑或删除。</li>
                 </ul>
             </div>
             <div class="flexilist">
             	<!--商品列表-->
                 <div class="common-head">
                     <div class="fl">
-                    	<a href="zc_project.php?act=add_product&id={$id}"><div class="fbutton"><div class="add" title="{$lang.add_zc_goods}"><span><i class="icon icon-plus"></i>{$lang.add_zc_goods}</span></div></div></a>
+                    	<a href="zc_project.php?act=add_product&id={$id}"><div class="fbutton"><div class="add" title="添加方案"><span><i class="icon icon-plus"></i>添加方案</span></div></div></a>
                     </div>	
                 </div>
                 <div class="common-content">
@@ -64,7 +64,7 @@
                                     </td>
                                 </tr>
 								{foreachelse}
-                                <tr><td class="no-records" colspan="12">{$lang.no_records}</td></tr>
+                                    <tr><td class="no-records" colspan="12">{$lang.no_records}</td></tr>
                                 {/foreach}
                             </tbody>
                         </table>
@@ -75,7 +75,8 @@
             </div>
 		</div>
 	</div>
-    {include file ='library/pagefooter.lbi'}
+ {include file ='library/pagefooter.lbi'}
+    
 	<script>
 		$(function(){
 			$('.nyroModal').nyroModal();

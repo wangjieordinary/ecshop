@@ -32,7 +32,7 @@
     	<div class="no_records pl450">
             <i class="no_icon_two"></i>
             <div class="no_info">
-                <h3>{$lang.no_zc_goods}</h3>
+                <h3>暂无众筹商品</h3>
             </div>
         </div>
     {/if}

@@ -25,32 +25,32 @@
 							{foreach from=$seckill_list item=tb name=sec}
 							{if $smarty.foreach.sec.index lt 5}
                         	<li {if !$tb.is_end && $tb.status}class="curr"{/if}{if $smarty.foreach.sec.total == 5} style="width:20%;"{/if}>
-                                <strong>{if $tb.tomorrow}{$lang.tomorrow}  {/if}{$tb.title}</strong>
+                                <strong>{if $tb.tomorrow}明日  {/if}{$tb.title}</strong>
                                 <div class="time" ectype="time" data-time="{if !$tb.is_end && !$tb.status}{$tb.begin_time_formated}{elseif !$tb.is_end && $tb.status}{$tb.end_time_formated}{/if}">
 									{if !$tb.is_end && !$tb.status}
-									<span>{$lang.distance_start}</span>
+									<span>距开始</span>
                                     <span class="hours">15</span>
                                     <em>:</em>
                                     <span class="minutes">40</span>
                                     <em>:</em>
                                     <span class="seconds">10</span>									
 									{elseif !$tb.is_end && $tb.status}
-									<span>{$lang.distance_end}</span>
+									<span>距结束</span>
                                     <span class="hours">15</span>
                                     <em>:</em>
                                     <span class="minutes">40</span>
                                     <em>:</em>
                                     <span class="seconds">10</span>
 									{else}
-									<span>{$lang.has_ended}</span>
+									<span>已结束</span>
 									{/if}                                   
                                 </div>
 								{if !$tb.is_end && !$tb.status}
-								<i>{$lang.begin_minute}</i>
+								<i>即将开始</i>
 								{elseif !$tb.is_end && $tb.status}
-								<i>{$lang.have_in_hand}</i>
+								<i>进行中</i>
 								{else}
-								<i>{$lang.has_ended}</i>
+								<i>已结束</i>
 								{/if}  
                             </li>
 							{/if}
@@ -70,24 +70,24 @@
                                     <div class="p-del"><del>{$goods.market_price_formated}</del></div>
                                 </div>
                                 <div class="p-number clearfix">
-                                	<span>{$lang.Sold}{$goods.percent}%</span>
+                                	<span>已售{$goods.percent}%</span>
                                     <div class="timebar"><i style="width:{$goods.percent}%;"></i></div>
                                 </div>
 								{if !$tb.is_end && !$tb.status}
                                 <a href="javascript:;" ectype="collSecGoods" data-id="{$goods.id}" class="btn {if $goods.is_remind}sc-redBg-btn{else}sc-greenBg-btn{/if}">
-                                {if $goods.is_remind}{$lang.cancel_remind_me}{else}{$lang.remind_me}{/if}
+                                {if $goods.is_remind}取消提醒{else}提醒我{/if}
                                 </a>
 								{elseif !$tb.is_end && $tb.status}
                                 {if $goods.sec_num le 0}
-                                <a href="javascript:;" class="btn sc-redBg-btn">{$lang.over_tobuy}</a>
+                                <a href="javascript:;" class="btn sc-redBg-btn">已抢完</a>
                                 {else}
                                 <a href="{$goods.url}"  target="_blank" class="btn sc-redBg-btn">
-								{$lang.button_buy}
+								立即购买
 								</a>
                                 {/if}                   
 								{else}
                                 <a href="{$goods.url}"  target="_blank" class="btn sc-redBg-btn">
-								{$lang.has_ended}
+								已结束
                                 </a> 
 								{/if} 	
                             </li>
@@ -116,6 +116,7 @@
 			$(this).addClass("curr").siblings().removeClass("curr");
 			
 			$(".seckill-warp").find("ul").eq(index).show().siblings().hide();
+			
 		});
 	}); 
     </script>

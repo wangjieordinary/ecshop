@@ -558,12 +558,6 @@ function set_attribute_table(goodsId , type, city_id)
 		dataVal = dataVal.replace(/\@/g, "%40");
 		dataVal = dataVal.replace(/\$/g, "%24");
 		dataVal = dataVal.replace(/\*/g, "%2A");
-		dataVal = dataVal.replace(/\(/g, "%28");
-		dataVal = dataVal.replace(/\)/g, "%29");
-		dataVal = dataVal.replace(/\（/g, "%EF%BC%88");
-		dataVal = dataVal.replace(/\）/g, "%EF%BC%89");
-		dataVal = dataVal.replace(/\：/g, "%EF%BC%9A");
-		dataVal = dataVal.replace(/\:/g, "%3A");
 	
 		attr_value_arr.push(dataVal);
 	});

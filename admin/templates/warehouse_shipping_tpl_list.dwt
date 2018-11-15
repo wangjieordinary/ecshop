@@ -10,8 +10,8 @@
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                	<li>{$lang.operation_prompt_content.tpl_list.0}</li>
-                    <li>{$lang.operation_prompt_content.tpl_list.1}</li>
+                	<li>展示所有仓库配送方式运费模板列表。</li>
+                    <li>可以设置仓库到不同地区的运费，根据实际需求谨慎设置。</li>
                 </ul>
             </div>
             <div class="flexilist">
@@ -29,18 +29,18 @@
                     {/if}
                 </div>
                 <div class="common-content">
-                    <form  method="post" action="warehouse.php" name="listForm" onsubmit="return confirm('{$lang.warehouse_confirm}')">
+                    <form  method="post" action="warehouse.php" name="listForm" onsubmit="return confirm('确定要移除选定的运费模板么？')">
                 	<div class="list-div" id="listDiv">
-                        {/if}
+                            {/if}
                     	<table cellpadding="0" cellspacing="0" border="0">
                             <thead>
                                 <tr>
                                 <th width="3%" class="sign"><div class="tDiv"><input type="checkbox" name="all_list" class="checkbox" id="all_list" /><label for="all_list" class="checkbox_stars"></label></div></th>
                                 <th width="5%"><div class="tDiv">{$lang.record_id}</div></th>
-                                <th width="15%"><div class="tDiv">{$lang.freight_template_name}</th>
-                                <th width="50%"><div class="tDiv">{$lang.originating_warehouse}</th>	
-                                <th width="15%"><div class="tDiv">{$lang.reach_region}</th>
-                                <th width="15%" class="handle">{$lang.handler}</th>
+                                <th width="15%"><div class="tDiv">运费模板名称</th>
+                                <th width="50%"><div class="tDiv">始发仓库</th>	
+                                <th width="15%"><div class="tDiv">抵达地区</th>
+                                <th width="15%" class="handle">操作</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,7 +54,7 @@
                                     <td class="handle">
                                         <div class="tDiv a2">
                                             <a href="warehouse.php?act=ship_tpl&shipping_id={$shipping_id}&id={$area.id}" title="{$lang.edit}" class="btn_edit"><i class="iocn icon-edit"></i>{$lang.edit}</a>
-                                            <a href="javascript:void(0);" onclick="remove_warehouse({$area.id}, '{$lang.warehouse_confirm_code}{$area.id}{$lagn.warehouse_confirm_code_2}',{$shipping_id})" title="{$lang.remove}" class="btn_trash"><i class="icon icon-trash"></i>{$lang.drop}</a>
+                                            <a href="javascript:void(0);" onclick="remove_warehouse({$area.id}, '确定删除编号为{$area.id}的模板吗？',{$shipping_id})" title="{$lang.remove}" class="btn_trash"><i class="icon icon-trash"></i>{$lang.drop}</a>
                                         </div>
                                     </td>
                                 </tr>
@@ -81,22 +81,22 @@
                     </form>
                 </div>
             </div>
-	   </div>
 	</div>
-    {include file ='library/pagefooter.lbi'}
-    <script type="text/javascript">
-        function remove_warehouse(id,cfm,shipping_id){
-            if (confirm(cfm))
-            {
-                var args = "&act=remove_tpl&id=" + id + "shipping_id=" + shipping_id ;
-               $.jqueryAjax('warehouse.php', 'is_ajax=1'+args, function(data){
-                   if(data.content == 1){
-                       $("#id_"+data.id).remove();
-                   }
-               }, "GET", "JSON");
-            }
+	</div>
+ {include file ='library/pagefooter.lbi'}
+<script type="text/javascript">
+    function remove_warehouse(id,cfm,shipping_id){
+        if (confirm(cfm))
+        {
+            var args = "&act=remove_tpl&id=" + id + "shipping_id=" + shipping_id ;
+           $.jqueryAjax('warehouse.php', 'is_ajax=1'+args, function(data){
+               if(data.content == 1){
+                   $("#id_"+data.id).remove();
+               }
+           }, "GET", "JSON");
         }
-    </script>     
+    }
+</script>     
 </body>
 </html>
 {/if}

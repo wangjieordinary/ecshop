@@ -15,10 +15,10 @@
                 <div class="value">[{$order.region}] {$order.address|escape}</div>
             </div>
             <div class="item">
-                <div class="label ftx-02"><em class="require-field">*</em>{$lang.label_post_form_id}</div>
+                <div class="label ftx-02"><em class="require-field">*</em>发货单号：</div>
                 <div class="value">
                 	<input type="text" name="invoice_no" id="invoice_no" class="text mr0" autocomplete="off" />
-                    <input type="submit" name="to_shipping" value="{$lang.deliver_goods}" class="btn btn25 blue_btn w60 tc" id="invoice_btn">
+                    <input type="submit" name="to_shipping" value="发货" class="btn btn25 blue_btn w60 tc" id="invoice_btn">
                 </div>
             </div>
         </div>

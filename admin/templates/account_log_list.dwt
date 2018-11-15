@@ -21,9 +21,9 @@
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                	<li>{$lang.operation_prompt_content.seller_account.0}</li>
-                    <li>{$lang.operation_prompt_content.seller_account.1}</li>
-                    <li>{$lang.operation_prompt_content.seller_account.2}</li>
+                	<li>商家资金列表</li>
+					<li>可对商家资金进行操作。</li>
+                    <li>可根据关键字进行查询，侧边栏进行高级搜索。</li>
                 </ul>
             </div>
             <div class="flexilist">

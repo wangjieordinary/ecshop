@@ -52,7 +52,7 @@
                 <div class="sl-value">
                 	<ul class="sl-v-list">
                     <li style="width:80px;"><a href="exchange.php" class="a_span a_span1">{$lang.all}</a></li>
-                    <!--{foreach from=$categories_pro item=cat}-->
+                    <!--{foreach from=$category_list item=cat}-->
                     <li><a href="exchange.php?sort={$pager.search.sort}&cat_id={$cat.cat_id}#exchange_list">{$cat.cat_alias_name}</a></li>
                     <!--{/foreach}-->
                     </ul>

@@ -18,7 +18,7 @@
                             <div class="imitate_select select_w120">
                                 <div class="cite">{$lang.conf_pay|escape}</div>
                                 <ul>
-                                    <li><a href="javascript:;" data-value="-1" class="ftx-01">{$lang.select_please}</a></li>
+                                    <li><a href="javascript:;" data-value="-1" class="ftx-01">请选择..</a></li>
                                     <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.pay_status.0}</a></li>
                                     <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.pay_status.1}</a></li>
                                 </ul>
@@ -62,11 +62,11 @@
                             </td>
                             <td align="center">{$lang.apply_status.$list.apply_status},{$lang.pay_status.$list.pay_status}</td>
                             <td class="ecsc-table-handle tr">
-                                <span><a href="../merchants_store.php?preview=1&temp_code={$list.temp_code}" target="_blank" title="{$lang.preview}" class="btn-green"><i class="sc_icon_see"></i><p>{$lang.preview}</p></a></span>
+                                <span><a href="../merchants_store.php?preview=1&temp_code={$list.temp_code}" target="_blank" title="预览" class="btn-green"><i class="sc_icon_see"></i><p>预览</p></a></span>
                                 {if $list.pay_status eq 0}
-                                <span><a href="visual_editing.php?act=temp_pay&apply_id={$list.apply_id}" class="btn-green"><i class="icon icon-edit"></i><p>{$lang.go_pay}</p></a></span>
+                                <span><a href="visual_editing.php?act=temp_pay&apply_id={$list.apply_id}" class="btn-green"><i class="icon icon-edit"></i><p>去支付</p></a></span>
                                 <span><a href="javascript:" title="{$lang.icon_edit}" ectype="temp_edit" data-id="{$list.apply_id}" data-code="{$list.temp_code}" class="btn-green"><i class="icon icon-edit"></i><p>{$lang.edit}</p></a></span>
-                                <span><a onclick="listTable.remove('{$list.apply_id}', '{$lang.sure_delete_cant_recovery}','remove')" href="javascript:;" class="btn-red"><i class="icon-trash"></i><p>{$lang.drop}</p></a></span>
+                                <span><a onclick="listTable.remove('{$list.apply_id}', '确定删除吗？删除后数据无法找回！','remove')" href="javascript:;" class="btn-red"><i class="icon-trash"></i><p>{$lang.drop}</p></a></span>
                                 {/if}
                             </td>
                         </tr>
@@ -124,10 +124,10 @@
         Ajax.call('visual_editing.php', "act=release&type="+type+"&suffix=" + code + "&apply_id=" + apply_id, function(data){
              pb({
 				id: "template_mall_dialog",
-				title: jl_tpl_info,
+				title: "模板信息",
 				width: 945,
 				content: data.content,
-				ok_title: jl_determine,
+				ok_title: "确定",
 				drag: true,
 				foot: true,
 				cl_cBtn: false,

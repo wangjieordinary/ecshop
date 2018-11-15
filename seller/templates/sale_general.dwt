@@ -17,7 +17,7 @@
                     <div class="order_stats_search clearfix">
                         <form action="javascript:searchGeneral()" name="searchForm">
                             <div class="screeItme">
-                                <strong class="fl lh mr10">{$lang.lable_select_date}</strong>
+                                <strong class="fl lh mr10">选择日期：</strong>
                                 <div class="text_time select_time" id="text_time1">
                                     <input name="date_start_time" type="text" id="start_time" value="{$start_time}" class="text" />
                                 </div>
@@ -27,19 +27,19 @@
                                 </div>
                             </div>
                             <div class="screeItme mt10">
-                                <strong class="fl lh mr10">{$lang.lable_time_type}</strong>
+                                <strong class="fl lh mr10">时间类型：</strong>
                                 <div  class="imitate_select select_w145">
-                                    <div class="cite">{$lang.please_select}</div>
+                                    <div class="cite">请选择</div>
                                     <ul>
-                                        <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.accord_deliver_time}</a></li>
-                                        <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.accord_order_time}</a></li>
+                                        <li><a href="javascript:;" data-value="0" class="ftx-01">按发货时间</a></li>
+                                        <li><a href="javascript:;" data-value="1" class="ftx-01">按下单时间</a></li>
                                     </ul>
                                     <input name="time_type" type="hidden" value="1" autocomplete="off" />
                                 </div>
                             </div>
                             <div class="screeItme mt10">
                                 <div class="bf100 fl order_status">
-                                    <strong class="fl lh mr10">{$lang.lable_order_state}</strong>
+                                    <strong class="fl lh mr10">订单状态：</strong>
                                     {foreach from=$os_list item=os key=key}
                                     <div class="checkbox_item fl lh mr10">
                                         <input name="order_status[]" type="checkbox" value="{$key}" class="ui-checkbox" id="order_{$key}"  autocomplete="off" />
@@ -48,7 +48,7 @@
                                     {/foreach}
                                 </div>
                                 <div class="bf100 fl mt5 shipping_status">
-                                    <strong class="fl lh mr10">{$lang.lable_deliver_state}</strong>
+                                    <strong class="fl lh mr10">发货状态：</strong>
                                     {foreach from=$ss_list item=ss key=key}
                                     <div class="checkbox_item fl lh mr10">
                                     <input name="shipping_status[]" type="checkbox" value="{$key}" class="ui-checkbox" id="shipping_{$key}"  autocomplete="off" />
@@ -57,7 +57,7 @@
                                     {/foreach}
                                 </div>
                                 <div class="bf100 fl mt5">
-                                    <strong class="fl lh mr10">{$lang.label_cate_name}</strong>
+                                    <strong class="fl lh mr10">分类名称：</strong>
                                     <input name="cat_name" value="" type="text" class="text text_2 mr10"  autocomplete="off" />
                                     <input type="submit" name="query_by_date" value="{$lang.query}" class="sc-btn sc-blueBg-btn btn30" />
                                 </div>
@@ -68,16 +68,16 @@
                         {/if}
                         <table width="100%" class="ecsc-default-table ecsc-table-seller mt20">
                             <tr>
-                                <th width="40%">{$lang.goods_name}</th>
-                                <th width="10%">{$lang.pro_code}</th>
-                                <th width="10%">{$lang.category}</th>
-                                <th width="10%"><a href="javascript:listTable.sort('goods_number');">{$lang.amount}</a></th>
-                                <th width="10%">{$lang.unit_price}</th>
-                                <th width="10%">{$lang.total_amount}</th>
+                                <th width="40%">商品名称</th>
+                                <th width="10%">货号</th>
+                                <th width="10%">分类</th>
+                                <th width="10%"><a href="javascript:listTable.sort('goods_number');">数量</a></th>
+                                <th width="10%">单价</th>
+                                <th width="10%">总金额</th>
                                 {if $filter.time_type eq 1}
-                                <th width="10%">{$lang.order_time}</th>
+                                <th width="10%">下单日期</th>
                                 {else}
-                                <th width="10%">{$lang.deliver_time}</th>
+                                <th width="10%">发货日期</th>
                                 {/if}
                             </tr>
                             {foreach from=$data_list item=list}

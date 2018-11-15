@@ -163,6 +163,7 @@ $(function(){
 			//店铺ID
 			ru_id = t.parents("*[ectype='promoItem']").data("ruid");
 
+			console.log(ru_id);
 			//判断全部商品是否全选
 			sfAll();
 			replace_cart_goods(cart_value,favourable_id,t,ru_id);
@@ -239,30 +240,6 @@ $(function(){
 			add_gift_cart(act_id, ru_id);
 		});
 		/**************************************赠品活动 start****************************************/
-
-		//购物车切换优惠活动刷新
-		$(document).on("click","*[ectype='changeFav']",function(){
-			var $this = $(this);
-			var aid = $this.data('aid');
-			var gid = $this.data('gid');
-			var rid = $this.data('rid');
-
-			Ajax.call('flow.php?step=cart_change_fav', 'aid=' + aid + '&gid=' + gid + '&rid=' + rid, function(data){
-				$("[ectype='cartTboy']").html(data.content);
-
-				sessionCartValue(data.cart_value);
-
-				cart_value = get_cart_value();
-				cartValue.val(cart_value);
-				
-				//判断是否全选
-				sfAll();
-
-				//获取选择的购物车ID的商品信息
-				change_cart_goods_number(data.cart_value);
-
-			}, 'POST', 'JSON');
-		});
 	}
 
 	

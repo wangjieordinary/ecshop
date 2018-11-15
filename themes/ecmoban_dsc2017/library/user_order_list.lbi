@@ -31,7 +31,7 @@
             {/if}
         </div>
 		<div class="t-info">
-			<span class="info-item">{$lang.order_number}：{$order.order_sn}</span>
+			<span class="info-item">订单号：{$order.order_sn}</span>
 			<span class="info-item">{$order.order_time}</span>
 			<span class="info-item">{$order.consignee}</span>	
 		</div>
@@ -85,7 +85,7 @@
 		<div class="c-handle" id="ss_msg_{$order.order_id}">
             {if $order.order_over neq 1}
 				{if $goods.og_extension_code eq 'package_buy' && !$order.is_package}
-					<span style="color:red">{$lang.package_already}</span>
+					<span style="color:red">礼包已下架</span>
 				{else}
 					{if $order.allow_order_delay && $order.allow_order_delay_handler}
 					<a href="javascript:void(0);" class="sc-btn" data-id="{$order.order_id}" id="sbumit_order_delay">{$order.allow_order_delay_handler}</a>
@@ -107,7 +107,7 @@
 						<span style="color:red">{$order.original_handler}</span>
 					{elseif $order.handler_act && $order.original_handler}
 						{if $order.is_my_shop neq 'my_shop'}
-						<a href="user.php?act={$order.handler_act}&order_id={$order.order_id}{if $order.sign neq 0}{$order.sign_url}{/if}{if $action eq 'auction'}&action=auction{/if}" {if $order.remind} onclick="if (!confirm('{$order.remind}')) return false;"{/if} class="sc-btn">{if $order.is_comment_again}{$lang.review_comments}{else}{$order.original_handler}{/if}</a>
+						<a href="user.php?act={$order.handler_act}&order_id={$order.order_id}{if $order.sign neq 0}{$order.sign_url}{/if}{if $action eq 'auction'}&action=auction{/if}" {if $order.remind} onclick="if (!confirm('{$order.remind}')) return false;"{/if} class="sc-btn">{if $order.is_comment_again}查看评论{else}{$order.original_handler}{/if}</a>
 						{/if}
 					{/if}
 				{/if}

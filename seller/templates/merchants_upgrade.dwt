@@ -37,12 +37,12 @@
                             <td align="center">{if $list.grade_img}<a href="../{$list.grade_img}"  title="{$lang.see_img}" target="_blank"><img src="../{$list.grade_img}" width="50" height="50"></a>{/if}</td>
                             <td align="center" nowrap="true">
                                 {if $list.id eq $grade_id}
-                                    <span class="red">{$lang.successed}</span>
+                                    <span class="red">已成功</span>
                                 {else}           
                                     {if $is_expiry || $grade_id eq ''}
-                                    <a href="merchants_upgrade.php?act=application_grade&grade_id={$list.id}" title="{$lang.apply}">{$lang.apply_now}</a>&nbsp;
+                                    <a href="merchants_upgrade.php?act=application_grade&grade_id={$list.id}" title="申请">立即申请</a>&nbsp;
                                     {else}
-                                    <span>{$lang.cant_apply}</span>&nbsp;
+                                    <span>不可申请</span>&nbsp;
                                     {/if}
                                 {/if}
                             </td>

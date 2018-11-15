@@ -16,19 +16,19 @@
                 	<div class="warp">
                     	<div class="warp_content">
                             <div class="title">
-                                <h3>{$lang.seller_center}</h3>
+                                <h3>商家管理中心</h3>
                                 <span class="txt"></span>
                             </div>
                             <form method="post" id="theForm" action="privilege.php?act=signin" name='theForm'>
                                 <div class="formInfo">
                                     <div class="formText">
                                         <i class="login-icon login-icon-user"></i>
-                                        <input type="text" name="username" autocomplete="off" class="input-text" value="" placeholder="{$lang.user_name}">
+                                        <input type="text" name="username" autocomplete="off" class="input-text" value="" placeholder="用户名">
                                     </div>
                                     <div class="formText">
                                         <i class="login-icon login-icon-pwd"></i>
                                         <input type="password"   style="display:none"/>
-                                        <input type="password" name="password" autocomplete="off" class="input-text" value="" placeholder="{$lang.seller_login_pwd}">
+                                        <input type="password" name="password" autocomplete="off" class="input-text" value="" placeholder="密  码">
                                     </div>
                                     <div class="formText">
                                         <div class="checkbox">
@@ -36,8 +36,8 @@
                                                 <input type="hidden" value="0" name="remember">
                                             </div>
                                         </div>
-                                        <span class="span">{$lang.save_info}</span>
-                                        <a href="javascript:void(0);" class="forget_pwd">{$lang.forget_pwd}</a>
+                                        <span class="span">保存信息</span>
+                                        <a href="javascript:void(0);" class="forget_pwd">忘记密码？</a>
                                     </div>
                                     <div class="formText submitDiv">
                                         {if $gd_version > 0}
@@ -46,14 +46,14 @@
                                                 <div class="arrow"></div>
                                                 <div class="code-img"><img style="cursor: pointer;" src="index.php?act=captcha" onclick= $(".code-img").find('img').attr('src',"index.php?act=captcha&"+Math.random()) /></div>
                                             </div>
-                                            <input type="text" name="captcha" class="input-yzm" value="" autocomplete="off" placeholder="{$lang.please_input_verify}" size="4" />
+                                            <input type="text" name="captcha" class="input-yzm" value="" autocomplete="off" placeholder="请输入验证码" size="4" />
                                         </span>
                                         <span class="submit_span">
-                                            <input type="submit" name="submit" class="sub" value="{$lang.seller_login}" />
+                                            <input type="submit" name="submit" class="sub" value="登 录" />
                                         </span>
                                         {else}
                                         <span class="submit_span">
-                                            <input type="submit"  name="submit" class="sub qp_sub" value="{$lang.seller_login}" />
+                                            <input type="submit"  name="submit" class="sub qp_sub" value="登 录" />
                                         </span>
                                         {/if}
                                         <input type="hidden" name="dsc_token" value="{$dsc_token}" autocomplete="off" />
@@ -71,7 +71,7 @@
         <div class="backpwd_info">
             <div class="close"></div>
             {if $form_act eq "forget_pwd"}
-            <div class="title">{$lang.forget_password}</div>
+            <div class="title">忘记密码</div>
             <form action="get_password.php" method="post" name="submitAdmin" id="submitAdmin1" >
                 <div class="formInfo">
                     <div class="formText">
@@ -83,7 +83,7 @@
                         <div class="form_prompt"></div>
                     </div>
                     <div class="formText submitDiv">
-                        <input type="submit" name="submit" class="sub qp_sub" value="{$lang.seller_send}" id="submitBtn"/>
+                        <input type="submit" name="submit" class="sub qp_sub" value="发 送" id="submitBtn"/>
                         <input type="hidden" name="action" value="get_pwd" />
                         <input type="hidden" name="act" value="forget_pwd" />
                     </div>
@@ -91,7 +91,7 @@
             </form>
             {/if}
             {if $form_act eq "reset_pwd"}
-            <div class="title">{$lang.reset_pwd}</div>
+            <div class="title">重置密码</div>
             <form action="get_password.php" method="post" name="submitAdmin" id="submitAdmin2">
                 <div class="formInfo">
                     <div class="formText">
@@ -163,21 +163,21 @@
 					pwd = $('#theForm input[name=password]');
 
                 if(seller_name.val() == ''){
-                    $('#error').html(jl_user_name_not_null);
+                    $('#error').html('用户名不能为空');
                     seller_name.focus();
                     username = false;
                     return false;
                 }
 
                 if(pwd.val() == ''){
-                    $('#error').html(jl_pwd_not_null);
+                    $('#error').html('密码不能为空');
                     pwd.focus();
                     password = false;
                     return false;
                 }
 
                 if(yzm.val() == ''){
-                    $('#error').html(jl_verify_not_null);
+                    $('#error').html('验证码不能为空');
                     yzm.focus();
                     captcha = false;
                     return false;
@@ -191,7 +191,7 @@
 						type:'post',
 						success:function(data){
 							if(data == 'false'){
-								$('#error').html(jl_verify_wrong);
+								$('#error').html('验证码错误');
 								captcha = false;
 								return false;
 							}
@@ -206,7 +206,7 @@
                         type:'post',
                         success:function(data){
                             if(data == 'false'){
-                                $('#error').html(jl_name_pwd_wrong);
+                                $('#error').html('用户名或密码错误');
                                 $('.code-img img').attr('src','index.php?act=captcha&'+Math.random());
                                 username=false;
                                 password=false;
@@ -264,11 +264,11 @@
 				},
 				messages:{
 					user_name :{
-						required : '<i class="icon icon-exclamation-sign"></i>'+jl_admin_name_not_null
+						required : '<i class="icon icon-exclamation-sign"></i>管理员名称不能为空'
 					},
 					email :{
-						required : '<i class="icon icon-exclamation-sign"></i>'+jl_email_not_null,
-						email : '<i class="icon icon-exclamation-sign"></i>'+jl_email_format_wrong
+						required : '<i class="icon icon-exclamation-sign"></i>邮箱不能为空',
+						email : '<i class="icon icon-exclamation-sign"></i>邮箱格式不正确'
 					}
 				}
 			});
@@ -297,12 +297,12 @@
 				},
 				messages:{
 					password :{
-						required : '<i class="icon icon-exclamation-sign"></i>'+jl_new_pwd_not_null,
-						minlength : '<i class="icon icon-exclamation-sign"></i>'+jl_pwd_nolessthan_6
+						required : '<i class="icon icon-exclamation-sign"></i>新密码不能为空',
+						minlength : '<i class="icon icon-exclamation-sign"></i>密码不能小于6位'
 					},
 					confirm_pwd :{
-						required : '<i class="icon icon-exclamation-sign"></i>'+jl_repwd_not_null,
-						equalTo : '<i class="icon icon-exclamation-sign"></i>'+jl_pwd_not_equal
+						required : '<i class="icon icon-exclamation-sign"></i>重复密码不能为空',
+						equalTo : '<i class="icon icon-exclamation-sign"></i>密码输入不一致'
 					}
 				}
 			});

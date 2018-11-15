@@ -95,8 +95,11 @@
                                                     <input name="rec_number" type="hidden" id="{$goods.rec_id}" value="1">
                                                 <!-- {/if} -->
                                                 
-                                                <!-- 该地区支持配送 -->
-                        						<input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="{if $goodsRu.shipping || !$goods.is_real}{if $goods.rec_shipping eq 1}0{else}1{/if}{else}1{/if}">
+                                                <!-- {if $goodsRu.shipping || !goods.is_real} 该地区支持配送-->
+                                                    <input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="0">
+                                                <!-- {else} -->
+                                                    <input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="1">
+                                                <!-- {/if} -->
                                             </div>
                                         </div>
                                     </div>
@@ -138,8 +141,11 @@
                                                     <input name="rec_number" type="hidden" id="{$goods.rec_id}" value="1">
                                                 <!-- {/if} -->
                                                 
-                                                <!-- 该地区支持配送 -->
-                        						<input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="{if $goodsRu.shipping || !$goods.is_real}{if $goods.rec_shipping eq 1}0{else}1{/if}{else}1{/if}">
+                                                <!-- {if $goodsRu.shipping || !goods.is_real} 该地区支持配送-->
+                                                    <input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="0">
+                                                <!-- {else} -->
+                                                    <input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="1">
+                                                <!-- {/if} -->
                                             </div>
                                         </div>
                                     </div>
@@ -205,8 +211,11 @@
                                                     <input name="rec_number" type="hidden" id="{$goods.rec_id}" value="1">
                                                 <!-- {/if} -->
                                                 
-                                                <!-- 该地区支持配送 -->
-                        						<input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="{if $goodsRu.shipping || !$goods.is_real}{if $goods.rec_shipping eq 1}0{else}1{/if}{else}1{/if}">
+                                                <!-- {if $goodsRu.shipping || !goods.is_real} 该地区支持配送-->
+                                                    <input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="0">
+                                                <!-- {else} -->
+                                                    <input name="shipping_prompt" type="hidden" id="{$goods.rec_id}" value="1">
+                                                <!-- {/if} -->
                                             </div>
                                         </div>
                                     </div>

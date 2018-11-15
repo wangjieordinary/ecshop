@@ -165,11 +165,7 @@ class AsyncUdpConnection extends UdpConnection
         if ($this->connected === true) {
             return;
         }
-        $this->_socket = stream_socket_client("udp://{$this->_remoteAddress}", $errno, $errmsg);
-        if (!$this->_socket) {
-            Worker::safeEcho(new \Exception($errmsg));
-            return;
-        }
+        $this->_socket = stream_socket_client("udp://{$this->_remoteAddress}");
         if ($this->onMessage) {
             Worker::$globalEvent->add($this->_socket, EventInterface::EV_READ, array($this, 'baseRead'));
         }

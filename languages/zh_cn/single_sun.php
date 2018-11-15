@@ -33,8 +33,4 @@ $_LANG['lou'] = "楼";
 $_LANG['Post_reply'] = "发表回复";
 $_LANG['reply_desc'] = "是吗？我试试 ";
 $_LANG['reply_desc_one'] = "回复帖子内容不能为空 ";
-
-$_LANG['sorry_single_sun'] = "抱歉，该主题帖正在被审核 ";
-
-?>
        

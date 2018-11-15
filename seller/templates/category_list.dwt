@@ -15,7 +15,7 @@
                 <div class="search-info">
                     <div class="search-form">
 					{if $parent_id > 0}
-                    	<a href="category.php?act=list&parent_id={$parent_id}&back_level={$level}" class="sc-btn sc-blue-btn"><i class="icon icon-reply"></i>&nbsp;{$lang.go_back_level}</a>
+                    	<a href="category.php?act=list&parent_id={$parent_id}&back_level={$level}" class="sc-btn sc-blue-btn"><i class="icon icon-reply"></i>&nbsp;返回上一级</a>
 					{/if}
                     </div>
                 </div>
@@ -24,11 +24,11 @@
                     <table class="ecsc-default-table">
                     	<thead>
                         <tr>
-							<th width="10%">{$lang.level}({$cat_level}{$lang.level_alt})</th>
-							<th width="30%">{$lang.cate_name}</th>
-							<th width="20%">{$lang.goods_number}</th>
-							<th width="20%">{$lang.number_unit}</th>
-							<th width="20%">{$lang.price_level}</th>
+							<th width="10%">级别({$cat_level}级)</th>
+							<th width="30%">分类名称</th>
+							<th width="20%">商品数量</th>
+							<th width="20%">数量单位</th>
+							<th width="20%">价格分级</th>
 						</tr>
                         </thead>
                         <tbody>
@@ -37,12 +37,12 @@
 								<td>
 									<div class="tDiv first_setup">
 										<div class="setup_span">
-											<em><i class="icon icon-cog"></i>{$lang.setup}<i class="arrow"></i></em>
+											<em><i class="icon icon-cog"></i>设置<i class="arrow"></i></em>
 											<ul>
 												{if $level lt 2}
-												<li><a href="category.php?act=list&parent_id={$cat.cat_id}&level={$level}">{$lang.view_next_level}</a></li>
+												<li><a href="category.php?act=list&parent_id={$cat.cat_id}&level={$level}">查看下一级</a></li>
 												{/if}
-                                                                                                <li><a href="javascript:void(0);" ectype="transfer_goods" data-cid="{$cat.cat_id}">{$lang.transfer_goods}</a></li>
+                                                                                                <li><a href="javascript:void(0);" ectype="transfer_goods" data-cid="{$cat.cat_id}">转移商品</a></li>
 											</ul>
 										</div>
 									</div>
@@ -68,17 +68,17 @@
 <script type="text/javascript">
 		//转移分类
 		$(document).on('click',"*[ectype='transfer_goods']",function(){
-                    if(confirm(jl_do_current_cate_do_sure)){
+                    if(confirm('执行此操作时，当前分类所有下级分类也同时转移，确定执行吗？')){
 			var cat_id = $(this).data("cid");
 			$.jqueryAjax("category.php", "act=move&cat_id="+cat_id, function(data){
 				var content = data.content;
 				pb({
 					id:"transfer_dialog",
-					title:jl_transfer_goods,
+					title:"转移商品",
 					width:732,
 					content:content,
-					ok_title:jl_start_transfer,
-					cl_title:jl_reset,
+					ok_title:"开始转移",
+					cl_title:"重置",
 					drag:false,
 					foot:true,
 					onOk:function(){

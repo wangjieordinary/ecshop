@@ -5,22 +5,22 @@
 
 <body class="iframe_body">
 	<div class="warpper">
-    	<div class="title">{$lang.09_crowdfunding} - {$ur_here}</div>
+    	<div class="title">众筹 - {$ur_here}</div>
         <div class="content">	
         	<div class="explanation" id="explanation">
             	<div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4><span id="explanationZoom" title="{$lang.fold_tips}"></span></div>
                 <ul>
-                	<li>{$lang.operation_prompt_content.list.0}</li>
-                    <li>{$lang.operation_prompt_content.list.1}</li>
+                	<li>众筹分类信息管理。</li>
+                    <li>可直接修改排序和添加分类。</li>
                 </ul>
             </div>
             <div class="flexilist">
                 <div class="common-head">
                     <div class="fl">
                     	{if $parent_id > 0}
-                            <a href="zc_category.php?act=list&parent_id={$parent_id}&back_level={$level}"><div class="fbutton"><div class="add" title="{$lang.go_back_level}"><span><i class="icon icon-reply"></i>{$lang.go_back_level}</span></div></div></a>
+                            <a href="zc_category.php?act=list&parent_id={$parent_id}&back_level={$level}"><div class="fbutton"><div class="add" title="返回上一级"><span><i class="icon icon-reply"></i>返回上一级</span></div></div></a>
                         {/if}
-                    	<a href="zc_category.php?act=add{if $parent_id}&parent_id={$parent_id}{/if}"><div class="fbutton"><div class="add" title="{$lang.add_zc_category}"><span><i class="icon icon-plus"></i>{$lang.add_zc_category}</span></div></div></a>
+                    	<a href="zc_category.php?act=add{if $parent_id}&parent_id={$parent_id}{/if}"><div class="fbutton"><div class="add" title="添加众筹分类"><span><i class="icon icon-plus"></i>添加众筹分类</span></div></div></a>
                     </div>
                     
                 </div>
@@ -31,9 +31,9 @@
                         	<thead>
                             	<tr>
                                 	<th width="15%"></th>
-                                	<th width="35%"><div class="tDiv">{$lang.category_name}</div></th>
-                                    <th width="25%"><div class="tDiv">{$lang.sort_order}</div></th>
-                                    <th width="25%" class="handle">{$lang.handler}</th>
+                                	<th width="35%"><div class="tDiv">分类名称</div></th>
+                                    <th width="25%"><div class="tDiv">排序</div></th>
+                                    <th width="25%" class="handle">操作</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -70,7 +70,7 @@
             </div>
 		</div>
 	</div>
-    {include file ='library/pagefooter.lbi'}
+ {include file ='library/pagefooter.lbi'}
 </body>
 </html>
 {/if}

@@ -43,5 +43,5 @@
 		<input type="hidden" name="three_level" value="" />
 		<input type="hidden" name="ext_cat_id" value="0" ectype="cat_id"/>
 	</div>
-	<a href="javascript:void(0);" class="btn btn30 btn_red fr" ectype="addExdCategory">{$lang.add}</a>
+	<a href="javascript:void(0);" class="btn btn30 btn_red fr" ectype="addExdCategory">添加</a>
 </div>

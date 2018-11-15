@@ -21,7 +21,7 @@ $(function(){
 		rules:{
 			username :{
 				required : true,
-				StringminLength: true, 
+				maxlength: 15,
 				StringLength: true,
 				stringCheck: true,
 				remote : {
@@ -136,7 +136,7 @@ $(function(){
 		messages:{
 			username:{
 				required : username_empty,
-				StringminLength : msg_un_length,
+				maxlength : msg_un_length,
 				StringLength : username_shorter,
 				stringCheck : msg_un_format,
 				remote : msg_un_registered

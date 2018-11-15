@@ -3,7 +3,7 @@
 <!--{if $cat_id}-->
 	<div class="selectbrand" id="selectbrand">
 		<div class="sb-hd">
-			<h2>{$lang.selection_brand}</h2>
+			<h2>精选大牌</h2>
 		</div>
 		<div class="sb-bd">
 			<div class="selectbrand-slide">

@@ -13,9 +13,9 @@
 				{include file ='library/seller_menu_tab.lbi'}
                 
                 <div class="explanation clear mb20" id="explanation">
-                    <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                    <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                     <ul>
-                        <li>{$lang.operation_prompt_content.list.2}</li>
+                        <li>设置商品运费模板：系统->配送方式-><a href="goods_transport.php?act=list">运费管理</a></li>
                     </ul>
                 </div>
                 
@@ -23,7 +23,7 @@
                 	<div class="search-form">
                     <form method="get" action="javascript:searchGoodsList()" name="searchFormList">		
                         <div class="search-key">
-                        	<input type="text" class="text" name="keyword" value="" placeholder="{$lang.goods_id_goods_keywords}">
+                        	<input type="text" class="text" name="keyword" value="" placeholder="商品ID/商品关键字">
                             <input type="submit" class="submit" value="{$lang.button_search}">
                             <input type="hidden" name="act" value="store_goods_online">
                             <input type="hidden" name="op" value="index">
@@ -63,8 +63,8 @@
                                     <td class="tl">
                                         <div class="goods-info">
                                         	<div class="goods-sku">
-                                            	<span class="sku">{$lang.lab_goods_sn}{$goods.goods_sn}</span>
-                                                <span class="time">{$lang.label_push_time}{$goods.formated_add_tim}</span>
+                                            	<span class="sku">货号：{$goods.goods_sn}</span>
+                                                <span class="time">发布时间：{$goods.formated_add_tim}</span>
                                             </div>
                                         	<div class="goods-img"><a href="../goods.php?id={$goods.goods_id}" target="_blank"><img src="{$goods.goods_thumb}" onmouseover="toolTip('<img src={$goods.goods_thumb}>')" onmouseout="toolTip()"></a></div>
                                             <div class="goods-desc">
@@ -74,36 +74,36 @@
                                                 </div>
                                             	<div class="goods-tag">
                                                     {if $goods.is_shipping}
-                                                    <em class="free">{$lang.free_shipping_alt}</em>
+                                                    <em class="free">免邮</em>
                                                     {/if}
     
                                                     {if $goods.stages}
-                                                    <em class="byStage">{$lang.by_stages}</em>
+                                                    <em class="byStage">分期</em>
                                                     {/if}
                                                     
                                                     {if !$goods.is_alone_sale}
-                                                    <em class="parts">{$lang.tab_groupgoods}</em>
+                                                    <em class="parts">配件</em>
                                                     {/if}
                                                     
                                                     {if $goods.is_promote}
                                                     {if $nowTime gte $goods.promote_end_date}
-                                                    <em class="saleEnd">{$lang.promote_end_date}</em>
+                                                    <em class="saleEnd">特卖结束</em>
                                                     {else}
-                                                    <em class="sale">{$lang.promote_date}</em>    
+                                                    <em class="sale">特卖</em>    
                                                     {/if}
                                                     {/if}
                                                     
                                                     {if $goods.is_xiangou}
                                                     {if $nowTime gte $goods.xiangou_end_date}
-                                                    <em class="purchaseEnd">{$lang.xiangou_end}</em>
+                                                    <em class="purchaseEnd">限购结束</em>
                                                     {else}
-                                                    <em class="purchase">{$lang.xiangou}</em>    
+                                                    <em class="purchase">限购</em>    
                                                     {/if}
                                                     {/if}
                                                 </div>
                                             </div>
                                             <div class="goods-lie">
-                                            	<span>{$lang.label_goods_freight}</span>
+                                            	<span>商品运费：</span>
                                                 {if $goods.freight eq 1}
                                                 <span class="red">{$lang.lab_freight_fixed}</span>
                                                 {elseif $goods.freight eq 2}
@@ -174,8 +174,8 @@
                                         <span><a href="../goods.php?id={$goods.goods_id}" target="_blank" class="btn-orange"><i class="sc_icon_see"></i><p>{$lang.view}</p></a></span>
                                         <span><a href="goods.php?act=copy&goods_id={$goods.goods_id}&extension_code={$code}" title='{$lang.copy_goods}' class="btn-orange"><i class="icon-copy"></i><p>{$lang.copy}</p></a></span></br>
                                         <span><a href="goods.php?act=edit&goods_id={$goods.goods_id}&extension_code={$code}" class="btn-green"><i class="icon-edit"></i><p>{$lang.edit}</p></a></span>
-                                        <span><a href="javascript:void(0);" onclick="listTable.remove({$goods.goods_id}, '{$lang.trash_goods_confirm}')" class="btn-red"><i class="icon-trash"></i><p>{$lang.drop}</p></a></span>
-										<span><a href="goods.php?act=view_log&id={$goods.goods_id}" class="btn-violet"><i class="icon-file-alt"></i><p>{$lang.log}</p></a></span>
+                                        <span><a href="javascript:void(0);" onclick="listTable.remove({$goods.goods_id}, '您确实要把该商品放入回收站吗？')" class="btn-red"><i class="icon-trash"></i><p>{$lang.drop}</p></a></span>
+										<span><a href="goods.php?act=view_log&id={$goods.goods_id}" class="btn-violet"><i class="icon-file-alt"></i><p>日志</p></a></span>
                                         <br />
                                         {if $add_handler}
                                             {foreach from=$add_handler item=handler name=namehandler}
@@ -192,14 +192,14 @@
                                 <tr>
                                     <th class="frist tc"><input type="checkbox" id="tfoot-all" name="checkboxes[]" class="ui-checkbox" onclick='listTable.selectAll(this, "checkboxes")'><label for="tfoot-all" class="ui-label"></label></th>
                                     <th class="batch-operation" colspan="20">
-                                    	<a href="javascript:void(0);" class="sc-btn sc-red-btn" data-type="trash"><i class="icon-trash"></i>{$lang.drop}</a>
-                                        <a href="javascript:void(0);" class="sc-btn sc-org-btn" data-type="on_sale"><i class="icon-arrow-up"></i>{$lang.on_sale}</a>
-                                        <a href="javascript:void(0);" class="sc-btn sc-org-btn" data-type="not_on_sale"><i class="icon-arrow-down"></i>{$lang.not_on_sale}</a>
-                                        <a href="javascript:void(0);" class="sc-btn sc-org-btn" data-type="return_type"><i class="icon-arrow-down"></i>{$lang.return_mark}</a>
+                                    	<a href="javascript:void(0);" class="sc-btn sc-red-btn" data-type="trash"><i class="icon-trash"></i>删除</a>
+                                        <a href="javascript:void(0);" class="sc-btn sc-org-btn" data-type="on_sale"><i class="icon-arrow-up"></i>上架</a>
+                                        <a href="javascript:void(0);" class="sc-btn sc-org-btn" data-type="not_on_sale"><i class="icon-arrow-down"></i>下架</a>
+                                        <a href="javascript:void(0);" class="sc-btn sc-org-btn" data-type="return_type"><i class="icon-arrow-down"></i>退换货标识</a>
 										<!--运费模板 start-->
-										<a href="javascript:void(0);" class="sc-btn sc-org-btn" data-type="set_goods_transport"><i class="icon-book"></i>{$lang.lab_goods_freighttemp}</a>
+										<a href="javascript:void(0);" class="sc-btn sc-org-btn" data-type="set_goods_transport"><i class="icon-book"></i>运费模板</a>
 										<div class="imitate_select select_w120" style="float:none; display:none;" ectype="goods_transport">
-											<div class="cite">{$lang.please_select}</div>
+											<div class="cite">请选择</div>
 											<ul style="display: none;">
 												 {foreach from=$transport_list item=item}
 												 <li><a href="javascript:;" data-value="{$item.tid}" class="ftx-01">{$item.title}</a></li>
@@ -207,11 +207,11 @@
 											</ul>
 											<input name="tid" type="hidden" value="0">
 										</div>	
-										<a href="javascript:void(0);" class="sc-btn sc-org-btn" data-type="goods_transport" style="display:none;" ectype="goods_transport"><i class="icon-ok"></i>{$lang.button_submit_alt}</a>
+										<a href="javascript:void(0);" class="sc-btn sc-org-btn" data-type="goods_transport" style="display:none;" ectype="goods_transport"><i class="icon-ok"></i>确定</a>
 										<!--运费模板 end-->
-                                    	<span>{if $record_count}{$lang.total_data}{$record_count}{$lang.record}，{/if}</span>
+                                    	<span>{if $record_count}共{$record_count}条记录，{/if}</span>
                                         <span class="page page_3">
-                                    		<i>{$lang.page_size}</i> <input type='text' size='3' id='pageSize' style=" border:1px solid #e5e5e5; background:#FFF; text-align:center; padding:3px; border-radius:4px;" value="{$filter.page_size}" onkeypress="return listTable.changePageSize(event)" />
+                                    		<i>每页</i> <input type='text' size='3' id='pageSize' style=" border:1px solid #e5e5e5; background:#FFF; text-align:center; padding:3px; border-radius:4px;" value="{$filter.page_size}" onkeypress="return listTable.changePageSize(event)" />
                                     	</span>
                                     </th>
                                 </tr>
@@ -314,7 +314,7 @@ $(function(){
 		if(checked){
 			changeAction(type);
 		}else{
-			alert(jl_please_select_goods);
+			alert("请勾选商品");
 		}
 	});
 });
@@ -330,8 +330,8 @@ $(document).on('click',"*[ectype='dialog']",function(){
 			title:title,
 			content:result.content,
 			drag:false,
-			ok_title:jl_determine,
-			cl_title:jl_cancel
+			ok_title:"确定",
+			cl_title:"取消"
 		});
 	}
 });
@@ -382,11 +382,11 @@ $(document).on("click","input[name='goods_model_price']",function(){
 		var content = data.content;
 		pb({
 			id:"categroy_dialog",
-			title:jl_warehouse_region_price,
+			title:"仓库/地区价格",
 			width:864,
 			content:content,
-			ok_title:jl_determine,
-			cl_title:jl_cancel,
+			ok_title:"确定",
+			cl_title:"取消",
 			drag:true,
 			foot:false
 		});
@@ -405,11 +405,11 @@ $(document).on("click","a[ectype='add_sku']",function(){
 		var content = data.content;
 		pb({
 			id:"categroy_dialog",
-			title:jl_edit_goods_info,
+			title:"编辑商品货品信息",
 			width:863,
 			content:content,
-			ok_title:jl_determine,
-			cl_title:jl_cancel,
+			ok_title:"确定",
+			cl_title:"取消",
 			drag:true,
 			foot:false
 		});
@@ -426,11 +426,11 @@ $(document).on("click","a[ectype='add_attr_sku']",function(){
 		var content = data.content;
 		pb({
 			id:"attr_sku_dialog",
-			title:jl_edit_goods_price,
+			title:"编辑商品货品价格",
 			width:563,
 			content:content,
-			ok_title:jl_determine,
-			cl_title:jl_cancel,
+			ok_title:"确定",
+			cl_title:"取消",
 			drag:true,
 			foot:true,
 			onOk:function(){

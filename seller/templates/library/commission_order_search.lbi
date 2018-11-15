@@ -2,11 +2,11 @@
 <form method="get" action="javascript:searchOrder()" name="searchOrderForm">
 <div class="gj_search">
 	<div class="search-gao-list" id="searchBarOpen">
-		<i class="icon icon-zoom-in"></i>{$lang.advanced_search}
+		<i class="icon icon-zoom-in"></i>高级搜索
 	</div>
 	<div class="search-gao-bar" style="right:-350px;">
-		<div class="handle-btn" id="searchBarClose"><i class="icon icon-zoom-out"></i>{$lang.pack_up}</div>
-		<div class="title"><h3>{$lang.advanced_search}</h3></div>
+		<div class="handle-btn" id="searchBarClose"><i class="icon icon-zoom-out"></i>收起边栏</div>
+		<div class="title"><h3>高级搜索</h3></div>
 			<div class="searchContent w300">
 				<div class="layout-box">
                 
@@ -30,22 +30,22 @@
                     
                     <!-- 订单分类 -->
 					<dl class="w300">
-						<dt>{$lang.order_type}</dt>
+						<dt>订单分类</dt>
 						<dd>
 							<div id="" class="imitate_select w300">
 								<div class="cite">{$lang.select_please}</div>
                                 <ul>
                                     <li><a href="javascript:;" data-value="">{$lang.select_please}</a></li>
-                                    <li><a href="javascript:;" data-value="stages">{$lang.order_stages}</a></li>
-                                    <li><a href="javascript:;" data-value="zc">{$lang.order_zc}</a></li>
-                                    <li><a href="javascript:;" data-value="store">{$lang.order_store}</a></li>
-                                    <li><a href="javascript:;" data-value="other">{$lang.order_other}</a></li>
-                                    <li><a href="javascript:;" data-value="dbdd">{$lang.order_dbdd}</a></li>
-                                    <li><a href="javascript:;" data-value="msdd">{$lang.order_msdd}</a></li>
-                                    <li><a href="javascript:;" data-value="tgdd">{$lang.order_tgdd}</a></li>
-                                    <li><a href="javascript:;" data-value="pmdd">{$lang.order_pmdd}</a></li>
-                                    <li><a href="javascript:;" data-value="jfdd">{$lang.order_jfdd}</a></li>
-                                    <li><a href="javascript:;" data-value="ysdd">{$lang.order_ysdd}</a></li>
+                                    <li><a href="javascript:;" data-value="stages">白条订单</a></li>
+                                    <li><a href="javascript:;" data-value="zc">众筹订单</a></li>
+                                    <li><a href="javascript:;" data-value="store">门店订单</a></li>
+                                    <li><a href="javascript:;" data-value="other">促销订单</a></li>
+                                    <li><a href="javascript:;" data-value="dbdd">夺宝订单</a></li>
+                                    <li><a href="javascript:;" data-value="msdd">秒杀订单</a></li>
+                                    <li><a href="javascript:;" data-value="tgdd">团购订单</a></li>
+                                    <li><a href="javascript:;" data-value="pmdd">拍卖订单</a></li>
+                                    <li><a href="javascript:;" data-value="jfdd">积分订单</a></li>
+                                    <li><a href="javascript:;" data-value="ysdd">预售订单</a></li>
                                 </ul>
 								<input name="order_cat" type="hidden" value="">
 							</div>
@@ -56,8 +56,8 @@
 				</div>
 			</div>
 			<div class="bot_btn">
-				<input type="submit" class="btn red_btn" name="tj_search" value="{$lang.button_inquire}" />
-				<input type="reset" class="btn btn_reset" name="reset" value="{$lang.button_reset_alt}" />
+				<input type="submit" class="btn red_btn" name="tj_search" value="提交查询" />
+				<input type="reset" class="btn btn_reset" name="reset" value="重置" />
 			</div>
 	</div>
 </div>

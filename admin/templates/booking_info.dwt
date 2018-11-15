@@ -79,7 +79,7 @@
                         </form>
                         <div class="clear"></div>
                         {if $booking.is_dispose}
-                        <div class="step_title"><i class="ui-step"></i><h3>{$lang.process_info}</h3></div>
+                        <div class="step_title"><i class="ui-step"></i><h3>处理信息</h3></div>
                         <div class="items mt20">
                         	<div class="item">
                             	<div class="label">{$lang.dispose_user}：</div>

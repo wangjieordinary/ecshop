@@ -52,7 +52,7 @@
                                     <td><div class="tDiv">{$info.type_name}</div></td>
                                     <td>
                                     	<div class="tDiv">
-                                            <div class="switch {if $info.is_show eq 1}active{/if}" title="{if $info.is_show eq 1}{$lang.yes}{else}{$lang.no}{/if}" onclick="listTable.switchBt(this, 'toggle_show_title', {$info.title_id})">
+                                            <div class="switch {if $info.is_show eq 1}active{/if}" title="{if $info.is_show eq 1}是{else}否{/if}" onclick="listTable.switchBt(this, 'toggle_show_title', {$info.title_id})">
                                             	<div class="circle"></div>
                                             </div>
                                             <input type="hidden" value="{$info.is_show}" name="">

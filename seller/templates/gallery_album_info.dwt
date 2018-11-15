@@ -21,10 +21,10 @@
 						</dd>
                     </dl>
                       <dl>
-                          <dt>{$lang.label_parent_album}</dt>
+                          <dt>上级相册：</dt>
                           <dd>
                               <div id="parent_id" class="imitate_select select_w320">
-                                  <div class="cite">{$lang.top_album}</div>
+                                  <div class="cite">顶级相册</div>
                                   <ul>
                                       {foreach from=$cat_select item=list}
                                       <li><a href="javascript:;" data-value="{$list.album_id}" class="ftx-01">{$list.name}</a></li>
@@ -40,7 +40,7 @@
                             <div class="type-file-box mr0">
                             	<div class="input">
                                 <input type="text" name="textfile" class="type-file-text" {if $album_info.album_cover}value="../{$album_info.album_cover}"{/if} id="textfield" autocomplete="off" readonly>
-                                <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}" />
+                                <input type="button" name="button" id="button" class="type-file-button" value="上传..." />
                                 <input type="file" class="type-file-file"  name="album_cover" data-state="imgfile" size="30" hidefocus="true" value="" />
                                 </div>
                                 {if $album_info.album_cover}

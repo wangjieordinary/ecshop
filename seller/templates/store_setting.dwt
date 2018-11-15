@@ -12,10 +12,10 @@
 				{include file ='library/url_here.lbi'}
 				<div class="tabmenu">
 					<ul class="tab" ectype="set_tab">
-						<li data-type="base" class="active"><a href="javascript:;">{$lang.basic_info}</a></li>
-                        <li data-type="contact"><a href="javascript:;">{$lang.contact_us}</a></li>
-						<li data-type="picture"><a href="javascript:;">{$lang.img_set}</a></li>
-						<li data-type="other"><a href="javascript:;">{$lang.kefu_third_set}</a></li>
+						<li data-type="base" class="active"><a href="javascript:;">基本信息</a></li>
+                        <li data-type="contact"><a href="javascript:;">联系我们</a></li>
+						<li data-type="picture"><a href="javascript:;">图片设置</a></li>
+						<li data-type="other"><a href="javascript:;">客服第三方设置</a></li>
 					</ul>
 				</div>
                 <div class="ecsc-form-goods" ectype="set_info">
@@ -95,14 +95,14 @@
                             <dd><textarea name="street_desc" class="textarea">{$shop_info.street_desc}</textarea><div class="notic">{$lang.street_desc}</div></dd>
                         </dl>
                         <dl>
-                            <dt>{$lang.label_audit_state}</dt>
+                            <dt>审核状态：</dt>
                             <dd style="line-height:30px">
 							{if $shop_info.review_status eq 2}
-							<span class="red">{$lang.audited_not_adopt}{if $shop_info.review_content}：{$shop_info.review_content}{/if}</span>
+							<span class="red">审核未通过{if $shop_info.review_content}：{$shop_info.review_content}{/if}</span>
 							{elseif $shop_info.review_status eq 1}
-							<span class="red">{$lang.not_audited}</span>
+							<span class="red">未审核</span>
 							{else}
-							<span class="green">{$lang.audited_adopt}</span>
+							<span class="green">审核通过</span>
 							{/if}	                                
                             </dd>
                         </dl>						
@@ -129,7 +129,7 @@
                                 
                                 <div id="dlProvinces" class="ui-dropdown smartdropdown alien">
                                     <input type="hidden" value="{$shop_info.province}" name="shop_province" id="selProvinces">
-                                        <div class="txt">{$lang.province_alt}</div>
+                                        <div class="txt">省/直辖市</div>
                                         <i class="down u-dropdown-icon"></i>
                                         <div class="options clearfix" style="max-height:300px;">
                                             {foreach from=$provinces item=list}
@@ -144,7 +144,7 @@
                             <dd>
                                 <div id="dlCity" class="ui-dropdown smartdropdown alien">
                                     <input type="hidden" value="{$shop_info.city}" name="shop_city" id="selCities">
-                                        <div class="txt">{$lang.city}</div>
+                                        <div class="txt">市</div>
                                         <i class="down u-dropdown-icon"></i>
                                         <div class="options clearfix" style="max-height:300px;">
                                             {foreach from=$cities item=list}
@@ -159,7 +159,7 @@
                             <dd>
                                 <div id="dlRegion" class="ui-dropdown smartdropdown alien">
                                     <input type="hidden" value="{$shop_info.district}" name="shop_district" id="selDistricts">
-                                    <div class="txt">{$lang.area_alt}</div>
+                                    <div class="txt">区/县</div>
                                     <i class="down u-dropdown-icon"></i>
                                     <div class="options clearfix" style="max-height:300px;">
                                         {foreach from=$districts item=list}
@@ -173,21 +173,21 @@
                             <dt>{$lang.shop_address}：</dt>
                             <dd>
                             	<input type="text" name="shop_address" value="{$shop_info.shop_address}" class="text"/>
-                                <div class="notic">{$lang.notice_shop_address}</div>
+                                <div class="notic">注意：无需填写区域，格式如（中山北路3553号伸大厦）</div>
                             </dd>
                         </dl>
                         <dl class="hide"> 
                             <dt>{$lang.tengxun_key}：</dt>
                             <dd>
                             	<input type="text" name="tengxun_key" value="{$shop_info.tengxun_key}" class="text" />
-                                <a href="http://lbs.qq.com/mykey.html" target="_blank">{$lang.get_tx_key}</a>
+                                <a href="http://lbs.qq.com/mykey.html" target="_blank">获取密钥</a>
                             </dd>
                         </dl>
                         <dl> 
                             <dt>{$lang.longitude}：</dt>
                             <dd>
                             	<input type="text" name="longitude" value="{$shop_info.longitude}" class="text" />
-                                <a href="javascript:;" onclick="get_coordinate();" class="txtline ml10">{$lang.click_get_postion}</a>
+                                <a href="javascript:;" onclick="get_coordinate();" class="txtline ml10">点击获取坐标</a>
                                 <div class="notic">{$lang.longitude_desc}</div>
                             </dd>
                         </dl>	
@@ -213,14 +213,14 @@
                             </dd>
                         </dl>
                         <dl>
-                            <dt>{$lang.label_audit_state}</dt>
+                            <dt>审核状态：</dt>
                             <dd style="line-height:30px">
 							{if $shop_info.review_status eq 2}
-							<span class="red">{$lang.audited_not_adopt}：{$shop_info.review_content}</span>
+							<span class="red">审核不通过：{$shop_info.review_content}</span>
 							{elseif $shop_info.review_status eq 1}
-							<span class="red">{$lang.not_audited}</span>
+							<span class="red">未审核</span>
 							{else}
-							<span class="green">{$lang.audited_adopt}</span>
+							<span class="green">审核通过</span>
 							{/if}	                                
                             </dd>
                         </dl>						
@@ -233,7 +233,7 @@
                                  <div class="type-file-box">
                                  	<div class="input">
                                         <input type="text" name="textfile" class="type-file-text" {if $shop_info.shop_logo}value="{$shop_info.shop_logo}"{/if} id="textfield" readonly>
-                                        <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}">
+                                        <input type="button" name="button" id="button" class="type-file-button" value="上传...">
                                         <input type="file" class="type-file-file" name="shop_logo" size="30" hidefocus="true" value="">
                                     </div>
                                     {if $shop_info.shop_logo}
@@ -253,7 +253,7 @@
                                  <div class="type-file-box">
                                  	<div class="input">
                                         <input type="text" name="textfile" class="type-file-text" {if $shop_info.logo_thumb}value="{$shop_info.logo_thumb}"{/if} id="textfield" readonly>
-                                        <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}">
+                                        <input type="button" name="button" id="button" class="type-file-button" value="上传...">
                                         <input type="file" class="type-file-file" name="logo_thumb" size="30" hidefocus="true" value="">
                                     </div>
                                     {if $shop_info.logo_thumb}
@@ -273,7 +273,7 @@
                                 <div class="type-file-box">
                                 	<div class="input">
                                         <input type="text" name="textfile" class="type-file-text" {if $shop_info.street_thumb}value="{$shop_info.street_thumb}"{/if} id="textfield" readonly>
-                                        <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}">
+                                        <input type="button" name="button" id="button" class="type-file-button" value="上传...">
                                         <input type="file" class="type-file-file" name="street_thumb" size="30" hidefocus="true" value="">
                                     </div>
                                     {if $shop_info.street_thumb}
@@ -292,7 +292,7 @@
                                 <div class="type-file-box">
                                 	<div class="input">
                                         <input type="text" name="textfile" class="type-file-text" {if $shop_info.brand_thumb}value="{$shop_info.brand_thumb}"{/if} id="textfield" readonly>
-                                        <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}">
+                                        <input type="button" name="button" id="button" class="type-file-button" value="上传...">
                                         <input type="file" class="type-file-file" name="brand_thumb" size="30" hidefocus="true" value="">
                                     </div>
                                     {if $shop_info.brand_thumb}
@@ -306,12 +306,12 @@
                             </dd>
                         </dl>
                         <dl>
-                            <dt>{$lang.qr_code_center_logo}: </dt>
+                            <dt>二维码中间Logo: </dt>
                             <dd>
                                 <div class="type-file-box">
                                 	<div class="input">
                                         <input type="text" name="textfile" class="type-file-text" {if $shop_info.qrcode_thumb}value="{$shop_info.qrcode_thumb}"{/if} id="textfield" readonly>
-                                        <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}">
+                                        <input type="button" name="button" id="button" class="type-file-button" value="上传...">
                                         <input type="file" class="type-file-file" name="qrcode_thumb" size="30" hidefocus="true" value="">
                                     </div>
                                     {if $shop_info.qrcode_thumb}
@@ -326,14 +326,14 @@
                         </dl>  
                         {/if}
                         <dl>
-                            <dt>{$lang.label_audit_state}</dt>
+                            <dt>审核状态：</dt>
                             <dd style="line-height:30px">
 							{if $shop_info.review_status eq 2}
-							<span class="red">{$lang.audited_not_adopt}：{$shop_info.review_content}</span>
+							<span class="red">审核不通过：{$shop_info.review_content}</span>
 							{elseif $shop_info.review_status eq 1}
-							<span class="red">{$lang.not_audited}</span>
+							<span class="red">未审核</span>
 							{else}
-							<span class="green">{$lang.audited_adopt}</span>
+							<span class="green">审核通过</span>
 							{/if}	                                
                             </dd>
                         </dl>						
@@ -355,46 +355,46 @@
                         </dl>
                         {if $shop_information.is_IM eq 1 || $shop_information.is_dsc}
                         <dl>
-                            <dt>{$lang.label_online_kefu_account}</dt>
+                            <dt>在线客服账号：</dt>
                             <dd>
                             	<input type="text" size="40" value="{$shop_info.kf_touid}" name="kf_touid" class="text">
-                            	<div class="notic">{$lang.in} <a href="http://my.open.taobao.com/app/app_list.htm" target="_blank" class="red"> {$lang.tb_open_plat}</a>{$lang.opened_yunwang_account}</div>
+                            	<div class="notic">在 <a href="http://my.open.taobao.com/app/app_list.htm" target="_blank" class="red"> 淘宝开放平台</a>已开通云旺客服的账号。</div>
                             </dd>
                         </dl>
                         <dl>
-                            <dt>{$lang.label_online_kefu_appkey}</dt>
+                            <dt>在线客服appkey：</dt>
                             <dd>
                                 <input type="text" size="40" value="{$shop_info.kf_appkey}" name="kf_appkey" class="text">
-                                <div class="notic">{$lang.notice_online_kefu_appkey}</div>
+                                <div class="notic">在淘宝开放平台创建一个应用(百川无线)即可获得appkey。</div>
                             </dd>
                         </dl>
                         <dl>
-                            <dt>{$lang.label_online_kefu_secretkey}</dt>
+                            <dt>在线客服secretkey：</dt>
                             <dd>
                                 <input type="text" size="40" value="{$shop_info.kf_secretkey}" name="kf_secretkey" class="text">
-                                <div class="notic">{$lang.notice_online_kefu_secretkey}</div>
+                                <div class="notic">在淘宝开放平台创建一个应用(百川无线)即可获得secretkey。</div>
                             </dd>
                         </dl>
                         <dl>
-                            <dt>{$lang.label_online_kefu_head_logo}</dt>
+                            <dt>在线客服头像LOGO：</dt>
                             <dd>
                                 <input type="text" size="40" value="{$shop_info.kf_logo}" name="kf_logo" class="text">
-                                <div class="notic">{$lang.notice_online_kefu_head_logo}</div>
+                                <div class="notic">直接黏贴图片网址(推荐40 x 40),不填即使用默认头像。</div>
                             </dd>
                         </dl>
                         <dl>
-                            <dt>{$lang.label_online_kefu_welcome_info}</dt>
+                            <dt>在线客服欢迎信息：</dt>
                             <dd>
                                 <input type="text" size="40" value="{$shop_info.kf_welcomeMsg}" name="kf_welcomeMsg" class="text">
-                                <div class="notic">{$lang.notice_online_kefu_welcome_info}</div>
+                                <div class="notic">向用户发送的一条欢迎信息。</div>
                             </dd>
                         </dl>
                         {/if}
                         <dl>
-                            <dt>{$lang.label_meiqia_kefu}</dt>
+                            <dt>美洽客服：</dt>
                             <dd>
                                 <input type="text" size="40" value="{$shop_info.meiqia}" name="meiqia" class="text text_2">
-                                <div class="notic">&nbsp;&nbsp;{$lang.notice_meiqia_kefu}</div>
+                                <div class="notic">&nbsp;&nbsp;此功能仅手机端（wap）使用</div>
                             </dd>
                         </dl>	
                         <dl>
@@ -420,50 +420,50 @@
                             </dd>
                         </dl>						
                         <dl>
-                            <dt>{$lang.label_scan_appkey}</dt>
+                            <dt>扫码appkey（极速数据）：</dt>
                             <dd>
                                 <input type="text" size="40" value="{$shop_info.js_appkey}" name="js_appkey" class="text text_1" autocomplete="off" id="code_appkey" />
-                                <div class="notic">{$lang.in}<a target="_blank" href="http://www.jisuapi.com/api/barcode2/"> {$lang.jisuapi} </a>{$lang.apply_account_dot}</div>
+                                <div class="notic">在<a target="_blank" href="http://www.jisuapi.com/api/barcode2/"> 极速数据 </a>申请账号。</div>
                             </dd>
                         </dl>	
                         <dl>
-                            <dt>{$lang.label_scan_appsecret}</dt>
+                            <dt>扫码appsecret（极速数据）：</dt>
                             <dd>
                                 <input type="text" size="40" value="{$shop_info.js_appsecret}" name="js_appsecret" class="text text_1" autocomplete="off" />
                             </dd>
                         </dl>	
 						<!--快递鸟设置 start-->	
                         <dl>
-                            <dt>{$lang.label_express_print_way}</dt>
+                            <dt>快递单打印方式：</dt>
                             <dd>
                                 <div class="checkbox_items">
                                 	<div class="checkbox_item">
                                         <input name="print_type" type="radio" value="0" class="ui-radio" id="print_type_0" {if $shop_info.print_type eq 0}checked="checked"{/if} />
-                                        <label class="ui-radio-label" for="print_type_0">{$lang.system_default}</label>
+                                        <label class="ui-radio-label" for="print_type_0">系统默认</label>
                                     </div>
                                     <div class="checkbox_item">
                                         <input name="print_type" type="radio" value="1" class="ui-radio" id="print_type_1" {if $shop_info.print_type eq 1}checked="checked"{/if} />
-                                        <label class="ui-radio-label" for="print_type_1">{$lang.kdn}</label>
+                                        <label class="ui-radio-label" for="print_type_1">快递鸟</label>
                                     </div>
                                 </div>
                             </dd>
                         </dl>						
                         <dl>
-                            <dt>{$lang.label_express_printer_kdn}</dt>
+                            <dt>快递单打印机（快递鸟）：</dt>
                             <dd>
                                 <input type="text" size="40" value="{$shop_info.kdniao_printer}" name="kdniao_printer" class="text text_1" autocomplete="off" />
                             </dd>
                         </dl>						
 						<!--快递鸟设置 end-->
                         <dl>
-                            <dt>{$lang.label_audit_state}</dt>
+                            <dt>审核状态：</dt>
                             <dd style="line-height:30px">
 							{if $shop_info.review_status eq 2}
-							<span class="red">{$lang.audited_not_adopt}：{$shop_info.review_content}</span>
+							<span class="red">审核不通过：{$shop_info.review_content}</span>
 							{elseif $shop_info.review_status eq 1}
-							<span class="red">{$lang.not_audited}</span>
+							<span class="red">未审核</span>
 							{else}
-							<span class="green">{$lang.audited_adopt}</span>
+							<span class="green">审核通过</span>
 							{/if}	                                
                             </dd>
                         </dl>						
@@ -472,7 +472,7 @@
                         <dl class="button_info">
                         	<dt>&nbsp;</dt>
                             <dd>
-								<input type="submit" class="sc-btn sc-blueBg-btn btn35" value="{$lang.submit}" id="submitBtn" />
+								<input type="submit" class="sc-btn sc-blueBg-btn btn35" value="提交" id="submitBtn" />
                                 <input type="hidden" name="data_op" value="{$data_op}"/>
                                 <input name="lngX" type="hidden" value="0" />
                                 <input name="latY" type="hidden" value="0" />
@@ -521,7 +521,7 @@ $(function(){
 		},
 		messages : {
 			shipping_id : {
-				min : '<i class="icon icon-exclamation-sign"></i>'+jl_select_deliver
+				min : '<i class="icon icon-exclamation-sign"></i>请选择配送方式'
 			}
 		}
 	});
@@ -570,11 +570,11 @@ function get_coordinate(){
 		var content = data.content;
 		pb({
 			id: "getlnglat",
-			title: jl_get_lat_lon,
+			title: "获取经纬度",
 			width: 1050,
 			height:460,
 			content: content,
-			ok_title: jl_determine,
+			ok_title: "确定",
 			drag: true,
 			foot: true,
 			cl_cBtn: false,
@@ -658,7 +658,7 @@ function get_lngxlaty(){
 	var mapObj = new AMap.Map('iCenter'); 
 	mapObj.plugin(["AMap.Geocoder"], function() {     //加载地理编码插件
 		MGeocoder = new AMap.Geocoder({
-			city:jl_nationwide, //城市，默认：“全国”
+			city:"全国", //城市，默认：“全国”
 			radius:500 //范围，默认：500
 		});
 		//返回地理编码结果

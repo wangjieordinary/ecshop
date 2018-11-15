@@ -23,27 +23,27 @@
 		<div class="manager">
 			<dl>
 				<dt class="name">{$admin_info.user_name}</dt>
-				<dd class="group">{$lang.superadministrator}</dd>
+				<dd class="group">超级管理员</dd>
 			</dl>
 			<span class="avatar">
 				<form action="index.php" id="fileForm" method="post"  enctype="multipart/form-data"  runat="server">
-					<input name="img" type="file" class="admin-avatar-file" id="_pic" title="{$lang.set_admin_avatar}">
+					<input name="img" type="file" class="admin-avatar-file" id="_pic" title="设置管理员头像">
 				</form>
 				<img nctype="admin_avatar" src="{if $admin_info.admin_user_img}../{$admin_info.admin_user_img}{else}images/admin.png{/if}" />
 			</span>
             <div id="admin-manager-btn" class="admin-manager-btn"><i class="arrow"></i></div>
 			<div class="manager-menu">
 				<div class="title">
-					<h4>{$lang.last_login}</h4>
-					<a href="privilege.php?act=edit&id={$smarty.session.admin_id}" target="workspace" class="edit_pwd">{$lang.change_password}</a>
+					<h4>最后登录</h4>
+					<a href="privilege.php?act=edit&id={$smarty.session.admin_id}" target="workspace" class="edit_pwd">修改密码</a>
 				</div>
 				<div class="login-date">
 					<strong>{$admin_info.last_login}</strong>
 					<span>(IP:{$admin_info.last_ip})</span>
 				</div>
 				<div class="title mt10">
-					<h4>{$lang.common_operation}</h4>
-					<a href="javascript:;" class="add_nav">{$lang.add_menu}</a>
+					<h4>常用操作</h4>
+					<a href="javascript:;" class="add_nav">添加菜单</a>
 				</div>
 				<div class="quick_link">
 					<ul>
@@ -56,49 +56,49 @@
 		</div>
 		<div class="operate">
 			<li style="position: relative;" ectype="oper_msg">
-				<a href="javascript:void(0);" class="msg" title="{$lang.view_message}">&nbsp;</a>
+				<a href="javascript:void(0);" class="msg" title="查看消息">&nbsp;</a>
 				<div id="msg_Container">
                 	<div class="item">
-                        <h3 class="order_msg" ectype="msg_tit">{$lang.order_prompt}<em class="iconfont icon-up"></em></h3>
+                        <h3 class="order_msg" ectype="msg_tit">订单提示<em class="iconfont icon-up"></em></h3>
                         <div class="msg_content" ectype="orderMsg" style="display:block;"></div>
                     </div>
 					
 					<div class="item">
-                        <h3 class="goods_msg" ectype="msg_tit">{$lang.goods_prompt}<em class="iconfont icon-down"></em></h3>
+                        <h3 class="goods_msg" ectype="msg_tit">商品提示<em class="iconfont icon-down"></em></h3>
                         <div class="msg_content" ectype="goodMsg"></div>
                     </div>
 					
                     <div class="item">
-                    	<h3 class="shop_msg" ectype="msg_tit">{$lang.seller_audit_prompt}<em class="iconfont icon-down"></em></h3>
+                    	<h3 class="shop_msg" ectype="msg_tit">商家审核提示<em class="iconfont icon-down"></em></h3>
                         <div class="msg_content" ectype="sellerMsg"></div>
                     </div>
 					
                     <div class="item">
-                    	<h3 class="ad_msg" ectype="msg_tit">{$lang.ad_position_prompt}<em class="iconfont icon-down"></em></h3>
+                    	<h3 class="ad_msg" ectype="msg_tit">广告位提示<em class="iconfont icon-down"></em></h3>
                         <div class="msg_content" ectype="advMsg"></div>
                     </div>
 					
                     <div class="item">
-                    	<h3 class="user_msg" ectype="msg_tit">{$lang.member_remind}<em class="iconfont icon-down"></em></h3>
+                    	<h3 class="user_msg" ectype="msg_tit">会员提醒<em class="iconfont icon-down"></em></h3>
                         <div class="msg_content" ectype="userMsg"></div>
                     </div>
 					
 					<div class="item">
-                    	<h3 class="campaign_msg" ectype="msg_tit">{$lang.activity_remind}<em class="iconfont icon-down"></em></h3>
+                    	<h3 class="campaign_msg" ectype="msg_tit">活动提醒<em class="iconfont icon-down"></em></h3>
                         <div class="msg_content" ectype="promotionMsg"></div>
                     </div>
 				</div>
 			</li>
 			<i></i>
-			<li><a href="../" target="_blank" class="home" title="{$lang.new_window_homepage}">&nbsp;</a></li>
+			<li><a href="../" target="_blank" class="home" title="新窗口打开商城首页">&nbsp;</a></li>
 			<i></i>
-			<li><a href="javascript:void(0);" class="sitemap" title="{$lang.view_all_manage_menu}">&nbsp;</a></li>
+			<li><a href="javascript:void(0);" class="sitemap" title="查看全部管理菜单">&nbsp;</a></li>
 			<i></i>
-			<li><a href="javascript:void(0);" id="trace_show" class="style-color" title="{$lang.chenge_color_admin}">&nbsp;</a></li>
+			<li><a href="javascript:void(0);" id="trace_show" class="style-color" title="给管理中心换个颜色">&nbsp;</a></li>
 			<i></i>
-			<li><a href="index.php?act=clear_cache" class="clear" target="workspace" title="{$lang.clear_cache}">&nbsp;</a></li>
+			<li><a href="index.php?act=clear_cache" class="clear" target="workspace" title="清除缓存">&nbsp;</a></li>
 			<i></i>
-			<li><a href="privilege.php?act=logout" class="prompt" title="{$lang.safe_logout_admin}">&nbsp;</a></li>
+			<li><a href="privilege.php?act=logout" class="prompt" title="安全退出管理中心">&nbsp;</a></li>
 		</div>
 	</div>
 </div>
@@ -106,17 +106,17 @@
 <div id="allMenu" style="display: none;">
 	<div class="admincp-map ui-widget-content ui-draggable" nctype="map_nav" id="draggable">
 		<div class="title ui-widget-header ui-draggable-handle" style="border:none; background:#fff;">
-			<h3>{$lang.admin_all_menu}</h3>
-			<h5>{$lang.set_common_menu}</h5>
+			<h3>管理中心全部菜单</h3>
+			<h5>切换显示全部管理菜单，通过点击勾选可添加菜单为管理常用操作项，最多添加10个</h5>
 			<span><a nctype="map_off" onclick="$('#allMenu').hide();" href="JavaScript:void(0);">X</a></span>
         </div>
 		<div class="content">
 			<ul class="admincp-map-nav">
-				<li class=""><a href="javascript:void(0);" data-param="map-system">{$lang.menuplatform}</a></li>
-				<li class="selected"><a href="javascript:void(0);" data-param="map-shop">{$lang.menushopping}</a></li>
-				<li class=""><a href="javascript:void(0);" data-param="map-mobile">{$lang.mobile_terminal}</a></li>
+				<li class=""><a href="javascript:void(0);" data-param="map-system">平台</a></li>
+				<li class="selected"><a href="javascript:void(0);" data-param="map-shop">商城</a></li>
+				<li class=""><a href="javascript:void(0);" data-param="map-mobile">手机端</a></li>
                 <!--<li class=""><a href="javascript:void(0);" data-param="map-cms">APP</a></li>-->
-                <li class=""><a href="javascript:void(0);" data-param="map-cms">{$lang.menuinformation}</a></li>
+                <li class=""><a href="javascript:void(0);" data-param="map-cms">资源</a></li>
 			</ul>
 			<div class="admincp-map-div" data-param="map-system" style="display: none;">
                 {foreach from=$nav_top.menuplatform.children item=vo}

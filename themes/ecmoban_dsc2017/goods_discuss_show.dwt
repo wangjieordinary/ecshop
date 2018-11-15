@@ -39,7 +39,7 @@
                     <div class="discuss-reply-info">
                         <div class="u-ico"><img src="{if $user_id}{if $user_info.user_picture}{$user_info.user_picture}{else}themes/<?php echo $GLOBALS['_CFG']['template']; ?>/images/touxiang.jpg{/if}{else}themes/<?php echo $GLOBALS['_CFG']['template']; ?>/images/avatar.png{/if}"></div>
                         <div class="ud-right d-r-warp">
-                            <div class="user-name">{$lang.publish_reply}</div>
+                            <div class="user-name">发表回复</div>
                             <input type="hidden" id="dis_id" name="dis_id" value="{$discuss.dis_id}">
                             <input type="hidden" id="quote_id" name="quote_id" value="">
                             <input type="hidden" id="nick_user" name="nick_user" value="{$discuss.user_id}">
@@ -48,16 +48,16 @@
                                     <input type="hidden" id="dis_id" name="dis_id" value="{$discuss.dis_id}">
                                     <input type="hidden" id="quote_id" name="quote_id" value="">
                                     <input type="hidden" id="nick_user" name="nick_user" value="{$discuss.user_id}">
-                                    <div id="quoteTitle" class="quote_title">{$lang.reply_comment}&#12288; <em class="userName"></em> </div>
+                                    <div id="quoteTitle" class="quote_title">回复&#12288; <em class="userName"></em> </div>
                                     <div id="quoteContent" class="quote_content"> {$lang.reply_desc}</div>
                                 </blockquote>
                             </div>
                             <textarea name="" id="reply_content" class="textarea"></textarea>
-                            <a href="#" class="btn sc-redBg-btn" ectype="publish">{$lang.reply_comment}</a>
+                            <a href="#" class="btn sc-redBg-btn" ectype="publish">回复</a>
                         </div>
                     </div>
                     <div class="discuss-all">
-                        <div class="tit">{$lang.all_comments}（{$reply_discuss.record_count}）</div>
+                        <div class="tit">全部评论（{$reply_discuss.record_count}）</div>
                         {foreach from=$reply_discuss.list item=list key=key name=noreply}
                         <div class="item">
                             <div class="u-ico"><img src="{if $list.user_picture}{$list.user_picture}{else}themes/<?php echo $GLOBALS['_CFG']['template']; ?>/images/touxiang.jpg{/if}"></div>
@@ -65,7 +65,7 @@
                                 {if $list.quote}
                                 <div>
                                     <blockquote class="quote">
-                                    <fieldset><legend>{$lang.reply_comment}&nbsp;{$list.quote.nick_name}&nbsp;</legend>
+                                    <fieldset><legend>回复&nbsp;{$list.quote.nick_name}&nbsp;</legend>
                                     <div class="quote_content"> 
                                         {$list.quote.dis_text}
                                     </div>
@@ -78,7 +78,7 @@
                                     <div class="time">{$list.add_time}</div>
                                 </div>
                                 <div class="d-i-txt">{$list.dis_text}</div>
-                                <a href="#reply" class="reply_parent" dis_id="{$discuss.dis_id}" quote_id="{$list.dis_id}" userID="{$list.user_id}" userName="{$list.nick_name}" data="{$list.dis_text}">{$lang.reply_comment}</a>
+                                <a href="#reply" class="reply_parent" dis_id="{$discuss.dis_id}" quote_id="{$list.dis_id}" userID="{$list.user_id}" userName="{$list.nick_name}" data="{$list.dis_text}">回复</a>
                             </div>                     
                         </div>
                         {/foreach}
@@ -101,7 +101,7 @@
                 </div>
                 <div class="album-right">
                     <div class="album-list">
-                        <div class="album-tit">{$lang.goods_album}({$num})</div>
+                        <div class="album-tit">商品相册({$num})</div>
                         <div class="album-list-warp">
                             <div class="album-ul">
                                 <ul>
@@ -118,9 +118,9 @@
                         </div>
                     </div>
                     <div class="pur-info">
-                        <p>{$lang.shop_Price_dis}：<span>{$goodsInfo.goods_price}</span></p>
-                        <p>{$lang.sale_amount}：<b>{$goodsInfo.sales_volume}</b>件</p>
-                        <a href="javascript:addToCart({$goodsInfo.goods_id})" class="btn sc-redBg-btn"><i class="iconfont icon-carts"></i>{$lang.btn_add_to_cart}</a>
+                        <p>商城价：<span>{$goodsInfo.goods_price}</span></p>
+                        <p>销售量：<b>{$goodsInfo.sales_volume}</b>件</p>
+                        <a href="javascript:addToCart({$goodsInfo.goods_id})" class="btn sc-redBg-btn"><i class="iconfont icon-carts"></i>加入购物车</a>
                     </div>
                 </div>
             </div>

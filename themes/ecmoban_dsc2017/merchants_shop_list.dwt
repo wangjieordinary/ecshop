@@ -20,12 +20,12 @@
     	<div class="crumbs-nav">
             <div class="crumbs-nav-main clearfix">
                 <div class="crumbs-nav-item">
-                    <span>{$lang.all_attribute}</span>
+                    <span>全部</span>
                     <span class="arrow">></span>
                     {if $display eq 'list'}
-                    <span>{$lang.total}{$shop_count}{$lang.home_shop}</span>
+                    <span>共{$shop_count}家店铺</span>
                     {else}
-                    <span>{$lang.total}{$shop_count}{$lang.jian_goods}</span>
+                    <span>共{$shop_count}件商品</span>
                     {/if}
                 </div>
             </div>
@@ -94,7 +94,7 @@
                                             <p>{$lang.seat_of}：{$shop.address}</p>
                                         </div>
                                         <div class="ss-btn">
-                                            <a onclick="get_collect_store(2, {$shop.ru_id});" href="javascript:void(0);" class="btn">{$lang.follow_store}</a>
+                                            <a onclick="get_collect_store(2, {$shop.ru_id});" href="javascript:void(0);" class="btn">关注店铺</a>
                                             <a href="{$shop.shop_url}" class="btn">{$lang.enter_the_shop}</a>
                                         </div>
                                     </div>
@@ -252,7 +252,7 @@
                                             {if $goods.self_run}
                                                 <span class="tag tac-sr">
                                                 <i class="i-left"></i>
-                                                {$lang.self_run}
+                                                自营
                                                 <i class="i-right"></i>
                                             </span>
                                             {/if}

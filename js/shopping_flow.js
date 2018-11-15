@@ -468,43 +468,14 @@ function changeVcard(val)
  */
 function changeVcardResponse(obj)
 {
-	
-	var payPw = $("#qt_onlinepay");	  //支付密码
-	var is_pay = 0;
-	
 	if(document.getElementById('ECS_VALUE_CARD').value > 0){
 		if(document.getElementById('value_card_psd')){
 			document.getElementById('value_card_psd').disabled = true;	
 			document.getElementById('value_card_psd').value = '';
-			
-			is_pay = 1;
 		}		
 	}else{
 		if(document.getElementById('value_card_psd')){
 			document.getElementById('value_card_psd').disabled = false;
-			
-			is_pay = 0;
-		}
-	}
-	
-	//验证支付密码
-	if(payPw.length > 0){
-		//非在线支付状态，使用余额抵扣，余额输入框大于0，支付密码填写框展示
-		if(is_pay > 0){
-			//支付密码显示
-			payPw.show();
-			
-			//初始化支付密码
-			payPw.find("input[name='pay_pwd']").val("");
-			
-			//支付密码隐藏域值赋值为1
-			payPw.find("input[name='pay_pwd_error']").val(1);
-		}else{
-			//支付密码隐藏
-			payPw.hide();
-			
-			//支付密码隐藏域值赋值为0
-			payPw.find("input[name='pay_pwd_error']").val(0);
 		}
 	}
 	

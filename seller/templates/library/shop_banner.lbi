@@ -2,18 +2,18 @@
 <div class="tishi">
 	<div class="tishi_info">
     	{if !$uploadImage}
-        <p class="first">{$lang.note_getcat_atr_1}</p>
+        <p class="first">注意：1、弹出框鼠标移到头部可以拖动，以防笔记本小屏幕内容展示不全；</p>
         {else}
-        <p class="first">{$lang.pagetip_shop_banner_2}</p>
-        <p>{$lang.pagetip_shop_banner_3}</p>
+        <p class="first">注意：1、请按照模板展示模式图片上面的尺寸来设置广告；</p>
+        <p>2、弹出框鼠标移到头部可以拖动，以防笔记本小屏幕内容展示不全；</p>
         <i class="icon"></i>
         {/if}
     </div>
 </div>
 <div class="tab">
 	<ul class="clearfix">
-    	<li class="current">{$lang.setup_content}</li>
-        {if $uploadImage eq 0}<li>{$lang.setup_display}</li>{/if}
+    	<li class="current">内容设置</li>
+        {if $uploadImage eq 0}<li>显示设置</li>{/if}
     </ul>
 </div>
 <div class="modal-body">
@@ -22,19 +22,19 @@
         <table id="addpictable" class="table">
             <thead>
                 <tr>
-                    <th>{$lang.imgage}</th>
+                    <th>图片</th>
                         {if $uploadImage neq 1}
-                        <th>{$lang.image_link}</th>
-                        <th class="center">{$lang.sort_order}</th>
+                        <th>图片链接</th>
+                        <th class="center">排序</th>
                         {if $mode eq 'lunbo'}
-                        <th class="center">{$lang.background_color}</th>
+                        <th class="center">背景颜色</th>
                         {/if}
                         {/if}
                         {if $titleup eq 1}
-                        <th class="center">{$lang.main_title}</th>
-                        <th class="center">{$lang.sub_title}</th>
+                        <th class="center">主标题</th>
+                        <th class="center">副标题</th>
                         {/if}
-                        <th class="center">{$lang.handler}</th>
+                        <th class="center">操作</th>
                 </tr>
             </thead>
             <tbody>
@@ -68,12 +68,12 @@
                             </td>
                             {/if}
                             <td class="center">
-                                <a href="javascript:;" class="pic_del del">{$lang.drop}</a>
+                                <a href="javascript:;" class="pic_del del">删除</a>
                             </td>
                     </tr>
                 {foreachelse}
                 	<tr class="notic">
-                    	<td colspan="5">{$lang.click_empty_or_upload_btn}</td>
+                    	<td colspan="5">点击下列图片空间图片可添加图片或点击上传图片按钮上传新图片</td>
                     </tr>    
                 {/foreach}
             </tbody>
@@ -85,9 +85,9 @@
                     <form action="" id="gallery_pic" method="post" enctype="multipart/form-data"  runat="server">
                         <div class="fl" ectype="albumFilter">
                             <div class="imitate_select select_w220" id="album_id">
-                                <div class="cite">{$lang.please_select_album}</div>		
+                                <div class="cite">请选择相册...</div>		
                                 <ul style="display: none;" class="ps-container" ectype="album_list_check">
-                                    <li><a href="javascript:;" data-value="0" class="ftx-01">{$lang.select_please}</a></li>
+                                    <li><a href="javascript:;" data-value="0" class="ftx-01">请选择...</a></li>
                                     {foreach from=$cat_select item=list}
                                     <li><a href="javascript:;" data-value="{$list.album_id}" class="ftx-01">{$list.name}</a></li>
                                     {/foreach}
@@ -95,21 +95,21 @@
                                 <input name="album_id" type="hidden" value="{$album_id}" id="album_id_val">
                             </div>
                             <div class="imitate_select select_w220" id="sort_name">
-                                <div class="cite">{$lang.select_please}</div>
+                                <div class="cite">请选择...</div>
                                 <ul style="display: none;" class="ps-container">
-                                    <li><a href="javascript:;" data-value="2" class="ftx-01">{$lang.sort_update_desc}</a></li>
-                                    <li><a href="javascript:;" data-value="1" class="ftx-01">{$lang.sort_update_asc}</a></li>
-                                    <li><a href="javascript:;" data-value="3" class="ftx-01">{$lang.sort_picsize_asc}</a></li>
-                                    <li><a href="javascript:;" data-value="4" class="ftx-01">{$lang.sort_picsize_desc}</a></li>
-                                    <li><a href="javascript:;" data-value="5" class="ftx-01">{$lang.sort_picname_asc}</a></li>
-                                    <li><a href="javascript:;" data-value="6" class="ftx-01">{$lang.sort_picname_desc}</a></li>
+                                    <li><a href="javascript:;" data-value="2" class="ftx-01">按上传时间从晚到早</a></li>
+                                    <li><a href="javascript:;" data-value="1" class="ftx-01">按上传时间从早到晚</a></li>
+                                    <li><a href="javascript:;" data-value="3" class="ftx-01">按图片从小到大</a></li>
+                                    <li><a href="javascript:;" data-value="4" class="ftx-01">按图片从大到小</a></li>
+                                    <li><a href="javascript:;" data-value="5" class="ftx-01">按图片名升序</a></li>
+                                    <li><a href="javascript:;" data-value="6" class="ftx-01">按图片名降序</a></li>
                                 </ul>
                                 <input name="sort_name" type="hidden" value="2" id="sort_name_val">
                             </div>
                         </div>
                         <div class="updata_btn">
-                        	<a href="javascript:void(0);" class="sc-btn btn28 sc-redBg-btn">{$lang.upload_image}<input name="file" type="file"></a>
-                            <a href="javascript:void(0);" class="sc-btn btn28 sc-redBg-btn" ectype="add_album">{$lang.add_album}</a>
+                        	<a href="javascript:void(0);" class="sc-btn btn28 sc-redBg-btn">上传图片<input name="file" type="file"></a>
+                            <a href="javascript:void(0);" class="sc-btn btn28 sc-redBg-btn" ectype="add_album">添加相册</a>
                         </div>
                     </form>
                 </div>
@@ -119,7 +119,7 @@
                             {foreach from=$pic_list item=pic_list}
                             <li><a href="javascript:;" onclick="addpic('{$pic_list.pic_file}',this)"><img src="{$pic_list.pic_file}"><span class="pixel">{$pic_list.pic_spec}</span></a></li>
                             {foreachelse}
-                            <li class="notic">{$lang.no_image}</li>
+                            <li class="notic">暂无图片</li>
                             {/foreach}
                         </ul>
                         <div class="clear"></div>
@@ -132,33 +132,33 @@
     <div class="body_info" style="display:none;">
     	<div class="control_list">
         	<div class="control_item">
-                <div class="control_text">{$lang.label_image_height}</div>
+                <div class="control_text">图片高度：</div>
                 <div class="control_value">
                 	{if $mode eq 'lunbo'}
-                	<input type="text" name="picHeight" value="{if $spec_attr.picHeight}{$spec_attr.picHeight}{else}600{/if}" class="shop_text" autocomplete="off" /><span>px</span><span>{$lang.pleas_upload_300_600}</span>
+                	<input type="text" name="picHeight" value="{if $spec_attr.picHeight}{$spec_attr.picHeight}{else}600{/if}" class="shop_text" autocomplete="off" /><span>px</span><span>请设置在300-600px这个之间</span>
                     {elseif $mode eq 'advImg1'}
-                    <input type="text" name="picHeight" value="{if $spec_attr.picHeight}{$spec_attr.picHeight}{else}400{/if}" class="shop_text" autocomplete="off" /><span>px</span><span>{$lang.accord_input_height_default}400</span>
+                    <input type="text" name="picHeight" value="{if $spec_attr.picHeight}{$spec_attr.picHeight}{else}400{/if}" class="shop_text" autocomplete="off" /><span>px</span><span>根据实际需求自行填写高度，默认为400</span>
                     {elseif $mode eq 'advImg2'}
-                    <input type="text" name="picHeight" value="{if $spec_attr.picHeight}{$spec_attr.picHeight}{else}650{/if}" class="shop_text" autocomplete="off" /><span>px</span><span>{$lang.accord_input_height_default}650</span>
+                    <input type="text" name="picHeight" value="{if $spec_attr.picHeight}{$spec_attr.picHeight}{else}650{/if}" class="shop_text" autocomplete="off" /><span>px</span><span>根据实际需求自行填写高度，默认为650</span>
                     {elseif $mode eq 'advImg3'}
-                    <input type="text" name="picHeight" value="{if $spec_attr.picHeight}{$spec_attr.picHeight}{else}380{/if}" class="shop_text" autocomplete="off" /><span>px</span><span>{$lang.accord_input_height_default}380</span>
+                    <input type="text" name="picHeight" value="{if $spec_attr.picHeight}{$spec_attr.picHeight}{else}380{/if}" class="shop_text" autocomplete="off" /><span>px</span><span>根据实际需求自行填写高度，默认为380</span>
                     {elseif $mode eq 'advImg4'}
-                    <input type="text" name="picHeight" value="{if $spec_attr.picHeight}{$spec_attr.picHeight}{else}250{/if}" class="shop_text" autocomplete="off" /><span>px</span><span>{$lang.accord_input_height_default}250</span>
+                    <input type="text" name="picHeight" value="{if $spec_attr.picHeight}{$spec_attr.picHeight}{else}250{/if}" class="shop_text" autocomplete="off" /><span>px</span><span>根据实际需求自行填写高度，默认为250</span>
                 	{/if}
                 </div>
             </div>
             {if $mode eq 'lunbo' || $mode eq 'advImg1'}
             <div class="control_item">
-                <div class="control_text">{$lang.label_switch_effect}</div>
+                <div class="control_text">切换效果：</div>
                 <div class="control_value">
                 	<div class="checkbox_items">
                         <div class="checkbox_item">
                             <input type="radio" name="slide_type" value="fold" class="ui-radio" id="shade" {if $spec_attr.slide_type neq 'roll'}checked{/if} >
-                            <label class="ui-radio-label" for="shade">{$lang.gradient}</label>
+                            <label class="ui-radio-label" for="shade">渐变</label>
                         </div>
                         <div class="checkbox_item">
                             <input type="radio" name="slide_type" value="roll" class="ui-radio" id="roll" {if $spec_attr.slide_type eq 'roll'}checked{/if}>
-                            <label class="ui-radio-label" for="roll">{$lang.roll}</label>
+                            <label class="ui-radio-label" for="roll">滚动</label>
                         </div>
                     </div>
                 </div>
@@ -166,23 +166,23 @@
             {/if}
             {if $mode eq 'advImg4'}
             <div class="control_item">
-                <div class="control_text">{$lang.label_display_mode}</div>
+                <div class="control_text">展示方式：</div>
                 <div class="control_value">
                 	<div class="itemsLayout line-item3" data-line="row3">
                     	<div class="itemsLayoutShot {if $spec_attr.itemsLayout eq 'row3'}dtselected{/if}"><a href="javascript:void(0);"><span></span></a></div>
-                        <div class="dd">{$lang.show}3{$lang.ge_ad_position}<br>（{$lang.recommend_size}394*394）</div>
+                        <div class="dd">展示3个广告位<br>（建议尺寸394*394）</div>
                     </div>
                     <div class="itemsLayout line-item4" data-line="row4">
                     	<div class="itemsLayoutShot {if $spec_attr.itemsLayout eq 'row4'}dtselected{/if}"><a href="javascript:void(0);"><span></span></a></div>
-                        <div class="dd">{$lang.show}4{$lang.ge_ad_position}<br>（{$lang.recommend_size}292*350）</div>
+                        <div class="dd">展示4个广告位<br>（建议尺寸292*350）</div>
                     </div>
                     <div class="itemsLayout line-item5" data-line="row5">
                     	<div class="itemsLayoutShot {if $spec_attr.itemsLayout eq 'row5'}dtselected{/if}"><a href="javascript:void(0);"><span></span></a></div>
-                        <div class="dd">{$lang.show}5{$lang.ge_ad_position}<br>（{$lang.recommend_size}232*337）</div>
+                        <div class="dd">展示5个广告位<br>（建议尺寸232*337）</div>
                     </div>
                     <div class="itemsLayout line-item6" data-line="row6">
                     	<div class="itemsLayoutShot {if $spec_attr.itemsLayout eq 'row6' || $spec_attr.itemsLayout eq ''}dtselected{/if}"><a href="javascript:void(0);"><span></span></a></div>
-                        <div class="dd">{$lang.show}6{$lang.ge_ad_position}<br>（{$lang.recommend_size}190*250）</div>
+                        <div class="dd">展示6个广告位<br>（建议尺寸190*250）</div>
                     </div>
                 </div>
             </div>
@@ -190,31 +190,31 @@
             {/if}
             {if $mode eq 'advImg3'}
             <div class="control_item">
-                <div class="control_text">{$lang.label_display_mode}</div>
+                <div class="control_text">展示方式：</div>
                 <div class="control_value">
                 	<div class="itemsLayout line-item-left-right" data-line="left-right">
                     	<div class="itemsLayoutShot {if $spec_attr.itemsLayout eq 'left-right' || $spec_attr.itemsLayout eq ''}dtselected{/if}"><a href="javascript:void(0);"><span></span></a></div>
-                        <div class="dd">{$lang.left_small_right_big}</div>
+                        <div class="dd">左小图右大图</div>
                     </div>
                     <div class="itemsLayout line-item-right-left" data-line="right-left">
                     	<div class="itemsLayoutShot {if $spec_attr.itemsLayout eq 'right-left'}dtselected{/if}"><a href="javascript:void(0);"><span></span></a></div>
-                        <div class="dd">{$lang.left_big_right_small}</div>
+                        <div class="dd">左大图右小图</div>
                     </div>
                 </div>
             </div>
             <input name="itemsLayout" type="hidden" value="{if $spec_attr.itemsLayout}{$spec_attr.itemsLayout}{else}left-right{/if}"/>
             {/if}
             <div class="control_item">
-                <div class="control_text">{$lang.label_whether_new_window}</div>
+                <div class="control_text">是否新窗口打开：</div>
                 <div class="control_value">
                 	<div class="checkbox_items">
                         <div class="checkbox_item">
                             <input type="radio" name="target" value="_blank" class="ui-radio" id="blank" {if $spec_attr.target neq '_self'}checked{/if} >
-                            <label class="ui-radio-label" for="blank">{$lang.yes}</label>
+                            <label class="ui-radio-label" for="blank">是</label>
                         </div>
                         <div class="checkbox_item">
                             <input type="radio" name="target" value="_self" class="ui-radio" id="self" {if $spec_attr.target eq '_self'}checked{/if}>
-                            <label class="ui-radio-label" for="self">{$lang.no}</label>
+                            <label class="ui-radio-label" for="self">否</label>
                         </div>
                     </div>
                 </div>
@@ -251,7 +251,7 @@
 				async: true
 			});
 		}else{
-			alert(jl_please_select_album);
+			alert("请选择相册");
 		}
 	});
 	//function changedpic(val,obj){
@@ -293,20 +293,20 @@
 		}
 
 		if( length< i  && length != 0){
-			alert(jl_module_max_add+length+jl_ge_image);
+			alert("此模块最多可添加"+length+"个图片");
 		}else{
                         if(mode != "lunbo"){
 				if(uploadImage == 1){
-					var html = '<tr><td><div class="img"><span><img src="'+src+'"></span><input type="hidden" name="pic_src[]" value="'+src+'"/></div></td><td class="center"><a href="javascript:;" class="pic_del del">{$lang.drop}</a></td></tr>';
+					var html = '<tr><td><div class="img"><span><img src="'+src+'"></span><input type="hidden" name="pic_src[]" value="'+src+'"/></div></td><td class="center"><a href="javascript:;" class="pic_del del">删除</a></td></tr>';
 				}else{
 					var title = '';
 					if(titleup == 1){
 						title = '<td class="center"><input type="text" value="" name="title[]" class="form-control small"></td><td class="center"> <input type="text" value="" name="subtitle[]" class="form-control small"></td>';
 					}
-					var html = '<tr><td><div class="img"><span><img src="'+src+'"></span><input type="hidden" name="pic_src[]" value="'+src+'"/></div></td><td><input type="text" name="link[]" class="form-control"></td><td class="center"><input type="text" value="1" name="sort[]" class="form-control small"></td>' + title + '<td class="center"><a href="javascript:;" class="pic_del del">{$lang.drop}</a></td></tr>';
+					var html = '<tr><td><div class="img"><span><img src="'+src+'"></span><input type="hidden" name="pic_src[]" value="'+src+'"/></div></td><td><input type="text" name="link[]" class="form-control"></td><td class="center"><input type="text" value="1" name="sort[]" class="form-control small"></td>' + title + '<td class="center"><a href="javascript:;" class="pic_del del">删除</a></td></tr>';
 				}
 			}else{
-				var html = '<tr><td><div class="img"><span><img src="'+src+'"></span><input type="hidden" name="pic_src[]" value="'+src+'"/></div></td><td><input type="text" name="link[]" class="form-control"></td><td class="center"><input type="text" value="1" name="sort[]" class="form-control small"></td><td class="center"><input type="text" value="" name="bg_color[]" class="form-control small"></td><td class="center"><a href="javascript:;" class="pic_del del">{$lang.drop}</a></td></tr>';
+				var html = '<tr><td><div class="img"><span><img src="'+src+'"></span><input type="hidden" name="pic_src[]" value="'+src+'"/></div></td><td><input type="text" name="link[]" class="form-control"></td><td class="center"><input type="text" value="1" name="sort[]" class="form-control small"></td><td class="center"><input type="text" value="" name="bg_color[]" class="form-control small"></td><td class="center"><a href="javascript:;" class="pic_del del">删除</a></td></tr>';
 			}
 			
 			if($("#addpictable").find(".notic").length>0){
@@ -383,14 +383,14 @@
 {if $temp eq 'goods_info'}
 <div class="tishi">
 	<div class="tishi_info">
-        <p class="first">{$lang.pagetip_shop_banner_1}</p>
+        <p class="first">注意：1、弹出框鼠标移到头部可以拖动，以防笔记本小屏幕内容展示不全；</p>
     </div>
 </div>
 {if $goods_type neq 1}
 <div class="tab">
 	<ul class="clearfix">
-    	<li class="current">{$lang.setup_content}</li>
-        <li>{$lang.setup_display}</li>
+    	<li class="current">内容设置</li>
+        <li>显示设置</li>
     </ul>
 </div>
 {/if}
@@ -403,7 +403,7 @@
                 <input type="hidden" name="cat_id" id="cat_id" value="{$cat_id|default:0}"/>-->
                 <div class="categorySelect fl">
                     <div class="selection">
-                        <input type="text" name="category_name" id="category_name" class="text w250 mr0 valid" value="{if $parent_category}{$parent_category}{else}{$lang.category_top}{/if}" autocomplete="off" readonly data-filter="cat_name" />
+                        <input type="text" name="category_name" id="category_name" class="text w250 mr0 valid" value="{if $parent_category}{$parent_category}{else}顶级分类{/if}" autocomplete="off" readonly data-filter="cat_name" />
                         <input type="hidden" name="cat_id" id="category_id" ectype="goods_cat_dialog" value="{$cat_id|default:0}" data-filter="cat_id" />
                     </div>
                     <div class="select-container" style="display:none;">
@@ -423,10 +423,10 @@
                 </div>  
             </div>
             <div class="search_con"><input width="20" name="keyword_brand" type="text" id="keyword_brand" class="text text_6"></div>
-            <a href="javascript:void(0);" class="btn fl" ectype="changedgoods">{$lang.button_submit_alt}</a>
+            <a href="javascript:void(0);" class="btn fl" ectype="changedgoods">确定</a>
             <div class="checkobx-item">
                 <input type="checkbox" name="is_selected" id="is_selected" class="ui-checkbox" onclick="checkd_selected(this)"/>
-                <label class="ui-label" for="is_selected">{$lang.selected_goods}</label>
+                <label class="ui-label" for="is_selected">已选择商品</label>
             </div>
         </div>
         <div class="table_list" ectype='goods_list'>
@@ -445,10 +445,10 @@
                                 {/if}
                             </p>
                         </div>
-                        <div class="choose"><a href="javascript:void(0);" class="on" onclick="selected_goods(this,'{$goods.goods_id}')"><i class="iconfont icon-gou"></i>{$lang.selected}</a></div>
+                        <div class="choose"><a href="javascript:void(0);" class="on" onclick="selected_goods(this,'{$goods.goods_id}')"><i class="iconfont icon-gou"></i>已选择</a></div>
                     </li>
                     {foreachelse}
-                    <li class="notic">{$lang.please_search_goods}</li>
+                    <li class="notic">请先搜索商品</li>
                     {/foreach}
                 </ul>
             </div>
@@ -457,54 +457,54 @@
     <div class="body_info floor_info" style="display:none;">
         <div class="control_list">
         	<div class="control_item">
-                <div class="control_text">{$lang.label_whether_show_title}</div>
+                <div class="control_text">是否显示标题：</div>
                 <div class="control_value">
                 	<div class="checkbox_items">
                         <div class="checkbox_item">
                         	<input type="radio" name="is_title" value="1" class="ui-radio" id="is_title_1" {if $arr.is_title neq 0} checked {/if}>
-                        	<label class="ui-radio-label" for="is_title_1">{$lang.yes}</label>
+                        	<label class="ui-radio-label" for="is_title_1">是</label>
                         </div>
                         <div class="checkbox_item">
                         	<input type="radio" name="is_title" value="0" class="ui-radio" id="is_title_0" {if $arr.is_title eq 0} checked {/if}>
-                            <label class="ui-radio-label" for="is_title_0">{$lang.no}</label>
+                            <label class="ui-radio-label" for="is_title_0">否</label>
                         </div>    
                     </div>
                 </div>
             </div>
             <div class="tit_head"{if $arr.is_title eq 0} style="display:none;"{/if}>
                 <div class="control_item">
-                    <div class="control_text">{$lang.label_floor_name}</div>
+                    <div class="control_text">楼层名称：</div>
                     <div class="control_value"><input name="cat_name" type="text" class="text text2" size="25" value="{$arr.cat_name}"></div>
                 </div>
                 <div class="control_item">
-                    <div class="control_text">{$lang.label_floor_desc}</div>
+                    <div class="control_text">楼层描述：</div>
                     <div class="control_value"><input name="cat_desc" type="text" class="text" size="25" value="{$arr.cat_desc}"></div>
                 </div>
                 <div class="control_item">
-                    <div class="control_text">{$lang.label_text_display}</div>
+                    <div class="control_text">文字显示：</div>
                     <div class="control_value">
                         <select class="select" name="align">
-                            <option value="left" {if $arr.align eq 'left'}checked {/if}>{$lang.align_left}</option>
-                            <option value="center" {if $arr.align eq 'center'}checked {/if}>{$lang.align_center}</option>
-                            <option value="regiht" {if $arr.align eq 'regiht'}checked {/if}>{$lang.align_right}</option>
+                            <option value="left" {if $arr.align eq 'left'}checked {/if}>居左</option>
+                            <option value="center" {if $arr.align eq 'center'}checked {/if}>居中</option>
+                            <option value="regiht" {if $arr.align eq 'regiht'}checked {/if}>居右</option>
                         </select>
                     </div>
                 </div>
             </div>
             <div class="control_item">
-                <div class="control_text">{$lang.label_display_mode}</div>
+                <div class="control_text">展示方式：</div>
                 <div class="control_value">
                 	<div class="itemsLayout line-item3" data-line="row3">
                     	<div class="itemsLayoutShot {if $arr.itemsLayout eq 'row3'}dtselected{/if}"><a href="javascript:void(0);"><span></span></a></div>
-                        <div class="dd">{$lang.one_row_display}3{$lang.jl_ge_goods}</div>
+                        <div class="dd">一行展示3个商品</div>
                     </div>
                     <div class="itemsLayout line-item4" data-line="row4">
                     	<div class="itemsLayoutShot {if $arr.itemsLayout eq 'row4'}dtselected{/if}"><a href="javascript:void(0);"><span></span></a></div>
-                        <div class="dd">{$lang.one_row_display}4{$lang.jl_ge_goods}</div>
+                        <div class="dd">一行展示4个商品</div>
                     </div>
                     <div class="itemsLayout line-item5" data-line="row5">
                     	<div class="itemsLayoutShot {if $arr.itemsLayout eq 'row5'}dtselected{/if}"><a href="javascript:void(0);"><span></span></a></div>
-                        <div class="dd">{$lang.one_row_display}5{$lang.jl_ge_goods}</div>
+                        <div class="dd">一行展示5个商品</div>
                     </div>
                 </div>
             </div>
@@ -562,7 +562,7 @@
 	   
 		if(obj.hasClass("on")){
 			obj.removeClass("on");
-			obj.html('<i class="iconfont icon-dsc-plus"></i>'+js_select);
+			obj.html('<i class="iconfont icon-dsc-plus"></i>选择');
 			arr = goods_ids.split(',');
 			for(var i =0;i<arr.length;i++){
 				if(arr[i] == goods_id){
@@ -571,7 +571,7 @@
 			}
 		}else{
 			$(obj).addClass('on');
-			$(obj).html('<i class="iconfont icon-gou"></i>'+js_selected);
+			$(obj).html('<i class="iconfont icon-gou"></i>已选择');
 			if(goods_ids){
 					arr = goods_ids + ','+goods_id;
 			}else{
@@ -595,32 +595,32 @@
 {if $temp eq 'header'}
 <div class="tishi">
 	<div class="tishi_info">
-	<p class="first">{$lang.note_getcat_atr_1}</p>
-    <p>{$lang.pagetip_shop_banner_header_2}</p>
+	<p class="first">注意：1、弹出框鼠标移到头部可以拖动，以防笔记本小屏幕内容展示不全;</p>
+    <p>2、自定义编辑器里面的编辑模板，样式可以写在编辑器里面;</p>
     </div>
 </div>
 <div class="tab">
 	<ul class="clearfix">
-    	<li class="current">{$lang.setup_content}</li>
+    	<li class="current">内容设置</li>
     </ul>
 </div>
 <div class="modal-body">
 	<div class="control_list">
         <div class="control_item">
-            <div class="control_text">{$lang.label_set_type}</div>
+            <div class="control_text">设置类型：</div>
             <div class="control_value">
-            	<label><input type="radio" name="header_type" value="defalt_type" class="checkbox" {if $content.header_type eq 'defalt_type'}checked{/if}><span>{$lang.default_type}</span></label>
-                <label><input type="radio" name="header_type" value="custom_type" class="checkbox" {if $content.header_type eq 'custom_type'}checked{/if}><span>{$lang.custom_type}</span></label>
+            	<label><input type="radio" name="header_type" value="defalt_type" class="checkbox" {if $content.header_type eq 'defalt_type'}checked{/if}><span>默认类型</span></label>
+                <label><input type="radio" name="header_type" value="custom_type" class="checkbox" {if $content.header_type eq 'custom_type'}checked{/if}><span>自定义类型</span></label>
             </div>
         </div>
         <div class="defalt_type" {if $content.header_type neq 'defalt_type'}style="display:none;"{/if}>
             <div class="control_item">
-                <div class="control_text">{$lang.label_head_image}</div>
+                <div class="control_text">头部图片：</div>
                 <form  action="" id="fileForm" method="post"  enctype="multipart/form-data"  runat="server" >
                     <div class="control_value relative">
                         <a href="javascript:void(0);" class="uploader-button">
-                        	<span class="btn-text">{$lang.select_file}</span>
-                        	<div class="file-input-wrapper"><input type="file" name="headerFile" value="{$lang.upload_image}" id="headerFile"  class="file-header-img"></div>
+                        	<span class="btn-text">选择文件</span>
+                        	<div class="file-input-wrapper"><input type="file" name="headerFile" value="上传图片" id="headerFile"  class="file-header-img"></div>
                         </a>
                         <div class="preview-box"><input name="fileimg" type="hidden" value="{if $content.headerbg_img}{$content.headerbg_img}{else}../data/gallery_album/ksh_bg.jpg{/if}"/><img id="headerbg_img" src="{if $content.headerbg_img}{$content.headerbg_img}{else}../data/gallery_album/ksh_bg.jpg{/if}" height="86"></div>
                     </div>
@@ -629,15 +629,15 @@
         </div>
         <div class="custom_type" {if $content.header_type eq 'defalt_type'}style="display:none;"{/if}>
         	<div class="control_item">
-                <div class="control_text">{$lang.label_custom_content}</div>
+                <div class="control_text">自定义内容：</div>
                 <div class="control_value over">
                     {$FCKeditor}
                 </div>
             </div>
         </div>
         <div class="control_item">
-            <div class="control_text">{$lang.label_height}</div>
-            <div class="control_value"><input type="text" name="picHeight" value="{if $content.picHeight}{$content.picHeight}{else}128{/if}" class="shop_text" autocomplete="off" /><span>px</span><span>{$lang.please_set_120_150}</span></div>
+            <div class="control_text">高度：</div>
+            <div class="control_value"><input type="text" name="picHeight" value="{if $content.picHeight}{$content.picHeight}{else}128{/if}" class="shop_text" autocomplete="off" /><span>px</span><span>请设置在120-150px这个之间</span></div>
         </div>
 	</div>        
 </div>
@@ -660,13 +660,13 @@
 {if $temp eq 'navigator'}
 <div class="tishi">
 	<div class="tishi_info">
-	<p class="first">{$lang.note_getcat_atr_1}&nbsp;&nbsp;&nbsp;&nbsp;{$lang.pagetip_shop_banner_nav_mode}</p>
+	<p class="first">注意：1、弹出框鼠标移到头部可以拖动，以防笔记本小屏幕内容展示不全;&nbsp;&nbsp;&nbsp;&nbsp;2、切换是否显示，点击对应的小图标即可完成切换</p>
     </div>
 </div>
 <div class="tab">
 	<ul class="clearfix">
-    	<li class="current">{$lang.setup_content}</li>
-        {if $topic_type neq 'topic_type'}<li>{$lang.setup_display}</li>{/if}
+    	<li class="current">内容设置</li>
+        {if $topic_type neq 'topic_type'}<li>显示设置</li>{/if}
     </ul>
 </div>
 <div class="modal-body">
@@ -676,13 +676,13 @@
     	<table class="table" data-table="navtable">
         	<thead>
                 <tr>
-                    <th width="30%">{$lang.cate_name}</th>
-                    <th width="25%">{$lang.link_address}</th>
-                    <th width="15%" class="center">{$lang.sort_order}</th>
+                    <th width="30%">分类名称</th>
+                    <th width="25%">链接地址</th>
+                    <th width="15%" class="center">排序</th>
                     {if $topic_type neq 'topic_type'}
-                    <th width="20%" class="center">{$lang.whether_display}</th>
+                    <th width="20%" class="center">是否显示</th>
                     {/if}
-                    <th width="15%" class="center">{$lang.handler}</th>
+                    <th width="15%" class="center">操作</th>
                 </tr>
             </thead>
             <tbody>
@@ -694,11 +694,11 @@
                     {if $topic_type neq 'topic_type'}
                     <td class="center" id="nav_{$navigator.id}"><img onclick = "edit_nav('{$navigator.ifshow}' ,'{$navigator.id}','edit_ifshow','1')" src="{if $navigator.ifshow eq 1}images/yes.gif{else}images/no.gif{/if}"/></td>
                     {/if}
-                    <td class="center"><a href="javascript:void(0);" {if $topic_type neq 'topic_type'}onclick="remove_nav('{$navigator.id}')"{else}onclick="remove_topicnav(this)"{/if} class="pic_del del">{$lang.drop}</a></td>
+                    <td class="center"><a href="javascript:void(0);" {if $topic_type neq 'topic_type'}onclick="remove_nav('{$navigator.id}')"{else}onclick="remove_topicnav(this)"{/if} class="pic_del del">删除</a></td>
                 </tr>
                 {foreachelse}
                 <tr class="notic">
-                    <td colspan="4">{$lang.now_no_custom_cate_click_add}</td>
+                    <td colspan="4">当前没有自定义商品分类，点击下面添加新分类添加</td>
                 </tr>
             	{/foreach}
             </tbody>
@@ -707,9 +707,9 @@
         </div>
         <div class="addCatagory" ectype="addCatagory">
         	<select class="select" id="catagory_type" {if $topic_type eq 'topic_type'}style="display:none;" {/if}>
-                <option value="0">{$lang.please_select}</option>
-                <option value="1">{$lang.custom_cate}</option>
-                <option value="2">{$lang.system_cate}</option>
+                <option value="0">请选择</option>
+                <option value="1">自定义分类</option>
+                <option value="2">系统分类</option>
             </select>
             <input type="text" name="custom_catagory" class="text" {if $topic_type neq 'topic_type'}style="display:none;" {/if}/>
             <select class="select" id="sys_catagory" style="display:none;">
@@ -717,31 +717,31 @@
                     <option value='{$key}|{$val.cat_id}|{$val.cat_name}|{$val.url}' id="" url="{$val.url}">{$val.cat_name}</option>
                 {/foreach}
             </select>
-            <a href="javascript:void(0);" class="{if $topic_type eq 'topic_type'}btn{else}btn btn_disabled{/if}" ectype="{if $topic_type eq 'topic_type'}topic_btn{else}store_btn{/if}">{$lang.add_new_cate}</a>
+            <a href="javascript:void(0);" class="{if $topic_type eq 'topic_type'}btn{else}btn btn_disabled{/if}" ectype="{if $topic_type eq 'topic_type'}topic_btn{else}store_btn{/if}">添加新分类</a>
         </div>
     </div>
     <div class="body_info" style="display:none;">
     	<div class="control_list">
             <div class="control_item">
-                <div class="control_text">{$lang.label_nav_bg_color}</div>
+                <div class="control_text">导航栏背景色：</div>
                 <div class="control_value">
                     <input type="text" name="navColor" class="navColor" value="{if $attr.navColor}{$attr.navColor}{else}#000{/if}">
                 </div>
             </div>
             <div class="control_item">
-                <div class="control_text">{$lang.label_whether_new_window}</div>
+                <div class="control_text">是否新窗口打开：</div>
                 <div class="control_value">
-                	<label><input type="radio" name="target" value="_blank" class="checkbox" {if $attr.target eq '_blank'} checked{/if}><span>{$lang.yes}</span></label>
-                    <label><input type="radio" name="target" value="_self" class="checkbox" {if $attr.target eq '_self'} checked{/if}><span>{$lang.no}</span></label>
+                	<label><input type="radio" name="target" value="_blank" class="checkbox" {if $attr.target eq '_blank'} checked{/if}><span>是</span></label>
+                    <label><input type="radio" name="target" value="_self" class="checkbox" {if $attr.target eq '_self'} checked{/if}><span>否</span></label>
                 </div>
             </div>
             <div class="control_item">
-                <div class="control_text">{$lang.label_text_display}</div>
+                <div class="control_text">文字显示：</div>
                 <div class="control_value">
                 	<select class="select" name="align">
-                        <option value="left" {if $attr.align eq 'left'}selected="selected" {/if}>{$lang.align_left}</option>
-                        <option value="center" {if $attr.align eq 'center'}selected="selected" {/if}>{$lang.align_center}</option>
-                        <option value="regiht" {if $attr.align eq 'regiht'}selected="selected" {/if}>{$lang.align_right}</option>
+                        <option value="left" {if $attr.align eq 'left'}selected="selected" {/if}>居左</option>
+                        <option value="center" {if $attr.align eq 'center'}selected="selected" {/if}>居中</option>
+                        <option value="regiht" {if $attr.align eq 'regiht'}selected="selected" {/if}>居右</option>
                     </select>
                 </div>
             </div>
@@ -792,7 +792,7 @@
                 }
                 
             }else{
-                alert(jl_navbar_no_exist);
+                alert("导航不存在");
             }
         }
 
@@ -817,7 +817,7 @@
             if(id > 0){
                 Ajax.call('get_ajax_content.php?is_ajax=1&act=remove_nav', "id=" + id , remove_navResponse, 'POST', 'JSON');
             }else{
-                alert(jl_navbar_no_exist);
+                alert("导航不存在");
             }
         }
 
@@ -832,7 +832,7 @@
 {if $temp eq 'custom'}
 <div class="tishi">
 	<div class="tishi_info">
-        <p class="first">{$lang.pagetip_shop_banner_1}</p>
+        <p class="first">注意：1、弹出框鼠标移到头部可以拖动，以防笔记本小屏幕内容展示不全；</p>
     </div>
 </div>
 <div class="modal-body">{$FCKeditor}</div>
@@ -843,10 +843,10 @@
 <form action="" id="{$mode}Insert" method="post" enctype="multipart/form-data" runat="server" >
     <div class="tab">
         <ul class="clearfix">
-            <li class="current">{$lang.floor_cate_set}</li>
-            <li>{$lang.floor_ad_set}</li>
+            <li class="current">楼层分类设置</li>
+            <li>楼层广告设置</li>
             {if $mode neq 'homeFloorFive' && $mode neq 'homeFloorEight' && $mode neq 'homeFloorNine' && $mode neq 'homeFloorTen' && $mode neq 'storeOneFloor1' && $mode neq 'storeTwoFloor1' && $mode neq 'storeThreeFloor1' && $mode neq 'storeFourFloor1' && $mode neq 'storeFiveFloor1' && $mode neq 'topicOneFloor' && $mode neq 'topicTwoFloor' && $mode neq 'topicThreeFloor'}
-            <li>{$lang.floor_brand_set}</li>
+            <li>楼层品牌设置</li>
             {/if}
         </ul>
     </div>
@@ -856,24 +856,24 @@
                 <div class="control_item">
                     {if $hierarchy neq '2'}
                     <div class="control_item">
-                        <div class="control_text"><em class="red">*</em>{$lang.label_module_name}</div>
-                        <div class="control_value"><input type="text" value="{$lift}" class="text" name="lift" autocomplete="off" maxlength="2" placeholder="{$lang.pleas_input_lift_title}" ectype="required" data-msg="{$lang.pleas_input_lift_title}" /><div class="notic">{$lang.mode_name_only_2word}</div></div>
+                        <div class="control_text"><em class="red">*</em>模块名称：</div>
+                        <div class="control_value"><input type="text" value="{$lift}" class="text" name="lift" autocomplete="off" maxlength="2" placeholder="请填写电梯层标题" ectype="required" data-msg="请填写电梯层标题" /><div class="notic">模块名称是显示首页左侧浮动导航；只能2个中文字符，如：店铺</div></div>
                     </div>
                     {/if}
                     <div class="control_item">
-                        <div class="control_text">{$lang.label_title}</div>
-                        <div class="control_value"><input type="text" value="{$spec_attr.floor_title}" class="text" name="floor_title" autocomplete="off" placeholder="{$lang.floor_title}"  data-msg="{$lang.floor_title}" /><div class="notic">{$lang.ftitle_empty_default_cate}</div></div>
+                        <div class="control_text">标题：</div>
+                        <div class="control_value"><input type="text" value="{$spec_attr.floor_title}" class="text" name="floor_title" autocomplete="off" placeholder="楼层标题"  data-msg="楼层标题" /><div class="notic">楼层标题，不填则默认为选择的楼层分类</div></div>
                     </div>
                     {if $mode eq 'storeOneFloor1' || $mode eq 'storeTwoFloor1' || $mode eq 'storeThreeFloor1' || $mode eq 'storeFourFloor1' || $mode eq 'storeFiveFloor1' || $mode eq "topicOneFloor"}
                     <div class="control_item">
-                        <div class="control_text">{$lang.label_subtitle}</div>
-                        <div class="control_value"><input type="text" value="{$spec_attr.sub_title}" class="text" name="sub_title" autocomplete="off" placeholder="{$lang.sub_title}"  data-msg="{$lang.sub_title}" /></div>
+                        <div class="control_text">次标题：</div>
+                        <div class="control_value"><input type="text" value="{$spec_attr.sub_title}" class="text" name="sub_title" autocomplete="off" placeholder="次标题"  data-msg="次标题" /></div>
                     </div>
                     {/if}
-                    <div class="control_text lh30">{$lang.label_floor_cate}</div>
+                    <div class="control_text lh30">楼层分类：</div>
                     <div class="control_value">
                         <div class="imitate_select select_w220" id="cat_id">
-                            <div class="cite">{$lang.please_select}</div>
+                            <div class="cite">请选择</div>
                             <ul>
                                 <li><a href="javascript:void(0);" data-value="">{$lang.select_please}</a></li>
                                 {foreach from=$cat_list item=list}
@@ -885,7 +885,7 @@
                         <div class="cat_floor">
                             {if $spec_attr.catChild}
                             <div class="imitate_select select_w220" id="cat_id1">
-                                <div class="cite">{$lang.please_select}</div>
+                                <div class="cite">请选择</div>
                                 <ul>
                                     <li><a href="javascript:void(0);" data-value="">{$lang.select_please}</a></li>
                                     {foreach from=$spec_attr.catChild item=list}
@@ -898,22 +898,22 @@
                         </div>
                         {if $mode eq 'homeFloorFour' || $mode eq 'homeFloorFive' || $mode eq 'homeFloorSeven' || $mode eq 'homeFloorSix' || $mode eq 'homeFloorEight' || $mode eq 'homeFloorTen' || $mode eq 'storeOneFloor1' || $mode eq 'storeTwoFloor1' || $mode eq 'storeThreeFloor1' || $mode eq 'storeFourFloor1' || $mode eq 'storeFiveFloor1' || $mode eq "topicOneFloor" || $mode eq "topicTwoFloor" || $mode eq "topicThreeFloor"}
                         <input name="top_goods" type="hidden" value='{$spec_attr.top_goods}'/>
-                        <a href="javascript:void(0);" class="hdle" ectype="setupGoods" data-top='1' data-goodsnumber="{if $mode eq 'homeFloorSeven'}6{else}12{/if}">{$lang.set_goods}</a>
+                        <a href="javascript:void(0);" class="hdle" ectype="setupGoods" data-top='1' data-goodsnumber="{if $mode eq 'homeFloorSeven'}6{else}12{/if}">设置商品</a>
                         {/if}
                     </div>
                     <input name="Floorcat_id" type="hidden" value='{$spec_attr.cat_id}'/>
                 </div>
                 {if $mode neq "storeOneFloor1" && $mode neq 'storeTwoFloor1' && $mode neq 'storeFourFloor1' && $mode neq 'storeFiveFloor1'}
                 <div class="control_item"{if $mode eq 'storeThreeFloor1' && $spec_attr.floorMode neq 1} style="display:none;"{/if}>
-                    <div class="control_text lh30">{$lang.label_floor_cate_level2}</div>
+                    <div class="control_text lh30">楼层二级分类：</div>
                     <div class="control_value" data-catnumber="{if $mode eq 'homeFloorModule'}2{else}6{/if}" data-goodsnumber="{if $mode eq 'homeFloorModule'}4{else}12{/if}">
                         {if $spec_attr.juniorCat}
                             {foreach from=$spec_attr.catInfo item=value name=name}
                             <div class="item" ectype="item">
                                 <div class="imitate_select select_w220" ectype="iselectErji">
-                                    <div class="cite" ectype="tit">{$lang.please_select}</div>
+                                    <div class="cite" ectype="tit">请选择</div>
                                     <ul>
-                                        <li><a href="javascript:void(0);" data-value="">{$lang.select_please}</a></li>
+                                        <li><a href="javascript:void(0);" data-value="">请选择..</a></li>
                                         {foreach from=$spec_attr.juniorCat item=list}
                                         <li{if $list.cat_id eq $value.cat_id} class="current"{/if}><a href="javascript:void(0);" data-value="{$list.cat_id}">{$list.cat_name}</a></li>
                                         {/foreach}
@@ -921,29 +921,29 @@
                                     <input name="cateValue[]" type="hidden" value="{$value.cat_id}" ectype="cateValue" />
                                 </div>
                                 {if $smarty.foreach.name.first}
-                                <a href="javascript:void(0);" class="hdle" ectype="addCate">{$lang.add_cate}</a>
+                                <a href="javascript:void(0);" class="hdle" ectype="addCate">增加分类</a>
                                 {/if}
                                 <a href="javascript:void(0);" class="hdle" ectype="setupGoods">
-                                    {$lang.set_goods}
+                                    设置商品
                                     <input type="hidden" name="cat_goods[]" value="{$value.cat_goods}">
                                 </a>
                                 {if !$smarty.foreach.name.first}
-                                <a href="javascript:void(0);" class="hdle" ectype="removeCate">{$lang.delete_cate}</a>
+                                <a href="javascript:void(0);" class="hdle" ectype="removeCate">删除分类</a>
                                 {/if}
                             </div>
                             {/foreach}
                         {else}
                         <div class="item" ectype="item">
                             <div class="imitate_select select_w220" ectype="iselectErji">
-                                <div class="cite" ectype="tit">{$lang.please_select}</div>
+                                <div class="cite" ectype="tit">请选择</div>
                                 <ul>
-                                    <li><a href="javascript:void(0);" data-value="">{$lang.select_please}</a></li>
+                                    <li><a href="javascript:void(0);" data-value="">请选择..</a></li>
                                 </ul>
                                 <input name="cateValue[]" type="hidden" value="" ectype="cateValue" />
                             </div>
-                            <a href="javascript:void(0);" class="hdle" ectype="addCate">{$lang.add_cate}</a>
+                            <a href="javascript:void(0);" class="hdle" ectype="addCate">增加分类</a>
                             <a href="javascript:void(0);" class="hdle" ectype="setupGoods" style="display:none;">
-                                {$lang.set_goods}
+                                设置商品
                                 <input type="hidden" name="cat_goods[]" value="">
                             </a>
                         </div>
@@ -954,7 +954,7 @@
                 
                 {if $mode neq 'storeOneFloor1' && $mode neq 'storeTwoFloor1' && $mode neq 'storeThreeFloor1' && $mode neq 'storeFourFloor1' && $mode neq 'storeFiveFloor1' && $mode neq 'topicOneFloor' && $mode neq 'topicTwoFloor' && $mode neq 'topicThreeFloor'}
                 <div class="control_item">
-                    <div class="control_text lh30">{$lang.label_set_color}</div>
+                    <div class="control_text lh30">设置颜色：</div>
                     <div class="control_value">
                         <div class="color-item color-item1{if $spec_attr.typeColor eq 'floor-color-type-1' || !$spec_attr.typeColor} selected{/if}" ectype="colorItem">
                             <input type="hidden" value="floor-color-type-1">
@@ -1070,7 +1070,7 @@
                 
                 {if $mode eq 'storeOneFloor1' || $mode eq 'storeTwoFloor1' || $mode eq 'storeThreeFloor1' || $mode eq 'storeFourFloor1' || $mode eq 'storeFiveFloor1' || $mode eq 'topicOneFloor' || $mode eq 'topicTwoFloor' || $mode eq 'topicThreeFloor'}
                 <div class="control_item">
-                    <div class="control_text lh30">{$lang.label_title_color}</div>
+                    <div class="control_text lh30">标题颜色：</div>
                     <div class="control_value">
                         <div class="color-item font-color-1{if $spec_attr.fontColor eq 'font-color-type-1' || (!$spec_attr.fontColor && $mode neq 'storeOneFloor1' && $mode neq 'storeFourFloor1' && $mode neq 'storeFiveFloor1' && $mode neq 'topicThreeFloor')} selected{/if}" ectype="colorItem">
                             <input type="hidden" value="font-color-type-1">
@@ -1102,7 +1102,7 @@
                         	<div class="img"><img src="images/visual/{$mode}_01.jpg"></div>
                             <div class="checkbox_item">
                             	<input type="radio" name="floorMode" value="1" data-pattern="{$floor_style.0}"{if $mode eq 'topicOneFloor' || $mode eq "storeThreeFloor1"} data-catepmer="0"{/if} class="ui-radio" id="floorMode_1"{if $spec_attr.floorMode lt 2} checked{/if}/>
-                            	<label class="ui-radio-label" for="floorMode_1">{$lang.floor_ad_template}{$lang.num_1}</label>
+                            	<label class="ui-radio-label" for="floorMode_1">楼层广告模板一</label>
                             </div>
                             <div ectype="floorModehide" class="hide">
                                 {if $spec_attr.floorMode eq 1}
@@ -1186,7 +1186,7 @@
                         	<div class="img"><img src="images/visual/{$mode}_02.jpg"></div>
                             <div class="checkbox_item">
                             	<input type="radio" name="floorMode" value="2" data-pattern="{$floor_style.1}"{if $mode eq 'topicOneFloor' || $mode eq "storeThreeFloor1"} data-catepmer="0"{/if} class="ui-radio" id="floorMode_2"{if $spec_attr.floorMode eq 2} checked{/if} />
-                            	<label class="ui-radio-label" for="floorMode_2">{$lang.floor_ad_template}{$lang.num_2}</label>
+                            	<label class="ui-radio-label" for="floorMode_2">楼层广告模板二</label>
                             </div>
                             <div ectype="floorModehide" class="hide">
                                 {if $spec_attr.floorMode eq 2}
@@ -1270,7 +1270,7 @@
                         	<div class="img"><img src="images/visual/{$mode}_03.jpg"></div>
                             <div class="checkbox_item">
                             	<input type="radio" name="floorMode" value="3" data-pattern="{$floor_style.2}"{if $mode eq 'topicOneFloor' || $mode eq "storeThreeFloor1"} data-catepmer="{if $mode eq 'topicOneFloor'}1{elseif $mode eq 'storeThreeFloor1'}0{/if}"{/if} class="ui-radio" id="floorMode_3"{if $spec_attr.floorMode eq 3} checked{/if}/>
-                            	<label class="ui-radio-label" for="floorMode_3">{$lang.floor_ad_template}{$lang.num_3}</label>
+                            	<label class="ui-radio-label" for="floorMode_3">楼层广告模板三</label>
                             </div>
                             <div ectype="floorModehide" class="hide">
                                 {if $spec_attr.floorMode eq 3}
@@ -1355,7 +1355,7 @@
                         	<div class="img"><img src="images/visual/{$mode}_04.jpg"></div>
                             <div class="checkbox_item">
                             	<input type="radio" name="floorMode" value="4" class="ui-radio" data-pattern="{$floor_style.3}"{if $mode eq "storeThreeFloor1"} data-catepmer="1"{/if} id="floorMode_4"{if $spec_attr.floorMode eq 4} checked{/if}/>
-                            	<label class="ui-radio-label" for="floorMode_4">{$lang.floor_ad_template}{$lang.num_4}</label>
+                            	<label class="ui-radio-label" for="floorMode_4">楼层广告模板四</label>
                             </div>
                             <div ectype="floorModehide" class="hide">
                                 {if $spec_attr.floorMode eq 4}
@@ -1441,7 +1441,7 @@
                             <div class="img"><img src="images/visual/{$mode}_05.jpg"></div>
                             <div class="checkbox_item">
                             	<input type="radio" name="floorMode" value="5" data-pattern="{$floor_style.4}"{if $mode eq 'topicOneFloor' || $mode eq "storeThreeFloor1"} data-catepmer="0"{/if} class="ui-radio" id="floorMode_5"{if $spec_attr.floorMode eq 5} checked{/if}/>
-                            	<label class="ui-radio-label" for="floorMode_5">{$lang.floor_ad_template}{$lang.num_5}</label>
+                            	<label class="ui-radio-label" for="floorMode_5">楼层广告模板五</label>
                             </div>
                             <div ectype="floorModehide" class="hide">
                                 {if $spec_attr.floorMode eq 5}
@@ -1525,9 +1525,9 @@
                     </div>
                 </div>
                 <div class="control_item control_item_cent" ectype="floorMode">
-                    <div class="control_text lh30"><span class="cor cor1"></span>{$lang.label_switch_ad_img}</div>
+                    <div class="control_text lh30"><span class="cor cor1"></span>轮播广告图：</div>
                     <div class="control_value lh30" ectype="imgControl">
-                        <a href="javascript:void(0);" class="blue fl" ectype="uploadImage" data-uploadimagetype="home" data-title="{$lang.switch_ad_img}"  data-number="{if $mode eq 'homeFloorThree'}5{else}3{/if}">{$lang.select_upload_img}</a>
+                        <a href="javascript:void(0);" class="blue fl" ectype="uploadImage" data-uploadimagetype="home" data-title="轮播广告图"  data-number="{if $mode eq 'homeFloorThree'}5{else}3{/if}">选择上传图片</a>
                         <div class="imgup_icon" ectype="imgValue" data-name="leftBanner">
                             {foreach from=$spec_attr.leftBanner item=item}
                             {if $item}<a href="{$item}" class="nyroModal" target="_blank"><i class="iconfont icon-image" onmouseover="toolTip('<img src={$item}>')" onmouseout="toolTip()"></i></a>{/if}
@@ -1537,9 +1537,9 @@
                 </div>
                	
                 <div class="control_item control_item_cent" ectype="floorMode">
-                    <div class="control_text lh30"><span class="cor cor2"></span>{$lang.label_common_ad_img}</div>
+                    <div class="control_text lh30"><span class="cor cor2"></span>普通广告图：</div>
                     <div class="control_value lh30" ectype="imgControl">
-                        <a href="javascript:void(0);" class="blue fl" ectype="uploadImage" data-uploadimagetype="home" data-title="{$lang.common_ad_img}" data-number="2">{$lang.select_upload_img}</a>
+                        <a href="javascript:void(0);" class="blue fl" ectype="uploadImage" data-uploadimagetype="home" data-title="普通广告图" data-number="2">选择上传图片</a>
                         <div class="imgup_icon" ectype="imgValue" data-name="leftAdv">
                             {foreach from=$spec_attr.leftAdv item=item}
                             {if $item}<a href="{$item}" class="nyroModal" target="_blank"><i class="iconfont icon-image" onmouseover="toolTip('<img src={$item}>')" onmouseout="toolTip()"></i></a>{/if}
@@ -1549,9 +1549,9 @@
                 </div>
                 
                 <div class="control_item control_item_cent" ectype="floorMode">
-                    <div class="control_text lh30"><span class="cor cor3"></span>{$lang.label_title_ad_img}</div>
+                    <div class="control_text lh30"><span class="cor cor3"></span>标题广告图：</div>
                     <div class="control_value lh30" ectype="imgControl">
-                        <a href="javascript:void(0);" class="blue fl" ectype="uploadImage" data-uploadimagetype="home" data-title="{$lang.title_ad_img}" {if $mode neq 'homeFloorFour' && $mode neq 'homeFloorSix'}data-titleup="1"{/if} data-number="{if $mode eq 'homeFloor'}5{elseif $mode eq 'homeFloorFour' || $mode eq 'homeFloorFive'}3{elseif $mode eq 'homeFloorSix'}2{elseif $mode eq 'homeFloorSeven'}1{else}4{/if}">{$lang.select_upload_img}</a>
+                        <a href="javascript:void(0);" class="blue fl" ectype="uploadImage" data-uploadimagetype="home" data-title="标题广告图" {if $mode neq 'homeFloorFour' && $mode neq 'homeFloorSix'}data-titleup="1"{/if} data-number="{if $mode eq 'homeFloor'}5{elseif $mode eq 'homeFloorFour' || $mode eq 'homeFloorFive'}3{elseif $mode eq 'homeFloorSix'}2{elseif $mode eq 'homeFloorSeven'}1{else}4{/if}">选择上传图片</a>
                         <div class="imgup_icon" ectype="imgValue" data-name="rightAdv">
                             {foreach from=$spec_attr.rightAdv item=item}
                             {if $item}<a href="{$item}" class="nyroModal" target="_blank"><i class="iconfont icon-image" onmouseover="toolTip('<img src={$item}>')" onmouseout="toolTip()"></i></a>{/if}
@@ -1565,11 +1565,11 @@
             <div class="control_item">
                 <div class="checkobx-item">
                     <input type="checkbox" id="selected_brand" name="is_selected" class="ui-checkbox fl" onclick="selected_brands(this)">
-                    <label class="ui-label" for="selected_brand">{$lang.already_selected_brand}</label>
+                    <label class="ui-label" for="selected_brand">已选择品牌</label>
                 </div>
             </div>
             <div class="brand_list" ectype='brand_list' data-bandnumber="{if $mode eq 'homeFloorModule'}5{/if}">
-            	<div class="notic">{$lang.please_floor_cate_or_no_brand}</div>
+            	<div class="notic">请先现在楼层一级分类或者该分类下暂无品牌</div>
             </div>
         </div>
     </div>
@@ -1630,7 +1630,7 @@
                 $(".cat_floor").html(result.content);
             }
             $("*[ectype='addCate']").parents(".item").find("ul").html(result.contentChild);
-            $("*[ectype='addCate']").parents(".item").find(".cite").html(jl_please_select);
+            $("*[ectype='addCate']").parents(".item").find(".cite").html("请选择..");
             $("*[ectype='addCate']").parents(".item").find("input[type='hidden']").val("");
             $("*[ectype='addCate']").parents(".item").siblings().remove();
             if(mode != 'homeFloorFive'){
@@ -1718,7 +1718,7 @@
     <div class="body_info">
         <div class="control_list">
             <div class="control_item">
-            	<div class="control_text lh30">{$lang.label_set_web_color}</div>
+            	<div class="control_text lh30">设置整站色调：</div>
                 <div class="control_value">
                 	<div class="color-item color-item1{if $spec_attr.typeColor eq ''} selected{/if}" ectype="colorItem">
                         <input type="hidden" value="">

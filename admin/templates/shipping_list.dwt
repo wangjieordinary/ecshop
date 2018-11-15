@@ -77,7 +77,7 @@
                                     </td>-->
                                     <td><div class="tDiv">{if $module.cod==1}<img src="images/yes.png" alt="{$lang.yes}" title="{$lang.yes}">{else}<img src="images/no.png" alt="{$lang.no}" title="{$lang.no}">{/if}</div></td>
                                     <td><div class="tDiv">{if $module.kdniao_print==1}<img src="images/yes.png" alt="{$lang.yes}" title="{$lang.yes}">{else}<img src="images/no.png" alt="{$lang.no}" title="{$lang.no}">{/if}</div></td>
-                                    <td><div class="tDiv">{if $seller_shopinfo.ru_id==0 && $module.id==$seller_shopinfo.shipping_id}<img src="images/yes.png" title="{$module.name}{$lang.enabled}">{else}<img src="images/no.png" alt="{$lang.no}" title="{$lang.no}">{/if}</div></td>
+                                    <td><div class="tDiv">{if $seller_shopinfo.ru_id==0 && $module.id==$seller_shopinfo.shipping_id}<img src="images/yes.png" title="{$module.name}已启用">{else}<img src="images/no.png" alt="{$lang.no}" title="{$lang.no}">{/if}</div></td>
                                     <td><div class="tDiv">{if $module.install == 1}<span onclick="listTable.edit(this, 'edit_order', '{$module.code}'); return false;">{$module.shipping_order}</span>{else}0{/if}</div></td>
                                     <td class="handle handle_tr tr">
                                         <div class="tDiv">

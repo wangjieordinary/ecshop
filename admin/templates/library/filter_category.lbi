@@ -1,9 +1,9 @@
 <div class="select-top">
-	<a href="javascript:;" class="categoryTop" data-cid="0" data-cname="" data-diff="{$lib|default:0}" data-show='{$cat_type_show|default:0}' data-seller='{$user_id|default:0}' data-table='{$table|default:0}'>{$lang.reelection}</a>
+	<a href="javascript:;" class="categoryTop" data-cid="0" data-cname="" data-diff="{$lib|default:0}" data-show='{$cat_type_show|default:0}' data-seller='{$user_id|default:0}' data-table='{$table|default:0}'>重选</a>
 	{foreach from=$filter_category_navigation item=navigation}
 	&gt <a href="javascript:;" class="categoryOne" data-cid="{$navigation.cat_id}" data-cname="{$navigation.cat_name}" data-diff="{$lib|default:0}" data-url='{$navigation.url}' data-show='{$cat_type_show|default:0}' data-seller='{$user_id|default:0}' data-table='{$table|default:0}'>{$navigation.cat_name}</a>
 	{foreachelse}
-	&gt <span>{$lang.select_cat}</span>
+	&gt <span>请选择分类</span>
 	{/foreach}
 </div>
 <div class="select-list">

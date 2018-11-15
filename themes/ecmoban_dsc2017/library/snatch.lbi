@@ -9,18 +9,18 @@
         <!--{foreach from=$price_list item=item name=foo}-->
         <!--{if $smarty.foreach.foo.iteration lt 6}-->
         <tr>
-            <td><span class="offer-statu {if $smarty.foreach.foo.index == 0}active{/if}">{if $smarty.foreach.foo.index == 0}{$lang.latest_price}{else}{$lang.bid}{/if}</span></td>
+            <td><span class="offer-statu {if $smarty.foreach.foo.index == 0}active{/if}">{if $smarty.foreach.foo.index == 0}最新价{else}出价{/if}</span></td>
             <td class="red">{$item.bid_price}</td>
         </tr>
         <!--{/if}-->
         <!--{foreachelse}-->
         <tr>
-            <td colspan="2">{$lang.no_record}</td>
+            <td colspan="2">暂无记录</td>
         </tr>
         <!--{/foreach}-->
 		<!-- {if $price_list} -->
         <tr>
-            <td colspan="2"><a href="#detail-slide" class="ftx-05" ectype="snatchType">{$lang.View_details} ></a></td>
+            <td colspan="2"><a href="#detail-slide" class="ftx-05" ectype="snatchType">查看详情 ></a></td>
         </tr>
 		<!--{/if}-->
     <!--{elseif $filename eq 'auction'}-->
@@ -33,12 +33,12 @@
         <!--{/if}-->
         <!--{foreachelse}-->
         <tr>
-            <td colspan="2">{$lang.no_record}</td>
+            <td colspan="2">暂无记录</td>
         </tr>
         <!--{/foreach}-->
 		<!-- {if $auction_log} -->
         <tr>
-            <td colspan="2"><a href="#detail-slide" class="ftx-05" ectype="snatchType">{$lang.View_details} ></a></td>
+            <td colspan="2"><a href="#detail-slide" class="ftx-05" ectype="snatchType">查看详情 ></a></td>
         </tr>
 		<!--{/if}-->
     <!--{/if}-->

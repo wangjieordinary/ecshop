@@ -15,7 +15,7 @@
 <div class="catetop-main w w1200" ectype="catetopWarp">
 	<!-- 精品推荐 -->
 	<div class="bestad" id="bestad">
-		<div class="hd"><h2>{$lang.best_goods}</h2></div>
+		<div class="hd"><h2>精品推荐</h2></div>
 		<div class="bd clearfix">
         	{* DSC 提醒您：动态载入top_style_food_hot.lbi，显示顶级分类页热门广告 *}{insert name='get_adv_child' ad_arr=$top_style_food_hot id=$cate_info.cat_id}
 		</div>
@@ -28,7 +28,7 @@
 	<!-- 随手购 -->
 	<div class="atwillgo" id="atwillgo">
 		<div class="awg-hd">
-			<h2>{$lang.purchase_hand}</h2>
+			<h2>随手购</h2>
 		</div>
 		<div class="awg-bd">
 			<div class="atwillgo-slide">
@@ -50,7 +50,7 @@
                                 {/if}
                             </div>
                             <div class="p-name"><a href="{$look.url}" target="_blank" title="{$look.name}">{$look.name}</a></div>
-                            <div class="p-btn"><a href="{$look.url}" target="_blank">{$lang.View_details}</a></div>
+                            <div class="p-btn"><a href="{$look.url}" target="_blank">查看详情</a></div>
                         </li>
                         <!--{/foreach}-->
                     </ul>
@@ -61,7 +61,7 @@
 	<!-- 楼层电梯 -->
     <div class="catetop-lift lift-hide" ectype="lift">
     	<div class="lift-list" ectype="liftList">
-        	<div class="catetop-lift-item lift-item-current" ectype="liftItem" data-target="#bestad"><span>{$lang.best_goods}</span></div>
+        	<div class="catetop-lift-item lift-item-current" ectype="liftItem" data-target="#bestad"><span>精品推荐</span></div>
         	<!--{foreach from=$categories_child item=cat name=child}-->
             <div class="catetop-lift-item lift-floor-item" ectype="liftItem"><span>{$cat.name}</span></div>
             <!--{/foreach}-->

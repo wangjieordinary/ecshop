@@ -24,9 +24,9 @@
 				</div>
 				{/if}
                 <div class="explanation clear mb20" id="explanation">
-                    <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                    <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                     <ul>
-                    	<li>{$lang.operation_prompt_content.info.1}</li>
+                    	<li>温馨提示：编辑查看管理员留言信箱。</li>
                     </ul>
                 </div>
                 <div class="ecsc-form-goods">
@@ -45,7 +45,7 @@
                                                 {/if}
                                             {/foreach}
                                         </select>
-                                        <div class="form_prompt">{$lang.press_ctrl_multi_select}</div>
+                                        <div class="form_prompt">按住ctrl可以多选</div>
 									</dd>
                                 </dl>
                                 {/if}

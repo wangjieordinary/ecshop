@@ -14,7 +14,6 @@
 */
 $_LANG['summary_phone'] = '手机购买';
 $_LANG['Group_purchase'] = "团购";
-$_LANG['group_buy_price'] = "团购价";
 $_LANG['Group_purchase_title'] = "精品质 惠生活";
 $_LANG['day'] = '天';
 $_LANG['hour'] = '小时';
@@ -56,10 +55,6 @@ $_LANG['residue_time'] = "剩余时间：";
 $_LANG['gong'] = "共";
 $_LANG['di_no'] = "第";
 $_LANG['weight'] = "重量";
-$_LANG['insane_group_buy'] = "疯狂团购";
-$_LANG['hot_group_buy'] = "热门团购";
-$_LANG['all_group_buy'] = "全部团购";
-$_LANG['other_group_buy'] = "其他团购";
 
 $_LANG['js_languages']['shiping_prompt'] = "暂不支持配送";
 $_LANG['js_languages']['Have_goods'] = "有货"; 
@@ -75,5 +70,3 @@ $_LANG['js_languages']['Purchase_quantity'] = '超过限购数量';
 
 $_LANG['js_languages']['common']['Stock_goods_null'] = "您团购的商品暂时缺货，请耐心等待！";
 $_LANG['buy_error'] = "很抱歉，您团购的商品暂时缺货，请及时联系客服！";
-
-?>

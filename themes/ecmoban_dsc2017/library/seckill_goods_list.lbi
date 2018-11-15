@@ -7,19 +7,19 @@
     	<i class="box_hd_dec"></i>
 		<i class="box-hd-icon"></i>
 		<div class="sk-time-cd">
-			<div class="sk-cd-tit">{if $sec_begin_time}{$lang.ju_start}{else}{$lang.ju_end}{/if}</div>
+			<div class="sk-cd-tit">{if $sec_begin_time}距开始{else}距结束{/if}</div>
 			<div class="cd-time fl" ectype="time" data-time='{if $sec_begin_time}{$sec_begin_time}{else}{$sec_end_time}{/if}'>
 				<div class="days hide"></div>
-				<span class="split hide">{$lang.day}</span>
+				<span class="split hide">天</span>
 				<div class="hours"></div>
-				<span class="split">{$lang.goods_js.time}</span>
+				<span class="split">时</span>
 				<div class="minutes"></div>
-				<span class="split">{$lang.goods_js.branch}</span>
+				<span class="split">分</span>
 				<div class="seconds"></div>
-				<span class="split">{$lang.goods_js.second}</span>
+				<span class="split">秒</span>
 			</div>
 		</div>
-        <div class="sk-more"><a href="{$url_seckill}" target="_blank">{$lang.more_secKill}</a> <i class="arrow"></i></div>
+        <div class="sk-more"><a href="{$url_seckill}" target="_blank">更多秒杀</a> <i class="arrow"></i></div>
 	</div>
 	<div class="box-bd clearfix">
     	<!--{/if}-->
@@ -47,12 +47,12 @@
 					</div>
 					<div class="p-btn">
 					{if $sec_begin_time}
-					<a href="{$goods.url}"  target="_blank">{$lang.begin_minute}</a>
+					<a href="{$goods.url}"  target="_blank">即将开始</a>
 					{else}
 					{if $goods.sec_num le 0}
-					<a href="javascript:;">{$lang.has_been_snatched}</a>
+					<a href="javascript:;">已抢完</a>
 					{else}
-					<a href="{$goods.url}"  target="_blank">{$lang.immediate_rush_buy}</a>
+					<a href="{$goods.url}"  target="_blank">立即抢购</a>
 					{/if}
 					{/if}
 					</div>

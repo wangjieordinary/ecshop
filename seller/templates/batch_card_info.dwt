@@ -14,7 +14,7 @@
                 <!--start-->
 				<div class="ecsc-form-goods">
                 	<div class="explanation" id="explanation">
-                        <div class="ex_tit"><i class="sc_icon"></i><h4>{$lang.operating_hints}</h4></div>
+                        <div class="ex_tit"><i class="sc_icon"></i><h4>操作提示</h4></div>
                     	{$lang.use_help}
                     </div>
 					<form method="post" action="virtual_card.php" name="theForm" enctype="multipart/form-data" id="batch_card_info_form">
@@ -32,7 +32,7 @@
                             	<div class="type-file-box">
                                 	<div class="input">
                                         <input type="text" name="textfile" class="type-file-text" id="textfield" readonly>
-                                        <input type="button" name="button" id="button" class="type-file-button" value="{$lang.upload_dot}">
+                                        <input type="button" name="button" id="button" class="type-file-button" value="上传...">
                                         <input type="file" class="type-file-file" id="uploadfile" name="uploadfile" size="30" data-state="csvfile" hidefocus="true" value="">
                                     </div>
                                 </div>
@@ -85,7 +85,7 @@ $(function(){
 		},
 		messages:{
 			separator:{
-				 required : '<i class="icon icon-exclamation-sign"></i>'+jl_separator_null
+				 required : '<i class="icon icon-exclamation-sign"></i>分隔符不可以不填写'
 			}
 		}			
 	});

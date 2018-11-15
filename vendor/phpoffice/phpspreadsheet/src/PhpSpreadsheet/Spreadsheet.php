@@ -116,14 +116,6 @@ class Spreadsheet
     private $ribbonBinObjects;
 
     /**
-     * List of unparsed loaded data for export to same format with better compatibility.
-     * It has to be minimized when the library start to support currently unparsed data.
-     *
-     * @var array
-     */
-    private $unparsedLoadedData = [];
-
-    /**
      * The workbook has macros ?
      *
      * @return bool
@@ -262,32 +254,6 @@ class Spreadsheet
         } else {
             $this->ribbonBinObjects = null;
         }
-    }
-
-    /**
-     * List of unparsed loaded data for export to same format with better compatibility.
-     * It has to be minimized when the library start to support currently unparsed data.
-     *
-     * @internal
-     *
-     * @return array
-     */
-    public function getUnparsedLoadedData()
-    {
-        return $this->unparsedLoadedData;
-    }
-
-    /**
-     * List of unparsed loaded data for export to same format with better compatibility.
-     * It has to be minimized when the library start to support currently unparsed data.
-     *
-     * @internal
-     *
-     * @param array $unparsedLoadedData
-     */
-    public function setUnparsedLoadedData(array $unparsedLoadedData)
-    {
-        $this->unparsedLoadedData = $unparsedLoadedData;
     }
 
     /**

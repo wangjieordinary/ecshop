@@ -86,7 +86,7 @@
              return;
           }
           var mobile = $("#mobie_phone").html();
-          var myreg = window.mobilereg;
+          var myreg = /^1(3[0-9]|4[57]|5[0-35-9]|7[0135678]|8[0-9])\d{8}$/;
           if( mobile == ''){
             d_messages('请先填写认证手机号');
             return false;

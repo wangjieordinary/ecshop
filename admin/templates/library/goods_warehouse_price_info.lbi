@@ -2,19 +2,19 @@
 <div id="merge_dialog">
 	<div class="items">
 		<div class="item">
-			<div class="label">{$lang.label_goods_name}</div>
+			<div class="label">商品名称：</div>
 			<div class="value lh30">
 				{$goods_info.goods_name}
 			</div>
 		</div>
         <div class="item">
-			<div class="label">{$lang.label_goods_type_name}</div>
+			<div class="label">商品类型名称：</div>
 			<div class="value lh30">
 				{$attr_info.attr_name}
 			</div>
 		</div>
         <div class="item">
-			<div class="label">{$lang.label_attr_name}</div>
+			<div class="label">属性名称：</div>
 			<div class="value lh30">
 				{$goods_attr_name}
 			</div>

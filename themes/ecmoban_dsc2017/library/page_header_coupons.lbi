@@ -26,7 +26,7 @@
                 <div class="dt dsc-cm">{$lang.Site_navigation}<i class="iconfont icon-down"></i></div>
                 <div class="dd dorpdown-layer">
                     <dl class="fore1">
-                        <dt>{$lang.characteristic_theme}</dt>
+                        <dt>特色主题</dt>
                         <dd>
                             <!-- {foreach name=nav_top_list from=$top_cat_list item=topc_cats key=key} -->
                                 <!--{if $smarty.foreach.nav_top_list.index < 3}-->
@@ -36,7 +36,7 @@
                         </dd>
                     </dl>
                     <dl class="fore2">
-                        <dt>{$lang.modules_txt_promo}</dt>
+                        <dt>促销活动</dt>
                         <dd>
                             <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav key=key} -->
                                 <!--{if $smarty.foreach.nav_top_list.index >= 4}-->
@@ -62,8 +62,8 @@
                 <form id="searchForm" name="searchForm" method="get" action="search.php" onSubmit="return checkSearchForm(this)" class="search-form">
                         <input autocomplete="off" onKeyUp="lookup(this.value);" name="keywords" type="text" id="keyword" value="{if $search_keywords}{$search_keywords}{else}{insert name='rand_keyword'}{/if}" class="search-text"/>
                     <input type="hidden" name="store_search_cmt" value="{$search_type|default:0}">
-                    <button type="submit" class="button button-goods" onclick="checkstore_search_cmt(0)">{$lang.serch_goods}</button>
-                    <button type="submit" class="button button-store" onclick="checkstore_search_cmt(1)">{$lang.serch_shop}</button>
+                    <button type="submit" class="button button-goods" onclick="checkstore_search_cmt(0)" >搜商品</button>
+                    <button type="submit" class="button button-store" onclick="checkstore_search_cmt(1)" >搜店铺</button>
                 </form>
                 {if $searchkeywords}
                 <ul class="keyword">

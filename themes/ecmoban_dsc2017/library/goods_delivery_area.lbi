@@ -61,6 +61,5 @@
     <input type="hidden" value="{$merchant_id|default:0}" id="merchantId" name="merchantId">
     <input type="hidden" value="{$region_id|default:0}" id="region_id" name="region_id" />
     <input type="hidden" value="{$area_id|default:0}" id="area_id" name="area_id" />
-    <input type="hidden" value="{$area_city|default:0}" id="area_city" name="area_city" />
 </div>
   

@@ -32,7 +32,7 @@
             </div>
         {/if}
         {foreachelse}
-        <div class="notic_store">{$lang.notic_store}</div>
+        <div class="notic_store">很抱歉，该区域暂无门店有货，正努力补货中•••</div>
         {/foreach}
     </div>
 {/if}

@@ -9,10 +9,10 @@
          <!--客服管理-s-->
 		 <div class="ecsc-layout-right">
             <div class="main-content" id="mainContent"> 
-				<div class="ecsc-path"><span>{$lang.10_priv_admin} - - {$lang.services_list}</span></div>
+				<div class="ecsc-path"><span>权限 - - 客服管理</span></div>
 				<div class="tabmenu">
 					<ul class="tab">
-							<li class="active"><a href="javascript:;">{$lang.services_list}</a></li>												
+							<li class="active"><a href="javascript:;">客服管理</a></li>												
 					</ul>
 				</div>
 				<div class="ecsc-form-goods">
@@ -21,15 +21,15 @@
 	                    <input type="hidden" name="id" value="{$services.id}" />
 	                    <div class="wrapper-list">
 	                        <dl>
-	                        	<dt>{$lang.label_kefu_nick_name}</dt>
+	                        	<dt>客服昵称：</dt>
 	                            <dd><input type="text" name="nick_name" value="{$services.nick_name}" size="50" class="text mr10"></dd>
 	                        </dl>
 	                        <dl>
-	                        	<dt>{$lang.label_job_intro}</dt>
+	                        	<dt>业务描述：</dt>
 	                            <dd><textarea name="kefu_desc" rows="6" cols="48" class="textarea">{$services.post_desc}</textarea></dd>
 	                        </dl>
 	                        <dl>
-	                        	<dt>{$lang.label_duty_man}</dt>
+	                        	<dt>负责人员：</dt>
 	                            <dd>
 	                            	<div class="checkbox_items">
 	                                	{foreach from=$admin_list item=list}
@@ -44,7 +44,7 @@
 	                        <dl class="button_info">
 	                        	<dt>&nbsp;</dt>
 	                            <dd>
-	                            	<input type="submit" value="{$lang.button_submit}" class="sc-btn sc-blueBg-btn btn35" id="submitBtn">
+	                            	<input type="submit" value=" 确定 " class="sc-btn sc-blueBg-btn btn35" id="submitBtn">
 	                            </dd>
 	                        </dl>
 	                    </div>

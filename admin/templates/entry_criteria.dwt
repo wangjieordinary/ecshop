@@ -66,8 +66,8 @@
 										<input type="hidden" value="" name="is_mandatory">
 									</div>
 								</td>
-								<td><div class="tDiv">{if $list.option_value}{$list.option_value|escape}{else}{$lang.wu}{/if}</div></td>
-								<td><div class="tDiv">{if $list.type eq $lang.charge}<input type="text" name="charge" class="text w100" value="{$list.charge|escape:html}" onBlur="listTable.editInput(this, 'edit_charge', '{$list.id}')"/>{else}{$lang.wu}{/if}</div></td>  
+								<td><div class="tDiv">{if $list.option_value}{$list.option_value|escape}{else}无{/if}</div></td>
+								<td><div class="tDiv">{if $list.type eq '缴纳费用'}<input type="text" name="charge" class="text w100" value="{$list.charge|escape:html}" onBlur="listTable.editInput(this, 'edit_charge', '{$list.id}')"/>{else}{$lang.wu}{/if}</div></td>  
 							    {/if}
                                 <td class="handle">
 									<div class="tDiv a2">
@@ -86,6 +86,6 @@
             </div>
         </div>
     </div>
-	{include file ='library/pagefooter.lbi'}
+ {include file ='library/pagefooter.lbi'}
 </body>
 </html>

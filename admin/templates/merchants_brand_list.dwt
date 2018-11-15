@@ -29,7 +29,7 @@
 					<div class="search">
                     	<form action="javascript:;" name="searchForm" onSubmit="searchGoodsname(this);">
                     	<div class="input">
-                        	<input type="text" name="brand_name" class="text nofocus" placeholder="{$lang.brand_name}" autocomplete="off">
+                        	<input type="text" name="brand_name" class="text nofocus" placeholder="品牌名称" autocomplete="off">
 							<input type="submit" class="btn" name="secrch_btn" ectype="secrch_btn" value="" />
                         </div>
                         </form>
@@ -44,13 +44,13 @@
                                 	<th width="5%"><div class="tDiv">{$lang.record_id}</div></th>
                                     <th width="10%"><div class="tDiv">{$lang.brand_name_cn}</div></th>
                                     <th width="9%"><div class="tDiv">{$lang.brand_name_en}</div></th>
-                                    <th width="6%"><div class="tDiv">{$lang.brand_image}</div></th>
+                                    <th width="6%"><div class="tDiv">品牌图片</div></th>
 									<th width="9%"><div class="tDiv">{$lang.associated_platform_brands}</div></th>
 									<th width="12%"><div class="tDiv">{$lang.goods_steps_name}</div></th>
                                     <!--<th width="12%"><div class="tDiv">{$lang.site_url}</div></th>-->
                                     <th width="12%"><div class="tDiv">{$lang.brand_desc}</div></th>
                                     <th width="4%"><div class="tDiv">{$lang.sort_order}</div></th>
-                                    <th width="5%"><div class="tDiv">{$lang.display}</div></th>
+                                    <th width="5%"><div class="tDiv">显示</div></th>
 									<th width="7%"><div class="tDiv">{$lang.adopt_status}</div></th>
                                     <th width="7%" class="handle">{$lang.handler}</th>
                                 </tr>
@@ -79,7 +79,7 @@
                                     <td><div class="tDiv"><input name="sort_order" class="text w40" value="{$brand.sort_order}" onkeyup="listTable.editInput(this, 'edit_sort_order',{$brand.brand_id} )" type="text"></div></td>
                                     <td>
                                         <div class="tDiv">
-                                            <div class="switch {if $brand.is_show}active{/if}" title="{if $brand.is_show}{$lang.yes}{else}{$lang.no}{/if}" onclick="listTable.switchBt(this, 'toggle_show', {$brand.brand_id})">
+                                            <div class="switch {if $brand.is_show}active{/if}" title="{if $brand.is_show}是{else}否{/if}" onclick="listTable.switchBt(this, 'toggle_show', {$brand.brand_id})">
                                                 <div class="circle"></div>
                                             </div>
                                             <input type="hidden" value="0" name="">
@@ -88,11 +88,11 @@
                                     <td>
                                         <div class="tDiv">
                                             {if $brand.audit_status eq 1}
-                                                <font class="blue">{$lang.have_audited}</font>    
+                                                <font class="blue">已审核</font>    
                                             {elseif $brand.audit_status eq 2}
-                                                <font class="red">{$lang.audited_not_adopt}</font>    
+                                                <font class="red">审核未通过</font>    
                                             {else}
-                                                <font class="org">{$lang.not_audited}</font>    
+                                                <font class="org">未审核</font>    
                                             {/if}
                                         </div>
                                     </td>                               

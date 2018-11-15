@@ -165,7 +165,7 @@
 						</div>
                         <div class="checkbox_item fl">
                             <input type="checkbox" id="authorizeCheckBox" value="1" name="ec_shop_permanent" class="ui-checkbox" onClick="get_authorizeCheckBox(this, 'shop_expireDateStart', 'shop_expireDateEnd','{$title.parentType.shop_expireDateStart}','{$title.parentType.shop_expireDateEnd}');" {if $title.parentType.shop_permanent eq 1}checked{/if}>
-                            <label for="authorizeCheckBox" class="ui-label">{$lang.permanent}</label>
+                            <label for="authorizeCheckBox" class="ui-label">永久</label>
                         </div>
 					</div>
 					<div id="container2" class="fl bf100 mt10" style="position: relative;">

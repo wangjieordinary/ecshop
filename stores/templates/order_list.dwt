@@ -7,38 +7,38 @@
     <div class="explanation" id="explanation">
         <i class="sc_icon"></i>
         <ul>
-            <li>{$lang.operation_prompt_content.order_list.0}</li>
-            <li>{$lang.operation_prompt_content.order_list.1}</li>
+            <li>通过前台门店自提的商品订单，可验证提货码进行付款自提操作。</li>
+            <li>平台设置该门店为抢单门店，可操作订单抢单，请及时操作，以免耽误发货。</li>
         </ul>
     </div>
     <div class="common-head">
     	<div class="search">
-        	<input type="text" class="text mr10" name="mobile" placeholder="{$lang.mobile}" />
-        	<input type="text" class="text mr10" name="pick_code" placeholder="{$lang.stores_pick_code}" />
-        	<input type="text" class="text" name="order_sn" placeholder="{$lang.order_sn_placeholder}" />
-            <button class="btn" name="search" onclick="searchOrder()">{$lang.search}</button>
+        	<input type="text" class="text mr10" name="mobile" placeholder="手机号码" />
+        	<input type="text" class="text mr10" name="pick_code" placeholder="提货码" />
+        	<input type="text" class="text" name="order_sn" placeholder="请输入订单号" />
+            <button class="btn" name="search" onclick="searchOrder()">搜索</button>
         </div>
     </div>
     <div class="clear"></div>
   <div class="order_state_tab">
-    <a href="order.php?act=list&order_type=-1" {if $order_type eq -1}class="current"{/if}>{$lang.all}</a>
-    <a href="order.php?act=list&order_type=0" {if $order_type eq 0}class="current"{/if}>{$lang.stores_order_type.0}</a>
-    <a href="order.php?act=list&order_type=1" {if $order_type eq 1}class="current"{/if}>{$lang.stores_order_type.1}</a>
-    <a href="order.php?act=list&order_type=2" {if $order_type eq 2}class="current"{/if}>{$lang.stores_order_type.2}</a> 
-    <a href="order.php?act=list&order_type=3" {if $order_type eq 3}class="current"{/if}>{$lang.stores_order_type.3}</a>
+    <a href="order.php?act=list&order_type=-1" {if $order_type eq -1}class="current"{/if}>全部</a>
+    <a href="order.php?act=list&order_type=0" {if $order_type eq 0}class="current"{/if}>待抢单</a>
+    <a href="order.php?act=list&order_type=1" {if $order_type eq 1}class="current"{/if}>待发货</a>
+    <a href="order.php?act=list&order_type=2" {if $order_type eq 2}class="current"{/if}>配货中</a> 
+    <a href="order.php?act=list&order_type=3" {if $order_type eq 3}class="current"{/if}>已发货</a>
   </div>
     <div class="list-div" id="listDiv">
     {/if}
     <table class="table">
         <thead>
             <tr>
-            	<th width="78" class="first">{$lang.record_id}</th>
+            	<th width="78" class="first">编号</th>
                 <th width="443" class="tl">{$lang.goods_name}</th>
                 <th width="116">{$lang.goods_price}</th>
                 <th width="50">{$lang.goods_number}</th>
                 <th width="100">{$lang.order_fee}</th>
                 <th width="100">{$lang.consignee}</th>
-                <th width="120">{$lang.shop_ship}</th>
+                <th width="120">配送方式</th>
                 <th width="100">{$lang.order_status}</th>
                 <th width="100" class="last">{$lang.handler}</th>
             </tr>
@@ -53,8 +53,8 @@
                 <td colspan="10" class="hd-info last">
                     <span>{$lang.order_sn}：{$order.order_sn}</span>
                     <span class="ml50">{$lang.add_time}：{$order.add_time}</span>
-                    <span class="ml50">{if $order.is_grab_order eq 1}{if $order.invoice_no}{$lang.express_no}：{$order.invoice_no}{/if}{else}{$lang.pay_pick_time}：{$order.take_time}{/if}</span>
-                    <em class="grab-icon">{if $order.is_grab_order eq 1}{$lang.qiang}{else}{$lang.zi}{/if}</em>
+                    <span class="ml50">{if $order.is_grab_order eq 1}{if $order.invoice_no}快递单号：{$order.invoice_no}{/if}{else}自提时间：{$order.take_time}{/if}</span>
+                    <em class="grab-icon">{if $order.is_grab_order eq 1}抢{else}自{/if}</em>
                 </td>
             </tr>
             {foreach from=$order.order_goods_list item=goods name=goods}
@@ -66,7 +66,7 @@
                         <div class="name">
                         	<p><a href="../goods.php?id={$goods.goods_id}" target="_blank">{$goods.goods_name}</a></p>
                             {if $goods.goods_sn}
-                            <p style="color:#999">{$lang.freight_number}：{$goods.goods_sn}</p>
+                            <p style="color:#999">货号：{$goods.goods_sn}</p>
                             {/if}
                             {if $goods.goods_attr}
                             <p style="color:#999">【{$goods.goods_attr}】</p>
@@ -77,7 +77,7 @@
                 <td>{$goods.formated_goods_price}</td>
                 <td>{$goods.goods_number}</td>
             	{if $smarty.foreach.goods.iteration eq 1}
-                    <td rowspan="{$order.rowspan}" {if $order.rowspan>1}class="border-left"{/if}>{$order.formated_total_fee}<br />({$lang.freight}{$order.shipping_fee})</td>
+                    <td rowspan="{$order.rowspan}" {if $order.rowspan>1}class="border-left"{/if}>{$order.formated_total_fee}<br />(运费{$order.shipping_fee})</td>
                     <td rowspan="{$order.rowspan}">
                     {$order.consignee}
                     {if $order.mobile}</br>{$lang.phone}:{$order.mobile}{/if}
@@ -86,26 +86,26 @@
                         {if $order.is_grab_order eq 1}
                             {$order.shipping_name}
                         {else}
-                            {$lang.private_store}
+                            门店自提
                         {/if}
                     </td>
                     <td rowspan="{$order.rowspan}">{$lang.os[$order.order_status]}<br>{$lang.ps[$order.pay_status]}<br>{$lang.ss[$order.shipping_status]}</td>
                     <td rowspan="{$order.rowspan}" class="handle last">
                     {if $order.order_status eq 2}
-                    <strong>{$lang.order_stats.2}</strong>
+                    <strong>已取消</strong>
                     {elseif $order.order_status eq 3}
-                    <strong>{$lang.order_stats.3}</strong>
+                    <strong>无效</strong>
                     {else}
                         {if $order.store_id eq 0}
                             <a href="javascript:deal_store_order({$order.id}, 'grab_order');">{$lang.grab_order}</a>
                             <br>
                             <br>
-                            <a href="javascript:deal_store_order({$order.id}, 'back');" style="margin-right: 15px;">{$lang.order_stats.4}</a>
+                            <a href="javascript:deal_store_order({$order.id}, 'back');" style="margin-right: 15px;">退回抢单</a>
                         {else}
                             {if $order.is_grab_order eq 1}
                                 {if $order.shipping_status gt 0}
                                     <!--<strong>{$lang.delivery_finished}</strong>-->
-                                    <a href="javascript:deal_store_order({$order.id}, 'achieve');">{$lang.view_order}</a>
+                                    <a href="javascript:deal_store_order({$order.id}, 'achieve');">查看订单</a>
                                 {else}
                                     <a href="javascript:deal_store_order({$order.id}, 'delivery');">{$lang.store_delivery}</a>
                                 {/if}
@@ -117,7 +117,7 @@
                                         <a href="javascript:deal_store_order({$order.id}, 'pick_goods');">{$lang.pay_pick}</a>
                                     {/if}
                                 {else}
-                                <a href="javascript:deal_store_order({$order.id}, 'achieve');">{$lang.view_order}</a>    
+                                <a href="javascript:deal_store_order({$order.id}, 'achieve');">查看订单</a>    
                                 {/if}
                             {/if}	
                         {/if}

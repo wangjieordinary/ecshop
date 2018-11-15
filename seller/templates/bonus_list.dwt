@@ -50,7 +50,7 @@
                         </td>
                         {if $show_bonus_sn}
 						{if $bonus.bonus_sn eq 0}
-                        <td>N/A{$lang.no_offline_send_bonus}</td>
+                        <td>N/A（非线下发放红包）</td>
                         <td>N/A</td>
 						{else}
                         <td>{$bonus.bonus_sn}</td>

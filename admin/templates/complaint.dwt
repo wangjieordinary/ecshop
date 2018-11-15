@@ -134,10 +134,10 @@
                     </div>
                 </div>
             </div>
-      </div>
+		</div>
 	</div>
  	{include file ='library/pagefooter.lbi'}
-  <script type="text/javascript">
+    <script type="text/javascript">
 	listTable.recordCount = {$record_count|default:0};
 	listTable.pageCount = {$page_count|default:1};
 	listTable.act_type = '{$act_type}';
@@ -145,7 +145,7 @@
 	{foreach from=$filter item=item key=key}
 	listTable.filter.{$key} = '{$item}';
 	{/foreach}
-  </script>
+    </script>
 </body>
 </html>
 {/if}

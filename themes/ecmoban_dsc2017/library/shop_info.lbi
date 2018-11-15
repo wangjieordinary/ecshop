@@ -60,7 +60,6 @@
             <div class="value">
             	<div class="shopTit">{$title.titles_annotation}</div>
                 <div class="value_warp">
-                	{if $is_brand > 0}
                 	<div class="value_item">
                         <div class="value_label">
                         	<em>*</em>
@@ -79,7 +78,6 @@
                             </div>
                         </div>
                     </div>
-                    {/if}
                     <div class="value_item">
                         <div class="value_label">
                         	<em>*</em>

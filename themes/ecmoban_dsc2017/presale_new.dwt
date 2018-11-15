@@ -96,9 +96,9 @@
 		<div class="no_records no_records_tc">
             <i class="no_icon_two"></i>
             <div class="no_info no_info_line">
-                <h3>{$lang.cat_not_null}</h3>
+                <h3>该分类下没有内容</h3>
                 <div class="no_btn">
-                    <a href="index.php" class="btn sc-redBg-btn">{$lang.back_home}</a>
+                    <a href="index.php" class="btn sc-redBg-btn">返回首页</a>
                 </div>
             </div>
         </div>

@@ -23,7 +23,7 @@
                 <div class="dt dsc-cm">{$lang.Site_navigation}<i class="iconfont icon-down"></i></div>
                 <div class="dd dorpdown-layer">
                     <dl class="fore1">
-                        <dt>{$lang.characteristic_theme}</dt>
+                        <dt>特色主题</dt>
                         <dd>
                             <!-- {foreach name=nav_top_list from=$top_cat_list item=topc_cats key=key} -->
                                 <!--{if $smarty.foreach.nav_top_list.index < 3}-->
@@ -33,7 +33,7 @@
                         </dd>
                     </dl>
                     <dl class="fore2">
-                        <dt>{$lang.modules_txt_promo}</dt>
+                        <dt>促销活动</dt>
                         <dd>
                             <!-- {foreach name=nav_top_list from=$navigator_list.top item=nav key=key} -->
                                 <!--{if $smarty.foreach.nav_top_list.index >= 4}-->
@@ -52,15 +52,15 @@
     <div class="w w1200">
         <div class="logo">
             <div class="logoImg"><a href="{$url_index}"><img src="images/logo.gif" /></a></div>
-            <div class="tit">{$lang.my_merchants}</div>
+            <div class="tit">商家入驻</div>
         </div>
         <div class="settled-header-right">
             <ul class="settled-nav">
-                <li class="curr"><a href="merchants.php">{$lang.home}</a></li>
-                <li><a href="javascript:void(0);" ectype="merchants_article">{$lang.settled_step}</a></li>
-                <li><a href="javascript:void(0);" ectype="merchants_article">{$lang.settled_agreement}</a></li>
-                <li><a href="javascript:void(0);" ectype="merchants_article">{$lang.settled_help}</a></li>
-                <li><a href="javascript:void(0);" ectype="merchants_article">{$lang.understand_more}</a></li>
+                <li class="curr"><a href="merchants.php">首页</a></li>
+                <li><a href="javascript:void(0);" ectype="merchants_article">入驻流程</a></li>
+                <li><a href="javascript:void(0);" ectype="merchants_article">入驻协议</a></li>
+                <li><a href="javascript:void(0);" ectype="merchants_article">入驻帮助</a></li>
+                <li><a href="javascript:void(0);" ectype="merchants_article">了解更多</a></li>
             </ul>
             <div class="tel">{$service_phone}</div>
         </div>

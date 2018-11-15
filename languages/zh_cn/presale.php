@@ -62,7 +62,6 @@ $_LANG['Goods_delivery'] = "商品发货";
 $_LANG['presale_Estimate'] = "预计";
 $_LANG['presale_Estimate_two'] = "时开始发货";
 $_LANG['Store_cat'] = '店内分类';
-$_LANG['relevant_cat'] = '相关分类';
 $_LANG['see_exc_goods'] = '查看全部商品';
 $_LANG['Product_details'] = '商品详情';
 $_LANG['Commodity_number'] = "商品编号";
@@ -86,15 +85,12 @@ $_LANG['year'] = "年";
 $_LANG['month'] = "月";
 $_LANG['View_details'] = "查看详情";
 $_LANG['make_appointment_now'] = "立即预约";
-$_LANG['specification'] = "规格参数";
-$_LANG['more_parameters'] = "更多参数";
-$_LANG['not_impression'] = "此商品还没有设置买家印象，陪我一起等下嘛";
-$_LANG['presale_seller'] = "预售商家";
 
 /*haojialeju*/
 $_LANG['restrict_amount'] = '限　　购';
 $_LANG['Already_buy'] = '已购买';
 /*haojialeju*/
+
 
 $_LANG['js_languages']['shiping_prompt'] = "暂不支持配送";
 $_LANG['js_languages']['Have_goods'] = "有货"; 
@@ -105,5 +101,3 @@ $_LANG['js_languages']['goods_over'] = "此商品暂时售完";
 $_LANG['is_shipping_area'] = "[ 暂不支持配送 ]";
 
 $_LANG['buy_error'] = "很抱歉，您预售的商品暂时缺货，请及时联系客服！";
-
-?>

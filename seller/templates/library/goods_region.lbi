@@ -47,13 +47,13 @@
                 </div>
             </div>
         {foreachelse}
-        <div class="no_content">{$lang.you_no_region_add_first}</div>    
+        <div class="no_content">您现在还没有地区，请先添加地区</div>    
         {/foreach}
     </div>
     {if $is_list neq 1}
         <input type="hidden" name="warehouse_area_id" value="{$warehouse_area_id}" />
         <div class="button" id="addWarehouse" dsctype="dialog" data-url="dialog.php?act=dialog_warehouse&temp=addRegion&user_id={$goods.user_id}&goods_id={$goods.goods_id|default:0}" title="{$lang.add_areaRegion}"><span>{$lang.add_areaRegion}</span></div>
         <div class="button" id="addBatchWarehouse" dsctype="dialog" data-url="dialog.php?act=dialog_warehouse&temp=addBatchRegion&goods_id={$goods.goods_id|default:0}" title="{$lang.add_batch_areaRegion}"><span>{$lang.add_batch_areaRegion}</span></div>
-        <a href="goods_area_batch.php?act=add&goods_id={$goods.goods_id}" class="button">{$lang.batch_upload_csv}</a>
+        <a href="goods_area_batch.php?act=add&goods_id={$goods.goods_id}" class="button">CSV批量上传</a>
     {/if}
 </div>

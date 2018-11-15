@@ -1,9 +1,9 @@
 {if $transport_area}
 <table class="ecsc-default-table ecsc-table-seller mb10">
 	<tr>
-		<td width="50%" class="tl">{$lang.transport_to}</td>
-		<td width="20%" class="tc">{$lang.freight_yuan}</td>
-		<td width="30%" class="tc">{$lang.handler}</td>
+		<td width="50%" class="tl">运送到</td>
+		<td width="20%" class="tc">运费（元）</td>
+		<td width="30%" class="tc">操作</td>
 	</tr>
 	{foreach from=$transport_area item=area}
 	<tr>
@@ -13,7 +13,7 @@
 			<p><strong>{$map.top_area}：</strong>{$map.area_list}</p>
 			{/foreach}
 			{else}
-			{$lang.unspecified_area}
+			未指定地区
 			{/if}		
 		</td>
 		<td width="20%">
@@ -21,8 +21,8 @@
 			<input type="text" name="sprice[{$area.id}]" class="text w80 tc fn" onblur="insertfee(this.value,{$area.id});" autocomplete="off" value="{$area.sprice}" />
 		</td>
 		<td width="30%" align="center">
-			<input type="button" value="{$lang.edit}" class="sc-btn btn30 sc-blueBg-btn fn mr10" data-role="edit_area" ectype="edit_area">
-			<input type="button" value="{$lang.drop}" class="sc-btn btn30 sc-blueBg-btn fn mr0" data-role="drop_area" ectype="drop_area">
+			<input type="button" value="编辑" class="sc-btn btn30 sc-blueBg-btn fn mr10" data-role="edit_area" ectype="edit_area">
+			<input type="button" value="删除" class="sc-btn btn30 sc-blueBg-btn fn mr0" data-role="drop_area" ectype="drop_area">
 		</td>
 	</tr>
 	{/foreach}

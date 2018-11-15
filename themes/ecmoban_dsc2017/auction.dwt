@@ -28,7 +28,7 @@
                         <div class="product-wrap">
                             <div class="name">{$auction.goods_name|escape:html}</div>
                             <div class="activity-title">
-                                <div class="activity-type"><i class="iconfont icon-time"></i><!-- {if $auction.status_no eq 0} 未开始 -->{$lang.au_pre_start} <!-- {elseif $auction.status_no eq 1} 进行中 -->{$lang.underway}<!-- {else} 已结束 -->{$lang.finished}<!-- {/if} --></div>
+                                <div class="activity-type"><i class="iconfont icon-time"></i><!-- {if $auction.status_no eq 0} 未开始 -->{$lang.au_pre_start} <!-- {elseif $auction.status_no eq 1} 进行中 -->正在进行<!-- {else} 已结束 -->已结束<!-- {/if} --></div>
                                 <div class="sk-time-cd">
                                     <div class="sk-cd-tit"><!-- {if $auction.status_no eq 0} 未开始 -->{$lang.end_time} <!-- {elseif $auction.status_no eq 1} 进行中 -->{$lang.residual_time}<!-- {else} 已结束 -->{$lang.end_time}<!-- {/if} --></div>
                                     <div class="cd-time" ectype="time" data-time="{$auction.end_time}">
@@ -70,7 +70,7 @@
                                             <div class="si-tit">{$lang.au_deposit}：</div>
                                             <div class="si-warp">
                                                 <span class="price">{$auction.formated_deposit}</span>
-                                                {$lang.deposit_notic}
+                                                用户账号当前余额不能低于保证金金额
                                             </div>
                                         </div>
                                         <!--{/if}-->
@@ -194,42 +194,42 @@
                         </div>
                     </div>
                     <div class="auction-progress clearfxi">
-                        <div class="apt">{$lang.auction_step}</div>
+                        <div class="apt">竞拍流程</div>
                         <div class="apb">
                             <ul>
                                 <li class="bt-info-tips">
-                                	01.{$lang.auction_01}<i class="iconfont icon-arrow-right-alt"></i>
+                                	01.获取资格<i class="iconfont icon-arrow-right-alt"></i>
                                     <div class="tips">
                                     	<div class="sprite-arrow"></div>
-                                        <div class="content">{$lang.auction_notic_01}</div>
+                                        <div class="content">用户账号当前余额不低于保证金金额</div>
                                     </div>
                                 </li>
                                 <li class="bt-info-tips">
-                                	02.{$lang.auction_02}<i class="iconfont icon-arrow-right-alt"></i>
+                                	02.拍得商品<i class="iconfont icon-arrow-right-alt"></i>
                                 	<div class="tips">
                                     	<div class="sprite-arrow"></div>
-                                        <div class="content">{$lang.auction_notic_02}</div>
+                                        <div class="content">保证竞拍结束时出价最高，获得竞拍商品</div>
                                     </div>
                                 </li>
                                 <li class="bt-info-tips">
-                                	03.{$lang.auction_03}<i class="iconfont icon-arrow-right-alt"></i>
+                                	03.确认订单<i class="iconfont icon-arrow-right-alt"></i>
                                 	<div class="tips">
                                     	<div class="sprite-arrow"></div>
-                                        <div class="content">{$lang.auction_notic_03}</div>
+                                        <div class="content">填写订单信息，提交订单</div>
                                     </div>
                                 </li>
                                 <li class="bt-info-tips">
-                                	04.{$lang.auction_04}<i class="iconfont icon-arrow-right-alt"></i>
+                                	04.支付订单<i class="iconfont icon-arrow-right-alt"></i>
                                     <div class="tips">
                                     	<div class="sprite-arrow"></div>
-                                        <div class="content">{$lang.auction_notic_04}</div>
+                                        <div class="content">支付已提交的订单</div>
                                     </div>
                                 </li>
                                 <li class="bt-info-tips">
-                                	05.{$lang.auction_05}
+                                	05.交易完成
                                     <div class="tips">
                                     	<div class="sprite-arrow"></div>
-                                        <div class="content">{$lang.auction_notic_05}</div>
+                                        <div class="content">支付成功后等待收货，竞拍完成</div>
                                     </div>
                                 </li>
                             </ul>
@@ -238,15 +238,15 @@
                     <div class="activity-desc-detail" id="detail-slide">
                         <div class="hd">
                             <ul>
-                                <li>{$lang.auction_introduce}</li>
-                                <li>{$lang.auction_record}</li>
-                                <li>{$lang.service_guarantee}</li>
-                                <li>{$lang.auction_strategy}</li>
+                                <li>拍卖介绍</li>
+                                <li>出价记录</li>
+                                <li>服务保障</li>
+                                <li>竞拍攻略</li>
                             </ul>
                         </div>
                         <div class="bd">
                             <div class="bd-item">
-                                <div class="desc-detail-title">{$lang.auction_introduce}</div>
+                                <div class="desc-detail-title">拍卖介绍</div>
                                 <div class="desc-detail-content">
                                 	{if $auction.act_desc}
                                     	{$auction.act_desc}
@@ -254,7 +254,7 @@
                                     	<div class="no_records">
                                         	<i class="no_icon_two"></i>
                                             <div class="no_info">
-                                            	<h3>{$lang.auction_introduce_notic}</h3>
+                                            	<h3>此活动当前未设置拍卖详情信息哟~</h3>
                                             </div>
                                         </div>
                                     {/if}
@@ -270,7 +270,7 @@
                                     <div class="no_records">
                                         <i class="no_icon_two"></i>
                                         <div class="no_info">
-                                            <h3>{$lang.service_guarantee_notic}</h3>
+                                            <h3>此活动当前未设置服务保障哟~</h3>
                                         </div>
                                     </div>
                                 {/if}
@@ -282,7 +282,7 @@
                                     <div class="no_records">
                                         <i class="no_icon_two"></i>
                                         <div class="no_info">
-                                            <h3>{$lang.auction_strategy_notic}</h3>
+                                            <h3>此活动当前未设置竞拍攻略哟~</h3>
                                         </div>
                                     </div>
                                 {/if}
@@ -481,7 +481,7 @@
 				
 				$(".btn-append").hide();
 				
-				pbDialog(json_languages.out_of_stock_notic," ",0,450,80,50);
+				pbDialog("很抱歉，您拍卖的商品暂时缺货，请及时联系客服！"," ",0,450,80,50);
 			}else{
 				$(".btn-append").show();
 			}

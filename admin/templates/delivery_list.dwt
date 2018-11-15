@@ -52,7 +52,7 @@
                                 	<td class="sign"><div class="tDiv"><input type="checkbox" value="{$delivery.delivery_id}" name="checkboxes[]" class="checkbox" id="checkbox_{$delivery.delivery_id}" /><label for="checkbox_{$delivery.delivery_id}" class="checkbox_stars"></label></div></td>
 									<td><div class="tDiv">{$delivery.delivery_sn}</div></td>
 									<td><div class="tDiv">{$delivery.order_sn}</div></td>
-									<td><div class="tDiv">{if $delivery.ru_name}<font style="color:#F00;">{$delivery.ru_name}</font>{else}<font class="blue">{$lang.19_self_support}</font>{/if}</div></td>
+									<td><div class="tDiv">{if $delivery.ru_name}<font style="color:#F00;">{$delivery.ru_name}</font>{else}<font class="blue">自营</font>{/if}</div></td>
 									<td><div class="tDiv">{$delivery.add_time}</div></td>
 									<td><div class="tDiv"><a href="mailto:{$delivery.email}"> {$delivery.consignee|escape}</a></div></td>
 									<td><div class="tDiv">{$delivery.update_time}</div></td>
@@ -130,7 +130,7 @@
                                     </dd>
                                 </dl>
                                 <dl>
-                                    <dt>{$lang.from_order}</dt>
+                                    <dt>订单来源</dt>
                                     <dd>
                                         <div id="order_referer" class="imitate_select select_w145">
                                           <div class="cite">{$lang.select_please}</div>
@@ -139,7 +139,7 @@
                                              <li><a href="javascript:;" data-value="pc">PC</a></li>
                                              <li><a href="javascript:;" data-value="touch">WAP</a></li>
                                              <li><a href="javascript:;" data-value="mobile">APP</a></li>
-                                             <li><a href="javascript:;" data-value="ecjia-cashdesk">{$lang.cashdesk}</a></li>
+                                             <li><a href="javascript:;" data-value="ecjia-cashdesk">收银台</a></li>
                                           </ul>
                                         <input name="order_referer" type="hidden" value="" id="order_referer_val">
                                         </div>

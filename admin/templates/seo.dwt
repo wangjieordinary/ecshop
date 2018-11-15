@@ -361,7 +361,7 @@
                         	<div class="step_title"><i class="ui-step"></i><h3>{$lang.seo_goods_cat}</h3></div>
                             <div class="step_content">
                                 <div class="item">
-                                    <div class="label">{$lang.require_field}&nbsp;{$lang.03_category_manage}：</div>
+                                    <div class="label">{$lang.require_field}&nbsp;商品分类：</div>
                                     <div class="label_value">
                                     	<div class="search_select">
                                             <div class="categorySelect">

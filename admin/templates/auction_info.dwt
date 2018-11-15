@@ -56,16 +56,13 @@
                                     <div class="item">
                                         <div class="label">{$lang.require_field}{$lang.label_goods_name}</div>
                                         <div class="label_value">
-											<div id="activity_goods" class="imitate_select select_w320">
+											<div id="goods_id" class="imitate_select select_w320">
 												<div class="cite">{if $auction}{$auction.goods_name}{else}{$lang.please_select}{/if}</div>
 												<ul>
                                                 	{if !$auction}<li class="li_not">{$lang.please_search_goods}</li>{/if}
 												</ul>
-                                                <input name="goods_id" type="hidden" value="{$auction.goods_id}" id="activity_goods_val">
+                                                <input name="goods_id" type="hidden" value="{$auction.goods_id}" id="goods_id_val">
 											</div>
-                                            <select name="product_id" class="input_select" {if $auction.product_id <= 0}style="display:none"{/if}>
-                                            {html_options options=$good_products_select selected=$auction.product_id}
-                                            </select>
                                             <div class="form_prompt"></div>
                                         </div>
                                     </div>
@@ -204,6 +201,7 @@
 		</div>
 	</div>
 	{include file ='library/pagefooter.lbi'}
+    
 	<script type="text/javascript">
         var display_yes = (Browser.isIE) ? 'block' : 'table-row-group';
     
@@ -219,58 +217,28 @@
         
         function searchGoodsResponse(result)
         {
-            $("#activity_goods").children("ul").find("li").remove();
+            $("#goods_id").children("ul").find("li").remove();
             var goods = result.content.goods;
             if (goods)
             {
               for (i = 0; i < goods.length; i++)
               {
-                $("#activity_goods").children("ul").append("<li><a href='javascript:;' data-value='"+goods[i].goods_id+"' class='ftx-01'>"+goods[i].goods_name+"</a></li>")
+                $("#goods_id").children("ul").append("<li><a href='javascript:;' data-value='"+goods[i].goods_id+"' class='ftx-01'>"+goods[i].goods_name+"</a></li>")
               }
-              $("#activity_goods").children("ul").show();
+              $("#goods_id").children("ul").show();
             }
         }
         
-        $.divselect("#activity_goods","#activity_goods_val",function(obj){
-            var filter = new Object;
-            filter.goods_id = document.forms['theForm'].elements['goods_id'].value;
-
-            Ajax.call('snatch.php?is_ajax=1&act=search_products', filter, searchProductsResponse, 'GET', 'JSON');
-        });
+        function change_good_products()
+        {
+          var filter = new Object;
+          filter.goods_id = document.forms['theForm'].elements['goods_id'].value;
         
-        function searchProductsResponse(result){
-            var frm = document.forms['theForm'];
-            var sp = frm.elements['product_id'];
-
-            if(result.error == 0){
-                /* 清除 options */
-                sp.length = 0;
-
-                /* 创建 product options */
-                var products = result.content.products;
-                if(products.length){
-                    sp.style.display = 'block';
-
-                    for(i = 0; i < products.length; i++){
-                        var p_opt = document.createElement("OPTION");
-                        p_opt.value = products[i].product_id;
-                        p_opt.text  = products[i].goods_attr_str;
-                        sp.options.add(p_opt);
-                    }
-                }else{
-                    sp.style.display = 'none';
-
-                    var p_opt = document.createElement("OPTION");
-                    p_opt.value = 0;
-                    p_opt.text  = search_is_null;
-                    sp.options.add(p_opt);
-                }
-            }
-
-            if(result.message.length > 0){
-                alert(result.message);
-            }
+          Ajax.call('snatch.php?is_ajax=1&act=search_products', filter, searchProductsResponse, 'GET', 'JSON');
         }
+        
+        function searchProductsResponse(result)
+        {}
         
         function checked_no_top(o)
         {
